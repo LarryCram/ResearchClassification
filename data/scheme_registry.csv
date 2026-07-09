@@ -1,0 +1,15 @@
+scheme,level,rank,code_form,cardinality,corresponds_to
+ASJC,field,2,2-digit,27,= OAX field_id (exact)
+ASJC,subfield,3,4-digit,334,superset of OAX subfield_id (252 of 361 used)
+FOR,division,1,2-digit,23,
+FOR,group,2,4-digit,213,
+FOR,field,3,6-digit,1967,
+Leiden,main_field,1,integer 1-5,5,"~OAX domain (derived, majority vote)"
+Leiden,micro_cluster,4,integer,,91% exact join to OAX topic via wikipedia_url
+OAX,domain,1,1-digit,4,
+OAX,field,2,2-digit,26,ASJC field code (exact)
+OAX,subfield,3,4-digit,252,ASJC subfield code (exact)
+OAX,topic,4,5-digit,4516,Leiden micro_cluster (91% exact via wikipedia_url)
+SEO,division,1,2-digit,19,
+SEO,group,2,4-digit,128,
+SEO,objective,3,6-digit,840,

@@ -1,0 +1,362 @@
+code,level,label
+10,field,Multidisciplinary
+1000,subfield,Multidisciplinary
+11,field,Agricultural and Biological Sciences
+1100,subfield,General Agricultural and Biological Sciences
+1101,subfield,Agricultural and Biological Sciences (miscellaneous)
+1102,subfield,Agronomy and Crop Science
+1103,subfield,Animal Science and Zoology
+1104,subfield,Aquatic Science
+1105,subfield,Ecology
+1106,subfield,Food Science
+1107,subfield,Forestry
+1108,subfield,Horticulture
+1109,subfield,Insect Science
+1110,subfield,Plant Science
+1111,subfield,Soil Science
+12,field,Arts and Humanities
+1200,subfield,General Arts and Humanities
+1201,subfield,Arts and Humanities (miscellaneous)
+1202,subfield,History
+1203,subfield,Language and Linguistics
+1204,subfield,Archeology (arts and humanities)
+1205,subfield,Classics
+1206,subfield,Conservation
+1207,subfield,History and Philosophy of Science
+1208,subfield,Literature and Literary Theory
+1209,subfield,Museology
+1210,subfield,Music
+1211,subfield,Philosophy
+1212,subfield,Religious Studies
+1213,subfield,Visual Arts and Performing Arts
+13,field,Biochemistry
+1300,subfield,General Biochemistry
+1301,subfield,Biochemistry
+1302,subfield,Aging
+1303,subfield,Biochemistry
+1304,subfield,Biophysics
+1305,subfield,Biotechnology
+1306,subfield,Cancer Research
+1307,subfield,Cell Biology
+1308,subfield,Clinical Biochemistry
+1309,subfield,Developmental Biology
+1310,subfield,Endocrinology
+1311,subfield,Genetics
+1312,subfield,Molecular Biology
+1313,subfield,Molecular Medicine
+1314,subfield,Physiology
+1315,subfield,Structural Biology
+14,field,Business
+1400,subfield,General Business
+1401,subfield,Business
+1402,subfield,Accounting
+1403,subfield,Business and International Management
+1404,subfield,Management Information Systems
+1405,subfield,Management of Technology and Innovation
+1406,subfield,Marketing
+1407,subfield,Organizational Behavior and Human Resource Management
+1408,subfield,Strategy and Management
+1409,subfield,Tourism
+1410,subfield,Industrial Relations
+15,field,Chemical Engineering
+1500,subfield,General Chemical Engineering
+1501,subfield,Chemical Engineering (miscellaneous)
+1502,subfield,Bioengineering
+1503,subfield,Catalysis
+1504,subfield,Chemical Health and Safety
+1505,subfield,Colloid and Surface Chemistry
+1506,subfield,Filtration and Separation
+1507,subfield,Fluid Flow and Transfer Processes
+1508,subfield,Process Chemistry and Technology
+16,field,Chemistry
+1600,subfield,General Chemistry
+1601,subfield,Chemistry (miscellaneous)
+1602,subfield,Analytical Chemistry
+1603,subfield,Electrochemistry
+1604,subfield,Inorganic Chemistry
+1605,subfield,Organic Chemistry
+1606,subfield,Physical and Theoretical Chemistry
+1607,subfield,Spectroscopy
+17,field,Computer Science
+1700,subfield,General Computer Science
+1701,subfield,Computer Science (miscellaneous)
+1702,subfield,Artificial Intelligence
+1703,subfield,Computational Theory and Mathematics
+1704,subfield,Computer Graphics and Computer-Aided Design
+1705,subfield,Computer Networks and Communications
+1706,subfield,Computer Science Applications
+1707,subfield,Computer Vision and Pattern Recognition
+1708,subfield,Hardware and Architecture
+1709,subfield,Human-Computer Interaction
+1710,subfield,Information Systems
+1711,subfield,Signal Processing
+1712,subfield,Software
+18,field,Decision Sciences
+1800,subfield,General Decision Sciences
+1801,subfield,Decision Sciences (miscellaneous)
+1802,subfield,Information Systems and Management
+1803,subfield,Management Science and Operations Research
+1804,subfield,Statistics
+19,field,Earth and Planetary Sciences
+1900,subfield,General Earth and Planetary Sciences
+1901,subfield,Earth and Planetary Sciences (miscellaneous)
+1902,subfield,Atmospheric Science
+1903,subfield,Computers in Earth Sciences
+1904,subfield,Earth-Surface Processes
+1905,subfield,Economic Geology
+1906,subfield,Geochemistry and Petrology
+1907,subfield,Geology
+1908,subfield,Geophysics
+1909,subfield,Geotechnical Engineering and Engineering Geology
+1910,subfield,Oceanography
+1911,subfield,Paleontology
+1912,subfield,Space and Planetary Science
+1913,subfield,Stratigraphy
+20,field,Economics
+2000,subfield,General Economics
+2001,subfield,Economics
+2002,subfield,Economics and Econometrics
+2003,subfield,Finance
+21,field,Energy
+2100,subfield,General Energy
+2101,subfield,Energy (miscellaneous)
+2102,subfield,Energy Engineering and Power Technology
+2103,subfield,Fuel Technology
+2104,subfield,Nuclear Energy and Engineering
+2105,subfield,Renewable Energy
+22,field,Engineering
+2200,subfield,General Engineering
+2201,subfield,Engineering (miscellaneous)
+2202,subfield,Aerospace Engineering
+2203,subfield,Automotive Engineering
+2204,subfield,Biomedical Engineering
+2205,subfield,Civil and Structural Engineering
+2206,subfield,Computational Mechanics
+2207,subfield,Control and Systems Engineering
+2208,subfield,Electrical and Electronic Engineering
+2209,subfield,Industrial and Manufacturing Engineering
+2210,subfield,Mechanical Engineering
+2211,subfield,Mechanics of Materials
+2212,subfield,Ocean Engineering
+2213,subfield,Safety
+2214,subfield,Media Technology
+2215,subfield,Building and Construction
+2216,subfield,Architecture
+23,field,Environmental Science
+2300,subfield,General Environmental Science
+2301,subfield,Environmental Science (miscellaneous)
+2302,subfield,Ecological Modeling
+2303,subfield,Ecology
+2304,subfield,Environmental Chemistry
+2305,subfield,Environmental Engineering
+2306,subfield,Global and Planetary Change
+2307,subfield,Health
+2308,subfield,Management
+2309,subfield,Nature and Landscape Conservation
+2310,subfield,Pollution
+2311,subfield,Waste Management and Disposal
+2312,subfield,Water Science and Technology
+24,field,Immunology and Microbiology
+2400,subfield,General Immunology and Microbiology
+2401,subfield,Immunology and Microbiology (miscellaneous)
+2402,subfield,Applied Microbiology and Biotechnology
+2403,subfield,Immunology
+2404,subfield,Microbiology
+2405,subfield,Parasitology
+2406,subfield,Virology
+25,field,Materials Science
+2500,subfield,General Materials Science
+2501,subfield,Materials Science (miscellaneous)
+2502,subfield,Biomaterials
+2503,subfield,Ceramics and Composites
+2504,subfield,Electronic
+2505,subfield,Materials Chemistry
+2506,subfield,Metals and Alloys
+2507,subfield,Polymers and Plastics
+2508,subfield,Surfaces
+26,field,Mathematics
+2600,subfield,General Mathematics
+2601,subfield,Mathematics (miscellaneous)
+2602,subfield,Algebra and Number Theory
+2603,subfield,Analysis
+2604,subfield,Applied Mathematics
+2605,subfield,Computational Mathematics
+2606,subfield,Control and Optimization
+2607,subfield,Discrete Mathematics and Combinatorics
+2608,subfield,Geometry and Topology
+2609,subfield,Logic
+2610,subfield,Mathematical Physics
+2611,subfield,Modeling and Simulation
+2612,subfield,Numerical Analysis
+2613,subfield,Statistics and Probability
+2614,subfield,Theoretical Computer Science
+27,field,Medicine
+2700,subfield,General Medicine
+2701,subfield,Medicine (miscellaneous)
+2702,subfield,Anatomy
+2703,subfield,Anesthesiology and Pain Medicine
+2704,subfield,Biochemistry (medical)
+2705,subfield,Cardiology and Cardiovascular Medicine
+2706,subfield,Critical Care and Intensive Care Medicine
+2707,subfield,Complementary and Alternative Medicine
+2708,subfield,Dermatology
+2709,subfield,Drug Guides
+2710,subfield,Embryology
+2711,subfield,Emergency Medicine
+2712,subfield,Endocrinology
+2713,subfield,Epidemiology
+2714,subfield,Family Practice
+2715,subfield,Gastroenterology
+2716,subfield,Genetics (clinical)
+2717,subfield,Geriatrics and Gerontology
+2718,subfield,Health Informatics
+2719,subfield,Health Policy
+2720,subfield,Hematology
+2721,subfield,Hepatology
+2722,subfield,Histology
+2723,subfield,Immunology and Allergy
+2724,subfield,Internal Medicine
+2725,subfield,Infectious Diseases
+2726,subfield,Microbiology (medical)
+2727,subfield,Nephrology
+2728,subfield,Neurology (clinical)
+2729,subfield,Obstetrics and Gynecology
+2730,subfield,Oncology
+2731,subfield,Ophthalmology
+2732,subfield,Orthopedics and Sports Medicine
+2733,subfield,Otorhinolaryngology
+2734,subfield,Pathology and Forensic Medicine
+2735,subfield,Pediatrics
+2736,subfield,Pharmacology (medical)
+2737,subfield,Physiology (medical)
+2738,subfield,Psychiatry and Mental Health
+2739,subfield,Public Health
+2740,subfield,Pulmonary and Respiratory Medicine
+2741,subfield,Radiology
+2742,subfield,Rehabilitation
+2743,subfield,Reproductive Medicine
+2744,subfield,Reviews and References (medical)
+2745,subfield,Rheumatology
+2746,subfield,Surgery
+2747,subfield,Transplantation
+2748,subfield,Urology
+28,field,Neuroscience
+2800,subfield,General Neuroscience
+2801,subfield,Neuroscience (miscellaneous)
+2802,subfield,Behavioral Neuroscience
+2803,subfield,Biological Psychiatry
+2804,subfield,Cellular and Molecular Neuroscience
+2805,subfield,Cognitive Neuroscience
+2806,subfield,Developmental Neuroscience
+2807,subfield,Endocrine and Autonomic Systems
+2808,subfield,Neurology
+2809,subfield,Sensory Systems
+29,field,Nursing
+2900,subfield,General Nursing
+2901,subfield,Nursing (miscellaneous)
+2902,subfield,Advanced and Specialized Nursing
+2903,subfield,Assessment and Diagnosis
+2904,subfield,Care Planning
+2905,subfield,Community and Home Care
+2906,subfield,Critical Care Nursing
+2907,subfield,Emergency Nursing
+2908,subfield,Fundamentals and Skills
+2909,subfield,Gerontology
+2910,subfield,Issues
+2911,subfield,Leadership and Management
+2912,subfield,LPN and LVN
+2913,subfield,Maternity and Midwifery
+2914,subfield,Medical and Surgical Nursing
+2915,subfield,Nurse Assisting
+2916,subfield,Nutrition and Dietetics
+2917,subfield,Oncology (nursing)
+2918,subfield,Pathophysiology
+2919,subfield,Pediatrics
+2920,subfield,Pharmacology (nursing)
+2921,subfield,Psychiatric Mental Health
+2922,subfield,Research and Theory
+2923,subfield,Review and Exam Preparation
+30,field,Pharmacology
+3000,subfield,General Pharmacology
+3001,subfield,Pharmacology
+3002,subfield,Drug Discovery
+3003,subfield,Pharmaceutical Science
+3004,subfield,Pharmacology
+3005,subfield,Toxicology
+31,field,Physics and Astronomy
+3100,subfield,General Physics and Astronomy
+3101,subfield,Physics and Astronomy (miscellaneous)
+3102,subfield,Acoustics and Ultrasonics
+3103,subfield,Astronomy and Astrophysics
+3104,subfield,Condensed Matter Physics
+3105,subfield,Instrumentation
+3106,subfield,Nuclear and High Energy Physics
+3107,subfield,Atomic and Molecular Physics
+3108,subfield,Radiation
+3109,subfield,Statistical and Nonlinear Physics
+3110,subfield,Surfaces and Interfaces
+32,field,Psychology
+3200,subfield,General Psychology
+3201,subfield,Psychology (miscellaneous)
+3202,subfield,Applied Psychology
+3203,subfield,Clinical Psychology
+3204,subfield,Developmental and Educational Psychology
+3205,subfield,Experimental and Cognitive Psychology
+3206,subfield,Neuropsychology and Physiological Psychology
+3207,subfield,Social Psychology
+33,field,Social Sciences
+3300,subfield,General Social Sciences
+3301,subfield,Social Sciences (miscellaneous)
+3302,subfield,Archeology
+3303,subfield,Development
+3304,subfield,Education
+3305,subfield,Geography
+3306,subfield,Health (social science)
+3307,subfield,Human Factors and Ergonomics
+3308,subfield,Law
+3309,subfield,Library and Information Sciences
+3310,subfield,Linguistics and Language
+3311,subfield,Safety Research
+3312,subfield,Sociology and Political Science
+3313,subfield,Transportation
+3314,subfield,Anthropology
+3315,subfield,Communication
+3316,subfield,Cultural Studies
+3317,subfield,Demography
+3318,subfield,Gender Studies
+3319,subfield,Life-span and Life-course Studies
+3320,subfield,Political Science and International Relations
+3321,subfield,Public Administration
+3322,subfield,Urban Studies
+34,field,Veterinary
+3400,subfield,General Veterinary
+3401,subfield,Veterinary (miscellaneous)
+3402,subfield,Equine
+3403,subfield,Food Animals
+3404,subfield,Small Animals
+35,field,Dentistry
+3500,subfield,General Dentistry
+3501,subfield,Dentistry (miscellaneous)
+3502,subfield,Dental Assisting
+3503,subfield,Dental Hygiene
+3504,subfield,Oral Surgery
+3505,subfield,Orthodontics
+3506,subfield,Periodontics
+36,field,Health Professions
+3600,subfield,General Health Professions
+3601,subfield,Health Professions (miscellaneous)
+3602,subfield,Chiropractics
+3603,subfield,Complementary and Manual Therapy
+3604,subfield,Emergency Medical Services
+3605,subfield,Health Information Management
+3606,subfield,Medical Assisting and Transcription
+3607,subfield,Medical Laboratory Technology
+3608,subfield,Medical Terminology
+3609,subfield,Occupational Therapy
+3610,subfield,Optometry
+3611,subfield,Pharmacy
+3612,subfield,Physical Therapy
+3613,subfield,Podiatry
+3614,subfield,Radiological and Ultrasound Technology
+3615,subfield,Respiratory Care
+3616,subfield,Speech and Hearing

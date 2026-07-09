@@ -1,0 +1,27 @@
+code,level,label,parent_code
+11,field,Agricultural and Biological Sciences,1
+12,field,Arts and Humanities,2
+13,field,"Biochemistry, Genetics and Molecular Biology",1
+14,field,"Business, Management and Accounting",2
+15,field,Chemical Engineering,3
+16,field,Chemistry,3
+17,field,Computer Science,3
+18,field,Decision Sciences,2
+19,field,Earth and Planetary Sciences,3
+20,field,"Economics, Econometrics and Finance",2
+21,field,Energy,3
+22,field,Engineering,3
+23,field,Environmental Science,3
+24,field,Immunology and Microbiology,1
+25,field,Materials Science,3
+26,field,Mathematics,3
+27,field,Medicine,4
+28,field,Neuroscience,1
+29,field,Nursing,4
+30,field,"Pharmacology, Toxicology and Pharmaceutics",1
+31,field,Physics and Astronomy,3
+32,field,Psychology,2
+33,field,Social Sciences,2
+34,field,Veterinary,4
+35,field,Dentistry,4
+36,field,Health Professions,4

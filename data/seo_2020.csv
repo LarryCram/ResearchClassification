@@ -1,0 +1,988 @@
+code,level,label,parent_code
+10,division,ANIMAL PRODUCTION AND ANIMAL PRIMARY PRODUCTS,
+1001,group,Environmentally sustainable animal production,10
+100101,objective,Management of gaseous waste from animal production (excl. greenhouse gases),1001
+100102,objective,Management of liquid waste from animal production (excl. water),1001
+100103,objective,Management of solid waste from animal production,1001
+100104,objective,Management of water consumption by animal production,1001
+100199,objective,Environmentally sustainable animal production not elsewhere classified,1001
+1002,group,Fisheries - aquaculture,10
+100201,objective,Aquaculture crustaceans (excl. rock lobster and prawns),1002
+100202,objective,Aquaculture fin fish (excl. tuna),1002
+100203,objective,Aquaculture molluscs (excl. oysters),1002
+100204,objective,Aquaculture oysters,1002
+100205,objective,Aquaculture prawns,1002
+100206,objective,Aquaculture rock lobster,1002
+100207,objective,Aquaculture tuna,1002
+100299,objective,Fisheries - aquaculture not elsewhere classified,1002
+1003,group,Fisheries - wild caught,10
+100301,objective,Fisheries - recreational freshwater,1003
+100302,objective,Fisheries - recreational marine,1003
+100303,objective,Wild caught crustaceans (excl. rock lobster and prawns),1003
+100304,objective,Wild caught edible molluscs,1003
+100305,objective,Wild caught fin fish (excl. tuna),1003
+100306,objective,Wild caught prawns,1003
+100307,objective,Wild caught rock lobster,1003
+100308,objective,Wild caught tuna,1003
+100399,objective,Fisheries - wild caught not elsewhere classified,1003
+1004,group,Livestock raising,10
+100401,objective,Beef cattle,1004
+100402,objective,Dairy cattle,1004
+100403,objective,Deer,1004
+100404,objective,"Game livestock (e.g. kangaroos, wallabies, camels, buffaloes)",1004
+100405,objective,Goats,1004
+100406,objective,Horses,1004
+100407,objective,Insects,1004
+100408,objective,"Minor livestock (e.g. alpacas, ostriches, crocodiles, farmed rabbits)",1004
+100409,objective,Non-cattle dairy,1004
+100410,objective,Pigs,1004
+100411,objective,Poultry,1004
+100412,objective,Sheep for meat,1004
+100413,objective,Sheep for wool,1004
+100499,objective,Livestock raising not elsewhere classified,1004
+1005,group,"Pasture, browse and fodder crops",10
+100501,objective,Browse crops,1005
+100502,objective,Lucerne,1005
+100503,objective,Native and residual pastures,1005
+100504,objective,Non-cereal crops (non-cereal crops for hay/silage/green feed),1005
+100505,objective,Sown pastures (excl. lucerne),1005
+100599,objective,"Pasture, browse and fodder crops not elsewhere classified",1005
+1006,group,Primary products from animals,10
+100601,objective,Eggs,1006
+100602,objective,Honey,1006
+100603,objective,Pearls,1006
+100604,objective,Raw wool,1006
+100605,objective,Unprocessed or minimally processed fish,1006
+100606,objective,Unprocessed or minimally processed milk,1006
+100699,objective,Primary products from animals not elsewhere classified,1006
+1099,group,Other animal production and animal primary products,10
+109901,objective,Animal adaptation to climate change,1099
+109902,objective,Animal welfare,1099
+109903,objective,Fish product traceability and quality assurance,1099
+109904,objective,Livestock product traceability and quality assurance,1099
+109999,objective,Other animal production and animal primary products not elsewhere classified,1099
+11,division,COMMERCIAL SERVICES AND TOURISM,
+1101,group,Environmentally sustainable commercial services and tourism,11
+110101,objective,Management of gaseous waste from commercial services and tourism (excl. greenhouse gases),1101
+110102,objective,Management of liquid waste from commercial services and tourism (excl. water),1101
+110103,objective,Management of solid waste from commercial services and tourism,1101
+110104,objective,Management of water consumption by commercial services and tourism,1101
+110199,objective,Environmentally sustainable commercial services and tourism not elsewhere classified,1101
+1102,group,Financial services,11
+110201,objective,Finance services,1102
+110202,objective,Investment services (excl. superannuation),1102
+110203,objective,Superannuation and insurance services,1102
+110299,objective,Financial services not elsewhere classified,1102
+1103,group,"Property, business support services and trade",11
+110301,objective,Administration and business support services,1103
+110302,objective,"Professional, scientific and technical services",1103
+110303,objective,Property services (incl. security),1103
+110304,objective,Wholesale and retail trade,1103
+110399,objective,"Property, business support services and trade not elsewhere classified",1103
+1104,group,Tourism services,11
+110401,objective,Economic issues in tourism,1104
+110402,objective,Socio-cultural issues in tourism,1104
+110403,objective,Tourism infrastructure development,1104
+110499,objective,Tourism services not elsewhere classified,1104
+1105,group,Water and waste services,11
+110501,objective,Waste management services,1105
+110502,objective,Waste recycling services,1105
+110503,objective,Water recycling services (incl. sewage and greywater),1105
+110504,objective,Water services and utilities,1105
+110599,objective,Water and waste services not elsewhere classified,1105
+1199,group,Other commercial services and tourism,11
+119901,objective,Hospitality services,1199
+119902,objective,Recreational services,1199
+119999,objective,Other commercial services and tourism not elsewhere classified,1199
+12,division,CONSTRUCTION,
+1201,group,Building management and services,12
+120101,objective,Civil building management and services,1201
+120102,objective,Commercial building management and services,1201
+120103,objective,Industrial building management and services,1201
+120104,objective,Institutional building management and services,1201
+120105,objective,Residential building management and services,1201
+120199,objective,Building management and services not elsewhere classified,1201
+1202,group,Construction design,12
+120201,objective,Civil construction design,1202
+120202,objective,Commercial construction design,1202
+120203,objective,Industrial construction design,1202
+120204,objective,Institutional construction design,1202
+120205,objective,Residential construction design,1202
+120299,objective,Construction design not elsewhere classified,1202
+1203,group,Construction materials performance and processes,12
+120301,objective,Cement and concrete materials,1203
+120302,objective,Glass materials,1203
+120303,objective,Metals,1203
+120304,objective,Polymeric materials and paints,1203
+120305,objective,"Stone, ceramics and clay materials",1203
+120306,objective,Timber materials,1203
+120399,objective,Construction materials performance and processes not elsewhere classified,1203
+1204,group,Construction planning,12
+120401,objective,Civil construction planning,1204
+120402,objective,Commercial construction planning,1204
+120403,objective,Industrial construction planning,1204
+120404,objective,Regional planning,1204
+120405,objective,Residential construction planning,1204
+120406,objective,Urban planning,1204
+120499,objective,Construction planning not elsewhere classified,1204
+1205,group,Construction processes,12
+120501,objective,Civil construction processes,1205
+120502,objective,Commercial construction processes,1205
+120503,objective,Industrial construction processes,1205
+120504,objective,Institutional construction processes,1205
+120505,objective,Residential construction processes,1205
+120599,objective,Construction processes not elsewhere classified,1205
+1206,group,Environmentally sustainable construction activities,12
+120601,objective,Management of gaseous waste from construction activities (excl. greenhouse gases),1206
+120602,objective,Management of liquid waste from construction activities (excl. water),1206
+120603,objective,Management of solid waste from construction activities,1206
+120604,objective,Management of water consumption by construction activities,1206
+120699,objective,Environmentally sustainable construction activities not elsewhere classified,1206
+1299,group,Other construction,12
+129901,objective,Adaptation to climate change in construction,1299
+129999,objective,Other construction not elsewhere classified,1299
+13,division,CULTURE AND SOCIETY,
+1301,group,Arts,13
+130101,objective,Design,1301
+130102,objective,Music,1301
+130103,objective,The creative arts,1301
+130104,objective,The performing arts,1301
+130199,objective,Arts not elsewhere classified,1301
+1302,group,Communication,13
+130201,objective,Communication across languages and culture,1302
+130202,objective,Languages and linguistics,1302
+130203,objective,Literature,1302
+130204,objective,The media,1302
+130205,objective,Visual communication,1302
+130299,objective,Communication not elsewhere classified,1302
+1303,group,Ethics,13
+130301,objective,Bioethics,1303
+130302,objective,Business ethics,1303
+130303,objective,Environmental ethics,1303
+130304,objective,Social ethics,1303
+130305,objective,Technological ethics,1303
+130306,objective,Workplace and organisational ethics (excl. business ethics),1303
+130399,objective,Ethics not elsewhere classified,1303
+1304,group,Heritage,13
+130401,objective,Assessment of heritage value,1304
+130402,objective,Conserving collections and movable cultural heritage,1304
+130403,objective,Conserving intangible cultural heritage,1304
+130404,objective,Conserving natural heritage,1304
+130405,objective,Conserving the historic environment,1304
+130499,objective,Heritage not elsewhere classified,1304
+1305,group,Religion,13
+130501,objective,Religion and society,1305
+130502,objective,Religious philosophies and belief systems,1305
+130503,objective,Religious rituals and traditions (excl. structures),1305
+130504,objective,Religious structures,1305
+130599,objective,Religion not elsewhere classified,1305
+1306,group,"Sport, exercise and recreation",13
+130601,objective,Exercise,1306
+130602,objective,Organised sports,1306
+130603,objective,Recreation and leisure activities (excl. sport and exercise),1306
+130699,objective,"Sport, exercise and recreation not elsewhere classified",1306
+1307,group,Understanding past societies,13
+130701,objective,Understanding Africa’s past,1307
+130702,objective,Understanding Asia’s past,1307
+130703,objective,Understanding Australia’s past,1307
+130704,objective,Understanding Europe’s past,1307
+130705,objective,Understanding New Zealand’s past,1307
+130706,objective,Understanding the past of the Americas,1307
+130799,objective,Understanding past societies not elsewhere classified,1307
+1399,group,Other culture and society,13
+139999,objective,Other culture and society not elsewhere classified,1399
+14,division,DEFENCE,
+1401,group,Defence,14
+140101,objective,Air,1401
+140102,objective,"Command, control and communications",1401
+140103,objective,Cyber and electronic security and warfare,1401
+140104,objective,Emerging defence technologies,1401
+140105,objective,"Intelligence, surveillance and space",1401
+140106,objective,Land,1401
+140107,objective,Logistics,1401
+140108,objective,Maritime,1401
+140109,objective,National security,1401
+140110,objective,Personnel,1401
+140199,objective,Defence not elsewhere classified,1401
+15,division,ECONOMIC FRAMEWORK,
+1501,group,International trade policy,15
+150101,objective,International agreements on trade,1501
+150102,objective,Trade assistance and protection,1501
+150103,objective,Trade policy,1501
+150199,objective,International trade policy not elsewhere classified,1501
+1502,group,Macroeconomics,15
+150201,objective,Balance of payments,1502
+150202,objective,Demography,1502
+150203,objective,Economic growth,1502
+150204,objective,Exchange rates,1502
+150205,objective,Fiscal policy,1502
+150206,objective,Income distribution,1502
+150207,objective,Macro labour market issues,1502
+150208,objective,Monetary policy,1502
+150209,objective,Savings and investments,1502
+150210,objective,Taxation,1502
+150299,objective,Macroeconomics not elsewhere classified,1502
+1503,group,Management and productivity,15
+150301,objective,Industrial relations,1503
+150302,objective,Management,1503
+150303,objective,Marketing,1503
+150304,objective,Productivity (excl. public sector),1503
+150305,objective,Public sector productivity,1503
+150306,objective,Technological and organisational innovation,1503
+150399,objective,Management and productivity not elsewhere classified,1503
+1504,group,Measurement standards and calibration services,15
+150401,objective,Agricultural and environmental standards and calibrations,1504
+150402,objective,Defence standards and calibrations,1504
+150403,objective,Manufacturing standards and calibrations,1504
+150404,objective,Service industries standards and calibrations,1504
+150499,objective,Measurement standards and calibration services not elsewhere classified,1504
+1505,group,Microeconomics,15
+150501,objective,Consumption,1505
+150502,objective,Human capital issues,1505
+150503,objective,Industrial organisations,1505
+150504,objective,Industry costs and structure,1505
+150505,objective,Industry policy,1505
+150506,objective,Market-based mechanisms,1505
+150507,objective,Micro labour market issues,1505
+150508,objective,Microeconomic effects of taxation,1505
+150509,objective,"Preference, behaviour and welfare",1505
+150510,objective,Production,1505
+150511,objective,Supply and demand,1505
+150599,objective,Microeconomics not elsewhere classified,1505
+1599,group,Other economic framework,15
+159901,objective,Carbon and emissions trading,1599
+159902,objective,Ecological economics,1599
+159999,objective,Other economic framework not elsewhere classified,1599
+16,division,EDUCATION AND TRAINING,
+1601,group,Learner and learning,16
+160101,objective,Early childhood education,1601
+160102,objective,Higher education,1601
+160103,objective,Primary education,1601
+160104,objective,Professional development and adult education,1601
+160105,objective,Secondary education,1601
+160199,objective,Learner and learning not elsewhere classified,1601
+1602,group,Schools and learning environments,16
+160201,objective,Equity and access to education,1602
+160202,objective,Gender aspects in education,1602
+160203,objective,Inclusive education,1602
+160204,objective,"Management, resources and leadership",1602
+160205,objective,Policies and development,1602
+160206,objective,Workforce transition and employment,1602
+160299,objective,Schools and learning environments not elsewhere classified,1602
+1603,group,Teaching and curriculum,16
+160301,objective,"Assessment, development and evaluation of curriculum",1603
+160302,objective,Pedagogy,1603
+160303,objective,Teacher and instructor development,1603
+160304,objective,Teaching and instruction technologies,1603
+160399,objective,Teaching and curriculum not elsewhere classified,1603
+1699,group,Other education and training,16
+169999,objective,Other education and training not elsewhere classified,1699
+17,division,ENERGY,
+1701,group,Energy efficiency,17
+170101,objective,Commercial energy efficiency,1701
+170102,objective,Industrial energy efficiency,1701
+170103,objective,Residential energy efficiency,1701
+170104,objective,Transport energy efficiency,1701
+170199,objective,Energy efficiency not elsewhere classified,1701
+1702,group,Energy exploration,17
+170201,objective,Coal exploration,1702
+170202,objective,Geothermal exploration,1702
+170203,objective,Oil and gas exploration,1702
+170204,objective,Oil shale and tar sands exploration,1702
+170205,objective,Uranium exploration,1702
+170299,objective,Energy exploration not elsewhere classified,1702
+1703,group,"Energy storage, distribution and supply",17
+170301,objective,Battery storage,1703
+170302,objective,Carbon capture and storage,1703
+170303,objective,Energy services and utilities,1703
+170304,objective,Energy storage (excl. hydrogen and batteries),1703
+170305,objective,Energy systems and analysis,1703
+170306,objective,Energy transmission and distribution (excl. hydrogen),1703
+170307,objective,Hydrogen distribution,1703
+170308,objective,Hydrogen storage,1703
+170309,objective,Smart grids,1703
+170399,objective,"Energy storage, distribution and supply not elsewhere classified",1703
+1704,group,Energy transformation,17
+170401,objective,Fuel cells (excl. solid oxide),1704
+170402,objective,Hydrogen-based energy systems,1704
+170403,objective,Nuclear energy,1704
+170404,objective,Solid oxide fuel cells,1704
+170405,objective,Transformation of coal into electricity,1704
+170406,objective,Transformation of coal into fuels,1704
+170407,objective,Transformation of electricity and material feedstocks into fuels,1704
+170408,objective,Transformation of gas into electricity,1704
+170409,objective,Transformation of gas into fuels,1704
+170499,objective,Energy transformation not elsewhere classified,1704
+1705,group,Environmentally sustainable energy activities,17
+170501,objective,Management of gaseous waste from energy activities (excl. greenhouse gases),1705
+170502,objective,Management of liquid waste from energy activities (excl. water),1705
+170503,objective,Management of solid waste from energy activities,1705
+170504,objective,Management of water consumption by energy activities,1705
+170599,objective,Environmentally sustainable energy activities not elsewhere classified,1705
+1706,group,Mining and extraction of energy resources,17
+170601,objective,Coal mining and extraction,1706
+170602,objective,Geothermal energy extraction,1706
+170603,objective,Oil and gas extraction,1706
+170604,objective,Oil shale and tar sands mining and extraction,1706
+170605,objective,Uranium mining and extraction,1706
+170699,objective,Mining and extraction of energy resources not elsewhere classified,1706
+1707,group,Processing of energy sources,17
+170701,objective,Biomass processing,1707
+170702,objective,Hydrogen production from fossil fuels,1707
+170703,objective,Hydrogen production from nuclear energy,1707
+170704,objective,Hydrogen production from renewable energy,1707
+170705,objective,Oil and gas processing,1707
+170706,objective,Preparation of black coal,1707
+170707,objective,Preparation of brown coal (lignite),1707
+170708,objective,Preparation of oil shale and tar sands,1707
+170709,objective,Preparation of uranium,1707
+170799,objective,Processing of energy sources not elsewhere classified,1707
+1708,group,Renewable energy,17
+170801,objective,Biofuel energy,1708
+170802,objective,Geothermal energy,1708
+170803,objective,Hydro-electric energy,1708
+170804,objective,Solar-photovoltaic energy,1708
+170805,objective,Solar-thermal energy,1708
+170806,objective,Tidal energy,1708
+170807,objective,Wave energy,1708
+170808,objective,Wind energy,1708
+170899,objective,Renewable energy not elsewhere classified,1708
+1799,group,Other energy,17
+179999,objective,Other energy not elsewhere classified,1799
+18,division,ENVIRONMENTAL MANAGEMENT,
+1801,group,"Air quality, atmosphere and weather",18
+180101,objective,Air quality,1801
+180102,objective,Atmospheric composition (incl. greenhouse gas inventory),1801
+180103,objective,Atmospheric processes and dynamics,1801
+180104,objective,Weather,1801
+180199,objective,"Air quality, atmosphere and weather not elsewhere classified",1801
+1802,group,Coastal and estuarine systems and management,18
+180201,objective,Assessment and management of coastal and estuarine ecosystems,1802
+180202,objective,Coastal erosion,1802
+180203,objective,Coastal or estuarine biodiversity,1802
+180204,objective,"Control of pests, diseases and exotic species in coastal and estuarine environments",1802
+180205,objective,Measurement and assessment of estuarine water quality,1802
+180206,objective,Rehabilitation or conservation of coastal or estuarine environments,1802
+180299,objective,Coastal and estuarine systems and management not elsewhere classified,1802
+1803,group,"Fresh, ground and surface water systems and management",18
+180301,objective,Assessment and management of freshwater ecosystems,1803
+180302,objective,"Control of pests, diseases and exotic species in fresh, ground and surface water",1803
+180303,objective,"Fresh, ground and surface water biodiversity",1803
+180304,objective,Freshwater assimilative capacity,1803
+180305,objective,"Ground water quantification, allocation and impact of depletion",1803
+180306,objective,Measurement and assessment of freshwater quality (incl. physical and chemical conditions of water),1803
+180307,objective,"Rehabilitation or conservation of fresh, ground and surface water environments",1803
+180308,objective,"Surface water quantification, allocation and impact of depletion",1803
+180399,objective,"Fresh, ground and surface water systems and management not elsewhere classified",1803
+1804,group,Management of Antarctic and Southern Ocean environments,18
+180401,objective,Antarctic and Southern Ocean ice dynamics,1804
+180402,objective,Antarctic and Southern Ocean oceanic processes,1804
+180403,objective,Assessment and management of Antarctic and Southern Ocean ecosystems,1804
+180404,objective,Biodiversity in Antarctic and Southern Ocean environments,1804
+180405,objective,"Control of pests, diseases and exotic species in Antarctic and Southern Ocean environments",1804
+180406,objective,Protection and conservation of Antarctic and Southern Ocean environments,1804
+180407,objective,Water quality in Antarctic and Southern Ocean environments,1804
+180499,objective,Management of Antarctic and Southern Ocean environments not elsewhere classified,1804
+1805,group,Marine systems and management,18
+180501,objective,Assessment and management of benthic marine ecosystems,1805
+180502,objective,Assessment and management of pelagic marine ecosystems,1805
+180503,objective,"Control of pests, diseases and exotic species in marine environments",1805
+180504,objective,Marine biodiversity,1805
+180505,objective,Measurement and assessment of marine water quality and condition,1805
+180506,objective,Oceanic processes (excl. in the Antarctic and Southern Ocean),1805
+180507,objective,Rehabilitation or conservation of marine environments,1805
+180599,objective,Marine systems and management not elsewhere classified,1805
+1806,group,Terrestrial systems and management,18
+180601,objective,Assessment and management of terrestrial ecosystems,1806
+180602,objective,"Control of pests, diseases and exotic species in terrestrial environments",1806
+180603,objective,"Evaluation, allocation, and impacts of land use",1806
+180604,objective,Rehabilitation or conservation of terrestrial environments,1806
+180605,objective,Soils,1806
+180606,objective,Terrestrial biodiversity,1806
+180607,objective,Terrestrial erosion,1806
+180699,objective,Terrestrial systems and management not elsewhere classified,1806
+1899,group,Other environmental management,18
+189999,objective,Other environmental management not elsewhere classified,1899
+19,division,"ENVIRONMENTAL POLICY, CLIMATE CHANGE AND NATURAL HAZARDS",
+1901,group,Adaptation to climate change,19
+190101,objective,Climate change adaptation measures (excl. ecosystem),1901
+190102,objective,Ecosystem adaptation to climate change,1901
+190103,objective,Social impacts of climate change and variability,1901
+190199,objective,Adaptation to climate change not elsewhere classified,1901
+1902,group,"Environmental policy, legislation and standards",19
+190201,objective,"Consumption patterns, population issues and the environment",1902
+190202,objective,Eco-verification (excl. environmental lifecycle assessment),1902
+190203,objective,Environmental education and awareness,1902
+190204,objective,Environmental lifecycle assessment,1902
+190205,objective,Environmental protection frameworks (incl. economic incentives),1902
+190206,objective,Institutional arrangements,1902
+190207,objective,Land policy,1902
+190208,objective,Rights to environmental and natural resources (excl. water allocation),1902
+190209,objective,Sustainability indicators,1902
+190210,objective,Trade and environment,1902
+190211,objective,Water policy (incl. water allocation),1902
+190299,objective,"Environmental policy, legislation and standards not elsewhere classified",1902
+1903,group,Mitigation of climate change,19
+190301,objective,Climate change mitigation strategies,1903
+190302,objective,Management of greenhouse gas emissions from animal production,1903
+190303,objective,Management of greenhouse gas emissions from commercial services and tourism,1903
+190304,objective,Management of greenhouse gas emissions from construction activities,1903
+190305,objective,Management of greenhouse gas emissions from electricity generation,1903
+190306,objective,Management of greenhouse gas emissions from energy activities,1903
+190307,objective,Management of greenhouse gas emissions from information and communication services,1903
+190308,objective,Management of greenhouse gas emissions from manufacturing activities,1903
+190309,objective,Management of greenhouse gas emissions from mineral resources activities,1903
+190310,objective,Management of greenhouse gas emissions from plant production,1903
+190311,objective,Management of greenhouse gas emissions from transport activities,1903
+190399,objective,Mitigation of climate change not elsewhere classified,1903
+1904,group,Natural hazards,19
+190401,objective,"Climatological hazards (e.g. extreme temperatures, drought and wildfires)",1904
+190402,objective,Extraterrestrial hazards (e.g. meteorites),1904
+190403,objective,"Geological hazards (e.g. earthquakes, landslides and volcanic activity)",1904
+190404,objective,Hydrological hazards (e.g. avalanches and floods),1904
+190405,objective,Meteorological hazards (e.g. cyclones and storms),1904
+190499,objective,Natural hazards not elsewhere classified,1904
+1905,group,Understanding climate change,19
+190501,objective,Climate change models,1905
+190502,objective,Climate variability (excl. social impacts),1905
+190503,objective,Effects of climate change on Antarctic and sub-Antarctic environments (excl. social impacts),1905
+190504,objective,Effects of climate change on Australia (excl. social impacts),1905
+190505,objective,Effects of climate change on New Zealand (excl. social impacts),1905
+190506,objective,Effects of climate change on the South Pacific (excl. Australia and New Zealand) (excl. social impacts),1905
+190507,objective,"Global effects of climate change (excl. Australia, New Zealand, Antarctica and the South Pacific) (excl. social impacts)",1905
+190508,objective,Understanding the impact of natural hazards caused by climate change,1905
+190599,objective,Understanding climate change not elsewhere classified,1905
+1999,group,"Other environmental policy, climate change and natural hazards",19
+199999,objective,"Other environmental policy, climate change and natural hazards not elsewhere classified",1999
+20,division,HEALTH,
+2001,group,Clinical health,20
+200101,objective,Diagnosis of human diseases and conditions,2001
+200102,objective,Efficacy of medications,2001
+200103,objective,Human pain management,2001
+200104,objective,Prevention of human diseases and conditions,2001
+200105,objective,Treatment of human diseases and conditions,2001
+200199,objective,Clinical health not elsewhere classified,2001
+2002,group,Evaluation of health and support services,20
+200201,objective,Determinants of health,2002
+200202,objective,Evaluation of health outcomes,2002
+200203,objective,Health education and promotion,2002
+200204,objective,Health inequalities,2002
+200205,objective,Health policy evaluation,2002
+200206,objective,Health system performance (incl. effectiveness of programs),2002
+200207,objective,Social structure and health,2002
+200208,objective,Telehealth,2002
+200299,objective,Evaluation of health and support services not elsewhere classified,2002
+2003,group,Provision of health and support services,20
+200301,objective,Allied health therapies (excl. mental health services),2003
+200302,objective,Community health care,2003
+200303,objective,Health surveillance,2003
+200304,objective,Inpatient hospital care,2003
+200305,objective,Mental health services,2003
+200306,objective,Midwifery,2003
+200307,objective,Nursing,2003
+200308,objective,Outpatient care,2003
+200309,objective,Palliative care,2003
+200310,objective,Primary care,2003
+200311,objective,"Urgent and critical care, and emergency medicine",2003
+200399,objective,Provision of health and support services not elsewhere classified,2003
+2004,group,Public health (excl. specific population health),20
+200401,objective,Behaviour and health,2004
+200402,objective,Dental health,2004
+200403,objective,Disability and functional capacity,2004
+200404,objective,Disease distribution and transmission (incl. surveillance and response),2004
+200405,objective,Food safety,2004
+200406,objective,Health protection and disaster response,2004
+200407,objective,Health status (incl. wellbeing),2004
+200408,objective,Injury prevention and control,2004
+200409,objective,Mental health,2004
+200410,objective,Nutrition,2004
+200411,objective,Overweight and obesity,2004
+200412,objective,Preventive medicine,2004
+200413,objective,Substance abuse,2004
+200499,objective,Public health (excl. specific population health) not elsewhere classified,2004
+2005,group,Specific population health (excl. Indigenous health),20
+200501,objective,Adolescent health,2005
+200502,objective,Health related to ageing,2005
+200503,objective,Health related to specific ethnic groups,2005
+200504,objective,Men's health,2005
+200505,objective,Migrant health,2005
+200506,objective,Neonatal and child health,2005
+200507,objective,Occupational health,2005
+200508,objective,Rural and remote area health,2005
+200509,objective,Women's and maternal health,2005
+200599,objective,Specific population health (excl. Indigenous health) not elsewhere classified,2005
+2099,group,Other health,20
+209999,objective,Other health not elsewhere classified,2099
+21,division,INDIGENOUS,
+2101,group,Aboriginal and Torres Strait Islander community services,21
+210101,objective,Aboriginal and Torres Strait Islander community service programs,2101
+210102,objective,Aboriginal and Torres Strait Islander development and wellbeing,2101
+210199,objective,Aboriginal and Torres Strait Islander community services not elsewhere classified,2101
+2102,group,Aboriginal and Torres Strait Islander education,21
+210201,objective,Aboriginal and Torres Strait Islander education engagement and attendance outcomes,2102
+210202,objective,Aboriginal and Torres Strait Islander education system performance,2102
+210203,objective,Aboriginal and Torres Strait Islander literacy and numeracy outcomes,2102
+210299,objective,Aboriginal and Torres Strait Islander education not elsewhere classified,2102
+2103,group,Aboriginal and Torres Strait Islander health,21
+210301,objective,Aboriginal and Torres Strait Islander determinants of health,2103
+210302,objective,Aboriginal and Torres Strait Islander health status and outcomes,2103
+210303,objective,Aboriginal and Torres Strait Islander health system performance,2103
+210399,objective,Aboriginal and Torres Strait Islander health not elsewhere classified,2103
+2104,group,Aboriginal and Torres Strait Islander heritage and culture,21
+210401,objective,Aboriginal and Torres Strait Islander artefacts,2104
+210402,objective,Aboriginal and Torres Strait Islander connection to land and environment,2104
+210403,objective,Aboriginal and Torres Strait Islander customary practices,2104
+210404,objective,Aboriginal and Torres Strait Islander knowledge,2104
+210405,objective,Aboriginal and Torres Strait Islander places of significance,2104
+210406,objective,Aboriginal and Torres Strait Islander tradition,2104
+210407,objective,Conserving Aboriginal and Torres Strait Islander heritage and culture,2104
+210499,objective,Aboriginal and Torres Strait Islander heritage and culture not elsewhere classified,2104
+2105,group,Ngā ratonga hapori Māori (Māori community services),21
+210501,objective,Ngā hōtaka ratonga hapori Māori (Māori community service programs),2105
+210502,objective,Te whanaketanga me te oranga o te Māori (Māori development and wellbeing),2105
+210599,objective,Ngā ratonga hapori o te Māori kāore anō kia whakarōpūtia i wāhi kē (Māori community services not elsewhere classified),2105
+2106,group,Mātauranga Māori (Māori education),21
+210601,objective,Te whai wāhi o te Māori ki te mātauranga me te taetae atu ki te kura (Māori education engagement and attendance outcomes),2106
+210602,objective,Te whakatutukitanga o te pūnaha mātauranga Māori (Māori education system performance),2106
+210603,objective,Ngā putanga reo matatini me te pāngarau o te Māori (Māori literacy and numeracy outcomes),2106
+210699,objective,Te mātauranga Māori kāore kāore anō kia whakarōpūtia i wāhi kē (Māori education not elsewhere classified),2106
+2107,group,Te hauora (hauora Māori) (Māori health),21
+210701,objective,Ngā tokoingoa hauora (determinants of Māori health),2107
+210702,objective,Te tūnga me ngā putanga hauora (Māori health status and outcomes),2107
+210703,objective,Te whakatutukinga o te pūnaha hauora (Māori health system performance),2107
+210799,objective,Te hauora kāore anō kia whakarōpūtia i wāhi kē (Māori health not elsewhere classified),2107
+2108,group,Te tuku ihotanga me te ahurea Māori (Māori heritage and culture),21
+210801,objective,Āhuatanga Māori (te tuku ihotanga Māori) (Māori tradition),2108
+210802,objective,Te whāomoomo i te tuku ihotanga me te ahurea Māori (conserving Māori heritage and culture),2108
+210803,objective,Mōhiotanga Māori (Māori knowledge),2108
+210804,objective,Ngā taonga (Māori artefacts),2108
+210805,objective,Ngā tikanga Māori (Māori customary practices),2108
+210806,objective,Ngā wāhi taonga (Māori places of significance),2108
+210899,objective,Te tuku ihotanga me te ahurea Māori kāore anō kia whakarōpūhia i wāhi kē (Māori heritage and culture not elsewhere classified),2108
+2109,group,Pacific Peoples community services,21
+210901,objective,Pacific Peoples community service programs,2109
+210902,objective,Pacific Peoples development and wellbeing,2109
+210999,objective,Pacific Peoples community services not elsewhere classified,2109
+2110,group,Pacific Peoples education,21
+211001,objective,Pacific Peoples education engagement and attendance,2110
+211002,objective,Pacific Peoples education system performance,2110
+211003,objective,Pacific Peoples literacy and numeracy outcomes,2110
+211099,objective,Pacific Peoples education not elsewhere classified,2110
+2111,group,Pacific Peoples health,21
+211101,objective,Pacific Peoples determinants of health,2111
+211102,objective,Pacific Peoples health status and outcomes,2111
+211103,objective,Pacific Peoples health system performance,2111
+211199,objective,Pacific Peoples health not elsewhere classified,2111
+2112,group,Pacific Peoples heritage and culture,21
+211201,objective,Conserving Pacific Peoples heritage and culture,2112
+211202,objective,Pacific Peoples connection to land and environment,2112
+211299,objective,Pacific Peoples heritage and culture not elsewhere classified,2112
+2199,group,Other Indigenous,21
+219999,objective,Other Indigenous not elsewhere classified,2199
+22,division,INFORMATION AND COMMUNICATION SERVICES,
+2201,group,"Communication technologies, systems and services",22
+220101,objective,E-infrastructures,2201
+220102,objective,Internet protocols (ip),2201
+220103,objective,Mobile technologies and communications,2201
+220104,objective,Network security,2201
+220105,objective,Network systems and services,2201
+220106,objective,"Satellite technologies, networks and services",2201
+220107,objective,"Wireless technologies, networks and services",2201
+220199,objective,"Communication technologies, systems and services not elsewhere classified",2201
+2202,group,Environmentally sustainable information and communication services,22
+220201,objective,Management of solid waste from information and communication services,2202
+220202,objective,Management of water consumption by information and communication services,2202
+220299,objective,Environmentally sustainable information and communication services not elsewhere classified,2202
+2203,group,Information services,22
+220301,objective,Digital humanities,2203
+220302,objective,Electronic information storage and retrieval services,2203
+220303,objective,Library and archival services,2203
+220304,objective,Museum and gallery collections,2203
+220305,objective,News collection services,2203
+220306,objective,Open access,2203
+220399,objective,Information services not elsewhere classified,2203
+2204,group,"Information systems, technologies and services",22
+220401,objective,Application software packages,2204
+220402,objective,Applied computing,2204
+220403,objective,Artificial intelligence,2204
+220404,objective,Computer systems,2204
+220405,objective,Cybersecurity,2204
+220406,objective,Graphics,2204
+220407,objective,Human-computer interaction,2204
+220408,objective,Information systems,2204
+220499,objective,"Information systems, technologies and services not elsewhere classified",2204
+2205,group,Media services,22
+220501,objective,"Animation, video games and computer generated imagery services",2205
+220502,objective,"Internet, digital and social media",2205
+220503,objective,Publishing and print services,2205
+220504,objective,"Radio, television, film and video services",2205
+220599,objective,Media services not elsewhere classified,2205
+2299,group,Other information and communication services,22
+229999,objective,Other information and communication services not elsewhere classified,2299
+23,division,"LAW, POLITICS AND COMMUNITY SERVICES",
+2301,group,Community services,23
+230101,objective,Ability and disability,2301
+230102,objective,Ageing and older people,2301
+230103,objective,Carers' support,2301
+230104,objective,Children's services and childcare,2301
+230105,objective,Citizenship and national identity,2301
+230106,objective,Employment services,2301
+230107,objective,Families and family services,2301
+230108,objective,Gender and sexualities,2301
+230109,objective,Homelessness and housing services,2301
+230110,objective,Migrant and refugee settlement services,2301
+230111,objective,Multicultural services,2301
+230112,objective,Social class and inequalities,2301
+230113,objective,"Structure, delivery and resourcing",2301
+230114,objective,Violence and abuse services,2301
+230115,objective,Youth services,2301
+230199,objective,Community services not elsewhere classified,2301
+2302,group,Government and politics,23
+230201,objective,Civics and citizenship,2302
+230202,objective,Electoral systems,2302
+230203,objective,Political systems,2302
+230204,objective,Public services policy advice and analysis,2302
+230299,objective,Government and politics not elsewhere classified,2302
+2303,group,International relations,23
+230301,objective,Defence and security policy,2303
+230302,objective,International aid and development,2303
+230303,objective,International organisations,2303
+230304,objective,International political economy (excl. international trade),2303
+230305,objective,Peace and conflict,2303
+230399,objective,International relations not elsewhere classified,2303
+2304,group,Justice and the law,23
+230401,objective,Civil justice,2304
+230402,objective,Crime prevention,2304
+230403,objective,Criminal justice,2304
+230404,objective,Law enforcement,2304
+230405,objective,Law reform,2304
+230406,objective,Legal processes,2304
+230407,objective,"Legislation, civil and criminal codes",2304
+230408,objective,Rehabilitation and correctional services,2304
+230499,objective,Justice and the law not elsewhere classified,2304
+2305,group,Work and labour market,23
+230501,objective,Employment patterns and change,2305
+230502,objective,Professions and professionalisation,2305
+230503,objective,Remuneration,2305
+230504,objective,Unpaid work and volunteering,2305
+230505,objective,Work and family responsibilities,2305
+230506,objective,Workplace safety,2305
+230599,objective,Work and labour market not elsewhere classified,2305
+2399,group,"Other law, politics and community services",23
+239999,objective,"Other law, politics and community services not elsewhere classified",2399
+24,division,MANUFACTURING,
+2401,group,Agricultural chemicals,24
+240101,objective,Animal protection chemicals,2401
+240102,objective,Chemical fertilisers,2401
+240103,objective,Crop and pasture protection chemicals,2401
+240199,objective,Agricultural chemicals not elsewhere classified,2401
+2402,group,Basic metal products,24
+240201,objective,Basic aluminium products,2402
+240202,objective,Basic copper products,2402
+240203,objective,Basic iron and steel products,2402
+240204,objective,Basic precious metal products,2402
+240205,objective,Basic zinc products,2402
+240299,objective,Basic metal products not elsewhere classified,2402
+2403,group,"Ceramics, glass and industrial mineral products",24
+240301,objective,Cement products and concrete materials,2403
+240302,objective,Ceramics,2403
+240303,objective,Clay products,2403
+240304,objective,Composite materials,2403
+240305,objective,Plaster and plaster products,2403
+240306,objective,Structural glass and glass products,2403
+240399,objective,"Ceramics, glass and industrial mineral products not elsewhere classified",2403
+2404,group,"Computer, electronic and communication equipment",24
+240401,objective,Computer and electronic office equipment (excl. communication equipment),2404
+240402,objective,Consumer electronic equipment (excl. communication equipment),2404
+240403,objective,Integrated circuits and devices,2404
+240404,objective,Integrated systems,2404
+240405,objective,Network infrastructure equipment,2404
+240406,objective,Processor modules,2404
+240407,objective,Robotics,2404
+240408,objective,Satellite navigation equipment,2404
+240409,objective,Telemetry equipment,2404
+240410,objective,Voice and data equipment,2404
+240499,objective,"Computer, electronic and communication equipment not elsewhere classified",2404
+2405,group,Dairy products,24
+240501,objective,Butter and milk-derived fats and oils (excl. cream),2405
+240502,objective,Casein,2405
+240503,objective,Cheese,2405
+240504,objective,"Processed milk and cream (incl. powder, evaporated and condensed)",2405
+240505,objective,Whey,2405
+240599,objective,Dairy products not elsewhere classified,2405
+2406,group,Environmentally sustainable manufacturing activities,24
+240601,objective,"Development of recyclable or biodegradable componentry, packaging or materials",2406
+240602,objective,Management of gaseous waste from manufacturing activities (excl. greenhouse gases),2406
+240603,objective,Management of liquid waste from manufacturing activities (excl. water),2406
+240604,objective,Management of solid waste from manufacturing activities,2406
+240605,objective,Management of water consumption by manufacturing activities,2406
+240699,objective,Environmentally sustainable manufacturing activities not elsewhere classified,2406
+2407,group,Fabricated metal products,24
+240701,objective,Coated metal and metal-coated products,2407
+240702,objective,Machined metal products,2407
+240703,objective,Metal castings,2407
+240704,objective,Semi-finished metal products,2407
+240705,objective,Sheet metal products,2407
+240706,objective,Structural metal products,2407
+240799,objective,Fabricated metal products not elsewhere classified,2407
+2408,group,Human pharmaceutical products,24
+240801,objective,Human biological preventatives,2408
+240802,objective,Human diagnostics,2408
+240803,objective,Human pharmaceutical treatments,2408
+240899,objective,Human pharmaceutical products not elsewhere classified,2408
+2409,group,Industrial chemicals and related products,24
+240901,objective,"Antimicrobials, antifungals and biocides",2409
+240902,objective,Bioplastics,2409
+240903,objective,Cosmetics,2409
+240904,objective,Fine chemicals,2409
+240905,objective,Industrial gases,2409
+240906,objective,Inorganic industrial chemicals,2409
+240907,objective,Lubricants,2409
+240908,objective,"Organic industrial chemicals (excl. resins, rubber and plastics)",2409
+240909,objective,Paints,2409
+240910,objective,Plastics,2409
+240911,objective,Resins,2409
+240912,objective,Rubber,2409
+240913,objective,Soaps,2409
+240999,objective,Industrial chemicals and related products not elsewhere classified,2409
+2410,group,Instrumentation,24
+241001,objective,Industrial instruments,2410
+241002,objective,Medical instruments,2410
+241003,objective,Scientific instruments,2410
+241099,objective,Instrumentation not elsewhere classified,2410
+2411,group,"Leather products, fibre processing and textiles",24
+241101,objective,Clothing,2411
+241102,objective,Cotton ginning,2411
+241103,objective,"Natural fibres, yarns and fabrics",2411
+241104,objective,Non-fabric textiles (e.g. felt),2411
+241105,objective,"Skins, leather and leather products",2411
+241106,objective,"Synthetic fibres, yarns and fabrics",2411
+241107,objective,Wool scouring and top making,2411
+241199,objective,"Leather products, fibre processing and textiles not elsewhere classified",2411
+2412,group,Machinery and equipment,24
+241201,objective,3D printers and printing,2412
+241202,objective,Autonomous and robotic systems,2412
+241203,objective,Electrical machinery and equipment (incl. appliances),2412
+241204,objective,Industrial machinery and equipment,2412
+241205,objective,Medical machinery and equipment,2412
+241299,objective,Machinery and equipment not elsewhere classified,2412
+2413,group,Processed food products and beverages (excl. dairy products),24
+241301,objective,Alcoholic beverages,2413
+241302,objective,Bakery products,2413
+241303,objective,Carcass meat (incl. fish and seafood),2413
+241304,objective,Flour mill and cereal food,2413
+241305,objective,Insects,2413
+241306,objective,Non-alcoholic beverages (excl. fruit juices and non-dairy milk),2413
+241307,objective,Non-dairy milk,2413
+241308,objective,Nutraceuticals and functional foods,2413
+241309,objective,Oils and fats (incl. margarines),2413
+241310,objective,Processed fish and seafood products,2413
+241311,objective,Processed fruit and vegetable products (incl. juices),2413
+241312,objective,Processed meat products,2413
+241313,objective,"Sugar, sweeteners and confectionery products",2413
+241399,objective,Processed food products and beverages (excl. dairy products) not elsewhere classified,2413
+2414,group,"Processed non-food agriculture products (excl. wood, paper and fibre)",24
+241401,objective,Essential oils,2414
+241402,objective,Organic fertilisers,2414
+241403,objective,Plant extracts,2414
+241404,objective,Prepared animal feed,2414
+241499,objective,"Processed non-food agricultural products (excl. wood, paper and fibre) not elsewhere classified",2414
+2415,group,Transport equipment,24
+241501,objective,Aerospace equipment,2415
+241502,objective,Automotive equipment,2415
+241503,objective,Nautical equipment,2415
+241504,objective,Rail equipment,2415
+241599,objective,Transport equipment not elsewhere classified,2415
+2416,group,Veterinary pharmaceutical products,24
+241601,objective,Veterinary biological preventatives,2416
+241602,objective,Veterinary diagnostics,2416
+241603,objective,Veterinary pharmaceutical treatments,2416
+241699,objective,Veterinary pharmaceutical products not elsewhere classified,2416
+2417,group,"Wood, wood products and paper",24
+241701,objective,Paper products and pulp,2417
+241702,objective,Printing and publishing processes,2417
+241703,objective,Reconstituted timber products,2417
+241704,objective,Wood products,2417
+241705,objective,Wood sawing and veneer,2417
+241799,objective,"Wood, wood products and paper not elsewhere classified",2417
+2499,group,Other manufacturing,24
+249999,objective,Other manufacturing not elsewhere classified,2499
+25,division,MINERAL RESOURCES (EXCL. ENERGY RESOURCES),
+2501,group,Environmentally sustainable mineral resource activities,25
+250101,objective,Management of gaseous waste from mineral resource activities (excl. greenhouse gases),2501
+250102,objective,Management of liquid waste from mineral resource activities (excl. water),2501
+250103,objective,Management of solid waste from mineral resource activities,2501
+250104,objective,Management of water consumption by mineral resource activities,2501
+250199,objective,Environmentally sustainable mineral resource activities not elsewhere classified,2501
+2502,group,First stage treatment of minerals,25
+250201,objective,Alumina production,2502
+250202,objective,Beneficiation of bauxite and aluminium ores (excl. alumina production),2502
+250203,objective,Beneficiation or dressing of iron ores,2502
+250204,objective,Beneficiation or dressing of non-metallic minerals (incl. diamonds),2502
+250205,objective,Concentrating processes of base metal ores (excl. aluminium and iron ores),2502
+250206,objective,Production of unrefined precious metal ingots and concentrates,2502
+250299,objective,First stage treatment of minerals not elsewhere classified,2502
+2503,group,Mineral exploration,25
+250301,objective,Aluminium ore exploration,2503
+250302,objective,Copper ore exploration,2503
+250303,objective,Diamond exploration,2503
+250304,objective,Iron ore exploration,2503
+250305,objective,Precious (noble) metal ore exploration,2503
+250306,objective,Stone and clay exploration,2503
+250307,objective,"Titanium minerals, zircon, and rare earth metal ore (e.g. monazite) exploration",2503
+250308,objective,Zinc ore exploration,2503
+250399,objective,Mineral exploration not elsewhere classified,2503
+2504,group,Primary mining and extraction of minerals,25
+250401,objective,Mining and extraction of aluminium ores,2504
+250402,objective,Mining and extraction of copper ores,2504
+250403,objective,Mining and extraction of diamonds,2504
+250404,objective,Mining and extraction of iron ores,2504
+250405,objective,Mining and extraction of precious (noble) metal ores,2504
+250406,objective,Mining and extraction of stone and clay,2504
+250407,objective,"Mining and extraction of titanium minerals, zircon, and rare earth metal ores (e.g. monazite)",2504
+250408,objective,Mining and extraction of zinc ores,2504
+250499,objective,Primary mining and extraction of minerals not elsewhere classified,2504
+2599,group,Other mineral resources (excl. energy resources),25
+259999,objective,Other mineral resources (excl. energy resources) not elsewhere classified,2599
+26,division,PLANT PRODUCTION AND PLANT PRIMARY PRODUCTS,
+2601,group,Environmentally sustainable plant production,26
+260101,objective,Management of gaseous waste from plant production (excl. greenhouse gases),2601
+260102,objective,Management of liquid waste from plant production (excl. water),2601
+260103,objective,Management of solid waste from plant production,2601
+260104,objective,Management of water consumption by plant production,2601
+260199,objective,Environmentally sustainable plant production not elsewhere classified,2601
+2602,group,Forestry,26
+260201,objective,Hardwood plantations,2602
+260202,objective,Harvesting and transport of forest products,2602
+260203,objective,Integration of farm and forestry,2602
+260204,objective,Native forests,2602
+260205,objective,Softwood plantations,2602
+260299,objective,Forestry not elsewhere classified,2602
+2603,group,Grains and seeds,26
+260301,objective,Barley,2603
+260302,objective,Canola,2603
+260303,objective,Grain legumes,2603
+260304,objective,Linseed,2603
+260305,objective,Lupins,2603
+260306,objective,Maize,2603
+260307,objective,Oats,2603
+260308,objective,Rice,2603
+260309,objective,Safflower seed,2603
+260310,objective,Sorghum,2603
+260311,objective,Soybeans,2603
+260312,objective,Wheat,2603
+260399,objective,Grains and seeds not elsewhere classified,2603
+2604,group,Harvesting and packaging of plant products,26
+260401,objective,Cotton lint and cotton seed,2604
+260402,objective,Fresh fruits and vegetables (post harvest),2604
+260403,objective,Sugar cane (cut for crushing),2604
+260404,objective,Unprocessed grains,2604
+260405,objective,Unprocessed industrial crops (excl. sugar and cotton),2604
+260406,objective,Unprocessed seeds,2604
+260499,objective,Harvesting and packaging of plant products not elsewhere classified,2604
+2605,group,Horticultural crops,26
+260501,objective,Almonds,2605
+260502,objective,Avocado,2605
+260503,objective,Berry fruit (excl. kiwifruit),2605
+260504,objective,Citrus fruit,2605
+260505,objective,Field grown vegetable crops,2605
+260506,objective,Kiwifruit,2605
+260507,objective,Macadamias,2605
+260508,objective,Mushrooms and truffles,2605
+260509,objective,Olives,2605
+260510,objective,"Ornamentals, natives, flowers and nursery plants",2605
+260511,objective,"Pome fruit, pip fruit",2605
+260512,objective,Protected vegetable crops,2605
+260513,objective,Stone fruit (excl. avocado),2605
+260514,objective,Table grapes,2605
+260515,objective,Tree nuts (excl. almonds and macadamias),2605
+260516,objective,Tropical fruit,2605
+260599,objective,Horticultural crops not elsewhere classified,2605
+2606,group,Industrial crops,26
+260601,objective,Cannabis,2606
+260602,objective,Cotton,2606
+260603,objective,Essential oil crops,2606
+260604,objective,Hemp,2606
+260605,objective,Hops,2606
+260606,objective,Plant extract crops,2606
+260607,objective,Sugar,2606
+260608,objective,Wine grapes,2606
+260699,objective,Industrial crops not elsewhere classified,2606
+2699,group,Other plant production and plant primary products,26
+269901,objective,Climate adaptive plants,2699
+269902,objective,Forest product traceability and quality assurance,2699
+269903,objective,Plant product traceability and quality assurance (excl. forest products),2699
+269999,objective,Other plant production and plant primary products not elsewhere classified,2699
+27,division,TRANSPORT,
+2701,group,Aerospace transport,27
+270101,objective,Air freight,2701
+270102,objective,Air passenger transport,2701
+270103,objective,Air safety and traffic management,2701
+270104,objective,Air terminal infrastructure and management,2701
+270105,objective,Autonomous air vehicles,2701
+270106,objective,Space transport,2701
+270199,objective,Aerospace transport not elsewhere classified,2701
+2702,group,Environmentally sustainable transport activities,27
+270201,objective,Management of gaseous waste from transport activities (excl. greenhouse gases),2702
+270202,objective,Management of liquid waste from transport activities (excl. water),2702
+270203,objective,Management of noise and vibration from transport activities,2702
+270204,objective,Management of solid waste from transport activities,2702
+270205,objective,Management of water consumption by transport activities,2702
+270299,objective,Environmentally sustainable transport activities not elsewhere classified,2702
+2703,group,Ground transport,27
+270301,objective,Active ground transport,2703
+270302,objective,Autonomous road vehicles,2703
+270303,objective,Heavy rail infrastructure and networks,2703
+270304,objective,Rail freight,2703
+270305,objective,Rail passenger movements,2703
+270306,objective,Rail safety,2703
+270307,objective,Road freight,2703
+270308,objective,Road infrastructure and networks,2703
+270309,objective,Road passenger movements (excl. public transport),2703
+270310,objective,Road public transport,2703
+270311,objective,Road safety,2703
+270312,objective,Urban rail infrastructure and networks (incl. light and metro rail),2703
+270399,objective,Ground transport not elsewhere classified,2703
+2704,group,Water transport,27
+270401,objective,Autonomous water vehicles,2704
+270402,objective,Coastal sea freight transport,2704
+270403,objective,Domestic passenger water transport (e.g. ferries),2704
+270404,objective,International passenger water transport (e.g. passenger ships),2704
+270405,objective,"International sea freight transport (excl. live animals, food products and liquefied gas)",2704
+270406,objective,International sea transport of food products,2704
+270407,objective,International sea transport of liquefied gas,2704
+270408,objective,International sea transport of live animals,2704
+270409,objective,Port infrastructure and management,2704
+270410,objective,Water safety,2704
+270499,objective,Water transport not elsewhere classified,2704
+2799,group,Other transport,27
+279901,objective,Intermodal materials handling,2799
+279902,objective,Multimodal transport,2799
+279903,objective,Pipeline transport,2799
+279904,objective,Postal and package services (incl. courier services),2799
+279999,objective,Other transport not elsewhere classified,2799
+28,division,EXPANDING KNOWLEDGE,
+2801,group,Expanding knowledge,28
+280101,objective,"Expanding knowledge in the agricultural, food and veterinary sciences",2801
+280102,objective,Expanding knowledge in the biological sciences,2801
+280103,objective,Expanding knowledge in the biomedical and clinical sciences,2801
+280104,objective,Expanding knowledge in built environment and design,2801
+280105,objective,Expanding knowledge in the chemical sciences,2801
+280106,objective,"Expanding knowledge in commerce, management, tourism and services",2801
+280107,objective,Expanding knowledge in the earth sciences,2801
+280108,objective,Expanding knowledge in economics,2801
+280109,objective,Expanding knowledge in education,2801
+280110,objective,Expanding knowledge in engineering,2801
+280111,objective,Expanding knowledge in the environmental sciences,2801
+280112,objective,Expanding knowledge in the health sciences,2801
+280113,objective,"Expanding knowledge in history, heritage and archaeology",2801
+280114,objective,Expanding knowledge in Indigenous studies,2801
+280115,objective,Expanding knowledge in the information and computing sciences,2801
+280116,objective,"Expanding knowledge in language, communication and culture",2801
+280117,objective,Expanding knowledge in law and legal studies,2801
+280118,objective,Expanding knowledge in the mathematical sciences,2801
+280119,objective,Expanding knowledge in philosophy and religious studies,2801
+280120,objective,Expanding knowledge in the physical sciences,2801
+280121,objective,Expanding knowledge in psychology,2801
+280122,objective,Expanding knowledge in creative arts and writing studies,2801
+280123,objective,Expanding knowledge in human society,2801

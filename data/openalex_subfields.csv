@@ -1,0 +1,253 @@
+code,level,label,parent_code
+1100,subfield,General Agricultural and Biological Sciences,11
+1102,subfield,Agronomy and Crop Science,11
+1103,subfield,Animal Science and Zoology,11
+1104,subfield,Aquatic Science,11
+1105,subfield,"Ecology, Evolution, Behavior and Systematics",11
+1106,subfield,Food Science,11
+1107,subfield,Forestry,11
+1108,subfield,Horticulture,11
+1109,subfield,Insect Science,11
+1110,subfield,Plant Science,11
+1111,subfield,Soil Science,11
+1200,subfield,General Arts and Humanities,12
+1202,subfield,History,12
+1203,subfield,Language and Linguistics,12
+1204,subfield,Archeology,12
+1205,subfield,Classics,12
+1206,subfield,Conservation,12
+1207,subfield,History and Philosophy of Science,12
+1208,subfield,Literature and Literary Theory,12
+1209,subfield,Museology,12
+1210,subfield,Music,12
+1211,subfield,Philosophy,12
+1212,subfield,Religious studies,12
+1213,subfield,Visual Arts and Performing Arts,12
+1302,subfield,Aging,13
+1303,subfield,Biochemistry,13
+1304,subfield,Biophysics,13
+1305,subfield,Biotechnology,13
+1306,subfield,Cancer Research,13
+1307,subfield,Cell Biology,13
+1308,subfield,Clinical Biochemistry,13
+1309,subfield,Developmental Biology,13
+1310,subfield,Endocrinology,13
+1311,subfield,Genetics,13
+1312,subfield,Molecular Biology,13
+1313,subfield,Molecular Medicine,13
+1314,subfield,Physiology,13
+1315,subfield,Structural Biology,13
+1402,subfield,Accounting,14
+1403,subfield,Business and International Management,14
+1404,subfield,Management Information Systems,14
+1405,subfield,Management of Technology and Innovation,14
+1406,subfield,Marketing,14
+1407,subfield,Organizational Behavior and Human Resource Management,14
+1408,subfield,Strategy and Management,14
+1409,subfield,"Tourism, Leisure and Hospitality Management",14
+1410,subfield,Industrial relations,14
+1502,subfield,Bioengineering,15
+1503,subfield,Catalysis,15
+1504,subfield,Chemical Health and Safety,15
+1506,subfield,Filtration and Separation,15
+1507,subfield,Fluid Flow and Transfer Processes,15
+1508,subfield,Process Chemistry and Technology,15
+1602,subfield,Analytical Chemistry,16
+1603,subfield,Electrochemistry,16
+1604,subfield,Inorganic Chemistry,16
+1605,subfield,Organic Chemistry,16
+1606,subfield,Physical and Theoretical Chemistry,16
+1607,subfield,Spectroscopy,16
+1702,subfield,Artificial Intelligence,17
+1703,subfield,Computational Theory and Mathematics,17
+1704,subfield,Computer Graphics and Computer-Aided Design,17
+1705,subfield,Computer Networks and Communications,17
+1706,subfield,Computer Science Applications,17
+1707,subfield,Computer Vision and Pattern Recognition,17
+1708,subfield,Hardware and Architecture,17
+1709,subfield,Human-Computer Interaction,17
+1710,subfield,Information Systems,17
+1711,subfield,Signal Processing,17
+1712,subfield,Software,17
+1800,subfield,General Decision Sciences,18
+1802,subfield,Information Systems and Management,18
+1803,subfield,Management Science and Operations Research,18
+1804,subfield,"Statistics, Probability and Uncertainty",18
+1902,subfield,Atmospheric Science,19
+1904,subfield,Earth-Surface Processes,19
+1906,subfield,Geochemistry and Petrology,19
+1907,subfield,Geology,19
+1908,subfield,Geophysics,19
+1910,subfield,Oceanography,19
+1911,subfield,Paleontology,19
+1912,subfield,Space and Planetary Science,19
+2000,subfield,"General Economics, Econometrics and Finance",20
+2002,subfield,Economics and Econometrics,20
+2003,subfield,Finance,20
+2100,subfield,General Energy,21
+2102,subfield,Energy Engineering and Power Technology,21
+2103,subfield,Fuel Technology,21
+2104,subfield,Nuclear Energy and Engineering,21
+2105,subfield,"Renewable Energy, Sustainability and the Environment",21
+2200,subfield,General Engineering,22
+2202,subfield,Aerospace Engineering,22
+2203,subfield,Automotive Engineering,22
+2204,subfield,Biomedical Engineering,22
+2205,subfield,Civil and Structural Engineering,22
+2206,subfield,Computational Mechanics,22
+2207,subfield,Control and Systems Engineering,22
+2208,subfield,Electrical and Electronic Engineering,22
+2209,subfield,Industrial and Manufacturing Engineering,22
+2210,subfield,Mechanical Engineering,22
+2211,subfield,Mechanics of Materials,22
+2212,subfield,Ocean Engineering,22
+2213,subfield,"Safety, Risk, Reliability and Quality",22
+2214,subfield,Media Technology,22
+2215,subfield,Building and Construction,22
+2216,subfield,Architecture,22
+2302,subfield,Ecological Modeling,23
+2303,subfield,Ecology,23
+2304,subfield,Environmental Chemistry,23
+2305,subfield,Environmental Engineering,23
+2306,subfield,Global and Planetary Change,23
+2307,subfield,"Health, Toxicology and Mutagenesis",23
+2308,subfield,"Management, Monitoring, Policy and Law",23
+2309,subfield,Nature and Landscape Conservation,23
+2310,subfield,Pollution,23
+2311,subfield,Waste Management and Disposal,23
+2312,subfield,Water Science and Technology,23
+2402,subfield,Applied Microbiology and Biotechnology,24
+2403,subfield,Immunology,24
+2404,subfield,Microbiology,24
+2405,subfield,Parasitology,24
+2406,subfield,Virology,24
+2500,subfield,General Materials Science,25
+2502,subfield,Biomaterials,25
+2503,subfield,Ceramics and Composites,25
+2504,subfield,"Electronic, Optical and Magnetic Materials",25
+2505,subfield,Materials Chemistry,25
+2506,subfield,Metals and Alloys,25
+2507,subfield,Polymers and Plastics,25
+2508,subfield,"Surfaces, Coatings and Films",25
+2602,subfield,Algebra and Number Theory,26
+2604,subfield,Applied Mathematics,26
+2605,subfield,Computational Mathematics,26
+2607,subfield,Discrete Mathematics and Combinatorics,26
+2608,subfield,Geometry and Topology,26
+2610,subfield,Mathematical Physics,26
+2611,subfield,Modeling and Simulation,26
+2612,subfield,Numerical Analysis,26
+2613,subfield,Statistics and Probability,26
+2614,subfield,Theoretical Computer Science,26
+2702,subfield,Anatomy,27
+2703,subfield,Anesthesiology and Pain Medicine,27
+2704,subfield,Biochemistry,27
+2705,subfield,Cardiology and Cardiovascular Medicine,27
+2706,subfield,Critical Care and Intensive Care Medicine,27
+2707,subfield,Complementary and alternative medicine,27
+2708,subfield,Dermatology,27
+2711,subfield,Emergency Medicine,27
+2712,subfield,"Endocrinology, Diabetes and Metabolism",27
+2713,subfield,Epidemiology,27
+2714,subfield,Family Practice,27
+2715,subfield,Gastroenterology,27
+2716,subfield,Genetics,27
+2717,subfield,Geriatrics and Gerontology,27
+2718,subfield,Health Informatics,27
+2720,subfield,Hematology,27
+2721,subfield,Hepatology,27
+2723,subfield,Immunology and Allergy,27
+2724,subfield,Internal Medicine,27
+2725,subfield,Infectious Diseases,27
+2726,subfield,Microbiology,27
+2727,subfield,Nephrology,27
+2728,subfield,Neurology,27
+2729,subfield,Obstetrics and Gynecology,27
+2730,subfield,Oncology,27
+2731,subfield,Ophthalmology,27
+2732,subfield,Orthopedics and Sports Medicine,27
+2733,subfield,Otorhinolaryngology,27
+2734,subfield,Pathology and Forensic Medicine,27
+2735,subfield,"Pediatrics, Perinatology and Child Health",27
+2736,subfield,Pharmacology,27
+2737,subfield,Physiology,27
+2738,subfield,Psychiatry and Mental health,27
+2739,subfield,"Public Health, Environmental and Occupational Health",27
+2740,subfield,Pulmonary and Respiratory Medicine,27
+2741,subfield,"Radiology, Nuclear Medicine and Imaging",27
+2742,subfield,Rehabilitation,27
+2743,subfield,Reproductive Medicine,27
+2745,subfield,Rheumatology,27
+2746,subfield,Surgery,27
+2747,subfield,Transplantation,27
+2748,subfield,Urology,27
+2802,subfield,Behavioral Neuroscience,28
+2803,subfield,Biological Psychiatry,28
+2804,subfield,Cellular and Molecular Neuroscience,28
+2805,subfield,Cognitive Neuroscience,28
+2806,subfield,Developmental Neuroscience,28
+2807,subfield,Endocrine and Autonomic Systems,28
+2808,subfield,Neurology,28
+2809,subfield,Sensory Systems,28
+2910,subfield,"Issues, ethics and legal aspects",29
+2911,subfield,Leadership and Management,29
+2916,subfield,Nutrition and Dietetics,29
+2922,subfield,Research and Theory,29
+3002,subfield,Drug Discovery,30
+3003,subfield,Pharmaceutical Science,30
+3004,subfield,Pharmacology,30
+3005,subfield,Toxicology,30
+3102,subfield,Acoustics and Ultrasonics,31
+3103,subfield,Astronomy and Astrophysics,31
+3104,subfield,Condensed Matter Physics,31
+3105,subfield,Instrumentation,31
+3106,subfield,Nuclear and High Energy Physics,31
+3107,subfield,"Atomic and Molecular Physics, and Optics",31
+3108,subfield,Radiation,31
+3109,subfield,Statistical and Nonlinear Physics,31
+3200,subfield,General Psychology,32
+3202,subfield,Applied Psychology,32
+3203,subfield,Clinical Psychology,32
+3204,subfield,Developmental and Educational Psychology,32
+3205,subfield,Experimental and Cognitive Psychology,32
+3206,subfield,Neuropsychology and Physiological Psychology,32
+3207,subfield,Social Psychology,32
+3300,subfield,General Social Sciences,33
+3302,subfield,Archeology,33
+3303,subfield,Development,33
+3304,subfield,Education,33
+3305,subfield,"Geography, Planning and Development",33
+3306,subfield,Health,33
+3307,subfield,Human Factors and Ergonomics,33
+3308,subfield,Law,33
+3309,subfield,Library and Information Sciences,33
+3310,subfield,Linguistics and Language,33
+3311,subfield,Safety Research,33
+3312,subfield,Sociology and Political Science,33
+3313,subfield,Transportation,33
+3314,subfield,Anthropology,33
+3315,subfield,Communication,33
+3316,subfield,Cultural Studies,33
+3317,subfield,Demography,33
+3318,subfield,Gender Studies,33
+3319,subfield,Life-span and Life-course Studies,33
+3320,subfield,Political Science and International Relations,33
+3321,subfield,Public Administration,33
+3322,subfield,Urban Studies,33
+3402,subfield,Equine,34
+3404,subfield,Small Animals,34
+3500,subfield,General Dentistry,35
+3504,subfield,Oral Surgery,35
+3505,subfield,Orthodontics,35
+3506,subfield,Periodontics,35
+3600,subfield,General Health Professions,36
+3603,subfield,Complementary and Manual Therapy,36
+3604,subfield,Emergency Medical Services,36
+3605,subfield,Health Information Management,36
+3607,subfield,Medical Laboratory Technology,36
+3608,subfield,Medical Terminology,36
+3609,subfield,Occupational Therapy,36
+3611,subfield,Pharmacy,36
+3612,subfield,"Physical Therapy, Sports Therapy and Rehabilitation",36
+3614,subfield,Radiological and Ultrasound Technology,36
+3616,subfield,Speech and Hearing,36

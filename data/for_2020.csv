@@ -1,0 +1,2204 @@
+code,level,label,parent_code
+30,division,"AGRICULTURAL, VETERINARY AND FOOD SCIENCES",
+3001,group,Agricultural biotechnology,30
+300101,field,Agricultural biotechnology diagnostics (incl. biosensors),3001
+300102,field,Agricultural marine biotechnology,3001
+300103,field,Agricultural molecular engineering of nucleic acids and proteins,3001
+300104,field,Genetically modified animals,3001
+300105,field,Genetically modified field crops and pasture,3001
+300106,field,Genetically modified horticulture plants,3001
+300107,field,Genetically modified trees,3001
+300108,field,Livestock cloning,3001
+300109,field,Non-genetically modified uses of biotechnology,3001
+300110,field,Transgenesis,3001
+300199,field,Agricultural biotechnology not elsewhere classified,3001
+3002,group,"Agriculture, land and farm management",30
+300201,field,Agricultural hydrology,3002
+300202,field,Agricultural land management,3002
+300203,field,Agricultural land planning,3002
+300204,field,Agricultural management of nutrients,3002
+300205,field,Agricultural production systems simulation,3002
+300206,field,Agricultural spatial analysis and modelling,3002
+300207,field,Agricultural systems analysis and modelling,3002
+300208,field,"Farm management, rural management and agribusiness",3002
+300209,field,Germplasm management,3002
+300210,field,Sustainable agricultural development,3002
+300299,field,"Agriculture, land and farm management not elsewhere classified",3002
+3003,group,Animal production,30
+300301,field,Animal growth and development,3003
+300302,field,Animal management,3003
+300303,field,Animal nutrition,3003
+300304,field,Animal protection (incl. pests and pathogens),3003
+300305,field,Animal reproduction and breeding,3003
+300306,field,Animal welfare,3003
+300307,field,Environmental studies in animal production,3003
+300399,field,Animal production not elsewhere classified,3003
+3004,group,Crop and pasture production,30
+300401,field,Agrochemicals and biocides (incl. application),3004
+300402,field,Agro-ecosystem function and prediction,3004
+300403,field,Agronomy,3004
+300404,field,Crop and pasture biochemistry and physiology,3004
+300405,field,Crop and pasture biomass and bioproducts,3004
+300406,field,Crop and pasture improvement (incl. selection and breeding),3004
+300407,field,Crop and pasture nutrition,3004
+300408,field,Crop and pasture post harvest technologies (incl. transportation and storage),3004
+300409,field,"Crop and pasture protection (incl. pests, diseases and weeds)",3004
+300410,field,Crop and pasture waste water use,3004
+300411,field,Fertilisers (incl. application),3004
+300412,field,Organic and low chemical input crop production,3004
+300413,field,Pollination biology and systems,3004
+300499,field,Crop and pasture production not elsewhere classified,3004
+3005,group,Fisheries sciences,30
+300501,field,Aquaculture,3005
+300502,field,Aquaculture and fisheries stock assessment,3005
+300503,field,Fish pests and diseases,3005
+300504,field,Fish physiology and genetics,3005
+300505,field,Fisheries management,3005
+300506,field,Post-harvest fisheries technologies (incl. transportation),3005
+300599,field,Fisheries sciences not elsewhere classified,3005
+3006,group,Food sciences,30
+300601,field,Beverage chemistry and beverage sensory science,3006
+300602,field,Food chemistry and food sensory science,3006
+300603,field,Food nutritional balance,3006
+300604,field,"Food packaging, preservation and processing",3006
+300605,field,"Food safety, traceability, certification and authenticity",3006
+300606,field,Food sustainability,3006
+300607,field,Food technology,3006
+300699,field,Food sciences not elsewhere classified,3006
+3007,group,Forestry sciences,30
+300701,field,Agroforestry,3007
+300702,field,Forest biodiversity,3007
+300703,field,Forest ecosystems,3007
+300704,field,Forest health and pathology,3007
+300705,field,Forestry biomass and bioproducts,3007
+300706,field,Forestry fire management,3007
+300707,field,Forestry management and environment,3007
+300708,field,Forestry product quality assessment,3007
+300709,field,Tree improvement (incl. selection and breeding),3007
+300710,field,Tree nutrition and physiology,3007
+300711,field,Wood fibre processing,3007
+300712,field,Wood processing,3007
+300799,field,Forestry sciences not elsewhere classified,3007
+3008,group,Horticultural production,30
+300801,field,Field organic and low chemical input horticulture,3008
+300802,field,Horticultural crop growth and development,3008
+300803,field,Horticultural crop improvement (incl. selection and breeding),3008
+300804,field,"Horticultural crop protection (incl. pests, diseases and weeds)",3008
+300805,field,Oenology and viticulture,3008
+300806,field,Post harvest horticultural technologies (incl. transportation and storage),3008
+300899,field,Horticultural production not elsewhere classified,3008
+3009,group,Veterinary sciences,30
+300901,field,Veterinary anaesthesiology and intensive care,3009
+300902,field,Veterinary anatomy and physiology,3009
+300903,field,Veterinary bacteriology,3009
+300904,field,Veterinary diagnosis and diagnostics,3009
+300905,field,Veterinary epidemiology,3009
+300906,field,Veterinary immunology,3009
+300907,field,Veterinary medicine (excl. urology),3009
+300908,field,Veterinary mycology,3009
+300909,field,Veterinary parasitology,3009
+300910,field,Veterinary pathology,3009
+300911,field,Veterinary pharmacology,3009
+300912,field,Veterinary surgery,3009
+300913,field,Veterinary urology,3009
+300914,field,Veterinary virology,3009
+300999,field,Veterinary sciences not elsewhere classified,3009
+3099,group,"Other agricultural, veterinary and food sciences",30
+309999,field,"Other agricultural, veterinary and food sciences not elsewhere classified",3099
+31,division,BIOLOGICAL SCIENCES,
+3101,group,Biochemistry and cell biology,31
+310101,field,Analytical biochemistry,3101
+310102,field,"Cell development, proliferation and death",3101
+310103,field,Cell metabolism,3101
+310104,field,Cell neurochemistry,3101
+310105,field,"Cellular interactions (incl. adhesion, matrix, cell wall)",3101
+310106,field,Enzymes,3101
+310107,field,Glycobiology,3101
+310108,field,Protein trafficking,3101
+310109,field,Proteomics and intermolecular interactions (excl. medical proteomics),3101
+310110,field,Receptors and membrane biology,3101
+310111,field,Signal transduction,3101
+310112,field,Structural biology (incl. macromolecular modelling),3101
+310113,field,Synthetic biology,3101
+310114,field,Systems biology,3101
+310199,field,Biochemistry and cell biology not elsewhere classified,3101
+3102,group,Bioinformatics and computational biology,31
+310201,field,Bioinformatic methods development,3102
+310202,field,Biological network analysis,3102
+310203,field,Computational ecology and phylogenetics,3102
+310204,field,Genomics and transcriptomics,3102
+310205,field,Proteomics and metabolomics,3102
+310206,field,Sequence analysis,3102
+310207,field,Statistical and quantitative genetics,3102
+310208,field,Translational and applied bioinformatics,3102
+310299,field,Bioinformatics and computational biology not elsewhere classified,3102
+3103,group,Ecology,31
+310301,field,Behavioural ecology,3103
+310302,field,Community ecology (excl. invasive species ecology),3103
+310303,field,Ecological physiology,3103
+310304,field,Freshwater ecology,3103
+310305,field,Marine and estuarine ecology (incl. marine ichthyology),3103
+310306,field,Palaeoecology,3103
+310307,field,Population ecology,3103
+310308,field,Terrestrial ecology,3103
+310399,field,Ecology not elsewhere classified,3103
+3104,group,Evolutionary biology,31
+310401,field,Animal systematics and taxonomy,3104
+310402,field,Biogeography and phylogeography,3104
+310403,field,Biological adaptation,3104
+310404,field,Evolution of developmental systems,3104
+310405,field,Evolutionary ecology,3104
+310406,field,Evolutionary impacts of climate change,3104
+310407,field,Host-parasite interactions,3104
+310408,field,Life histories,3104
+310409,field,Microbial taxonomy,3104
+310410,field,Phylogeny and comparative analysis,3104
+310411,field,Plant and fungus systematics and taxonomy,3104
+310412,field,Speciation and extinction,3104
+310499,field,Evolutionary biology not elsewhere classified,3104
+3105,group,Genetics,31
+310501,field,Anthropological genetics,3105
+310502,field,Cell and nuclear division,3105
+310503,field,Developmental genetics (incl. sex determination),3105
+310504,field,Epigenetics (incl. genome methylation and epigenomics),3105
+310505,field,Gene expression (incl. microarray and other genome-wide approaches),3105
+310506,field,Gene mapping,3105
+310507,field,Genetic immunology,3105
+310508,field,Genome structure and regulation,3105
+310509,field,Genomics,3105
+310510,field,Molecular evolution,3105
+310511,field,Neurogenetics,3105
+310599,field,Genetics not elsewhere classified,3105
+3106,group,Industrial biotechnology,31
+310601,field,Biocatalysis and enzyme technology,3106
+310602,field,"Bioprocessing, bioproduction and bioproducts",3106
+310603,field,Fermentation,3106
+310604,field,Industrial biotechnology diagnostics (incl. biosensors),3106
+310605,field,Industrial microbiology (incl. biofeedstocks),3106
+310606,field,Industrial molecular engineering of nucleic acids and proteins,3106
+310607,field,Nanobiotechnology,3106
+310699,field,Industrial biotechnology not elsewhere classified,3106
+3107,group,Microbiology,31
+310701,field,Bacteriology,3107
+310702,field,Infectious agents,3107
+310703,field,Microbial ecology,3107
+310704,field,Microbial genetics,3107
+310705,field,Mycology,3107
+310706,field,Virology,3107
+310799,field,Microbiology not elsewhere classified,3107
+3108,group,Plant biology,31
+310801,field,Phycology (incl. marine grasses),3108
+310802,field,Plant biochemistry,3108
+310803,field,Plant cell and molecular biology,3108
+310804,field,Plant developmental and reproductive biology,3108
+310805,field,Plant pathology,3108
+310806,field,Plant physiology,3108
+310899,field,Plant biology not elsewhere classified,3108
+3109,group,Zoology,31
+310901,field,Animal behaviour,3109
+310902,field,Animal cell and molecular biology,3109
+310903,field,Animal developmental and reproductive biology,3109
+310904,field,Animal diet and nutrition,3109
+310905,field,Animal immunology,3109
+310906,field,Animal neurobiology,3109
+310907,field,Animal physiological ecology,3109
+310908,field,Animal physiology - biophysics,3109
+310909,field,Animal physiology - cell,3109
+310910,field,Animal physiology - systems,3109
+310911,field,Animal structure and function,3109
+310912,field,Comparative physiology,3109
+310913,field,Invertebrate biology,3109
+310914,field,Vertebrate biology,3109
+310999,field,Zoology not elsewhere classified,3109
+3199,group,Other biological sciences,31
+319901,field,Forensic biology,3199
+319902,field,Global change biology,3199
+319999,field,Other biological sciences not elsewhere classified,3199
+32,division,BIOMEDICAL AND CLINICAL SCIENCES,
+3201,group,Cardiovascular medicine and haematology,32
+320101,field,Cardiology (incl. cardiovascular diseases),3201
+320102,field,Haematology,3201
+320103,field,Respiratory diseases,3201
+320199,field,Cardiovascular medicine and haematology not elsewhere classified,3201
+3202,group,Clinical sciences,32
+320201,field,Anaesthesiology,3202
+320202,field,Clinical chemistry (incl. diagnostics),3202
+320203,field,Clinical microbiology,3202
+320204,field,Clinimetrics,3202
+320205,field,Dermatology,3202
+320206,field,Diagnostic radiography,3202
+320207,field,Emergency medicine,3202
+320208,field,Endocrinology,3202
+320209,field,Gastroenterology and hepatology,3202
+320210,field,Geriatrics and gerontology,3202
+320211,field,Infectious diseases,3202
+320212,field,Intensive care,3202
+320213,field,Medical genetics (excl. cancer genetics),3202
+320214,field,Nephrology and urology,3202
+320215,field,Nuclear medicine,3202
+320216,field,Orthopaedics,3202
+320217,field,Otorhinolaryngology,3202
+320218,field,Pain,3202
+320219,field,Paramedicine,3202
+320220,field,Pathology (excl. oral pathology),3202
+320221,field,Psychiatry (incl. psychotherapy),3202
+320222,field,Radiology and organ imaging,3202
+320223,field,Rheumatology and arthritis,3202
+320224,field,Rural clinical health,3202
+320225,field,Sports medicine,3202
+320226,field,Surgery,3202
+320227,field,Venereology,3202
+320299,field,Clinical sciences not elsewhere classified,3202
+3203,group,Dentistry,32
+320301,field,Craniofacial biology,3203
+320302,field,Dental materials and equipment,3203
+320303,field,"Dental therapeutics, pharmacology and toxicology",3203
+320304,field,Endodontics,3203
+320305,field,Oral and maxillofacial surgery,3203
+320306,field,Oral implantology,3203
+320307,field,Oral medicine and pathology,3203
+320308,field,Orthodontics and dentofacial orthopaedics,3203
+320309,field,Paedodontics,3203
+320310,field,Periodontics,3203
+320311,field,Prosthodontics,3203
+320312,field,Special needs dentistry,3203
+320399,field,Dentistry not elsewhere classified,3203
+3204,group,Immunology,32
+320401,field,Allergy,3204
+320402,field,"Applied immunology (incl. antibody engineering, xenotransplantation and t-cell therapies)",3204
+320403,field,Autoimmunity,3204
+320404,field,Cellular immunology,3204
+320405,field,Humoural immunology and immunochemistry,3204
+320406,field,Immunogenetics (incl. genetic immunology),3204
+320407,field,Innate immunity,3204
+320408,field,Transplantation immunology,3204
+320409,field,Tumour immunology,3204
+320499,field,Immunology not elsewhere classified,3204
+3205,group,Medical biochemistry and metabolomics,32
+320501,field,Medical biochemistry - amino acids and metabolites,3205
+320502,field,Medical biochemistry - carbohydrates,3205
+320503,field,Medical biochemistry - inorganic elements and compounds,3205
+320504,field,Medical biochemistry - lipids,3205
+320505,field,Medical biochemistry - nucleic acids,3205
+320506,field,Medical biochemistry - proteins and peptides (incl. medical proteomics),3205
+320507,field,Metabolic medicine,3205
+320599,field,Medical biochemistry and metabolomics not elsewhere classified,3205
+3206,group,Medical biotechnology,32
+320601,field,Gene and molecular therapy,3206
+320602,field,Medical biotechnology diagnostics (incl. biosensors),3206
+320603,field,Medical molecular engineering of nucleic acids and proteins,3206
+320604,field,Nanomedicine,3206
+320605,field,"Nanotoxicology, health and safety",3206
+320606,field,Regenerative medicine (incl. stem cells),3206
+320699,field,Medical biotechnology not elsewhere classified,3206
+3207,group,Medical microbiology,32
+320701,field,Medical bacteriology,3207
+320702,field,Medical infection agents (incl. prions),3207
+320703,field,Medical mycology,3207
+320704,field,Medical parasitology,3207
+320705,field,Medical virology,3207
+320799,field,Medical microbiology not elsewhere classified,3207
+3208,group,Medical physiology,32
+320801,field,Cell physiology,3208
+320802,field,Human biophysics,3208
+320803,field,Systems physiology,3208
+320899,field,Medical physiology not elsewhere classified,3208
+3209,group,Neurosciences,32
+320901,field,Autonomic nervous system,3209
+320902,field,Cellular nervous system,3209
+320903,field,Central nervous system,3209
+320904,field,Computational neuroscience (incl. mathematical neuroscience and theoretical neuroscience),3209
+320905,field,Neurology and neuromuscular diseases,3209
+320906,field,Peripheral nervous system,3209
+320907,field,Sensory systems,3209
+320999,field,Neurosciences not elsewhere classified,3209
+3210,group,Nutrition and dietetics,32
+321001,field,Clinical nutrition,3210
+321002,field,Food properties (incl. characteristics and health benefits),3210
+321003,field,Nutrigenomics and personalised nutrition,3210
+321004,field,Nutritional science,3210
+321005,field,Public health nutrition,3210
+321006,field,Sport and exercise nutrition,3210
+321099,field,Nutrition and dietetics not elsewhere classified,3210
+3211,group,Oncology and carcinogenesis,32
+321101,field,Cancer cell biology,3211
+321102,field,Cancer diagnosis,3211
+321103,field,Cancer genetics,3211
+321104,field,Cancer therapy (excl. chemotherapy and radiation therapy),3211
+321105,field,Chemotherapy,3211
+321106,field,Haematological tumours,3211
+321107,field,Liquid biopsies,3211
+321108,field,Molecular targets,3211
+321109,field,Predictive and prognostic markers,3211
+321110,field,Radiation therapy,3211
+321111,field,Solid tumours,3211
+321199,field,Oncology and carcinogenesis not elsewhere classified,3211
+3212,group,Ophthalmology and optometry,32
+321201,field,Ophthalmology,3212
+321202,field,Optical technology,3212
+321203,field,Optometry,3212
+321204,field,Vision science,3212
+321299,field,Ophthalmology and optometry not elsewhere classified,3212
+3213,group,Paediatrics,32
+321301,field,Adolescent health,3213
+321302,field,Infant and child health,3213
+321303,field,Neonatology,3213
+321399,field,Paediatrics not elsewhere classified,3213
+3214,group,Pharmacology and pharmaceutical sciences,32
+321401,field,Basic pharmacology,3214
+321402,field,Clinical pharmacology and therapeutics,3214
+321403,field,Clinical pharmacy and pharmacy practice,3214
+321404,field,Pharmaceutical delivery technologies,3214
+321405,field,Pharmaceutical sciences,3214
+321406,field,Pharmacogenomics,3214
+321407,field,Toxicology (incl. clinical toxicology),3214
+321499,field,Pharmacology and pharmaceutical sciences not elsewhere classified,3214
+3215,group,Reproductive medicine,32
+321501,field,Foetal development and medicine,3215
+321502,field,Obstetrics and gynaecology,3215
+321503,field,Reproduction,3215
+321599,field,Reproductive medicine not elsewhere classified,3215
+3299,group,Other biomedical and clinical sciences,32
+329999,field,Other biomedical and clinical sciences not elsewhere classified,3299
+33,division,BUILT ENVIRONMENT AND DESIGN,
+3301,group,Architecture,33
+330101,field,Architectural computing and visualisation methods,3301
+330102,field,Architectural design,3301
+330103,field,Architectural heritage and conservation,3301
+330104,field,"Architectural history, theory and criticism",3301
+330105,field,Architectural science and technology,3301
+330106,field,Architecture for disaster relief,3301
+330107,field,Architecture management,3301
+330108,field,Interior design,3301
+330109,field,Landscape architecture,3301
+330110,field,Sustainable architecture,3301
+330199,field,Architecture not elsewhere classified,3301
+3302,group,Building,33
+330201,field,Automation and technology in building and construction,3302
+330202,field,Building construction management and project planning,3302
+330203,field,Building industry studies,3302
+330204,field,Building information modelling and management,3302
+330205,field,Building organisational studies,3302
+330206,field,"Building science, technologies and systems",3302
+330207,field,Quantity surveying,3302
+330299,field,Building not elsewhere classified,3302
+3303,group,Design,33
+330301,field,Data visualisation and computational (incl. parametric and generative) design,3303
+330302,field,Design anthropology,3303
+330303,field,Design for disaster relief,3303
+330304,field,"Design history, theory and criticism",3303
+330305,field,Design management,3303
+330306,field,Design practice and methods,3303
+330307,field,Ergonomics design,3303
+330308,field,Fire safety design,3303
+330309,field,Industrial and product design,3303
+330310,field,Interaction and experience design,3303
+330311,field,Models and simulations of design,3303
+330312,field,Service design,3303
+330313,field,Social design,3303
+330314,field,Sustainable design,3303
+330315,field,Textile and fashion design,3303
+330316,field,Visual communication design (incl. graphic design),3303
+330399,field,Design not elsewhere classified,3303
+3304,group,Urban and regional planning,33
+330401,field,Community planning,3304
+330402,field,History and theory of the built environment (excl. architecture),3304
+330403,field,"Housing markets, development and management",3304
+330404,field,Land use and environmental planning,3304
+330405,field,Public participation and community engagement,3304
+330406,field,Regional analysis and development,3304
+330407,field,Regulatory planning and development assessment,3304
+330408,field,"Strategic, metropolitan and regional planning",3304
+330409,field,Transport planning,3304
+330410,field,Urban analysis and development,3304
+330411,field,Urban design,3304
+330412,field,Urban informatics,3304
+330413,field,Urban planning and health,3304
+330499,field,Urban and regional planning not elsewhere classified,3304
+3399,group,Other built environment and design,33
+339999,field,Other built environment and design not elsewhere classified,3399
+34,division,CHEMICAL SCIENCES,
+3401,group,Analytical chemistry,34
+340101,field,Analytical spectrometry,3401
+340102,field,Bioassays,3401
+340103,field,Electroanalytical chemistry,3401
+340104,field,Flow analysis,3401
+340105,field,Instrumental methods (excl. immunological and bioassay methods),3401
+340106,field,Metabolomic chemistry,3401
+340107,field,"Quality assurance, chemometrics, traceability and metrological chemistry",3401
+340108,field,Sensor technology (incl. chemical aspects),3401
+340109,field,Separation science,3401
+340199,field,Analytical chemistry not elsewhere classified,3401
+3402,group,Inorganic chemistry,34
+340201,field,Bioinorganic chemistry,3402
+340202,field,Crystallography,3402
+340203,field,F-block chemistry,3402
+340204,field,Inorganic green chemistry,3402
+340205,field,Main group metal chemistry,3402
+340206,field,Metal cluster chemistry,3402
+340207,field,Metal organic frameworks,3402
+340208,field,Non-metal chemistry,3402
+340209,field,Organometallic chemistry,3402
+340210,field,Solid state chemistry,3402
+340211,field,Transition metal chemistry,3402
+340299,field,Inorganic chemistry not elsewhere classified,3402
+3403,group,Macromolecular and materials chemistry,34
+340301,field,Inorganic materials (incl. nanomaterials),3403
+340302,field,Macromolecular materials,3403
+340303,field,Nanochemistry,3403
+340304,field,Optical properties of materials,3403
+340305,field,Physical properties of materials,3403
+340306,field,Polymerisation mechanisms,3403
+340307,field,Structure and dynamics of materials,3403
+340308,field,Supramolecular chemistry,3403
+340309,field,Theory and design of materials,3403
+340399,field,Macromolecular and materials chemistry not elsewhere classified,3403
+3404,group,Medicinal and biomolecular chemistry,34
+340401,field,Biologically active molecules,3404
+340402,field,Biomolecular modelling and design,3404
+340403,field,Characterisation of biological macromolecules,3404
+340404,field,Cheminformatics and quantitative structure-activity relationships,3404
+340405,field,Glycoconjugates,3404
+340406,field,Molecular medicine,3404
+340407,field,Proteins and peptides,3404
+340499,field,Medicinal and biomolecular chemistry not elsewhere classified,3404
+3405,group,Organic chemistry,34
+340501,field,Free radical chemistry,3405
+340502,field,Natural products and bioactive compounds,3405
+340503,field,Organic chemical synthesis,3405
+340504,field,Organic green chemistry,3405
+340505,field,Physical organic chemistry,3405
+340599,field,Organic chemistry not elsewhere classified,3405
+3406,group,Physical chemistry,34
+340601,field,Catalysis and mechanisms of reactions,3406
+340602,field,Chemical thermodynamics and energetics,3406
+340603,field,Colloid and surface chemistry,3406
+340604,field,Electrochemistry,3406
+340605,field,Molecular imaging (incl. electron microscopy and neutron diffraction),3406
+340606,field,Photochemistry,3406
+340607,field,Reaction kinetics and dynamics,3406
+340608,field,Solution chemistry,3406
+340609,field,Transport properties and non-equilibrium processes,3406
+340699,field,Physical chemistry not elsewhere classified,3406
+3407,group,Theoretical and computational chemistry,34
+340701,field,Computational chemistry,3407
+340702,field,Radiation and matter,3407
+340703,field,Statistical mechanics in chemistry,3407
+340704,field,Theoretical quantum chemistry,3407
+340799,field,Theoretical and computational chemistry not elsewhere classified,3407
+3499,group,Other chemical sciences,34
+349901,field,Forensic chemistry,3499
+349999,field,Other chemical sciences not elsewhere classified,3499
+35,division,"COMMERCE, MANAGEMENT, TOURISM AND SERVICES",
+3501,group,"Accounting, auditing and accountability",35
+350101,field,Accounting theory and standards,3501
+350102,field,Auditing and accountability,3501
+350103,field,Financial accounting,3501
+350104,field,International accounting,3501
+350105,field,Management accounting,3501
+350106,field,Not-for-profit accounting and accountability,3501
+350107,field,Sustainability accounting and reporting,3501
+350108,field,Taxation accounting,3501
+350199,field,"Accounting, auditing and accountability not elsewhere classified",3501
+3502,group,"Banking, finance and investment",35
+350201,field,Environment and climate finance,3502
+350202,field,Finance,3502
+350203,field,Financial econometrics,3502
+350204,field,Financial institutions (incl. banking),3502
+350205,field,Household finance and financial literacy,3502
+350206,field,Insurance studies,3502
+350207,field,International finance,3502
+350208,field,Investment and risk management,3502
+350209,field,Not-for-profit finance and risk,3502
+350299,field,"Banking, finance and investment not elsewhere classified",3502
+3503,group,Business systems in context,35
+350301,field,Business analytics,3503
+350302,field,"Business information management (incl. records, knowledge and intelligence)",3503
+350303,field,Business information systems,3503
+350304,field,Business systems in context,3503
+350305,field,Forensic intelligence,3503
+350306,field,Forensic science and management,3503
+350307,field,Technology management,3503
+350399,field,Business systems in context not elsewhere classified,3503
+3504,group,Commercial services,35
+350401,field,Food and hospitality services,3504
+350402,field,Hospitality management,3504
+350403,field,Real estate and valuation services,3504
+350404,field,Retail,3504
+350405,field,Sport and leisure management,3504
+350499,field,Commercial services not elsewhere classified,3504
+3505,group,Human resources and industrial relations,35
+350501,field,Business and labour history,3505
+350502,field,Employment equity and diversity,3505
+350503,field,Human resources management,3505
+350504,field,Industrial and employee relations,3505
+350505,field,Occupational and workplace health and safety,3505
+350506,field,Workforce planning,3505
+350507,field,Workplace wellbeing and quality of working life,3505
+350599,field,Human resources and industrial relations not elsewhere classified,3505
+3506,group,Marketing,35
+350601,field,Consumer behaviour,3506
+350602,field,Consumer-oriented product or service development,3506
+350603,field,Industrial marketing,3506
+350604,field,Marketing communications,3506
+350605,field,Marketing management (incl. strategy and customer relations),3506
+350606,field,Marketing research methodology,3506
+350607,field,Marketing technology,3506
+350608,field,Marketing theory,3506
+350609,field,Not-for-profit marketing,3506
+350610,field,Pricing (incl. consumer value estimation),3506
+350611,field,Service marketing,3506
+350612,field,Social marketing,3506
+350699,field,Marketing not elsewhere classified,3506
+3507,group,"Strategy, management and organisational behaviour",35
+350701,field,Corporate governance,3507
+350702,field,Corporate social responsibility,3507
+350703,field,Disaster and emergency management,3507
+350704,field,Entrepreneurship,3507
+350705,field,Innovation management,3507
+350706,field,International business,3507
+350707,field,Leadership,3507
+350708,field,Not-for-profit business and management,3507
+350709,field,Organisation and management theory,3507
+350710,field,Organisational behaviour,3507
+350711,field,Organisational planning and management,3507
+350712,field,Production and operations management,3507
+350713,field,Project management,3507
+350714,field,Public sector organisation and management,3507
+350715,field,Quality management,3507
+350716,field,Small business organisation and management,3507
+350717,field,Stakeholder engagement,3507
+350718,field,Strategy,3507
+350799,field,"Strategy, management and organisational behaviour not elsewhere classified",3507
+3508,group,Tourism,35
+350801,field,Impacts of tourism,3508
+350802,field,Tourism forecasting,3508
+350803,field,Tourism management,3508
+350804,field,Tourism marketing,3508
+350805,field,Tourism resource appraisal,3508
+350806,field,Tourist behaviour and visitor experience,3508
+350899,field,Tourism not elsewhere classified,3508
+3509,group,"Transportation, logistics and supply chains",35
+350901,field,Air transportation and freight services,3509
+350902,field,Intelligent mobility,3509
+350903,field,Logistics,3509
+350904,field,Maritime transportation and freight services,3509
+350905,field,Passenger needs,3509
+350906,field,Public transport,3509
+350907,field,Rail transportation and freight services,3509
+350908,field,Road transportation and freight services,3509
+350909,field,Supply chains,3509
+350999,field,"Transportation, logistics and supply chains not elsewhere classified",3509
+3599,group,"Other commerce, management, tourism and services",35
+359999,field,"Other commerce, management, tourism and services not elsewhere classified",3599
+36,division,CREATIVE ARTS AND WRITING,
+3601,group,"Art history, theory and criticism",36
+360101,field,Art criticism,3601
+360102,field,Art history,3601
+360103,field,Art theory,3601
+360104,field,Visual cultures,3601
+360199,field,"Art history, theory and criticism not elsewhere classified",3601
+3602,group,Creative and professional writing,36
+360201,field,Creative writing (incl. scriptwriting),3602
+360202,field,Digital writing,3602
+360203,field,Professional writing and journalism practice,3602
+360204,field,Site-based writing,3602
+360205,field,Technical writing,3602
+360299,field,Creative and professional writing not elsewhere classified,3602
+3603,group,Music,36
+360301,field,Music cognition,3603
+360302,field,Music composition and improvisation,3603
+360303,field,Music education,3603
+360304,field,Music performance,3603
+360305,field,Music technology and recording,3603
+360306,field,Musicology and ethnomusicology,3603
+360399,field,Music not elsewhere classified,3603
+3604,group,Performing arts,36
+360401,field,Applied theatre,3604
+360402,field,Dance and dance studies,3604
+360403,field,"Drama, theatre and performance studies",3604
+360499,field,Performing arts not elsewhere classified,3604
+3605,group,Screen and digital media,36
+360501,field,Cinema studies,3605
+360502,field,Computer gaming and animation,3605
+360503,field,Digital and electronic media art,3605
+360504,field,Interactive media,3605
+360505,field,Screen media,3605
+360506,field,Visual effects,3605
+360599,field,Screen and digital media not elsewhere classified,3605
+3606,group,Visual arts,36
+360601,field,Crafts,3606
+360602,field,Fine arts,3606
+360603,field,Performance art,3606
+360604,field,"Photography, video and lens-based practice",3606
+360699,field,Visual arts not elsewhere classified,3606
+3699,group,Other creative arts and writing,36
+369999,field,Other creative arts and writing not elsewhere classified,3699
+37,division,EARTH SCIENCES,
+3701,group,Atmospheric sciences,37
+370101,field,Adverse weather events,3701
+370102,field,Air pollution processes and air quality measurement,3701
+370103,field,Atmospheric aerosols,3701
+370104,field,"Atmospheric composition, chemistry and processes",3701
+370105,field,Atmospheric dynamics,3701
+370106,field,Atmospheric radiation,3701
+370107,field,Cloud physics,3701
+370108,field,Meteorology,3701
+370109,field,Tropospheric and stratospheric physics,3701
+370199,field,Atmospheric sciences not elsewhere classified,3701
+3702,group,Climate change science,37
+370201,field,Climate change processes,3702
+370202,field,Climatology,3702
+370203,field,Greenhouse gas inventories and fluxes,3702
+370299,field,Climate change science not elsewhere classified,3702
+3703,group,Geochemistry,37
+370301,field,Exploration geochemistry,3703
+370302,field,Inorganic geochemistry,3703
+370303,field,Isotope geochemistry,3703
+370304,field,Organic geochemistry,3703
+370399,field,Geochemistry not elsewhere classified,3703
+3704,group,Geoinformatics,37
+370401,field,Computational modelling and simulation in earth sciences,3704
+370402,field,Earth and space science informatics,3704
+370403,field,Geoscience data visualisation,3704
+370499,field,Geoinformatics not elsewhere classified,3704
+3705,group,Geology,37
+370501,field,Biomineralisation,3705
+370502,field,Geochronology,3705
+370503,field,Igneous and metamorphic petrology,3705
+370504,field,Marine geoscience,3705
+370505,field,Mineralogy and crystallography,3705
+370506,field,Palaeontology (incl. palynology),3705
+370507,field,Planetary geology,3705
+370508,field,Resource geoscience,3705
+370509,field,Sedimentology,3705
+370510,field,"Stratigraphy (incl. biostratigraphy, sequence stratigraphy and basin analysis)",3705
+370511,field,Structural geology and tectonics,3705
+370512,field,Volcanology,3705
+370599,field,Geology not elsewhere classified,3705
+3706,group,Geophysics,37
+370601,field,Applied geophysics,3706
+370602,field,Electrical and electromagnetic methods in geophysics,3706
+370603,field,Geodesy,3706
+370604,field,Geodynamics,3706
+370605,field,Geothermics and radiometrics,3706
+370606,field,Gravimetrics,3706
+370607,field,Magnetism and palaeomagnetism,3706
+370608,field,Petrophysics and rock mechanics,3706
+370609,field,Seismology and seismic exploration,3706
+370699,field,Geophysics not elsewhere classified,3706
+3707,group,Hydrology,37
+370701,field,Contaminant hydrology,3707
+370702,field,Ecohydrology,3707
+370703,field,Groundwater hydrology,3707
+370704,field,Surface water hydrology,3707
+370705,field,Urban hydrology,3707
+370799,field,Hydrology not elsewhere classified,3707
+3708,group,Oceanography,37
+370801,field,Biological oceanography,3708
+370802,field,Chemical oceanography,3708
+370803,field,Physical oceanography,3708
+370899,field,Oceanography not elsewhere classified,3708
+3709,group,Physical geography and environmental geoscience,37
+370901,field,Geomorphology and earth surface processes,3709
+370902,field,Glaciology,3709
+370903,field,Natural hazards,3709
+370904,field,Palaeoclimatology,3709
+370905,field,Quaternary environments,3709
+370906,field,Regolith and landscape evolution,3709
+370999,field,Physical geography and environmental geoscience not elsewhere classified,3709
+3799,group,Other earth sciences,37
+379901,field,Earth system sciences,3799
+379999,field,Other earth sciences not elsewhere classified,3799
+38,division,ECONOMICS,
+3801,group,Applied economics,38
+380101,field,Agricultural economics,3801
+380102,field,Behavioural economics,3801
+380103,field,Economic history,3801
+380104,field,Economics of education,3801
+380105,field,Environment and resource economics,3801
+380106,field,Experimental economics,3801
+380107,field,Financial economics,3801
+380108,field,Health economics,3801
+380109,field,Industry economics and industrial organisation,3801
+380110,field,International economics,3801
+380111,field,Labour economics,3801
+380112,field,Macroeconomics (incl. monetary and fiscal theory),3801
+380113,field,Public economics - public choice,3801
+380114,field,Public economics - publicly provided goods,3801
+380115,field,Public economics - taxation and revenue,3801
+380116,field,Tourism economics,3801
+380117,field,Transport economics,3801
+380118,field,Urban and regional economics,3801
+380119,field,Welfare economics,3801
+380199,field,Applied economics not elsewhere classified,3801
+3802,group,Econometrics,38
+380201,field,Cross-sectional analysis,3802
+380202,field,Econometric and statistical methods,3802
+380203,field,Economic models and forecasting,3802
+380204,field,Panel data analysis,3802
+380205,field,Time-series analysis,3802
+380299,field,Econometrics not elsewhere classified,3802
+3803,group,Economic theory,38
+380301,field,History of economic thought,3803
+380302,field,Macroeconomic theory,3803
+380303,field,Mathematical economics,3803
+380304,field,Microeconomic theory,3803
+380399,field,Economic theory not elsewhere classified,3803
+3899,group,Other economics,38
+389901,field,Comparative economic systems,3899
+389902,field,Ecological economics,3899
+389903,field,Heterodox economics,3899
+389999,field,Other economics not elsewhere classified,3899
+39,division,EDUCATION,
+3901,group,Curriculum and pedagogy,39
+390101,field,"Creative arts, media and communication curriculum and pedagogy",3901
+390102,field,Curriculum and pedagogy theory and development,3901
+390103,field,"Economics, business and management curriculum and pedagogy",3901
+390104,field,"English and literacy curriculum and pedagogy (excl. LOTE, ESL and TESOL)",3901
+390105,field,Environmental education curriculum and pedagogy,3901
+390106,field,Geography education curriculum and pedagogy,3901
+390107,field,"Humanities and social sciences curriculum and pedagogy (excl. economics, business and management)",3901
+390108,field,"LOTE, ESL and TESOL curriculum and pedagogy",3901
+390109,field,Mathematics and numeracy curriculum and pedagogy,3901
+390110,field,"Medicine, nursing and health curriculum and pedagogy",3901
+390111,field,Physical education and development curriculum and pedagogy,3901
+390112,field,Religion curriculum and pedagogy,3901
+390113,field,"Science, technology and engineering curriculum and pedagogy",3901
+390114,field,Vocational education and training curriculum and pedagogy,3901
+390115,field,Work integrated learning (incl. internships),3901
+390199,field,Curriculum and pedagogy not elsewhere classified,3901
+3902,group,"Education policy, sociology and philosophy",39
+390201,field,Education policy,3902
+390202,field,History and philosophy of education,3902
+390203,field,Sociology of education,3902
+390299,field,"Education policy, sociology and philosophy not elsewhere classified",3902
+3903,group,Education systems,39
+390301,field,Continuing and community education,3903
+390302,field,Early childhood education,3903
+390303,field,Higher education,3903
+390304,field,Primary education,3903
+390305,field,Professional education and training,3903
+390306,field,Secondary education,3903
+390307,field,Teacher education and professional development of educators,3903
+390308,field,"Technical, further and workplace education",3903
+390399,field,Education systems not elsewhere classified,3903
+3904,group,Specialist studies in education,39
+390401,field,Comparative and cross-cultural education,3904
+390402,field,Education assessment and evaluation,3904
+390403,field,"Educational administration, management and leadership",3904
+390404,field,Educational counselling,3904
+390405,field,Educational technology and computing,3904
+390406,field,"Gender, sexuality and education",3904
+390407,field,Inclusive education,3904
+390408,field,Learning analytics,3904
+390409,field,Learning sciences,3904
+390410,field,"Multicultural education (excl. Aboriginal and Torres Strait Islander, Māori and Pacific Peoples)",3904
+390411,field,Special education and disability,3904
+390412,field,Teacher and student wellbeing,3904
+390499,field,Specialist studies in education not elsewhere classified,3904
+3999,group,Other Education,39
+399999,field,Other education not elsewhere classified,3999
+40,division,ENGINEERING,
+4001,group,Aerospace engineering,40
+400101,field,Aerospace materials,4001
+400102,field,Aerospace structures,4001
+400103,field,Aircraft performance and flight control systems,4001
+400104,field,Avionics,4001
+400105,field,Flight dynamics,4001
+400106,field,Hypersonic propulsion and hypersonic aerothermodynamics,4001
+400107,field,"Satellite, space vehicle and missile design and testing",4001
+400199,field,Aerospace engineering not elsewhere classified,4001
+4002,group,Automotive engineering,40
+400201,field,Automotive combustion and fuel engineering,4002
+400202,field,Automotive engineering materials,4002
+400203,field,Automotive mechatronics and autonomous systems,4002
+400204,field,Automotive safety engineering,4002
+400205,field,Hybrid and electric vehicles and powertrains,4002
+400299,field,Automotive engineering not elsewhere classified,4002
+4003,group,Biomedical engineering,40
+400301,field,Biofabrication,4003
+400302,field,Biomaterials,4003
+400303,field,Biomechanical engineering,4003
+400304,field,Biomedical imaging,4003
+400305,field,Biomedical instrumentation,4003
+400306,field,Computational physiology,4003
+400307,field,Mechanobiology,4003
+400308,field,Medical devices,4003
+400309,field,Neural engineering,4003
+400310,field,Rehabilitation engineering,4003
+400311,field,Tissue engineering,4003
+400399,field,Biomedical engineering not elsewhere classified,4003
+4004,group,Chemical engineering,40
+400401,field,Carbon capture engineering (excl. sequestration),4004
+400402,field,Chemical and thermal processes in energy and combustion,4004
+400403,field,Chemical engineering design,4004
+400404,field,Electrochemical energy storage and conversion,4004
+400405,field,Food engineering,4004
+400406,field,Powder and particle technology,4004
+400407,field,Process control and simulation,4004
+400408,field,Reaction engineering (excl. nuclear reactions),4004
+400409,field,Separation technologies,4004
+400410,field,Wastewater treatment processes,4004
+400411,field,Water treatment processes,4004
+400499,field,Chemical engineering not elsewhere classified,4004
+4005,group,Civil engineering,40
+400501,field,Architectural engineering,4005
+400502,field,Civil geotechnical engineering,4005
+400503,field,Complex civil systems,4005
+400504,field,Construction engineering,4005
+400505,field,Construction materials,4005
+400506,field,Earthquake engineering,4005
+400507,field,Fire safety engineering,4005
+400508,field,Infrastructure engineering and asset management,4005
+400509,field,Structural dynamics,4005
+400510,field,Structural engineering,4005
+400511,field,Timber engineering,4005
+400512,field,Transport engineering,4005
+400513,field,Water resources engineering,4005
+400599,field,Civil engineering not elsewhere classified,4005
+4006,group,Communications engineering,40
+400601,field,Antennas and propagation,4006
+400602,field,Data communications,4006
+400603,field,"Molecular, biological, and multi-scale communications",4006
+400604,field,Network engineering,4006
+400605,field,Optical fibre communication systems and technologies,4006
+400606,field,Satellite communications,4006
+400607,field,Signal processing,4006
+400608,field,Wireless communication systems and technologies (incl. microwave and millimetrewave),4006
+400699,field,Communications engineering not elsewhere classified,4006
+4007,group,"Control engineering, mechatronics and robotics",40
+400701,field,Assistive robots and technology,4007
+400702,field,Automation engineering,4007
+400703,field,Autonomous vehicle systems,4007
+400704,field,Biomechatronics,4007
+400705,field,Control engineering,4007
+400706,field,Field robotics,4007
+400707,field,Manufacturing robotics,4007
+400708,field,Mechatronics hardware design and architecture,4007
+400709,field,Medical robotics,4007
+400710,field,Micro-manipulation,4007
+400711,field,"Simulation, modelling, and programming of mechatronics systems",4007
+400799,field,"Control engineering, mechatronics and robotics not elsewhere classified",4007
+4008,group,Electrical engineering,40
+400801,field,Circuits and systems,4008
+400802,field,Electrical circuits and systems,4008
+400803,field,"Electrical energy generation (incl. renewables, excl. photovoltaics)",4008
+400804,field,Electrical energy storage,4008
+400805,field,"Electrical energy transmission, networks and systems",4008
+400806,field,Electrical machines and drives,4008
+400807,field,Engineering electromagnetics,4008
+400808,field,Photovoltaic power systems,4008
+400899,field,Electrical engineering not elsewhere classified,4008
+4009,group,"Electronics, sensors and digital hardware",40
+400901,field,Analog electronics and interfaces,4009
+400902,field,Digital electronic devices,4009
+400903,field,Digital processor architectures,4009
+400904,field,"Electronic device and system performance evaluation, testing and simulation",4009
+400905,field,Electronic instrumentation,4009
+400906,field,Electronic sensors,4009
+400907,field,Industrial electronics,4009
+400908,field,Microelectronics,4009
+400909,field,"Photonic and electro-optical devices, sensors and systems (excl. communications)",4009
+400910,field,Photovoltaic devices (solar cells),4009
+400911,field,Power electronics,4009
+400912,field,Quantum engineering systems (incl. computing and communications),4009
+400913,field,Radio frequency engineering,4009
+400999,field,"Electronics, sensors and digital hardware not elsewhere classified",4009
+4010,group,Engineering practice and education,40
+401001,field,Engineering design,4010
+401002,field,Engineering education,4010
+401003,field,Engineering practice,4010
+401004,field,Humanitarian engineering,4010
+401005,field,Risk engineering,4010
+401006,field,Systems engineering,4010
+401099,field,Engineering practice and education not elsewhere classified,4010
+4011,group,Environmental engineering,40
+401101,field,Air pollution modelling and control,4011
+401102,field,Environmentally sustainable engineering,4011
+401103,field,Global and planetary environmental engineering,4011
+401104,field,Health and ecological risk assessment,4011
+401105,field,Life cycle assessment and industrial ecology,4011
+401106,field,"Waste management, reduction, reuse and recycling",4011
+401199,field,Environmental engineering not elsewhere classified,4011
+4012,group,Fluid mechanics and thermal engineering,40
+401201,field,Aerodynamics (excl. hypersonic aerodynamics),4012
+401202,field,Bio-fluids,4012
+401203,field,Biomedical fluid mechanics,4012
+401204,field,"Computational methods in fluid flow, heat and mass transfer (incl. computational fluid dynamics)",4012
+401205,field,"Experimental methods in fluid flow, heat and mass transfer",4012
+401206,field,Fluid-structure interaction and aeroacoustics,4012
+401207,field,Fundamental and theoretical fluid dynamics,4012
+401208,field,Geophysical and environmental fluid flows,4012
+401209,field,Hydrodynamics and hydraulic engineering,4012
+401210,field,Microfluidics and nanofluidics,4012
+401211,field,Multiphysics flows (incl. multiphase and reacting flows),4012
+401212,field,Non-Newtonian fluid flows (incl. rheology),4012
+401213,field,Turbulent flows,4012
+401299,field,Fluid mechanics and thermal engineering not elsewhere classified,4012
+4013,group,Geomatic engineering,40
+401301,field,Cartography and digital mapping,4013
+401302,field,Geospatial information systems and geospatial data modelling,4013
+401303,field,Navigation and position fixing,4013
+401304,field,Photogrammetry and remote sensing,4013
+401305,field,Satellite-based positioning,4013
+401306,field,Surveying (incl. hydrographic surveying),4013
+401399,field,Geomatic engineering not elsewhere classified,4013
+4014,group,Manufacturing engineering,40
+401401,field,Additive manufacturing,4014
+401402,field,CAD/CAM systems,4014
+401403,field,Flexible manufacturing systems,4014
+401404,field,Industrial engineering,4014
+401405,field,Machine tools,4014
+401406,field,Machining,4014
+401407,field,Manufacturing management,4014
+401408,field,Manufacturing processes and technologies (excl. textiles),4014
+401409,field,Manufacturing safety and quality,4014
+401410,field,Microtechnology,4014
+401411,field,"Packaging, storage and transportation (excl. food and agricultural products)",4014
+401412,field,Precision engineering,4014
+401413,field,Textile technology,4014
+401499,field,Manufacturing engineering not elsewhere classified,4014
+4015,group,Maritime engineering,40
+401501,field,Marine engineering,4015
+401502,field,Naval architecture,4015
+401503,field,Ocean engineering,4015
+401504,field,Ship and platform structures (incl. maritime hydrodynamics),4015
+401505,field,Special vehicles,4015
+401599,field,Maritime engineering not elsewhere classified,4015
+4016,group,Materials engineering,40
+401601,field,Ceramics,4016
+401602,field,Composite and hybrid materials,4016
+401603,field,Compound semiconductors,4016
+401604,field,Elemental semiconductors,4016
+401605,field,Functional materials,4016
+401606,field,Glass,4016
+401607,field,Metals and alloy materials,4016
+401608,field,Organic semiconductors,4016
+401609,field,Polymers and plastics,4016
+401610,field,"Timber, pulp and paper",4016
+401611,field,Wearable materials,4016
+401699,field,Materials engineering not elsewhere classified,4016
+4017,group,Mechanical engineering,40
+401701,field,Acoustics and noise control (excl. architectural acoustics),4017
+401702,field,"Dynamics, vibration and vibration control",4017
+401703,field,"Energy generation, conversion and storage (excl. chemical and electrical)",4017
+401704,field,Mechanical engineering asset management,4017
+401705,field,Microelectromechanical systems (MEMS),4017
+401706,field,Numerical modelling and mechanical characterisation,4017
+401707,field,Solid mechanics,4017
+401708,field,Tribology,4017
+401799,field,Mechanical engineering not elsewhere classified,4017
+4018,group,Nanotechnology,40
+401801,field,Micro- and nanosystems,4018
+401802,field,Molecular and organic electronics,4018
+401803,field,Nanoelectromechanical systems,4018
+401804,field,Nanoelectronics,4018
+401805,field,"Nanofabrication, growth and self assembly",4018
+401806,field,Nanomanufacturing,4018
+401807,field,Nanomaterials,4018
+401808,field,Nanometrology,4018
+401809,field,Nanophotonics,4018
+401810,field,Nanoscale characterisation,4018
+401899,field,Nanotechnology not elsewhere classified,4018
+4019,group,Resources engineering and extractive metallurgy,40
+401901,field,Electrometallurgy,4019
+401902,field,Geomechanics and resources geotechnical engineering,4019
+401903,field,Hydrometallurgy,4019
+401904,field,Mineral processing/beneficiation,4019
+401905,field,Mining engineering,4019
+401906,field,Nuclear engineering (incl. fuel enrichment and waste processing and storage),4019
+401907,field,Petroleum and reservoir engineering,4019
+401908,field,Pyrometallurgy,4019
+401999,field,Resources engineering and extractive metallurgy not elsewhere classified,4019
+4099,group,Other engineering,40
+409901,field,Agricultural engineering,4099
+409902,field,Engineering instrumentation,4099
+409903,field,Granular mechanics,4099
+409999,field,Other engineering not elsewhere classified,4099
+41,division,ENVIRONMENTAL SCIENCES,
+4101,group,Climate change impacts and adaptation,41
+410101,field,Carbon sequestration science,4101
+410102,field,Ecological impacts of climate change and ecological adaptation,4101
+410103,field,Human impacts of climate change and human adaptation,4101
+410199,field,Climate change impacts and adaptation not elsewhere classified,4101
+4102,group,Ecological applications,41
+410201,field,Bioavailability and ecotoxicology,4102
+410202,field,Biosecurity science and invasive species ecology,4102
+410203,field,Ecosystem function,4102
+410204,field,Ecosystem services (incl. pollination),4102
+410205,field,Fire ecology,4102
+410206,field,Landscape ecology,4102
+410299,field,Ecological applications not elsewhere classified,4102
+4103,group,Environmental biotechnology,41
+410301,field,Biodiscovery,4103
+410302,field,Biological control,4103
+410303,field,Bioremediation,4103
+410304,field,Environmental biotechnology diagnostics (incl. biosensors),4103
+410305,field,Environmental marine biotechnology,4103
+410306,field,Environmental nanotechnology and nanometrology,4103
+410399,field,Environmental biotechnology not elsewhere classified,4103
+4104,group,Environmental management,41
+410401,field,Conservation and biodiversity,4104
+410402,field,Environmental assessment and monitoring,4104
+410403,field,Environmental education and extension,4104
+410404,field,Environmental management,4104
+410405,field,Environmental rehabilitation and restoration,4104
+410406,field,Natural resource management,4104
+410407,field,Wildlife and habitat management,4104
+410499,field,Environmental management not elsewhere classified,4104
+4105,group,Pollution and contamination,41
+410501,field,Environmental biogeochemistry,4105
+410502,field,Noise and wave pollution processes and measurement,4105
+410503,field,Groundwater quality processes and contaminated land assessment,4105
+410504,field,Surface water quality processes and contaminated sediment assessment,4105
+410599,field,Pollution and contamination not elsewhere classified,4105
+4106,group,Soil sciences,41
+410601,field,Land capability and soil productivity,4106
+410602,field,Pedology and pedometrics,4106
+410603,field,Soil biology,4106
+410604,field,Soil chemistry and soil carbon sequestration (excl. carbon sequestration science),4106
+410605,field,Soil physics,4106
+410699,field,Soil sciences not elsewhere classified,4106
+4199,group,Other environmental sciences,41
+419999,field,Other environmental sciences not elsewhere classified,4199
+42,division,HEALTH SCIENCES,
+4201,group,Allied health and rehabilitation science,42
+420101,field,Arts therapy,4201
+420102,field,Audiology,4201
+420103,field,Music therapy,4201
+420104,field,Occupational therapy,4201
+420105,field,Orthoptics,4201
+420106,field,Physiotherapy,4201
+420107,field,Podiatry,4201
+420108,field,Prosthetics and orthotics,4201
+420109,field,Rehabilitation,4201
+420110,field,Speech pathology,4201
+420199,field,Allied health and rehabilitation science not elsewhere classified,4201
+4202,group,Epidemiology,42
+420201,field,Behavioural epidemiology,4202
+420202,field,Disease surveillance,4202
+420203,field,Environmental epidemiology,4202
+420204,field,Epidemiological methods,4202
+420205,field,Epidemiological modelling,4202
+420206,field,Forensic epidemiology,4202
+420207,field,Major global burdens of disease,4202
+420208,field,Nutritional epidemiology,4202
+420209,field,Occupational epidemiology,4202
+420210,field,Social epidemiology,4202
+420299,field,Epidemiology not elsewhere classified,4202
+4203,group,Health services and systems,42
+420301,field,Aged health care,4203
+420302,field,Digital health,4203
+420303,field,Family care,4203
+420304,field,General practice,4203
+420305,field,Health and community services,4203
+420306,field,Health care administration,4203
+420307,field,Health counselling,4203
+420308,field,Health informatics and information systems,4203
+420309,field,Health management,4203
+420310,field,Health surveillance,4203
+420311,field,Health systems,4203
+420312,field,Implementation science and evaluation,4203
+420313,field,Mental health services,4203
+420314,field,Multimorbidity,4203
+420315,field,One health,4203
+420316,field,Palliative care,4203
+420317,field,Patient safety,4203
+420318,field,People with disability,4203
+420319,field,Primary health care,4203
+420320,field,Residential client care,4203
+420321,field,Rural and remote health services,4203
+420399,field,Health services and systems not elsewhere classified,4203
+4204,group,Midwifery,42
+420401,field,Clinical midwifery,4204
+420402,field,Models of care and place of birth,4204
+420403,field,Psychosocial aspects of childbirth and perinatal mental health,4204
+420499,field,Midwifery not elsewhere classified,4204
+4205,group,Nursing,42
+420501,field,Acute care,4205
+420502,field,Aged care nursing,4205
+420503,field,Community and primary care,4205
+420504,field,Mental health nursing,4205
+420505,field,Nursing workforce,4205
+420506,field,Sub-acute care,4205
+420599,field,Nursing not elsewhere classified,4205
+4206,group,Public health,42
+420601,field,Community child health,4206
+420602,field,Health equity,4206
+420603,field,Health promotion,4206
+420604,field,Injury prevention,4206
+420605,field,Preventative health care,4206
+420606,field,Social determinants of health,4206
+420699,field,Public health not elsewhere classified,4206
+4207,group,Sports science and exercise,42
+420701,field,Biomechanics,4207
+420702,field,Exercise physiology,4207
+420703,field,Motor control,4207
+420799,field,Sports science and exercise not elsewhere classified,4207
+4208,group,"Traditional, complementary and integrative medicine",42
+420801,field,Chiropractic,4208
+420802,field,Naturopathy,4208
+420803,field,Traditional Chinese medicine and treatments,4208
+420899,field,"Traditional, complementary and integrative medicine not elsewhere classified",4208
+4299,group,Other health sciences,42
+429999,field,Other health sciences not elsewhere classified,4299
+43,division,"HISTORY, HERITAGE AND ARCHAEOLOGY",
+4301,group,Archaeology,43
+430101,field,Archaeological science,4301
+430102,field,"Archaeology of Asia, Africa and the Americas",4301
+430103,field,Archaeology of Australia (excl. Aboriginal and Torres Strait Islander),4301
+430104,field,"Archaeology of Europe, the Mediterranean and the Levant",4301
+430105,field,Archaeology of New Zealand (excl. Māori),4301
+430106,field,Digital archaeology,4301
+430107,field,Historical archaeology (incl. industrial archaeology),4301
+430108,field,Maritime archaeology,4301
+430199,field,Archaeology not elsewhere classified,4301
+4302,group,"Heritage, archive and museum studies",43
+430201,field,"Archival, repository and related studies",4302
+430202,field,"Critical heritage, museum and archive studies",4302
+430203,field,Cultural heritage management (incl. world heritage),4302
+430204,field,Digital heritage,4302
+430205,field,Heritage and cultural conservation,4302
+430206,field,Heritage collections and interpretations,4302
+430207,field,"Heritage tourism, visitor and audience studies",4302
+430208,field,Intangible heritage,4302
+430209,field,Materials conservation,4302
+430299,field,"Heritage, archive and museum studies not elsewhere classified",4302
+4303,group,Historical studies,43
+430301,field,Asian history,4303
+430302,field,Australian history,4303
+430303,field,Biography,4303
+430304,field,British history,4303
+430305,field,Classical Greek and Roman history,4303
+430306,field,Digital history,4303
+430307,field,Environmental history,4303
+430308,field,"European history (excl. British, classical Greek and Roman)",4303
+430309,field,Gender history,4303
+430310,field,Global and world history,4303
+430311,field,Historical studies of crime,4303
+430312,field,Histories of race,4303
+430313,field,"History of empires, imperialism and colonialism",4303
+430314,field,History of religion,4303
+430315,field,History of the pacific,4303
+430316,field,International history,4303
+430317,field,Latin and South American history,4303
+430318,field,Middle Eastern and North African history,4303
+430319,field,Migration history,4303
+430320,field,New Zealand history,4303
+430321,field,North American history,4303
+430322,field,Sub-Saharan African history,4303
+430323,field,Transnational history,4303
+430399,field,Historical studies not elsewhere classified,4303
+4399,group,"Other history, heritage and archaeology",43
+439999,field,"Other history, heritage and archaeology not elsewhere classified",4399
+44,division,HUMAN SOCIETY,
+4401,group,Anthropology,44
+440101,field,Anthropology of development,4401
+440102,field,Anthropology of gender and sexuality,4401
+440103,field,Biological (physical) anthropology,4401
+440104,field,Environmental anthropology,4401
+440105,field,Linguistic anthropology,4401
+440106,field,Medical anthropology,4401
+440107,field,Social and cultural anthropology,4401
+440199,field,Anthropology not elsewhere classified,4401
+4402,group,Criminology,44
+440201,field,Causes and prevention of crime,4402
+440202,field,"Correctional theory, offender treatment and rehabilitation",4402
+440203,field,Courts and sentencing,4402
+440204,field,Crime and social justice,4402
+440205,field,Criminological theories,4402
+440206,field,Critical approaches to crime,4402
+440207,field,Cybercrime,4402
+440208,field,Environmental crime,4402
+440209,field,Gender and crime,4402
+440210,field,Organised crime,4402
+440211,field,"Police administration, procedures and practice",4402
+440212,field,Private policing and security services,4402
+440213,field,Race/ethnicity and crime,4402
+440214,field,Sociological studies of crime,4402
+440215,field,State crime,4402
+440216,field,"Technology, crime and surveillance",4402
+440217,field,Terrorism,4402
+440218,field,Victims,4402
+440219,field,White collar crime,4402
+440299,field,Criminology not elsewhere classified,4402
+4403,group,Demography,44
+440301,field,Family and household studies,4403
+440302,field,Fertility,4403
+440303,field,Migration,4403
+440304,field,Mortality,4403
+440305,field,Population trends and policies,4403
+440399,field,Demography not elsewhere classified,4403
+4404,group,Development studies,44
+440401,field,Development cooperation,4404
+440402,field,"Humanitarian disasters, conflict and peacebuilding",4404
+440403,field,"Labour, migration and development",4404
+440404,field,Political economy and social change,4404
+440405,field,"Poverty, inclusivity and wellbeing",4404
+440406,field,Rural community development,4404
+440407,field,Socio-economic development,4404
+440408,field,Urban community development,4404
+440499,field,Development studies not elsewhere classified,4404
+4405,group,Gender studies,44
+440501,field,Feminist and queer theory,4405
+440502,field,Feminist methodologies,4405
+440503,field,Feminist theory,4405
+440504,field,Gender relations,4405
+440505,field,Intersectional studies,4405
+440506,field,Sexualities,4405
+440507,field,Studies of men and masculinities,4405
+440508,field,Transgender studies,4405
+440509,field,Women's studies (incl. girls' studies),4405
+440599,field,Gender studies not elsewhere classified,4405
+4406,group,Human geography,44
+440601,field,Cultural geography,4406
+440602,field,Development geography,4406
+440603,field,Economic geography,4406
+440604,field,Environmental geography,4406
+440605,field,Health geography,4406
+440606,field,Political geography,4406
+440607,field,Population geography,4406
+440608,field,"Recreation, leisure and tourism geography",4406
+440609,field,Rural and regional geography,4406
+440610,field,Social geography,4406
+440611,field,Transport geography,4406
+440612,field,Urban geography,4406
+440699,field,Human geography not elsewhere classified,4406
+4407,group,Policy and administration,44
+440701,field,Communications and media policy,4407
+440702,field,Crime policy,4407
+440703,field,Economic development policy,4407
+440704,field,Environment policy,4407
+440705,field,"Gender, policy and administration",4407
+440706,field,Health policy,4407
+440707,field,Housing policy,4407
+440708,field,Public administration,4407
+440709,field,Public policy,4407
+440710,field,"Research, science and technology policy",4407
+440711,field,Risk policy,4407
+440712,field,Social policy,4407
+440713,field,Tourism policy,4407
+440714,field,Urban policy,4407
+440799,field,Policy and administration not elsewhere classified,4407
+4408,group,Political science,44
+440801,field,Australian government and politics,4408
+440802,field,Citizenship,4408
+440803,field,Comparative government and politics,4408
+440804,field,Defence studies,4408
+440805,field,Environmental politics,4408
+440806,field,Gender and politics,4408
+440807,field,Government and politics of Asia and the Pacific,4408
+440808,field,International relations,4408
+440809,field,New Zealand government and politics,4408
+440810,field,Peace studies,4408
+440811,field,Political theory and political philosophy,4408
+440899,field,Political science not elsewhere classified,4408
+4409,group,Social work,44
+440901,field,Clinical social work practice,4409
+440902,field,"Counselling, wellbeing and community services",4409
+440903,field,Social program evaluation,4409
+440999,field,Social work not elsewhere classified,4409
+4410,group,Sociology,44
+441001,field,"Applied sociology, program evaluation and social impact assessment",4410
+441002,field,Environmental sociology,4410
+441003,field,Rural sociology,4410
+441004,field,Social change,4410
+441005,field,Social theory,4410
+441006,field,Sociological methodology and research methods,4410
+441007,field,Sociology and social studies of science and technology,4410
+441008,field,Sociology of culture,4410
+441009,field,Sociology of family and relationships,4410
+441010,field,Sociology of gender,4410
+441011,field,Sociology of health,4410
+441012,field,Sociology of inequalities,4410
+441013,field,"Sociology of migration, ethnicity and multiculturalism",4410
+441014,field,Sociology of religion,4410
+441015,field,Sociology of the life course,4410
+441016,field,Urban sociology and community studies,4410
+441099,field,Sociology not elsewhere classified,4410
+4499,group,Other human society,44
+449901,field,Studies of Asian society,4499
+449999,field,Other human society not elsewhere classified,4499
+45,division,INDIGENOUS STUDIES,
+4501,group,"Aboriginal and Torres Strait Islander culture, language and history",45
+450101,field,Aboriginal and Torres Strait Islander archaeology,4501
+450102,field,Aboriginal and Torres Strait Islander artefacts,4501
+450103,field,Aboriginal and Torres Strait Islander cultural history,4501
+450104,field,Aboriginal and Torres Strait Islander culture,4501
+450105,field,"Aboriginal and Torres Strait Islander curatorial, archives and museum studies",4501
+450106,field,Aboriginal and Torres Strait Islander ethics,4501
+450107,field,Aboriginal and Torres Strait Islander history,4501
+450108,field,Aboriginal and Torres Strait Islander linguistics and languages,4501
+450109,field,"Aboriginal and Torres Strait Islander literature, journalism and professional writing",4501
+450110,field,"Aboriginal and Torres Strait Islander media, film, animation and photography",4501
+450111,field,Aboriginal and Torres Strait Islander music and performing arts,4501
+450112,field,Aboriginal and Torres Strait Islander philosophy,4501
+450113,field,Aboriginal and Torres Strait Islander religion and religious studies,4501
+450114,field,Aboriginal and Torres Strait Islander repatriation,4501
+450115,field,Aboriginal and Torres Strait Islander research methods,4501
+450116,field,Aboriginal and Torres Strait Islander visual arts and crafts,4501
+450117,field,"Aboriginal and Torres Strait Islander ways of knowing, being and doing",4501
+450118,field,Conservation of Aboriginal and Torres Strait Islander heritage,4501
+450199,field,"Aboriginal and Torres Strait Islander culture, language and history not elsewhere classified",4501
+4502,group,Aboriginal and Torres Strait Islander education,45
+450201,field,Aboriginal and Torres Strait Islander curriculum and pedagogy,4502
+450202,field,Aboriginal and Torres Strait Islander early childhood education,4502
+450203,field,Aboriginal and Torres Strait Islander educational methods,4502
+450204,field,"Aboriginal and Torres Strait Islander technical, further, continuing and community education",4502
+450205,field,Aboriginal and Torres Strait Islander higher education,4502
+450206,field,Aboriginal and Torres Strait Islander language education,4502
+450207,field,Aboriginal and Torres Strait Islander men’s education,4502
+450208,field,Aboriginal and Torres Strait Islander primary education,4502
+450209,field,Aboriginal and Torres Strait Islander secondary education,4502
+450210,field,Aboriginal and Torres Strait Islander student engagement and teaching,4502
+450211,field,Aboriginal and Torres Strait Islander women’s education,4502
+450212,field,Cultural responsiveness and working with Aboriginal and Torres Strait Islander communities education,4502
+450213,field,"Embedding Aboriginal and Torres Strait Islander knowledges, histories, culture, country, perspectives and ethics in education",4502
+450299,field,Aboriginal and Torres Strait Islander education not elsewhere classified,4502
+4503,group,Aboriginal and Torres Strait Islander environmental knowledges and management,45
+450301,field,Aboriginal and Torres Strait Islander agriculture and forestry,4503
+450302,field,Aboriginal and Torres Strait Islander earth sciences,4503
+450303,field,Aboriginal and Torres Strait Islander environmental conservation,4503
+450304,field,Aboriginal and Torres Strait Islander environmental knowledges,4503
+450305,field,Aboriginal and Torres Strait Islander fisheries and customary fisheries,4503
+450306,field,Aboriginal and Torres Strait Islander land and water management,4503
+450307,field,Aboriginal and Torres Strait Islander marine environment science,4503
+450399,field,Aboriginal and Torres Strait Islander environmental knowledges and management not elsewhere classified,4503
+4504,group,Aboriginal and Torres Strait Islander health and wellbeing,45
+450401,field,Aboriginal and Torres Strait Islander and disability,4504
+450402,field,Aboriginal and Torres Strait Islander biomedical and clinical sciences,4504
+450403,field,Aboriginal and Torres Strait Islander child health and wellbeing,4504
+450404,field,Aboriginal and Torres Strait Islander cultural determinants of health,4504
+450405,field,Aboriginal and Torres Strait Islander diet and nutrition,4504
+450406,field,Aboriginal and Torres Strait Islander epidemiology,4504
+450407,field,Aboriginal and Torres Strait Islander health policy,4504
+450408,field,Aboriginal and Torres Strait Islander health promotion,4504
+450409,field,Aboriginal and Torres Strait Islander health services,4504
+450410,field,Aboriginal and Torres Strait Islander lifecourse,4504
+450411,field,Aboriginal and Torres Strait Islander medicine and treatments,4504
+450412,field,Aboriginal and Torres Strait Islander men’s health and wellbeing,4504
+450413,field,Aboriginal and Torres Strait Islander midwifery and paediatrics,4504
+450414,field,Aboriginal and Torres Strait Islander mothers and babies health and wellbeing,4504
+450415,field,Aboriginal and Torres Strait Islander nursing,4504
+450416,field,Aboriginal and Torres Strait Islander psychology,4504
+450417,field,Aboriginal and Torres Strait Islander public health and wellbeing,4504
+450418,field,Aboriginal and Torres Strait Islander remote health,4504
+450419,field,Aboriginal and Torres Strait Islander social determinants of health,4504
+450420,field,"Aboriginal and Torres Strait Islander social, emotional, cultural and spiritual wellbeing",4504
+450421,field,Aboriginal and Torres Strait Islander sport and physical activity,4504
+450422,field,Aboriginal and Torres Strait Islander theory of change models for health,4504
+450423,field,Aboriginal and Torres Strait Islander youth and family social and emotional wellbeing,4504
+450499,field,Aboriginal and Torres Strait Islander health and wellbeing not elsewhere classified,4504
+4505,group,"Aboriginal and Torres Strait Islander peoples, society and community",45
+450501,field,Aboriginal and Torres Strait Islander accounting,4505
+450502,field,Aboriginal and Torres Strait Islander anthropology,4505
+450503,field,Aboriginal and Torres Strait Islander architecture,4505
+450504,field,Aboriginal and Torres Strait Islander commerce,4505
+450505,field,Aboriginal and Torres Strait Islander community and regional development,4505
+450506,field,Aboriginal and Torres Strait Islander community governance and decision making,4505
+450507,field,Aboriginal and Torres Strait Islander community-based research,4505
+450508,field,Aboriginal and Torres Strait Islander criminology,4505
+450509,field,Aboriginal and Torres Strait Islander customary law,4505
+450510,field,Aboriginal and Torres Strait Islander design practice and management,4505
+450511,field,Aboriginal and Torres Strait Islander economics,4505
+450512,field,Aboriginal and Torres Strait Islander finance,4505
+450513,field,Aboriginal and Torres Strait Islander human geography and demography,4505
+450514,field,Aboriginal and Torres Strait Islander legislation,4505
+450515,field,Aboriginal and Torres Strait Islander management,4505
+450516,field,Aboriginal and Torres Strait Islander marketing,4505
+450517,field,Aboriginal and Torres Strait Islander not-for-profit social enterprises,4505
+450518,field,Aboriginal and Torres Strait Islander peoples and the law,4505
+450519,field,Aboriginal and Torres Strait Islander perspectives,4505
+450520,field,Aboriginal and Torres Strait Islander political participation and representation,4505
+450521,field,Aboriginal and Torres Strait Islander politics,4505
+450522,field,Aboriginal and Torres Strait Islander social impact and program evaluation,4505
+450523,field,Aboriginal and Torres Strait Islander social work and social justice,4505
+450524,field,Aboriginal and Torres Strait Islander sociological studies,4505
+450525,field,Aboriginal and Torres Strait Islander sociology,4505
+450526,field,Aboriginal and Torres Strait Islander tourism,4505
+450527,field,Aboriginal and Torres Strait Islander urban and regional planning,4505
+450599,field,"Aboriginal and Torres Strait Islander peoples, society and community not elsewhere classified",4505
+4506,group,Aboriginal and Torres Strait Islander sciences,45
+450601,field,Aboriginal and Torres Strait Islander astronomy and cosmology,4506
+450602,field,Aboriginal and Torres Strait Islander biological sciences,4506
+450603,field,Aboriginal and Torres Strait Islander computing technology use and design,4506
+450604,field,Aboriginal and Torres Strait Islander engineering,4506
+450605,field,Aboriginal and Torres Strait Islander genomics,4506
+450606,field,Aboriginal and Torres Strait Islander information and knowledge management systems,4506
+450607,field,Aboriginal and Torres Strait Islander innovation,4506
+450608,field,Aboriginal and Torres Strait Islander knowledge management methods,4506
+450609,field,"Aboriginal and Torres Strait Islander mathematical, physical and chemical sciences (excl. astronomy and cosmology)",4506
+450699,field,Aboriginal and Torres Strait Islander sciences not elsewhere classified,4506
+4507,group,"Te ahurea, reo me te hītori o te Māori (Māori culture, language and history)",45
+450701,field,Te whāomoomo i te tuku ihotanga Māori (conservation of Māori heritage),4507
+450702,field,Te mana wahine (female status),4507
+450703,field,Te mana tāne (male status),4507
+450704,field,Te mātai whaipara Māori (Māori archaeology),4507
+450705,field,Ngā taonga Māori nō mua (Māori artefacts),4507
+450706,field,Te hītori ahurea Māori (Māori cultural history),4507
+450707,field,Te ahurea Māori (Māori culture),4507
+450708,field,"Ngā mātai kaitiaki, pūranga me ngā whare tongarewa o te Māori (Māori curatorial, archives and museum studies)",4507
+450709,field,Ngā matatika o te Māori (Māori ethics),4507
+450710,field,Te hītori Māori (Māori history),4507
+450711,field,"Te whenua, ahurea me te tuakiri o te Māori (Māori land, culture and identity)",4507
+450712,field,Te mātai i te reo Māori me te reo Māori (Māori linguistics and languages),4507
+450713,field,"Te mātākōrero, te kawe kōrero me te tuhituhi ngaio o te Māori (Māori literature, journalism and professional writing)",4507
+450714,field,"Ngā arapāho, ngā kiriata, te hākoritanga me te hopu whakaahua o te Māori (Māori media, film, animation and photography)",4507
+450715,field,Te puoro me ngā mahi a te rēhia o te Māori (Māori music and performing arts),4507
+450716,field,Te rapunga whakaaro o te Māori (Māori philosophy),4507
+450717,field,Ngā Kaupapa Māori (Māori projects),4507
+450718,field,Te whakapono me te mātai whakapono o te Māori (Māori religion and religious studies),4507
+450719,field,Te whakahoki taonga a te Māori ki te kāinga (Māori repatriation),4507
+450720,field,Ngā tikanga rangahau o te Māori (Māori research methods),4507
+450721,field,Ngā toi ataata ngā mahi ā-rehe o te Māori (Māori visual arts and crafts),4507
+450799,field,"Te ahurea, reo, me te hītori o te Māori kāore anō kia whakarōpūtia i wāhi kē (Māori culture, language and history not elsewhere classified)",4507
+4508,group,Mātauranga Māori (Māori education),45
+450801,field,Ngā kōhanga reo (Māori curriculum and pedagogy),4508
+450802,field,Te Whāriki - te mātauranga kōhungahunga Māori (Māori early childhood education),4508
+450803,field,Ngā tikanga mātauranga o te Māori (Māori educational methods),4508
+450804,field,Te mātauranga kura tuatoru Māori (Māori higher education),4508
+450805,field,Te mātauranga reo Māori (Māori language education),4508
+450806,field,Ngā kura kaupapa Māori (Māori primary education),4508
+450807,field,Te urupare me te whai wāhi Māori ki te mātauranga (Māori responsiveness and engaged education),4508
+450808,field,Te mātauranga kura tuarua Māori (Māori secondary education),4508
+450809,field,Te whai wāhi ākonga me ngā mahi whakaako o te Māori (Māori student engagement and teaching),4508
+450810,field,"Tō te Māori mātauranga hangarau, mātauranga atu anō, mātauranga haere tonu, me te mātauranga hapori (Māori technical, further, continuing and community education)",4508
+450811,field,Te mātauranga Māori i roto i te mātauranga (Mātauranga Māori in education),4508
+450899,field,Te mātauranga Māori kāore anō kia whakarōpūtia i wāhi kē (Māori education not elsewhere classified),4508
+4509,group,Ngā mātauranga taiao o te Māori (Māori environmental knowledges),45
+450901,field,Te ahuwhenua me ngā mahi ngahere o te Māori (Māori agriculture and forestry),4509
+450902,field,Ngā pūtaiao-ā-nuku o te Māori (Māori earth sciences),4509
+450903,field,Te whāomoomo taiao o te Māori (Māori environmental conservation),4509
+450904,field,Ngā mātauranga taiao o te Māori (Māori environmental knowledges),4509
+450905,field,Te ahumoana me te ahumoana tuku iho o te Māori (Māori fisheries and customary fisheries),4509
+450906,field,Te whakahaere whenua me te wai o te Māori (Māori land and water management),4509
+450907,field,Te pūtaiao taiao moana o te Māori (Māori marine environment science),4509
+450999,field,Ngā mātauranga taiao o te Māori kāore anō kia whakarōpūtia i wāhi kē (Māori environmental knowledges not elsewhere classified),4509
+4510,group,Te hauora me te oranga o te Māori (Māori health and wellbeing),45
+451001,field,Te whaikaha me te Māori (Māori and disability),4510
+451002,field,"Ngā pūtaiao koiora-hauora, haumanu hoki o te Māori (Māori biomedical and clinical sciences)",4510
+451003,field,Ngā tokoingoa ahurea o te hauora o te Māori (Māori cultural determinants of health),4510
+451004,field,Te horakai me ngā kai o te Māori (Māori diet and nutrition),4510
+451005,field,Te mātai tahumaero o te Māori (Māori epidemiology),4510
+451006,field,Ngā kaupapahere hauora o te Māori (Māori health policy),4510
+451007,field,Te whakatairanga hauora o te Māori (Māori health promotion),4510
+451008,field,Ngā wāhanga ora o te Māori (Māori life course),4510
+451009,field,Ngā rongoā me ngā whakamaimoa o te Māori (Māori medicine and treatments),4510
+451010,field,Ngā kaiwhakawhānau me te mātai mate tamariki o te Māori (Māori midwifery and paediatrics),4510
+451011,field,"Te hauora me te oranga ā-whaea, ā-pēpi o te Māori (Māori mothers and babies health and wellbeing)",4510
+451012,field,Te mahi tapuhi o te Māori (Māori nursing),4510
+451013,field,Mātauranga hinengaro kaupapa Māori (Māori psychology),4510
+451014,field,Ngā pūnaha mātauranga hinengaro o te Māori (Māori psychology knowledge systems),4510
+451015,field,Te hauora me te oranga tūmatanui o te Māori (Māori public health and wellbeing),4510
+451016,field,Te hauora mamao o te Māori (Māori remote health),4510
+451017,field,"Te oranga ā-pāpori, ā-hinengaro, ā-ahurea, ā-wairua o te Māori (Māori social, cultural, emotional and spiritual wellbeing)",4510
+451018,field,Ngā tokoingoa pāpori o te hauora o te Māori (Māori social determinants of health),4510
+451019,field,Ngā hākinakina me te korikori tinana o te Māori (Māori sport and physical activity),4510
+451020,field,Te ariā o ngā tauira panoni hauora o te Māori (Māori theory of change models for health),4510
+451021,field,Ngā taiohi me ngā whānau Māori (Māori youth and family),4510
+451099,field,Te hauora me te oranga o te Māori kāore anō kia whakarōpūhia i wāhi kē (Māori health and wellbeing not elsewhere classified),4510
+4511,group,"Ngā tāngata, te porihanga me ngā hapori o te Māori (Māori peoples, society and community)",45
+451101,field,Te mahi kaute o te Māori (Māori accounting),4511
+451102,field,Te mātauranga tikanga Māori (Māori anthropology),4511
+451103,field,Te hoahoanga whare o te Māori (Māori architecture),4511
+451104,field,Ngā mahi tauhokohoko o te Māori (Māori commerce),4511
+451105,field,"Te whanaketanga ā-hapori, ā-rohe o te Māori (Māori community and regional development)",4511
+451106,field,Te rangahau kei rō hapori o te Māori (Māori community-based research),4511
+451107,field,"Te kāwana ā-hapori, whakatau take hoki o te Māori (Māori community governance and decision making)",4511
+451108,field,Te mātauranga taihara Māori (Māori criminology),4511
+451109,field,Ngā tikanga Māori (Māori customary law),4511
+451110,field,Te whakaharatau me te whakahaere hoahoa o te Māori (Māori design practice and management),4511
+451111,field,Te mātauranga ōhanga o te Māori (Māori economics),4511
+451112,field,Te ahumoni Māori (Māori finance),4511
+451113,field,Te mātauranga matawhenua ā-iwi me te tatauranga ā-iwi o te Māori (Māori human geography and demography),4511
+451114,field,Te ture Whenua (Māori land law),4511
+451115,field,Te ture me te tika Māori (Māori law and justice),4511
+451116,field,Ngā ture Māori (Māori legislation),4511
+451117,field,Te whakahaere o te Māori (Māori management),4511
+451118,field,Te whakamākete o te Māori (Māori marketing),4511
+451119,field,Ngā hinonga pāpori kaupapa atawhai o te Māori (Māori not-for-profit social enterprises),4511
+451120,field,Ngā iwi Māori me te ture (Māori peoples and the law),4511
+451121,field,Ngā tirohanga Māori (Māori perspectives),4511
+451122,field,Te whai wāhi me te whakakanohi taha tōrāngapū o te Māori (Māori political participation and representation),4511
+451123,field,Ngā mahi tōrangapū Māori (Māori politics),4511
+451124,field,Ngā ture rawa Māori (Māori resource law),4511
+451125,field,Te pāpātanga pāpori me te aromātai hōtaka o te Māori (Māori social impact and program evaluation),4511
+451126,field,Ngā mahi tauwhiro me te tika pāpori o te Māori (Māori social work and social justice),4511
+451127,field,Ngā mātai tikanga ā-iwi o te Māori (Māori sociological studies),4511
+451128,field,Te mātauranga pāpori o te Māori (Māori sociology),4511
+451129,field,Te mahi tāpoi Māori (Māori tourism),4511
+451130,field,Te Tiriti o Waitangi (The Treaty of Waitangi),4511
+451131,field,"Te whakamahere ā-tāone, ā-rohe o te Māori (Māori urban and regional planning)",4511
+451199,field,"Ngā tāngata, te porihanga me ngā hapori o te Māori kāore anō kia whakarōpūtia i wāhi kē (Māori peoples, society and community not elsewhere classified)",4511
+4512,group,Ngā pūtaiao Māori (Māori sciences),45
+451201,field,Te mātai arorangi me te mātai tuarangi o te Māori (Māori astronomy and cosmology),4512
+451202,field,Ngā pūtaiao koiora o te Māori (Māori biological sciences),4512
+451203,field,Te whakamahi me te hoahoa o te hangarau rorohiko o te Māori (Māori computing technology use and design),4512
+451204,field,Te mana motuhake o ngā raraunga Māori (Māori data sovereignty),4512
+451205,field,Te mātauranga pūkaha o te Māori (Māori engineering),4512
+451206,field,Te mātai huingaira o te Māori (Māori genomics),4512
+451207,field,Ngā pūnaha whakahaere mōhiohio me te mātauranga o te Māori (Māori information and knowledge management systems),4512
+451208,field,Te wairua auaha o te Māori (Māori innovation),4512
+451209,field,Ngā tikanga whakahaere mōhiotanga Māori (Māori knowledge management methods),4512
+451210,field,"Ngā pūtaiao pāngarau, ōkiko, matū hoki - hāunga te mātai arorangi me te mātai tuarangi o te Māori (Māori mathematical, physical and chemical sciences - excl. astronomy and cosmology)",4512
+451211,field,Te tukatuka reo noa o te Māori (Māori natural language processing),4512
+451299,field,Ngā pūtaiao Māori kāore anō kia whakarōpūhia i wāhi kē (Māori sciences not elsewhere classified),4512
+4513,group,"Pacific Peoples culture, language and history",45
+451301,field,Archaeology of New Guinea and Pacific Islands (excl. New Zealand),4513
+451302,field,Conservation of Pacific Peoples heritage,4513
+451303,field,Pacific Peoples artefacts,4513
+451304,field,Pacific Peoples cultural history,4513
+451305,field,Pacific Peoples culture,4513
+451306,field,"Pacific Peoples curatorial, archives and museum studies",4513
+451307,field,Pacific Peoples ethics,4513
+451308,field,Pacific Peoples history,4513
+451309,field,"Pacific Peoples land, culture and identity",4513
+451310,field,Pacific Peoples linguistics and languages,4513
+451311,field,"Pacific Peoples literature, journalism and professional writing",4513
+451312,field,"Pacific Peoples media, film, animation and photography",4513
+451313,field,Pacific Peoples music and performing arts,4513
+451314,field,Pacific Peoples philosophy,4513
+451315,field,Pacific Peoples religion and religious studies,4513
+451316,field,Pacific Peoples repatriation,4513
+451317,field,Pacific Peoples research methods,4513
+451318,field,Pacific Peoples visual arts and crafts,4513
+451319,field,"Pacific Peoples ways of knowing, being and doing",4513
+451399,field,"Pacific Peoples culture, language and history not elsewhere classified",4513
+4514,group,Pacific Peoples education,45
+451401,field,Cultural responsiveness and working with Pacific Peoples communities education,4514
+451402,field,"Embedding Pacific Peoples knowledges, histories, culture, country, perspectives and ethics in education",4514
+451403,field,Pacific Peoples curriculum and pedagogy,4514
+451404,field,Pacific Peoples early childhood education,4514
+451405,field,Pacific Peoples educational methods,4514
+451406,field,"Pacific Peoples technical, further, continuing and community education",4514
+451407,field,Pacific Peoples higher education,4514
+451408,field,Pacific Peoples language education,4514
+451409,field,Pacific Peoples men’s education,4514
+451410,field,Pacific Peoples primary education,4514
+451411,field,Pacific Peoples secondary education,4514
+451412,field,Pacific Peoples student engagement and teaching,4514
+451413,field,Pacific Peoples women’s education,4514
+451499,field,Pacific Peoples education not elsewhere classified,4514
+4515,group,Pacific Peoples environmental knowledges,45
+451501,field,Pacific Peoples agriculture and forestry,4515
+451502,field,Pacific Peoples earth sciences,4515
+451503,field,Pacific Peoples environmental conservation,4515
+451504,field,Pacific Peoples environmental knowledges,4515
+451505,field,Pacific Peoples fisheries and customary fisheries,4515
+451506,field,Pacific Peoples land and water management,4515
+451507,field,Pacific Peoples marine environment science,4515
+451599,field,Pacific Peoples environmental knowledges not elsewhere classified,4515
+4516,group,Pacific Peoples health and wellbeing,45
+451601,field,Pacific Peoples and disability,4516
+451602,field,Pacific Peoples biomedical and clinical science,4516
+451603,field,Pacific Peoples cultural determinants of health,4516
+451604,field,Pacific Peoples diet and nutrition,4516
+451605,field,Pacific Peoples epidemiology,4516
+451606,field,Pacific Peoples health policy,4516
+451607,field,Pacific Peoples health promotion,4516
+451608,field,Pacific Peoples life course,4516
+451609,field,Pacific Peoples medicine and treatments,4516
+451610,field,Pacific Peoples midwifery and paediatrics,4516
+451611,field,Pacific Peoples mothers and babies health and wellbeing,4516
+451612,field,Pacific Peoples nursing,4516
+451613,field,Pacific Peoples psychology,4516
+451614,field,Pacific Peoples public health and wellbeing,4516
+451615,field,Pacific Peoples remote health,4516
+451616,field,Pacific Peoples social determinants of health,4516
+451617,field,"Pacific Peoples social, cultural, emotional and spiritual wellbeing",4516
+451618,field,Pacific Peoples sport and physical activity,4516
+451619,field,Pacific Peoples theory of change models for health,4516
+451620,field,Pacific Peoples youth and family,4516
+451699,field,Pacific Peoples health and wellbeing not elsewhere classified,4516
+4517,group,Pacific Peoples sciences,45
+451701,field,Pacific Peoples astronomy and cosmology,4517
+451702,field,Pacific Peoples biological sciences,4517
+451703,field,Pacific Peoples computing technology use and design,4517
+451704,field,Pacific Peoples engineering,4517
+451705,field,Pacific Peoples genomics,4517
+451706,field,Pacific Peoples information and knowledge management systems,4517
+451707,field,Pacific Peoples innovation,4517
+451708,field,Pacific Peoples knowledge management methods,4517
+451709,field,"Pacific Peoples mathematical, physical and chemical sciences (excl. astronomy and cosmology)",4517
+451799,field,Pacific Peoples sciences not elsewhere classified,4517
+4518,group,Pacific Peoples society and community,45
+451801,field,Pacific Peoples and the law,4518
+451802,field,Pacific Peoples anthropology,4518
+451803,field,Pacific Peoples architecture,4518
+451804,field,Pacific Peoples commerce,4518
+451805,field,Pacific Peoples community and regional development,4518
+451806,field,Pacific Peoples community governance and decision making,4518
+451807,field,Pacific Peoples community-based research,4518
+451808,field,Pacific Peoples criminology,4518
+451809,field,Pacific Peoples customary law,4518
+451810,field,Pacific Peoples design practice and management,4518
+451811,field,Pacific Peoples economics,4518
+451812,field,Pacific Peoples finance,4518
+451813,field,Pacific Peoples human geography and demography,4518
+451814,field,Pacific Peoples legislation,4518
+451815,field,Pacific Peoples management,4518
+451816,field,Pacific Peoples marketing,4518
+451817,field,Pacific Peoples not-for-profit social enterprises,4518
+451818,field,Pacific Peoples perspectives,4518
+451819,field,Pacific Peoples political participation and representation,4518
+451820,field,Pacific Peoples politics,4518
+451821,field,Pacific Peoples social impact and program evaluation,4518
+451822,field,Pacific Peoples social work and social justice,4518
+451823,field,Pacific Peoples sociological studies,4518
+451824,field,Pacific Peoples sociology,4518
+451825,field,Pacific Peoples tourism,4518
+451826,field,Pacific Peoples urban and regional planning,4518
+451899,field,"Pacific Peoples, society and community not elsewhere classified",4518
+4519,group,"Other Indigenous data, methodologies and global Indigenous studies",45
+451901,field,"Global Indigenous studies culture, language and history",4519
+451902,field,Global Indigenous studies environmental knowledges and management,4519
+451903,field,Global Indigenous studies health and wellbeing,4519
+451904,field,"Global Indigenous studies peoples, society and community",4519
+451905,field,Global Indigenous studies sciences,4519
+451906,field,Indigenous data and data technologies,4519
+451907,field,Indigenous methodologies,4519
+451999,field,"Other Indigenous data, methodologies and global Indigenous studies not elsewhere classified",4519
+4599,group,Other Indigenous studies,45
+459999,field,Other Indigenous studies not elsewhere classified,4599
+46,division,INFORMATION AND COMPUTING SCIENCES,
+4601,group,Applied computing,46
+460101,field,Applications in arts and humanities,4601
+460102,field,Applications in health,4601
+460103,field,Applications in life sciences,4601
+460104,field,Applications in physical sciences,4601
+460105,field,Applications in social sciences and education,4601
+460106,field,Spatial data and applications,4601
+460199,field,Applied computing not elsewhere classified,4601
+4602,group,Artificial intelligence,46
+460201,field,Artificial life and complex adaptive systems,4602
+460202,field,Autonomous agents and multiagent systems,4602
+460203,field,Evolutionary computation,4602
+460204,field,Fuzzy computation,4602
+460205,field,Intelligent robotics,4602
+460206,field,Knowledge representation and reasoning,4602
+460207,field,Modelling and simulation,4602
+460208,field,Natural language processing,4602
+460209,field,Planning and decision making,4602
+460210,field,Satisfiability and optimisation,4602
+460211,field,Speech production,4602
+460212,field,Speech recognition,4602
+460299,field,Artificial intelligence not elsewhere classified,4602
+4603,group,Computer vision and multimedia computation,46
+460301,field,Active sensing,4603
+460302,field,Audio processing,4603
+460303,field,Computational imaging,4603
+460304,field,Computer vision,4603
+460305,field,Image and video coding,4603
+460306,field,Image processing,4603
+460307,field,Multimodal analysis and synthesis,4603
+460308,field,Pattern recognition,4603
+460309,field,Video processing,4603
+460399,field,Computer vision and multimedia computation not elsewhere classified,4603
+4604,group,Cybersecurity and privacy,46
+460401,field,Cryptography,4604
+460402,field,Data and information privacy,4604
+460403,field,Data security and protection,4604
+460404,field,Digital forensics,4604
+460405,field,Hardware security,4604
+460406,field,Software and application security,4604
+460407,field,System and network security,4604
+460499,field,Cybersecurity and privacy not elsewhere classified,4604
+4605,group,Data management and data science,46
+460501,field,Data engineering and data science,4605
+460502,field,Data mining and knowledge discovery,4605
+460503,field,"Data models, storage and indexing",4605
+460504,field,Data quality,4605
+460505,field,Database systems,4605
+460506,field,"Graph, social and multimedia data",4605
+460507,field,Information extraction and fusion,4605
+460508,field,Information retrieval and web search,4605
+460509,field,Query processing and optimisation,4605
+460510,field,Recommender systems,4605
+460511,field,Stream and sensor data,4605
+460599,field,Data management and data science not elsewhere classified,4605
+4606,group,Distributed computing and systems software,46
+460601,field,Cloud computing,4606
+460602,field,Concurrent/parallel systems and technologies,4606
+460603,field,Cyberphysical systems and internet of things,4606
+460604,field,Dependable systems,4606
+460605,field,Distributed systems and algorithms,4606
+460606,field,Energy-efficient computing,4606
+460607,field,High performance computing,4606
+460608,field,Mobile computing,4606
+460609,field,Networking and communications,4606
+460610,field,Operating systems,4606
+460611,field,Performance evaluation,4606
+460612,field,Service oriented computing,4606
+460699,field,Distributed computing and systems software not elsewhere classified,4606
+4607,group,"Graphics, augmented reality and games",46
+460701,field,Computer aided design,4607
+460702,field,Computer graphics,4607
+460703,field,Entertainment and gaming,4607
+460704,field,Interactive narrative,4607
+460705,field,Procedural content generation,4607
+460706,field,Serious games,4607
+460707,field,Sound and music computing,4607
+460708,field,Virtual and mixed reality,4607
+460799,field,"Graphics, augmented reality and games not elsewhere classified",4607
+4608,group,Human-centred computing,46
+460801,field,Accessible computing,4608
+460802,field,Affective computing,4608
+460803,field,Collaborative and social computing,4608
+460804,field,Computing education,4608
+460805,field,"Fairness, accountability, transparency, trust and ethics of computer systems",4608
+460806,field,Human-computer interaction,4608
+460807,field,Information visualisation,4608
+460808,field,Mixed initiative and human-in-the-loop,4608
+460809,field,Pervasive computing,4608
+460810,field,Social robotics,4608
+460899,field,Human-centred computing not elsewhere classified,4608
+4609,group,Information systems,46
+460901,field,Business process management,4609
+460902,field,Decision support and group support systems,4609
+460903,field,"Information modelling, management and ontologies",4609
+460904,field,Information security management,4609
+460905,field,Information systems development methodologies and practice,4609
+460906,field,Information systems education,4609
+460907,field,Information systems for sustainable development and the public good,4609
+460908,field,Information systems organisation and management,4609
+460909,field,"Information systems philosophy, research methods and theory",4609
+460910,field,Information systems user experience design and development,4609
+460911,field,"Inter-organisational, extra-organisational and global information systems",4609
+460912,field,Knowledge and information management,4609
+460999,field,Information systems not elsewhere classified,4609
+4610,group,Library and information studies,46
+461001,field,Digital curation and preservation,4610
+461002,field,Human information behaviour,4610
+461003,field,Human information interaction and retrieval,4610
+461004,field,"Information governance, policy and ethics",4610
+461005,field,Informetrics,4610
+461006,field,Library studies,4610
+461007,field,Open access,4610
+461008,field,Organisation of information and knowledge resources,4610
+461009,field,Recordkeeping informatics,4610
+461010,field,Social and community informatics,4610
+461099,field,Library and information studies not elsewhere classified,4610
+4611,group,Machine learning,46
+461101,field,Adversarial machine learning,4611
+461102,field,Context learning,4611
+461103,field,Deep learning,4611
+461104,field,Neural networks,4611
+461105,field,Reinforcement learning,4611
+461106,field,Semi- and unsupervised learning,4611
+461199,field,Machine learning not elsewhere classified,4611
+4612,group,Software engineering,46
+461201,field,Automated software engineering,4612
+461202,field,Empirical software engineering,4612
+461203,field,Formal methods for software,4612
+461204,field,Programming languages,4612
+461205,field,Requirements engineering,4612
+461206,field,Software architecture,4612
+461207,field,"Software quality, processes and metrics",4612
+461208,field,"Software testing, verification and validation",4612
+461299,field,Software engineering not elsewhere classified,4612
+4613,group,Theory of computation,46
+461301,field,"Coding, information theory and compression",4613
+461302,field,Computational complexity and computability,4613
+461303,field,Computational logic and formal languages,4613
+461304,field,Concurrency theory,4613
+461305,field,Data structures and algorithms,4613
+461306,field,Numerical computation and mathematical software,4613
+461307,field,Quantum computation,4613
+461399,field,Theory of computation not elsewhere classified,4613
+4699,group,Other information and computing sciences,46
+469999,field,Other information and computing sciences not elsewhere classified,4699
+47,division,"LANGUAGE, COMMUNICATION AND CULTURE",
+4701,group,Communication and media studies,47
+470101,field,Communication studies,4701
+470102,field,Communication technology and digital media studies,4701
+470103,field,Environmental communication,4701
+470104,field,International and development communication,4701
+470105,field,Journalism studies,4701
+470106,field,Media industry studies,4701
+470107,field,Media studies,4701
+470108,field,"Organisational, interpersonal and intercultural communication",4701
+470199,field,Communication and media studies not elsewhere classified,4701
+4702,group,Cultural studies,47
+470201,field,Arts and cultural policy,4702
+470202,field,Asian cultural studies,4702
+470203,field,Consumption and everyday life,4702
+470204,field,Cultural and creative industries,4702
+470205,field,"Cultural studies of agriculture, food and wine",4702
+470206,field,Cultural studies of nation and region,4702
+470207,field,Cultural theory,4702
+470208,field,"Culture, representation and identity",4702
+470209,field,Environment and culture,4702
+470210,field,Globalisation and culture,4702
+470211,field,Migrant cultural studies,4702
+470212,field,"Multicultural, intercultural and cross-cultural studies",4702
+470213,field,Postcolonial studies,4702
+470214,field,Screen and media culture,4702
+470299,field,Cultural studies not elsewhere classified,4702
+4703,group,Language studies,47
+470301,field,African languages,4703
+470302,field,Central and Eastern European languages (incl. Russian),4703
+470303,field,Chinese languages,4703
+470304,field,Comparative language studies,4703
+470305,field,Early English languages,4703
+470306,field,English as a second language,4703
+470307,field,English language,4703
+470308,field,French language,4703
+470309,field,German language,4703
+470310,field,Iberian languages,4703
+470311,field,Indian languages,4703
+470312,field,Indonesian languages,4703
+470313,field,Italian language,4703
+470314,field,Japanese language,4703
+470315,field,Korean language,4703
+470316,field,Latin and classical Greek languages,4703
+470317,field,Middle Eastern languages,4703
+470318,field,Other Asian languages (excl. South-East Asian),4703
+470319,field,Other European languages,4703
+470320,field,South-East Asian languages (excl. Indonesian),4703
+470321,field,Translation and interpretation studies,4703
+470399,field,Language studies not elsewhere classified,4703
+4704,group,Linguistics,47
+470401,field,Applied linguistics and educational linguistics,4704
+470402,field,Child language acquisition,4704
+470403,field,Computational linguistics,4704
+470404,field,Corpus linguistics,4704
+470405,field,Discourse and pragmatics,4704
+470406,field,"Historical, comparative and typological linguistics",4704
+470407,field,Language documentation and description,4704
+470408,field,Lexicography and semantics,4704
+470409,field,"Linguistic structures (incl. phonology, morphology and syntax)",4704
+470410,field,Phonetics and speech science,4704
+470411,field,Sociolinguistics,4704
+470499,field,Linguistics not elsewhere classified,4704
+4705,group,Literary studies,47
+470501,field,African literature,4705
+470502,field,Australian literature (excl. Aboriginal and Torres Strait Islander literature),4705
+470503,field,Book history,4705
+470504,field,British and Irish literature,4705
+470505,field,Central and Eastern European literature (incl. Russian),4705
+470506,field,Children's literature,4705
+470507,field,Comparative and transnational literature,4705
+470508,field,Digital literature,4705
+470509,field,Ecocriticism,4705
+470510,field,Indian literature,4705
+470511,field,Indonesian literature,4705
+470512,field,Korean literature,4705
+470513,field,Latin and classical Greek literature,4705
+470514,field,Literary theory,4705
+470515,field,Literature in Chinese,4705
+470516,field,Literature in French,4705
+470517,field,Literature in German,4705
+470518,field,Literature in Italian,4705
+470519,field,Literature in Japanese,4705
+470520,field,Literature in Spanish and Portuguese,4705
+470521,field,Middle Eastern literature,4705
+470522,field,New Zealand literature (excl. Māori literature),4705
+470523,field,North American literature,4705
+470524,field,Other Asian literature (excl. South-East Asian),4705
+470525,field,Other European literature,4705
+470526,field,Other literatures in English,4705
+470527,field,Popular and genre literature,4705
+470528,field,Print culture,4705
+470529,field,South-East Asian literature (excl. Indonesian),4705
+470530,field,Stylistics and textual analysis,4705
+470531,field,Young adult literature,4705
+470599,field,Literary studies not elsewhere classified,4705
+4799,group,"Other language, communication and culture",47
+479999,field,"Other language, communication and culture not elsewhere classified",4799
+48,division,LAW AND LEGAL STUDIES,
+4801,group,Commercial law,48
+480101,field,"Banking, finance and securities law",4801
+480102,field,Commercial law,4801
+480103,field,Corporations and associations law,4801
+480104,field,Labour law,4801
+480105,field,Not-for-profit law,4801
+480106,field,Taxation law,4801
+480199,field,Commercial law not elsewhere classified,4801
+4802,group,Environmental and resources law,48
+480201,field,Animal law,4802
+480202,field,Climate change law,4802
+480203,field,Environmental law,4802
+480204,field,"Mining, energy and natural resources law",4802
+480299,field,Environmental and resources law not elsewhere classified,4802
+4803,group,International and comparative law,48
+480301,field,Asian and Pacific law,4803
+480302,field,Comparative law,4803
+480303,field,Conflict of laws (incl. private international law),4803
+480304,field,European Union law,4803
+480305,field,International arbitration,4803
+480306,field,International criminal law,4803
+480307,field,International humanitarian and human rights law,4803
+480308,field,International trade and investment law,4803
+480309,field,Ocean law and governance,4803
+480310,field,Public international law,4803
+480311,field,"Space, maritime and aviation law",4803
+480399,field,International and comparative law not elsewhere classified,4803
+4804,group,Law in context,48
+480401,field,Criminal law,4804
+480402,field,Family law,4804
+480403,field,Law and humanities,4804
+480404,field,Law and religion,4804
+480405,field,Law and society and socio-legal research,4804
+480406,field,Law reform,4804
+480407,field,"Law, gender and sexuality (incl. feminist legal scholarship)",4804
+480408,field,"Law, science and technology",4804
+480409,field,Legal education,4804
+480410,field,"Legal theory, jurisprudence and legal interpretation",4804
+480411,field,Media and communication law,4804
+480412,field,Medical and health law,4804
+480413,field,"Race, ethnicity and law",4804
+480414,field,Sports law,4804
+480499,field,Law in context not elsewhere classified,4804
+4805,group,Legal systems,48
+480501,field,Access to justice,4805
+480502,field,Civil procedure,4805
+480503,field,Criminal procedure,4805
+480504,field,Legal institutions (incl. courts and justice systems),4805
+480505,field,"Legal practice, lawyering and the legal profession",4805
+480506,field,"Litigation, adjudication and dispute resolution",4805
+480507,field,Youth justice,4805
+480599,field,Legal systems not elsewhere classified,4805
+4806,group,Private law and civil obligations,48
+480601,field,Contract law,4806
+480602,field,Equity and trusts law,4806
+480603,field,Intellectual property law,4806
+480604,field,Property law (excl. intellectual property law),4806
+480605,field,Tort law,4806
+480699,field,Private law and civil obligations not elsewhere classified,4806
+4807,group,Public law,48
+480701,field,Administrative law,4807
+480702,field,Constitutional law,4807
+480703,field,Domestic human rights law,4807
+480704,field,"Migration, asylum and refugee law",4807
+480705,field,Military law and justice,4807
+480706,field,Privacy and data rights,4807
+480707,field,"Welfare, insurance, disability and social security law",4807
+480799,field,Public law not elsewhere classified,4807
+4899,group,Other law and legal studies,48
+489999,field,Other law and legal studies not elsewhere classified,4899
+49,division,MATHEMATICAL SCIENCES,
+4901,group,Applied mathematics,49
+490101,field,Approximation theory and asymptotic methods,4901
+490102,field,Biological mathematics,4901
+490103,field,"Calculus of variations, mathematical aspects of systems theory and control theory",4901
+490104,field,Complex systems,4901
+490105,field,Dynamical systems in applications,4901
+490106,field,Financial mathematics,4901
+490107,field,Mathematical methods and special functions,4901
+490108,field,Operations research,4901
+490109,field,Theoretical and applied mechanics,4901
+490199,field,Applied mathematics not elsewhere classified,4901
+4902,group,Mathematical physics,49
+490201,field,Algebraic structures in mathematical physics,4902
+490202,field,Integrable systems (classical and quantum),4902
+490203,field,"Mathematical aspects of classical mechanics, quantum mechanics and quantum information theory",4902
+490204,field,Mathematical aspects of general relativity,4902
+490205,field,"Mathematical aspects of quantum and conformal field theory, quantum gravity and string theory",4902
+490206,field,"Statistical mechanics, physical combinatorics and mathematical aspects of condensed matter",4902
+490299,field,Mathematical physics not elsewhere classified,4902
+4903,group,Numerical and computational mathematics,49
+490301,field,Experimental mathematics,4903
+490302,field,Numerical analysis,4903
+490303,field,Numerical solution of differential and integral equations,4903
+490304,field,Optimisation,4903
+490399,field,Numerical and computational mathematics not elsewhere classified,4903
+4904,group,Pure mathematics,49
+490401,field,Algebra and number theory,4904
+490402,field,Algebraic and differential geometry,4904
+490403,field,"Category theory, k theory, homological algebra",4904
+490404,field,Combinatorics and discrete mathematics (excl. physical combinatorics),4904
+490405,field,Group theory and generalisations,4904
+490406,field,"Lie groups, harmonic and Fourier analysis",4904
+490407,field,"Mathematical logic, set theory, lattices and universal algebra",4904
+490408,field,Operator algebras and functional analysis,4904
+490409,field,"Ordinary differential equations, difference equations and dynamical systems",4904
+490410,field,Partial differential equations,4904
+490411,field,Real and complex functions (incl. several variables),4904
+490412,field,Topology,4904
+490499,field,Pure mathematics not elsewhere classified,4904
+4905,group,Statistics,49
+490501,field,Applied statistics,4905
+490502,field,Biostatistics,4905
+490503,field,Computational statistics,4905
+490504,field,"Forensic evaluation, inference and statistics",4905
+490505,field,Large and complex data theory,4905
+490506,field,Probability theory,4905
+490507,field,Spatial statistics,4905
+490508,field,Statistical data science,4905
+490509,field,Statistical theory,4905
+490510,field,Stochastic analysis and modelling,4905
+490511,field,Time series and spatial modelling,4905
+490599,field,Statistics not elsewhere classified,4905
+4999,group,Other mathematical sciences,49
+499999,field,Other mathematical sciences not elsewhere classified,4999
+50,division,PHILOSOPHY AND RELIGIOUS STUDIES,
+5001,group,Applied ethics,50
+500101,field,Bioethics,5001
+500102,field,Business ethics,5001
+500103,field,Ethical use of new technology,5001
+500104,field,Human rights and justice issues (excl. law),5001
+500105,field,Legal ethics,5001
+500106,field,Medical ethics,5001
+500107,field,Professional ethics,5001
+500199,field,Applied ethics not elsewhere classified,5001
+5002,group,History and philosophy of specific fields,50
+500201,field,History and philosophy of engineering and technology,5002
+500202,field,History and philosophy of law and justice,5002
+500203,field,History and philosophy of medicine,5002
+500204,field,History and philosophy of science,5002
+500205,field,History and philosophy of the humanities,5002
+500206,field,History and philosophy of the social sciences,5002
+500207,field,History of ideas,5002
+500208,field,History of philosophy,5002
+500299,field,History and philosophy of specific fields not elsewhere classified,5002
+5003,group,Philosophy,50
+500301,field,Aesthetics,5003
+500302,field,Critical theory,5003
+500303,field,Decision theory,5003
+500304,field,Environmental philosophy,5003
+500305,field,Epistemology,5003
+500306,field,Ethical theory,5003
+500307,field,Hermeneutics,5003
+500308,field,Logic,5003
+500309,field,Metaphysics,5003
+500310,field,Phenomenology,5003
+500311,field,Philosophical psychology (incl. moral psychology and philosophy of action),5003
+500312,field,Philosophy of cognition,5003
+500313,field,Philosophy of gender,5003
+500314,field,Philosophy of language,5003
+500315,field,Philosophy of mind (excl. cognition),5003
+500316,field,Philosophy of religion,5003
+500317,field,Philosophy of science (excl. history and philosophy of specific fields),5003
+500318,field,Philosophy of specific cultures (incl. comparative philosophy),5003
+500319,field,Poststructuralism,5003
+500320,field,Psychoanalytic philosophy,5003
+500321,field,Social and political philosophy,5003
+500399,field,Philosophy not elsewhere classified,5003
+5004,group,Religious studies,50
+500401,field,Christian studies,5004
+500402,field,Comparative religious studies,5004
+500403,field,Islamic studies,5004
+500404,field,Jewish studies,5004
+500405,field,"Religion, society and culture",5004
+500406,field,Studies in eastern religious traditions,5004
+500407,field,"Studies in religious traditions (excl. Eastern, Jewish, Christian and Islamic traditions)",5004
+500499,field,Religious studies not elsewhere classified,5004
+5005,group,Theology,50
+500501,field,Theology,5005
+500599,field,Theology not elsewhere classified,5005
+5099,group,Other philosophy and religious studies,50
+509999,field,Other philosophy and religious studies not elsewhere classified,5099
+51,division,PHYSICAL SCIENCES,
+5101,group,Astronomical sciences,51
+510101,field,Astrobiology,5101
+510102,field,Astronomical instrumentation,5101
+510103,field,Cosmology and extragalactic astronomy,5101
+510104,field,Galactic astronomy,5101
+510105,field,General relativity and gravitational waves,5101
+510106,field,High energy astrophysics and galactic cosmic rays,5101
+510107,field,Planetary science (excl. solar system and planetary geology),5101
+510108,field,Solar physics,5101
+510109,field,Stellar astronomy and planetary systems,5101
+510199,field,Astronomical sciences not elsewhere classified,5101
+5102,group,"Atomic, molecular and optical physics",51
+510201,field,Atomic and molecular physics,5102
+510202,field,Lasers and quantum electronics,5102
+510203,field,Nonlinear optics and spectroscopy,5102
+510204,field,"Photonics, optoelectronics and optical communications",5102
+510205,field,Terahertz physics,5102
+510299,field,"Atomic, molecular and optical physics not elsewhere classified",5102
+5103,group,Classical physics,51
+510301,field,Acoustics and acoustical devices; waves,5103
+510302,field,Classical and physical optics,5103
+510303,field,Electrostatics and electrodynamics,5103
+510304,field,Thermodynamics and statistical physics,5103
+510399,field,Classical physics not elsewhere classified,5103
+5104,group,Condensed matter physics,51
+510401,field,Condensed matter characterisation technique development,5104
+510402,field,Condensed matter imaging,5104
+510403,field,Condensed matter modelling and density functional theory,5104
+510404,field,Electronic and magnetic properties of condensed matter; superconductivity,5104
+510405,field,Soft condensed matter,5104
+510406,field,Structural properties of condensed matter,5104
+510407,field,Surface properties of condensed matter,5104
+510499,field,Condensed matter physics not elsewhere classified,5104
+5105,group,Medical and biological physics,51
+510501,field,Biological physics,5105
+510502,field,Medical physics,5105
+510599,field,Medical and biological physics not elsewhere classified,5105
+5106,group,Nuclear and plasma physics,51
+510601,field,Nuclear physics,5106
+510602,field,Plasma physics; fusion plasmas; electrical discharges,5106
+510699,field,Nuclear and plasma physics not elsewhere classified,5106
+5107,group,Particle and high energy physics,51
+510701,field,Astroparticle physics and particle cosmology,5107
+510702,field,Field theory and string theory,5107
+510703,field,Particle physics,5107
+510799,field,Particle and high energy physics not elsewhere classified,5107
+5108,group,Quantum physics,51
+510801,field,Degenerate quantum gases and atom optics,5108
+510802,field,Foundations of quantum mechanics,5108
+510803,field,"Quantum information, computation and communication",5108
+510804,field,Quantum optics and quantum optomechanics,5108
+510805,field,Quantum technologies,5108
+510899,field,Quantum physics not elsewhere classified,5108
+5109,group,Space sciences,51
+510901,field,Astrodynamics and space situational awareness,5109
+510902,field,Heliophysics and space weather,5109
+510903,field,"Mesospheric, thermospheric, ionospheric and magnetospheric physics",5109
+510904,field,Solar system energetic particles,5109
+510905,field,Solar system planetary science (excl. planetary geology),5109
+510906,field,Space instrumentation,5109
+510999,field,Space sciences not elsewhere classified,5109
+5110,group,Synchrotrons and accelerators,51
+511001,field,Accelerators,5110
+511002,field,Instruments and techniques,5110
+511003,field,Synchrotrons,5110
+511099,field,Synchrotrons and accelerators not elsewhere classified,5110
+5199,group,Other physical sciences,51
+519901,field,Complex physical systems,5199
+519999,field,Other physical sciences not elsewhere classified,5199
+52,division,PSYCHOLOGY,
+5201,group,Applied and developmental psychology,52
+520101,field,Child and adolescent development,5201
+520102,field,Educational psychology,5201
+520103,field,Forensic psychology,5201
+520104,field,Industrial and organisational psychology (incl. human factors),5201
+520105,field,"Psychological methodology, design and analysis",5201
+520106,field,Psychology of ageing,5201
+520107,field,Sport and exercise psychology,5201
+520108,field,"Testing, assessment and psychometrics",5201
+520199,field,Applied and developmental psychology not elsewhere classified,5201
+5202,group,Biological psychology,52
+520201,field,Behavioural genetics,5202
+520202,field,Behavioural neuroscience,5202
+520203,field,Cognitive neuroscience,5202
+520204,field,Evolutionary psychological studies,5202
+520205,field,Psychopharmacology,5202
+520206,field,Psychophysiology,5202
+520207,field,Social and affective neuroscience,5202
+520299,field,Biological psychology not elsewhere classified,5202
+5203,group,Clinical and health psychology,52
+520301,field,Clinical neuropsychology,5203
+520302,field,Clinical psychology,5203
+520303,field,Counselling psychology,5203
+520304,field,Health psychology,5203
+520399,field,Clinical and health psychology not elsewhere classified,5203
+5204,group,Cognitive and computational psychology,52
+520401,field,Cognition,5204
+520402,field,Decision making,5204
+520403,field,"Learning, motivation and emotion",5204
+520404,field,Memory and attention,5204
+520405,field,Psycholinguistics (incl. speech production and comprehension),5204
+520406,field,"Sensory processes, perception and performance",5204
+520499,field,Cognitive and computational psychology not elsewhere classified,5204
+5205,group,Social and personality psychology,52
+520501,field,Community psychology,5205
+520502,field,Gender psychology,5205
+520503,field,Personality and individual differences,5205
+520504,field,Psychology of religion,5205
+520505,field,Social psychology,5205
+520599,field,Social and personality psychology not elsewhere classified,5205
+5299,group,Other psychology,52
+529999,field,Other psychology not elsewhere classified,5299
