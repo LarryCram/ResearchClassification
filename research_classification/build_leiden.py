@@ -124,6 +124,52 @@ def _majority_vote(
     return pd.DataFrame(rows, columns=BRIDGE_COLUMNS)
 
 
+def division_centric_leiden_parent(
+    for_df: pd.DataFrame,
+    mc_main_field: pd.DataFrame,
+    joined_with_for: pd.DataFrame,
+    main_field_label: dict[str, str],
+) -> pd.DataFrame:
+    """The correctly-directed counterpart to bridge_leiden_for.csv. That table answers
+    'given a Leiden main field, which single FOR division best represents it' -- and its
+    vote-share confidence is honestly low for broad main fields like Social sciences and
+    humanities, because one coarse bucket (5 main fields) necessarily contains many
+    divisions (23) worth of content; that low share reflects the parent's breadth, not
+    doubt about any individual child's placement.
+
+    This function asks the reverse, hierarchically correct question instead: of a given
+    FOR division's OWN content, what fraction sits under each Leiden main field? Since FOR
+    divisions are the finer/child level relative to Leiden's main fields, this is the
+    direction where "confidence" means "is this child's parent correct" -- and it is
+    typically high (e.g. Human Society -> Social sciences and humanities is 95%, not 43%).
+    """
+    primary_main = mc_main_field[mc_main_field["is_primary_main_field"]].set_index(
+        "micro_cluster_id"
+    )["main_field_id"].to_dict()
+    df = joined_with_for.copy()
+    df["main_field_id"] = df["micro_cluster_id"].map(primary_main)
+    df = df.dropna(subset=["for_division", "main_field_id"])
+
+    for_label = dict(zip(for_df["code"], for_df["label"]))
+    rows = []
+    for div_code, grp in df.groupby("for_division"):
+        counts = grp["main_field_id"].value_counts()
+        total = len(grp)
+        for i, (mf_code, n) in enumerate(counts.items()):
+            rows.append(
+                {
+                    "for_division_code": div_code,
+                    "for_division_label": for_label.get(div_code, ""),
+                    "leiden_main_field_id": mf_code,
+                    "leiden_main_field_label": main_field_label.get(mf_code, ""),
+                    "is_primary": i == 0,
+                    "share": round(n / total, 3),
+                    "n_micro_clusters": total,
+                }
+            )
+    return pd.DataFrame(rows)
+
+
 def run() -> dict[str, pd.DataFrame]:
     from . import build_openalex
 
@@ -163,11 +209,19 @@ def run() -> dict[str, pd.DataFrame]:
     )
     write_csv(for_bridge, DATA_DIR / "bridge_leiden_for.csv", ["source_code"])
 
+    for_df = pd.read_csv(DATA_DIR / "for_2020.csv", dtype=str, keep_default_na=False)
+    main_field_label = dict(zip(main_field["code"], main_field["label"]))
+    division_parent = division_centric_leiden_parent(
+        for_df, mc_main_field, joined_with_for, main_field_label
+    )
+    write_csv(division_parent, DATA_DIR / "for2020_division_leiden_main_field.csv", ["for_division_code"])
+
     return {
         "leiden_main_field": main_field,
         "bridge_leiden_openalex_topic": topic_bridge,
         "bridge_leiden_openalex_domain": domain_bridge,
         "bridge_leiden_for": for_bridge,
+        "for2020_division_leiden_main_field": division_parent,
     }
 
 

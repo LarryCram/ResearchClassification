@@ -50,19 +50,27 @@ def best_for_division(con: duckdb.DuckDBPyConnection, category: str, top_n: int 
 
 
 def leiden_main_field_for_division(con: duckdb.DuckDBPyConnection, for_code: str):
-    """Invert bridge_leiden_for.csv (built Leiden -> FOR) to look up FOR -> Leiden: for each
-    FOR division, take the Leiden main field that gave it the highest empirical vote share."""
+    """FOR division -> Leiden main field, using for2020_division_leiden_main_field.csv.
+
+    This is deliberately NOT an inversion of bridge_leiden_for.csv (which answers the
+    opposite question -- "given a Leiden main field, which single division best represents
+    it" -- and its low confidence for broad main fields like Social sciences and humanities
+    reflects that parent's breadth across many divisions, not doubt about any one division's
+    placement). Since FOR divisions are the finer/child level relative to Leiden's main
+    fields, the correctly-directed statistic is division-centric: of THIS division's own
+    content, what share sits under each Leiden main field. That's what this table holds,
+    and it's why e.g. Human Society lands at ~95% here rather than the 43% you'd get by
+    naively inverting the other table.
+    """
     row = con.execute(
         """
-        SELECT source_code, source_label, confidence
-        FROM bridge_leiden_for
-        WHERE canonical_code = ?
-        ORDER BY CAST(confidence AS DOUBLE) DESC
-        LIMIT 1
+        SELECT leiden_main_field_label, share
+        FROM for2020_division_leiden_main_field
+        WHERE for_division_code = ? AND is_primary = 'True'
         """,
         [for_code],
     ).fetchone()
-    return row  # (leiden_code, leiden_label, confidence) or None
+    return row  # (leiden_label, share) or None
 
 
 def main() -> None:
@@ -76,7 +84,7 @@ def main() -> None:
         candidates = best_for_division(con, category)
         for_code, for_label, score = candidates[0]
         leiden = leiden_main_field_for_division(con, for_code)
-        leiden_desc = f"{leiden[1]} ({float(leiden[2]):.2f})" if leiden else "no Leiden mapping found"
+        leiden_desc = f"{leiden[0]} ({float(leiden[1]):.2f})" if leiden else "no Leiden mapping found"
 
         print(f"{year:>4} {hep_code:>5} {hep_name:<26} {state:<3} {category:<32} {amount_k:>7}"
               f"  ->  {for_label} [{for_code}] ({score:.2f})"

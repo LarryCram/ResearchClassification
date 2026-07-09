@@ -1,0 +1,74 @@
+for_division_code,for_division_label,leiden_main_field_id,leiden_main_field_label,is_primary,share,n_micro_clusters
+30,"AGRICULTURAL, VETERINARY AND FOOD SCIENCES",4,Life and earth sciences,True,0.695,213
+30,"AGRICULTURAL, VETERINARY AND FOOD SCIENCES",2,Biomedical and health sciences,False,0.141,213
+30,"AGRICULTURAL, VETERINARY AND FOOD SCIENCES",1,Social sciences and humanities,False,0.103,213
+30,"AGRICULTURAL, VETERINARY AND FOOD SCIENCES",3,Physical sciences and engineering,False,0.047,213
+30,"AGRICULTURAL, VETERINARY AND FOOD SCIENCES",5,Mathematics and computer science,False,0.014,213
+31,BIOLOGICAL SCIENCES,1,Social sciences and humanities,False,0.011,282
+31,BIOLOGICAL SCIENCES,3,Physical sciences and engineering,False,0.074,282
+31,BIOLOGICAL SCIENCES,5,Mathematics and computer science,False,0.032,282
+31,BIOLOGICAL SCIENCES,2,Biomedical and health sciences,True,0.805,282
+31,BIOLOGICAL SCIENCES,4,Life and earth sciences,False,0.078,282
+32,BIOMEDICAL AND CLINICAL SCIENCES,2,Biomedical and health sciences,True,0.903,734
+32,BIOMEDICAL AND CLINICAL SCIENCES,1,Social sciences and humanities,False,0.053,734
+32,BIOMEDICAL AND CLINICAL SCIENCES,3,Physical sciences and engineering,False,0.02,734
+32,BIOMEDICAL AND CLINICAL SCIENCES,5,Mathematics and computer science,False,0.016,734
+32,BIOMEDICAL AND CLINICAL SCIENCES,4,Life and earth sciences,False,0.007,734
+34,CHEMICAL SCIENCES,2,Biomedical and health sciences,False,0.011,92
+34,CHEMICAL SCIENCES,5,Mathematics and computer science,False,0.011,92
+34,CHEMICAL SCIENCES,1,Social sciences and humanities,False,0.011,92
+34,CHEMICAL SCIENCES,3,Physical sciences and engineering,True,0.924,92
+34,CHEMICAL SCIENCES,4,Life and earth sciences,False,0.043,92
+35,"COMMERCE, MANAGEMENT, TOURISM AND SERVICES",1,Social sciences and humanities,True,0.914,116
+35,"COMMERCE, MANAGEMENT, TOURISM AND SERVICES",5,Mathematics and computer science,False,0.069,116
+35,"COMMERCE, MANAGEMENT, TOURISM AND SERVICES",2,Biomedical and health sciences,False,0.017,116
+37,EARTH SCIENCES,1,Social sciences and humanities,False,0.057,53
+37,EARTH SCIENCES,4,Life and earth sciences,True,0.792,53
+37,EARTH SCIENCES,5,Mathematics and computer science,False,0.075,53
+37,EARTH SCIENCES,3,Physical sciences and engineering,False,0.075,53
+38,ECONOMICS,2,Biomedical and health sciences,False,0.013,78
+38,ECONOMICS,1,Social sciences and humanities,True,0.962,78
+38,ECONOMICS,5,Mathematics and computer science,False,0.026,78
+40,ENGINEERING,4,Life and earth sciences,False,0.026,644
+40,ENGINEERING,3,Physical sciences and engineering,True,0.652,644
+40,ENGINEERING,5,Mathematics and computer science,False,0.256,644
+40,ENGINEERING,1,Social sciences and humanities,False,0.051,644
+40,ENGINEERING,2,Biomedical and health sciences,False,0.014,644
+41,ENVIRONMENTAL SCIENCES,2,Biomedical and health sciences,False,0.035,171
+41,ENVIRONMENTAL SCIENCES,5,Mathematics and computer science,False,0.041,171
+41,ENVIRONMENTAL SCIENCES,1,Social sciences and humanities,False,0.193,171
+41,ENVIRONMENTAL SCIENCES,3,Physical sciences and engineering,False,0.14,171
+41,ENVIRONMENTAL SCIENCES,4,Life and earth sciences,True,0.591,171
+42,HEALTH SCIENCES,2,Biomedical and health sciences,True,0.648,122
+42,HEALTH SCIENCES,1,Social sciences and humanities,False,0.262,122
+42,HEALTH SCIENCES,4,Life and earth sciences,False,0.041,122
+42,HEALTH SCIENCES,5,Mathematics and computer science,False,0.033,122
+42,HEALTH SCIENCES,3,Physical sciences and engineering,False,0.016,122
+43,"HISTORY, HERITAGE AND ARCHAEOLOGY",3,Physical sciences and engineering,False,0.005,203
+43,"HISTORY, HERITAGE AND ARCHAEOLOGY",2,Biomedical and health sciences,False,0.005,203
+43,"HISTORY, HERITAGE AND ARCHAEOLOGY",4,Life and earth sciences,False,0.015,203
+43,"HISTORY, HERITAGE AND ARCHAEOLOGY",1,Social sciences and humanities,True,0.975,203
+44,HUMAN SOCIETY,1,Social sciences and humanities,True,0.95,575
+44,HUMAN SOCIETY,5,Mathematics and computer science,False,0.019,575
+44,HUMAN SOCIETY,2,Biomedical and health sciences,False,0.017,575
+44,HUMAN SOCIETY,4,Life and earth sciences,False,0.012,575
+44,HUMAN SOCIETY,3,Physical sciences and engineering,False,0.002,575
+46,INFORMATION AND COMPUTING SCIENCES,2,Biomedical and health sciences,False,0.004,247
+46,INFORMATION AND COMPUTING SCIENCES,4,Life and earth sciences,False,0.008,247
+46,INFORMATION AND COMPUTING SCIENCES,1,Social sciences and humanities,False,0.146,247
+46,INFORMATION AND COMPUTING SCIENCES,5,Mathematics and computer science,True,0.826,247
+46,INFORMATION AND COMPUTING SCIENCES,3,Physical sciences and engineering,False,0.016,247
+49,MATHEMATICAL SCIENCES,5,Mathematics and computer science,True,0.667,123
+49,MATHEMATICAL SCIENCES,1,Social sciences and humanities,False,0.293,123
+49,MATHEMATICAL SCIENCES,2,Biomedical and health sciences,False,0.016,123
+49,MATHEMATICAL SCIENCES,3,Physical sciences and engineering,False,0.016,123
+49,MATHEMATICAL SCIENCES,4,Life and earth sciences,False,0.008,123
+51,PHYSICAL SCIENCES,2,Biomedical and health sciences,False,0.01,100
+51,PHYSICAL SCIENCES,3,Physical sciences and engineering,True,0.84,100
+51,PHYSICAL SCIENCES,5,Mathematics and computer science,False,0.09,100
+51,PHYSICAL SCIENCES,1,Social sciences and humanities,False,0.04,100
+51,PHYSICAL SCIENCES,4,Life and earth sciences,False,0.02,100
+52,PSYCHOLOGY,2,Biomedical and health sciences,False,0.173,127
+52,PSYCHOLOGY,5,Mathematics and computer science,False,0.039,127
+52,PSYCHOLOGY,1,Social sciences and humanities,True,0.78,127
+52,PSYCHOLOGY,4,Life and earth sciences,False,0.008,127
