@@ -151,3 +151,101 @@ def resolve(value: str, system: System) -> CanonicalResult:
 
 def resolve_many(values: list[str], system: System) -> list[CanonicalResult]:
     return [resolve(v, system) for v in values]
+
+
+@dataclass(frozen=True)
+class TargetResult:
+    """One requested target's result from resolve_forward(). If no mapping exists (only
+    happens for FOR division 45, Indigenous Studies -- ANZSRC-specific, no counterpart
+    anywhere in OpenAlex/ASJC's international taxonomy), code/label are empty and `method`
+    is "unavailable" rather than raising, since that's a real answer ("there is none"), not
+    a lookup failure."""
+
+    code: str
+    label: str
+    level: str
+    confidence: float
+    method: str
+    note: str = ""
+
+
+_NO_MAPPING_NOTE = (
+    "No OpenAlex/Leiden equivalent exists for this FOR division in the source data -- "
+    "genuinely absent, not a lookup failure."
+)
+
+
+def resolve_forward(
+    value: str, system: Literal["FOR", "SEO"], targets: tuple[str, ...] = ("FOR2020", "OAX", "Leiden")
+) -> dict[str, TargetResult]:
+    """Map any valid code or label -- from any in-scope vintage (pre-2000 RFCD1998/SEO1998,
+    FOR2008/SEO2008, FORD2015/NABS2007, or FOR2020/SEO2020 itself) -- forward to its FOR2020
+    (or SEO2020) equivalent, and from there up to its OpenAlex (OAX) and Leiden Main Field
+    equivalents, per request via `targets`.
+
+    Two invariants enforced throughout, matching how this whole pipeline is built:
+    - Forward in time only: every hop moves from an older/coarser vintage toward FOR2020,
+      never the reverse (e.g. this never goes FOR2020 -> FOR2008 -> RFCD1998).
+    - Up the hierarchy only, never down: OAX/Leiden results are reported at whatever level
+      the data honestly supports for a FOR *division* (OAX field/domain, Leiden main field)
+      -- never a fabricated OAX topic (1-of-4516) guess, since a division-level input can't
+      honestly justify that much specificity.
+
+    system="SEO" only ever returns a SEO2020 result -- OAX/Leiden are subject/topic
+    classifications with no relationship to SEO by design (see project scope), so those
+    targets come back as "unavailable" rather than a forced guess.
+    """
+    con = _connection()
+    base = resolve(value, system)
+    results: dict[str, TargetResult] = {}
+
+    if "FOR2020" in targets or "SEO2020" in targets:
+        key = f"{system}2020"
+        results[key] = TargetResult(
+            base.canonical_code, base.canonical_label, base.canonical_level,
+            base.confidence, base.match_method,
+        )
+
+    if system == "SEO":
+        for t in ("OAX", "Leiden"):
+            if t in targets:
+                results[t] = TargetResult(
+                    "", "", "", 0.0, "unavailable",
+                    "SEO is an objective classification; OAX/Leiden are subject/topic "
+                    "classifications with no relationship to SEO by design.",
+                )
+        return results
+
+    division_code = base.canonical_code[:2]  # up the hierarchy: always resolve via division
+
+    if "OAX" in targets:
+        row = con.execute(
+            """
+            SELECT openalex_field_id, openalex_field_label, share
+            FROM for2020_division_openalex_field
+            WHERE for_division_code = ? AND is_primary = 'True'
+            """,
+            [division_code],
+        ).fetchone()
+        if row:
+            code, label, share = row
+            results["OAX"] = TargetResult(code, label, "field", float(share), "derived_empirical")
+        else:
+            results["OAX"] = TargetResult("", "", "", 0.0, "unavailable", _NO_MAPPING_NOTE)
+
+    if "Leiden" in targets:
+        row = con.execute(
+            """
+            SELECT leiden_main_field_id, leiden_main_field_label, share
+            FROM for2020_division_leiden_main_field
+            WHERE for_division_code = ? AND is_primary = 'True'
+            """,
+            [division_code],
+        ).fetchone()
+        if row:
+            code, label, share = row
+            results["Leiden"] = TargetResult(code, label, "main_field", float(share), "derived_empirical")
+        else:
+            results["Leiden"] = TargetResult("", "", "", 0.0, "unavailable", _NO_MAPPING_NOTE)
+
+    return results

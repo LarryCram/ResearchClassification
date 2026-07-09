@@ -12,7 +12,7 @@ sys.path.insert(0, str(ROOT))
 
 import pandas as pd
 
-from research_classification import resolve
+from research_classification import resolve, resolve_forward
 from research_classification.resolver import _connection
 
 
@@ -98,6 +98,47 @@ def test_for2008_known_code():
     print(f"  FOR2008 010101 -> FOR2020 {result.canonical_code} ({result.canonical_label!r}) OK")
 
 
+def test_resolve_forward_pre2000():
+    # RFCD1998 230104 "Category Theory, K Theory, Homological Algebra" -> FOR2020 490403,
+    # then up to OAX field and Leiden main field (never a fabricated OAX topic guess)
+    results = resolve_forward("230104", "FOR")
+    assert results["FOR2020"].code == "490403"
+    assert results["OAX"].level == "field"  # up the hierarchy only -- never "topic"
+    assert results["OAX"].method == "derived_empirical"
+    assert results["Leiden"].level == "main_field"
+    assert results["Leiden"].label == "Mathematics and computer science"
+    print(f"  RFCD1998 230104 -> FOR2020 {results['FOR2020'].code}, "
+          f"OAX field {results['OAX'].label!r} ({results['OAX'].confidence}), "
+          f"Leiden {results['Leiden'].label!r} ({results['Leiden'].confidence}) OK")
+
+
+def test_resolve_forward_indigenous_studies_gap():
+    # FOR division 45 (Indigenous Studies) genuinely has no OpenAlex/Leiden equivalent --
+    # must report "unavailable" with a reason, not silently fabricate or raise.
+    con = _connection()
+    row = con.execute(
+        "SELECT source_code FROM bridge_asrc1998_for2020 WHERE canonical_code LIKE '45%' "
+        "AND is_primary = 'True' LIMIT 1"
+    ).fetchone()
+    assert row is not None
+    results = resolve_forward(row[0], "FOR")
+    assert results["OAX"].method == "unavailable" and results["OAX"].code == ""
+    assert results["Leiden"].method == "unavailable" and results["Leiden"].code == ""
+    assert "genuinely absent" in results["OAX"].note
+    print(f"  RFCD1998 {row[0]} (division 45) correctly reports OAX/Leiden as unavailable")
+
+
+def test_resolve_forward_seo_has_no_oax_leiden():
+    con = _connection()
+    row = con.execute("SELECT source_code FROM bridge_asrc1998_seo2020 LIMIT 1").fetchone()
+    assert row is not None
+    results = resolve_forward(row[0], "SEO")
+    assert results["SEO2020"].code
+    assert results["OAX"].method == "unavailable"
+    assert results["Leiden"].method == "unavailable"
+    print(f"  SEO1998 {row[0]} -> SEO2020 {results['SEO2020'].code}, OAX/Leiden correctly unavailable by design")
+
+
 def test_lookup_error():
     try:
         resolve("not-a-real-code", "FOR")
@@ -116,6 +157,9 @@ if __name__ == "__main__":
         test_asjc_exact_join,
         test_leiden_for_derivation,
         test_for2008_known_code,
+        test_resolve_forward_pre2000,
+        test_resolve_forward_indigenous_studies_gap,
+        test_resolve_forward_seo_has_no_oax_leiden,
         test_lookup_error,
     ]
     for t in tests:
