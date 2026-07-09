@@ -15,8 +15,9 @@ DATA_DIR = ROOT / "research_classification" / "data"
 
 
 def parse_1998_to_2008(sheet: str) -> pd.DataFrame:
-    """Table 1 (RFCD1998 -> FOR2008) / Table 3 (SEO1998 -> SEO2008): plain code/label
-    columns, with an optional trailing 'p' glued onto the 2008 code for partial matches."""
+    """Table 1 (RFCD1998, called FOR1998 in this project's own naming -> FOR2008) /
+    Table 3 (SEO1998 -> SEO2008): plain code/label columns, with an optional trailing 'p'
+    glued onto the 2008 code for partial matches."""
     xlsx = rio.ensure_converted(LEGACY_XLS)
     wb = openpyxl.load_workbook(xlsx, data_only=True)
     ws = wb[sheet]
@@ -116,10 +117,10 @@ def compose_with_2008_2020(
 
 
 def run() -> dict[str, pd.DataFrame]:
-    rfcd_raw = parse_1998_to_2008("Table 1")
+    for1998_raw = parse_1998_to_2008("Table 1")
     seo1998_raw = parse_1998_to_2008("Table 3")
 
-    rfcd_resolved = resolve_1998_to_2008_primary(rfcd_raw)
+    for1998_resolved = resolve_1998_to_2008_primary(for1998_raw)
     seo1998_resolved = resolve_1998_to_2008_primary(seo1998_raw)
 
     for2008_2020 = pd.read_csv(DATA_DIR / "bridge_for2008_for2020.csv", dtype=str, keep_default_na=False)
@@ -127,15 +128,17 @@ def run() -> dict[str, pd.DataFrame]:
     seo2008_2020 = pd.read_csv(DATA_DIR / "bridge_seo2008_seo2020.csv", dtype=str, keep_default_na=False)
     seo2008_2020["is_primary"] = seo2008_2020["is_primary"].isin(["True", "true"])
 
-    rfcd_bridge = compose_with_2008_2020(rfcd_resolved, for2008_2020, "FOR", "RFCD1998")
+    # "FOR1998" is this project's own naming for consistency with FOR2008/FOR2020; ABS's own
+    # documents call this scheme RFCD1998 (Research Fields, Courses and Disciplines).
+    for1998_bridge = compose_with_2008_2020(for1998_resolved, for2008_2020, "FOR", "FOR1998")
     seo1998_bridge = compose_with_2008_2020(seo1998_resolved, seo2008_2020, "SEO", "SEO1998")
 
-    write_csv(rfcd_bridge, DATA_DIR / "bridge_asrc1998_for2020.csv", ["source_code"])
-    write_csv(seo1998_bridge, DATA_DIR / "bridge_asrc1998_seo2020.csv", ["source_code"])
+    write_csv(for1998_bridge, DATA_DIR / "bridge_for1998_for2020.csv", ["source_code"])
+    write_csv(seo1998_bridge, DATA_DIR / "bridge_seo1998_seo2020.csv", ["source_code"])
 
     return {
-        "bridge_asrc1998_for2020": rfcd_bridge,
-        "bridge_asrc1998_seo2020": seo1998_bridge,
+        "bridge_for1998_for2020": for1998_bridge,
+        "bridge_seo1998_seo2020": seo1998_bridge,
     }
 
 

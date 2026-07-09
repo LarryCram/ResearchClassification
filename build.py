@@ -53,10 +53,10 @@ def main() -> None:
     print("5. Building Leiden bridges (wikipedia_url exact join + empirical derivation)...")
     build_leiden.run()
 
-    print("6. Building ABS 2008<->2020 / FORD2015 / NABS2007 correspondence bridges...")
+    print("6. Building ABS FOR2008<->2020 / SEO2008<->2020 correspondence bridges...")
     build_correspondences_abs.run()
 
-    print("7. Building legacy RFCD1998/SEO1998 bridges (via direct 1297.0 combined table)...")
+    print("7. Building legacy FOR1998/SEO1998 bridges (via direct 1297.0 combined table)...")
     build_correspondences_legacy.run()
 
     print("8. Building the scheme_registry.csv nomenclature/level map...")

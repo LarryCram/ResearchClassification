@@ -1,9 +1,7 @@
-"""Shared parsing utilities: legacy .xls conversion, ANZSRC-style hierarchy readers,
-and combined code+label cell splitting used by the FORD/NABS-style correspondence tables."""
+"""Shared parsing utilities: legacy .xls conversion and ANZSRC-style hierarchy readers."""
 
 from __future__ import annotations
 
-import re
 import subprocess
 from pathlib import Path
 
@@ -117,32 +115,6 @@ def read_definitions(xlsx_path: Path, sheet_name: str = "Table 4") -> pd.DataFra
             }
         )
     return pd.DataFrame(rows)
-
-
-_CODE_LABEL_RE = re.compile(r"^\s*(\d+(?:\.\d+)?)\s+(.*?)\s*$")
-_TRAILING_P_RE = re.compile(r"^\s*\(?p\)?\s*$", re.IGNORECASE)
-
-
-def split_code_label(cell: object) -> tuple[str, str, bool] | None:
-    """Split a combined 'CODE Label text (p)' cell (used by the FORD2015/NABS2007-style
-    correspondence tables) into (code, label, is_partial).
-
-    Returns None if the cell doesn't look like a code+label pair.
-    """
-    if cell is None:
-        return None
-    text = str(cell).strip()
-    if not text:
-        return None
-    m = _CODE_LABEL_RE.match(text)
-    if not m:
-        return None
-    code, label = m.group(1), m.group(2)
-    is_partial = False
-    if label.endswith("(p)") or label.endswith("(P)"):
-        is_partial = True
-        label = label[: -len("(p)")].strip()
-    return code, label, is_partial
 
 
 def split_trailing_p_code(cell: object) -> tuple[str, bool] | None:

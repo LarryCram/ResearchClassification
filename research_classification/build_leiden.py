@@ -48,7 +48,7 @@ def build_topic_join(micro_clusters: pd.DataFrame, openalex_raw: pd.DataFrame) -
     real correspondences, so only URLs that are unique on both sides are joined -- keeping
     every row in the resulting bridge an unambiguous, truly exact 1:1 match.
     """
-    oax = openalex_raw[["topic_id", "topic_name", "wikipedia_url", "field_id", "domain_id"]]
+    oax = openalex_raw[["topic_id", "topic_name", "wikipedia_url", "field_id", "subfield_id", "domain_id"]]
     oax = oax[oax["wikipedia_url"] != ""]
     oax_unique = oax[~oax.duplicated("wikipedia_url", keep=False)]
 
@@ -250,6 +250,13 @@ def run() -> dict[str, pd.DataFrame]:
     )
     write_csv(division_to_oax_field, DATA_DIR / "for2020_division_openalex_field.csv", ["for_division_code"])
 
+    openalex_subfields = pd.read_csv(DATA_DIR / "openalex_subfields.csv", dtype=str, keep_default_na=False)
+    subfield_label_plain = dict(zip(openalex_subfields["code"], openalex_subfields["label"]))
+    division_to_oax_subfield = division_centric_target(
+        for_df, exploded, "subfield_id", subfield_label_plain, "openalex_subfield_id", "openalex_subfield_label"
+    )
+    write_csv(division_to_oax_subfield, DATA_DIR / "for2020_division_openalex_subfield.csv", ["for_division_code"])
+
     return {
         "leiden_main_field": main_field,
         "bridge_leiden_openalex_topic": topic_bridge,
@@ -258,6 +265,7 @@ def run() -> dict[str, pd.DataFrame]:
         "for2020_division_leiden_main_field": division_to_leiden,
         "for2020_division_openalex_domain": division_to_oax_domain,
         "for2020_division_openalex_field": division_to_oax_field,
+        "for2020_division_openalex_subfield": division_to_oax_subfield,
     }
 
 

@@ -1,13 +1,18 @@
 """Public resolver API.
 
-Resolver() with no arguments loads the CSVs bundled inside this package (research_classification/data/)
-into an in-memory DuckDB -- so `pip install git+https://github.com/LarryCram/ResearchClassification.git`
-followed immediately by `Resolver().resolve(...)` just works, no separate build step and no
-external data file required. Pass db_path=... to point at an exported .duckdb file instead
-(e.g. one produced by build_duckdb.py) if you want that file's exact snapshot or faster
-repeated startup across many short-lived processes.
+Resolver() with no arguments loads the CSVs bundled inside this package
+(research_classification/data/) into an in-memory DuckDB -- so `pip install git+https://
+github.com/LarryCram/ResearchClassification.git` followed immediately by
+`Resolver().resolve(...)` just works, no separate build step and no external data file
+required. Pass db_path=... to point at an exported .duckdb file instead (e.g. one produced
+by build_duckdb.py) if you want that file's exact snapshot or faster repeated startup
+across many short-lived processes.
 
-`system` is always required, never inferred, since FOR/SEO/OAX codes collide with each other.
+Both `from_scheme` and `to_scheme` are always required, never inferred -- codes collide
+across schemes and vintages (e.g. FOR1998's 300101 is "Soil Physics", FOR2020's own 300101
+is "Agricultural biotechnology diagnostics" -- 48% of FOR1998's 898 codes collide with a
+differently-meaning FOR2020 code this way), so guessing which scheme a bare code came from
+is unsafe. Naming the scheme explicitly removes the guesswork by construction.
 """
 
 from __future__ import annotations
@@ -19,116 +24,71 @@ from typing import Literal
 
 import duckdb
 
-System = Literal["FOR", "SEO", "OAX"]
+FromScheme = Literal["OAX", "FOR1998", "FOR2008", "FOR2020", "SEO1998", "SEO2008", "SEO2020"]
+ToScheme = Literal["OAX_DOMAIN", "OAX_FIELD", "OAX_SUBFIELD", "OAX_TOPIC", "FOR2020", "SEO2020", "LEIDEN"]
 
-_CANONICAL_TABLE = {"FOR": "for_2020", "SEO": "seo_2020", "OAX": None}  # OAX spans 4 tables
-_OAX_TABLES = ["openalex_domains", "openalex_fields", "openalex_subfields", "openalex_topics"]
+_VALID_FROM_SCHEMES = {"OAX", "FOR1998", "FOR2008", "FOR2020", "SEO1998", "SEO2008", "SEO2020"}
+_VALID_TO_SCHEMES = {"OAX_DOMAIN", "OAX_FIELD", "OAX_SUBFIELD", "OAX_TOPIC", "FOR2020", "SEO2020", "LEIDEN"}
+_FOR_VINTAGES = {"FOR1998", "FOR2008", "FOR2020"}
+_SEO_VINTAGES = {"SEO1998", "SEO2008", "SEO2020"}
 
-_BRIDGE_TABLES = [
-    "bridge_for2008_for2020",
-    "bridge_seo2008_seo2020",
-    "bridge_ford2015_for2020",
-    "bridge_nabs2007_seo2020",
-    "bridge_asrc1998_for2020",
-    "bridge_asrc1998_seo2020",
-    "bridge_asjc_openalex",
-    "bridge_openalex_for",
-    "bridge_leiden_openalex_topic",
-    "bridge_leiden_openalex_domain",
-    "bridge_leiden_for",
-]
-
-# The subset of _BRIDGE_TABLES whose source_code genuinely IS "a FOR/SEO code from some
-# other year" -- i.e. could plausibly arrive as a bare code claiming to be FOR/SEO input,
-# and so is worth hard-failing over if it collides with the current FOR2020/SEO2020 meaning.
-# Deliberately excludes bridge_openalex_for/bridge_leiden_for/bridge_asjc_openalex/
-# bridge_leiden_openalex_*: those represent a DIFFERENT classification system's own code
-# (an OpenAlex field id, a Leiden main_field id) that WE curated/derived a mapping for --
-# not a prior ANZSRC vintage -- so a coincidental digit-string collision with one of those
-# isn't a real-world ambiguity a caller would ever actually hit (nobody hands this tool an
-# OpenAlex field id and claims it's a FOR code), and hard-failing on it would only break the
-# legitimate, intentional use of resolve(<leiden_main_field_id>, "FOR").
-_VINTAGE_BRIDGE_TABLES: dict[System, list[str]] = {
-    "FOR": ["bridge_asrc1998_for2020", "bridge_for2008_for2020", "bridge_ford2015_for2020"],
-    "SEO": ["bridge_asrc1998_seo2020", "bridge_seo2008_seo2020", "bridge_nabs2007_seo2020"],
-    "OAX": [],
+# Native code length(s) per from_scheme, used to recover a leading zero lost to integer
+# conversion (common when codes pass through pandas/JSON/Excel without being read as text).
+# FOR/SEO codes are always exactly 2, 4, or 6 digits; since no two of those differ by 1, an
+# observed length of 1, 3, or 5 can only mean "lost its leading zero" -- unambiguous. OAX's
+# four levels are natively 1/2/4/5 digits and never start with 0 in the actual data (domain
+# 1-4, field 11-36, subfield/topic prefixed by those), so no correction is needed there, but
+# the same length-based logic is still applied defensively.
+_NATIVE_LENGTHS: dict[str, set[int]] = {
+    "FOR1998": {6},
+    "FOR2008": {6},
+    "FOR2020": {2, 4, 6},
+    "SEO1998": {6},
+    "SEO2008": {6},
+    "SEO2020": {2, 4, 6},
+    "OAX": {1, 2, 4, 5},
 }
+
+# from_scheme -> bridge table to search (None means "canonical table directly, no bridge")
+_VINTAGE_BRIDGE_TABLE: dict[str, str | None] = {
+    "FOR1998": "bridge_for1998_for2020",
+    "FOR2008": "bridge_for2008_for2020",
+    "FOR2020": None,
+    "SEO1998": "bridge_seo1998_seo2020",
+    "SEO2008": "bridge_seo2008_seo2020",
+    "SEO2020": None,
+}
+
+# to_scheme -> (division-centric table, code column, label column, result level label)
+_DIVISION_CENTRIC: dict[str, tuple[str, str, str, str]] = {
+    "OAX_DOMAIN": ("for2020_division_openalex_domain", "openalex_domain_id", "openalex_domain_label", "domain"),
+    "OAX_FIELD": ("for2020_division_openalex_field", "openalex_field_id", "openalex_field_label", "field"),
+    "OAX_SUBFIELD": ("for2020_division_openalex_subfield", "openalex_subfield_id", "openalex_subfield_label", "subfield"),
+    "LEIDEN": ("for2020_division_leiden_main_field", "leiden_main_field_id", "leiden_main_field_label", "main_field"),
+}
+
+_OAX_LEVEL_TABLE = {"domain": "openalex_domains", "field": "openalex_fields", "subfield": "openalex_subfields", "topic": "openalex_topics"}
+_OAX_LEVEL_RANK = {"domain": 0, "field": 1, "subfield": 2, "topic": 3}
+_TO_SCHEME_OAX_LEVEL = {"OAX_DOMAIN": "domain", "OAX_FIELD": "field", "OAX_SUBFIELD": "subfield", "OAX_TOPIC": "topic"}
+
+_NO_MAPPING_NOTE = (
+    "No OpenAlex/Leiden equivalent exists for this FOR division in the source data -- "
+    "genuinely absent (ANZSRC's Indigenous Studies division, code 45, has no counterpart "
+    "anywhere in OpenAlex/ASJC's international taxonomy), not a lookup failure."
+)
 
 
 @dataclass(frozen=True)
 class CanonicalResult:
     input_value: str
-    system: System
-    canonical_code: str
-    canonical_label: str
-    canonical_level: str
-    source_system: str
-    match_method: str
-    confidence: float
-    alternates: tuple["CanonicalResult", ...] = field(default_factory=tuple)
-
-
-@dataclass(frozen=True)
-class TargetResult:
-    """One requested target's result from Resolver.resolve_forward(). If no mapping exists
-    (only happens for FOR division 45, Indigenous Studies -- ANZSRC-specific, no counterpart
-    anywhere in OpenAlex/ASJC's international taxonomy), code/label are empty and `method`
-    is "unavailable" rather than raising, since that's a real answer ("there is none"), not
-    a lookup failure."""
-
+    from_scheme: FromScheme
+    to_scheme: ToScheme
     code: str
     label: str
     level: str
+    match_method: str
     confidence: float
-    method: str
-    note: str = ""
-
-
-_NO_MAPPING_NOTE = (
-    "No OpenAlex/Leiden equivalent exists for this FOR division in the source data -- "
-    "genuinely absent, not a lookup failure."
-)
-
-
-class AmbiguousCodeError(LookupError):
-    """Raised when a bare code (no source_type given) matches more than one scheme with
-    genuinely different canonical targets, and there's no way to tell which one was meant.
-
-    This is real, not theoretical: RFCD1998 (pre-2000) and FOR2020 reused overlapping
-    numeric ranges with unrelated meanings -- code 300101 is "Soil Physics" under RFCD1998
-    but "Agricultural biotechnology diagnostics" under FOR2020. 48% of RFCD1998's 898 codes
-    collide with a differently-meaning FOR2020 code this way. Silently preferring one
-    interpretation (e.g. always the current FOR2020 meaning) would misclassify roughly half
-    of all pre-2008 codes with false confidence=1.0 and no indication anything was wrong --
-    so this hard-fails instead. Pass source_type= (e.g. "FOR20", matching ARC's own
-    field-of-research/socio-economic-objective "type" tag) to resolve unambiguously.
-    """
-
-    def __init__(self, value: str, system: str, candidates: list["CanonicalResult"]):
-        self.value = value
-        self.system = system
-        self.candidates = candidates
-        lines = "\n".join(
-            f"  - as {c.source_system}: {c.canonical_code} {c.canonical_label!r}" for c in candidates
-        )
-        super().__init__(
-            f"{value!r} is ambiguous as a {system} code -- matches multiple schemes with "
-            f"different meanings:\n{lines}\nPass source_type= to disambiguate (e.g. the "
-            f"ARC field-of-research/socio-economic-objective JSON's own \"type\" value, "
-            f"like \"FOR20\")."
-        )
-
-
-# Maps an explicit vintage hint to how it should be resolved. None means "this is already
-# the current 2020 vintage -- search only the canonical table, not any bridge." A string
-# means "this is a historical vintage -- search only bridge rows with this source_system."
-# Only vintages actually confirmed against real data are listed; an unrecognized source_type
-# raises rather than guessing (see resolve()'s docstring) -- add new entries here once their
-# exact tag string is confirmed against real source data, don't guess in advance.
-_SOURCE_TYPE_MAP: dict[str, tuple[System, str | None]] = {
-    "FOR20": ("FOR", None),
-    "SEO20": ("SEO", None),
-}
+    alternates: tuple["CanonicalResult", ...] = field(default_factory=tuple)
 
 
 class Resolver:
@@ -151,275 +111,215 @@ class Resolver:
                 )
         return con
 
-    # -- internal lookups -------------------------------------------------
+    # -- normalization ------------------------------------------------------
 
-    def _canonical_identity(self, value: str, system: System) -> CanonicalResult | None:
-        if system == "OAX":
-            for table in _OAX_TABLES:
-                row = self._con.execute(
-                    f"SELECT code, level, label FROM {table} WHERE code = ?", [value]
-                ).fetchone()
-                if row:
-                    code, level, label = row
-                    return CanonicalResult(value, system, code, label, level, system, "identity", 1.0)
-            return None
-        table = _CANONICAL_TABLE[system]
+    @staticmethod
+    def _normalize_code(value: str | int, from_scheme: str) -> str:
+        text = str(value)
+        if not text.isdigit():
+            return text  # a label, not a code -- leave untouched
+        native_lengths = _NATIVE_LENGTHS.get(from_scheme, set())
+        if len(text) in native_lengths:
+            return text
+        if (len(text) + 1) in native_lengths:
+            return "0" + text
+        return text  # doesn't match a known native length; let lookup fail with a clear message
+
+    # -- FOR2020 / SEO2020 resolution (from a vintage, or identity) --------
+
+    def _resolve_current_vintage(self, value: str, family_system: str) -> CanonicalResult:
+        """family_system is 'FOR' or 'SEO'. Resolves against the FOR2020/SEO2020 canonical
+        table directly, by code then by case-insensitive label."""
+        table = "for_2020" if family_system == "FOR" else "seo_2020"
         row = self._con.execute(f"SELECT code, level, label FROM {table} WHERE code = ?", [value]).fetchone()
         if not row:
-            return None
-        code, level, label = row
-        return CanonicalResult(value, system, code, label, level, f"{system}2020", "identity", 1.0)
-
-    def _canonical_label_match(self, value: str, system: System) -> CanonicalResult | None:
-        tables = _OAX_TABLES if system == "OAX" else [_CANONICAL_TABLE[system]]
-        for table in tables:
             row = self._con.execute(
                 f"SELECT code, level, label FROM {table} WHERE lower(label) = lower(?)", [value]
             ).fetchone()
-            if row:
-                code, level, label = row
-                source_system = system if system == "OAX" else f"{system}2020"
-                return CanonicalResult(value, system, code, label, level, source_system, "identity", 1.0)
-        return None
+        if not row:
+            raise LookupError(f"{value!r} not found in the {family_system}2020 canonical table")
+        code, level, label = row
+        to_scheme = "FOR2020" if family_system == "FOR" else "SEO2020"
+        return CanonicalResult(value, to_scheme, to_scheme, code, label, level, "identity", 1.0)
 
-    def _bridge_lookup(
-        self,
-        value: str,
-        system: System,
-        by: str,
-        source_system: str | None = None,
-        tables: list[str] | None = None,
-    ) -> list[CanonicalResult]:
-        """Search bridge tables for a matching source_code (by='code') or case-insensitive
-        source_label (by='label'), is_primary row first. If source_system is given, only
-        rows from that specific source scheme are considered (used by the source_type-hinted
-        path in resolve() to search one historical vintage exactly). If tables is given,
-        only those bridge tables are searched (used to scope the no-hint ambiguity check to
-        genuine ANZSRC vintages, see _VINTAGE_BRIDGE_TABLES); defaults to every bridge table."""
-        where_col = "source_code = ?" if by == "code" else "lower(source_label) = lower(?)"
-        source_filter = " AND source_system = ?" if source_system else ""
-        params_extra = [source_system] if source_system else []
-        hits: list[tuple[bool, CanonicalResult]] = []
-        for table in (tables if tables is not None else _BRIDGE_TABLES):
-            query = (
-                f"SELECT source_system, canonical_code, canonical_label, canonical_level, "
-                f"is_primary, match_method, confidence FROM {table} "
-                f"WHERE system = ? AND {where_col}{source_filter}"
-            )
-            for source_sys, code, label, level, is_primary, match_method, confidence in self._con.execute(
-                query, [system, value, *params_extra]
-            ).fetchall():
-                # bundled CSVs and exported .duckdb files are both loaded all_varchar=true,
-                # so is_primary/confidence come back as strings -- bool("False") is True in
-                # Python, so this must be a string comparison, not bool()
-                result = CanonicalResult(
-                    value, system, code, label, level, source_sys, match_method, float(confidence)
-                )
-                hits.append((str(is_primary).lower() == "true", result))
-        hits.sort(key=lambda h: not h[0])
-        return [result for _, result in hits]
+    def _resolve_vintage_to_current(self, value: str, from_scheme: str, family_system: str) -> CanonicalResult:
+        table = _VINTAGE_BRIDGE_TABLE[from_scheme]
+        to_scheme = "FOR2020" if family_system == "FOR" else "SEO2020"
+        if table is None:
+            result = self._resolve_current_vintage(value, family_system)
+            return CanonicalResult(value, from_scheme, to_scheme, result.code, result.label, result.level, result.match_method, result.confidence)
 
-    # -- public API ---------------------------------------------------------
+        rows = self._con.execute(
+            "SELECT canonical_code, canonical_label, canonical_level, is_primary, match_method, confidence "
+            f"FROM {table} WHERE source_code = ? ORDER BY is_primary DESC",
+            [value],
+        ).fetchall()
+        if not rows:
+            rows = self._con.execute(
+                "SELECT canonical_code, canonical_label, canonical_level, is_primary, match_method, confidence "
+                f"FROM {table} WHERE lower(source_label) = lower(?) ORDER BY is_primary DESC",
+                [value],
+            ).fetchall()
+        if not rows:
+            raise LookupError(f"{value!r} not found among {from_scheme} entries")
 
-    def resolve(self, value: str, system: System, source_type: str | None = None) -> CanonicalResult:
-        """source_type is an optional vintage hint (e.g. "FOR20", matching the ARC field-
-        of-research/socio-economic-objective JSON's own "type" tag) that restricts the
-        search to exactly that scheme. Without it, a bare code that matches more than one
-        scheme with genuinely different meanings raises AmbiguousCodeError rather than
-        silently picking one -- see that class's docstring for why (RFCD1998/FOR2020 alone
-        collide on 48% of RFCD1998's own codes)."""
-        if system not in ("FOR", "SEO", "OAX"):
-            raise ValueError(f"system must be one of FOR/SEO/OAX, got {system!r}")
-
-        if source_type is not None:
-            return self._resolve_with_hint(value, system, source_type)
-
-        hit = self._resolve_unambiguous(value, system, by="code")
-        if hit:
-            return hit
-        hit = self._resolve_unambiguous(value, system, by="label")
-        if hit:
-            return hit
-
-        raise LookupError(f"{value!r} not found in {system} canonical or bridge tables")
-
-    def _resolve_unambiguous(self, value: str, system: System, by: str) -> CanonicalResult | None:
-        """Collect every interpretation of `value` -- canonical identity/label match, plus
-        each genuine-ANZSRC-vintage bridge table's own best (is_primary) answer (see
-        _VINTAGE_BRIDGE_TABLES) -- and hard-fail via AmbiguousCodeError if DIFFERENT SOURCE
-        SCHEMES disagree on the canonical target, rather than silently preferring one. This
-        is deliberately scoped to disagreement ACROSS schemes, not the ordinary within-one-
-        scheme one-to-many case (e.g. a single RFCD1998 code with several partial-match
-        alternates all under source_system=RFCD1998, which is the existing, legitimate
-        is_primary/alternates pattern used throughout this pipeline and must NOT hard-fail).
-        If neither the canonical table nor any vintage bridge matches at all, falls back to
-        the full bridge set (OpenAlex/Leiden-derived included) with no ambiguity check, since
-        those represent a different kind of mapping, not a colliding ANZSRC vintage."""
-        identity_hit = (
-            self._canonical_identity(value, system) if by == "code" else self._canonical_label_match(value, system)
+        results = [
+            CanonicalResult(value, from_scheme, to_scheme, code, label, level, method, float(confidence))
+            for code, label, level, _is_primary, method, confidence in rows
+        ]
+        primary, *rest = results
+        return CanonicalResult(
+            primary.input_value, primary.from_scheme, primary.to_scheme, primary.code, primary.label,
+            primary.level, primary.match_method, primary.confidence, alternates=tuple(rest),
         )
-        vintage_tables = _VINTAGE_BRIDGE_TABLES.get(system, [])
-        vintage_hits = self._bridge_lookup(value, system, by=by, tables=vintage_tables)
 
-        # one representative (the primary) per distinct source_system, since _bridge_lookup
-        # already sorts is_primary first within each table/source_system
-        seen_schemes: set[str] = set()
-        scheme_primaries: list[CanonicalResult] = []
-        for hit in vintage_hits:
-            if hit.source_system not in seen_schemes:
-                seen_schemes.add(hit.source_system)
-                scheme_primaries.append(hit)
+    def _resolve_to_for2020_division(self, value: str, from_scheme: str) -> tuple[str, str, str, float, str]:
+        """Internal helper: resolve any FOR-family input down to just its FOR2020 division
+        code/label (2-digit) -- the hub every OAX/Leiden target is reached through. Returns
+        (division_code, division_label, match_method, confidence, provenance_note)."""
+        result = self._resolve_vintage_to_current(value, from_scheme, "FOR")
+        division_code = result.code[:2]
+        if division_code == result.code:
+            return division_code, result.label, result.match_method, result.confidence, ""
+        row = self._con.execute("SELECT label FROM for_2020 WHERE code = ?", [division_code]).fetchone()
+        division_label = row[0] if row else ""
+        note = f"truncated from {result.to_scheme} {result.level} {result.code!r} to its division"
+        return division_code, division_label, result.match_method, result.confidence, note
 
-        cross_scheme_candidates = ([identity_hit] if identity_hit else []) + scheme_primaries
-        if cross_scheme_candidates:
-            distinct_targets = {c.canonical_code for c in cross_scheme_candidates}
-            if len(distinct_targets) > 1:
-                seen_targets: set[str] = set()
-                representatives = []
-                for c in cross_scheme_candidates:
-                    if c.canonical_code not in seen_targets:
-                        seen_targets.add(c.canonical_code)
-                        representatives.append(c)
-                raise AmbiguousCodeError(value, system, representatives)
+    # -- OAX hierarchy walking (up only) ------------------------------------
 
-            if identity_hit:
-                return identity_hit
-            primary, *rest = vintage_hits
-            return CanonicalResult(
-                primary.input_value, primary.system, primary.canonical_code, primary.canonical_label,
-                primary.canonical_level, primary.source_system, primary.match_method, primary.confidence,
-                alternates=tuple(rest),
-            )
-
-        # nothing in the canonical table or any genuine vintage -- fall back to the full
-        # bridge set (OpenAlex/Leiden-derived), no ambiguity check needed for these
-        other_hits = self._bridge_lookup(value, system, by=by)
-        if other_hits:
-            primary, *rest = other_hits
-            return CanonicalResult(
-                primary.input_value, primary.system, primary.canonical_code, primary.canonical_label,
-                primary.canonical_level, primary.source_system, primary.match_method, primary.confidence,
-                alternates=tuple(rest),
-            )
+    def _oax_identify(self, value: str) -> tuple[str, str, str, str] | None:
+        """Returns (code, level, label, parent_code) for a bare OAX-family code/label,
+        checking all four levels (their code ranges never overlap: domain 1-4, field 11-36,
+        subfield/topic prefixed by those, so at most one table ever matches)."""
+        for level, table in _OAX_LEVEL_TABLE.items():
+            row = self._con.execute(f"SELECT code, label, parent_code FROM {table} WHERE code = ?", [value]).fetchone()
+            if row:
+                return row[0], level, row[1], row[2]
+        for level, table in _OAX_LEVEL_TABLE.items():
+            row = self._con.execute(
+                f"SELECT code, label, parent_code FROM {table} WHERE lower(label) = lower(?)", [value]
+            ).fetchone()
+            if row:
+                return row[0], level, row[1], row[2]
         return None
 
-    def _resolve_with_hint(self, value: str, system: System, source_type: str) -> CanonicalResult:
-        if source_type not in _SOURCE_TYPE_MAP:
+    # -- public API -----------------------------------------------------
+
+    def resolve(self, value: str | int, from_scheme: FromScheme, to_scheme: ToScheme) -> CanonicalResult:
+        if from_scheme not in _VALID_FROM_SCHEMES:
+            raise ValueError(f"from_scheme must be one of {sorted(_VALID_FROM_SCHEMES)}, got {from_scheme!r}")
+        if to_scheme not in _VALID_TO_SCHEMES:
+            raise ValueError(f"to_scheme must be one of {sorted(_VALID_TO_SCHEMES)}, got {to_scheme!r}")
+
+        code = self._normalize_code(value, from_scheme)
+
+        if from_scheme in _SEO_VINTAGES:
+            if to_scheme != "SEO2020":
+                raise ValueError(
+                    f"from_scheme={from_scheme!r} can only target to_scheme='SEO2020' -- SEO is an "
+                    f"objective classification with no relationship to OAX/Leiden by design"
+                )
+            return self._resolve_vintage_to_current(code, from_scheme, "SEO")
+
+        if from_scheme in _FOR_VINTAGES:
+            if to_scheme == "FOR2020":
+                return self._resolve_vintage_to_current(code, from_scheme, "FOR")
+            if to_scheme == "OAX_TOPIC":
+                raise ValueError(
+                    "to_scheme='OAX_TOPIC' is never supported from a FOR-family input -- OpenAlex's "
+                    "4,516 topics are far finer than anything honestly derivable from a FOR division; "
+                    "the finest OAX granularity available this way is 'OAX_SUBFIELD'"
+                )
+            if to_scheme in _DIVISION_CENTRIC:
+                return self._resolve_from_for_division_hub(code, from_scheme, to_scheme)
+            raise ValueError(f"from_scheme={from_scheme!r} cannot target to_scheme={to_scheme!r}")
+
+        # from_scheme == "OAX"
+        if to_scheme == "FOR2020":
+            return self._resolve_oax_to_for2020(code)
+        if to_scheme == "LEIDEN":
+            return self._resolve_oax_to_leiden(code)
+        if to_scheme in _TO_SCHEME_OAX_LEVEL:
+            return self._resolve_oax_to_oax(code, to_scheme)
+        raise ValueError(f"from_scheme='OAX' cannot target to_scheme={to_scheme!r}")
+
+    def resolve_many(
+        self, values: list[str | int], from_scheme: FromScheme, to_scheme: ToScheme
+    ) -> list[CanonicalResult]:
+        return [self.resolve(v, from_scheme, to_scheme) for v in values]
+
+    # -- FOR-family -> OAX/Leiden, via the FOR2020-division hub -------------
+
+    def _resolve_from_for_division_hub(self, code: str, from_scheme: FromScheme, to_scheme: ToScheme) -> CanonicalResult:
+        division_code, division_label, hop1_method, hop1_confidence, note = self._resolve_to_for2020_division(code, from_scheme)
+        table, code_col, label_col, level = _DIVISION_CENTRIC[to_scheme]
+        row = self._con.execute(
+            f"SELECT {code_col}, {label_col}, share FROM {table} WHERE for_division_code = ? AND is_primary = 'True'",
+            [division_code],
+        ).fetchone()
+        if not row:
+            raise LookupError(f"{code!r} (FOR2020 division {division_code} {division_label!r}): {_NO_MAPPING_NOTE}")
+        out_code, out_label, share = row
+        return CanonicalResult(code, from_scheme, to_scheme, out_code, out_label, level, "derived_empirical", float(share))
+
+    # -- OAX -> FOR2020 / Leiden / OAX ---------------------------------------
+
+    def _resolve_oax_to_for2020(self, code: str) -> CanonicalResult:
+        identified = self._oax_identify(code)
+        if not identified:
+            raise LookupError(f"{code!r} not found in any OAX table (domain/field/subfield/topic)")
+        oax_code, level, label, parent_code = identified
+        if _OAX_LEVEL_RANK[level] < _OAX_LEVEL_RANK["field"]:
             raise ValueError(
-                f"Unrecognized source_type {source_type!r}. Known values: {sorted(_SOURCE_TYPE_MAP)}. "
-                f"Guessing at an unconfirmed scheme mapping here would defeat the purpose of "
-                f"passing a hint at all -- add the exact tag to _SOURCE_TYPE_MAP once its "
-                f"meaning is confirmed against real source data."
+                f"cannot resolve FOR2020 from an OAX {level}-level input ({code!r}) -- the curated "
+                f"OpenAlex-field-to-FOR-division mapping needs at least field-level precision"
             )
-        hint_system, hint_source_system = _SOURCE_TYPE_MAP[source_type]
-        if hint_system != system:
+        field_code, _field_label = self._oax_walk_up_simple(oax_code, level, "field")
+        row = self._con.execute(
+            "SELECT canonical_code, canonical_label, canonical_level, confidence "
+            "FROM bridge_openalex_for WHERE source_code = ? AND is_primary = 'True'",
+            [field_code],
+        ).fetchone()
+        if not row:
+            raise LookupError(f"{code!r} (OpenAlex field {field_code}): no curated FOR2020 mapping found")
+        for_code, for_label, for_level, confidence = row
+        return CanonicalResult(code, "OAX", "FOR2020", for_code, for_label, for_level, "manual_curated", float(confidence))
+
+    def _resolve_oax_to_leiden(self, code: str) -> CanonicalResult:
+        for2020 = self._resolve_oax_to_for2020(code)
+        table, code_col, label_col, level = _DIVISION_CENTRIC["LEIDEN"]
+        row = self._con.execute(
+            f"SELECT {code_col}, {label_col}, share FROM {table} WHERE for_division_code = ? AND is_primary = 'True'",
+            [for2020.code],
+        ).fetchone()
+        if not row:
+            raise LookupError(f"{code!r} (via FOR2020 division {for2020.code} {for2020.label!r}): {_NO_MAPPING_NOTE}")
+        out_code, out_label, share = row
+        return CanonicalResult(code, "OAX", "LEIDEN", out_code, out_label, level, "derived_empirical", float(share))
+
+    def _resolve_oax_to_oax(self, code: str, to_scheme: ToScheme) -> CanonicalResult:
+        identified = self._oax_identify(code)
+        if not identified:
+            raise LookupError(f"{code!r} not found in any OAX table (domain/field/subfield/topic)")
+        oax_code, level, label, _parent_code = identified
+        target_level = _TO_SCHEME_OAX_LEVEL[to_scheme]
+        out_code, out_label = self._oax_walk_up_simple(oax_code, level, target_level)
+        # walking parent_code is an exact hierarchy fact, not a derived/empirical estimate,
+        # whether it's a same-level identity match or a walk up to a coarser ancestor
+        return CanonicalResult(code, "OAX", to_scheme, out_code, out_label, target_level, "identity", 1.0)
+
+    def _oax_walk_up_simple(self, code: str, level: str, target_level: str) -> tuple[str, str]:
+        if _OAX_LEVEL_RANK[target_level] > _OAX_LEVEL_RANK[level]:
             raise ValueError(
-                f"source_type={source_type!r} implies system={hint_system!r}, but "
-                f"system={system!r} was requested"
+                f"cannot resolve OAX {level} {code!r} down to {target_level} -- one {level} contains "
+                f"many {target_level}s, not derivable uniquely (up the hierarchy only)"
             )
-
-        if hint_source_system is None:
-            # current vintage: canonical table only, never a bridge -- a bridge match here
-            # would by definition be some OTHER scheme's code colliding numerically
-            hit = self._canonical_identity(value, system) or self._canonical_label_match(value, system)
-            if hit:
-                return hit
-            raise LookupError(
-                f"{value!r} not found in the {system}2020 canonical table (source_type={source_type!r})"
-            )
-
-        bridge_hits = self._bridge_lookup(value, system, by="code", source_system=hint_source_system)
-        if not bridge_hits:
-            bridge_hits = self._bridge_lookup(value, system, by="label", source_system=hint_source_system)
-        if bridge_hits:
-            primary, *rest = bridge_hits
-            return CanonicalResult(
-                primary.input_value, primary.system, primary.canonical_code, primary.canonical_label,
-                primary.canonical_level, primary.source_system, primary.match_method, primary.confidence,
-                alternates=tuple(rest),
-            )
-        raise LookupError(f"{value!r} not found among {hint_source_system} entries (source_type={source_type!r})")
-
-    def resolve_many(self, values: list[str], system: System, source_type: str | None = None) -> list[CanonicalResult]:
-        return [self.resolve(v, system, source_type=source_type) for v in values]
-
-    def resolve_forward(
-        self,
-        value: str,
-        system: Literal["FOR", "SEO"],
-        targets: tuple[str, ...] = ("FOR2020", "OAX", "Leiden"),
-        source_type: str | None = None,
-    ) -> dict[str, TargetResult]:
-        """Map any valid code or label -- from any in-scope vintage (pre-2000 RFCD1998/
-        SEO1998, FOR2008/SEO2008, FORD2015/NABS2007, or FOR2020/SEO2020 itself) -- forward to
-        its FOR2020 (or SEO2020) equivalent, and from there up to its OpenAlex (OAX) and
-        Leiden Main Field equivalents, per request via `targets`.
-
-        Two invariants enforced throughout, matching how this whole pipeline is built:
-        - Forward in time only: every hop moves from an older/coarser vintage toward
-          FOR2020, never the reverse (e.g. this never goes FOR2020 -> FOR2008 -> RFCD1998).
-        - Up the hierarchy only, never down: OAX/Leiden results are reported at whatever
-          level the data honestly supports for a FOR *division* (OAX field, Leiden main
-          field) -- never a fabricated OAX topic (1-of-4516) guess, since a division-level
-          input can't honestly justify that much specificity.
-
-        system="SEO" only ever returns a SEO2020 result -- OAX/Leiden are subject/topic
-        classifications with no relationship to SEO by design (see project scope), so those
-        targets come back as "unavailable" rather than a forced guess.
-
-        source_type is the same optional vintage hint as resolve() -- pass it whenever you
-        have it (e.g. ARC's own "type" tag) to avoid AmbiguousCodeError on a colliding code.
-        """
-        base = self.resolve(value, system, source_type=source_type)
-        results: dict[str, TargetResult] = {}
-
-        if "FOR2020" in targets or "SEO2020" in targets:
-            key = f"{system}2020"
-            results[key] = TargetResult(
-                base.canonical_code, base.canonical_label, base.canonical_level,
-                base.confidence, base.match_method,
-            )
-
-        if system == "SEO":
-            for t in ("OAX", "Leiden"):
-                if t in targets:
-                    results[t] = TargetResult(
-                        "", "", "", 0.0, "unavailable",
-                        "SEO is an objective classification; OAX/Leiden are subject/topic "
-                        "classifications with no relationship to SEO by design.",
-                    )
-            return results
-
-        division_code = base.canonical_code[:2]  # up the hierarchy: always resolve via division
-
-        if "OAX" in targets:
-            row = self._con.execute(
-                """
-                SELECT openalex_field_id, openalex_field_label, share
-                FROM for2020_division_openalex_field
-                WHERE for_division_code = ? AND is_primary = 'True'
-                """,
-                [division_code],
-            ).fetchone()
-            if row:
-                code, label, share = row
-                results["OAX"] = TargetResult(code, label, "field", float(share), "derived_empirical")
-            else:
-                results["OAX"] = TargetResult("", "", "", 0.0, "unavailable", _NO_MAPPING_NOTE)
-
-        if "Leiden" in targets:
-            row = self._con.execute(
-                """
-                SELECT leiden_main_field_id, leiden_main_field_label, share
-                FROM for2020_division_leiden_main_field
-                WHERE for_division_code = ? AND is_primary = 'True'
-                """,
-                [division_code],
-            ).fetchone()
-            if row:
-                code, label, share = row
-                results["Leiden"] = TargetResult(code, label, "main_field", float(share), "derived_empirical")
-            else:
-                results["Leiden"] = TargetResult("", "", "", 0.0, "unavailable", _NO_MAPPING_NOTE)
-
-        return results
+        cur_code, cur_level = code, level
+        _parent_of = {"field": "domain", "subfield": "field", "topic": "subfield"}
+        while cur_level != target_level:
+            table = _OAX_LEVEL_TABLE[cur_level]
+            row = self._con.execute(f"SELECT parent_code FROM {table} WHERE code = ?", [cur_code]).fetchone()
+            cur_code, cur_level = row[0], _parent_of[cur_level]
+        label_row = self._con.execute(f"SELECT label FROM {_OAX_LEVEL_TABLE[cur_level]} WHERE code = ?", [cur_code]).fetchone()
+        return cur_code, label_row[0]
