@@ -8,7 +8,7 @@ from . import io as rio
 
 ROOT = Path(__file__).resolve().parent.parent
 ABS_DIR = ROOT / "data_untracked" / "ABS_FOR_SEO"
-DATA_DIR = ROOT / "data"
+DATA_DIR = ROOT / "research_classification" / "data"
 
 FOR_LEVELS = ["division", "group", "field"]
 SEO_LEVELS = ["division", "group", "objective"]

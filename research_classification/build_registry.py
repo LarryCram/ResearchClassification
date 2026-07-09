@@ -7,7 +7,7 @@ import pandas as pd
 from .hierarchy import write_csv
 
 ROOT = Path(__file__).resolve().parent.parent
-DATA_DIR = ROOT / "data"
+DATA_DIR = ROOT / "research_classification" / "data"
 
 # Static "Rosetta stone" of how every scheme's levels line up by granularity.
 # rank=1 is the coarsest level within that scheme. cardinality/corresponds_to are filled

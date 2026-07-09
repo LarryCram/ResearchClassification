@@ -11,7 +11,7 @@ from .hierarchy import BRIDGE_COLUMNS, write_csv
 
 ROOT = Path(__file__).resolve().parent.parent
 LEGACY_XLS = ROOT / "data_untracked" / "ABS_FOR_SEO" / "1297.0 correspondence tables.xls"
-DATA_DIR = ROOT / "data"
+DATA_DIR = ROOT / "research_classification" / "data"
 
 
 def parse_1998_to_2008(sheet: str) -> pd.DataFrame:

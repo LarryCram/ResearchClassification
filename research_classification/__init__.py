@@ -1,3 +1,3 @@
-from .resolver import CanonicalResult, TargetResult, resolve, resolve_forward, resolve_many
+from .resolver import CanonicalResult, Resolver, TargetResult
 
-__all__ = ["CanonicalResult", "TargetResult", "resolve", "resolve_forward", "resolve_many"]
+__all__ = ["CanonicalResult", "Resolver", "TargetResult"]

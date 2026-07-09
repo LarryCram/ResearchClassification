@@ -9,7 +9,7 @@ from .hierarchy import BRIDGE_COLUMNS, write_csv
 
 ROOT = Path(__file__).resolve().parent.parent
 SRC = ROOT / "data_untracked" / "ASJC1.xlsx"
-DATA_DIR = ROOT / "data"
+DATA_DIR = ROOT / "research_classification" / "data"
 
 
 def load_asjc() -> pd.DataFrame:

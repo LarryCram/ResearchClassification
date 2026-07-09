@@ -11,7 +11,7 @@ from .hierarchy import BRIDGE_COLUMNS, write_csv
 
 ROOT = Path(__file__).resolve().parent.parent
 ABS_DIR = ROOT / "data_untracked" / "ABS_FOR_SEO"
-DATA_DIR = ROOT / "data"
+DATA_DIR = ROOT / "research_classification" / "data"
 
 
 def _lexical_score(a: str, b: str) -> float:

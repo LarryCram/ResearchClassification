@@ -9,7 +9,7 @@ from .hierarchy import write_csv
 
 ROOT = Path(__file__).resolve().parent.parent
 SRC = ROOT / "data_untracked" / "OpenAlex_topic_mapping_table.xlsx"
-DATA_DIR = ROOT / "data"
+DATA_DIR = ROOT / "research_classification" / "data"
 
 
 def _to_int_str(v: object) -> str:

@@ -9,7 +9,7 @@ from .hierarchy import BRIDGE_COLUMNS, write_csv
 
 ROOT = Path(__file__).resolve().parent.parent
 LEIDEN_DIR = ROOT / "data_untracked" / "classification_openalex_2023nov"
-DATA_DIR = ROOT / "data"
+DATA_DIR = ROOT / "research_classification" / "data"
 
 
 def load_main_field() -> pd.DataFrame:
