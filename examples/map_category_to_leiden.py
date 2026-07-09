@@ -1,19 +1,17 @@
 """Demo: map (year, hep_code, hep_name, state, Category, $K)-style rows -- e.g. from a
-HERDC/National Competitive Grants Register extract -- onto a Leiden Ranking Main Field.
+HERDC/National Competitive Grants Register extract -- forward to FOR2020, OpenAlex (OAX),
+and Leiden Ranking Main Field, using research_classification.resolve_forward().
 
-This is meant as a template for "other analytical projects": it only reads
-data/research_classification.duckdb (copy that one file wherever you need it) and doesn't
-import the research_classification package at all.
-
-Why this needs two hops, not one:
+Why there's still one manual step before resolve_forward() can run:
   "Category" values like "Medical and health sciences" are pre-2008 broad Field-of-Research
-  groupings (ASRC 1998 / RFCD-style division names) -- they don't appear verbatim anywhere
-  in ANZSRC 2020, so there's no official crosswalk to look them up in directly. This demo
-  fuzzy-matches Category against the 23 FOR2020 division labels (the closest thing we do
-  have a real, ABS-published lineage for back to 1998 -- see bridge_asrc1998_for2020.csv),
-  then follows the empirically-derived Leiden<->FOR bridge from there. Every other lookup
-  in this pipeline is an exact/official match; this free-text hop is the one genuinely
-  approximate step, so its score is surfaced rather than hidden.
+  groupings (ASRC 1998 / RFCD-style division names) written as free text, not a code.
+  resolve_forward() (like the rest of this pipeline) only does exact code/label lookups --
+  it deliberately never guesses at free text, since a bad silent match is worse than a loud
+  failure. So this demo fuzzy-matches Category against the 23 FOR2020 division labels itself
+  (the one genuinely approximate step, with its score always shown), then hands the resulting
+  FOR2020 division *code* to resolve_forward() for everything after that -- which is exact/
+  official or empirically-derived the whole way, exactly like every other resolve_forward()
+  call, whether or not it started from free text.
 
 If your dataset only has a small fixed set of Category values (ASRC 1998 had ~20 divisions),
 the practical move is to run this once, eyeball the top candidates below, and save the
@@ -23,11 +21,17 @@ result as your own small verified lookup table rather than re-fuzzy-matching eve
 from __future__ import annotations
 
 import difflib
+import sys
 from pathlib import Path
+
+ROOT = Path(__file__).resolve().parent.parent
+sys.path.insert(0, str(ROOT))
 
 import duckdb
 
-DB_PATH = Path(__file__).resolve().parent.parent / "data" / "research_classification.duckdb"
+from research_classification import resolve_forward
+
+DB_PATH = ROOT / "data" / "research_classification.duckdb"
 
 SAMPLE_ROWS = [
     # year, hep_code, hep_name, state, category, amount_k
@@ -37,9 +41,14 @@ SAMPLE_ROWS = [
     (2001, 1001, "University of Sydney", "NSW", "Studies in human society", 640),
 ]
 
+# A row can also arrive as an actual RFCD1998 code rather than free text -- resolve_forward()
+# handles that directly, no fuzzy-matching step needed at all.
+SAMPLE_RFCD1998_CODE = "230104"  # "Category Theory, K Theory, Homological Algebra"
+
 
 def best_for_division(con: duckdb.DuckDBPyConnection, category: str, top_n: int = 3):
-    """Fuzzy-match free-text Category against the 23 FOR2020 division labels."""
+    """The one approximate step: fuzzy-match free-text Category against the 23 FOR2020
+    division labels. Everything downstream of this uses resolve_forward()."""
     divisions = con.execute("SELECT code, label FROM for_2020 WHERE level = 'division'").fetchall()
     scored = sorted(
         ((code, label, difflib.SequenceMatcher(None, category.lower(), label.lower()).ratio())
@@ -49,55 +58,42 @@ def best_for_division(con: duckdb.DuckDBPyConnection, category: str, top_n: int 
     return scored[:top_n]
 
 
-def leiden_main_field_for_division(con: duckdb.DuckDBPyConnection, for_code: str):
-    """FOR division -> Leiden main field, using for2020_division_leiden_main_field.csv.
-
-    This is deliberately NOT an inversion of bridge_leiden_for.csv (which answers the
-    opposite question -- "given a Leiden main field, which single division best represents
-    it" -- and its low confidence for broad main fields like Social sciences and humanities
-    reflects that parent's breadth across many divisions, not doubt about any one division's
-    placement). Since FOR divisions are the finer/child level relative to Leiden's main
-    fields, the correctly-directed statistic is division-centric: of THIS division's own
-    content, what share sits under each Leiden main field. That's what this table holds,
-    and it's why e.g. Human Society lands at ~95% here rather than the 43% you'd get by
-    naively inverting the other table.
-    """
-    row = con.execute(
-        """
-        SELECT leiden_main_field_label, share
-        FROM for2020_division_leiden_main_field
-        WHERE for_division_code = ? AND is_primary = 'True'
-        """,
-        [for_code],
-    ).fetchone()
-    return row  # (leiden_label, share) or None
+def print_forward_result(prefix: str, results: dict) -> None:
+    for2020 = results["FOR2020"] if "FOR2020" in results else results["SEO2020"]
+    oax, leiden = results["OAX"], results["Leiden"]
+    print(f"{prefix}  ->  {for2020.label} [{for2020.code}] ({for2020.confidence:.2f}, {for2020.method})")
+    oax_desc = f"{oax.label} [{oax.level}] ({oax.confidence:.2f})" if oax.method != "unavailable" else f"unavailable -- {oax.note}"
+    leiden_desc = f"{leiden.label} ({leiden.confidence:.2f})" if leiden.method != "unavailable" else f"unavailable -- {leiden.note}"
+    print(f"{'':{len(prefix)}}  ->  OAX: {oax_desc}")
+    print(f"{'':{len(prefix)}}  ->  Leiden: {leiden_desc}")
 
 
 def main() -> None:
     con = duckdb.connect(str(DB_PATH), read_only=True)
 
-    print(f"{'year':>4} {'hep':>5} {'hep_name':<26} {'st':<3} {'category':<32} {'$K':>7}"
-          f"  ->  {'FOR division (score)':<42}  ->  Leiden main field (confidence)")
-    print("-" * 150)
-
+    print("=== Free-text Category column (needs a fuzzy-match step first) ===\n")
     for year, hep_code, hep_name, state, category, amount_k in SAMPLE_ROWS:
         candidates = best_for_division(con, category)
-        for_code, for_label, score = candidates[0]
-        leiden = leiden_main_field_for_division(con, for_code)
-        leiden_desc = f"{leiden[0]} ({float(leiden[1]):.2f})" if leiden else "no Leiden mapping found"
+        for_code, _, score = candidates[0]
+        prefix = f"{year} {hep_code} {hep_name:<26} {state} {category!r:<35} ${amount_k}K  (fuzzy match {score:.2f})"
 
-        print(f"{year:>4} {hep_code:>5} {hep_name:<26} {state:<3} {category:<32} {amount_k:>7}"
-              f"  ->  {for_label} [{for_code}] ({score:.2f})"
-              f"  ->  {leiden_desc}")
+        results = resolve_forward(for_code, "FOR")
+        print_forward_result(prefix, results)
 
         if len(candidates) > 1 and candidates[1][2] > score - 0.1:
             alts = ", ".join(f"{lbl} ({s:.2f})" for _, lbl, s in candidates[1:])
-            print(f"       (close alternate FOR division match(es), worth eyeballing: {alts})")
+            print(f"{'':{len(prefix)}}     (close alternate FOR division match(es), worth eyeballing: {alts})")
+        print()
+
+    print("=== Actual RFCD1998 code (no fuzzy-matching needed at all) ===\n")
+    prefix = f"RFCD1998 {SAMPLE_RFCD1998_CODE!r}"
+    print_forward_result(prefix, resolve_forward(SAMPLE_RFCD1998_CODE, "FOR"))
 
     print(
-        "\nNote: the FOR-division match score is the only approximate step here -- "
-        "everything downstream of it (FOR -> Leiden) uses the pipeline's exact/official "
-        "or empirically-derived bridges, same as every other lookup in this project."
+        "\nNote: only the Category fuzzy-match above is approximate. Every resolve_forward()"
+        " call is exact/official or empirically-derived the whole way -- forward in time only"
+        " (never FOR2020 -> FOR2008 -> RFCD1998), and up the hierarchy only (OAX is reported"
+        " at field level, never a fabricated guess at one of 4516 topics)."
     )
 
 
