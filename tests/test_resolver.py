@@ -169,6 +169,33 @@ def test_indigenous_studies_gap():
     print(f"  FOR1998 {row[0]} (division 45) correctly reports OAX as genuinely absent")
 
 
+def test_group_level_precision():
+    # FOR2020 groups 4904 (Pure mathematics) and 4905 (Statistics) both sit under division
+    # 49, and both used to give the identical division-level OAX field/confidence -- now
+    # they should differentiate (verified directly against the raw table: 4904 -> Mathematics
+    # at confidence 1.0, 4905 -> Mathematics at 0.69), each more specific than division 49's
+    # own confidence of 0.61 alone.
+    div = resolver.resolve("49", "FOR2020", "OAX_FIELD")
+    g4904 = resolver.resolve("4904", "FOR2020", "OAX_FIELD")
+    g4905 = resolver.resolve("4905", "FOR2020", "OAX_FIELD")
+    assert g4904.code == g4905.code == div.code == "26"  # all agree on OAX field "Mathematics"
+    assert g4904.confidence != g4905.confidence  # but differentiate at group level
+    assert g4904.level == "field" and g4904.match_method == "derived_empirical"
+
+    # a FOR1998 code resolving to a 6-digit FOR2020 field should use its group ancestor
+    # (4-digit) for OAX/Leiden precision, not just fall back to the coarser division
+    oax_group_level = resolver.resolve("230104", "FOR1998", "OAX_FIELD")
+    assert oax_group_level.confidence == g4904.confidence  # same group (4904) either way
+
+    # OAX subfield input resolving to FOR2020 should get group-level (4-digit) output when
+    # that subfield's group has coverage, not just the division-level 2-digit fallback
+    from_subfield = resolver.resolve("1908", "OAX", "FOR2020")  # Geophysics subfield
+    assert len(from_subfield.code) == 4 and from_subfield.level == "group"
+
+    print(f"  group-level precision OK: division 49={div.confidence}, group 4904={g4904.confidence}, "
+          f"group 4905={g4905.confidence}; OAX subfield->FOR2020 gives group-level {from_subfield.code!r}")
+
+
 def test_leading_zero_normalization():
     # FOR2008 codes in divisions 01-09 (556 of them) lose their leading zero if read as an
     # int by pandas/JSON/Excel -- e.g. "010101" becomes 10101. Since FOR2008 codes are
@@ -218,6 +245,7 @@ if __name__ == "__main__":
         test_oax_domain_too_coarse_for_for2020,
         test_seo_cannot_target_oax_or_leiden,
         test_indigenous_studies_gap,
+        test_group_level_precision,
         test_leading_zero_normalization,
         test_explicit_db_path_matches_bundled,
         test_lookup_error,

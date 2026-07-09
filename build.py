@@ -17,6 +17,7 @@ from research_classification import (
     build_openalex,
     build_registry,
     curate_openalex_for,
+    curate_openalex_subfield_to_for_group,
 )
 from research_classification.hierarchy import audit_encoding, validate_bridge, validate_canonical
 
@@ -44,11 +45,16 @@ def main() -> None:
     print("3. Building ASJC table and exact-ID bridge to OpenAlex...")
     build_asjc.run()
 
-    print("4. Curating (or reusing) the one hand-curated seed: OpenAlex field -> FOR division...")
+    print("4. Curating (or reusing) the hand-curated seed: OpenAlex field -> FOR division...")
     seed = curate_openalex_for.run()
     bridge_openalex_for = curate_openalex_for.to_bridge(seed)
     from research_classification.hierarchy import write_csv
     write_csv(bridge_openalex_for, DATA_DIR / "bridge_openalex_for.csv", ["source_code"])
+
+    print("4b. Curating (or reusing) OpenAlex subfield -> FOR group (constrained + algorithmic)...")
+    subfield_seed = curate_openalex_subfield_to_for_group.run()
+    bridge_openalex_for_group = curate_openalex_subfield_to_for_group.to_bridge(subfield_seed)
+    write_csv(bridge_openalex_for_group, DATA_DIR / "bridge_openalex_for_group.csv", ["source_code"])
 
     print("5. Building Leiden bridges (wikipedia_url exact join + empirical derivation)...")
     build_leiden.run()

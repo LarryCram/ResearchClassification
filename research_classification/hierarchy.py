@@ -29,6 +29,7 @@ MATCH_METHODS = {
     "exact_key_join",
     "derived_empirical",
     "manual_curated",
+    "constrained_lexical",
     "lexical",
 }
 

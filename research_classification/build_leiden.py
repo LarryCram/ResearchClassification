@@ -145,6 +145,29 @@ def explode_for_divisions(joined: pd.DataFrame, bridge_openalex_for: pd.DataFram
     return exploded.rename(columns={"canonical_code": "for_division"}).drop(columns=["source_code"])
 
 
+def explode_for_groups(joined: pd.DataFrame, bridge_openalex_for_group: pd.DataFrame) -> pd.DataFrame:
+    """One level finer than explode_for_divisions(), but PRIMARY-ONLY rather than every
+    candidate -- deliberately different from that function's all-alternates approach. The
+    division-level seed (26 fields) has few alternates per field, so exploding on all of
+    them fills real coverage gaps without much distortion. The group-level seed (252
+    subfields, each scored against ~9-30 candidate groups) routinely has several
+    close-scoring alternates per subfield; exploding on all of them means a single dominant
+    subfield's full micro-cluster count gets duplicated identically across every one of its
+    candidate groups (verified directly: groups 4904 and 4905 both showed exactly 123 rows
+    -- the field's entire count -- because one subfield's seed row listed both as
+    alternates). Primary-only avoids that duplication and gives each group its own honest,
+    non-inflated count, at the cost of lower coverage (~129/213 groups vs ~193/213 with
+    alternates). That's an acceptable trade: callers (see resolver.py's
+    _resolve_from_for2020_code) already fall back to the division-level table when a group
+    has no row here, so an uncovered group degrades gracefully rather than getting a
+    distorted answer.
+    """
+    primary = bridge_openalex_for_group[bridge_openalex_for_group["is_primary"] == "True"]
+    subfield_to_groups = primary[["source_code", "canonical_code"]].drop_duplicates()
+    exploded = joined.merge(subfield_to_groups, left_on="subfield_id", right_on="source_code", how="inner")
+    return exploded.rename(columns={"canonical_code": "for_group"}).drop(columns=["source_code"])
+
+
 def division_centric_target(
     for_df: pd.DataFrame,
     df_exploded: pd.DataFrame,
@@ -152,27 +175,33 @@ def division_centric_target(
     target_label: dict[str, str],
     target_id_name: str,
     target_label_name: str,
+    for_level_col: str = "for_division",
+    for_level_name: str = "division",
 ) -> pd.DataFrame:
     """The hierarchically correct direction for any Leiden/OAX target coarser than a FOR
-    division: of a given division's OWN content (weighted by how many distinct
+    division or group: of a given FOR node's OWN content (weighted by how many distinct
     micro-cluster/topic rows land there), what share sits under each candidate value of
     `target_col`? This is deliberately the reverse of bridge_leiden_for.csv /
     bridge_openalex_for.csv, which both answer "given the coarse parent, which single FOR
     division best represents it" -- a question whose low vote-share for broad parents
     reflects the parent's breadth, not doubt about any division's placement. Confidence here
-    means "is this division's parent correct," and is typically high for a clean taxonomy.
+    means "is this FOR node's parent correct," and is typically high for a clean taxonomy.
+
+    for_level_col/for_level_name select division- or group-level grouping over the same
+    `df_exploded` shape (pass for_level_col="for_group", for_level_name="group" for the
+    group-centric tables, built from a group-keyed exploded frame instead of division-keyed).
     """
-    df = df_exploded.dropna(subset=["for_division", target_col])
+    df = df_exploded.dropna(subset=[for_level_col, target_col])
     for_label = dict(zip(for_df["code"], for_df["label"]))
     rows = []
-    for div_code, grp in df.groupby("for_division"):
+    for level_code, grp in df.groupby(for_level_col):
         counts = grp[target_col].value_counts()
         total = len(grp)
         for i, (target_code, n) in enumerate(counts.items()):
             rows.append(
                 {
-                    "for_division_code": div_code,
-                    "for_division_label": for_label.get(div_code, ""),
+                    f"for_{for_level_name}_code": level_code,
+                    f"for_{for_level_name}_label": for_label.get(level_code, ""),
                     target_id_name: target_code,
                     target_label_name: target_label.get(target_code, ""),
                     "is_primary": i == 0,
@@ -257,6 +286,42 @@ def run() -> dict[str, pd.DataFrame]:
     )
     write_csv(division_to_oax_subfield, DATA_DIR / "for2020_division_openalex_subfield.csv", ["for_division_code"])
 
+    # Group-level (4-digit) counterparts of the four division-centric tables above, one
+    # level finer, built the identical way but exploded through
+    # seeds/openalex_subfield_to_for_group.csv instead of the field->division seed. Coverage
+    # is necessarily partial (see explode_for_groups()'s docstring) -- a FOR group with no
+    # rows here just doesn't get a row in these tables, which callers must handle by falling
+    # back to the division-level table, not something these functions paper over.
+    bridge_openalex_for_group = pd.read_csv(DATA_DIR / "bridge_openalex_for_group.csv", dtype=str, keep_default_na=False)
+    group_exploded = explode_for_groups(joined, bridge_openalex_for_group)
+    group_exploded["main_field_id"] = group_exploded["micro_cluster_id"].map(
+        mc_main_field[mc_main_field["is_primary_main_field"]].set_index("micro_cluster_id")["main_field_id"].to_dict()
+    )
+
+    group_to_leiden = division_centric_target(
+        for_df, group_exploded, "main_field_id", main_field_label, "leiden_main_field_id", "leiden_main_field_label",
+        for_level_col="for_group", for_level_name="group",
+    )
+    write_csv(group_to_leiden, DATA_DIR / "for2020_group_leiden_main_field.csv", ["for_group_code"])
+
+    group_to_oax_domain = division_centric_target(
+        for_df, group_exploded, "domain_id", domain_label_plain, "openalex_domain_id", "openalex_domain_label",
+        for_level_col="for_group", for_level_name="group",
+    )
+    write_csv(group_to_oax_domain, DATA_DIR / "for2020_group_openalex_domain.csv", ["for_group_code"])
+
+    group_to_oax_field = division_centric_target(
+        for_df, group_exploded, "field_id", field_label_plain, "openalex_field_id", "openalex_field_label",
+        for_level_col="for_group", for_level_name="group",
+    )
+    write_csv(group_to_oax_field, DATA_DIR / "for2020_group_openalex_field.csv", ["for_group_code"])
+
+    group_to_oax_subfield = division_centric_target(
+        for_df, group_exploded, "subfield_id", subfield_label_plain, "openalex_subfield_id", "openalex_subfield_label",
+        for_level_col="for_group", for_level_name="group",
+    )
+    write_csv(group_to_oax_subfield, DATA_DIR / "for2020_group_openalex_subfield.csv", ["for_group_code"])
+
     return {
         "leiden_main_field": main_field,
         "bridge_leiden_openalex_topic": topic_bridge,
@@ -266,6 +331,10 @@ def run() -> dict[str, pd.DataFrame]:
         "for2020_division_openalex_domain": division_to_oax_domain,
         "for2020_division_openalex_field": division_to_oax_field,
         "for2020_division_openalex_subfield": division_to_oax_subfield,
+        "for2020_group_leiden_main_field": group_to_leiden,
+        "for2020_group_openalex_domain": group_to_oax_domain,
+        "for2020_group_openalex_field": group_to_oax_field,
+        "for2020_group_openalex_subfield": group_to_oax_subfield,
     }
 
 

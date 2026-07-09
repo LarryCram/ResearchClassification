@@ -59,12 +59,21 @@ _VINTAGE_BRIDGE_TABLE: dict[str, str | None] = {
     "SEO2020": None,
 }
 
-# to_scheme -> (division-centric table, code column, label column, result level label)
+# to_scheme -> (division-centric table, code column, label column, result level label).
+# Group-centric tables (one level finer, ~91% group coverage -- missing only division 45
+# Indigenous Studies' groups, which have no OpenAlex equivalent at any granularity) are
+# tried first when the FOR2020 code in hand has at least group-level (4-digit) precision;
+# these division-level tables are always the fallback, and the only option below group level.
 _DIVISION_CENTRIC: dict[str, tuple[str, str, str, str]] = {
     "OAX_DOMAIN": ("for2020_division_openalex_domain", "openalex_domain_id", "openalex_domain_label", "domain"),
     "OAX_FIELD": ("for2020_division_openalex_field", "openalex_field_id", "openalex_field_label", "field"),
     "OAX_SUBFIELD": ("for2020_division_openalex_subfield", "openalex_subfield_id", "openalex_subfield_label", "subfield"),
     "LEIDEN": ("for2020_division_leiden_main_field", "leiden_main_field_id", "leiden_main_field_label", "main_field"),
+}
+
+_GROUP_CENTRIC: dict[str, tuple[str, str, str, str]] = {
+    to_scheme: (table.replace("for2020_division_", "for2020_group_"), code_col, label_col, level)
+    for to_scheme, (table, code_col, label_col, level) in _DIVISION_CENTRIC.items()
 }
 
 _OAX_LEVEL_TABLE = {"domain": "openalex_domains", "field": "openalex_fields", "subfield": "openalex_subfields", "topic": "openalex_topics"}
@@ -173,19 +182,6 @@ class Resolver:
             primary.level, primary.match_method, primary.confidence, alternates=tuple(rest),
         )
 
-    def _resolve_to_for2020_division(self, value: str, from_scheme: str) -> tuple[str, str, str, float, str]:
-        """Internal helper: resolve any FOR-family input down to just its FOR2020 division
-        code/label (2-digit) -- the hub every OAX/Leiden target is reached through. Returns
-        (division_code, division_label, match_method, confidence, provenance_note)."""
-        result = self._resolve_vintage_to_current(value, from_scheme, "FOR")
-        division_code = result.code[:2]
-        if division_code == result.code:
-            return division_code, result.label, result.match_method, result.confidence, ""
-        row = self._con.execute("SELECT label FROM for_2020 WHERE code = ?", [division_code]).fetchone()
-        division_label = row[0] if row else ""
-        note = f"truncated from {result.to_scheme} {result.level} {result.code!r} to its division"
-        return division_code, division_label, result.match_method, result.confidence, note
-
     # -- OAX hierarchy walking (up only) ------------------------------------
 
     def _oax_identify(self, value: str) -> tuple[str, str, str, str] | None:
@@ -251,17 +247,38 @@ class Resolver:
 
     # -- FOR-family -> OAX/Leiden, via the FOR2020-division hub -------------
 
-    def _resolve_from_for_division_hub(self, code: str, from_scheme: FromScheme, to_scheme: ToScheme) -> CanonicalResult:
-        division_code, division_label, hop1_method, hop1_confidence, note = self._resolve_to_for2020_division(code, from_scheme)
+    def _resolve_from_for2020_code(
+        self, input_value: str, for2020_code: str, to_scheme: ToScheme, from_scheme: FromScheme
+    ) -> CanonicalResult:
+        """Given an already-resolved FOR2020 code -- division (2-digit) or group (4-digit)
+        precision -- resolve into to_scheme via the group-centric table when group-level
+        precision is available (falling back to division-level if that group has no
+        coverage, e.g. it's one of division 45's), else division-centric directly."""
+        if len(for2020_code) >= 4:
+            group_code = for2020_code[:4]
+            table, code_col, label_col, level = _GROUP_CENTRIC[to_scheme]
+            row = self._con.execute(
+                f"SELECT {code_col}, {label_col}, share FROM {table} WHERE for_group_code = ? AND is_primary = 'True'",
+                [group_code],
+            ).fetchone()
+            if row:
+                out_code, out_label, share = row
+                return CanonicalResult(input_value, from_scheme, to_scheme, out_code, out_label, level, "derived_empirical", float(share))
+
+        division_code = for2020_code[:2]
         table, code_col, label_col, level = _DIVISION_CENTRIC[to_scheme]
         row = self._con.execute(
             f"SELECT {code_col}, {label_col}, share FROM {table} WHERE for_division_code = ? AND is_primary = 'True'",
             [division_code],
         ).fetchone()
         if not row:
-            raise LookupError(f"{code!r} (FOR2020 division {division_code} {division_label!r}): {_NO_MAPPING_NOTE}")
+            raise LookupError(f"{input_value!r} (FOR2020 division {division_code}): {_NO_MAPPING_NOTE}")
         out_code, out_label, share = row
-        return CanonicalResult(code, from_scheme, to_scheme, out_code, out_label, level, "derived_empirical", float(share))
+        return CanonicalResult(input_value, from_scheme, to_scheme, out_code, out_label, level, "derived_empirical", float(share))
+
+    def _resolve_from_for_division_hub(self, code: str, from_scheme: FromScheme, to_scheme: ToScheme) -> CanonicalResult:
+        result = self._resolve_vintage_to_current(code, from_scheme, "FOR")
+        return self._resolve_from_for2020_code(code, result.code, to_scheme, from_scheme)
 
     # -- OAX -> FOR2020 / Leiden / OAX ---------------------------------------
 
@@ -275,6 +292,20 @@ class Resolver:
                 f"cannot resolve FOR2020 from an OAX {level}-level input ({code!r}) -- the curated "
                 f"OpenAlex-field-to-FOR-division mapping needs at least field-level precision"
             )
+
+        # subfield-or-deeper input tries the finer group-level seed first (walking up to
+        # subfield if given a topic), falling back to the field-level/division-level seed
+        if _OAX_LEVEL_RANK[level] >= _OAX_LEVEL_RANK["subfield"]:
+            subfield_code, _subfield_label = self._oax_walk_up_simple(oax_code, level, "subfield")
+            row = self._con.execute(
+                "SELECT canonical_code, canonical_label, canonical_level, confidence "
+                "FROM bridge_openalex_for_group WHERE source_code = ? AND is_primary = 'True'",
+                [subfield_code],
+            ).fetchone()
+            if row:
+                group_code, group_label, group_level, confidence = row
+                return CanonicalResult(code, "OAX", "FOR2020", group_code, group_label, group_level, "constrained_lexical", float(confidence))
+
         field_code, _field_label = self._oax_walk_up_simple(oax_code, level, "field")
         row = self._con.execute(
             "SELECT canonical_code, canonical_label, canonical_level, confidence "
@@ -288,15 +319,7 @@ class Resolver:
 
     def _resolve_oax_to_leiden(self, code: str) -> CanonicalResult:
         for2020 = self._resolve_oax_to_for2020(code)
-        table, code_col, label_col, level = _DIVISION_CENTRIC["LEIDEN"]
-        row = self._con.execute(
-            f"SELECT {code_col}, {label_col}, share FROM {table} WHERE for_division_code = ? AND is_primary = 'True'",
-            [for2020.code],
-        ).fetchone()
-        if not row:
-            raise LookupError(f"{code!r} (via FOR2020 division {for2020.code} {for2020.label!r}): {_NO_MAPPING_NOTE}")
-        out_code, out_label, share = row
-        return CanonicalResult(code, "OAX", "LEIDEN", out_code, out_label, level, "derived_empirical", float(share))
+        return self._resolve_from_for2020_code(code, for2020.code, "LEIDEN", "OAX")
 
     def _resolve_oax_to_oax(self, code: str, to_scheme: ToScheme) -> CanonicalResult:
         identified = self._oax_identify(code)

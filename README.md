@@ -49,9 +49,21 @@ Two rules hold everywhere:
   no relationship to OAX/Leiden by design, so any other `to_scheme` raises immediately.
 
 If a mapping genuinely doesn't exist (e.g. ANZSRC's Indigenous Studies division has no
-counterpart anywhere in OpenAlex/ASJC's international taxonomy), `resolve()` raises
-`LookupError` with an explanatory message rather than guessing. See `TODO.md` for this and
-one other known, deliberately-deferred gap.
+counterpart anywhere in OpenAlex/ASJC's international taxonomy, at any granularity), 
+`resolve()` raises `LookupError` with an explanatory message rather than guessing. See
+`TODO.md` for this and its coverage caveats.
+
+### Precision: group-level (4-digit) when available, division-level otherwise
+
+`resolve()` automatically uses FOR *group* precision (4-digit, e.g. `4905`) over *division*
+precision (2-digit, e.g. `49`) whenever the input supports it, falling back gracefully when
+it doesn't (partial coverage -- see `TODO.md`):
+
+```python
+r.resolve("4905", "FOR2020", "OAX_FIELD")  # group-level: confidence 0.69
+r.resolve("49", "FOR2020", "OAX_FIELD")    # division-level fallback: confidence 0.61
+r.resolve("1908", "OAX", "FOR2020")        # OAX subfield -> FOR2020 group (4-digit), not just division
+```
 
 ### Why both ends are always named explicitly
 

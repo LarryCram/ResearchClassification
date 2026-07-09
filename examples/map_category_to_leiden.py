@@ -102,9 +102,10 @@ def main() -> None:
     print(
         "\nNote: only the Category fuzzy-match above is approximate. Every resolve() call"
         " is exact/official or empirically-derived the whole way -- forward in time only"
-        " (never FOR2020 -> FOR2008 -> FOR1998), and up the hierarchy only (OAX_FIELD is the"
-        " finest granularity available from a FOR division; OAX_TOPIC always hard-fails,"
-        " never a fabricated guess at one of 4516 topics)."
+        " (never FOR2020 -> FOR2008 -> FOR1998), and up the hierarchy only. resolve() also"
+        " prefers FOR group-level (4-digit) precision over division-level automatically"
+        " when the input supports it, falling back gracefully when it doesn't -- OAX_TOPIC"
+        " still always hard-fails, never a fabricated guess at one of 4516 topics."
     )
 
 
