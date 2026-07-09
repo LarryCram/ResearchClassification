@@ -16,7 +16,7 @@ sys.path.insert(0, str(ROOT))
 
 import pandas as pd
 
-from research_classification import Resolver
+from research_classification import AmbiguousCodeError, Resolver
 
 DATA_DIR = ROOT / "research_classification" / "data"
 resolver = Resolver()
@@ -39,10 +39,13 @@ def test_row_counts():
 
 
 def test_identity_round_trip():
-    for system, fname in [("FOR", "for_2020.csv"), ("SEO", "seo_2020.csv")]:
+    # source_type=... is required here: some FOR2020 codes collide with a differently-
+    # meaning RFCD1998 code (see test_ambiguous_code_hard_fails), so an unhinted resolve()
+    # would correctly raise AmbiguousCodeError for those rather than silently identity-match.
+    for system, fname, hint in [("FOR", "for_2020.csv", "FOR20"), ("SEO", "seo_2020.csv", "SEO20")]:
         df = pd.read_csv(DATA_DIR / fname, dtype=str, keep_default_na=False)
         for code in df["code"]:
-            result = resolver.resolve(code, system)
+            result = resolver.resolve(code, system, source_type=hint)
             assert result.match_method == "identity", f"{system} {code}: {result.match_method}"
             assert result.confidence == 1.0
     print(f"  identity round-trip OK ({len(df)} {system} codes, plus earlier systems)")
@@ -64,8 +67,10 @@ def test_system_isolation():
     # completely different table depending on `system`, which is what actually matters:
     # passing the wrong system for a code that IS valid in the other system must fail loudly
     # rather than silently returning a wrong answer.
-    for_result = resolver.resolve("30", "FOR")
-    seo_result = resolver.resolve("10", "SEO")
+    # (source_type hints used here since "10" also collides with an NABS2007 chapter code --
+    # see test_ambiguous_code_hard_fails for that in detail.)
+    for_result = resolver.resolve("30", "FOR", source_type="FOR20")
+    seo_result = resolver.resolve("10", "SEO", source_type="SEO20")
     oax_result = resolver.resolve("1", "OAX")
     assert for_result.system == "FOR" and seo_result.system == "SEO" and oax_result.system == "OAX"
     assert for_result.canonical_label != seo_result.canonical_label != oax_result.canonical_label
@@ -142,6 +147,64 @@ def test_resolve_forward_seo_has_no_oax_leiden():
     print(f"  SEO1998 {row[0]} -> SEO2020 {results['SEO2020'].code}, OAX/Leiden correctly unavailable by design")
 
 
+def test_ambiguous_code_hard_fails():
+    # 300101 means "Soil Physics" under RFCD1998 but "Agricultural biotechnology
+    # diagnostics" under FOR2020 -- a real collision (48% of RFCD1998's 898 codes collide
+    # with a differently-meaning FOR2020 code this way). Without a source_type hint this
+    # must hard-fail rather than silently prefer one meaning.
+    try:
+        resolver.resolve("300101", "FOR")
+        raise AssertionError("expected AmbiguousCodeError")
+    except AmbiguousCodeError as e:
+        assert len(e.candidates) == 2
+        targets = {c.source_system: c.canonical_code for c in e.candidates}
+        assert targets["FOR2020"] == "300101"
+        assert targets["RFCD1998"] == "410605"  # "Soil physics", correctly renumbered
+
+    # with the hint, resolves confidently and specifically
+    for2020 = resolver.resolve("300101", "FOR", source_type="FOR20")
+    assert for2020.canonical_code == "300101" and for2020.match_method == "identity"
+
+    # a non-colliding code is completely unaffected (no false-positive hard fail)
+    unambiguous = resolver.resolve("230104", "FOR")
+    assert unambiguous.canonical_code == "490403"
+
+    # an unrecognized source_type is rejected explicitly rather than guessed at
+    try:
+        resolver.resolve("300101", "FOR", source_type="RFCD98")
+        raise AssertionError("expected ValueError")
+    except ValueError:
+        pass
+
+    # source_type implying the wrong system is rejected explicitly
+    try:
+        resolver.resolve("300101", "SEO", source_type="FOR20")
+        raise AssertionError("expected ValueError")
+    except ValueError:
+        pass
+
+    # same collision pattern on the SEO side: "10" is both SEO2020's own division 10
+    # ("ANIMAL PRODUCTION...") and an NABS2007 chapter code (weakly mapping to "Air quality")
+    try:
+        resolver.resolve("10", "SEO")
+        raise AssertionError("expected AmbiguousCodeError")
+    except AmbiguousCodeError as e:
+        targets = {c.source_system: c.canonical_code for c in e.candidates}
+        assert targets["SEO2020"] == "10"
+        assert targets["NABS2007"] == "180101"
+    seo2020 = resolver.resolve("10", "SEO", source_type="SEO20")
+    assert seo2020.canonical_code == "10" and seo2020.match_method == "identity"
+
+    # resolve(<leiden_main_field_id>, "FOR") must still work unhinted -- this is NOT a
+    # vintage collision (Leiden ids are cross-scheme derived plumbing, not another year's
+    # FOR code), so it must not be caught up in the ambiguity check
+    leiden_derived = resolver.resolve("1", "FOR")
+    assert leiden_derived.match_method == "derived_empirical"
+
+    print("  ambiguous code hard-fails without a hint, resolves confidently with one, "
+          "non-colliding codes and Leiden-derived lookups unaffected")
+
+
 def test_lookup_error():
     try:
         resolver.resolve("not-a-real-code", "FOR")
@@ -178,6 +241,7 @@ if __name__ == "__main__":
         test_resolve_forward_indigenous_studies_gap,
         test_resolve_forward_seo_has_no_oax_leiden,
         test_explicit_db_path_matches_bundled,
+        test_ambiguous_code_hard_fails,
         test_lookup_error,
     ]
     for t in tests:

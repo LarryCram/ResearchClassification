@@ -1,3 +1,3 @@
-from .resolver import CanonicalResult, Resolver, TargetResult
+from .resolver import AmbiguousCodeError, CanonicalResult, Resolver, TargetResult
 
-__all__ = ["CanonicalResult", "Resolver", "TargetResult"]
+__all__ = ["AmbiguousCodeError", "CanonicalResult", "Resolver", "TargetResult"]

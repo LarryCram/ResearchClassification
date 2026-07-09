@@ -44,6 +44,35 @@ If a mapping genuinely doesn't exist (e.g. ANZSRC's Indigenous Studies division 
 counterpart anywhere in OpenAlex/ASJC's international taxonomy), the result says so
 explicitly (`method="unavailable"`, with a `note`) rather than guessing or raising.
 
+### Ambiguous codes: pass `source_type` when you have it
+
+ANZSRC reused overlapping code ranges across revisions: e.g. `300101` means "Soil Physics"
+under the pre-2000 RFCD1998 scheme but "Agricultural biotechnology diagnostics" under
+FOR2020 -- two unrelated meanings, same digit string (48% of RFCD1998's 898 codes collide
+with a differently-meaning FOR2020 code this way; a similar collision exists between SEO2020
+and NABS2007 chapter codes). A bare code with no vintage information is genuinely ambiguous,
+so `resolve()`/`resolve_forward()` raise `AmbiguousCodeError` rather than silently guessing:
+
+```python
+from research_classification import AmbiguousCodeError
+
+r.resolve("300101", "FOR")
+# AmbiguousCodeError: '300101' is ambiguous as a FOR code -- matches multiple schemes:
+#   - as FOR2020: 300101 'Agricultural biotechnology diagnostics (incl. biosensors)'
+#   - as RFCD1998: 410605 'Soil physics'
+```
+
+If you know the vintage -- e.g. from ARC's own `"type"` field in its field-of-research /
+socio-economic-objective JSON (`"type":"FOR20"` / `"type":"SEO20"`) -- pass it as
+`source_type` to resolve unambiguously:
+
+```python
+r.resolve("300101", "FOR", source_type="FOR20")   # -> confidently FOR2020's meaning
+```
+
+Only vintages confirmed against real data are recognized (`FOR20`, `SEO20` currently); an
+unrecognized `source_type` raises `ValueError` rather than guessing at what it might mean.
+
 ## Rebuilding the data
 
 Only needed if you're changing the source classification files themselves
