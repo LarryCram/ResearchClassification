@@ -12,7 +12,7 @@ Peoples " + concept, or a Maori-language label with the English gloss in parens)
 concrete failure modes found and fixed while building it, matching this pipeline's existing
 pattern of iterating a lexical scorer against spot-checked real output).
 
-`resolve()` now reaches OAX/Leiden for **2,201 of FOR2020's 2,203 codes** (confirmed
+`resolve()` now reaches OAX/Leiden for **all 2,203 of FOR2020's codes** (confirmed
 exhaustively -- `test_exhaustive_for2020_to_oax_leiden_coverage` resolves every single one),
 by routing division-45 codes through a proxy FOR2020 group or division representing the same
 underlying concept, tagged `match_method="cultural_proxy"` so it's always visible as a
@@ -41,9 +41,9 @@ score multiplied into whatever confidence the proxy target itself resolves with.
   and Humanities") -- confirmed directly by the user as division 45's sensible general
   landing spot.
 
-**Genuinely unmapped, by design**: group **4599** ("Other Indigenous studies") and its sole
-field 459999 have no sub-structure and no non-Indigenous analogue at all -- `resolve()`
-still raises `LookupError` for these two, with an explanatory note, rather than guessing.
+Group **4599** ("Other Indigenous studies") and its sole field 459999 -- no sub-structure,
+no algorithmic signal at all -- were the last remaining gap; user-confirmed to the same
+proxy as 4519's own default, FOR2020 group 4499 "Other human society".
 
 ## OAX/Leiden -> FOR2020 group-level (4-digit) precision: done, but partial coverage
 `seeds/openalex_subfield_to_for_group.csv` (252 rows, algorithmic -- see its own docstring

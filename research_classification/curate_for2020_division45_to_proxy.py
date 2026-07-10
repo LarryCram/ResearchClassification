@@ -269,6 +269,12 @@ def run() -> pd.DataFrame:
     ]:
         add_row(field_code, field_label, "manual override (-> FOR2020 4499 Other human society)", "4499", group_label["4499"], "group", 0.7)
 
+    # Group 4599 ("Other Indigenous studies") -- the last remaining gap. No sub-structure,
+    # no prefix/gloss pattern, but user-confirmed: same proxy as 4519's own default, group
+    # 4499 "Other human society" -- both are division 45's own generic "everything else"
+    # catch-all, so they get the same generic non-Indigenous catch-all in return.
+    add_row("4599", group_label["4599"], "manual override (-> FOR2020 4499 Other human society)", "4499", group_label["4499"], "group", 0.7)
+
     df = pd.DataFrame(rows)
     SEEDS_DIR.mkdir(parents=True, exist_ok=True)
     df.to_csv(seed_path, index=False, encoding="utf-8")

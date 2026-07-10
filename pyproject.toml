@@ -16,4 +16,4 @@ build = ["pandas", "openpyxl"]
 packages = ["research_classification"]
 
 [tool.setuptools.package-data]
-research_classification = ["data/*.csv"]
+research_classification = ["data/*.csv", "data/*.duckdb"]

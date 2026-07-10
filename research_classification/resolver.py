@@ -1,12 +1,14 @@
 """Public resolver API.
 
-Resolver() with no arguments loads the CSVs bundled inside this package
-(research_classification/data/) into an in-memory DuckDB -- so `pip install git+https://
-github.com/LarryCram/ResearchClassification.git` followed immediately by
+Resolver() with no arguments opens the pre-built research_classification.duckdb bundled
+inside this package (research_classification/data/) directly, read-only -- so `pip install
+git+https://github.com/LarryCram/ResearchClassification.git` followed immediately by
 `Resolver().resolve(...)` just works, no separate build step and no external data file
-required. Pass db_path=... to point at an exported .duckdb file instead (e.g. one produced
-by build_duckdb.py) if you want that file's exact snapshot or faster repeated startup
-across many short-lived processes.
+required. This is ~10ms (vs ~360ms rebuilding an in-memory database from the 28 bundled CSVs
+on every call), so it's the default; the CSVs stay bundled too as an automatic fallback (see
+_load_bundled_db()'s docstring) and remain the git-diffable source of truth build.py rebuilds
+from. Pass db_path=... to point at a different exported .duckdb file instead if you want a
+specific file's exact snapshot.
 
 Both `from_scheme` and `to_scheme` are always required, never inferred -- codes collide
 across schemes and vintages (e.g. FOR1998's 300101 is "Soil Physics", FOR2020's own 300101
@@ -18,6 +20,7 @@ is unsafe. Naming the scheme explicitly removes the guesswork by construction.
 from __future__ import annotations
 
 import importlib.resources
+import warnings
 from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Literal
@@ -83,10 +86,9 @@ _TO_SCHEME_OAX_LEVEL = {"OAX_DOMAIN": "domain", "OAX_FIELD": "field", "OAX_SUBFI
 _NO_MAPPING_NOTE = (
     "No OpenAlex/Leiden equivalent exists for this FOR division in the source data, and no "
     "match_method='cultural_proxy' fallback applies either -- genuinely absent, not a lookup "
-    "failure. For FOR2020 division 45 (Indigenous Studies), most groups resolve via a "
-    "lexically-derived (or, for two groups, user-confirmed) proxy to their non-Indigenous "
-    "equivalent research content; only groups 4519/4599 (\"Other Indigenous...\") have no "
-    "non-Indigenous analogue at all, and stay unmapped -- see TODO.md."
+    "failure. (As of this build, every FOR2020 code -- including all of division 45, "
+    "Indigenous Studies, via curate_for2020_division45_to_proxy.py -- resolves; this message "
+    "would only fire for a genuinely new, uncurated gap.) See TODO.md."
 )
 
 
@@ -105,10 +107,39 @@ class CanonicalResult:
 
 class Resolver:
     def __init__(self, db_path: str | Path | None = None):
+        self._resource_ctx = None  # keeps an as_file()-extracted temp path alive, if any
         if db_path is not None:
             self._con = duckdb.connect(str(db_path), read_only=True)
         else:
-            self._con = self._load_bundled_csvs()
+            self._con = self._load_bundled_db()
+
+    def _load_bundled_db(self) -> duckdb.DuckDBPyConnection:
+        """Opens the pre-built .duckdb file bundled in package data directly (~10ms),
+        falling back to rebuilding in-memory from the bundled CSVs (~360ms, but always
+        works) if that file can't be opened -- e.g. it was built with a different duckdb
+        version than whatever's installed now. DuckDB's on-disk storage format isn't
+        guaranteed compatible indefinitely across versions, and this package is meant to be
+        pip-installed unmodified into new environments over a period of years, so this isn't
+        a hypothetical: the fallback exists specifically so a version mismatch degrades to
+        "slower" rather than "broken"."""
+        db_resource = importlib.resources.files("research_classification") / "data" / "research_classification.duckdb"
+        ctx = importlib.resources.as_file(db_resource)
+        real_path = ctx.__enter__()
+        try:
+            con = duckdb.connect(str(real_path), read_only=True)
+        except duckdb.Error as e:
+            ctx.__exit__(None, None, None)
+            warnings.warn(
+                f"Could not open the bundled research_classification.duckdb ({e}); falling back to "
+                "rebuilding in-memory from the bundled CSVs (slower, but unaffected by duckdb version "
+                "drift). To silence this, rebuild the .duckdb file with the currently-installed duckdb "
+                "version (python build.py, or research_classification.build_duckdb.run()).",
+                RuntimeWarning,
+                stacklevel=2,
+            )
+            return self._load_bundled_csvs()
+        self._resource_ctx = ctx  # keep the (usually no-op) extracted path alive for self's lifetime
+        return con
 
     @staticmethod
     def _load_bundled_csvs() -> duckdb.DuckDBPyConnection:

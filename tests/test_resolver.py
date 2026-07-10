@@ -1,9 +1,7 @@
 """Plain-assert smoke tests. Run: .venv/bin/python tests/test_resolver.py
 
-Runs entirely against the CSVs bundled inside research_classification/data/ -- no build
-step required first (that's the whole point of Resolver() defaulting to an in-memory build
-from package data). test_explicit_db_path_matches_bundled additionally sanity-checks
-Resolver(db_path=...) against the exported .duckdb file if `python build.py` has been run.
+Runs entirely against research_classification/data/ (the bundled, git-tracked CSVs and the
+pre-built .duckdb file Resolver() opens by default) -- no build step required first.
 """
 
 from __future__ import annotations
@@ -153,19 +151,6 @@ def test_seo_cannot_target_oax_or_leiden():
     print("  SEO2020 correctly cannot target any OAX/Leiden scheme")
 
 
-def test_indigenous_studies_gap():
-    # Groups 4519/4599 ("Other Indigenous data, methodologies..." / "Other Indigenous
-    # studies") have no prefix/gloss pattern and no non-Indigenous analogue at all -- unlike
-    # the rest of division 45 (see test_division45_cultural_proxy), these must still report
-    # an informative LookupError, not silently fabricate a mapping.
-    try:
-        resolver.resolve("459999", "FOR2020", "OAX_FIELD")
-        raise AssertionError("expected LookupError")
-    except LookupError as e:
-        assert "genuinely absent" in str(e)
-    print("  FOR2020 459999 (group 4599, no non-Indigenous analogue) correctly reports OAX as genuinely absent")
-
-
 def test_division45_cultural_proxy():
     # Most of division 45 (Indigenous Studies) DOES resolve to OAX/Leiden now, via a
     # lexically-derived (or, for two theme-buckets, user-confirmed) proxy to the
@@ -204,17 +189,19 @@ def test_division45_cultural_proxy():
     assert data_tech.match_method == methodologies.match_method == "cultural_proxy"
     assert data_tech.label == methodologies.label == "Social Sciences"
 
-    # group 4599 ("Other Indigenous studies") has no sibling structure and no non-Indigenous
-    # analogue at all -- must NOT get a proxy, unlike everything else in division 45
-    row = resolver._con.execute(
-        "SELECT 1 FROM for2020_division45_group_to_proxy WHERE for2020_source_code IN ('4599','459999')"
-    ).fetchone()
-    assert row is None
+    # group 4599 ("Other Indigenous studies", division 45's last remaining gap) -> same
+    # user-confirmed proxy as 4519's own default, FOR2020 group 4499 "Other human society";
+    # its sole field 459999 inherits the same via the group-prefix fallback tier
+    other_indigenous = resolver.resolve("4599", "FOR2020", "OAX_FIELD")
+    other_indigenous_field = resolver.resolve("459999", "FOR2020", "OAX_FIELD")
+    assert other_indigenous.match_method == other_indigenous_field.match_method == "cultural_proxy"
+    assert other_indigenous.label == other_indigenous_field.label == "Social Sciences"
 
     print(f"  division-45 cultural proxy OK: FOR1998 321207 -> OAX field {oax.label!r} "
           f"({oax.confidence}, {oax.match_method}); FOR2008 210101 -> Leiden {leiden.label!r} ({leiden.confidence}); "
           f"FOR2020 450601 (sciences override) -> OAX field {sci.label!r} ({sci.confidence}); "
-          f"bare 45/4519/451999 -> {bare45.label!r}; 451906 -> {data_tech.label!r}; 451907 -> {methodologies.label!r}")
+          f"bare 45/4519/451999 -> {bare45.label!r}; 451906 -> {data_tech.label!r}; 451907 -> {methodologies.label!r}; "
+          f"4599/459999 -> {other_indigenous.label!r}")
 
 
 def test_group_level_precision():
@@ -256,27 +243,37 @@ def test_leading_zero_normalization():
 
 
 def test_explicit_db_path_matches_bundled():
-    # Resolver(db_path=...) against the exported .duckdb file should agree with the
-    # default in-memory-from-bundled-CSVs path -- same data, two ways to load it.
-    db_path = ROOT / "data" / "research_classification.duckdb"
-    if not db_path.exists():
-        print("  (skipped: run `python build.py` first to produce data/research_classification.duckdb)")
-        return
-    exported = Resolver(db_path=db_path)
+    # Resolver(db_path=...) pointed explicitly at the same bundled .duckdb file the default
+    # constructor opens automatically should agree -- same data, two ways to load it.
+    db_path = DATA_DIR / "research_classification.duckdb"
+    assert db_path.exists(), "research_classification.duckdb should always be present (git-tracked, bundled package data)"
+    explicit = Resolver(db_path=db_path)
     a = resolver.resolve("30", "FOR2020", "FOR2020")
-    b = exported.resolve("30", "FOR2020", "FOR2020")
+    b = explicit.resolve("30", "FOR2020", "FOR2020")
     assert a.code == b.code and a.label == b.label
-    print("  Resolver(db_path=...) against the exported file agrees with the bundled default")
+    print("  Resolver(db_path=...) against the bundled .duckdb file agrees with the default constructor")
+
+
+def test_csv_fallback_matches_default():
+    # Resolver._load_bundled_csvs() (the fallback path used if the bundled .duckdb file
+    # can't be opened, e.g. a duckdb version mismatch) should give identical results to the
+    # default fast path -- same source CSVs either way, just loaded differently.
+    from_csv = Resolver.__new__(Resolver)
+    from_csv._resource_ctx = None
+    from_csv._con = Resolver._load_bundled_csvs()
+    a = resolver.resolve("230104", "FOR1998", "OAX_FIELD")
+    b = from_csv.resolve("230104", "FOR1998", "OAX_FIELD")
+    assert a.code == b.code and a.label == b.label and a.confidence == b.confidence
+    print("  CSV-fallback path agrees with the default bundled-.duckdb path")
 
 
 def test_exhaustive_for2020_to_oax_leiden_coverage():
-    # Every FOR2020 code (2203 total: 23 divisions, 213 groups, 1967 fields) should resolve
-    # to both OAX_FIELD and LEIDEN except exactly the two division-45 codes with genuinely
-    # no non-Indigenous analogue: group 4599 ("Other Indigenous studies") and its sole field
-    # 459999. This is a permanent regression guard on the cultural_proxy coverage -- any
-    # unexpected failure here means something in division 45's proxy chain broke.
+    # Every single FOR2020 code (2203 total: 23 divisions, 213 groups, 1967 fields) resolves
+    # to both OAX_FIELD and LEIDEN -- division 45's cultural-proxy chain (see
+    # curate_for2020_division45_to_proxy.py) now covers all of it, including the last
+    # remaining gap (group 4599, proxied to FOR2020 group 4499 "Other human society"). This
+    # is a permanent regression guard: any future failure here means something broke.
     for_df = pd.read_csv(DATA_DIR / "for_2020.csv", dtype=str, keep_default_na=False)
-    expected_failures = {"4599", "459999"}
     for to_scheme in ("OAX_FIELD", "LEIDEN"):
         failures = set()
         for code in for_df["code"]:
@@ -284,9 +281,27 @@ def test_exhaustive_for2020_to_oax_leiden_coverage():
                 resolver.resolve(code, "FOR2020", to_scheme)
             except LookupError:
                 failures.add(code)
-        assert failures == expected_failures, f"{to_scheme}: expected failures {expected_failures}, got {failures}"
-    print(f"  exhaustive FOR2020 coverage OK: {len(for_df) - len(expected_failures)}/{len(for_df)} codes "
-          f"resolve to both OAX_FIELD and LEIDEN; only {expected_failures} genuinely unmapped")
+        assert not failures, f"{to_scheme}: unexpected LookupError(s) for {failures}"
+    print(f"  exhaustive FOR2020 coverage OK: all {len(for_df)}/{len(for_df)} codes resolve to both OAX_FIELD and LEIDEN")
+
+
+def test_exhaustive_legacy_for_coverage():
+    # Every FOR1998 and FOR2008 code that appears as a source_code in its vintage bridge
+    # (898 and 1238 respectively) should also resolve to both OAX_FIELD and LEIDEN, since
+    # they all resolve to *some* FOR2020 code first and FOR2020 is now fully covered (see
+    # test_exhaustive_for2020_to_oax_leiden_coverage). A permanent regression guard.
+    for from_scheme, bridge_file in [("FOR1998", "bridge_for1998_for2020.csv"), ("FOR2008", "bridge_for2008_for2020.csv")]:
+        bridge = pd.read_csv(DATA_DIR / bridge_file, dtype=str, keep_default_na=False)
+        codes = bridge["source_code"].unique()
+        for to_scheme in ("OAX_FIELD", "LEIDEN"):
+            failures = set()
+            for code in codes:
+                try:
+                    resolver.resolve(code, from_scheme, to_scheme)
+                except LookupError:
+                    failures.add(code)
+            assert not failures, f"{from_scheme} -> {to_scheme}: unexpected LookupError(s) for {failures}"
+        print(f"  exhaustive {from_scheme} coverage OK: all {len(codes)}/{len(codes)} codes resolve to both OAX_FIELD and LEIDEN")
 
 
 def test_lookup_error():
@@ -312,12 +327,13 @@ if __name__ == "__main__":
         test_oax_down_direction_hard_fails,
         test_oax_domain_too_coarse_for_for2020,
         test_seo_cannot_target_oax_or_leiden,
-        test_indigenous_studies_gap,
         test_division45_cultural_proxy,
         test_exhaustive_for2020_to_oax_leiden_coverage,
+        test_exhaustive_legacy_for_coverage,
         test_group_level_precision,
         test_leading_zero_normalization,
         test_explicit_db_path_matches_bundled,
+        test_csv_fallback_matches_default,
         test_lookup_error,
     ]
     for t in tests:

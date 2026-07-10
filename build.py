@@ -95,7 +95,7 @@ def main() -> None:
     files_with_findings = sorted({f[0] for f in findings})
     print(f"   {len(findings)} non-ASCII cell(s) found across {len(files_with_findings)} file(s): {files_with_findings}")
 
-    print("11. Loading everything into data/research_classification.duckdb...")
+    print("11. Loading everything into research_classification/data/research_classification.duckdb...")
     build_duckdb.run()
 
     print("12. Summary:")
