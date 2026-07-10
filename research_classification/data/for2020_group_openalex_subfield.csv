@@ -1,247 +1,194 @@
 for_group_code,for_group_label,openalex_subfield_id,openalex_subfield_label,is_primary,share,n_rows
-3002,"Agriculture, land and farm management",1100,General Agricultural and Biological Sciences,True,0.538,13
-3002,"Agriculture, land and farm management",1104,Aquatic Science,False,0.462,13
-3003,Animal production,3404,Small Animals,True,1.0,10
-3004,Crop and pasture production,1102,Agronomy and Crop Science,True,1.0,9
-3006,Food sciences,1106,Food Science,True,1.0,31
-3007,Forestry sciences,1107,Forestry,True,1.0,3
-3009,Veterinary sciences,3402,Equine,True,1.0,1
-3101,Biochemistry and cell biology,1307,Cell Biology,True,0.944,18
-3101,Biochemistry and cell biology,1315,Structural Biology,False,0.056,18
-3102,Bioinformatics and computational biology,1312,Molecular Biology,True,1.0,132
-3103,Ecology,2303,Ecology,True,1.0,32
-3104,Evolutionary biology,1105,"Ecology, Evolution, Behavior and Systematics",True,0.941,34
-3104,Evolutionary biology,1309,Developmental Biology,False,0.059,34
-3105,Genetics,2716,Genetics,False,0.188,48
-3105,Genetics,1311,Genetics,True,0.812,48
-3106,Industrial biotechnology,1305,Biotechnology,True,1.0,8
-3107,Microbiology,1109,Insect Science,True,0.424,33
-3107,Microbiology,1310,Endocrinology,False,0.212,33
-3107,Microbiology,2404,Microbiology,False,0.182,33
-3107,Microbiology,2406,Virology,False,0.091,33
-3107,Microbiology,2402,Applied Microbiology and Biotechnology,False,0.061,33
-3107,Microbiology,2726,Microbiology,False,0.03,33
-3108,Plant biology,1110,Plant Science,True,1.0,80
-3109,Zoology,1103,Animal Science and Zoology,True,1.0,8
-3201,Cardiovascular medicine and haematology,2732,Orthopedics and Sports Medicine,False,0.028,250
-3201,Cardiovascular medicine and haematology,2708,Dermatology,False,0.052,250
-3201,Cardiovascular medicine and haematology,2734,Pathology and Forensic Medicine,False,0.088,250
-3201,Cardiovascular medicine and haematology,2711,Emergency Medicine,False,0.044,250
-3201,Cardiovascular medicine and haematology,2741,"Radiology, Nuclear Medicine and Imaging",False,0.116,250
-3201,Cardiovascular medicine and haematology,2746,Surgery,True,0.372,250
-3201,Cardiovascular medicine and haematology,2705,Cardiology and Cardiovascular Medicine,False,0.112,250
-3201,Cardiovascular medicine and haematology,2740,Pulmonary and Respiratory Medicine,False,0.188,250
-3202,Clinical sciences,2405,Parasitology,True,0.171,41
-3202,Clinical sciences,2721,Hepatology,False,0.146,41
-3202,Clinical sciences,2748,Urology,False,0.122,41
-3202,Clinical sciences,2715,Gastroenterology,False,0.122,41
-3202,Clinical sciences,1308,Clinical Biochemistry,False,0.098,41
-3202,Clinical sciences,2733,Otorhinolaryngology,False,0.073,41
-3202,Clinical sciences,2717,Geriatrics and Gerontology,False,0.073,41
-3202,Clinical sciences,2714,Family Practice,False,0.049,41
-3202,Clinical sciences,2747,Transplantation,False,0.024,41
-3202,Clinical sciences,2727,Nephrology,False,0.122,41
-3203,Dentistry,2702,Anatomy,False,0.5,2
-3203,Dentistry,3002,Drug Discovery,True,0.5,2
-3204,Immunology,2723,Immunology and Allergy,False,0.077,39
-3204,Immunology,2403,Immunology,True,0.615,39
-3204,Immunology,2720,Hematology,False,0.308,39
-3205,Medical biochemistry and metabolomics,1303,Biochemistry,True,0.5,12
-3205,Medical biochemistry and metabolomics,3005,Toxicology,False,0.333,12
-3205,Medical biochemistry and metabolomics,2704,Biochemistry,False,0.167,12
-3206,Medical biotechnology,1313,Molecular Medicine,True,0.667,3
-3206,Medical biotechnology,2724,Internal Medicine,False,0.333,3
-3207,Medical microbiology,2706,Critical Care and Intensive Care Medicine,True,0.556,9
-3207,Medical microbiology,2703,Anesthesiology and Pain Medicine,False,0.444,9
-3208,Medical physiology,2737,Physiology,True,0.744,39
-3208,Medical physiology,1304,Biophysics,False,0.154,39
-3208,Medical physiology,1314,Physiology,False,0.103,39
-3209,Neurosciences,2807,Endocrine and Autonomic Systems,False,0.037,82
-3209,Neurosciences,2802,Behavioral Neuroscience,False,0.012,82
-3209,Neurosciences,2806,Developmental Neuroscience,False,0.037,82
-3209,Neurosciences,2809,Sensory Systems,False,0.037,82
-3209,Neurosciences,2808,Neurology,False,0.122,82
-3209,Neurosciences,2804,Cellular and Molecular Neuroscience,False,0.159,82
-3209,Neurosciences,2728,Neurology,False,0.256,82
-3209,Neurosciences,2805,Cognitive Neuroscience,True,0.341,82
-3210,Nutrition and dietetics,2916,Nutrition and Dietetics,True,1.0,17
-3211,Oncology and carcinogenesis,2730,Oncology,True,0.721,43
-3211,Oncology and carcinogenesis,1306,Cancer Research,False,0.279,43
-3212,Ophthalmology and optometry,2731,Ophthalmology,True,1.0,12
-3214,Pharmacology and pharmaceutical sciences,2736,Pharmacology,True,0.455,44
-3214,Pharmacology and pharmaceutical sciences,3004,Pharmacology,False,0.318,44
-3214,Pharmacology and pharmaceutical sciences,3003,Pharmaceutical Science,False,0.114,44
-3214,Pharmacology and pharmaceutical sciences,3611,Pharmacy,False,0.114,44
-3215,Reproductive medicine,2743,Reproductive Medicine,True,1.0,7
-3301,Architecture,2216,Architecture,True,1.0,2
-3302,Building,2215,Building and Construction,True,1.0,19
-3304,Urban and regional planning,3313,Transportation,False,0.273,22
-3304,Urban and regional planning,3322,Urban Studies,True,0.727,22
-3401,Analytical chemistry,1602,Analytical Chemistry,True,0.875,8
-3401,Analytical chemistry,1603,Electrochemistry,False,0.125,8
-3402,Inorganic chemistry,1604,Inorganic Chemistry,True,1.0,12
-3403,Macromolecular and materials chemistry,2505,Materials Chemistry,True,0.865,74
-3403,Macromolecular and materials chemistry,1607,Spectroscopy,False,0.135,74
-3405,Organic chemistry,1605,Organic Chemistry,True,1.0,54
-3406,Physical chemistry,1606,Physical and Theoretical Chemistry,True,1.0,8
-3501,"Accounting, auditing and accountability",1402,Accounting,True,1.0,17
-3503,Business systems in context,1405,Management of Technology and Innovation,True,1.0,13
-3504,Commercial services,1409,"Tourism, Leisure and Hospitality Management",True,1.0,2
-3506,Marketing,1406,Marketing,True,0.867,15
-3506,Marketing,1800,General Decision Sciences,False,0.133,15
-3507,"Strategy, management and organisational behaviour",1403,Business and International Management,False,0.023,87
-3507,"Strategy, management and organisational behaviour",1407,Organizational Behavior and Human Resource Management,False,0.276,87
-3507,"Strategy, management and organisational behaviour",1803,Management Science and Operations Research,False,0.322,87
-3507,"Strategy, management and organisational behaviour",1408,Strategy and Management,True,0.379,87
-3601,"Art history, theory and criticism",1209,Museology,True,0.6,15
-3601,"Art history, theory and criticism",1206,Conservation,False,0.4,15
-3603,Music,1210,Music,True,1.0,5
-3604,Performing arts,1213,Visual Arts and Performing Arts,True,1.0,13
-3701,Atmospheric sciences,1902,Atmospheric Science,True,1.0,10
-3703,Geochemistry,1906,Geochemistry and Petrology,True,1.0,6
-3704,Geoinformatics,1912,Space and Planetary Science,True,1.0,1
-3705,Geology,1907,Geology,True,1.0,5
-3706,Geophysics,1908,Geophysics,True,1.0,10
-3708,Oceanography,1910,Oceanography,True,0.533,15
-3708,Oceanography,1911,Paleontology,False,0.467,15
-3799,Other earth sciences,1904,Earth-Surface Processes,True,1.0,6
-3801,Applied economics,2000,"General Economics, Econometrics and Finance",False,0.238,21
-3801,Applied economics,2003,Finance,True,0.762,21
-3802,Econometrics,2002,Economics and Econometrics,True,1.0,57
-3902,"Education policy, sociology and philosophy",3312,Sociology and Political Science,True,0.98,197
-3902,"Education policy, sociology and philosophy",3310,Linguistics and Language,False,0.01,197
-3902,"Education policy, sociology and philosophy",3300,General Social Sciences,False,0.01,197
-3903,Education systems,3304,Education,True,1.0,82
-3904,Specialist studies in education,3307,Human Factors and Ergonomics,True,0.6,5
-3904,Specialist studies in education,3302,Archeology,False,0.4,5
-3999,Other Education,3311,Safety Research,True,0.571,28
-3999,Other Education,3315,Communication,False,0.429,28
-4001,Aerospace engineering,2202,Aerospace Engineering,True,1.0,39
-4002,Automotive engineering,2203,Automotive Engineering,True,1.0,9
-4003,Biomedical engineering,2204,Biomedical Engineering,True,1.0,66
-4004,Chemical engineering,2104,Nuclear Energy and Engineering,False,0.111,9
-4004,Chemical engineering,1506,Filtration and Separation,False,0.111,9
-4004,Chemical engineering,1502,Bioengineering,False,0.111,9
-4004,Chemical engineering,1508,Process Chemistry and Technology,False,0.222,9
-4004,Chemical engineering,1503,Catalysis,True,0.444,9
-4005,Civil engineering,2205,Civil and Structural Engineering,True,0.975,40
-4005,Civil engineering,2200,General Engineering,False,0.025,40
-4007,"Control engineering, mechatronics and robotics",2207,Control and Systems Engineering,True,1.0,37
-4008,Electrical engineering,2208,Electrical and Electronic Engineering,True,0.972,108
-4008,Electrical engineering,2102,Energy Engineering and Power Technology,False,0.019,108
-4008,Electrical engineering,2100,General Energy,False,0.009,108
-4010,Engineering practice and education,2214,Media Technology,True,0.556,18
-4010,Engineering practice and education,2213,"Safety, Risk, Reliability and Quality",False,0.444,18
-4011,Environmental engineering,2105,"Renewable Energy, Sustainability and the Environment",True,0.526,38
-4011,Environmental engineering,2305,Environmental Engineering,False,0.447,38
-4011,Environmental engineering,1504,Chemical Health and Safety,False,0.026,38
-4012,Fluid mechanics and thermal engineering,1507,Fluid Flow and Transfer Processes,False,0.138,29
-4012,Fluid mechanics and thermal engineering,2206,Computational Mechanics,True,0.862,29
-4014,Manufacturing engineering,2209,Industrial and Manufacturing Engineering,True,0.941,17
-4014,Manufacturing engineering,2103,Fuel Technology,False,0.059,17
-4015,Maritime engineering,2212,Ocean Engineering,True,1.0,20
-4016,Materials engineering,2507,Polymers and Plastics,True,0.867,15
-4016,Materials engineering,2503,Ceramics and Composites,False,0.133,15
-4017,Mechanical engineering,2210,Mechanical Engineering,True,0.76,96
-4017,Mechanical engineering,2211,Mechanics of Materials,False,0.24,96
-4018,Nanotechnology,2502,Biomaterials,True,1.0,13
-4019,Resources engineering and extractive metallurgy,2506,Metals and Alloys,True,1.0,1
-4101,Climate change impacts and adaptation,2306,Global and Planetary Change,True,0.641,39
-4101,Climate change impacts and adaptation,2307,"Health, Toxicology and Mutagenesis",False,0.359,39
-4102,Ecological applications,2302,Ecological Modeling,True,1.0,3
-4103,Environmental biotechnology,2304,Environmental Chemistry,True,1.0,10
-4104,Environmental management,2311,Waste Management and Disposal,False,0.117,60
-4104,Environmental management,2309,Nature and Landscape Conservation,False,0.183,60
-4104,Environmental management,2312,Water Science and Technology,False,0.25,60
-4104,Environmental management,2308,"Management, Monitoring, Policy and Law",True,0.45,60
-4105,Pollution and contamination,2310,Pollution,True,1.0,10
-4106,Soil sciences,1111,Soil Science,True,1.0,12
-4201,Allied health and rehabilitation science,2742,Rehabilitation,True,0.7,10
-4201,Allied health and rehabilitation science,3505,Orthodontics,False,0.3,10
-4202,Epidemiology,2713,Epidemiology,True,1.0,38
-4203,Health services and systems,3500,General Dentistry,False,0.038,26
-4203,Health services and systems,2911,Leadership and Management,False,0.038,26
-4203,Health services and systems,2718,Health Informatics,False,0.038,26
-4203,Health services and systems,2910,"Issues, ethics and legal aspects",False,0.038,26
-4203,Health services and systems,3614,Radiological and Ultrasound Technology,False,0.077,26
-4203,Health services and systems,3604,Emergency Medical Services,False,0.269,26
-4203,Health services and systems,3605,Health Information Management,True,0.462,26
-4203,Health services and systems,2922,Research and Theory,False,0.038,26
-4205,Nursing,3616,Speech and Hearing,True,1.0,9
-4206,Public health,2738,Psychiatry and Mental health,False,0.126,127
-4206,Public health,2735,"Pediatrics, Perinatology and Child Health",False,0.126,127
-4206,Public health,2739,"Public Health, Environmental and Occupational Health",True,0.409,127
-4206,Public health,3600,General Health Professions,False,0.339,127
-4207,Sports science and exercise,3612,"Physical Therapy, Sports Therapy and Rehabilitation",True,1.0,4
-4208,"Traditional, complementary and integrative medicine",2707,Complementary and alternative medicine,True,0.609,23
-4208,"Traditional, complementary and integrative medicine",3504,Oral Surgery,False,0.217,23
-4208,"Traditional, complementary and integrative medicine",3603,Complementary and Manual Therapy,False,0.087,23
-4208,"Traditional, complementary and integrative medicine",3607,Medical Laboratory Technology,False,0.043,23
-4208,"Traditional, complementary and integrative medicine",3608,Medical Terminology,False,0.043,23
-4299,Other health sciences,2729,Obstetrics and Gynecology,False,0.096,83
-4299,Other health sciences,3506,Periodontics,False,0.036,83
-4299,Other health sciences,3306,Health,False,0.12,83
-4299,Other health sciences,3609,Occupational Therapy,False,0.048,83
-4299,Other health sciences,2725,Infectious Diseases,False,0.217,83
-4299,Other health sciences,2712,"Endocrinology, Diabetes and Metabolism",False,0.193,83
-4299,Other health sciences,2745,Rheumatology,True,0.289,83
-4303,Historical studies,1202,History,True,1.0,37
-4401,Anthropology,3314,Anthropology,True,1.0,22
-4403,Demography,3317,Demography,True,1.0,25
-4404,Development studies,3303,Development,True,1.0,4
-4405,Gender studies,3318,Gender Studies,True,1.0,17
-4406,Human geography,3305,"Geography, Planning and Development",True,1.0,12
-4407,Policy and administration,3321,Public Administration,True,1.0,1
-4408,Political science,3320,Political Science and International Relations,True,1.0,95
-4601,Applied computing,1706,Computer Science Applications,True,1.0,5
-4602,Artificial intelligence,1702,Artificial Intelligence,True,1.0,69
-4603,Computer vision and multimedia computation,1707,Computer Vision and Pattern Recognition,True,0.778,45
-4603,Computer vision and multimedia computation,1711,Signal Processing,False,0.222,45
-4606,Distributed computing and systems software,1708,Hardware and Architecture,False,0.2,40
-4606,Distributed computing and systems software,1705,Computer Networks and Communications,True,0.8,40
-4607,"Graphics, augmented reality and games",1704,Computer Graphics and Computer-Aided Design,True,1.0,4
-4608,Human-centred computing,1709,Human-Computer Interaction,True,1.0,8
-4609,Information systems,1710,Information Systems,True,0.708,72
-4609,Information systems,1404,Management Information Systems,False,0.167,72
-4609,Information systems,1802,Information Systems and Management,False,0.125,72
-4610,Library and information studies,3309,Library and Information Sciences,True,1.0,2
-4612,Software engineering,1712,Software,True,1.0,5
-4613,Theory of computation,1703,Computational Theory and Mathematics,True,0.952,21
-4613,Theory of computation,2614,Theoretical Computer Science,False,0.048,21
-4702,Cultural studies,3316,Cultural Studies,True,1.0,22
-4704,Linguistics,1203,Language and Linguistics,True,1.0,15
-4705,Literary studies,1208,Literature and Literary Theory,True,0.93,43
-4705,Literary studies,1205,Classics,False,0.07,43
-4807,Public law,3308,Law,True,1.0,31
-4901,Applied mathematics,2604,Applied Mathematics,True,1.0,16
-4902,Mathematical physics,2610,Mathematical Physics,True,0.786,14
-4902,Mathematical physics,2607,Discrete Mathematics and Combinatorics,False,0.214,14
-4903,Numerical and computational mathematics,2612,Numerical Analysis,True,0.5,8
-4903,Numerical and computational mathematics,2611,Modeling and Simulation,False,0.375,8
-4903,Numerical and computational mathematics,2605,Computational Mathematics,False,0.125,8
-4904,Pure mathematics,2608,Geometry and Topology,True,0.688,16
-4904,Pure mathematics,2602,Algebra and Number Theory,False,0.312,16
-4905,Statistics,2613,Statistics and Probability,True,0.69,29
-4905,Statistics,1804,"Statistics, Probability and Uncertainty",False,0.31,29
-5002,History and philosophy of specific fields,1207,History and Philosophy of Science,True,1.0,11
-5003,Philosophy,1211,Philosophy,True,1.0,38
-5004,Religious studies,1212,Religious studies,True,1.0,12
-5099,Other philosophy and religious studies,1204,Archeology,True,1.0,14
-5101,Astronomical sciences,3103,Astronomy and Astrophysics,True,0.913,23
-5101,Astronomical sciences,3105,Instrumentation,False,0.087,23
-5102,"Atomic, molecular and optical physics",3102,Acoustics and Ultrasonics,False,0.019,54
-5102,"Atomic, molecular and optical physics",3107,"Atomic and Molecular Physics, and Optics",True,0.667,54
-5102,"Atomic, molecular and optical physics",2504,"Electronic, Optical and Magnetic Materials",False,0.315,54
-5104,Condensed matter physics,3104,Condensed Matter Physics,True,0.667,12
-5104,Condensed matter physics,2508,"Surfaces, Coatings and Films",False,0.333,12
-5106,Nuclear and plasma physics,3109,Statistical and Nonlinear Physics,True,0.7,20
-5106,Nuclear and plasma physics,3108,Radiation,False,0.3,20
-5107,Particle and high energy physics,3106,Nuclear and High Energy Physics,True,1.0,12
-5201,Applied and developmental psychology,3204,Developmental and Educational Psychology,True,0.68,25
-5201,Applied and developmental psychology,3202,Applied Psychology,False,0.28,25
-5201,Applied and developmental psychology,3206,Neuropsychology and Physiological Psychology,False,0.04,25
-5202,Biological psychology,2803,Biological Psychiatry,True,0.5,2
-5202,Biological psychology,3200,General Psychology,False,0.5,2
-5203,Clinical and health psychology,3203,Clinical Psychology,True,1.0,35
-5204,Cognitive and computational psychology,3205,Experimental and Cognitive Psychology,True,1.0,21
-5205,Social and personality psychology,3207,Social Psychology,True,1.0,45
+3001,Agricultural biotechnology,1110,Plant Science,True,0.167,30
+3002,"Agriculture, land and farm management",2308,"Management, Monitoring, Policy and Law",True,0.167,30
+3003,Animal production,2308,"Management, Monitoring, Policy and Law",True,0.1,30
+3004,Crop and pasture production,1710,Information Systems,True,0.133,30
+3005,Fisheries sciences,1311,Genetics,True,0.1,30
+3006,Food sciences,1106,Food Science,True,0.233,30
+3007,Forestry sciences,2306,Global and Planetary Change,True,0.133,30
+3008,Horticultural production,2208,Electrical and Electronic Engineering,True,0.1,30
+3009,Veterinary sciences,3404,Small Animals,True,0.133,30
+3099,"Other agricultural, veterinary and food sciences",1106,Food Science,True,0.233,30
+3101,Biochemistry and cell biology,1312,Molecular Biology,True,0.2,30
+3102,Bioinformatics and computational biology,2613,Statistics and Probability,True,0.2,30
+3103,Ecology,2303,Ecology,True,0.267,30
+3104,Evolutionary biology,1105,"Ecology, Evolution, Behavior and Systematics",True,0.333,30
+3105,Genetics,1312,Molecular Biology,True,0.333,30
+3106,Industrial biotechnology,1312,Molecular Biology,True,0.2,30
+3107,Microbiology,2303,Ecology,True,0.267,30
+3108,Plant biology,1312,Molecular Biology,True,0.2,30
+3109,Zoology,2303,Ecology,True,0.133,30
+3199,Other biological sciences,1312,Molecular Biology,True,0.1,30
+3201,Cardiovascular medicine and haematology,2746,Surgery,True,0.1,30
+3202,Clinical sciences,2739,"Public Health, Environmental and Occupational Health",True,0.1,30
+3203,Dentistry,2505,Materials Chemistry,True,0.167,30
+3204,Immunology,1311,Genetics,True,0.1,30
+3205,Medical biochemistry and metabolomics,1312,Molecular Biology,True,0.267,30
+3206,Medical biotechnology,1312,Molecular Biology,True,0.167,30
+3207,Medical microbiology,2739,"Public Health, Environmental and Occupational Health",True,0.133,30
+3208,Medical physiology,2403,Immunology,True,0.167,30
+3209,Neurosciences,2610,Mathematical Physics,True,0.067,30
+3210,Nutrition and dietetics,2916,Nutrition and Dietetics,True,0.2,30
+3211,Oncology and carcinogenesis,2730,Oncology,True,0.233,30
+3212,Ophthalmology and optometry,2208,Electrical and Electronic Engineering,True,0.233,30
+3213,Paediatrics,3203,Clinical Psychology,True,0.167,30
+3214,Pharmacology and pharmaceutical sciences,2208,Electrical and Electronic Engineering,True,0.1,30
+3215,Reproductive medicine,1312,Molecular Biology,True,0.1,30
+3299,Other biomedical and clinical sciences,1207,History and Philosophy of Science,True,0.2,30
+3301,Architecture,1207,History and Philosophy of Science,True,0.133,30
+3302,Building,1407,Organizational Behavior and Human Resource Management,True,0.167,30
+3303,Design,1407,Organizational Behavior and Human Resource Management,True,0.067,30
+3304,Urban and regional planning,2308,"Management, Monitoring, Policy and Law",True,0.133,30
+3399,Other built environment and design,2208,Electrical and Electronic Engineering,True,0.133,30
+3401,Analytical chemistry,1602,Analytical Chemistry,True,0.067,30
+3402,Inorganic chemistry,1605,Organic Chemistry,True,0.367,30
+3403,Macromolecular and materials chemistry,2505,Materials Chemistry,True,0.3,30
+3404,Medicinal and biomolecular chemistry,1312,Molecular Biology,True,0.2,30
+3405,Organic chemistry,1605,Organic Chemistry,True,0.4,30
+3406,Physical chemistry,1605,Organic Chemistry,True,0.2,30
+3407,Theoretical and computational chemistry,1605,Organic Chemistry,True,0.167,30
+3499,Other chemical sciences,1605,Organic Chemistry,True,0.233,30
+3501,"Accounting, auditing and accountability",1402,Accounting,True,0.133,30
+3502,"Banking, finance and investment",1402,Accounting,True,0.2,30
+3503,Business systems in context,1710,Information Systems,True,0.133,30
+3504,Commercial services,1106,Food Science,True,0.1,30
+3505,Human resources and industrial relations,3609,Occupational Therapy,True,0.133,30
+3506,Marketing,1406,Marketing,True,0.133,30
+3507,"Strategy, management and organisational behaviour",1408,Strategy and Management,True,0.333,30
+3508,Tourism,2303,Ecology,True,0.067,30
+3509,"Transportation, logistics and supply chains",3313,Transportation,True,0.133,30
+3599,"Other commerce, management, tourism and services",2712,"Endocrinology, Diabetes and Metabolism",True,0.1,30
+3601,"Art history, theory and criticism",1213,Visual Arts and Performing Arts,True,0.2,30
+3602,Creative and professional writing,3304,Education,True,0.167,30
+3603,Music,3304,Education,True,0.233,30
+3604,Performing arts,1213,Visual Arts and Performing Arts,True,0.1,30
+3605,Screen and digital media,3315,Communication,True,0.167,30
+3606,Visual arts,3304,Education,True,0.133,30
+3699,Other creative arts and writing,1213,Visual Arts and Performing Arts,True,0.393,28
+3701,Atmospheric sciences,2306,Global and Planetary Change,True,0.1,30
+3702,Climate change science,2306,Global and Planetary Change,True,0.2,30
+3703,Geochemistry,1605,Organic Chemistry,True,0.3,30
+3704,Geoinformatics,1702,Artificial Intelligence,True,0.167,30
+3705,Geology,2205,Civil and Structural Engineering,True,0.233,30
+3706,Geophysics,2211,Mechanics of Materials,True,0.133,30
+3707,Hydrology,2312,Water Science and Technology,True,0.133,30
+3708,Oceanography,1605,Organic Chemistry,True,0.167,30
+3709,Physical geography and environmental geoscience,2308,"Management, Monitoring, Policy and Law",True,0.1,30
+3799,Other earth sciences,2210,Mechanical Engineering,True,0.1,30
+3801,Applied economics,2002,Economics and Econometrics,True,0.167,30
+3802,Econometrics,2002,Economics and Econometrics,True,0.233,30
+3803,Economic theory,2002,Economics and Econometrics,True,0.2,30
+3899,Other economics,2002,Economics and Econometrics,True,0.233,30
+3901,Curriculum and pedagogy,3304,Education,True,0.1,30
+3902,"Education policy, sociology and philosophy",3312,Sociology and Political Science,True,0.167,30
+3903,Education systems,3304,Education,True,0.633,30
+3904,Specialist studies in education,3304,Education,True,0.3,30
+3999,Other Education,3304,Education,True,0.233,30
+4001,Aerospace engineering,2207,Control and Systems Engineering,True,0.267,30
+4002,Automotive engineering,2210,Mechanical Engineering,True,0.2,30
+4003,Biomedical engineering,2741,"Radiology, Nuclear Medicine and Imaging",True,0.133,30
+4004,Chemical engineering,2210,Mechanical Engineering,True,0.133,30
+4005,Civil engineering,2205,Civil and Structural Engineering,True,0.2,30
+4006,Communications engineering,2208,Electrical and Electronic Engineering,True,0.233,30
+4007,"Control engineering, mechatronics and robotics",2207,Control and Systems Engineering,True,0.267,30
+4008,Electrical engineering,2208,Electrical and Electronic Engineering,True,0.333,30
+4009,"Electronics, sensors and digital hardware",2208,Electrical and Electronic Engineering,True,0.3,30
+4010,Engineering practice and education,3304,Education,True,0.2,30
+4011,Environmental engineering,2308,"Management, Monitoring, Policy and Law",True,0.1,30
+4012,Fluid mechanics and thermal engineering,2206,Computational Mechanics,True,0.267,30
+4013,Geomatic engineering,2202,Aerospace Engineering,True,0.133,30
+4014,Manufacturing engineering,2209,Industrial and Manufacturing Engineering,True,0.133,30
+4015,Maritime engineering,2212,Ocean Engineering,True,0.133,30
+4016,Materials engineering,2210,Mechanical Engineering,True,0.3,30
+4017,Mechanical engineering,2207,Control and Systems Engineering,True,0.2,30
+4018,Nanotechnology,2208,Electrical and Electronic Engineering,True,0.133,30
+4019,Resources engineering and extractive metallurgy,2205,Civil and Structural Engineering,True,0.167,30
+4099,Other engineering,2210,Mechanical Engineering,True,0.133,30
+4101,Climate change impacts and adaptation,2306,Global and Planetary Change,True,0.2,30
+4102,Ecological applications,2306,Global and Planetary Change,True,0.1,30
+4103,Environmental biotechnology,2308,"Management, Monitoring, Policy and Law",True,0.1,30
+4104,Environmental management,2308,"Management, Monitoring, Policy and Law",True,0.2,30
+4105,Pollution and contamination,2312,Water Science and Technology,True,0.2,30
+4106,Soil sciences,1111,Soil Science,True,0.067,30
+4199,Other environmental sciences,1207,History and Philosophy of Science,True,0.133,30
+4201,Allied health and rehabilitation science,3609,Occupational Therapy,True,0.167,30
+4202,Epidemiology,3306,Health,True,0.067,30
+4203,Health services and systems,3600,General Health Professions,True,0.167,30
+4204,Midwifery,3203,Clinical Psychology,True,0.167,30
+4205,Nursing,3600,General Health Professions,True,0.2,30
+4206,Public health,3600,General Health Professions,True,0.233,30
+4207,Sports science and exercise,2204,Biomedical Engineering,True,0.067,30
+4208,"Traditional, complementary and integrative medicine",2707,Complementary and alternative medicine,True,0.1,30
+4299,Other health sciences,2739,"Public Health, Environmental and Occupational Health",True,0.1,30
+4301,Archaeology,1207,History and Philosophy of Science,True,0.133,30
+4302,"Heritage, archive and museum studies",1204,Archeology,True,0.133,30
+4303,Historical studies,3312,Sociology and Political Science,True,0.267,30
+4399,"Other history, heritage and archaeology",3312,Sociology and Political Science,True,0.167,30
+4401,Anthropology,3312,Sociology and Political Science,True,0.2,30
+4402,Criminology,3312,Sociology and Political Science,True,0.2,30
+4403,Demography,3312,Sociology and Political Science,True,0.2,30
+4404,Development studies,3312,Sociology and Political Science,True,0.3,30
+4405,Gender studies,3318,Gender Studies,True,0.233,30
+4406,Human geography,3312,Sociology and Political Science,True,0.233,30
+4407,Policy and administration,2002,Economics and Econometrics,True,0.2,30
+4408,Political science,3320,Political Science and International Relations,True,0.167,30
+4409,Social work,3304,Education,True,0.167,30
+4410,Sociology,3312,Sociology and Political Science,True,0.2,30
+4499,Other human society,3320,Political Science and International Relations,True,0.133,30
+4601,Applied computing,3304,Education,True,0.3,30
+4602,Artificial intelligence,1702,Artificial Intelligence,True,0.3,30
+4603,Computer vision and multimedia computation,1707,Computer Vision and Pattern Recognition,True,0.333,30
+4604,Cybersecurity and privacy,1710,Information Systems,True,0.267,30
+4605,Data management and data science,1710,Information Systems,True,0.233,30
+4606,Distributed computing and systems software,1705,Computer Networks and Communications,True,0.133,30
+4607,"Graphics, augmented reality and games",2202,Aerospace Engineering,True,0.1,30
+4608,Human-centred computing,3304,Education,True,0.2,30
+4609,Information systems,3304,Education,True,0.233,30
+4610,Library and information studies,1710,Information Systems,True,0.133,30
+4611,Machine learning,1702,Artificial Intelligence,True,0.3,30
+4612,Software engineering,1710,Information Systems,True,0.067,30
+4613,Theory of computation,1702,Artificial Intelligence,True,0.167,30
+4699,Other information and computing sciences,1207,History and Philosophy of Science,True,0.167,30
+4701,Communication and media studies,3315,Communication,True,0.2,30
+4702,Cultural studies,3312,Sociology and Political Science,True,0.133,30
+4703,Language studies,3312,Sociology and Political Science,True,0.167,30
+4704,Linguistics,1203,Language and Linguistics,True,0.333,30
+4705,Literary studies,1208,Literature and Literary Theory,True,0.233,30
+4799,"Other language, communication and culture",1203,Language and Linguistics,True,0.1,30
+4801,Commercial law,3308,Law,True,0.167,30
+4802,Environmental and resources law,2306,Global and Planetary Change,True,0.2,30
+4803,International and comparative law,3320,Political Science and International Relations,True,0.333,30
+4804,Law in context,3318,Gender Studies,True,0.167,30
+4805,Legal systems,3308,Law,True,0.133,30
+4806,Private law and civil obligations,2505,Materials Chemistry,True,0.2,30
+4807,Public law,3312,Sociology and Political Science,True,0.3,30
+4899,Other law and legal studies,3320,Political Science and International Relations,True,0.3,30
+4901,Applied mathematics,1803,Management Science and Operations Research,True,0.1,30
+4902,Mathematical physics,2610,Mathematical Physics,True,0.167,30
+4903,Numerical and computational mathematics,2604,Applied Mathematics,True,0.133,30
+4904,Pure mathematics,2610,Mathematical Physics,True,0.2,30
+4905,Statistics,1702,Artificial Intelligence,True,0.133,30
+4999,Other mathematical sciences,1207,History and Philosophy of Science,True,0.2,30
+5001,Applied ethics,3312,Sociology and Political Science,True,0.167,30
+5002,History and philosophy of specific fields,1207,History and Philosophy of Science,True,0.167,30
+5003,Philosophy,3312,Sociology and Political Science,True,0.2,30
+5004,Religious studies,3312,Sociology and Political Science,True,0.267,30
+5005,Theology,1211,Philosophy,True,0.5,10
+5099,Other philosophy and religious studies,3312,Sociology and Political Science,True,0.1,30
+5101,Astronomical sciences,3103,Astronomy and Astrophysics,True,0.2,30
+5102,"Atomic, molecular and optical physics",3107,"Atomic and Molecular Physics, and Optics",True,0.267,30
+5103,Classical physics,3107,"Atomic and Molecular Physics, and Optics",True,0.1,30
+5104,Condensed matter physics,2505,Materials Chemistry,True,0.1,30
+5105,Medical and biological physics,2736,Pharmacology,True,0.1,30
+5106,Nuclear and plasma physics,3106,Nuclear and High Energy Physics,True,0.2,30
+5107,Particle and high energy physics,3106,Nuclear and High Energy Physics,True,0.1,30
+5108,Quantum physics,3107,"Atomic and Molecular Physics, and Optics",True,0.2,30
+5109,Space sciences,3103,Astronomy and Astrophysics,True,0.133,30
+5110,Synchrotrons and accelerators,1803,Management Science and Operations Research,True,0.1,30
+5199,Other physical sciences,3109,Statistical and Nonlinear Physics,True,0.067,30
+5201,Applied and developmental psychology,3204,Developmental and Educational Psychology,True,0.167,30
+5202,Biological psychology,3312,Sociology and Political Science,True,0.133,30
+5203,Clinical and health psychology,3203,Clinical Psychology,True,0.167,30
+5204,Cognitive and computational psychology,1803,Management Science and Operations Research,True,0.1,30
+5205,Social and personality psychology,3318,Gender Studies,True,0.333,30
+5299,Other psychology,3207,Social Psychology,True,0.158,19

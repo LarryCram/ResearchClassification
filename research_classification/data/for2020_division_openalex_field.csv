@@ -1,41 +1,23 @@
 for_division_code,for_division_label,openalex_field_id,openalex_field_label,is_primary,share,n_rows
-30,"AGRICULTURAL, VETERINARY AND FOOD SCIENCES",11,Agricultural and Biological Sciences,True,0.948,213
-30,"AGRICULTURAL, VETERINARY AND FOOD SCIENCES",34,Veterinary,False,0.052,213
-31,BIOLOGICAL SCIENCES,13,"Biochemistry, Genetics and Molecular Biology",True,0.496,484
-31,BIOLOGICAL SCIENCES,11,Agricultural and Biological Sciences,False,0.417,484
-31,BIOLOGICAL SCIENCES,24,Immunology and Microbiology,False,0.087,484
-32,BIOMEDICAL AND CLINICAL SCIENCES,27,Medicine,True,0.638,1016
-32,BIOMEDICAL AND CLINICAL SCIENCES,13,"Biochemistry, Genetics and Molecular Biology",False,0.236,1016
-32,BIOMEDICAL AND CLINICAL SCIENCES,28,Neuroscience,False,0.061,1016
-32,BIOMEDICAL AND CLINICAL SCIENCES,24,Immunology and Microbiology,False,0.041,1016
-32,BIOMEDICAL AND CLINICAL SCIENCES,30,"Pharmacology, Toxicology and Pharmaceutics",False,0.024,1016
-33,BUILT ENVIRONMENT AND DESIGN,22,Engineering,False,0.461,1067
-33,BUILT ENVIRONMENT AND DESIGN,33,Social Sciences,True,0.539,1067
-34,CHEMICAL SCIENCES,16,Chemistry,True,1.0,92
-35,"COMMERCE, MANAGEMENT, TOURISM AND SERVICES",14,"Business, Management and Accounting",True,0.707,164
-35,"COMMERCE, MANAGEMENT, TOURISM AND SERVICES",18,Decision Sciences,False,0.293,164
-36,CREATIVE ARTS AND WRITING,12,Arts and Humanities,True,1.0,203
-37,EARTH SCIENCES,19,Earth and Planetary Sciences,True,1.0,53
-38,ECONOMICS,20,"Economics, Econometrics and Finance",True,1.0,78
-39,EDUCATION,33,Social Sciences,True,1.0,575
-40,ENGINEERING,15,Chemical Engineering,False,0.02,644
-40,ENGINEERING,21,Energy,False,0.039,644
-40,ENGINEERING,22,Engineering,True,0.764,644
-40,ENGINEERING,25,Materials Science,False,0.177,644
-41,ENVIRONMENTAL SCIENCES,23,Environmental Science,True,0.872,196
-41,ENVIRONMENTAL SCIENCES,21,Energy,False,0.128,196
-42,HEALTH SCIENCES,27,Medicine,True,0.842,770
-42,HEALTH SCIENCES,36,Health Professions,False,0.117,770
-42,HEALTH SCIENCES,29,Nursing,False,0.026,770
-42,HEALTH SCIENCES,35,Dentistry,False,0.016,770
-43,"HISTORY, HERITAGE AND ARCHAEOLOGY",12,Arts and Humanities,True,1.0,203
-44,HUMAN SOCIETY,33,Social Sciences,True,1.0,575
-46,INFORMATION AND COMPUTING SCIENCES,17,Computer Science,True,1.0,247
-47,"LANGUAGE, COMMUNICATION AND CULTURE",12,Arts and Humanities,True,1.0,203
-48,LAW AND LEGAL STUDIES,33,Social Sciences,True,1.0,575
-49,MATHEMATICAL SCIENCES,26,Mathematics,True,0.61,123
-49,MATHEMATICAL SCIENCES,18,Decision Sciences,False,0.39,123
-50,PHILOSOPHY AND RELIGIOUS STUDIES,12,Arts and Humanities,True,1.0,203
-51,PHYSICAL SCIENCES,31,Physics and Astronomy,False,0.467,214
-51,PHYSICAL SCIENCES,25,Materials Science,True,0.533,214
-52,PSYCHOLOGY,32,Psychology,True,1.0,127
+30,"AGRICULTURAL, VETERINARY AND FOOD SCIENCES",11,Agricultural and Biological Sciences,True,0.5,30
+31,BIOLOGICAL SCIENCES,13,"Biochemistry, Genetics and Molecular Biology",True,0.4,30
+32,BIOMEDICAL AND CLINICAL SCIENCES,27,Medicine,True,0.267,30
+33,BUILT ENVIRONMENT AND DESIGN,22,Engineering,True,0.2,30
+34,CHEMICAL SCIENCES,16,Chemistry,True,0.467,30
+35,"COMMERCE, MANAGEMENT, TOURISM AND SERVICES",14,"Business, Management and Accounting",True,0.533,30
+36,CREATIVE ARTS AND WRITING,12,Arts and Humanities,True,0.4,30
+37,EARTH SCIENCES,23,Environmental Science,True,0.433,30
+38,ECONOMICS,20,"Economics, Econometrics and Finance",True,0.267,30
+39,EDUCATION,33,Social Sciences,True,0.467,30
+40,ENGINEERING,22,Engineering,True,0.767,30
+41,ENVIRONMENTAL SCIENCES,23,Environmental Science,True,0.667,30
+42,HEALTH SCIENCES,36,Health Professions,True,0.333,30
+43,"HISTORY, HERITAGE AND ARCHAEOLOGY",33,Social Sciences,True,0.467,30
+44,HUMAN SOCIETY,33,Social Sciences,True,0.633,30
+46,INFORMATION AND COMPUTING SCIENCES,17,Computer Science,True,0.767,30
+47,"LANGUAGE, COMMUNICATION AND CULTURE",12,Arts and Humanities,True,0.633,30
+48,LAW AND LEGAL STUDIES,33,Social Sciences,True,0.667,30
+49,MATHEMATICAL SCIENCES,26,Mathematics,True,0.567,30
+50,PHILOSOPHY AND RELIGIOUS STUDIES,33,Social Sciences,True,0.6,30
+51,PHYSICAL SCIENCES,31,Physics and Astronomy,True,0.4,30
+52,PSYCHOLOGY,32,Psychology,True,0.367,30

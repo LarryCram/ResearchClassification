@@ -1,5 +1,82 @@
 # Known gaps
 
+## OAX <-> FOR2020 rebuild: abandoned mid-session, uncommitted, needs a different approach
+
+Attempted a full rebuild of every OAX<->FOR2020 correspondence table (`seeds/openalex_field_to_for_division.csv`,
+`seeds/openalex_subfield_to_for_group.csv`, a new `seeds/openalex_field_to_for_group.csv`, and the four
+`for2020_*_openalex_*.csv` tables), after finding the original hand-typed OAX->FOR2020 seed and the
+"empirical" FOR2020->OAX tables were not actually independent of each other (the latter routed through the
+former via `build_leiden.py`'s `explode_for_divisions()`). **None of this is committed.** `git status` shows
+modified/untracked files across `research_classification/` and `seeds/`; `build.py` was never run end-to-end
+against the changes; the bundled `.duckdb` does not reflect any of this.
+
+**New module**: `research_classification/cascade_match.py` -- a shared lexical matcher meant to replace ad hoc
+per-script matching, built up over many iterations across one long session:
+1. Exact word-set match (`exact_match_words()`), with a small AU/UK<->US spelling dictionary and a minimal
+   stopword list (only genuine grammatical connectors, not domain words like "science"/"other").
+2. Contains-match (`contains_match()`, added last) -- one label's word set a unique proper subset of the
+   other's, e.g. "Zoology" vs "Animal Science and Zoology".
+3. Raw word/stem SET-INTERSECTION SIZE (`bag_overlap()`) as a last-resort fallback -- deliberately not a
+   ratio (Jaccard/overlap-coefficient); several ratio-based formulas were each found, in turn, to
+   systematically favor whichever candidate had the smaller (or, for Jaccard, the larger) bag.
+4. `topic_rank_resolve()` for the FOR2020->OAX direction -- scores individual OpenAlex topics against a
+   FOR2020 node's bag and looks at where the top N concentrate.
+
+**Reviewed and approved by the user directly:**
+- `seeds/openalex_field_to_for_division.csv` (26 OAX fields -> FOR2020 divisions).
+- `seeds/openalex_subfield_to_for_group.csv` (252 OAX subfields -> FOR2020 groups), 44 manual overrides
+  applied after a full by-eye scan of every row.
+
+**Unfinished, unreviewed, or actively broken:**
+- `curate_openalex_field_to_for_precise.py` (group-level precision for OAX field input) -- built and ran,
+  spot-checked by the assistant only, never reviewed by the user.
+- `curate_for2020_to_openalex.py` (the FOR2020->OAX reverse direction) -- iterated on heavily, never
+  converged. Real bugs found along the way: `topic_rank_resolve()` had no exact-match step at all (missed
+  e.g. FOR2020 group "Architecture" == OAX subfield "Architecture"); the same "biggest bag wins" bias that
+  affected earlier tables recurred here too (e.g. "PHYSICAL SCIENCES" landed on OAX field "Engineering"
+  instead of "Physics and Astronomy"); OpenAlex has several genuinely duplicate-named subfields under two
+  different parent fields (Genetics, Physiology, Microbiology, Neurology, Pharmacology, Archeology,
+  Biochemistry) that silently blocked exact-match until a same-side self-test caught it. The last code
+  change (a duplicate-label tie-break + contains-match tier added to `_exact_match`) was rejected by the
+  user as still not making sense, and the session ended there without re-running or re-verifying it.
+- `curate_openalex_to_leiden.py` (OAX -> Leiden main field, pure OAX-side) -- not started.
+- `build_leiden.py`'s composition rewrite (FOR2020->Leiden via FOR2020->OAX x OAX->Leiden, replacing today's
+  independent re-aggregation) -- not started.
+- `curate_for2020_division45_to_proxy.py`'s import of shared text builders from `cascade_match.py` -- not
+  started.
+- `resolver.py` / `build.py` wiring to any of the new/rebuilt tables -- not started.
+- Test suite -- not run since these changes began; expect many hardcoded-expectation failures.
+- The `for2020_*_openalex_*.csv` tables (division/group -> OAX domain/field/subfield) never got a full user
+  review -- the session ended mid-review, with the user auditing exact/contains-match coverage through a long
+  series of ad hoc queries (single-word FOR/OAX label cross-checks, same-side self-match tests) rather than
+  reviewing the generated tables directly.
+
+**The user's assessment, in the order given:**
+- Repeatedly corrected the scoring formula across the session (Jaccard -> overlap coefficient -> raw count ->
+  stemming -> minimal stopwords -> contains-match), each time after finding concrete wrong outputs --
+  described this as "going around in circles."
+- Proposed a different overall strategy instead of continuing to refine matching formulas: "fuzzy matching
+  followed by an LLM subscription to find anomalies then a scheme to work on them," attributing the
+  difficulty to "the simplicity arising from the narrow linguistic aspects of this 'research language'
+  problem" -- i.e., judged that direct LLM review and correction of the output would be faster and more
+  reliable than continuing to build automated scoring/matching logic.
+- Ran a long, careful manual audit (single-word label cross-checks between OAX and FOR2020, then a same-side
+  self-match test) that did surface real, concrete bugs (the Paediatrics/Clinical-sciences bag-size bias; the
+  missing exact-match step in the FOR2020->OAX direction; the OAX duplicate-subfield-name issue) -- the
+  underlying diagnosis (formula-only fixes were not converging) is backed by real evidence, not just
+  frustration.
+- Final message, after the last fix (duplicate-name tie-break + contains-match added to the FOR2020->OAX
+  direction): "That make no sense after you do it nor did it make any sense before. I have had it" -- asked
+  to close the session and hand off to a different coding assistant.
+
+**Recommendation for whoever picks this up:** don't resume by adding more matching-formula tiers. The user's
+own diagnosis -- run a simple/cheap fuzzy pass, then have a human or LLM directly review and correct the
+output rather than trying to make automated scoring converge on every case -- is worth taking at face value.
+`cascade_match.py`'s exact-match and contains-match tiers (steps 1-1.5) are solid and were validated by direct
+review; the raw bag-overlap fallback (step 2) and `topic_rank_resolve()` are the parts that kept needing
+rescue-by-hand and are the better candidates to replace with a review-and-correct workflow rather than
+further tuning.
+
 ## SEO -> SDG: done for SEO only; FOR/OAX -> SDG deferred
 `resolve()` reaches `SDG_GOAL`/`SDG_PILLAR` from every SEO vintage (SEO1998/2008/2020), via
 `research_classification/curate_seo_to_sdg.py` -- a user-provided, single-valued

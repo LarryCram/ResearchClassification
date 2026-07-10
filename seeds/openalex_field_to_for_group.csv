@@ -1,0 +1,19 @@
+openalex_field_id,openalex_field_name,for_group_code,for_group_label,confidence,match_method,notes
+11,Agricultural and Biological Sciences,3004,Crop and pasture production,0.059,constrained_lexical,constrained to groups within division 30
+12,Arts and Humanities,4705,Literary studies,0.084,constrained_lexical,constrained to groups within division 47
+13,"Biochemistry, Genetics and Molecular Biology",3105,Genetics,0.042,constrained_lexical,constrained to groups within division 31
+14,"Business, Management and Accounting",3507,"Strategy, management and organisational behaviour",0.092,constrained_lexical,constrained to groups within division 35
+15,Chemical Engineering,4004,Chemical engineering,1.0,exact_match,from division-level exact match
+17,Computer Science,4605,Data management and data science,0.062,constrained_lexical,constrained to groups within division 46
+18,Decision Sciences,4609,Information systems,0.124,constrained_lexical,constrained to groups within division 46
+26,Mathematics,4904,Pure mathematics,0.152,constrained_lexical,constrained to groups within division 49
+27,Medicine,3202,Clinical sciences,0.031,constrained_lexical,constrained to groups within division 32
+28,Neuroscience,3209,Neurosciences,1.0,exact_match,from division-level exact match
+29,Nursing,4205,Nursing,1.0,exact_match,from division-level exact match
+30,"Pharmacology, Toxicology and Pharmaceutics",3214,Pharmacology and pharmaceutical sciences,0.098,constrained_lexical,constrained to groups within division 32
+31,Physics and Astronomy,5101,Astronomical sciences,0.09,constrained_lexical,constrained to groups within division 51
+32,Psychology,5201,Applied and developmental psychology,0.061,constrained_lexical,constrained to groups within division 52
+33,Social Sciences,4410,Sociology,0.042,constrained_lexical,constrained to groups within division 44
+34,Veterinary,3009,Veterinary sciences,1.0,exact_match,from division-level exact match
+35,Dentistry,3203,Dentistry,1.0,exact_match,from division-level exact match
+36,Health Professions,4203,Health services and systems,0.086,constrained_lexical,constrained to groups within division 42

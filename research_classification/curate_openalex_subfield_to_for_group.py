@@ -1,129 +1,118 @@
-"""OpenAlex subfield (252) -> FOR group (213). The second (and, unlike the field-to-division
-seed, algorithmic rather than hand-reviewed) curated table in the pipeline.
+"""OpenAlex subfield (252) -> FOR group (213), algorithmic via cascade_match's tokenizer,
+exact-match-first cascade, and raw bag-overlap scoring (see cascade_match.py's module
+docstring for the full rationale).
 
-Why this is tractable where a blind 252x213 comparison wouldn't be: every OAX subfield has a
-known parent field, and every field is already curated to one or more FOR divisions in
-seeds/openalex_field_to_for_division.csv. So for a given subfield, the candidate group pool
-is restricted to only the groups belonging to its parent field's already-assigned
-division(s) -- ~9 groups on average, occasionally ~20-35 for fields with several division
-alternates (e.g. "Arts and Humanities") -- never the full 213. That constrained pool is
-small and hierarchically consistent enough that keyword-overlap scoring alone is reliable
-enough to BE the curation mechanism here, not just a sanity check on it (see _group_score()
-below for why this uses Jaccard + an "Other X" penalty rather than the field-level seed's
-min-normalized overlap_score -- that formula turned out to systematically favor every
-division's minimal "not elsewhere classified" catch-all group). Confidence is that raw
-score; there is no separate manual override list the way the field-level seed has one,
-since 252 individual judgment calls isn't practical the way 26 was.
+Searches ALL 213 groups, not just the ones under the subfield's parent field's already-
+assigned division -- found directly this session that constraining the pool to the parent
+field's division silently walls off the correct answer whenever a subfield's true home is a
+*different* division than its own field's: OAX subfield "Education" (3304) sits under field
+33 "Social Sciences", whose field-level division is 44 HUMAN SOCIETY, so a division-
+constrained search never even sees division 39 EDUCATION's groups (3901 "Curriculum and
+pedagogy" etc.) -- exactly the kind of miss this whole rebuild exists to fix, not reproduce
+one level down.
+
+BUT only for subfields with enough of their own vocabulary to trust an open search --
+gated by SOURCE_MIN_TOKENS_FOR_OPEN_SEARCH. Checked directly: opening the pool fully found
+143 of 252 subfields "crossing" to a non-home division, and the ones with real topical
+support turned out to all have large bags (Sociology and Political Science: 345 tokens,
+Education: 170, Economics and Econometrics: 147, Anthropology: 53 ...) while the wrong ones
+were all near-empty (Equine: 4 tokens landing on "Law in context" via 2 coincidentally
+shared generic words; General Psychology: 4 tokens; Complementary and Manual Therapy: 7).
+There's no score-based threshold that separates these -- a thin subfield's *best possible*
+overlap with anything is small, genuine match or not -- so the gate is on the subfield's own
+bag size instead: enough vocabulary to mean something across an open 213-group search, or
+not enough, in which case the search stays constrained to the parent field's own
+already-curated division (the safer, structurally-grounded default) the way it always did.
+Subfields still below even the constrained pool's floor are left for direct manual
+inspection (see _MANUAL_OVERRIDES) rather than another round of formula-tuning -- these are
+exactly the cases with too little text for *any* automated method to trust itself on.
+
+Unlike curate_openalex_for.py's division search (where fine-grained group candidates are
+excluded from the bag-overlap step because a group's bag is always a strict subset of its own
+parent division's), groups being compared here ARE the target granularity -- ordinary
+peer-to-peer overlap, no subset-exclusion needed.
+
+Top-scoring candidates are kept as rows (primary + a handful of ranked alternates,
+`is_primary` flags the winner) -- resolver.py's generic lookup surfaces the runners-up as
+`alternates` on the returned CanonicalResult. Capped at TOP_N_ALTERNATES per subfield.
 """
 
 from __future__ import annotations
 
-import re
 from pathlib import Path
 
 import pandas as pd
 
-from . import io as rio
-from .curate_openalex_for import STOPWORDS
+from . import cascade_match as cm
 from .hierarchy import BRIDGE_COLUMNS, write_csv
-
-
-def _tokenize_with_bigrams(text: str) -> set[str]:
-    """Unigram stems PLUS bigrams of consecutive surviving stems. Unigrams alone are prone
-    to spurious matches on common cross-domain words ("systems", "development", "rural",
-    "analysis" -- none stoplisted, all near-meaningless individually) that coincidentally
-    outvote a genuinely on-topic match with fewer but more specific shared words (verified
-    directly: "Forestry" matched "Agriculture, land and farm management" via {rural, agric,
-    systems, development, analysis} -- 5 generic hits -- over the obviously-correct "Forestry
-    sciences" group's 2 specific hits {agroforestry, forest(ry)}). A true topical match tends
-    to share not just isolated words but the *phrases* they sit in; unrelated texts sharing a
-    handful of common words almost never share the word-pairs around them. Bigrams make that
-    distinction visible to Jaccard without a stoplist arms race against every generic word
-    that might show up in a scientific abstract.
-    """
-    words = re.findall(r"[a-z]+", text.lower())
-    stems = [w[:5] for w in words if w not in STOPWORDS and len(w) > 2]
-    unigrams = set(stems)
-    bigrams = {f"{a}_{b}" for a, b in zip(stems, stems[1:])}
-    return unigrams | bigrams
-
-
-def _name_score(name_a: str, name_b: str) -> float:
-    a, b = _tokenize_with_bigrams(name_a), _tokenize_with_bigrams(name_b)
-    return len(a & b) / len(a | b) if a and b else 0.0
-
-
-def _group_score(
-    subfield_name: str, subfield_text: str, group_code: str, group_label: str, group_text: str
-) -> float:
-    """Overlap coefficient (intersection / min(|a|,|b|)) over unigrams+bigrams, PLUS a
-    name-to-name bonus. Three failure modes were found and traded off against each other
-    while building this, in order:
-
-    1. Plain Jaccard (intersection/union) systematically favoured every division's minimal
-       "Other X not elsewhere classified" group: its tiny definition gives a small union, so
-       a single coincidental generic-word match could beat a genuine 10-token match against
-       the real target group. Bigrams reduce (not eliminate) this by requiring matching
-       *phrases*, not just isolated common words ("systems", "rural", "development").
-    2. But subfields with short own-text and a genuinely correct target group that happens
-       to have a long, detailed definition (e.g. "Equine" vs "Veterinary sciences", whose
-       definition enumerates a dozen+ specific veterinary subtopics) then score *worse*
-       under Jaccard than a coincidental short-text match, because the union is dominated by
-       the correct group's own richness -- the opposite bias from #1. Switching the
-       normalization to overlap coefficient (divide by the smaller set, not the union) fixes
-       this: it rewards the correct group's detailed text covering the subfield's small
-       vocabulary, rather than penalising it for being detailed.
-    3. Reintroducing that same short-text bias for the *"Other X"* case specifically, since
-       overlap coefficient has the same property plain min-normalization did (see
-       curate_openalex_for.py's docstring for the original diagnosis). Bigrams alone don't
-       fully close this, so the explicit NEC penalty below stays, at a stronger 0.3x (rather
-       than 0.5x) to compensate for overlap coefficient's reintroduced short-text advantage.
-
-    The name-to-name score is a bonus on top (not blended in) for the same reason as before:
-    a decisive exact-name match ("Forestry" vs "Forestry sciences") should dominate, but
-    pairs with zero name overlap despite being genuinely related ("Equine" vs "Veterinary
-    sciences") must fall back to the text score entirely unpenalised. Capped at 1.0.
-    """
-    name_score = _name_score(subfield_name, group_label)
-
-    text_a, text_b = _tokenize_with_bigrams(subfield_text), _tokenize_with_bigrams(group_text)
-    text_score = len(text_a & text_b) / min(len(text_a), len(text_b)) if text_a and text_b else 0.0
-
-    score = min(1.0, text_score + name_score)
-    if group_code.endswith("99"):  # ANZSRC's own "not elsewhere classified" convention
-        score *= 0.3
-    return score
 
 ROOT = Path(__file__).resolve().parent.parent
 DATA_DIR = ROOT / "research_classification" / "data"
 SEEDS_DIR = ROOT / "seeds"
-FOR_XLSX = ROOT / "data_untracked" / "ABS_FOR_SEO" / "anzsrc2020_for.xlsx"
 
+MIN_OVERLAP = 2  # groups' bags are far smaller than divisions' -- a lower floor than
+                 # cascade_match.MIN_OVERLAP is appropriate at this granularity
+TOP_N_ALTERNATES = 8
+SOURCE_MIN_TOKENS_FOR_OPEN_SEARCH = 25  # see module docstring: below this, stay constrained
+                                         # to the parent field's own division
 
-def _group_texts(for_df: pd.DataFrame) -> dict[str, str]:
-    """Group text = the group's own Table 4 definition PLUS every child FIELD's label, for
-    the same reason division text included child group labels: a bare group definition is
-    too terse to match subfield-level vocabulary against on its own."""
-    defs = rio.read_definitions(FOR_XLSX, sheet_name="Table 4")
-    groups = defs[defs["level"] == "group"].set_index("code")
-    fields = for_df[for_df["level"] == "field"]
-    texts: dict[str, str] = {code: f"{row['label']} {row['definition']}" for code, row in groups.iterrows()}
-    for _, row in fields.iterrows():
-        parent = row["parent_code"]
-        if parent in texts:
-            texts[parent] += f" {row['label']}"
-    return texts
-
-
-def _subfield_texts(subfields: pd.DataFrame, topics: pd.DataFrame) -> dict[str, str]:
-    """Subfield text = the subfield's own label PLUS every child topic's label, the same
-    pattern used for field text (field label + child subfield labels) in the field seed."""
-    texts: dict[str, str] = dict(zip(subfields["code"], subfields["label"]))
-    for _, row in topics.iterrows():
-        parent = row["parent_code"]
-        if parent in texts:
-            texts[parent] += f" {row['label']}"
-    return texts
+# Escape hatch for subfield/group pairs the cascade gets wrong -- filled in only after
+# inspecting the real run's output. Found directly this session: certain FOR2020 groups
+# (Literary studies 61 tokens, Clinical sciences 49, Crop and pasture production 43 --
+# against a median group bag size of just 19) act as size-based "magnets" the same way
+# division 40 ENGINEERING and division 45 did at the coarser level, absorbing genuinely
+# unrelated subfields (Archeology, Conservation, Political Science...) purely by having more
+# child fields' worth of vocabulary to coincidentally overlap with. Rather than another round
+# of formula-tuning to chase this down statistically, these ~30 were identified by direct
+# inspection of the full primary-pick list and corrected by hand -- exactly the "your LLM
+# would get this right" sanity check these thin/noisy cases call for, not a cleverer score.
+# subfield_code -> (for_group_code, notes)
+_MANUAL_OVERRIDES: dict[str, tuple[str, str]] = {
+    "1204": ("4301", "Archaeology -- landed on Architecture/Anthropology via generic overlap"),
+    "3302": ("4301", "Archaeology -- landed on Architecture via generic overlap"),
+    "2215": ("3302", "Building and Construction -- exact-fit group 'Building' exists but wasn't reached"),
+    "2705": ("3201", "Cardiology and Cardiovascular Medicine -- exact-fit group exists"),
+    "1706": ("4601", "Computer Science Applications -- general fit, was a Literary-studies-style false magnet hit"),
+    "1206": ("4102", "Conservation -- ecological/environmental concept, not Literary studies"),
+    "3604": ("4203", "Emergency Medical Services -- health services concept, not HR/industrial relations"),
+    "2712": ("3205", "Endocrinology, Diabetes and Metabolism -- metabolomics is the closest real fit"),
+    "3300": ("4499", "General Social Sciences -- division 44's own NEC catch-all, not Education"),
+    "2306": ("3702", "Global and Planetary Change -- exact-fit 'Climate change science' exists"),
+    "1207": ("5002", "History and Philosophy of Science -- exact-fit group exists"),
+    "3310": ("4704", "Linguistics and Language -- exact-fit 'Linguistics' group exists"),
+    "2214": ("4701", "Media Technology -- communication/media concept, not Curriculum and pedagogy"),
+    "2728": ("3209", "Neurology -- exact-fit 'Neurosciences' group exists"),
+    "2808": ("3209", "Neurology -- exact-fit 'Neurosciences' group exists"),
+    "2729": ("3215", "Obstetrics and Gynecology -- exact-fit 'Reproductive medicine' group exists"),
+    "3320": ("4408", "Political Science and International Relations -- exact-fit 'Political science' group exists"),
+    "2742": ("4201", "Rehabilitation -- exact-fit 'Allied health and rehabilitation science' group exists"),
+    "1711": ("4006", "Signal Processing -- communications engineering concept, not econometrics"),
+    "3312": ("4410", "Sociology and Political Science -- Sociology is the lead concept; landed on Literary studies via generic overlap"),
+    "3616": ("4201", "Speech and Hearing -- allied health concept, not urban and regional planning"),
+    "1804": ("4905", "Statistics, Probability and Uncertainty -- exact-fit 'Statistics' group exists"),
+    "3322": ("3304", "Urban Studies -- exact-fit 'Urban and regional planning' group exists"),
+    "2312": ("3707", "Water Science and Technology -- exact-fit 'Hydrology' group exists"),
+    "1104": ("3005", "Aquatic Science -- fisheries/aquatic concept, not animal production"),
+    "2304": ("4105", "Environmental Chemistry -- pollution/contamination is the closest real fit"),
+    "2310": ("4105", "Pollution -- exact-fit 'Pollution and contamination' group exists"),
+    "2309": ("4104", "Nature and Landscape Conservation -- environmental management concept"),
+    "3306": ("4299", "Health -- division 42's own NEC catch-all, not Sociology"),
+    "1202": ("4303", "History -- exact-fit 'Historical studies' group exists"),
+    "1209": ("4302", "Museology -- exact-fit 'Heritage, archive and museum studies' group exists"),
+    "1213": ("3606", "Visual Arts and Performing Arts -- visual arts concept, not Literary studies"),
+    "2736": ("3214", "Pharmacology -- exact-fit 'Pharmacology and pharmaceutical sciences' group exists"),
+    "3004": ("3214", "Pharmacology -- exact-fit 'Pharmacology and pharmaceutical sciences' group exists"),
+    "2717": ("3202", "Geriatrics and Gerontology -- general clinical concept, not pharmacology"),
+    "1307": ("3101", "Cell Biology -- exact-fit 'Biochemistry and cell biology' group exists"),
+    "1310": ("3205", "Endocrinology -- metabolomics is the closest real fit, not evolutionary biology"),
+    "2307": ("3214", "Health, Toxicology and Mutagenesis -- toxicology/pharmacology concept"),
+    "2737": ("3208", "Physiology (Medicine field) -- exact-fit 'Medical physiology' group exists"),
+    "1712": ("4612", "Software -- exact-fit 'Software engineering' group exists"),
+    "2105": ("4104", "Renewable Energy, Sustainability and the Environment -- environmental management concept"),
+    "2212": ("4015", "Ocean Engineering -- exact-fit 'Maritime engineering' group exists"),
+    "2612": ("4903", "Numerical Analysis -- exact-fit 'Numerical and computational mathematics' group exists"),
+    "2613": ("4905", "Statistics and Probability -- exact-fit 'Statistics' group exists"),
+}
 
 
 def run() -> pd.DataFrame:
@@ -134,68 +123,100 @@ def run() -> pd.DataFrame:
     subfields = pd.read_csv(DATA_DIR / "openalex_subfields.csv", dtype=str, keep_default_na=False)
     topics = pd.read_csv(DATA_DIR / "openalex_topics.csv", dtype=str, keep_default_na=False)
     for_df = pd.read_csv(DATA_DIR / "for_2020.csv", dtype=str, keep_default_na=False)
+    for_df = for_df[~for_df["code"].str.startswith("45")]  # division 45 excluded; own proxy mechanism
     field_to_division = pd.read_csv(SEEDS_DIR / "openalex_field_to_for_division.csv", dtype=str, keep_default_na=False)
 
+    division_of_field = dict(zip(field_to_division["openalex_field_id"], field_to_division["for_division_code"]))
     group_label = dict(zip(for_df[for_df["level"] == "group"]["code"], for_df[for_df["level"] == "group"]["label"]))
+    all_group_codes = list(group_label)
     groups_by_division: dict[str, list[str]] = {}
     for _, row in for_df[for_df["level"] == "group"].iterrows():
         groups_by_division.setdefault(row["parent_code"], []).append(row["code"])
 
-    candidate_divisions_by_field: dict[str, list[str]] = {}
-    for field_id, grp in field_to_division.groupby("openalex_field_id"):
-        candidate_divisions_by_field[field_id] = list(grp["for_division_code"])
-
-    group_texts = _group_texts(for_df)
-    subfield_texts = _subfield_texts(subfields, topics)
-
-    all_group_codes = list(group_label)
+    subfield_bags = cm.oax_subfield_bags(subfields, topics)
+    group_bags = cm.for_group_texts(for_df)
 
     rows = []
-    skipped = []
     for _, sub in subfields.iterrows():
         subfield_id, subfield_name, field_id = sub["code"], sub["label"], sub["parent_code"]
-        divisions = candidate_divisions_by_field.get(field_id, [])
-        candidate_groups = {g for d in divisions for g in groups_by_division.get(d, [])}
 
-        # Escape hatch: the parent field's own curated division(s) sometimes don't include
-        # the division holding an otherwise decisive, near-exact-name match -- e.g. "Nutrition
-        # and Dietetics" was only searched within Division 42 (its field's assigned division),
-        # missing the identically-named Group 3210 that happens to sit in Division 32. A
-        # cross-division search restricted to only *decisive* name matches (>=0.5, i.e. most
-        # of the name's own tokens overlap) can't reintroduce the coincidental-match problem
-        # this whole scoring scheme exists to avoid, since it ignores the constrained pool's
-        # bag-of-words text entirely and only fires on genuine, close-to-exact naming.
-        exact_name_matches = {g for g in all_group_codes if _name_score(subfield_name, group_label[g]) >= 0.5}
-        candidate_groups |= exact_name_matches
-        candidate_groups = sorted(candidate_groups)
-
-        if not candidate_groups:
-            skipped.append(subfield_id)
-            continue
-
-        scored = sorted(
-            (
-                (g, _group_score(subfield_name, subfield_texts.get(subfield_id, ""), g, group_label.get(g, ""), group_texts.get(g, "")))
-                for g in candidate_groups
-            ),
-            key=lambda t: t[1], reverse=True,
-        )
-        for i, (group_code, score) in enumerate(scored):
+        if subfield_id in _MANUAL_OVERRIDES:
+            group_code, note = _MANUAL_OVERRIDES[subfield_id]
             rows.append(
                 {
                     "openalex_subfield_id": subfield_id,
                     "openalex_subfield_name": subfield_name,
                     "for_group_code": group_code,
                     "for_group_label": group_label.get(group_code, ""),
-                    "is_primary": i == 0,
-                    "confidence": round(score, 3),
-                    "notes": f"constrained to groups within division(s) {','.join(divisions)}",
+                    "is_primary": True,
+                    "confidence": 0.7,
+                    "match_method": "manual_override",
+                    "notes": note,
                 }
             )
+            continue
 
-    if skipped:
-        print(f"  [openalex_subfield_to_for_group] {len(skipped)} subfield(s) skipped, "
-              f"no reachable FOR group (parent field has no division in the seed): {skipped}")
+        subfield_words = cm.exact_match_words(subfield_name)
+        group_words = {g: cm.exact_match_words(group_label[g]) for g in all_group_codes}
+        exact_hits = {g for g, words in group_words.items() if subfield_words and words == subfield_words}
+
+        if not exact_hits and subfield_words:
+            contains_pool = {g: w for g, w in group_words.items() if not cm.is_nec_code(g)}
+            contains_hit = cm.contains_match(subfield_words, contains_pool)
+            if contains_hit is not None:
+                exact_hits = {contains_hit}
+
+        source_tokens = cm.tokenize_words(subfield_bags.get(subfield_id, ""))
+        if len(source_tokens) >= SOURCE_MIN_TOKENS_FOR_OPEN_SEARCH:
+            pool = all_group_codes
+        else:
+            pool = groups_by_division.get(division_of_field.get(field_id, ""), []) or all_group_codes
+
+        scored = sorted(
+            (
+                (g, cm.bag_overlap(subfield_bags.get(subfield_id, ""), group_bags.get(g, "")))
+                for g in pool
+            ),
+            key=lambda t: (t[1], not cm.is_nec_code(t[0])),  # tie -> non-NEC group ranks first
+            reverse=True,
+        )
+
+        # Winner: a decisive exact match (if unique) always wins outright; otherwise the
+        # top raw-overlap scorer. Either way, the rest of the sorted list becomes ranked
+        # alternates.
+        is_exact = len(exact_hits) == 1
+        if is_exact:
+            winner = next(iter(exact_hits))
+            ranked = [winner] + [g for g, _ in scored if g != winner][:TOP_N_ALTERNATES]
+        else:
+            ranked = [g for g, _ in scored[: TOP_N_ALTERNATES + 1]]
+
+        overlap_of = dict(scored)
+        for i, group_code in enumerate(ranked):
+            is_primary = i == 0
+            if is_primary and is_exact and group_code == winner:
+                confidence, method = 1.0, "exact_match"
+            else:
+                overlap = overlap_of.get(group_code, 0)
+                confidence = round(min(1.0, overlap / len(source_tokens)), 3) if source_tokens else 0.0
+                method = "constrained_lexical"
+                if is_primary and overlap < MIN_OVERLAP:
+                    # Nothing cleared even the low group-level floor -- still recorded (so
+                    # resolver.py has *a* row to fall back to division-level from), but not
+                    # trustworthy enough to call it a confident group-level pick.
+                    confidence, method = 0.0, "below_floor"
+            rows.append(
+                {
+                    "openalex_subfield_id": subfield_id,
+                    "openalex_subfield_name": subfield_name,
+                    "for_group_code": group_code,
+                    "for_group_label": group_label.get(group_code, ""),
+                    "is_primary": is_primary,
+                    "confidence": confidence,
+                    "match_method": method,
+                    "notes": "",
+                }
+            )
 
     df = pd.DataFrame(rows)
     SEEDS_DIR.mkdir(parents=True, exist_ok=True)
@@ -216,7 +237,7 @@ def to_bridge(seed: pd.DataFrame) -> pd.DataFrame:
                 "canonical_label": r["for_group_label"],
                 "canonical_level": "group",
                 "is_primary": str(r["is_primary"]) in ("True", "true", "1"),
-                "match_method": "constrained_lexical",
+                "match_method": r["match_method"],
                 "confidence": float(r["confidence"]),
                 "notes": r["notes"],
             }
@@ -230,3 +251,5 @@ if __name__ == "__main__":
     bridge = to_bridge(seed)
     write_csv(bridge, DATA_DIR / "bridge_openalex_for_group.csv", ["source_code"])
     print("bridge rows:", len(bridge))
+    print("\nmatch_method breakdown (primary rows only):")
+    print(seed[seed["is_primary"].astype(str) == "True"]["match_method"].value_counts())

@@ -1,41 +1,27 @@
-openalex_field_id,openalex_field_name,for_division_code,for_division_label,is_primary,confidence,notes
-11,Agricultural and Biological Sciences,30,"AGRICULTURAL, VETERINARY AND FOOD SCIENCES",True,0.389,keyword-overlap self-check agrees with top algorithmic candidate
-11,Agricultural and Biological Sciences,31,BIOLOGICAL SCIENCES,False,0.389,"keyword-overlap self-check top candidate was division 30 (AGRICULTURAL, VETERINARY AND FOOD SCIENCES, score=0.389); kept Claude's judgment based on subfield composition"
-12,Arts and Humanities,43,"HISTORY, HERITAGE AND ARCHAEOLOGY",True,0.154,"keyword-overlap self-check top candidate was division 45 (INDIGENOUS STUDIES, score=0.471); kept Claude's judgment based on subfield composition"
-12,Arts and Humanities,36,CREATIVE ARTS AND WRITING,False,0.429,"keyword-overlap self-check top candidate was division 45 (INDIGENOUS STUDIES, score=0.471); kept Claude's judgment based on subfield composition"
-12,Arts and Humanities,50,PHILOSOPHY AND RELIGIOUS STUDIES,False,0.294,"keyword-overlap self-check top candidate was division 45 (INDIGENOUS STUDIES, score=0.471); kept Claude's judgment based on subfield composition"
-12,Arts and Humanities,47,"LANGUAGE, COMMUNICATION AND CULTURE",False,0.231,"keyword-overlap self-check top candidate was division 45 (INDIGENOUS STUDIES, score=0.471); kept Claude's judgment based on subfield composition"
-13,"Biochemistry, Genetics and Molecular Biology",31,BIOLOGICAL SCIENCES,True,0.312,"keyword-overlap self-check top candidate was division 32 (BIOMEDICAL AND CLINICAL SCIENCES, score=0.375); kept Claude's judgment based on subfield composition"
-13,"Biochemistry, Genetics and Molecular Biology",32,BIOMEDICAL AND CLINICAL SCIENCES,False,0.375,keyword-overlap self-check agrees with top algorithmic candidate
-14,"Business, Management and Accounting",35,"COMMERCE, MANAGEMENT, TOURISM AND SERVICES",True,0.684,keyword-overlap self-check agrees with top algorithmic candidate
-15,Chemical Engineering,40,ENGINEERING,True,0.385,keyword-overlap self-check agrees with top algorithmic candidate
-16,Chemistry,34,CHEMICAL SCIENCES,True,0.75,keyword-overlap self-check agrees with top algorithmic candidate
-17,Computer Science,46,INFORMATION AND COMPUTING SCIENCES,True,0.565,keyword-overlap self-check agrees with top algorithmic candidate
-18,Decision Sciences,49,MATHEMATICAL SCIENCES,True,0.1,"keyword-overlap self-check top candidate was division 45 (INDIGENOUS STUDIES, score=0.500); kept Claude's judgment based on subfield composition"
-18,Decision Sciences,35,"COMMERCE, MANAGEMENT, TOURISM AND SERVICES",False,0.2,"keyword-overlap self-check top candidate was division 45 (INDIGENOUS STUDIES, score=0.500); kept Claude's judgment based on subfield composition"
-19,Earth and Planetary Sciences,37,EARTH SCIENCES,True,0.5,keyword-overlap self-check agrees with top algorithmic candidate
-20,"Economics, Econometrics and Finance",38,ECONOMICS,True,0.333,"keyword-overlap self-check top candidate was division 35 (COMMERCE, MANAGEMENT, TOURISM AND SERVICES, score=0.333); kept Claude's judgment based on subfield composition"
-21,Energy,40,ENGINEERING,True,0.3,"keyword-overlap self-check top candidate was division 46 (INFORMATION AND COMPUTING SCIENCES, score=0.400); kept Claude's judgment based on subfield composition"
-21,Energy,41,ENVIRONMENTAL SCIENCES,False,0.1,"keyword-overlap self-check top candidate was division 46 (INFORMATION AND COMPUTING SCIENCES, score=0.400); kept Claude's judgment based on subfield composition"
-22,Engineering,40,ENGINEERING,True,0.48,keyword-overlap self-check agrees with top algorithmic candidate
-22,Engineering,33,BUILT ENVIRONMENT AND DESIGN,False,0.176,"keyword-overlap self-check top candidate was division 40 (ENGINEERING, score=0.480); kept Claude's judgment based on subfield composition"
-23,Environmental Science,41,ENVIRONMENTAL SCIENCES,True,0.417,keyword-overlap self-check agrees with top algorithmic candidate
-24,Immunology and Microbiology,31,BIOLOGICAL SCIENCES,True,0.833,keyword-overlap self-check agrees with top algorithmic candidate
-24,Immunology and Microbiology,32,BIOMEDICAL AND CLINICAL SCIENCES,False,0.5,"keyword-overlap self-check top candidate was division 31 (BIOLOGICAL SCIENCES, score=0.833); kept Claude's judgment based on subfield composition"
-25,Materials Science,40,ENGINEERING,True,0.5,keyword-overlap self-check agrees with top algorithmic candidate
-25,Materials Science,51,PHYSICAL SCIENCES,False,0.062,"keyword-overlap self-check top candidate was division 40 (ENGINEERING, score=0.500); kept Claude's judgment based on subfield composition"
-26,Mathematics,49,MATHEMATICAL SCIENCES,True,0.545,keyword-overlap self-check agrees with top algorithmic candidate
-27,Medicine,32,BIOMEDICAL AND CLINICAL SCIENCES,True,0.25,"keyword-overlap self-check top candidate was division 42 (HEALTH SCIENCES, score=0.467); kept Claude's judgment based on subfield composition"
-27,Medicine,42,HEALTH SCIENCES,False,0.467,keyword-overlap self-check agrees with top algorithmic candidate
-28,Neuroscience,32,BIOMEDICAL AND CLINICAL SCIENCES,True,0.25,"keyword-overlap self-check top candidate was division 52 (PSYCHOLOGY, score=0.417); kept Claude's judgment based on subfield composition"
-29,Nursing,42,HEALTH SCIENCES,True,0.091,"keyword-overlap self-check top candidate was division 32 (BIOMEDICAL AND CLINICAL SCIENCES, score=0.364); kept Claude's judgment based on subfield composition"
-30,"Pharmacology, Toxicology and Pharmaceutics",32,BIOMEDICAL AND CLINICAL SCIENCES,True,0.25,keyword-overlap self-check agrees with top algorithmic candidate
-31,Physics and Astronomy,51,PHYSICAL SCIENCES,True,0.688,keyword-overlap self-check agrees with top algorithmic candidate
-32,Psychology,52,PSYCHOLOGY,True,0.727,keyword-overlap self-check agrees with top algorithmic candidate
-33,Social Sciences,44,HUMAN SOCIETY,True,0.714,keyword-overlap self-check agrees with top algorithmic candidate
-33,Social Sciences,39,EDUCATION,False,0.2,"keyword-overlap self-check top candidate was division 44 (HUMAN SOCIETY, score=0.714); kept Claude's judgment based on subfield composition"
-33,Social Sciences,48,LAW AND LEGAL STUDIES,False,0.231,"keyword-overlap self-check top candidate was division 44 (HUMAN SOCIETY, score=0.714); kept Claude's judgment based on subfield composition"
-33,Social Sciences,33,BUILT ENVIRONMENT AND DESIGN,False,0.235,"keyword-overlap self-check top candidate was division 44 (HUMAN SOCIETY, score=0.714); kept Claude's judgment based on subfield composition"
-34,Veterinary,30,"AGRICULTURAL, VETERINARY AND FOOD SCIENCES",True,0.5,keyword-overlap self-check agrees with top algorithmic candidate
-35,Dentistry,42,HEALTH SCIENCES,True,0.0,"keyword-overlap self-check top candidate was division 32 (BIOMEDICAL AND CLINICAL SCIENCES, score=0.167); kept Claude's judgment based on subfield composition"
-36,Health Professions,42,HEALTH SCIENCES,True,0.4,keyword-overlap self-check agrees with top algorithmic candidate
+openalex_field_id,openalex_field_name,for_division_code,for_division_label,for_group_code,for_group_label,is_primary,confidence,match_method,notes
+11,Agricultural and Biological Sciences,30,"AGRICULTURAL, VETERINARY AND FOOD SCIENCES",,,True,0.188,constrained_lexical,
+12,Arts and Humanities,47,"LANGUAGE, COMMUNICATION AND CULTURE",,,True,0.165,constrained_lexical,
+13,"Biochemistry, Genetics and Molecular Biology",31,BIOLOGICAL SCIENCES,,,True,0.155,constrained_lexical,
+14,"Business, Management and Accounting",35,"COMMERCE, MANAGEMENT, TOURISM AND SERVICES",,,True,0.303,constrained_lexical,
+15,Chemical Engineering,40,ENGINEERING,4004,Chemical engineering,True,1.0,exact_match,
+16,Chemistry,34,CHEMICAL SCIENCES,,,True,0.245,constrained_lexical,
+17,Computer Science,46,INFORMATION AND COMPUTING SCIENCES,,,True,0.334,constrained_lexical,
+18,Decision Sciences,46,INFORMATION AND COMPUTING SCIENCES,,,True,0.357,constrained_lexical,
+19,Earth and Planetary Sciences,37,EARTH SCIENCES,,,True,0.238,constrained_lexical,
+20,"Economics, Econometrics and Finance",35,"COMMERCE, MANAGEMENT, TOURISM AND SERVICES",,,True,0.23,constrained_lexical,
+21,Energy,40,ENGINEERING,,,True,0.371,constrained_lexical,
+22,Engineering,40,ENGINEERING,,,True,1.0,exact_match,
+23,Environmental Science,41,ENVIRONMENTAL SCIENCES,,,True,1.0,exact_match,
+24,Immunology and Microbiology,31,BIOLOGICAL SCIENCES,,,True,0.173,constrained_lexical,
+25,Materials Science,40,ENGINEERING,,,True,0.232,constrained_lexical,
+26,Mathematics,49,MATHEMATICAL SCIENCES,,,True,0.304,constrained_lexical,
+27,Medicine,32,BIOMEDICAL AND CLINICAL SCIENCES,,,True,0.097,constrained_lexical,
+28,Neuroscience,32,BIOMEDICAL AND CLINICAL SCIENCES,3209,Neurosciences,True,1.0,exact_match,
+29,Nursing,42,HEALTH SCIENCES,4205,Nursing,True,1.0,exact_match,
+30,"Pharmacology, Toxicology and Pharmaceutics",32,BIOMEDICAL AND CLINICAL SCIENCES,,,True,0.197,constrained_lexical,
+31,Physics and Astronomy,51,PHYSICAL SCIENCES,,,True,0.266,constrained_lexical,
+32,Psychology,52,PSYCHOLOGY,,,True,1.0,exact_match,
+33,Social Sciences,44,HUMAN SOCIETY,,,True,0.129,constrained_lexical,
+34,Veterinary,30,"AGRICULTURAL, VETERINARY AND FOOD SCIENCES",3009,Veterinary sciences,True,1.0,exact_match,
+35,Dentistry,32,BIOMEDICAL AND CLINICAL SCIENCES,3203,Dentistry,True,1.0,exact_match,
+36,Health Professions,42,HEALTH SCIENCES,,,True,0.7,manual_override,obviously Health Sciences on inspection; lexical overlap was a noise-level near-tie with Info/Computing Sciences
