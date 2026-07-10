@@ -48,10 +48,28 @@ Two rules hold everywhere:
 - `SEO*` schemes can only ever target `SEO2020` -- SEO is an objective classification with
   no relationship to OAX/Leiden by design, so any other `to_scheme` raises immediately.
 
-If a mapping genuinely doesn't exist (e.g. ANZSRC's Indigenous Studies division has no
-counterpart anywhere in OpenAlex/ASJC's international taxonomy, at any granularity), 
-`resolve()` raises `LookupError` with an explanatory message rather than guessing. See
-`TODO.md` for this and its coverage caveats.
+If a mapping genuinely doesn't exist, `resolve()` raises `LookupError` with an explanatory
+message rather than guessing. See `TODO.md` for coverage caveats.
+
+### Indigenous Studies (FOR2020 division 45): resolved via cultural proxy
+
+ANZSRC's Indigenous Studies division (Aboriginal & Torres Strait Islander, Maori, and
+Pacific Peoples research) has no direct OpenAlex/ASJC counterpart -- but its own group/field
+labels are, almost entirely, a generic FOR2020 research concept with a population prefix
+added ("Aboriginal and Torres Strait Islander history", "Pacific Peoples archaeology", a
+Maori-language label with the English gloss in parens). `resolve()` reaches OAX/Leiden for
+16 of division 45's 18 themed groups by routing through the non-Indigenous FOR2020 group or
+division representing that same concept, tagged distinctly so it's never mistaken for
+official ANZSRC content or a real derived statistic:
+
+```python
+r.resolve("321207", "FOR1998", "OAX_FIELD")  # "Indigenous Health" -> OAX field 'Medicine'
+                                              # match_method='cultural_proxy', confidence=0.51
+```
+
+Two groups (4519, 4599 -- "Other Indigenous data/methodologies/studies") have no
+non-Indigenous analogue at all and still raise `LookupError`, by design. See
+`research_classification/curate_for2020_division45_to_proxy.py` for the full method.
 
 ### Precision: group-level (4-digit) when available, division-level otherwise
 

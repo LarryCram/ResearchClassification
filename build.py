@@ -16,6 +16,7 @@ from research_classification import (
     build_leiden,
     build_openalex,
     build_registry,
+    curate_for2020_division45_to_proxy,
     curate_openalex_for,
     curate_openalex_subfield_to_for_group,
 )
@@ -55,6 +56,10 @@ def main() -> None:
     subfield_seed = curate_openalex_subfield_to_for_group.run()
     bridge_openalex_for_group = curate_openalex_subfield_to_for_group.to_bridge(subfield_seed)
     write_csv(bridge_openalex_for_group, DATA_DIR / "bridge_openalex_for_group.csv", ["source_code"])
+
+    print("4c. Curating (or reusing) FOR2020 division 45 -> non-45 proxy (lexical + 2 manual overrides)...")
+    division45_seed = curate_for2020_division45_to_proxy.run()
+    write_csv(division45_seed, DATA_DIR / "for2020_division45_group_to_proxy.csv", ["for2020_division45_group_code"])
 
     print("5. Building Leiden bridges (wikipedia_url exact join + empirical derivation)...")
     build_leiden.run()

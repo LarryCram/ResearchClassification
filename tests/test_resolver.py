@@ -154,19 +154,50 @@ def test_seo_cannot_target_oax_or_leiden():
 
 
 def test_indigenous_studies_gap():
-    # FOR division 45 (Indigenous Studies) genuinely has no OpenAlex/Leiden equivalent --
-    # must report this as an informative LookupError, not silently fabricate a mapping.
-    row = resolver._con.execute(
-        "SELECT source_code FROM bridge_for1998_for2020 WHERE canonical_code LIKE '45%' "
-        "AND is_primary = 'True' LIMIT 1"
-    ).fetchone()
-    assert row is not None
+    # Groups 4519/4599 ("Other Indigenous data, methodologies..." / "Other Indigenous
+    # studies") have no prefix/gloss pattern and no non-Indigenous analogue at all -- unlike
+    # the rest of division 45 (see test_division45_cultural_proxy), these must still report
+    # an informative LookupError, not silently fabricate a mapping.
     try:
-        resolver.resolve(row[0], "FOR1998", "OAX_FIELD")
+        resolver.resolve("459999", "FOR2020", "OAX_FIELD")
         raise AssertionError("expected LookupError")
     except LookupError as e:
         assert "genuinely absent" in str(e)
-    print(f"  FOR1998 {row[0]} (division 45) correctly reports OAX as genuinely absent")
+    print("  FOR2020 459999 (group 4599, no non-Indigenous analogue) correctly reports OAX as genuinely absent")
+
+
+def test_division45_cultural_proxy():
+    # Most of division 45 (Indigenous Studies) DOES resolve to OAX/Leiden now, via a
+    # lexically-derived (or, for two theme-buckets, user-confirmed) proxy to the
+    # non-Indigenous FOR2020 group/division representing the same underlying research
+    # concept -- see curate_for2020_division45_to_proxy.py. FOR1998 321207 "Indigenous
+    # Health" and FOR2008 210101 "Aboriginal and Torres Strait Islander Archaeology" are
+    # both confirmed (via direct query against the vintage bridges) to have their *primary*
+    # FOR2020 target inside division 45 -- real historical codes that hard-failed before.
+    oax = resolver.resolve("321207", "FOR1998", "OAX_FIELD")
+    assert oax.match_method == "cultural_proxy"
+    assert oax.label == "Medicine"  # health and wellbeing -> division 42 Health Sciences -> OAX field
+
+    leiden = resolver.resolve("210101", "FOR2008", "LEIDEN")
+    assert leiden.match_method == "cultural_proxy"
+    assert leiden.label == "Social sciences and humanities"
+
+    # the "sciences" theme's manual override (Environmental Science, not the algorithmic
+    # noise-pick) is reachable directly too
+    sci = resolver.resolve("450601", "FOR2020", "OAX_FIELD")  # ATSI astronomy and cosmology
+    assert sci.match_method == "cultural_proxy"
+    assert sci.label == "Environmental Science"
+    assert sci.confidence == 0.61  # 0.7 (override) * 0.871... rounded -- proxy confidence compounds
+
+    # groups 4519/4599 must NOT get a proxy -- confirm the proxy table has no row for them
+    row = resolver._con.execute(
+        "SELECT 1 FROM for2020_division45_group_to_proxy WHERE for2020_division45_group_code IN ('4519','4599')"
+    ).fetchone()
+    assert row is None
+
+    print(f"  division-45 cultural proxy OK: FOR1998 321207 -> OAX field {oax.label!r} "
+          f"({oax.confidence}, {oax.match_method}); FOR2008 210101 -> Leiden {leiden.label!r} ({leiden.confidence}); "
+          f"FOR2020 450601 (sciences override) -> OAX field {sci.label!r} ({sci.confidence})")
 
 
 def test_group_level_precision():
@@ -245,6 +276,7 @@ if __name__ == "__main__":
         test_oax_domain_too_coarse_for_for2020,
         test_seo_cannot_target_oax_or_leiden,
         test_indigenous_studies_gap,
+        test_division45_cultural_proxy,
         test_group_level_precision,
         test_leading_zero_normalization,
         test_explicit_db_path_matches_bundled,

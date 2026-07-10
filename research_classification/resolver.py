@@ -81,9 +81,12 @@ _OAX_LEVEL_RANK = {"domain": 0, "field": 1, "subfield": 2, "topic": 3}
 _TO_SCHEME_OAX_LEVEL = {"OAX_DOMAIN": "domain", "OAX_FIELD": "field", "OAX_SUBFIELD": "subfield", "OAX_TOPIC": "topic"}
 
 _NO_MAPPING_NOTE = (
-    "No OpenAlex/Leiden equivalent exists for this FOR division in the source data -- "
-    "genuinely absent (ANZSRC's Indigenous Studies division, code 45, has no counterpart "
-    "anywhere in OpenAlex/ASJC's international taxonomy), not a lookup failure."
+    "No OpenAlex/Leiden equivalent exists for this FOR division in the source data, and no "
+    "match_method='cultural_proxy' fallback applies either -- genuinely absent, not a lookup "
+    "failure. For FOR2020 division 45 (Indigenous Studies), most groups resolve via a "
+    "lexically-derived (or, for two groups, user-confirmed) proxy to their non-Indigenous "
+    "equivalent research content; only groups 4519/4599 (\"Other Indigenous...\") have no "
+    "non-Indigenous analogue at all, and stay unmapped -- see TODO.md."
 )
 
 
@@ -271,10 +274,25 @@ class Resolver:
             f"SELECT {code_col}, {label_col}, share FROM {table} WHERE for_division_code = ? AND is_primary = 'True'",
             [division_code],
         ).fetchone()
-        if not row:
-            raise LookupError(f"{input_value!r} (FOR2020 division {division_code}): {_NO_MAPPING_NOTE}")
-        out_code, out_label, share = row
-        return CanonicalResult(input_value, from_scheme, to_scheme, out_code, out_label, level, "derived_empirical", float(share))
+        if row:
+            out_code, out_label, share = row
+            return CanonicalResult(input_value, from_scheme, to_scheme, out_code, out_label, level, "derived_empirical", float(share))
+
+        if division_code == "45":
+            proxy = self._con.execute(
+                "SELECT proxy_code, confidence FROM for2020_division45_group_to_proxy "
+                "WHERE for2020_division45_group_code = ?",
+                [for2020_code[:4]],
+            ).fetchone()
+            if proxy:
+                proxy_code, proxy_confidence = proxy
+                proxied = self._resolve_from_for2020_code(input_value, proxy_code, to_scheme, from_scheme)
+                return CanonicalResult(
+                    input_value, from_scheme, to_scheme, proxied.code, proxied.label, proxied.level,
+                    "cultural_proxy", round(proxied.confidence * float(proxy_confidence), 3),
+                )
+
+        raise LookupError(f"{input_value!r} (FOR2020 division {division_code}): {_NO_MAPPING_NOTE}")
 
     def _resolve_from_for_division_hub(self, code: str, from_scheme: FromScheme, to_scheme: ToScheme) -> CanonicalResult:
         result = self._resolve_vintage_to_current(code, from_scheme, "FOR")

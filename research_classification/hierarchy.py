@@ -31,6 +31,7 @@ MATCH_METHODS = {
     "manual_curated",
     "constrained_lexical",
     "lexical",
+    "cultural_proxy",
 }
 
 
