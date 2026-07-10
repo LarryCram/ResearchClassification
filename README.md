@@ -95,12 +95,14 @@ CanonicalResult(
 | `constrained_lexical` | algorithmic lexical match within a hierarchically-constrained candidate pool | the lexical score |
 | `lexical` | ABS's own "p"-flagged many-to-many ties, broken by string similarity | the similarity score |
 | `cultural_proxy` | routed through a non-Indigenous FOR2020 proxy for division 45 (Indigenous Studies) -- see below | the proxy match's score, possibly compounded with the proxy target's own confidence |
+| `user_provided` | externally-sourced content the user supplied and confirmed directly (SEO -> SDG) -- no computed score, confidence assigned directly | as assigned; `1.0` throughout for SEO->SDG |
 
 Both `from_scheme` and `to_scheme` are always required, spelled out as one of these named
 values -- never inferred, never guessed:
 
 - **`from_scheme`**: `OAX`, `FOR1998`, `FOR2008`, `FOR2020`, `SEO1998`, `SEO2008`, `SEO2020`
-- **`to_scheme`**: `OAX_DOMAIN`, `OAX_FIELD`, `OAX_SUBFIELD`, `OAX_TOPIC`, `FOR2020`, `SEO2020`, `LEIDEN`
+- **`to_scheme`**: `OAX_DOMAIN`, `OAX_FIELD`, `OAX_SUBFIELD`, `OAX_TOPIC`, `FOR2020`, `SEO2020`,
+  `LEIDEN`, `SDG_GOAL`, `SDG_PILLAR`
 
 Two rules hold everywhere:
 
@@ -112,11 +114,31 @@ Two rules hold everywhere:
   rather than fabricating a guess. The same applies within OAX itself: `OAX_FIELD ->
   OAX_TOPIC` raises (one field has many topics), while `OAX_TOPIC -> OAX_FIELD` (walking up
   the real hierarchy) works and is exact.
-- `SEO*` schemes can only ever target `SEO2020` -- SEO is an objective classification with
-  no relationship to OAX/Leiden by design, so any other `to_scheme` raises immediately.
+- `SEO*` schemes can only ever target `SEO2020`, `SDG_GOAL`, or `SDG_PILLAR` -- SEO is an
+  objective classification with no relationship to OAX/Leiden by design, so any other
+  `to_scheme` raises immediately. `FOR*`/`OAX` cannot reach `SDG_GOAL`/`SDG_PILLAR` yet
+  (planned as a follow-on).
 
 If a mapping genuinely doesn't exist, `resolve()` raises `LookupError` with an explanatory
 message rather than guessing. See `TODO.md` for coverage caveats.
+
+### SEO -> UN Sustainable Development Goals
+
+Every SEO vintage resolves to the UN SDGs, via a user-provided division-level alignment
+table (`research_classification/curate_seo_to_sdg.py`) -- single-valued (one SDG per
+division) and, above that, the UN's own "5 Ps" pillar grouping (People, Planet, Prosperity,
+Peace, Partnership):
+
+```python
+r.resolve("20", "SEO2020", "SDG_GOAL")    # Health -> SDG 3 "Good Health and Well-being"
+r.resolve("20", "SEO2020", "SDG_PILLAR")  # -> "People" (SDG 3's parent pillar)
+r.resolve("920101", "SEO2008", "SDG_GOAL")  # legacy vintage, via the same SEO2020 hub
+```
+
+The source table's own division numbering didn't match ours for 6 of 19 divisions (it used
+a different/draft SEO2020 revision); resolved by matching on label instead of the source's
+code, with two divisions given a direct user override where the source table had no
+counterpart at all -- see the module docstring for the full account.
 
 ### Indigenous Studies (FOR2020 division 45): resolved via cultural proxy
 

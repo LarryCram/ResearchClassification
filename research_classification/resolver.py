@@ -28,10 +28,16 @@ from typing import Literal
 import duckdb
 
 FromScheme = Literal["OAX", "FOR1998", "FOR2008", "FOR2020", "SEO1998", "SEO2008", "SEO2020"]
-ToScheme = Literal["OAX_DOMAIN", "OAX_FIELD", "OAX_SUBFIELD", "OAX_TOPIC", "FOR2020", "SEO2020", "LEIDEN"]
+ToScheme = Literal[
+    "OAX_DOMAIN", "OAX_FIELD", "OAX_SUBFIELD", "OAX_TOPIC", "FOR2020", "SEO2020", "LEIDEN",
+    "SDG_GOAL", "SDG_PILLAR",
+]
 
 _VALID_FROM_SCHEMES = {"OAX", "FOR1998", "FOR2008", "FOR2020", "SEO1998", "SEO2008", "SEO2020"}
-_VALID_TO_SCHEMES = {"OAX_DOMAIN", "OAX_FIELD", "OAX_SUBFIELD", "OAX_TOPIC", "FOR2020", "SEO2020", "LEIDEN"}
+_VALID_TO_SCHEMES = {
+    "OAX_DOMAIN", "OAX_FIELD", "OAX_SUBFIELD", "OAX_TOPIC", "FOR2020", "SEO2020", "LEIDEN",
+    "SDG_GOAL", "SDG_PILLAR",
+}
 _FOR_VINTAGES = {"FOR1998", "FOR2008", "FOR2020"}
 _SEO_VINTAGES = {"SEO1998", "SEO2008", "SEO2020"}
 
@@ -216,6 +222,29 @@ class Resolver:
             primary.level, primary.match_method, primary.confidence, alternates=tuple(rest),
         )
 
+    # -- SEO -> SDG (division-level, user-provided) --------------------------
+
+    def _resolve_seo_to_sdg(self, code: str, from_scheme: FromScheme, to_scheme: ToScheme) -> CanonicalResult:
+        seo2020 = self._resolve_vintage_to_current(code, from_scheme, "SEO")
+        division_code = seo2020.code[:2]
+        row = self._con.execute(
+            "SELECT sdg_code, sdg_label, confidence FROM seo2020_division_sdg WHERE seo2020_division_code = ?",
+            [division_code],
+        ).fetchone()
+        if not row:
+            raise LookupError(f"{code!r} (SEO2020 division {division_code}): no SDG mapping found")
+        goal_code, goal_label, confidence = row
+
+        if to_scheme == "SDG_GOAL":
+            return CanonicalResult(code, from_scheme, to_scheme, goal_code, goal_label, "goal", "user_provided", float(confidence))
+
+        # SDG_PILLAR: walk up the exact, official goal->pillar hierarchy fact in sdg.csv --
+        # not a separately-derived estimate, so it carries the same confidence as the goal.
+        pillar_row = self._con.execute("SELECT parent_code FROM sdg WHERE code = ? AND level = 'goal'", [goal_code]).fetchone()
+        pillar_code = pillar_row[0]
+        pillar_label = self._con.execute("SELECT label FROM sdg WHERE code = ? AND level = 'pillar'", [pillar_code]).fetchone()[0]
+        return CanonicalResult(code, from_scheme, to_scheme, pillar_code, pillar_label, "pillar", "user_provided", float(confidence))
+
     # -- OAX hierarchy walking (up only) ------------------------------------
 
     def _oax_identify(self, value: str) -> tuple[str, str, str, str] | None:
@@ -245,12 +274,15 @@ class Resolver:
         code = self._normalize_code(value, from_scheme)
 
         if from_scheme in _SEO_VINTAGES:
-            if to_scheme != "SEO2020":
-                raise ValueError(
-                    f"from_scheme={from_scheme!r} can only target to_scheme='SEO2020' -- SEO is an "
-                    f"objective classification with no relationship to OAX/Leiden by design"
-                )
-            return self._resolve_vintage_to_current(code, from_scheme, "SEO")
+            if to_scheme == "SEO2020":
+                return self._resolve_vintage_to_current(code, from_scheme, "SEO")
+            if to_scheme in ("SDG_GOAL", "SDG_PILLAR"):
+                return self._resolve_seo_to_sdg(code, from_scheme, to_scheme)
+            raise ValueError(
+                f"from_scheme={from_scheme!r} can only target to_scheme='SEO2020', 'SDG_GOAL', or "
+                f"'SDG_PILLAR' -- SEO is an objective classification with no relationship to OAX/Leiden "
+                f"by design"
+            )
 
         if from_scheme in _FOR_VINTAGES:
             if to_scheme == "FOR2020":

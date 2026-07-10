@@ -1,0 +1,20 @@
+seo2020_division_code,seo2020_division_label,sdg_code,sdg_label,confidence,notes
+10,ANIMAL PRODUCTION AND ANIMAL PRIMARY PRODUCTS,2,Zero Hunger,1.0,
+11,COMMERCIAL SERVICES AND TOURISM,8,Decent Work and Economic Growth,1.0,
+12,CONSTRUCTION,9,"Industry, Innovation and Infrastructure",1.0,
+13,CULTURE AND SOCIETY,10,Reduced Inequalities,1.0,
+14,DEFENCE,16,"Peace, Justice and Strong Institutions",1.0,
+15,ECONOMIC FRAMEWORK,8,Decent Work and Economic Growth,1.0,
+16,EDUCATION AND TRAINING,4,Quality Education,1.0,
+17,ENERGY,7,Affordable and Clean Energy,1.0,
+18,ENVIRONMENTAL MANAGEMENT,15,Life on Land,1.0,
+19,"ENVIRONMENTAL POLICY, CLIMATE CHANGE AND NATURAL HAZARDS",13,Climate Action,1.0,
+20,HEALTH,3,Good Health and Well-being,1.0,
+21,INDIGENOUS,10,Reduced Inequalities,1.0,
+22,INFORMATION AND COMMUNICATION SERVICES,9,"Industry, Innovation and Infrastructure",1.0,
+23,"LAW, POLITICS AND COMMUNITY SERVICES",16,"Peace, Justice and Strong Institutions",1.0,
+24,MANUFACTURING,9,"Industry, Innovation and Infrastructure",1.0,
+25,MINERAL RESOURCES (EXCL. ENERGY RESOURCES),12,Responsible Consumption and Production,1.0,
+26,PLANT PRODUCTION AND PLANT PRIMARY PRODUCTS,2,Zero Hunger,1.0,
+27,TRANSPORT,11,Sustainable Cities and Communities,1.0,division renumbered in source table (was 'Transport' at 31); matched by label
+28,EXPANDING KNOWLEDGE,9,"Industry, Innovation and Infrastructure",1.0,no counterpart in source table; user-provided override

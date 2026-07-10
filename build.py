@@ -16,9 +16,11 @@ from research_classification import (
     build_leiden,
     build_openalex,
     build_registry,
+    build_sdg,
     curate_for2020_division45_to_proxy,
     curate_openalex_for,
     curate_openalex_subfield_to_for_group,
+    curate_seo_to_sdg,
 )
 from research_classification.hierarchy import audit_encoding, validate_bridge, validate_canonical
 
@@ -30,6 +32,14 @@ def main() -> None:
     for_df, seo_df = build_for_seo.run()
     validate_canonical(for_df, 23 + 213 + 1967, "FOR")
     validate_canonical(seo_df, 19 + 128 + 840, "SEO")
+
+    print("1b. Building canonical SDG table (5 pillars + 17 goals)...")
+    sdg_df = build_sdg.run()
+    validate_canonical(sdg_df, 5 + 17, "SDG", require_prefix=False, level_order=["pillar", "goal"])
+
+    print("1c. Curating (or reusing) SEO2020 division -> SDG goal (user-provided)...")
+    seo_sdg_seed = curate_seo_to_sdg.run()
+    curate_seo_to_sdg.write_data_table(seo_sdg_seed)
 
     print("2. Building canonical OpenAlex tables...")
     oax_tables = build_openalex.run()

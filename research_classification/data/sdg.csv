@@ -1,0 +1,23 @@
+code,level,label,parent_code
+1,goal,No Poverty,PEOPLE
+10,goal,Reduced Inequalities,PROSPERITY
+11,goal,Sustainable Cities and Communities,PROSPERITY
+12,goal,Responsible Consumption and Production,PLANET
+13,goal,Climate Action,PLANET
+14,goal,Life Below Water,PLANET
+15,goal,Life on Land,PLANET
+16,goal,"Peace, Justice and Strong Institutions",PEACE
+17,goal,Partnerships for the Goals,PARTNERSHIP
+2,goal,Zero Hunger,PEOPLE
+3,goal,Good Health and Well-being,PEOPLE
+4,goal,Quality Education,PEOPLE
+5,goal,Gender Equality,PEOPLE
+6,goal,Clean Water and Sanitation,PLANET
+7,goal,Affordable and Clean Energy,PROSPERITY
+8,goal,Decent Work and Economic Growth,PROSPERITY
+9,goal,"Industry, Innovation and Infrastructure",PROSPERITY
+PARTNERSHIP,pillar,Partnership,
+PEACE,pillar,Peace,
+PEOPLE,pillar,People,
+PLANET,pillar,Planet,
+PROSPERITY,pillar,Prosperity,

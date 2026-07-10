@@ -29,6 +29,7 @@ def test_row_counts():
         "openalex_fields": 26,
         "openalex_subfields": 252,
         "openalex_topics": 4516,
+        "sdg": 22,
     }
     for table, expected in counts.items():
         n = resolver._con.execute(f"SELECT COUNT(*) FROM {table}").fetchone()[0]
@@ -149,6 +150,62 @@ def test_seo_cannot_target_oax_or_leiden():
         except ValueError as e:
             assert "SEO" in str(e)
     print("  SEO2020 correctly cannot target any OAX/Leiden scheme")
+
+
+def test_seo_to_sdg():
+    # User-provided division-level SDG alignment (curate_seo_to_sdg.py). Single-valued
+    # throughout -- no .alternates, even for the two divisions whose source table originally
+    # listed two SDGs (13, 18): only the first-listed is kept, per the user's instruction.
+    health = resolver.resolve("20", "SEO2020", "SDG_GOAL")
+    assert health.code == "3" and health.label == "Good Health and Well-being"
+    assert health.match_method == "user_provided" and health.confidence == 1.0
+    assert health.alternates == ()
+
+    culture = resolver.resolve("13", "SEO2020", "SDG_GOAL")
+    assert culture.code == "10" and culture.alternates == ()  # SDG 11 dropped, not an alternate
+
+    # division 28 "Expanding Knowledge" has no counterpart in the user's source table at all
+    # -- resolved via their direct override, not the table
+    expanding = resolver.resolve("28", "SEO2020", "SDG_GOAL")
+    assert expanding.code == "9"
+
+    # SDG_PILLAR walks up the exact goal->pillar hierarchy fact, same confidence as the goal
+    pillar = resolver.resolve("20", "SEO2020", "SDG_PILLAR")
+    assert pillar.code == "PEOPLE" and pillar.label == "People" and pillar.level == "pillar"
+    assert pillar.confidence == health.confidence and pillar.match_method == "user_provided"
+
+    # legacy vintages reach SDG via the same SEO2020 hub every other SEO resolution uses
+    seo2008_code = resolver._con.execute(
+        "SELECT source_code FROM bridge_seo2008_seo2020 WHERE canonical_code LIKE '20%' AND is_primary = 'True' LIMIT 1"
+    ).fetchone()[0]
+    from_2008 = resolver.resolve(seo2008_code, "SEO2008", "SDG_GOAL")
+    assert from_2008.code == health.code
+
+    # FOR/OAX cannot reach SDG yet -- explicitly out of scope until a follow-on FOR->SDG ask
+    try:
+        resolver.resolve("10", "FOR2020", "SDG_GOAL")
+        raise AssertionError("expected ValueError")
+    except ValueError as e:
+        assert "SDG" not in str(e) or "FOR2020" in str(e)
+
+    print(f"  SEO->SDG OK: division 20 -> goal {health.label!r} -> pillar {pillar.label!r}; "
+          f"division 28 override -> goal {expanding.code}; SEO2008 {seo2008_code} -> goal {from_2008.code}")
+
+
+def test_exhaustive_seo2020_to_sdg_coverage():
+    # Every one of SEO2020's 19 divisions resolves to both SDG_GOAL and SDG_PILLAR --
+    # permanent regression guard, same pattern as the FOR2020 exhaustive coverage tests.
+    seo_df = pd.read_csv(DATA_DIR / "seo_2020.csv", dtype=str, keep_default_na=False)
+    divisions = seo_df[seo_df["level"] == "division"]["code"]
+    for to_scheme in ("SDG_GOAL", "SDG_PILLAR"):
+        failures = set()
+        for code in divisions:
+            try:
+                resolver.resolve(code, "SEO2020", to_scheme)
+            except LookupError:
+                failures.add(code)
+        assert not failures, f"{to_scheme}: unexpected LookupError(s) for {failures}"
+    print(f"  exhaustive SEO2020->SDG coverage OK: all {len(divisions)}/{len(divisions)} divisions resolve to both SDG_GOAL and SDG_PILLAR")
 
 
 def test_division45_cultural_proxy():
@@ -327,6 +384,8 @@ if __name__ == "__main__":
         test_oax_down_direction_hard_fails,
         test_oax_domain_too_coarse_for_for2020,
         test_seo_cannot_target_oax_or_leiden,
+        test_seo_to_sdg,
+        test_exhaustive_seo2020_to_sdg_coverage,
         test_division45_cultural_proxy,
         test_exhaustive_for2020_to_oax_leiden_coverage,
         test_exhaustive_legacy_for_coverage,

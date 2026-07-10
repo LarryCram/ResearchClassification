@@ -1,5 +1,22 @@
 # Known gaps
 
+## SEO -> SDG: done for SEO only; FOR/OAX -> SDG deferred
+`resolve()` reaches `SDG_GOAL`/`SDG_PILLAR` from every SEO vintage (SEO1998/2008/2020), via
+`research_classification/curate_seo_to_sdg.py` -- a user-provided, single-valued
+division-level alignment table, plus the UN's own 5-pillar grouping above the 17 goals
+(`research_classification/build_sdg.py`). The user's source table's own division numbering
+didn't match ours for 6 of 19 divisions (looked like a different/draft SEO2020 revision --
+our real division 27 is "Transport", 28 is "Expanding Knowledge"; the source table had
+"Transport" at 31 and no counterpart for "Expanding Knowledge" at all). Resolved by matching
+on label rather than the source's code, plus two direct user overrides (division 27 reuses
+the source's own "Transport" row; division 28 -> SDG 9). Full 19/19 coverage, exhaustively
+tested (`test_exhaustive_seo2020_to_sdg_coverage`).
+
+**Deferred, explicitly out of scope for now**: the user's next ask is "a higher aggregation
+like Leiden for FOR" -- i.e. FOR (and/or OAX) reaching SDG too. `to_scheme="SDG_GOAL"`/
+`"SDG_PILLAR"` currently raise `ValueError` for any `from_scheme` other than SEO*, on
+purpose -- not a gap to close incidentally, a separate future request.
+
 ## FOR2020 Division 45 (Indigenous Studies) -> OAX/Leiden: resolved via cultural proxy
 Division 45 has no *direct* OpenAlex/ASJC counterpart at any granularity (confirmed: none
 of OpenAlex's 26 top-level fields was ever curated to point there, so the absence propagates
