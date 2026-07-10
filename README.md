@@ -58,17 +58,17 @@ Pacific Peoples research) has no direct OpenAlex/ASJC counterpart -- but its own
 labels are, almost entirely, a generic FOR2020 research concept with a population prefix
 added ("Aboriginal and Torres Strait Islander history", "Pacific Peoples archaeology", a
 Maori-language label with the English gloss in parens). `resolve()` reaches OAX/Leiden for
-16 of division 45's 18 themed groups by routing through the non-Indigenous FOR2020 group or
-division representing that same concept, tagged distinctly so it's never mistaken for
-official ANZSRC content or a real derived statistic:
+**2,201 of FOR2020's 2,203 codes** (exhaustively verified) by routing division-45 codes
+through the non-Indigenous FOR2020 group or division representing that same concept, tagged
+distinctly so it's never mistaken for official ANZSRC content or a real derived statistic:
 
 ```python
 r.resolve("321207", "FOR1998", "OAX_FIELD")  # "Indigenous Health" -> OAX field 'Medicine'
                                               # match_method='cultural_proxy', confidence=0.51
 ```
 
-Two groups (4519, 4599 -- "Other Indigenous data/methodologies/studies") have no
-non-Indigenous analogue at all and still raise `LookupError`, by design. See
+Only group **4599** ("Other Indigenous studies") and its sole field have no non-Indigenous
+analogue at all and still raise `LookupError`, by design. See
 `research_classification/curate_for2020_division45_to_proxy.py` for the full method.
 
 ### Precision: group-level (4-digit) when available, division-level otherwise

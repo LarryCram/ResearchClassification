@@ -1,4 +1,5 @@
-for2020_division45_group_code,for2020_division45_group_label,theme,proxy_code,proxy_label,proxy_level,confidence
+for2020_source_code,for2020_source_label,theme,proxy_code,proxy_label,proxy_level,confidence
+45,INDIGENOUS STUDIES,division-45 default (no group-level input),47,"LANGUAGE, COMMUNICATION AND CULTURE",division,0.409
 4501,"Aboriginal and Torres Strait Islander culture, language and history","culture, language and history",47,"LANGUAGE, COMMUNICATION AND CULTURE",division,0.409
 4502,Aboriginal and Torres Strait Islander education,education,39,EDUCATION,division,1.0
 4503,Aboriginal and Torres Strait Islander environmental knowledges and management,environmental knowledges,41,ENVIRONMENTAL SCIENCES,division,0.467
@@ -17,3 +18,11 @@ for2020_division45_group_code,for2020_division45_group_label,theme,proxy_code,pr
 4516,Pacific Peoples health and wellbeing,health and wellbeing,42,HEALTH SCIENCES,division,0.606
 4517,Pacific Peoples sciences,sciences,41,ENVIRONMENTAL SCIENCES,division,0.7
 4518,Pacific Peoples society and community,"peoples, society and community",4406,Human geography,group,0.7
+4519,"Other Indigenous data, methodologies and global Indigenous studies",division-45 default (heterogeneous group),47,"LANGUAGE, COMMUNICATION AND CULTURE",division,0.409
+451901,"Global Indigenous studies culture, language and history","4519 field, reuses 'culture, language and history' theme",47,"LANGUAGE, COMMUNICATION AND CULTURE",division,0.409
+451902,Global Indigenous studies environmental knowledges and management,"4519 field, reuses 'environmental knowledges' theme",41,ENVIRONMENTAL SCIENCES,division,0.467
+451903,Global Indigenous studies health and wellbeing,"4519 field, reuses 'health and wellbeing' theme",42,HEALTH SCIENCES,division,0.606
+451904,"Global Indigenous studies peoples, society and community","4519 field, reuses 'peoples, society and community' theme",4406,Human geography,group,0.7
+451905,Global Indigenous studies sciences,"4519 field, reuses 'sciences' theme",41,ENVIRONMENTAL SCIENCES,division,0.7
+451906,Indigenous data and data technologies,manual override (-> FOR2020 4499 Other human society),4499,Other human society,group,0.7
+451907,Indigenous methodologies,manual override (-> FOR2020 4499 Other human society),4499,Other human society,group,0.7

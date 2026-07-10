@@ -59,7 +59,7 @@ def main() -> None:
 
     print("4c. Curating (or reusing) FOR2020 division 45 -> non-45 proxy (lexical + 2 manual overrides)...")
     division45_seed = curate_for2020_division45_to_proxy.run()
-    write_csv(division45_seed, DATA_DIR / "for2020_division45_group_to_proxy.csv", ["for2020_division45_group_code"])
+    write_csv(division45_seed, DATA_DIR / "for2020_division45_group_to_proxy.csv", ["for2020_source_code"])
 
     print("5. Building Leiden bridges (wikipedia_url exact join + empirical derivation)...")
     build_leiden.run()

@@ -12,24 +12,38 @@ Peoples " + concept, or a Maori-language label with the English gloss in parens)
 concrete failure modes found and fixed while building it, matching this pipeline's existing
 pattern of iterating a lexical scorer against spot-checked real output).
 
-`resolve()` now reaches OAX/Leiden for **16 of division 45's 18 themed groups** (all except
-4519/4599, see below) by routing through a proxy FOR2020 group or division representing the
-same underlying concept, tagged `match_method="cultural_proxy"` in the result so it's always
-visible as a designed heuristic hop, not official ANZSRC content -- confidence is the proxy
-match's own score multiplied into whatever confidence the proxy target itself resolves with.
-4 of the 6 themes (education, health and wellbeing, environmental knowledges, culture/
-language/history) resolved via lexical scoring alone; 2 (sciences; peoples, society and
-community) scored as pure noise algorithmically (best "sciences" candidates were things like
-"Medical and biological physics" -- no coherent winner, since ANZSRC's own "sciences" and
-"peoples, society and community" theme buckets are each multi-division in breadth) and were
-resolved instead via direct user confirmation: sciences -> Environmental Sciences (division
-41); peoples, society and community -> Human geography (group 4406).
+`resolve()` now reaches OAX/Leiden for **2,201 of FOR2020's 2,203 codes** (confirmed
+exhaustively -- `test_exhaustive_for2020_to_oax_leiden_coverage` resolves every single one),
+by routing division-45 codes through a proxy FOR2020 group or division representing the same
+underlying concept, tagged `match_method="cultural_proxy"` so it's always visible as a
+designed heuristic hop, not official ANZSRC content -- confidence is the proxy match's own
+score multiplied into whatever confidence the proxy target itself resolves with.
 
-**Genuinely unmapped, by design**: groups 4519 ("Other Indigenous data, methodologies and
-global Indigenous studies") and 4599 ("Other Indigenous studies") have no prefix/gloss
-pattern at all -- Indigenous data sovereignty, Indigenous research methodologies -- and no
-non-Indigenous analogue exists to proxy through. `resolve()` still raises `LookupError` for
-these two, with an explanatory note, rather than guessing.
+- 4 of the 6 themes (education, health and wellbeing, environmental knowledges, culture/
+  language/history) resolved via lexical scoring alone across all 18 themed groups
+  (4501-4518). 2 (sciences; peoples, society and community) scored as pure noise
+  algorithmically (best "sciences" candidates were things like "Medical and biological
+  physics" -- no coherent winner, since both theme buckets are each multi-division in
+  breadth) and were resolved instead via direct user confirmation: sciences -> Environmental
+  Sciences (division 41); peoples, society and community -> Human geography (group 4406).
+- Group **4519** ("Other Indigenous data, methodologies and global Indigenous studies") is
+  heterogeneous, not a themed sibling -- 5 of its 8 fields are literally "Global Indigenous
+  studies " + one of the 6 theme names and reuse that theme's proxy directly. Its other two
+  fields, 451906 ("...data and data technologies") and 451907 ("...methodologies"), were
+  resolved via direct user confirmation to FOR2020 group 4499 ("Other human society",
+  division 44's own NEC catch-all, already resolving cleanly to OAX "Social Sciences") rather
+  than either field's individually-scored pick (division 46 for 451906; a degenerate,
+  meaningless score for 451907 -- a single generic word tying at 1.0 against unrelated groups
+  like Bioinformatics and Architecture) -- data governance and research methodology are both
+  fundamentally about how a society organises knowledge, not computing-technology or
+  sociology-methods specifically. Bare division 45 itself, and 4519's own catch-all/NEC
+  field, both default to the "culture, language and history" theme's proxy (OAX field "Arts
+  and Humanities") -- confirmed directly by the user as division 45's sensible general
+  landing spot.
+
+**Genuinely unmapped, by design**: group **4599** ("Other Indigenous studies") and its sole
+field 459999 have no sub-structure and no non-Indigenous analogue at all -- `resolve()`
+still raises `LookupError` for these two, with an explanatory note, rather than guessing.
 
 ## OAX/Leiden -> FOR2020 group-level (4-digit) precision: done, but partial coverage
 `seeds/openalex_subfield_to_for_group.csv` (252 rows, algorithmic -- see its own docstring

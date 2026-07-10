@@ -279,11 +279,21 @@ class Resolver:
             return CanonicalResult(input_value, from_scheme, to_scheme, out_code, out_label, level, "derived_empirical", float(share))
 
         if division_code == "45":
+            # Tries the exact code first (covers the 451901-451907 field-level overrides,
+            # and a direct query of bare "45" or bare "4519"), then its group prefix (covers
+            # the 18 themed groups 4501-4518, and 4519's own NEC field falling through to
+            # 4519's group-level default). Deliberately does NOT fall back any further -- an
+            # unmapped group like 4599 stays a hard LookupError, not silently swallowed by
+            # the division-wide default.
             proxy = self._con.execute(
-                "SELECT proxy_code, confidence FROM for2020_division45_group_to_proxy "
-                "WHERE for2020_division45_group_code = ?",
-                [for2020_code[:4]],
+                "SELECT proxy_code, confidence FROM for2020_division45_group_to_proxy WHERE for2020_source_code = ?",
+                [for2020_code],
             ).fetchone()
+            if not proxy and len(for2020_code) > 4:
+                proxy = self._con.execute(
+                    "SELECT proxy_code, confidence FROM for2020_division45_group_to_proxy WHERE for2020_source_code = ?",
+                    [for2020_code[:4]],
+                ).fetchone()
             if proxy:
                 proxy_code, proxy_confidence = proxy
                 proxied = self._resolve_from_for2020_code(input_value, proxy_code, to_scheme, from_scheme)

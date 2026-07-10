@@ -189,15 +189,32 @@ def test_division45_cultural_proxy():
     assert sci.label == "Environmental Science"
     assert sci.confidence == 0.61  # 0.7 (override) * 0.871... rounded -- proxy confidence compounds
 
-    # groups 4519/4599 must NOT get a proxy -- confirm the proxy table has no row for them
+    # bare division 45 and 4519's own catch-all both default to the "culture, language and
+    # history" theme's own proxy -- the user's confirmed general landing spot for division 45
+    bare45 = resolver.resolve("45", "FOR2020", "OAX_FIELD")
+    bare4519 = resolver.resolve("4519", "FOR2020", "OAX_FIELD")
+    nec4519 = resolver.resolve("451999", "FOR2020", "OAX_FIELD")  # 4519's own NEC field
+    assert bare45.label == bare4519.label == nec4519.label == "Arts and Humanities"
+    assert bare45.match_method == "cultural_proxy"
+
+    # 4519's other two fields both -> user-confirmed proxy through FOR2020 group 4499
+    # ("Other human society"), which itself already resolves cleanly (OAX "Social Sciences")
+    data_tech = resolver.resolve("451906", "FOR2020", "OAX_FIELD")  # "Indigenous data and data technologies"
+    methodologies = resolver.resolve("451907", "FOR2020", "OAX_FIELD")  # "Indigenous methodologies"
+    assert data_tech.match_method == methodologies.match_method == "cultural_proxy"
+    assert data_tech.label == methodologies.label == "Social Sciences"
+
+    # group 4599 ("Other Indigenous studies") has no sibling structure and no non-Indigenous
+    # analogue at all -- must NOT get a proxy, unlike everything else in division 45
     row = resolver._con.execute(
-        "SELECT 1 FROM for2020_division45_group_to_proxy WHERE for2020_division45_group_code IN ('4519','4599')"
+        "SELECT 1 FROM for2020_division45_group_to_proxy WHERE for2020_source_code IN ('4599','459999')"
     ).fetchone()
     assert row is None
 
     print(f"  division-45 cultural proxy OK: FOR1998 321207 -> OAX field {oax.label!r} "
           f"({oax.confidence}, {oax.match_method}); FOR2008 210101 -> Leiden {leiden.label!r} ({leiden.confidence}); "
-          f"FOR2020 450601 (sciences override) -> OAX field {sci.label!r} ({sci.confidence})")
+          f"FOR2020 450601 (sciences override) -> OAX field {sci.label!r} ({sci.confidence}); "
+          f"bare 45/4519/451999 -> {bare45.label!r}; 451906 -> {data_tech.label!r}; 451907 -> {methodologies.label!r}")
 
 
 def test_group_level_precision():
@@ -252,6 +269,26 @@ def test_explicit_db_path_matches_bundled():
     print("  Resolver(db_path=...) against the exported file agrees with the bundled default")
 
 
+def test_exhaustive_for2020_to_oax_leiden_coverage():
+    # Every FOR2020 code (2203 total: 23 divisions, 213 groups, 1967 fields) should resolve
+    # to both OAX_FIELD and LEIDEN except exactly the two division-45 codes with genuinely
+    # no non-Indigenous analogue: group 4599 ("Other Indigenous studies") and its sole field
+    # 459999. This is a permanent regression guard on the cultural_proxy coverage -- any
+    # unexpected failure here means something in division 45's proxy chain broke.
+    for_df = pd.read_csv(DATA_DIR / "for_2020.csv", dtype=str, keep_default_na=False)
+    expected_failures = {"4599", "459999"}
+    for to_scheme in ("OAX_FIELD", "LEIDEN"):
+        failures = set()
+        for code in for_df["code"]:
+            try:
+                resolver.resolve(code, "FOR2020", to_scheme)
+            except LookupError:
+                failures.add(code)
+        assert failures == expected_failures, f"{to_scheme}: expected failures {expected_failures}, got {failures}"
+    print(f"  exhaustive FOR2020 coverage OK: {len(for_df) - len(expected_failures)}/{len(for_df)} codes "
+          f"resolve to both OAX_FIELD and LEIDEN; only {expected_failures} genuinely unmapped")
+
+
 def test_lookup_error():
     try:
         resolver.resolve("not-a-real-code", "FOR2020", "FOR2020")
@@ -277,6 +314,7 @@ if __name__ == "__main__":
         test_seo_cannot_target_oax_or_leiden,
         test_indigenous_studies_gap,
         test_division45_cultural_proxy,
+        test_exhaustive_for2020_to_oax_leiden_coverage,
         test_group_level_precision,
         test_leading_zero_normalization,
         test_explicit_db_path_matches_bundled,

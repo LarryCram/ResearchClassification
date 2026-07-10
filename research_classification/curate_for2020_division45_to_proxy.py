@@ -10,9 +10,16 @@ Peoples population/perspective -- its own labels make this explicit by construct
 
 Division 45 is structured as exactly 6 themes x 3 populations (ATSI 4501-4506, Maori
 4507-4512, Pacific 4513-4518, same thematic order each time -- confirmed directly against
-for_2020.csv), plus 4519/4599 ("Other Indigenous...") which don't fit the pattern at all and
-are excluded below -- genuinely Indigenous-specific content (data sovereignty, Indigenous
-research methodologies) with no non-Indigenous analogue.
+for_2020.csv), plus two "Other Indigenous..." catch-all groups that don't fit the pattern:
+
+- **4519** ("Other Indigenous data, methodologies and global Indigenous studies") is
+  heterogeneous, not a themed sibling -- but 5 of its 8 fields are literally "Global
+  Indigenous studies " + one of the 6 theme names, so they reuse that theme's own proxy
+  directly. The remaining 3 fields are handled individually (see below); the bare group code
+  and bare division 45 itself both default to the "culture, language and history" theme's
+  proxy, the broadest reasonable landing spot.
+- **4599** ("Other Indigenous studies") has no sub-structure at all -- one NEC field, no
+  non-Indigenous analogue possible -- and stays permanently unmapped.
 
 Two design iterations, both driven by concrete failures found while spot-checking real
 output (same pipeline pattern as curate_openalex_subfield_to_for_group.py's documented
@@ -79,8 +86,20 @@ _THEME_BUCKETS: dict[str, list[str]] = {
     "sciences": ["4506", "4512", "4517"],
 }
 
-_PREFIXES = ["Aboriginal and Torres Strait Islander ", "Pacific Peoples "]
+_PREFIXES = ["Aboriginal and Torres Strait Islander ", "Pacific Peoples ", "Indigenous ", "Global Indigenous studies "]
 _MAORI_GLOSS_RE = re.compile(r"\(M[aā]ori (.+?)\)\s*$")
+
+# Group 4519 ("Other Indigenous data, methodologies and global Indigenous studies") is
+# heterogeneous, not a themed sibling of 4501-4518 -- but 5 of its 8 fields ("Global
+# Indigenous studies " + concept) are literally restatements of 5 of the 6 existing themes,
+# so they reuse those themes' own proxy directly rather than being scored again.
+_4519_FIELD_TO_THEME: dict[str, str] = {
+    "451901": "culture, language and history",
+    "451902": "environmental knowledges",
+    "451903": "health and wellbeing",
+    "451904": "peoples, society and community",
+    "451905": "sciences",
+}
 
 # User-provided domain override. ANZSRC's own field labels for the "sciences" theme spread
 # across many STEM subtopics (astronomy, computing, engineering, genomics...), and the
@@ -165,8 +184,22 @@ def run() -> pd.DataFrame:
     group_texts = _group_texts(for_df, strip=False)
     division_texts = _division_texts(for_df)
 
+    def add_row(src: str, src_label: str, theme: str, proxy_code: str, proxy_label: str, proxy_level: str, score: float) -> None:
+        rows.append(
+            {
+                "for2020_source_code": src,
+                "for2020_source_label": src_label,
+                "theme": theme,
+                "proxy_code": proxy_code,
+                "proxy_label": proxy_label,
+                "proxy_level": proxy_level,
+                "confidence": round(score, 3),
+            }
+        )
+
     rows = []
     below_floor = []
+    theme_results: dict[str, tuple[str, str, str, float]] = {}
     for theme, members in _THEME_BUCKETS.items():
         merged_text = " ".join(source_texts.get(m, "") for m in members)
 
@@ -192,24 +225,49 @@ def run() -> pd.DataFrame:
         if score < CONFIDENCE_FLOOR:
             below_floor.append((theme, members, proxy_code, proxy_label, round(score, 3)))
             continue
+        theme_results[theme] = (proxy_code, proxy_label, proxy_level, score)
         for src in members:
-            rows.append(
-                {
-                    "for2020_division45_group_code": src,
-                    "for2020_division45_group_label": group_label[src],
-                    "theme": theme,
-                    "proxy_code": proxy_code,
-                    "proxy_label": proxy_label,
-                    "proxy_level": proxy_level,
-                    "confidence": round(score, 3),
-                }
-            )
+            add_row(src, group_label[src], theme, proxy_code, proxy_label, proxy_level, score)
 
     if below_floor:
         print(f"  [for2020_division45_to_proxy] {len(below_floor)} theme(s) below confidence "
               f"floor {CONFIDENCE_FLOOR}, all member groups left unmapped (still hard-fail):")
         for theme, members, code, label, score in below_floor:
             print(f"    {theme!r} ({', '.join(members)}): best candidate was {code} {label!r} ({score})")
+
+    # Group 4519 ("Other Indigenous data, methodologies and global Indigenous studies") is
+    # heterogeneous, not a 3-way theme bucket -- handled field-by-field, plus its own group
+    # (and bare division 45 itself) default to the "culture, language and history" theme's
+    # own proxy as the broadest reasonable landing spot within division 45. That theme
+    # resolves to OAX field "Arts and Humanities" -- the same target the user independently
+    # confirmed as division 45's own sensible default.
+    if "culture, language and history" in theme_results:
+        default_code, default_label, default_level, default_score = theme_results["culture, language and history"]
+        add_row("45", "INDIGENOUS STUDIES", "division-45 default (no group-level input)", default_code, default_label, default_level, default_score)
+        add_row("4519", group_label["4519"], "division-45 default (heterogeneous group)", default_code, default_label, default_level, default_score)
+
+    for field_code, theme in _4519_FIELD_TO_THEME.items():
+        if theme in theme_results:
+            proxy_code, proxy_label, proxy_level, score = theme_results[theme]
+            field_label = for_df.loc[for_df["code"] == field_code, "label"].iloc[0]
+            add_row(field_code, field_label, f"4519 field, reuses {theme!r} theme", proxy_code, proxy_label, proxy_level, score)
+
+    # 451906 "Indigenous data and data technologies" and 451907 "Indigenous methodologies"
+    # -- an initial algorithmic attempt at 451906 alone found division 46 (Information and
+    # Computing Sciences, a decisive score), but 451907's score was degenerate (a single
+    # generic word tying at 1.0 against many unrelated groups: Bioinformatics, Architecture,
+    # Marketing...). User-provided override for both: FOR2020 group 4499 "Other human
+    # society" (division 44's own NEC catch-all, already resolving cleanly to OAX "Social
+    # Sciences"/Leiden "Social sciences and humanities") -- data governance/sovereignty and
+    # research methodology are both fundamentally about how a society organises knowledge
+    # and research, not primarily computing-technology or sociology-methods topics
+    # specifically, so the broader human-society catch-all is the better single proxy for
+    # both than either of the narrower individual picks.
+    for field_code, field_label in [
+        ("451906", "Indigenous data and data technologies"),
+        ("451907", "Indigenous methodologies"),
+    ]:
+        add_row(field_code, field_label, "manual override (-> FOR2020 4499 Other human society)", "4499", group_label["4499"], "group", 0.7)
 
     df = pd.DataFrame(rows)
     SEEDS_DIR.mkdir(parents=True, exist_ok=True)
