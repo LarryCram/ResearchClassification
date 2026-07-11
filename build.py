@@ -18,6 +18,7 @@ from research_classification import (
     build_registry,
     build_sdg,
     curate_for2020_division45_to_proxy,
+    curate_for2020_to_openalex,
     curate_openalex_for,
     curate_openalex_subfield_to_for_group,
     curate_seo_to_sdg,
@@ -25,9 +26,38 @@ from research_classification import (
 from research_classification.hierarchy import audit_encoding, validate_bridge, validate_canonical
 
 DATA_DIR = build_registry.DATA_DIR
+SEEDS_DIR = DATA_DIR.parent.parent / "seeds"
+
+# Every seed file a curate_*.run() cache-guards on ("if exists, load and never regenerate").
+# If the bundled .duckdb from a prior build already exists but one of these is missing, that's
+# not a fresh clone -- something deleted a locked-in, possibly hand-reviewed seed, and letting
+# the cache-guard silently regenerate it from scratch would quietly discard that review. See
+# TODO.md and curate_for2020_to_openalex.py's module docstring for the history behind this.
+_LOCKED_SEEDS = [
+    "openalex_field_to_for_division.csv",
+    "openalex_subfield_to_for_group.csv",
+    "for2020_division_to_openalex_field.csv",
+    "for2020_group_to_openalex_subfield.csv",
+]
+
+
+def _warn_on_missing_seeds() -> None:
+    db_exists = (DATA_DIR / "research_classification.duckdb").exists()
+    if not db_exists:
+        return  # first build ever (fresh clone) -- nothing locked in yet, nothing to warn about
+    missing = [name for name in _LOCKED_SEEDS if not (SEEDS_DIR / name).exists()]
+    if missing:
+        print("!" * 70)
+        print("WARNING: a previous build exists, but the following locked-in seed file(s) are")
+        print("missing. Any human review captured in them will be silently regenerated from")
+        print("scratch (or lost) unless you restore them from git before continuing:")
+        for name in missing:
+            print(f"  - seeds/{name}")
+        print("!" * 70)
 
 
 def main() -> None:
+    _warn_on_missing_seeds()
     print("1. Building canonical FOR/SEO tables...")
     for_df, seo_df = build_for_seo.run()
     validate_canonical(for_df, 23 + 213 + 1967, "FOR")
@@ -71,7 +101,12 @@ def main() -> None:
     division45_seed = curate_for2020_division45_to_proxy.run()
     write_csv(division45_seed, DATA_DIR / "for2020_division45_group_to_proxy.csv", ["for2020_source_code"])
 
-    print("5. Building Leiden bridges (wikipedia_url exact join + empirical derivation)...")
+    print("4d. Curating (or reusing) FOR2020 division/group -> OAX field/subfield "
+          "(hand-curated, ported from an earlier project; independent of 4/4b above)...")
+    curate_for2020_to_openalex.run()
+
+    print("5. Building Leiden bridges (wikipedia_url exact join + empirical derivation), "
+          "and composing FOR2020 -> Leiden through the curated FOR2020 -> OAX tables above...")
     build_leiden.run()
 
     print("6. Building ABS FOR2008<->2020 / SEO2008<->2020 correspondence bridges...")

@@ -64,7 +64,6 @@ from pathlib import Path
 import pandas as pd
 
 from . import io as rio
-from .curate_openalex_subfield_to_for_group import _group_score
 
 ROOT = Path(__file__).resolve().parent.parent
 DATA_DIR = ROOT / "research_classification" / "data"
@@ -171,6 +170,16 @@ def run() -> pd.DataFrame:
     seed_path = SEEDS_DIR / "for2020_division45_group_to_proxy.csv"
     if seed_path.exists():
         return pd.read_csv(seed_path, dtype=str, keep_default_na=False)
+
+    # Deferred: this scoring path only runs the one time the seed doesn't exist yet. Imported
+    # lazily (not at module load time) so a broken/renamed helper in that module can't crash
+    # every import of this one -- this happened in practice: _group_score no longer exists at
+    # module scope in curate_openalex_subfield_to_for_group.py after its cascade_match
+    # migration, breaking this import even though the seed already exists and this code path
+    # never runs. See TODO.md: migrating this scorer onto cascade_match's shared helpers is
+    # separately-tracked, not-yet-started work -- this lazy import just stops the unrelated
+    # crash without touching the already-reviewed division-45 proxy logic itself.
+    from .curate_openalex_subfield_to_for_group import _group_score
 
     for_df = pd.read_csv(DATA_DIR / "for_2020.csv", dtype=str, keep_default_na=False)
     group_rows = for_df[for_df["level"] == "group"]

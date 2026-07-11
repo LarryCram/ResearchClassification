@@ -1,326 +1,392 @@
-for_group_code,for_group_label,leiden_main_field_id,leiden_main_field_label,is_primary,share,n_rows
-3002,"Agriculture, land and farm management",4,Life and earth sciences,True,0.538,13
-3002,"Agriculture, land and farm management",1,Social sciences and humanities,False,0.385,13
-3002,"Agriculture, land and farm management",2,Biomedical and health sciences,False,0.077,13
-3003,Animal production,2,Biomedical and health sciences,True,0.8,10
-3003,Animal production,4,Life and earth sciences,False,0.2,10
-3004,Crop and pasture production,4,Life and earth sciences,True,0.778,9
-3004,Crop and pasture production,2,Biomedical and health sciences,False,0.222,9
-3006,Food sciences,5,Mathematics and computer science,False,0.065,31
-3006,Food sciences,2,Biomedical and health sciences,False,0.097,31
-3006,Food sciences,1,Social sciences and humanities,False,0.226,31
-3006,Food sciences,3,Physical sciences and engineering,False,0.226,31
-3006,Food sciences,4,Life and earth sciences,True,0.387,31
-3007,Forestry sciences,1,Social sciences and humanities,True,0.667,3
-3007,Forestry sciences,4,Life and earth sciences,False,0.333,3
-3009,Veterinary sciences,2,Biomedical and health sciences,True,1.0,1
-3101,Biochemistry and cell biology,2,Biomedical and health sciences,True,0.889,18
-3101,Biochemistry and cell biology,4,Life and earth sciences,False,0.056,18
-3101,Biochemistry and cell biology,3,Physical sciences and engineering,False,0.056,18
-3102,Bioinformatics and computational biology,5,Mathematics and computer science,False,0.053,132
-3102,Bioinformatics and computational biology,4,Life and earth sciences,False,0.068,132
-3102,Bioinformatics and computational biology,3,Physical sciences and engineering,False,0.083,132
-3102,Bioinformatics and computational biology,2,Biomedical and health sciences,True,0.795,132
-3103,Ecology,4,Life and earth sciences,True,0.875,32
-3103,Ecology,1,Social sciences and humanities,False,0.062,32
-3103,Ecology,2,Biomedical and health sciences,False,0.031,32
-3103,Ecology,5,Mathematics and computer science,False,0.031,32
-3104,Evolutionary biology,4,Life and earth sciences,True,0.941,34
-3104,Evolutionary biology,2,Biomedical and health sciences,False,0.059,34
-3105,Genetics,5,Mathematics and computer science,False,0.021,48
-3105,Genetics,1,Social sciences and humanities,False,0.021,48
-3105,Genetics,2,Biomedical and health sciences,True,0.833,48
-3105,Genetics,4,Life and earth sciences,False,0.125,48
-3106,Industrial biotechnology,2,Biomedical and health sciences,True,0.625,8
-3106,Industrial biotechnology,3,Physical sciences and engineering,False,0.25,8
-3106,Industrial biotechnology,4,Life and earth sciences,False,0.125,8
-3107,Microbiology,2,Biomedical and health sciences,True,0.576,33
-3107,Microbiology,4,Life and earth sciences,False,0.394,33
-3107,Microbiology,1,Social sciences and humanities,False,0.03,33
-3108,Plant biology,5,Mathematics and computer science,False,0.013,80
-3108,Plant biology,3,Physical sciences and engineering,False,0.025,80
-3108,Plant biology,1,Social sciences and humanities,False,0.062,80
-3108,Plant biology,2,Biomedical and health sciences,False,0.138,80
-3108,Plant biology,4,Life and earth sciences,True,0.762,80
-3109,Zoology,4,Life and earth sciences,True,0.625,8
-3109,Zoology,2,Biomedical and health sciences,False,0.25,8
-3109,Zoology,3,Physical sciences and engineering,False,0.125,8
-3201,Cardiovascular medicine and haematology,2,Biomedical and health sciences,True,0.944,250
-3201,Cardiovascular medicine and haematology,3,Physical sciences and engineering,False,0.02,250
-3201,Cardiovascular medicine and haematology,5,Mathematics and computer science,False,0.02,250
-3201,Cardiovascular medicine and haematology,1,Social sciences and humanities,False,0.016,250
-3202,Clinical sciences,4,Life and earth sciences,False,0.024,41
-3202,Clinical sciences,2,Biomedical and health sciences,True,0.976,41
-3203,Dentistry,2,Biomedical and health sciences,True,0.5,2
-3203,Dentistry,1,Social sciences and humanities,False,0.5,2
-3204,Immunology,2,Biomedical and health sciences,True,1.0,39
-3205,Medical biochemistry and metabolomics,2,Biomedical and health sciences,True,0.667,12
-3205,Medical biochemistry and metabolomics,3,Physical sciences and engineering,False,0.25,12
-3205,Medical biochemistry and metabolomics,1,Social sciences and humanities,False,0.083,12
-3206,Medical biotechnology,2,Biomedical and health sciences,True,0.667,3
-3206,Medical biotechnology,3,Physical sciences and engineering,False,0.333,3
-3207,Medical microbiology,2,Biomedical and health sciences,True,1.0,9
-3208,Medical physiology,1,Social sciences and humanities,False,0.026,39
-3208,Medical physiology,5,Mathematics and computer science,False,0.026,39
-3208,Medical physiology,2,Biomedical and health sciences,True,0.795,39
-3208,Medical physiology,3,Physical sciences and engineering,False,0.103,39
-3208,Medical physiology,4,Life and earth sciences,False,0.051,39
-3209,Neurosciences,2,Biomedical and health sciences,True,0.744,82
-3209,Neurosciences,1,Social sciences and humanities,False,0.195,82
-3209,Neurosciences,5,Mathematics and computer science,False,0.049,82
-3209,Neurosciences,3,Physical sciences and engineering,False,0.012,82
-3210,Nutrition and dietetics,2,Biomedical and health sciences,True,0.765,17
-3210,Nutrition and dietetics,4,Life and earth sciences,False,0.235,17
-3211,Oncology and carcinogenesis,4,Life and earth sciences,False,0.023,43
-3211,Oncology and carcinogenesis,2,Biomedical and health sciences,True,0.93,43
-3211,Oncology and carcinogenesis,3,Physical sciences and engineering,False,0.047,43
-3212,Ophthalmology and optometry,2,Biomedical and health sciences,True,0.917,12
-3212,Ophthalmology and optometry,3,Physical sciences and engineering,False,0.083,12
-3214,Pharmacology and pharmaceutical sciences,4,Life and earth sciences,False,0.045,44
-3214,Pharmacology and pharmaceutical sciences,2,Biomedical and health sciences,True,0.75,44
-3214,Pharmacology and pharmaceutical sciences,3,Physical sciences and engineering,False,0.114,44
-3214,Pharmacology and pharmaceutical sciences,1,Social sciences and humanities,False,0.091,44
-3215,Reproductive medicine,1,Social sciences and humanities,False,0.286,7
-3215,Reproductive medicine,2,Biomedical and health sciences,True,0.714,7
-3301,Architecture,1,Social sciences and humanities,True,1.0,2
-3302,Building,3,Physical sciences and engineering,True,0.526,19
-3302,Building,1,Social sciences and humanities,False,0.263,19
-3302,Building,5,Mathematics and computer science,False,0.158,19
-3302,Building,4,Life and earth sciences,False,0.053,19
-3304,Urban and regional planning,1,Social sciences and humanities,True,0.818,22
-3304,Urban and regional planning,5,Mathematics and computer science,False,0.136,22
-3304,Urban and regional planning,4,Life and earth sciences,False,0.045,22
-3401,Analytical chemistry,4,Life and earth sciences,False,0.125,8
-3401,Analytical chemistry,5,Mathematics and computer science,False,0.125,8
-3401,Analytical chemistry,3,Physical sciences and engineering,True,0.75,8
-3402,Inorganic chemistry,3,Physical sciences and engineering,True,0.917,12
-3402,Inorganic chemistry,4,Life and earth sciences,False,0.083,12
-3403,Macromolecular and materials chemistry,3,Physical sciences and engineering,True,0.986,74
-3403,Macromolecular and materials chemistry,5,Mathematics and computer science,False,0.014,74
-3405,Organic chemistry,3,Physical sciences and engineering,True,0.944,54
-3405,Organic chemistry,4,Life and earth sciences,False,0.037,54
-3405,Organic chemistry,2,Biomedical and health sciences,False,0.019,54
-3406,Physical chemistry,1,Social sciences and humanities,False,0.125,8
-3406,Physical chemistry,3,Physical sciences and engineering,True,0.875,8
-3501,"Accounting, auditing and accountability",1,Social sciences and humanities,True,1.0,17
-3503,Business systems in context,1,Social sciences and humanities,True,0.846,13
-3503,Business systems in context,5,Mathematics and computer science,False,0.077,13
-3503,Business systems in context,2,Biomedical and health sciences,False,0.077,13
-3504,Commercial services,1,Social sciences and humanities,True,1.0,2
-3506,Marketing,1,Social sciences and humanities,True,0.933,15
-3506,Marketing,5,Mathematics and computer science,False,0.067,15
-3507,"Strategy, management and organisational behaviour",2,Biomedical and health sciences,False,0.011,87
-3507,"Strategy, management and organisational behaviour",5,Mathematics and computer science,False,0.184,87
-3507,"Strategy, management and organisational behaviour",1,Social sciences and humanities,True,0.805,87
-3601,"Art history, theory and criticism",1,Social sciences and humanities,True,0.933,15
-3601,"Art history, theory and criticism",4,Life and earth sciences,False,0.067,15
-3603,Music,1,Social sciences and humanities,True,1.0,5
-3604,Performing arts,1,Social sciences and humanities,True,1.0,13
-3701,Atmospheric sciences,4,Life and earth sciences,True,0.8,10
-3701,Atmospheric sciences,3,Physical sciences and engineering,False,0.1,10
-3701,Atmospheric sciences,1,Social sciences and humanities,False,0.1,10
-3703,Geochemistry,5,Mathematics and computer science,False,0.167,6
-3703,Geochemistry,3,Physical sciences and engineering,False,0.167,6
-3703,Geochemistry,4,Life and earth sciences,True,0.667,6
-3704,Geoinformatics,1,Social sciences and humanities,True,1.0,1
-3705,Geology,4,Life and earth sciences,True,0.6,5
-3705,Geology,5,Mathematics and computer science,False,0.4,5
-3706,Geophysics,4,Life and earth sciences,True,0.7,10
-3706,Geophysics,5,Mathematics and computer science,False,0.1,10
-3706,Geophysics,3,Physical sciences and engineering,False,0.1,10
-3706,Geophysics,1,Social sciences and humanities,False,0.1,10
-3708,Oceanography,4,Life and earth sciences,True,0.933,15
-3708,Oceanography,3,Physical sciences and engineering,False,0.067,15
-3799,Other earth sciences,4,Life and earth sciences,True,1.0,6
-3801,Applied economics,1,Social sciences and humanities,True,0.952,21
-3801,Applied economics,5,Mathematics and computer science,False,0.048,21
-3802,Econometrics,1,Social sciences and humanities,True,0.965,57
-3802,Econometrics,5,Mathematics and computer science,False,0.018,57
-3802,Econometrics,2,Biomedical and health sciences,False,0.018,57
-3902,"Education policy, sociology and philosophy",1,Social sciences and humanities,True,0.959,197
-3902,"Education policy, sociology and philosophy",2,Biomedical and health sciences,False,0.02,197
-3902,"Education policy, sociology and philosophy",4,Life and earth sciences,False,0.005,197
-3902,"Education policy, sociology and philosophy",5,Mathematics and computer science,False,0.015,197
-3903,Education systems,4,Life and earth sciences,False,0.012,82
-3903,Education systems,1,Social sciences and humanities,True,0.988,82
-3904,Specialist studies in education,1,Social sciences and humanities,True,0.8,5
-3904,Specialist studies in education,5,Mathematics and computer science,False,0.2,5
-3999,Other Education,1,Social sciences and humanities,True,0.929,28
-3999,Other Education,5,Mathematics and computer science,False,0.036,28
-3999,Other Education,3,Physical sciences and engineering,False,0.036,28
-4001,Aerospace engineering,3,Physical sciences and engineering,True,0.59,39
-4001,Aerospace engineering,5,Mathematics and computer science,False,0.359,39
-4001,Aerospace engineering,4,Life and earth sciences,False,0.026,39
-4001,Aerospace engineering,1,Social sciences and humanities,False,0.026,39
-4002,Automotive engineering,3,Physical sciences and engineering,True,0.889,9
-4002,Automotive engineering,1,Social sciences and humanities,False,0.111,9
-4003,Biomedical engineering,3,Physical sciences and engineering,True,0.606,66
-4003,Biomedical engineering,5,Mathematics and computer science,False,0.212,66
-4003,Biomedical engineering,2,Biomedical and health sciences,False,0.121,66
-4003,Biomedical engineering,4,Life and earth sciences,False,0.045,66
-4003,Biomedical engineering,1,Social sciences and humanities,False,0.015,66
-4004,Chemical engineering,4,Life and earth sciences,False,0.111,9
-4004,Chemical engineering,3,Physical sciences and engineering,True,0.889,9
-4005,Civil engineering,1,Social sciences and humanities,False,0.05,40
-4005,Civil engineering,3,Physical sciences and engineering,True,0.85,40
-4005,Civil engineering,5,Mathematics and computer science,False,0.1,40
-4007,"Control engineering, mechatronics and robotics",5,Mathematics and computer science,True,0.865,37
-4007,"Control engineering, mechatronics and robotics",3,Physical sciences and engineering,False,0.135,37
-4008,Electrical engineering,5,Mathematics and computer science,True,0.528,108
-4008,Electrical engineering,3,Physical sciences and engineering,False,0.454,108
-4008,Electrical engineering,1,Social sciences and humanities,False,0.009,108
-4008,Electrical engineering,4,Life and earth sciences,False,0.009,108
-4010,Engineering practice and education,3,Physical sciences and engineering,False,0.167,18
-4010,Engineering practice and education,1,Social sciences and humanities,False,0.222,18
-4010,Engineering practice and education,5,Mathematics and computer science,True,0.611,18
-4011,Environmental engineering,3,Physical sciences and engineering,True,0.421,38
-4011,Environmental engineering,4,Life and earth sciences,False,0.289,38
-4011,Environmental engineering,1,Social sciences and humanities,False,0.237,38
-4011,Environmental engineering,5,Mathematics and computer science,False,0.053,38
-4012,Fluid mechanics and thermal engineering,3,Physical sciences and engineering,True,0.759,29
-4012,Fluid mechanics and thermal engineering,5,Mathematics and computer science,False,0.207,29
-4012,Fluid mechanics and thermal engineering,1,Social sciences and humanities,False,0.034,29
-4014,Manufacturing engineering,1,Social sciences and humanities,False,0.176,17
-4014,Manufacturing engineering,3,Physical sciences and engineering,False,0.294,17
-4014,Manufacturing engineering,5,Mathematics and computer science,True,0.529,17
-4015,Maritime engineering,3,Physical sciences and engineering,True,0.55,20
-4015,Maritime engineering,5,Mathematics and computer science,False,0.2,20
-4015,Maritime engineering,4,Life and earth sciences,False,0.15,20
-4015,Maritime engineering,1,Social sciences and humanities,False,0.1,20
-4016,Materials engineering,3,Physical sciences and engineering,True,1.0,15
-4017,Mechanical engineering,4,Life and earth sciences,False,0.042,96
-4017,Mechanical engineering,1,Social sciences and humanities,False,0.01,96
-4017,Mechanical engineering,3,Physical sciences and engineering,True,0.854,96
-4017,Mechanical engineering,5,Mathematics and computer science,False,0.094,96
-4018,Nanotechnology,3,Physical sciences and engineering,True,0.846,13
-4018,Nanotechnology,4,Life and earth sciences,False,0.077,13
-4018,Nanotechnology,2,Biomedical and health sciences,False,0.077,13
-4019,Resources engineering and extractive metallurgy,3,Physical sciences and engineering,True,1.0,1
-4101,Climate change impacts and adaptation,3,Physical sciences and engineering,False,0.026,39
-4101,Climate change impacts and adaptation,4,Life and earth sciences,True,0.692,39
-4101,Climate change impacts and adaptation,1,Social sciences and humanities,False,0.179,39
-4101,Climate change impacts and adaptation,2,Biomedical and health sciences,False,0.103,39
-4102,Ecological applications,3,Physical sciences and engineering,False,0.333,3
-4102,Ecological applications,5,Mathematics and computer science,False,0.333,3
-4102,Ecological applications,4,Life and earth sciences,True,0.333,3
-4103,Environmental biotechnology,4,Life and earth sciences,True,0.7,10
-4103,Environmental biotechnology,3,Physical sciences and engineering,False,0.2,10
-4103,Environmental biotechnology,1,Social sciences and humanities,False,0.1,10
-4104,Environmental management,4,Life and earth sciences,True,0.367,60
-4104,Environmental management,1,Social sciences and humanities,False,0.35,60
-4104,Environmental management,3,Physical sciences and engineering,False,0.2,60
-4104,Environmental management,5,Mathematics and computer science,False,0.067,60
-4104,Environmental management,2,Biomedical and health sciences,False,0.017,60
-4105,Pollution and contamination,3,Physical sciences and engineering,False,0.1,10
-4105,Pollution and contamination,4,Life and earth sciences,True,0.7,10
-4105,Pollution and contamination,1,Social sciences and humanities,False,0.2,10
-4106,Soil sciences,4,Life and earth sciences,True,0.75,12
-4106,Soil sciences,1,Social sciences and humanities,False,0.25,12
-4201,Allied health and rehabilitation science,2,Biomedical and health sciences,True,0.9,10
-4201,Allied health and rehabilitation science,3,Physical sciences and engineering,False,0.1,10
-4202,Epidemiology,2,Biomedical and health sciences,True,0.974,38
-4202,Epidemiology,5,Mathematics and computer science,False,0.026,38
-4203,Health services and systems,4,Life and earth sciences,False,0.038,26
-4203,Health services and systems,1,Social sciences and humanities,False,0.192,26
-4203,Health services and systems,2,Biomedical and health sciences,True,0.654,26
-4203,Health services and systems,5,Mathematics and computer science,False,0.115,26
-4205,Nursing,2,Biomedical and health sciences,True,0.667,9
-4205,Nursing,1,Social sciences and humanities,False,0.222,9
-4205,Nursing,3,Physical sciences and engineering,False,0.111,9
-4206,Public health,2,Biomedical and health sciences,True,0.709,127
-4206,Public health,1,Social sciences and humanities,False,0.268,127
-4206,Public health,5,Mathematics and computer science,False,0.016,127
-4206,Public health,4,Life and earth sciences,False,0.008,127
-4207,Sports science and exercise,2,Biomedical and health sciences,True,1.0,4
-4208,"Traditional, complementary and integrative medicine",2,Biomedical and health sciences,True,0.826,23
-4208,"Traditional, complementary and integrative medicine",4,Life and earth sciences,False,0.087,23
-4208,"Traditional, complementary and integrative medicine",5,Mathematics and computer science,False,0.043,23
-4208,"Traditional, complementary and integrative medicine",1,Social sciences and humanities,False,0.043,23
-4299,Other health sciences,1,Social sciences and humanities,False,0.096,83
-4299,Other health sciences,2,Biomedical and health sciences,True,0.904,83
-4303,Historical studies,1,Social sciences and humanities,True,1.0,37
-4401,Anthropology,4,Life and earth sciences,False,0.091,22
-4401,Anthropology,1,Social sciences and humanities,True,0.909,22
-4403,Demography,4,Life and earth sciences,False,0.04,25
-4403,Demography,1,Social sciences and humanities,True,0.92,25
-4403,Demography,2,Biomedical and health sciences,False,0.04,25
-4404,Development studies,1,Social sciences and humanities,True,0.75,4
-4404,Development studies,5,Mathematics and computer science,False,0.25,4
-4405,Gender studies,1,Social sciences and humanities,True,0.941,17
-4405,Gender studies,2,Biomedical and health sciences,False,0.059,17
-4406,Human geography,1,Social sciences and humanities,True,0.75,12
-4406,Human geography,5,Mathematics and computer science,False,0.167,12
-4406,Human geography,4,Life and earth sciences,False,0.083,12
-4407,Policy and administration,1,Social sciences and humanities,True,1.0,1
-4408,Political science,1,Social sciences and humanities,True,1.0,95
-4601,Applied computing,1,Social sciences and humanities,True,0.6,5
-4601,Applied computing,5,Mathematics and computer science,False,0.4,5
-4602,Artificial intelligence,5,Mathematics and computer science,True,0.841,69
-4602,Artificial intelligence,1,Social sciences and humanities,False,0.116,69
-4602,Artificial intelligence,4,Life and earth sciences,False,0.029,69
-4602,Artificial intelligence,3,Physical sciences and engineering,False,0.014,69
-4603,Computer vision and multimedia computation,5,Mathematics and computer science,True,0.978,45
-4603,Computer vision and multimedia computation,3,Physical sciences and engineering,False,0.022,45
-4606,Distributed computing and systems software,3,Physical sciences and engineering,False,0.025,40
-4606,Distributed computing and systems software,5,Mathematics and computer science,True,0.975,40
-4607,"Graphics, augmented reality and games",5,Mathematics and computer science,True,1.0,4
-4608,Human-centred computing,5,Mathematics and computer science,True,0.875,8
-4608,Human-centred computing,1,Social sciences and humanities,False,0.125,8
-4609,Information systems,1,Social sciences and humanities,True,0.514,72
-4609,Information systems,5,Mathematics and computer science,False,0.472,72
-4609,Information systems,3,Physical sciences and engineering,False,0.014,72
-4610,Library and information studies,1,Social sciences and humanities,True,1.0,2
-4612,Software engineering,1,Social sciences and humanities,False,0.2,5
-4612,Software engineering,5,Mathematics and computer science,True,0.8,5
-4613,Theory of computation,5,Mathematics and computer science,True,0.857,21
-4613,Theory of computation,1,Social sciences and humanities,False,0.095,21
-4613,Theory of computation,2,Biomedical and health sciences,False,0.048,21
-4702,Cultural studies,1,Social sciences and humanities,True,0.955,22
-4702,Cultural studies,2,Biomedical and health sciences,False,0.045,22
-4704,Linguistics,1,Social sciences and humanities,True,1.0,15
-4705,Literary studies,1,Social sciences and humanities,True,1.0,43
-4807,Public law,1,Social sciences and humanities,True,1.0,31
-4901,Applied mathematics,1,Social sciences and humanities,False,0.062,16
-4901,Applied mathematics,3,Physical sciences and engineering,False,0.062,16
-4901,Applied mathematics,5,Mathematics and computer science,True,0.875,16
-4902,Mathematical physics,5,Mathematics and computer science,True,1.0,14
-4903,Numerical and computational mathematics,5,Mathematics and computer science,True,0.875,8
-4903,Numerical and computational mathematics,1,Social sciences and humanities,False,0.125,8
-4904,Pure mathematics,5,Mathematics and computer science,True,0.938,16
-4904,Pure mathematics,4,Life and earth sciences,False,0.062,16
-4905,Statistics,2,Biomedical and health sciences,False,0.069,29
-4905,Statistics,3,Physical sciences and engineering,False,0.034,29
-4905,Statistics,5,Mathematics and computer science,True,0.552,29
-4905,Statistics,1,Social sciences and humanities,False,0.345,29
-5002,History and philosophy of specific fields,1,Social sciences and humanities,True,1.0,11
-5003,Philosophy,1,Social sciences and humanities,True,1.0,38
-5004,Religious studies,1,Social sciences and humanities,True,1.0,12
-5099,Other philosophy and religious studies,1,Social sciences and humanities,True,0.714,14
-5099,Other philosophy and religious studies,4,Life and earth sciences,False,0.143,14
-5099,Other philosophy and religious studies,2,Biomedical and health sciences,False,0.071,14
-5099,Other philosophy and religious studies,3,Physical sciences and engineering,False,0.071,14
-5101,Astronomical sciences,5,Mathematics and computer science,False,0.087,23
-5101,Astronomical sciences,4,Life and earth sciences,False,0.087,23
-5101,Astronomical sciences,1,Social sciences and humanities,False,0.13,23
-5101,Astronomical sciences,3,Physical sciences and engineering,True,0.696,23
-5102,"Atomic, molecular and optical physics",3,Physical sciences and engineering,True,0.944,54
-5102,"Atomic, molecular and optical physics",5,Mathematics and computer science,False,0.037,54
-5102,"Atomic, molecular and optical physics",1,Social sciences and humanities,False,0.019,54
-5104,Condensed matter physics,3,Physical sciences and engineering,True,1.0,12
-5106,Nuclear and plasma physics,3,Physical sciences and engineering,True,0.7,20
-5106,Nuclear and plasma physics,5,Mathematics and computer science,False,0.25,20
-5106,Nuclear and plasma physics,2,Biomedical and health sciences,False,0.05,20
-5107,Particle and high energy physics,3,Physical sciences and engineering,True,1.0,12
-5201,Applied and developmental psychology,1,Social sciences and humanities,True,0.96,25
-5201,Applied and developmental psychology,2,Biomedical and health sciences,False,0.04,25
-5202,Biological psychology,2,Biomedical and health sciences,True,0.5,2
-5202,Biological psychology,1,Social sciences and humanities,False,0.5,2
-5203,Clinical and health psychology,1,Social sciences and humanities,True,0.6,35
-5203,Clinical and health psychology,2,Biomedical and health sciences,False,0.4,35
-5204,Cognitive and computational psychology,2,Biomedical and health sciences,False,0.19,21
-5204,Cognitive and computational psychology,5,Mathematics and computer science,False,0.048,21
-5204,Cognitive and computational psychology,1,Social sciences and humanities,True,0.762,21
-5205,Social and personality psychology,5,Mathematics and computer science,False,0.089,45
-5205,Social and personality psychology,2,Biomedical and health sciences,False,0.067,45
-5205,Social and personality psychology,1,Social sciences and humanities,True,0.822,45
-5205,Social and personality psychology,4,Life and earth sciences,False,0.022,45
+for_group_code,for_group_label,leiden_main_field_id,leiden_main_field_label,is_primary,share,n_rows,match_method
+3001,Agricultural biotechnology,1,Social sciences and humanities,True,0.714,7,derived_empirical
+3001,Agricultural biotechnology,4,Life and earth sciences,False,0.286,7,derived_empirical
+3002,"Agriculture, land and farm management",4,Life and earth sciences,True,0.778,9,derived_empirical
+3002,"Agriculture, land and farm management",2,Biomedical and health sciences,False,0.222,9,derived_empirical
+3003,Animal production,4,Life and earth sciences,True,0.625,8,derived_empirical
+3003,Animal production,2,Biomedical and health sciences,False,0.25,8,derived_empirical
+3003,Animal production,3,Physical sciences and engineering,False,0.125,8,derived_empirical
+3004,Crop and pasture production,4,Life and earth sciences,True,0.778,9,derived_empirical
+3004,Crop and pasture production,2,Biomedical and health sciences,False,0.222,9,derived_empirical
+3005,Fisheries sciences,2,Biomedical and health sciences,False,0.167,6,derived_empirical
+3005,Fisheries sciences,4,Life and earth sciences,True,0.833,6,derived_empirical
+3006,Food sciences,4,Life and earth sciences,True,0.387,31,derived_empirical
+3006,Food sciences,3,Physical sciences and engineering,False,0.226,31,derived_empirical
+3006,Food sciences,1,Social sciences and humanities,False,0.226,31,derived_empirical
+3006,Food sciences,2,Biomedical and health sciences,False,0.097,31,derived_empirical
+3006,Food sciences,5,Mathematics and computer science,False,0.065,31,derived_empirical
+3007,Forestry sciences,1,Social sciences and humanities,True,0.667,3,derived_empirical
+3007,Forestry sciences,4,Life and earth sciences,False,0.333,3,derived_empirical
+3009,Veterinary sciences,2,Biomedical and health sciences,False,0.25,8,derived_empirical
+3009,Veterinary sciences,4,Life and earth sciences,True,0.625,8,derived_empirical
+3009,Veterinary sciences,3,Physical sciences and engineering,False,0.125,8,derived_empirical
+3099,"Other agricultural, veterinary and food sciences",4,Life and earth sciences,False,0.286,7,derived_empirical
+3099,"Other agricultural, veterinary and food sciences",1,Social sciences and humanities,True,0.714,7,derived_empirical
+3101,Biochemistry and cell biology,2,Biomedical and health sciences,True,0.667,6,derived_empirical
+3101,Biochemistry and cell biology,3,Physical sciences and engineering,False,0.167,6,derived_empirical
+3101,Biochemistry and cell biology,1,Social sciences and humanities,False,0.167,6,derived_empirical
+3102,Bioinformatics and computational biology,2,Biomedical and health sciences,True,0.795,132,derived_empirical
+3102,Bioinformatics and computational biology,3,Physical sciences and engineering,False,0.083,132,derived_empirical
+3102,Bioinformatics and computational biology,4,Life and earth sciences,False,0.068,132,derived_empirical
+3102,Bioinformatics and computational biology,5,Mathematics and computer science,False,0.053,132,derived_empirical
+3103,Ecology,4,Life and earth sciences,True,0.969,32,derived_empirical
+3103,Ecology,2,Biomedical and health sciences,False,0.031,32,derived_empirical
+3104,Evolutionary biology,2,Biomedical and health sciences,False,0.031,32,derived_empirical
+3104,Evolutionary biology,4,Life and earth sciences,True,0.969,32,derived_empirical
+3105,Genetics,2,Biomedical and health sciences,True,0.795,39,derived_empirical
+3105,Genetics,4,Life and earth sciences,False,0.154,39,derived_empirical
+3105,Genetics,1,Social sciences and humanities,False,0.026,39,derived_empirical
+3105,Genetics,5,Mathematics and computer science,False,0.026,39,derived_empirical
+3106,Industrial biotechnology,2,Biomedical and health sciences,True,0.625,8,derived_empirical
+3106,Industrial biotechnology,3,Physical sciences and engineering,False,0.25,8,derived_empirical
+3106,Industrial biotechnology,4,Life and earth sciences,False,0.125,8,derived_empirical
+3107,Microbiology,2,Biomedical and health sciences,True,0.833,6,derived_empirical
+3107,Microbiology,1,Social sciences and humanities,False,0.167,6,derived_empirical
+3108,Plant biology,3,Physical sciences and engineering,False,0.025,80,derived_empirical
+3108,Plant biology,1,Social sciences and humanities,False,0.062,80,derived_empirical
+3108,Plant biology,5,Mathematics and computer science,False,0.013,80,derived_empirical
+3108,Plant biology,4,Life and earth sciences,True,0.762,80,derived_empirical
+3108,Plant biology,2,Biomedical and health sciences,False,0.138,80,derived_empirical
+3109,Zoology,4,Life and earth sciences,True,0.625,8,derived_empirical
+3109,Zoology,2,Biomedical and health sciences,False,0.25,8,derived_empirical
+3109,Zoology,3,Physical sciences and engineering,False,0.125,8,derived_empirical
+3199,Other biological sciences,1,Social sciences and humanities,True,0.714,7,derived_empirical
+3199,Other biological sciences,4,Life and earth sciences,False,0.286,7,derived_empirical
+3201,Cardiovascular medicine and haematology,2,Biomedical and health sciences,True,0.964,28,derived_empirical
+3201,Cardiovascular medicine and haematology,5,Mathematics and computer science,False,0.036,28,derived_empirical
+3202,Clinical sciences,2,Biomedical and health sciences,True,1.0,1,derived_empirical
+3203,Dentistry,2,Biomedical and health sciences,True,1.0,1,derived_empirical
+3204,Immunology,2,Biomedical and health sciences,True,1.0,3,derived_empirical
+3205,Medical biochemistry and metabolomics,2,Biomedical and health sciences,True,1.0,2,derived_empirical
+3206,Medical biotechnology,2,Biomedical and health sciences,True,1.0,9,derived_empirical
+3207,Medical microbiology,2,Biomedical and health sciences,True,1.0,1,derived_empirical
+3208,Medical physiology,2,Biomedical and health sciences,True,0.966,29,derived_empirical
+3208,Medical physiology,1,Social sciences and humanities,False,0.034,29,derived_empirical
+3209,Neurosciences,2,Biomedical and health sciences,True,1.0,21,derived_empirical
+3210,Nutrition and dietetics,2,Biomedical and health sciences,True,1.0,16,derived_empirical
+3211,Oncology and carcinogenesis,2,Biomedical and health sciences,True,0.968,31,derived_empirical
+3211,Oncology and carcinogenesis,3,Physical sciences and engineering,False,0.032,31,derived_empirical
+3212,Ophthalmology and optometry,2,Biomedical and health sciences,True,0.917,12,derived_empirical
+3212,Ophthalmology and optometry,3,Physical sciences and engineering,False,0.083,12,derived_empirical
+3213,Paediatrics,1,Social sciences and humanities,False,0.125,16,derived_empirical
+3213,Paediatrics,2,Biomedical and health sciences,True,0.875,16,derived_empirical
+3214,Pharmacology and pharmaceutical sciences,2,Biomedical and health sciences,True,0.85,20,derived_empirical
+3214,Pharmacology and pharmaceutical sciences,4,Life and earth sciences,False,0.05,20,derived_empirical
+3214,Pharmacology and pharmaceutical sciences,3,Physical sciences and engineering,False,0.05,20,derived_empirical
+3214,Pharmacology and pharmaceutical sciences,1,Social sciences and humanities,False,0.05,20,derived_empirical
+3215,Reproductive medicine,2,Biomedical and health sciences,True,0.714,7,derived_empirical
+3215,Reproductive medicine,1,Social sciences and humanities,False,0.286,7,derived_empirical
+3299,Other biomedical and clinical sciences,2,Biomedical and health sciences,True,1.0,1,derived_empirical
+3301,Architecture,1,Social sciences and humanities,True,1.0,2,derived_empirical
+3302,Building,4,Life and earth sciences,False,0.053,19,derived_empirical
+3302,Building,5,Mathematics and computer science,False,0.158,19,derived_empirical
+3302,Building,3,Physical sciences and engineering,True,0.526,19,derived_empirical
+3302,Building,1,Social sciences and humanities,False,0.263,19,derived_empirical
+3303,Design,1,Social sciences and humanities,True,1.0,13,derived_empirical
+3304,Urban and regional planning,1,Social sciences and humanities,True,0.938,16,derived_empirical
+3304,Urban and regional planning,5,Mathematics and computer science,False,0.062,16,derived_empirical
+3399,Other built environment and design,3,Physical sciences and engineering,True,1.0,1,derived_empirical
+3401,Analytical chemistry,3,Physical sciences and engineering,True,0.714,7,derived_empirical
+3401,Analytical chemistry,5,Mathematics and computer science,False,0.143,7,derived_empirical
+3401,Analytical chemistry,4,Life and earth sciences,False,0.143,7,derived_empirical
+3402,Inorganic chemistry,4,Life and earth sciences,False,0.083,12,derived_empirical
+3402,Inorganic chemistry,3,Physical sciences and engineering,True,0.917,12,derived_empirical
+3403,Macromolecular and materials chemistry,4,Life and earth sciences,False,0.037,54,derived_empirical
+3403,Macromolecular and materials chemistry,2,Biomedical and health sciences,False,0.019,54,derived_empirical
+3403,Macromolecular and materials chemistry,3,Physical sciences and engineering,True,0.944,54,derived_empirical
+3404,Medicinal and biomolecular chemistry,2,Biomedical and health sciences,False,0.019,54,derived_empirical
+3404,Medicinal and biomolecular chemistry,4,Life and earth sciences,False,0.037,54,derived_empirical
+3404,Medicinal and biomolecular chemistry,3,Physical sciences and engineering,True,0.944,54,derived_empirical
+3405,Organic chemistry,3,Physical sciences and engineering,True,0.944,54,derived_empirical
+3405,Organic chemistry,4,Life and earth sciences,False,0.037,54,derived_empirical
+3405,Organic chemistry,2,Biomedical and health sciences,False,0.019,54,derived_empirical
+3406,Physical chemistry,3,Physical sciences and engineering,True,0.875,8,derived_empirical
+3406,Physical chemistry,1,Social sciences and humanities,False,0.125,8,derived_empirical
+3407,Theoretical and computational chemistry,3,Physical sciences and engineering,True,0.875,8,derived_empirical
+3407,Theoretical and computational chemistry,1,Social sciences and humanities,False,0.125,8,derived_empirical
+3499,Other chemical sciences,3,Physical sciences and engineering,True,0.875,8,derived_empirical
+3499,Other chemical sciences,1,Social sciences and humanities,False,0.125,8,derived_empirical
+3501,"Accounting, auditing and accountability",1,Social sciences and humanities,True,1.0,17,derived_empirical
+3502,"Banking, finance and investment",1,Social sciences and humanities,True,1.0,2,derived_empirical
+3503,Business systems in context,1,Social sciences and humanities,True,1.0,2,derived_empirical
+3504,Commercial services,1,Social sciences and humanities,True,1.0,2,derived_empirical
+3505,Human resources and industrial relations,1,Social sciences and humanities,True,0.875,24,derived_empirical
+3505,Human resources and industrial relations,5,Mathematics and computer science,False,0.083,24,derived_empirical
+3505,Human resources and industrial relations,2,Biomedical and health sciences,False,0.042,24,derived_empirical
+3506,Marketing,1,Social sciences and humanities,True,0.923,13,derived_empirical
+3506,Marketing,5,Mathematics and computer science,False,0.077,13,derived_empirical
+3507,"Strategy, management and organisational behaviour",1,Social sciences and humanities,True,1.0,33,derived_empirical
+3508,Tourism,1,Social sciences and humanities,True,1.0,2,derived_empirical
+3509,"Transportation, logistics and supply chains",1,Social sciences and humanities,True,1.0,2,derived_empirical
+3599,"Other commerce, management, tourism and services",1,Social sciences and humanities,True,1.0,2,derived_empirical
+3601,"Art history, theory and criticism",1,Social sciences and humanities,True,1.0,13,derived_empirical
+3602,Creative and professional writing,1,Social sciences and humanities,True,1.0,40,derived_empirical
+3603,Music,1,Social sciences and humanities,True,1.0,5,derived_empirical
+3604,Performing arts,1,Social sciences and humanities,True,1.0,13,derived_empirical
+3605,Screen and digital media,1,Social sciences and humanities,True,1.0,13,derived_empirical
+3606,Visual arts,1,Social sciences and humanities,True,1.0,13,derived_empirical
+3701,Atmospheric sciences,4,Life and earth sciences,True,0.8,10,derived_empirical
+3701,Atmospheric sciences,3,Physical sciences and engineering,False,0.1,10,derived_empirical
+3701,Atmospheric sciences,1,Social sciences and humanities,False,0.1,10,derived_empirical
+3702,Climate change science,4,Life and earth sciences,True,0.8,10,derived_empirical
+3702,Climate change science,3,Physical sciences and engineering,False,0.1,10,derived_empirical
+3702,Climate change science,1,Social sciences and humanities,False,0.1,10,derived_empirical
+3703,Geochemistry,3,Physical sciences and engineering,False,0.167,6,derived_empirical
+3703,Geochemistry,4,Life and earth sciences,True,0.667,6,derived_empirical
+3703,Geochemistry,5,Mathematics and computer science,False,0.167,6,derived_empirical
+3704,Geoinformatics,4,Life and earth sciences,True,0.6,5,derived_empirical
+3704,Geoinformatics,5,Mathematics and computer science,False,0.4,5,derived_empirical
+3705,Geology,4,Life and earth sciences,True,0.6,5,derived_empirical
+3705,Geology,5,Mathematics and computer science,False,0.4,5,derived_empirical
+3706,Geophysics,1,Social sciences and humanities,False,0.1,10,derived_empirical
+3706,Geophysics,4,Life and earth sciences,True,0.7,10,derived_empirical
+3706,Geophysics,5,Mathematics and computer science,False,0.1,10,derived_empirical
+3706,Geophysics,3,Physical sciences and engineering,False,0.1,10,derived_empirical
+3707,Hydrology,4,Life and earth sciences,True,1.0,6,derived_empirical
+3708,Oceanography,3,Physical sciences and engineering,False,0.125,8,derived_empirical
+3708,Oceanography,4,Life and earth sciences,True,0.875,8,derived_empirical
+3709,Physical geography and environmental geoscience,4,Life and earth sciences,True,1.0,6,derived_empirical
+3799,Other earth sciences,4,Life and earth sciences,True,0.6,5,derived_empirical
+3799,Other earth sciences,5,Mathematics and computer science,False,0.4,5,derived_empirical
+3801,Applied economics,1,Social sciences and humanities,True,0.965,57,derived_empirical
+3801,Applied economics,5,Mathematics and computer science,False,0.018,57,derived_empirical
+3801,Applied economics,2,Biomedical and health sciences,False,0.018,57,derived_empirical
+3802,Econometrics,1,Social sciences and humanities,True,0.965,57,derived_empirical
+3802,Econometrics,5,Mathematics and computer science,False,0.018,57,derived_empirical
+3802,Econometrics,2,Biomedical and health sciences,False,0.018,57,derived_empirical
+3803,Economic theory,2,Biomedical and health sciences,False,0.018,57,derived_empirical
+3803,Economic theory,5,Mathematics and computer science,False,0.018,57,derived_empirical
+3803,Economic theory,1,Social sciences and humanities,True,0.965,57,derived_empirical
+3899,Other economics,1,Social sciences and humanities,True,1.0,5,derived_empirical
+3901,Curriculum and pedagogy,1,Social sciences and humanities,True,0.988,82,derived_empirical
+3901,Curriculum and pedagogy,4,Life and earth sciences,False,0.012,82,derived_empirical
+3902,"Education policy, sociology and philosophy",1,Social sciences and humanities,True,0.988,82,derived_empirical
+3902,"Education policy, sociology and philosophy",4,Life and earth sciences,False,0.012,82,derived_empirical
+3903,Education systems,1,Social sciences and humanities,True,0.988,82,derived_empirical
+3903,Education systems,4,Life and earth sciences,False,0.012,82,derived_empirical
+3904,Specialist studies in education,1,Social sciences and humanities,True,0.988,82,derived_empirical
+3904,Specialist studies in education,4,Life and earth sciences,False,0.012,82,derived_empirical
+3999,Other Education,4,Life and earth sciences,False,0.012,82,derived_empirical
+3999,Other Education,1,Social sciences and humanities,True,0.988,82,derived_empirical
+4001,Aerospace engineering,1,Social sciences and humanities,False,0.026,39,derived_empirical
+4001,Aerospace engineering,4,Life and earth sciences,False,0.026,39,derived_empirical
+4001,Aerospace engineering,3,Physical sciences and engineering,True,0.59,39,derived_empirical
+4001,Aerospace engineering,5,Mathematics and computer science,False,0.359,39,derived_empirical
+4002,Automotive engineering,3,Physical sciences and engineering,True,0.889,9,derived_empirical
+4002,Automotive engineering,1,Social sciences and humanities,False,0.111,9,derived_empirical
+4003,Biomedical engineering,3,Physical sciences and engineering,True,0.606,66,derived_empirical
+4003,Biomedical engineering,5,Mathematics and computer science,False,0.212,66,derived_empirical
+4003,Biomedical engineering,2,Biomedical and health sciences,False,0.121,66,derived_empirical
+4003,Biomedical engineering,4,Life and earth sciences,False,0.045,66,derived_empirical
+4003,Biomedical engineering,1,Social sciences and humanities,False,0.015,66,derived_empirical
+4004,Chemical engineering,4,Life and earth sciences,False,0.5,2,derived_empirical
+4004,Chemical engineering,3,Physical sciences and engineering,True,0.5,2,derived_empirical
+4005,Civil engineering,3,Physical sciences and engineering,True,0.846,39,derived_empirical
+4005,Civil engineering,5,Mathematics and computer science,False,0.103,39,derived_empirical
+4005,Civil engineering,1,Social sciences and humanities,False,0.051,39,derived_empirical
+4006,Communications engineering,5,Mathematics and computer science,True,0.533,105,derived_empirical
+4006,Communications engineering,3,Physical sciences and engineering,False,0.457,105,derived_empirical
+4006,Communications engineering,4,Life and earth sciences,False,0.01,105,derived_empirical
+4007,"Control engineering, mechatronics and robotics",3,Physical sciences and engineering,False,0.135,37,derived_empirical
+4007,"Control engineering, mechatronics and robotics",5,Mathematics and computer science,True,0.865,37,derived_empirical
+4008,Electrical engineering,3,Physical sciences and engineering,False,0.457,105,derived_empirical
+4008,Electrical engineering,4,Life and earth sciences,False,0.01,105,derived_empirical
+4008,Electrical engineering,5,Mathematics and computer science,True,0.533,105,derived_empirical
+4009,"Electronics, sensors and digital hardware",3,Physical sciences and engineering,False,0.457,105,derived_empirical
+4009,"Electronics, sensors and digital hardware",4,Life and earth sciences,False,0.01,105,derived_empirical
+4009,"Electronics, sensors and digital hardware",5,Mathematics and computer science,True,0.533,105,derived_empirical
+4010,Engineering practice and education,3,Physical sciences and engineering,True,1.0,1,derived_empirical
+4011,Environmental engineering,4,Life and earth sciences,True,0.529,17,derived_empirical
+4011,Environmental engineering,3,Physical sciences and engineering,False,0.412,17,derived_empirical
+4011,Environmental engineering,5,Mathematics and computer science,False,0.059,17,derived_empirical
+4012,Fluid mechanics and thermal engineering,3,Physical sciences and engineering,True,0.849,73,derived_empirical
+4012,Fluid mechanics and thermal engineering,5,Mathematics and computer science,False,0.11,73,derived_empirical
+4012,Fluid mechanics and thermal engineering,4,Life and earth sciences,False,0.027,73,derived_empirical
+4012,Fluid mechanics and thermal engineering,1,Social sciences and humanities,False,0.014,73,derived_empirical
+4013,Geomatic engineering,5,Mathematics and computer science,False,0.103,39,derived_empirical
+4013,Geomatic engineering,1,Social sciences and humanities,False,0.051,39,derived_empirical
+4013,Geomatic engineering,3,Physical sciences and engineering,True,0.846,39,derived_empirical
+4014,Manufacturing engineering,5,Mathematics and computer science,True,0.562,16,derived_empirical
+4014,Manufacturing engineering,3,Physical sciences and engineering,False,0.25,16,derived_empirical
+4014,Manufacturing engineering,1,Social sciences and humanities,False,0.188,16,derived_empirical
+4015,Maritime engineering,3,Physical sciences and engineering,True,0.55,20,derived_empirical
+4015,Maritime engineering,5,Mathematics and computer science,False,0.2,20,derived_empirical
+4015,Maritime engineering,4,Life and earth sciences,False,0.15,20,derived_empirical
+4015,Maritime engineering,1,Social sciences and humanities,False,0.1,20,derived_empirical
+4017,Mechanical engineering,4,Life and earth sciences,False,0.027,73,derived_empirical
+4017,Mechanical engineering,3,Physical sciences and engineering,True,0.849,73,derived_empirical
+4017,Mechanical engineering,5,Mathematics and computer science,False,0.11,73,derived_empirical
+4017,Mechanical engineering,1,Social sciences and humanities,False,0.014,73,derived_empirical
+4018,Nanotechnology,3,Physical sciences and engineering,True,1.0,1,derived_empirical
+4019,Resources engineering and extractive metallurgy,3,Physical sciences and engineering,True,1.0,1,derived_empirical
+4099,Other engineering,3,Physical sciences and engineering,True,1.0,1,derived_empirical
+4101,Climate change impacts and adaptation,4,Life and earth sciences,True,0.76,25,derived_empirical
+4101,Climate change impacts and adaptation,1,Social sciences and humanities,False,0.2,25,derived_empirical
+4101,Climate change impacts and adaptation,3,Physical sciences and engineering,False,0.04,25,derived_empirical
+4102,Ecological applications,4,Life and earth sciences,True,0.875,32,derived_empirical
+4102,Ecological applications,1,Social sciences and humanities,False,0.062,32,derived_empirical
+4102,Ecological applications,2,Biomedical and health sciences,False,0.031,32,derived_empirical
+4102,Ecological applications,5,Mathematics and computer science,False,0.031,32,derived_empirical
+4103,Environmental biotechnology,3,Physical sciences and engineering,False,0.2,10,derived_empirical
+4103,Environmental biotechnology,1,Social sciences and humanities,False,0.1,10,derived_empirical
+4103,Environmental biotechnology,4,Life and earth sciences,True,0.7,10,derived_empirical
+4104,Environmental management,1,Social sciences and humanities,True,0.593,27,derived_empirical
+4104,Environmental management,4,Life and earth sciences,False,0.296,27,derived_empirical
+4104,Environmental management,3,Physical sciences and engineering,False,0.074,27,derived_empirical
+4104,Environmental management,5,Mathematics and computer science,False,0.037,27,derived_empirical
+4105,Pollution and contamination,4,Life and earth sciences,True,0.7,10,derived_empirical
+4105,Pollution and contamination,1,Social sciences and humanities,False,0.2,10,derived_empirical
+4105,Pollution and contamination,3,Physical sciences and engineering,False,0.1,10,derived_empirical
+4106,Soil sciences,1,Social sciences and humanities,False,0.1,10,derived_empirical
+4106,Soil sciences,4,Life and earth sciences,True,0.7,10,derived_empirical
+4106,Soil sciences,3,Physical sciences and engineering,False,0.2,10,derived_empirical
+4199,Other environmental sciences,5,Mathematics and computer science,False,0.031,32,derived_empirical
+4199,Other environmental sciences,2,Biomedical and health sciences,False,0.031,32,derived_empirical
+4199,Other environmental sciences,4,Life and earth sciences,True,0.875,32,derived_empirical
+4199,Other environmental sciences,1,Social sciences and humanities,False,0.062,32,derived_empirical
+4201,Allied health and rehabilitation science,2,Biomedical and health sciences,True,1.0,7,derived_empirical
+4202,Epidemiology,2,Biomedical and health sciences,True,0.974,38,derived_empirical
+4202,Epidemiology,5,Mathematics and computer science,False,0.026,38,derived_empirical
+4203,Health services and systems,2,Biomedical and health sciences,True,0.788,52,derived_empirical
+4203,Health services and systems,1,Social sciences and humanities,False,0.173,52,derived_empirical
+4203,Health services and systems,5,Mathematics and computer science,False,0.019,52,derived_empirical
+4203,Health services and systems,4,Life and earth sciences,False,0.019,52,derived_empirical
+4204,Midwifery,2,Biomedical and health sciences,True,1.0,8,derived_empirical
+4205,Nursing,2,Biomedical and health sciences,True,1.0,1,derived_empirical
+4206,Public health,4,Life and earth sciences,False,0.019,52,derived_empirical
+4206,Public health,5,Mathematics and computer science,False,0.019,52,derived_empirical
+4206,Public health,2,Biomedical and health sciences,True,0.788,52,derived_empirical
+4206,Public health,1,Social sciences and humanities,False,0.173,52,derived_empirical
+4207,Sports science and exercise,2,Biomedical and health sciences,True,1.0,7,derived_empirical
+4208,"Traditional, complementary and integrative medicine",2,Biomedical and health sciences,True,0.857,14,derived_empirical
+4208,"Traditional, complementary and integrative medicine",4,Life and earth sciences,False,0.143,14,derived_empirical
+4299,Other health sciences,2,Biomedical and health sciences,True,1.0,1,derived_empirical
+4301,Archaeology,2,Biomedical and health sciences,False,0.071,14,derived_empirical
+4301,Archaeology,3,Physical sciences and engineering,False,0.071,14,derived_empirical
+4301,Archaeology,1,Social sciences and humanities,True,0.714,14,derived_empirical
+4301,Archaeology,4,Life and earth sciences,False,0.143,14,derived_empirical
+4302,"Heritage, archive and museum studies",1,Social sciences and humanities,True,1.0,9,derived_empirical
+4303,Historical studies,1,Social sciences and humanities,True,1.0,37,derived_empirical
+4401,Anthropology,1,Social sciences and humanities,True,0.909,22,derived_empirical
+4401,Anthropology,4,Life and earth sciences,False,0.091,22,derived_empirical
+4402,Criminology,1,Social sciences and humanities,True,0.959,193,derived_empirical
+4402,Criminology,2,Biomedical and health sciences,False,0.021,193,derived_empirical
+4402,Criminology,5,Mathematics and computer science,False,0.016,193,derived_empirical
+4402,Criminology,4,Life and earth sciences,False,0.005,193,derived_empirical
+4403,Demography,1,Social sciences and humanities,True,0.92,25,derived_empirical
+4403,Demography,2,Biomedical and health sciences,False,0.04,25,derived_empirical
+4403,Demography,4,Life and earth sciences,False,0.04,25,derived_empirical
+4404,Development studies,5,Mathematics and computer science,False,0.25,4,derived_empirical
+4404,Development studies,1,Social sciences and humanities,True,0.75,4,derived_empirical
+4405,Gender studies,1,Social sciences and humanities,True,0.941,17,derived_empirical
+4405,Gender studies,2,Biomedical and health sciences,False,0.059,17,derived_empirical
+4406,Human geography,1,Social sciences and humanities,True,0.75,12,derived_empirical
+4406,Human geography,5,Mathematics and computer science,False,0.167,12,derived_empirical
+4406,Human geography,4,Life and earth sciences,False,0.083,12,derived_empirical
+4407,Policy and administration,1,Social sciences and humanities,True,1.0,1,derived_empirical
+4408,Political science,1,Social sciences and humanities,True,1.0,95,derived_empirical
+4409,Social work,1,Social sciences and humanities,True,1.0,2,derived_empirical
+4410,Sociology,5,Mathematics and computer science,False,0.016,193,derived_empirical
+4410,Sociology,4,Life and earth sciences,False,0.005,193,derived_empirical
+4410,Sociology,1,Social sciences and humanities,True,0.959,193,derived_empirical
+4410,Sociology,2,Biomedical and health sciences,False,0.021,193,derived_empirical
+4499,Other human society,1,Social sciences and humanities,True,1.0,2,derived_empirical
+4601,Applied computing,5,Mathematics and computer science,False,0.4,5,derived_empirical
+4601,Applied computing,1,Social sciences and humanities,True,0.6,5,derived_empirical
+4602,Artificial intelligence,5,Mathematics and computer science,True,0.841,69,derived_empirical
+4602,Artificial intelligence,1,Social sciences and humanities,False,0.116,69,derived_empirical
+4602,Artificial intelligence,4,Life and earth sciences,False,0.029,69,derived_empirical
+4602,Artificial intelligence,3,Physical sciences and engineering,False,0.014,69,derived_empirical
+4603,Computer vision and multimedia computation,5,Mathematics and computer science,True,0.971,35,derived_empirical
+4603,Computer vision and multimedia computation,3,Physical sciences and engineering,False,0.029,35,derived_empirical
+4604,Cybersecurity and privacy,5,Mathematics and computer science,True,0.969,32,derived_empirical
+4604,Cybersecurity and privacy,3,Physical sciences and engineering,False,0.031,32,derived_empirical
+4605,Data management and data science,1,Social sciences and humanities,False,0.431,51,derived_empirical
+4605,Data management and data science,3,Physical sciences and engineering,False,0.02,51,derived_empirical
+4605,Data management and data science,5,Mathematics and computer science,True,0.549,51,derived_empirical
+4606,Distributed computing and systems software,5,Mathematics and computer science,True,0.8,5,derived_empirical
+4606,Distributed computing and systems software,1,Social sciences and humanities,False,0.2,5,derived_empirical
+4607,"Graphics, augmented reality and games",5,Mathematics and computer science,True,1.0,4,derived_empirical
+4608,Human-centred computing,5,Mathematics and computer science,True,0.875,8,derived_empirical
+4608,Human-centred computing,1,Social sciences and humanities,False,0.125,8,derived_empirical
+4609,Information systems,5,Mathematics and computer science,True,0.549,51,derived_empirical
+4609,Information systems,1,Social sciences and humanities,False,0.431,51,derived_empirical
+4609,Information systems,3,Physical sciences and engineering,False,0.02,51,derived_empirical
+4610,Library and information studies,1,Social sciences and humanities,True,1.0,2,derived_empirical
+4611,Machine learning,4,Life and earth sciences,False,0.029,69,derived_empirical
+4611,Machine learning,3,Physical sciences and engineering,False,0.014,69,derived_empirical
+4611,Machine learning,5,Mathematics and computer science,True,0.841,69,derived_empirical
+4611,Machine learning,1,Social sciences and humanities,False,0.116,69,derived_empirical
+4612,Software engineering,5,Mathematics and computer science,True,0.8,5,derived_empirical
+4612,Software engineering,1,Social sciences and humanities,False,0.2,5,derived_empirical
+4613,Theory of computation,5,Mathematics and computer science,True,0.9,20,derived_empirical
+4613,Theory of computation,2,Biomedical and health sciences,False,0.05,20,derived_empirical
+4613,Theory of computation,1,Social sciences and humanities,False,0.05,20,derived_empirical
+4699,Other information and computing sciences,1,Social sciences and humanities,True,0.6,5,derived_empirical
+4699,Other information and computing sciences,5,Mathematics and computer science,False,0.4,5,derived_empirical
+4701,Communication and media studies,1,Social sciences and humanities,True,0.917,12,derived_empirical
+4701,Communication and media studies,5,Mathematics and computer science,False,0.083,12,derived_empirical
+4702,Cultural studies,2,Biomedical and health sciences,False,0.045,22,derived_empirical
+4702,Cultural studies,1,Social sciences and humanities,True,0.955,22,derived_empirical
+4703,Language studies,1,Social sciences and humanities,True,1.0,15,derived_empirical
+4704,Linguistics,1,Social sciences and humanities,True,1.0,15,derived_empirical
+4705,Literary studies,1,Social sciences and humanities,True,1.0,40,derived_empirical
+4801,Commercial law,1,Social sciences and humanities,True,1.0,31,derived_empirical
+4802,Environmental and resources law,1,Social sciences and humanities,True,1.0,31,derived_empirical
+4803,International and comparative law,1,Social sciences and humanities,True,1.0,31,derived_empirical
+4804,Law in context,1,Social sciences and humanities,True,1.0,31,derived_empirical
+4805,Legal systems,1,Social sciences and humanities,True,1.0,31,derived_empirical
+4806,Private law and civil obligations,1,Social sciences and humanities,True,1.0,31,derived_empirical
+4807,Public law,1,Social sciences and humanities,True,1.0,31,derived_empirical
+4899,Other law and legal studies,1,Social sciences and humanities,True,1.0,31,derived_empirical
+4901,Applied mathematics,1,Social sciences and humanities,False,0.062,16,derived_empirical
+4901,Applied mathematics,5,Mathematics and computer science,True,0.875,16,derived_empirical
+4901,Applied mathematics,3,Physical sciences and engineering,False,0.062,16,derived_empirical
+4902,Mathematical physics,5,Mathematics and computer science,True,1.0,11,derived_empirical
+4903,Numerical and computational mathematics,5,Mathematics and computer science,True,1.0,1,derived_empirical
+4904,Pure mathematics,5,Mathematics and computer science,True,1.0,5,derived_empirical
+4905,Statistics,5,Mathematics and computer science,True,0.6,20,derived_empirical
+4905,Statistics,1,Social sciences and humanities,False,0.35,20,derived_empirical
+4905,Statistics,2,Biomedical and health sciences,False,0.05,20,derived_empirical
+4999,Other mathematical sciences,5,Mathematics and computer science,True,0.875,16,derived_empirical
+4999,Other mathematical sciences,3,Physical sciences and engineering,False,0.062,16,derived_empirical
+4999,Other mathematical sciences,1,Social sciences and humanities,False,0.062,16,derived_empirical
+5001,Applied ethics,1,Social sciences and humanities,True,1.0,38,derived_empirical
+5002,History and philosophy of specific fields,1,Social sciences and humanities,True,1.0,11,derived_empirical
+5003,Philosophy,1,Social sciences and humanities,True,1.0,38,derived_empirical
+5004,Religious studies,1,Social sciences and humanities,True,1.0,12,derived_empirical
+5005,Theology,1,Social sciences and humanities,True,1.0,12,derived_empirical
+5101,Astronomical sciences,3,Physical sciences and engineering,True,0.667,21,derived_empirical
+5101,Astronomical sciences,1,Social sciences and humanities,False,0.143,21,derived_empirical
+5101,Astronomical sciences,4,Life and earth sciences,False,0.095,21,derived_empirical
+5101,Astronomical sciences,5,Mathematics and computer science,False,0.095,21,derived_empirical
+5102,"Atomic, molecular and optical physics",3,Physical sciences and engineering,True,0.917,36,derived_empirical
+5102,"Atomic, molecular and optical physics",1,Social sciences and humanities,False,0.028,36,derived_empirical
+5102,"Atomic, molecular and optical physics",5,Mathematics and computer science,False,0.056,36,derived_empirical
+5103,Classical physics,5,Mathematics and computer science,False,0.357,14,derived_empirical
+5103,Classical physics,3,Physical sciences and engineering,True,0.643,14,derived_empirical
+5104,Condensed matter physics,3,Physical sciences and engineering,True,1.0,8,derived_empirical
+5105,Medical and biological physics,3,Physical sciences and engineering,True,0.833,6,derived_empirical
+5105,Medical and biological physics,2,Biomedical and health sciences,False,0.167,6,derived_empirical
+5106,Nuclear and plasma physics,3,Physical sciences and engineering,True,1.0,12,derived_empirical
+5107,Particle and high energy physics,3,Physical sciences and engineering,True,1.0,12,derived_empirical
+5108,Quantum physics,3,Physical sciences and engineering,True,1.0,8,derived_empirical
+5109,Space sciences,5,Mathematics and computer science,False,0.095,21,derived_empirical
+5109,Space sciences,4,Life and earth sciences,False,0.095,21,derived_empirical
+5109,Space sciences,3,Physical sciences and engineering,True,0.667,21,derived_empirical
+5109,Space sciences,1,Social sciences and humanities,False,0.143,21,derived_empirical
+5110,Synchrotrons and accelerators,3,Physical sciences and engineering,True,1.0,2,derived_empirical
+5199,Other physical sciences,3,Physical sciences and engineering,True,1.0,1,derived_empirical
+5201,Applied and developmental psychology,1,Social sciences and humanities,True,0.857,7,derived_empirical
+5201,Applied and developmental psychology,2,Biomedical and health sciences,False,0.143,7,derived_empirical
+5202,Biological psychology,1,Social sciences and humanities,True,1.0,1,derived_empirical
+5203,Clinical and health psychology,2,Biomedical and health sciences,False,0.4,35,derived_empirical
+5203,Clinical and health psychology,1,Social sciences and humanities,True,0.6,35,derived_empirical
+5204,Cognitive and computational psychology,2,Biomedical and health sciences,False,0.19,21,derived_empirical
+5204,Cognitive and computational psychology,5,Mathematics and computer science,False,0.048,21,derived_empirical
+5204,Cognitive and computational psychology,1,Social sciences and humanities,True,0.762,21,derived_empirical
+5205,Social and personality psychology,2,Biomedical and health sciences,False,0.067,45,derived_empirical
+5205,Social and personality psychology,4,Life and earth sciences,False,0.022,45,derived_empirical
+5205,Social and personality psychology,1,Social sciences and humanities,True,0.822,45,derived_empirical
+5205,Social and personality psychology,5,Mathematics and computer science,False,0.089,45,derived_empirical
+5299,Other psychology,1,Social sciences and humanities,True,1.0,1,derived_empirical

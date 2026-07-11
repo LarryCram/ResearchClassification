@@ -324,22 +324,24 @@ class Resolver:
             group_code = for2020_code[:4]
             table, code_col, label_col, level = _GROUP_CENTRIC[to_scheme]
             row = self._con.execute(
-                f"SELECT {code_col}, {label_col}, share FROM {table} WHERE for_group_code = ? AND is_primary = 'True'",
+                f"SELECT {code_col}, {label_col}, share, match_method FROM {table} "
+                "WHERE for_group_code = ? AND is_primary = 'True'",
                 [group_code],
             ).fetchone()
             if row:
-                out_code, out_label, share = row
-                return CanonicalResult(input_value, from_scheme, to_scheme, out_code, out_label, level, "derived_empirical", float(share))
+                out_code, out_label, share, match_method = row
+                return CanonicalResult(input_value, from_scheme, to_scheme, out_code, out_label, level, match_method, float(share))
 
         division_code = for2020_code[:2]
         table, code_col, label_col, level = _DIVISION_CENTRIC[to_scheme]
         row = self._con.execute(
-            f"SELECT {code_col}, {label_col}, share FROM {table} WHERE for_division_code = ? AND is_primary = 'True'",
+            f"SELECT {code_col}, {label_col}, share, match_method FROM {table} "
+            "WHERE for_division_code = ? AND is_primary = 'True'",
             [division_code],
         ).fetchone()
         if row:
-            out_code, out_label, share = row
-            return CanonicalResult(input_value, from_scheme, to_scheme, out_code, out_label, level, "derived_empirical", float(share))
+            out_code, out_label, share, match_method = row
+            return CanonicalResult(input_value, from_scheme, to_scheme, out_code, out_label, level, match_method, float(share))
 
         if division_code == "45":
             # Tries the exact code first (covers the 451901-451907 field-level overrides,

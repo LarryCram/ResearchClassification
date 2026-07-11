@@ -1,16 +1,88 @@
 # Known gaps
 
-## OAX <-> FOR2020 rebuild: abandoned mid-session, uncommitted, needs a different approach
+## OAX <-> FOR2020: RESOLVED, via a hand-curated mapping recovered from an earlier project
+
+The prior approach (documented below, kept for history) tried to build the FOR2020->OAX
+direction algorithmically -- lexical cascade scoring, then per-topic rank concentration --
+and never converged, ending with the session abandoned mid-review.
+
+That direction turned out to already be solved: `data_untracked/EARLIER_FOR_OAX_analysis/`
+(an earlier, separate, less-structured project) contained a hand-curated dict mapping every
+FOR2020 division to an OAX field and every FOR2020 group to an OAX subfield, with a
+hierarchy-nesting constraint enforced at its own build time and inline human rationale on
+every entry. Ported into `research_classification/curate_for2020_to_openalex.py`
+(`FIELD_BY_DIVISION`, `SUBFIELD_BY_GROUP`), replacing both the never-converged cascade/
+topic-rank approach *and* `build_leiden.py`'s old `explode_for_divisions()`/
+`explode_for_groups()` generation of the `for2020_*_openalex_*.csv` tables (which was
+circular: it derived a FOR node's "empirical" OAX distribution by routing back through
+`bridge_openalex_for(_group).csv`, itself generated FROM the reverse OAX->FOR seed).
+
+Reviewed this session via a falsification-driven pass (direct domain judgment, not just the
+lexical/cross-direction signals, which produce both false positives -- e.g. "Chemical
+Engineering" being both an OAX field and a FOR group name -- and false negatives -- e.g.
+"equine"/"veterinary" sharing no lexical overlap despite being a clearly correct match).
+Two real issues found and fixed:
+
+- **Division 33 "Built Environment and Design"** was mapped to OAX field 12 (Arts and
+  Humanities); OAX field 22 (Engineering) has exact-name subfields "Architecture" (2216) and
+  "Building and Construction" (2215) that were unreachable as a result. Reassigned the
+  division to field 22; groups 3303 (Design) and 3304 (Urban and regional planning) get their
+  own cross-field overrides back toward Arts and Humanities / Social Sciences since neither
+  fits Engineering.
+- **15 individual groups** are a much better fit for a *different* OAX field than their
+  division's own assignment (each division's field is right for every other group in it, so
+  reassigning the whole division would just break those). Given explicit group-level
+  overrides in `GROUP_FIELD_OVERRIDE`, tagged `match_method="manual_override"`:
+  division 31's Biochemistry/Bioinformatics/Genetics/Industrial biotechnology/Microbiology (5
+  groups, -> OAX fields 13/24), Dentistry (-> field 35), Nursing (-> field 29), Chemical/
+  Environmental/Materials engineering (-> fields 15/23/25), Communication/Cultural studies
+  (-> field 33), and Library and information studies (-> field 33's "Library and Information
+  Sciences" subfield, found during review). Confirmed directly with the user that breaking
+  the division-field/group-subfield nesting for these specific, individually-reviewed cases
+  is fine -- it's inherent in the two tables and well known in the ASJC context.
+- A handful of other borderline cases (5199 "Other physical sciences" -> Acoustics and
+  Ultrasonics, 5103 Classical physics -> Statistical and Nonlinear Physics, 5108 Quantum
+  physics -> Condensed Matter Physics, 3002 Agriculture/land/farm management -> Agronomy and
+  Crop Science, 3602 Creative and professional writing -> Literature and Literary Theory,
+  4604 Cybersecurity and privacy -> Computer Networks and Communications) were reviewed and
+  left as-is: each is the best available fit given OAX's actual subfield inventory for the
+  applicable field, not a correctable oversight.
+
+Every row in `seeds/for2020_division_to_openalex_field.csv` (22 rows, division 45 excluded --
+see its own cultural_proxy mechanism below) and `seeds/for2020_group_to_openalex_subfield.csv`
+(193 rows) is marked `reviewed` with today's date. `resolver.py` now reports the real
+provenance (`manual_curated` for direct ported facts, `manual_override` for the 16 cross-field
+exceptions, `derived_empirical` only for the division-level subfield roll-up, which has no
+direct curated fact and is instead a majority vote over the division's own now-independently-
+curated groups) instead of a hardcoded string. Full exhaustive coverage (2,203/2,203 FOR2020
+codes) holds, confirmed by `tests/test_resolver.py`.
+
+Along the way, fixed three pre-existing bugs that were silently blocking `build.py` from ever
+running to completion on `main` (confirmed against a clean checkout): a dead import
+(`curate_for2020_division45_to_proxy.py` importing a since-renamed `_group_score`, now
+deferred/lazy so it doesn't crash on module load when its seed already exists) and three
+legitimate `match_method` values (`exact_match`, `contains_match`, `below_floor`, already
+produced by `cascade_match.py`/`curate_openalex_subfield_to_for_group.py`) missing from
+`hierarchy.py`'s `MATCH_METHODS` allow-list.
+
+**Lock-in going forward:** `seeds/*.csv` are cache-guarded (present on disk = never
+regenerated) -- this was already the convention, but `build_leiden.py` used to bypass it by
+independently regenerating the same `for2020_*_openalex_*.csv` tables every run. That's fixed:
+`build_leiden.py` no longer touches those tables at all (they come from
+`curate_for2020_to_openalex.py` alone) and only composes `for2020_*_leiden_main_field.csv`
+through the new curated seed. `build.py` also now warns loudly if a previously-built project
+is missing a locked-in seed file, rather than silently regenerating it from scratch.
+
+<details>
+<summary>Prior (abandoned) approach, kept for history</summary>
 
 Attempted a full rebuild of every OAX<->FOR2020 correspondence table (`seeds/openalex_field_to_for_division.csv`,
 `seeds/openalex_subfield_to_for_group.csv`, a new `seeds/openalex_field_to_for_group.csv`, and the four
 `for2020_*_openalex_*.csv` tables), after finding the original hand-typed OAX->FOR2020 seed and the
 "empirical" FOR2020->OAX tables were not actually independent of each other (the latter routed through the
-former via `build_leiden.py`'s `explode_for_divisions()`). **None of this is committed.** `git status` shows
-modified/untracked files across `research_classification/` and `seeds/`; `build.py` was never run end-to-end
-against the changes; the bundled `.duckdb` does not reflect any of this.
+former via `build_leiden.py`'s `explode_for_divisions()`).
 
-**New module**: `research_classification/cascade_match.py` -- a shared lexical matcher meant to replace ad hoc
+**`research_classification/cascade_match.py`**: a shared lexical matcher meant to replace ad hoc
 per-script matching, built up over many iterations across one long session:
 1. Exact word-set match (`exact_match_words()`), with a small AU/UK<->US spelling dictionary and a minimal
    stopword list (only genuine grammatical connectors, not domain words like "science"/"other").
@@ -22,34 +94,10 @@ per-script matching, built up over many iterations across one long session:
 4. `topic_rank_resolve()` for the FOR2020->OAX direction -- scores individual OpenAlex topics against a
    FOR2020 node's bag and looks at where the top N concentrate.
 
-**Reviewed and approved by the user directly:**
-- `seeds/openalex_field_to_for_division.csv` (26 OAX fields -> FOR2020 divisions).
-- `seeds/openalex_subfield_to_for_group.csv` (252 OAX subfields -> FOR2020 groups), 44 manual overrides
-  applied after a full by-eye scan of every row.
-
-**Unfinished, unreviewed, or actively broken:**
-- `curate_openalex_field_to_for_precise.py` (group-level precision for OAX field input) -- built and ran,
-  spot-checked by the assistant only, never reviewed by the user.
-- `curate_for2020_to_openalex.py` (the FOR2020->OAX reverse direction) -- iterated on heavily, never
-  converged. Real bugs found along the way: `topic_rank_resolve()` had no exact-match step at all (missed
-  e.g. FOR2020 group "Architecture" == OAX subfield "Architecture"); the same "biggest bag wins" bias that
-  affected earlier tables recurred here too (e.g. "PHYSICAL SCIENCES" landed on OAX field "Engineering"
-  instead of "Physics and Astronomy"); OpenAlex has several genuinely duplicate-named subfields under two
-  different parent fields (Genetics, Physiology, Microbiology, Neurology, Pharmacology, Archeology,
-  Biochemistry) that silently blocked exact-match until a same-side self-test caught it. The last code
-  change (a duplicate-label tie-break + contains-match tier added to `_exact_match`) was rejected by the
-  user as still not making sense, and the session ended there without re-running or re-verifying it.
-- `curate_openalex_to_leiden.py` (OAX -> Leiden main field, pure OAX-side) -- not started.
-- `build_leiden.py`'s composition rewrite (FOR2020->Leiden via FOR2020->OAX x OAX->Leiden, replacing today's
-  independent re-aggregation) -- not started.
-- `curate_for2020_division45_to_proxy.py`'s import of shared text builders from `cascade_match.py` -- not
-  started.
-- `resolver.py` / `build.py` wiring to any of the new/rebuilt tables -- not started.
-- Test suite -- not run since these changes began; expect many hardcoded-expectation failures.
-- The `for2020_*_openalex_*.csv` tables (division/group -> OAX domain/field/subfield) never got a full user
-  review -- the session ended mid-review, with the user auditing exact/contains-match coverage through a long
-  series of ad hoc queries (single-word FOR/OAX label cross-checks, same-side self-match tests) rather than
-  reviewing the generated tables directly.
+Reviewed and approved by the user directly (still current, untouched by the above):
+`seeds/openalex_field_to_for_division.csv` (26 OAX fields -> FOR2020 divisions) and
+`seeds/openalex_subfield_to_for_group.csv` (252 OAX subfields -> FOR2020 groups, 44 manual
+overrides applied after a full by-eye scan of every row).
 
 **The user's assessment, in the order given:**
 - Repeatedly corrected the scoring formula across the session (Jaccard -> overlap coefficient -> raw count ->
@@ -69,13 +117,9 @@ per-script matching, built up over many iterations across one long session:
   direction): "That make no sense after you do it nor did it make any sense before. I have had it" -- asked
   to close the session and hand off to a different coding assistant.
 
-**Recommendation for whoever picks this up:** don't resume by adding more matching-formula tiers. The user's
-own diagnosis -- run a simple/cheap fuzzy pass, then have a human or LLM directly review and correct the
-output rather than trying to make automated scoring converge on every case -- is worth taking at face value.
-`cascade_match.py`'s exact-match and contains-match tiers (steps 1-1.5) are solid and were validated by direct
-review; the raw bag-overlap fallback (step 2) and `topic_rank_resolve()` are the parts that kept needing
-rescue-by-hand and are the better candidates to replace with a review-and-correct workflow rather than
-further tuning.
+This diagnosis is exactly what got followed through on above: no more matching-formula tiers --
+a cheap ported mapping, then direct LLM review and correction of the actual output.
+</details>
 
 ## SEO -> SDG: done for SEO only; FOR/OAX -> SDG deferred
 `resolve()` reaches `SDG_GOAL`/`SDG_PILLAR` from every SEO vintage (SEO1998/2008/2020), via

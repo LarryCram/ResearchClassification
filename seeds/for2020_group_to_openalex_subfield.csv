@@ -1,0 +1,194 @@
+for2020_code,for2020_label,for2020_division_code,openalex_subfield_id,openalex_subfield_label,openalex_field_id,openalex_field_label,is_primary,confidence,match_method,notes,reviewed
+3001,Agricultural biotechnology,30,1100,General Agricultural and Biological Sciences,11,Agricultural and Biological Sciences,True,1.0,manual_curated,Agricultural biotechnology  (no Biotechnology in AgBio subfields),2026-07-11
+3002,"Agriculture, land and farm management",30,1102,Agronomy and Crop Science,11,Agricultural and Biological Sciences,True,1.0,manual_curated,"Agriculture, land and farm management -> Agronomy and Crop Science",2026-07-11
+3003,Animal production,30,1103,Animal Science and Zoology,11,Agricultural and Biological Sciences,True,1.0,manual_curated,Animal production -> Animal Science and Zoology,2026-07-11
+3004,Crop and pasture production,30,1102,Agronomy and Crop Science,11,Agricultural and Biological Sciences,True,1.0,manual_curated,Crop and pasture production -> Agronomy and Crop Science,2026-07-11
+3005,Fisheries sciences,30,1104,Aquatic Science,11,Agricultural and Biological Sciences,True,1.0,manual_curated,Fisheries sciences -> Aquatic Science,2026-07-11
+3006,Food sciences,30,1106,Food Science,11,Agricultural and Biological Sciences,True,1.0,manual_curated,Food sciences -> Food Science,2026-07-11
+3007,Forestry sciences,30,1107,Forestry,11,Agricultural and Biological Sciences,True,1.0,manual_curated,Forestry sciences -> Forestry,2026-07-11
+3008,Horticultural production,30,1108,Horticulture,11,Agricultural and Biological Sciences,True,1.0,manual_curated,Horticultural production -> Horticulture,2026-07-11
+3009,Veterinary sciences,30,1103,Animal Science and Zoology,11,Agricultural and Biological Sciences,True,1.0,manual_curated,Veterinary sciences -> Animal Science and Zoology,2026-07-11
+3099,"Other agricultural, veterinary and food sciences",30,1100,General Agricultural and Biological Sciences,11,Agricultural and Biological Sciences,True,1.0,manual_curated,Other -> General Agricultural and Biological Sciences,2026-07-11
+3101,Biochemistry and cell biology,31,1303,Biochemistry,13,"Biochemistry, Genetics and Molecular Biology",True,1.0,manual_override,"Biochemistry and cell biology -> Biochemistry (field 13, exact-ish; field 11 has no Biochemistry subfield)",2026-07-11
+3102,Bioinformatics and computational biology,31,1312,Molecular Biology,13,"Biochemistry, Genetics and Molecular Biology",True,1.0,manual_override,"Bioinformatics and computational biology -> Molecular Biology (field 13; closest available, imperfect -- no dedicated Bioinformatics subfield exists anywhere in OAX)",2026-07-11
+3103,Ecology,31,1105,"Ecology, Evolution, Behavior and Systematics",11,Agricultural and Biological Sciences,True,1.0,manual_curated,"Ecology -> Ecology, Evolution, Behavior and Systematics",2026-07-11
+3104,Evolutionary biology,31,1105,"Ecology, Evolution, Behavior and Systematics",11,Agricultural and Biological Sciences,True,1.0,manual_curated,"Evolutionary biology -> Ecology, Evolution, Behavior and Systematics",2026-07-11
+3105,Genetics,31,1311,Genetics,13,"Biochemistry, Genetics and Molecular Biology",True,1.0,manual_override,"Genetics -> Genetics (field 13, exact match)",2026-07-11
+3106,Industrial biotechnology,31,1305,Biotechnology,13,"Biochemistry, Genetics and Molecular Biology",True,1.0,manual_override,"Industrial biotechnology -> Biotechnology (field 13, exact-ish match)",2026-07-11
+3107,Microbiology,31,2404,Microbiology,24,Immunology and Microbiology,True,1.0,manual_override,"Microbiology -> Microbiology (field 24, exact match)",2026-07-11
+3108,Plant biology,31,1110,Plant Science,11,Agricultural and Biological Sciences,True,1.0,manual_curated,Plant biology -> Plant Science,2026-07-11
+3109,Zoology,31,1103,Animal Science and Zoology,11,Agricultural and Biological Sciences,True,1.0,manual_curated,Zoology -> Animal Science and Zoology,2026-07-11
+3199,Other biological sciences,31,1100,General Agricultural and Biological Sciences,11,Agricultural and Biological Sciences,True,1.0,manual_curated,Other -> General,2026-07-11
+3201,Cardiovascular medicine and haematology,32,2705,Cardiology and Cardiovascular Medicine,27,Medicine,True,1.0,manual_curated,Cardiovascular medicine and haematology -> Cardiology and Cardiovascular Medicine,2026-07-11
+3202,Clinical sciences,32,2724,Internal Medicine,27,Medicine,True,1.0,manual_curated,Clinical sciences -> Internal Medicine,2026-07-11
+3203,Dentistry,32,3500,General Dentistry,35,Dentistry,True,1.0,manual_override,"Dentistry -> General Dentistry (field 35, exact match)",2026-07-11
+3204,Immunology,32,2723,Immunology and Allergy,27,Medicine,True,1.0,manual_curated,Immunology -> Immunology and Allergy,2026-07-11
+3205,Medical biochemistry and metabolomics,32,2704,Biochemistry,27,Medicine,True,1.0,manual_curated,Medical biochemistry and metabolomics -> Biochemistry,2026-07-11
+3206,Medical biotechnology,32,2716,Genetics,27,Medicine,True,1.0,manual_curated,Medical biotechnology -> Genetics,2026-07-11
+3207,Medical microbiology,32,2726,Microbiology,27,Medicine,True,1.0,manual_curated,Medical microbiology -> Microbiology,2026-07-11
+3208,Medical physiology,32,2737,Physiology,27,Medicine,True,1.0,manual_curated,Medical physiology -> Physiology,2026-07-11
+3209,Neurosciences,32,2728,Neurology,27,Medicine,True,1.0,manual_curated,Neurosciences -> Neurology,2026-07-11
+3210,Nutrition and dietetics,32,2712,"Endocrinology, Diabetes and Metabolism",27,Medicine,True,1.0,manual_curated,"Nutrition and dietetics -> Endocrinology, Diabetes and Metabolism",2026-07-11
+3211,Oncology and carcinogenesis,32,2730,Oncology,27,Medicine,True,1.0,manual_curated,Oncology and carcinogenesis -> Oncology,2026-07-11
+3212,Ophthalmology and optometry,32,2731,Ophthalmology,27,Medicine,True,1.0,manual_curated,Ophthalmology and optometry -> Ophthalmology,2026-07-11
+3213,Paediatrics,32,2735,"Pediatrics, Perinatology and Child Health",27,Medicine,True,1.0,manual_curated,"Paediatrics -> Pediatrics, Perinatology and Child Health",2026-07-11
+3214,Pharmacology and pharmaceutical sciences,32,2736,Pharmacology,27,Medicine,True,1.0,manual_curated,Pharmacology and pharmaceutical sciences -> Pharmacology,2026-07-11
+3215,Reproductive medicine,32,2743,Reproductive Medicine,27,Medicine,True,1.0,manual_curated,Reproductive medicine -> Reproductive Medicine,2026-07-11
+3299,Other biomedical and clinical sciences,32,2724,Internal Medicine,27,Medicine,True,1.0,manual_curated,Other -> Internal Medicine,2026-07-11
+3301,Architecture,33,2216,Architecture,22,Engineering,True,1.0,manual_curated,"Architecture -> Architecture (exact match, unreachable before the division-33 field reassignment)",2026-07-11
+3302,Building,33,2215,Building and Construction,22,Engineering,True,1.0,manual_curated,"Building -> Building and Construction (exact-ish match, ditto)",2026-07-11
+3303,Design,33,1213,Visual Arts and Performing Arts,12,Arts and Humanities,True,1.0,manual_override,Design -> Visual Arts and Performing Arts (field 12; no Design analogue anywhere in Engineering),2026-07-11
+3304,Urban and regional planning,33,3322,Urban Studies,33,Social Sciences,True,1.0,manual_override,"Urban and regional planning -> Urban Studies (field 33, exact-ish match; better fit than any Engineering subfield)",2026-07-11
+3399,Other built environment and design,33,2200,General Engineering,22,Engineering,True,1.0,manual_curated,Other -> General Engineering,2026-07-11
+3401,Analytical chemistry,34,1602,Analytical Chemistry,16,Chemistry,True,1.0,manual_curated,Analytical chemistry -> Analytical Chemistry,2026-07-11
+3402,Inorganic chemistry,34,1604,Inorganic Chemistry,16,Chemistry,True,1.0,manual_curated,Inorganic chemistry -> Inorganic Chemistry,2026-07-11
+3403,Macromolecular and materials chemistry,34,1605,Organic Chemistry,16,Chemistry,True,1.0,manual_curated,Macromolecular and materials chemistry -> Organic Chemistry,2026-07-11
+3404,Medicinal and biomolecular chemistry,34,1605,Organic Chemistry,16,Chemistry,True,1.0,manual_curated,Medicinal and biomolecular chemistry -> Organic Chemistry,2026-07-11
+3405,Organic chemistry,34,1605,Organic Chemistry,16,Chemistry,True,1.0,manual_curated,Organic chemistry -> Organic Chemistry,2026-07-11
+3406,Physical chemistry,34,1606,Physical and Theoretical Chemistry,16,Chemistry,True,1.0,manual_curated,Physical chemistry -> Physical and Theoretical Chemistry,2026-07-11
+3407,Theoretical and computational chemistry,34,1606,Physical and Theoretical Chemistry,16,Chemistry,True,1.0,manual_curated,Theoretical and computational chemistry -> Physical and Theoretical Chemistry,2026-07-11
+3499,Other chemical sciences,34,1606,Physical and Theoretical Chemistry,16,Chemistry,True,1.0,manual_curated,Other -> Physical and Theoretical Chemistry,2026-07-11
+3501,"Accounting, auditing and accountability",35,1402,Accounting,14,"Business, Management and Accounting",True,1.0,manual_curated,"Accounting, auditing and accountability -> Accounting",2026-07-11
+3502,"Banking, finance and investment",35,1403,Business and International Management,14,"Business, Management and Accounting",True,1.0,manual_curated,"Banking, finance and investment -> Business and International Management",2026-07-11
+3503,Business systems in context,35,1403,Business and International Management,14,"Business, Management and Accounting",True,1.0,manual_curated,Business systems in context -> Business and International Management,2026-07-11
+3504,Commercial services,35,1403,Business and International Management,14,"Business, Management and Accounting",True,1.0,manual_curated,Commercial services -> Business and International Management,2026-07-11
+3505,Human resources and industrial relations,35,1407,Organizational Behavior and Human Resource Management,14,"Business, Management and Accounting",True,1.0,manual_curated,Human resources and industrial relations -> Org Behavior and HRM,2026-07-11
+3506,Marketing,35,1406,Marketing,14,"Business, Management and Accounting",True,1.0,manual_curated,Marketing -> Marketing,2026-07-11
+3507,"Strategy, management and organisational behaviour",35,1408,Strategy and Management,14,"Business, Management and Accounting",True,1.0,manual_curated,"Strategy, management and organisational behaviour -> Strategy and Management",2026-07-11
+3508,Tourism,35,1409,"Tourism, Leisure and Hospitality Management",14,"Business, Management and Accounting",True,1.0,manual_curated,"Tourism -> Tourism, Leisure and Hospitality Management",2026-07-11
+3509,"Transportation, logistics and supply chains",35,1403,Business and International Management,14,"Business, Management and Accounting",True,1.0,manual_curated,"Transportation, logistics and supply chains -> Business and International Management",2026-07-11
+3599,"Other commerce, management, tourism and services",35,1403,Business and International Management,14,"Business, Management and Accounting",True,1.0,manual_curated,Other -> Business and International Management,2026-07-11
+3601,"Art history, theory and criticism",36,1213,Visual Arts and Performing Arts,12,Arts and Humanities,True,1.0,manual_curated,"Art history, theory and criticism -> Visual Arts and Performing Arts",2026-07-11
+3602,Creative and professional writing,36,1208,Literature and Literary Theory,12,Arts and Humanities,True,1.0,manual_curated,Creative and professional writing -> Literature and Literary Theory,2026-07-11
+3603,Music,36,1210,Music,12,Arts and Humanities,True,1.0,manual_curated,Music -> Music,2026-07-11
+3604,Performing arts,36,1213,Visual Arts and Performing Arts,12,Arts and Humanities,True,1.0,manual_curated,Performing arts -> Visual Arts and Performing Arts,2026-07-11
+3605,Screen and digital media,36,1213,Visual Arts and Performing Arts,12,Arts and Humanities,True,1.0,manual_curated,Screen and digital media -> Visual Arts and Performing Arts,2026-07-11
+3606,Visual arts,36,1213,Visual Arts and Performing Arts,12,Arts and Humanities,True,1.0,manual_curated,Visual arts -> Visual Arts and Performing Arts,2026-07-11
+3699,Other creative arts and writing,36,1200,General Arts and Humanities,12,Arts and Humanities,True,1.0,manual_curated,Other -> General Arts and Humanities,2026-07-11
+3701,Atmospheric sciences,37,1902,Atmospheric Science,19,Earth and Planetary Sciences,True,1.0,manual_curated,Atmospheric sciences -> Atmospheric Science,2026-07-11
+3702,Climate change science,37,1902,Atmospheric Science,19,Earth and Planetary Sciences,True,1.0,manual_curated,Climate change science -> Atmospheric Science,2026-07-11
+3703,Geochemistry,37,1906,Geochemistry and Petrology,19,Earth and Planetary Sciences,True,1.0,manual_curated,Geochemistry -> Geochemistry and Petrology,2026-07-11
+3704,Geoinformatics,37,1907,Geology,19,Earth and Planetary Sciences,True,1.0,manual_curated,Geoinformatics -> Geology,2026-07-11
+3705,Geology,37,1907,Geology,19,Earth and Planetary Sciences,True,1.0,manual_curated,Geology -> Geology,2026-07-11
+3706,Geophysics,37,1908,Geophysics,19,Earth and Planetary Sciences,True,1.0,manual_curated,Geophysics -> Geophysics,2026-07-11
+3707,Hydrology,37,1904,Earth-Surface Processes,19,Earth and Planetary Sciences,True,1.0,manual_curated,Hydrology -> Earth-Surface Processes,2026-07-11
+3708,Oceanography,37,1910,Oceanography,19,Earth and Planetary Sciences,True,1.0,manual_curated,Oceanography -> Oceanography,2026-07-11
+3709,Physical geography and environmental geoscience,37,1904,Earth-Surface Processes,19,Earth and Planetary Sciences,True,1.0,manual_curated,Physical geography and environmental geoscience -> Earth-Surface Processes,2026-07-11
+3799,Other earth sciences,37,1907,Geology,19,Earth and Planetary Sciences,True,1.0,manual_curated,Other -> Geology,2026-07-11
+3801,Applied economics,38,2002,Economics and Econometrics,20,"Economics, Econometrics and Finance",True,1.0,manual_curated,Applied economics -> Economics and Econometrics,2026-07-11
+3802,Econometrics,38,2002,Economics and Econometrics,20,"Economics, Econometrics and Finance",True,1.0,manual_curated,Econometrics -> Economics and Econometrics,2026-07-11
+3803,Economic theory,38,2002,Economics and Econometrics,20,"Economics, Econometrics and Finance",True,1.0,manual_curated,Economic theory -> Economics and Econometrics,2026-07-11
+3899,Other economics,38,2000,"General Economics, Econometrics and Finance",20,"Economics, Econometrics and Finance",True,1.0,manual_curated,"Other -> General Economics, Econometrics and Finance",2026-07-11
+3901,Curriculum and pedagogy,39,3304,Education,33,Social Sciences,True,1.0,manual_curated,Curriculum and pedagogy -> Education,2026-07-11
+3902,"Education policy, sociology and philosophy",39,3304,Education,33,Social Sciences,True,1.0,manual_curated,"Education policy, sociology and philosophy -> Education",2026-07-11
+3903,Education systems,39,3304,Education,33,Social Sciences,True,1.0,manual_curated,Education systems -> Education,2026-07-11
+3904,Specialist studies in education,39,3304,Education,33,Social Sciences,True,1.0,manual_curated,Specialist studies in education -> Education,2026-07-11
+3999,Other Education,39,3304,Education,33,Social Sciences,True,1.0,manual_curated,Other -> Education,2026-07-11
+4001,Aerospace engineering,40,2202,Aerospace Engineering,22,Engineering,True,1.0,manual_curated,Aerospace engineering -> Aerospace Engineering,2026-07-11
+4002,Automotive engineering,40,2203,Automotive Engineering,22,Engineering,True,1.0,manual_curated,Automotive engineering -> Automotive Engineering,2026-07-11
+4003,Biomedical engineering,40,2204,Biomedical Engineering,22,Engineering,True,1.0,manual_curated,Biomedical engineering -> Biomedical Engineering,2026-07-11
+4004,Chemical engineering,40,1508,Process Chemistry and Technology,15,Chemical Engineering,True,1.0,manual_override,Chemical engineering -> Process Chemistry and Technology (field 15; closest available -- field 15 has no General Chemical Engineering subfield),2026-07-11
+4005,Civil engineering,40,2205,Civil and Structural Engineering,22,Engineering,True,1.0,manual_curated,Civil engineering -> Civil and Structural Engineering,2026-07-11
+4006,Communications engineering,40,2208,Electrical and Electronic Engineering,22,Engineering,True,1.0,manual_curated,Communications engineering -> Electrical and Electronic Engineering,2026-07-11
+4007,"Control engineering, mechatronics and robotics",40,2207,Control and Systems Engineering,22,Engineering,True,1.0,manual_curated,"Control engineering, mechatronics and robotics -> Control and Systems Engineering",2026-07-11
+4008,Electrical engineering,40,2208,Electrical and Electronic Engineering,22,Engineering,True,1.0,manual_curated,Electrical engineering -> Electrical and Electronic Engineering,2026-07-11
+4009,"Electronics, sensors and digital hardware",40,2208,Electrical and Electronic Engineering,22,Engineering,True,1.0,manual_curated,"Electronics, sensors and digital hardware -> Electrical and Electronic Engineering",2026-07-11
+4010,Engineering practice and education,40,2200,General Engineering,22,Engineering,True,1.0,manual_curated,Engineering practice and education -> General Engineering,2026-07-11
+4011,Environmental engineering,40,2305,Environmental Engineering,23,Environmental Science,True,1.0,manual_override,"Environmental engineering -> Environmental Engineering (field 23, exact match)",2026-07-11
+4012,Fluid mechanics and thermal engineering,40,2210,Mechanical Engineering,22,Engineering,True,1.0,manual_curated,Fluid mechanics and thermal engineering -> Mechanical Engineering,2026-07-11
+4013,Geomatic engineering,40,2205,Civil and Structural Engineering,22,Engineering,True,1.0,manual_curated,Geomatic engineering -> Civil and Structural Engineering,2026-07-11
+4014,Manufacturing engineering,40,2209,Industrial and Manufacturing Engineering,22,Engineering,True,1.0,manual_curated,Manufacturing engineering -> Industrial and Manufacturing Engineering,2026-07-11
+4015,Maritime engineering,40,2212,Ocean Engineering,22,Engineering,True,1.0,manual_curated,Maritime engineering -> Ocean Engineering,2026-07-11
+4016,Materials engineering,40,2500,General Materials Science,25,Materials Science,True,1.0,manual_override,"Materials engineering -> General Materials Science (field 25, exact-ish match)",2026-07-11
+4017,Mechanical engineering,40,2210,Mechanical Engineering,22,Engineering,True,1.0,manual_curated,Mechanical engineering -> Mechanical Engineering,2026-07-11
+4018,Nanotechnology,40,2200,General Engineering,22,Engineering,True,1.0,manual_curated,Nanotechnology -> General Engineering,2026-07-11
+4019,Resources engineering and extractive metallurgy,40,2200,General Engineering,22,Engineering,True,1.0,manual_curated,Resources engineering and extractive metallurgy -> General Engineering,2026-07-11
+4099,Other engineering,40,2200,General Engineering,22,Engineering,True,1.0,manual_curated,Other -> General Engineering,2026-07-11
+4101,Climate change impacts and adaptation,41,2306,Global and Planetary Change,23,Environmental Science,True,1.0,manual_curated,Climate change impacts and adaptation -> Global and Planetary Change,2026-07-11
+4102,Ecological applications,41,2303,Ecology,23,Environmental Science,True,1.0,manual_curated,Ecological applications -> Ecology,2026-07-11
+4103,Environmental biotechnology,41,2304,Environmental Chemistry,23,Environmental Science,True,1.0,manual_curated,Environmental biotechnology -> Environmental Chemistry,2026-07-11
+4104,Environmental management,41,2308,"Management, Monitoring, Policy and Law",23,Environmental Science,True,1.0,manual_curated,"Environmental management -> Management, Monitoring, Policy and Law",2026-07-11
+4105,Pollution and contamination,41,2310,Pollution,23,Environmental Science,True,1.0,manual_curated,Pollution and contamination -> Pollution,2026-07-11
+4106,Soil sciences,41,2304,Environmental Chemistry,23,Environmental Science,True,1.0,manual_curated,Soil sciences -> Environmental Chemistry (Soil Sci is AgBio field 11),2026-07-11
+4199,Other environmental sciences,41,2303,Ecology,23,Environmental Science,True,1.0,manual_curated,Other -> Ecology,2026-07-11
+4201,Allied health and rehabilitation science,42,2742,Rehabilitation,27,Medicine,True,1.0,manual_curated,Allied health and rehabilitation science -> Rehabilitation,2026-07-11
+4202,Epidemiology,42,2713,Epidemiology,27,Medicine,True,1.0,manual_curated,Epidemiology -> Epidemiology,2026-07-11
+4203,Health services and systems,42,2739,"Public Health, Environmental and Occupational Health",27,Medicine,True,1.0,manual_curated,Health services and systems -> Public Health,2026-07-11
+4204,Midwifery,42,2729,Obstetrics and Gynecology,27,Medicine,True,1.0,manual_curated,Midwifery -> Obstetrics and Gynecology,2026-07-11
+4205,Nursing,42,2922,Research and Theory,29,Nursing,True,1.0,manual_override,"Nursing -> Research and Theory (field 29; closest available -- field 29 has no General Nursing subfield, only narrow subtopics)",2026-07-11
+4206,Public health,42,2739,"Public Health, Environmental and Occupational Health",27,Medicine,True,1.0,manual_curated,Public health -> Public Health,2026-07-11
+4207,Sports science and exercise,42,2732,Orthopedics and Sports Medicine,27,Medicine,True,1.0,manual_curated,Sports science and exercise -> Orthopedics and Sports Medicine,2026-07-11
+4208,"Traditional, complementary and integrative medicine",42,2707,Complementary and alternative medicine,27,Medicine,True,1.0,manual_curated,"Traditional, complementary and integrative medicine -> Complementary medicine",2026-07-11
+4299,Other health sciences,42,2724,Internal Medicine,27,Medicine,True,1.0,manual_curated,Other -> Internal Medicine,2026-07-11
+4301,Archaeology,43,1204,Archeology,12,Arts and Humanities,True,1.0,manual_curated,Archaeology -> Archeology,2026-07-11
+4302,"Heritage, archive and museum studies",43,1209,Museology,12,Arts and Humanities,True,1.0,manual_curated,"Heritage, archive and museum studies -> Museology",2026-07-11
+4303,Historical studies,43,1202,History,12,Arts and Humanities,True,1.0,manual_curated,Historical studies -> History,2026-07-11
+4399,"Other history, heritage and archaeology",43,1200,General Arts and Humanities,12,Arts and Humanities,True,1.0,manual_curated,Other -> General Arts and Humanities,2026-07-11
+4401,Anthropology,44,3314,Anthropology,33,Social Sciences,True,1.0,manual_curated,Anthropology -> Anthropology,2026-07-11
+4402,Criminology,44,3312,Sociology and Political Science,33,Social Sciences,True,1.0,manual_curated,Criminology -> Sociology and Political Science,2026-07-11
+4403,Demography,44,3317,Demography,33,Social Sciences,True,1.0,manual_curated,Demography -> Demography,2026-07-11
+4404,Development studies,44,3303,Development,33,Social Sciences,True,1.0,manual_curated,Development studies -> Development,2026-07-11
+4405,Gender studies,44,3318,Gender Studies,33,Social Sciences,True,1.0,manual_curated,Gender studies -> Gender Studies,2026-07-11
+4406,Human geography,44,3305,"Geography, Planning and Development",33,Social Sciences,True,1.0,manual_curated,"Human geography -> Geography, Planning and Development",2026-07-11
+4407,Policy and administration,44,3321,Public Administration,33,Social Sciences,True,1.0,manual_curated,Policy and administration -> Public Administration,2026-07-11
+4408,Political science,44,3320,Political Science and International Relations,33,Social Sciences,True,1.0,manual_curated,Political science -> Political Science and International Relations,2026-07-11
+4409,Social work,44,3300,General Social Sciences,33,Social Sciences,True,1.0,manual_curated,Social work -> General Social Sciences,2026-07-11
+4410,Sociology,44,3312,Sociology and Political Science,33,Social Sciences,True,1.0,manual_curated,Sociology -> Sociology and Political Science,2026-07-11
+4499,Other human society,44,3300,General Social Sciences,33,Social Sciences,True,1.0,manual_curated,Other -> General Social Sciences,2026-07-11
+4601,Applied computing,46,1706,Computer Science Applications,17,Computer Science,True,1.0,manual_curated,Applied computing -> Computer Science Applications,2026-07-11
+4602,Artificial intelligence,46,1702,Artificial Intelligence,17,Computer Science,True,1.0,manual_curated,Artificial intelligence -> Artificial Intelligence,2026-07-11
+4603,Computer vision and multimedia computation,46,1707,Computer Vision and Pattern Recognition,17,Computer Science,True,1.0,manual_curated,Computer vision and multimedia computation -> Computer Vision and Pattern Recognition,2026-07-11
+4604,Cybersecurity and privacy,46,1705,Computer Networks and Communications,17,Computer Science,True,1.0,manual_curated,Cybersecurity and privacy -> Computer Networks and Communications,2026-07-11
+4605,Data management and data science,46,1710,Information Systems,17,Computer Science,True,1.0,manual_curated,Data management and data science -> Information Systems,2026-07-11
+4606,Distributed computing and systems software,46,1712,Software,17,Computer Science,True,1.0,manual_curated,Distributed computing and systems software -> Software,2026-07-11
+4607,"Graphics, augmented reality and games",46,1704,Computer Graphics and Computer-Aided Design,17,Computer Science,True,1.0,manual_curated,"Graphics, augmented reality and games -> Computer Graphics and Computer-Aided Design",2026-07-11
+4608,Human-centred computing,46,1709,Human-Computer Interaction,17,Computer Science,True,1.0,manual_curated,Human-centred computing -> Human-Computer Interaction,2026-07-11
+4609,Information systems,46,1710,Information Systems,17,Computer Science,True,1.0,manual_curated,Information systems -> Information Systems,2026-07-11
+4610,Library and information studies,46,3309,Library and Information Sciences,33,Social Sciences,True,1.0,manual_override,"Library and information studies -> Library and Information Sciences (field 33, exact-ish match)",2026-07-11
+4611,Machine learning,46,1702,Artificial Intelligence,17,Computer Science,True,1.0,manual_curated,Machine learning -> Artificial Intelligence,2026-07-11
+4612,Software engineering,46,1712,Software,17,Computer Science,True,1.0,manual_curated,Software engineering -> Software,2026-07-11
+4613,Theory of computation,46,1703,Computational Theory and Mathematics,17,Computer Science,True,1.0,manual_curated,Theory of computation -> Computational Theory and Mathematics,2026-07-11
+4699,Other information and computing sciences,46,1706,Computer Science Applications,17,Computer Science,True,1.0,manual_curated,Other -> Computer Science Applications,2026-07-11
+4701,Communication and media studies,47,3315,Communication,33,Social Sciences,True,1.0,manual_override,"Communication and media studies -> Communication (field 33, exact match)",2026-07-11
+4702,Cultural studies,47,3316,Cultural Studies,33,Social Sciences,True,1.0,manual_override,"Cultural studies -> Cultural Studies (field 33, exact match)",2026-07-11
+4703,Language studies,47,1203,Language and Linguistics,12,Arts and Humanities,True,1.0,manual_curated,Language studies -> Language and Linguistics,2026-07-11
+4704,Linguistics,47,1203,Language and Linguistics,12,Arts and Humanities,True,1.0,manual_curated,Linguistics -> Language and Linguistics,2026-07-11
+4705,Literary studies,47,1208,Literature and Literary Theory,12,Arts and Humanities,True,1.0,manual_curated,Literary studies -> Literature and Literary Theory,2026-07-11
+4799,"Other language, communication and culture",47,1200,General Arts and Humanities,12,Arts and Humanities,True,1.0,manual_curated,Other -> General Arts and Humanities,2026-07-11
+4801,Commercial law,48,3308,Law,33,Social Sciences,True,1.0,manual_curated,Commercial law -> Law,2026-07-11
+4802,Environmental and resources law,48,3308,Law,33,Social Sciences,True,1.0,manual_curated,Environmental and resources law -> Law,2026-07-11
+4803,International and comparative law,48,3308,Law,33,Social Sciences,True,1.0,manual_curated,International and comparative law -> Law,2026-07-11
+4804,Law in context,48,3308,Law,33,Social Sciences,True,1.0,manual_curated,Law in context -> Law,2026-07-11
+4805,Legal systems,48,3308,Law,33,Social Sciences,True,1.0,manual_curated,Legal systems -> Law,2026-07-11
+4806,Private law and civil obligations,48,3308,Law,33,Social Sciences,True,1.0,manual_curated,Private law and civil obligations -> Law,2026-07-11
+4807,Public law,48,3308,Law,33,Social Sciences,True,1.0,manual_curated,Public law -> Law,2026-07-11
+4899,Other law and legal studies,48,3308,Law,33,Social Sciences,True,1.0,manual_curated,Other -> Law,2026-07-11
+4901,Applied mathematics,49,2604,Applied Mathematics,26,Mathematics,True,1.0,manual_curated,Applied mathematics -> Applied Mathematics,2026-07-11
+4902,Mathematical physics,49,2610,Mathematical Physics,26,Mathematics,True,1.0,manual_curated,Mathematical physics -> Mathematical Physics,2026-07-11
+4903,Numerical and computational mathematics,49,2605,Computational Mathematics,26,Mathematics,True,1.0,manual_curated,Numerical and computational mathematics -> Computational Mathematics,2026-07-11
+4904,Pure mathematics,49,2602,Algebra and Number Theory,26,Mathematics,True,1.0,manual_curated,Pure mathematics -> Algebra and Number Theory,2026-07-11
+4905,Statistics,49,2613,Statistics and Probability,26,Mathematics,True,1.0,manual_curated,Statistics -> Statistics and Probability,2026-07-11
+4999,Other mathematical sciences,49,2604,Applied Mathematics,26,Mathematics,True,1.0,manual_curated,Other -> Applied Mathematics,2026-07-11
+5001,Applied ethics,50,1211,Philosophy,12,Arts and Humanities,True,1.0,manual_curated,Applied ethics -> Philosophy,2026-07-11
+5002,History and philosophy of specific fields,50,1207,History and Philosophy of Science,12,Arts and Humanities,True,1.0,manual_curated,History and philosophy of specific fields -> History and Philosophy of Science,2026-07-11
+5003,Philosophy,50,1211,Philosophy,12,Arts and Humanities,True,1.0,manual_curated,Philosophy -> Philosophy,2026-07-11
+5004,Religious studies,50,1212,Religious studies,12,Arts and Humanities,True,1.0,manual_curated,Religious studies -> Religious studies,2026-07-11
+5005,Theology,50,1212,Religious studies,12,Arts and Humanities,True,1.0,manual_curated,Theology -> Religious studies,2026-07-11
+5099,Other philosophy and religious studies,50,1200,General Arts and Humanities,12,Arts and Humanities,True,1.0,manual_curated,Other -> General Arts and Humanities,2026-07-11
+5101,Astronomical sciences,51,3103,Astronomy and Astrophysics,31,Physics and Astronomy,True,1.0,manual_curated,Astronomical sciences -> Astronomy and Astrophysics,2026-07-11
+5102,"Atomic, molecular and optical physics",51,3107,"Atomic and Molecular Physics, and Optics",31,Physics and Astronomy,True,1.0,manual_curated,"Atomic, molecular and optical physics -> Atomic and Molecular Physics, and Optics",2026-07-11
+5103,Classical physics,51,3109,Statistical and Nonlinear Physics,31,Physics and Astronomy,True,1.0,manual_curated,Classical physics -> Statistical and Nonlinear Physics,2026-07-11
+5104,Condensed matter physics,51,3104,Condensed Matter Physics,31,Physics and Astronomy,True,1.0,manual_curated,Condensed matter physics -> Condensed Matter Physics,2026-07-11
+5105,Medical and biological physics,51,3108,Radiation,31,Physics and Astronomy,True,1.0,manual_curated,Medical and biological physics -> Radiation,2026-07-11
+5106,Nuclear and plasma physics,51,3106,Nuclear and High Energy Physics,31,Physics and Astronomy,True,1.0,manual_curated,Nuclear and plasma physics -> Nuclear and High Energy Physics,2026-07-11
+5107,Particle and high energy physics,51,3106,Nuclear and High Energy Physics,31,Physics and Astronomy,True,1.0,manual_curated,Particle and high energy physics -> Nuclear and High Energy Physics,2026-07-11
+5108,Quantum physics,51,3104,Condensed Matter Physics,31,Physics and Astronomy,True,1.0,manual_curated,Quantum physics -> Condensed Matter Physics,2026-07-11
+5109,Space sciences,51,3103,Astronomy and Astrophysics,31,Physics and Astronomy,True,1.0,manual_curated,Space sciences -> Astronomy and Astrophysics,2026-07-11
+5110,Synchrotrons and accelerators,51,3105,Instrumentation,31,Physics and Astronomy,True,1.0,manual_curated,Synchrotrons and accelerators -> Instrumentation,2026-07-11
+5199,Other physical sciences,51,3102,Acoustics and Ultrasonics,31,Physics and Astronomy,True,1.0,manual_curated,Other -> Acoustics and Ultrasonics,2026-07-11
+5201,Applied and developmental psychology,52,3202,Applied Psychology,32,Psychology,True,1.0,manual_curated,Applied and developmental psychology -> Applied Psychology,2026-07-11
+5202,Biological psychology,52,3206,Neuropsychology and Physiological Psychology,32,Psychology,True,1.0,manual_curated,Biological psychology -> Neuropsychology and Physiological Psychology,2026-07-11
+5203,Clinical and health psychology,52,3203,Clinical Psychology,32,Psychology,True,1.0,manual_curated,Clinical and health psychology -> Clinical Psychology,2026-07-11
+5204,Cognitive and computational psychology,52,3205,Experimental and Cognitive Psychology,32,Psychology,True,1.0,manual_curated,Cognitive and computational psychology -> Experimental and Cognitive Psychology,2026-07-11
+5205,Social and personality psychology,52,3207,Social Psychology,32,Psychology,True,1.0,manual_curated,Social and personality psychology -> Social Psychology,2026-07-11
+5299,Other psychology,52,3200,General Psychology,32,Psychology,True,1.0,manual_curated,Other -> General Psychology,2026-07-11

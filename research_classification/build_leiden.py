@@ -124,48 +124,32 @@ def _majority_vote(
     return pd.DataFrame(rows, columns=BRIDGE_COLUMNS)
 
 
-def explode_for_divisions(joined: pd.DataFrame, bridge_openalex_for: pd.DataFrame) -> pd.DataFrame:
-    """Attach FOR division(s) to each joined micro-cluster/topic row, using EVERY
-    (openalex_field, for_division) pair from the curated seed -- not just each field's
-    primary. Using primary-only here misses 6 of 23 FOR divisions entirely (33, 36, 39, 47,
-    48, 50): those divisions were only ever curated as a *secondary* interpretation of a
-    broader OpenAlex field (e.g. division 36 Creative Arts is an alternate under field 12
-    Arts and Humanities, whose primary is division 43 History), so no row would ever get
-    for_division=36 under a primary-only join and any downstream aggregation would silently
-    have zero data for it. Using all seed rows means a row can now contribute evidence to
-    more than one division (honest, since e.g. an "Arts and Humanities" topic genuinely is
-    relevant to History AND Creative Arts AND Philosophy AND Language, not just one of
-    them) -- one exception remains: division 45 (Indigenous Studies) has NO row in the seed
-    at all, primary or alternate, because none of OpenAlex/ASJC's 26 broad fields has an
-    Indigenous-studies equivalent. That's a genuine, real gap (see README-style docstring on
-    resolve_forward in resolver.py), not something this exploded join can paper over.
+def explode_for_divisions(joined: pd.DataFrame, division_field_seed: pd.DataFrame) -> pd.DataFrame:
+    """Attach a FOR2020 division to each joined micro-cluster/topic row, via the
+    independently hand-curated FOR2020 division -> OAX field mapping
+    (curate_for2020_to_openalex.py), not the reverse (OAX field -> FOR division) seed used
+    elsewhere in this pipeline -- using the reverse seed here would make this "FOR2020 ->
+    Leiden" derivation circular (deriving evidence FOR the very relationship it's supposed to
+    independently confirm), exactly the problem this replaced. Division 45 (Indigenous
+    Studies) has no row here by construction (curate_for2020_to_openalex excludes it -- see
+    that module's docstring); it's resolved via its own dedicated cultural_proxy mechanism
+    instead.
     """
-    field_to_divisions = bridge_openalex_for[["source_code", "canonical_code"]].drop_duplicates()
-    exploded = joined.merge(field_to_divisions, left_on="field_id", right_on="source_code", how="inner")
-    return exploded.rename(columns={"canonical_code": "for_division"}).drop(columns=["source_code"])
+    field_to_division = division_field_seed[["openalex_field_id", "for_division_code"]].drop_duplicates()
+    exploded = joined.merge(field_to_division, left_on="field_id", right_on="openalex_field_id", how="inner")
+    return exploded.rename(columns={"for_division_code": "for_division"})
 
 
-def explode_for_groups(joined: pd.DataFrame, bridge_openalex_for_group: pd.DataFrame) -> pd.DataFrame:
-    """One level finer than explode_for_divisions(), but PRIMARY-ONLY rather than every
-    candidate -- deliberately different from that function's all-alternates approach. The
-    division-level seed (26 fields) has few alternates per field, so exploding on all of
-    them fills real coverage gaps without much distortion. The group-level seed (252
-    subfields, each scored against ~9-30 candidate groups) routinely has several
-    close-scoring alternates per subfield; exploding on all of them means a single dominant
-    subfield's full micro-cluster count gets duplicated identically across every one of its
-    candidate groups (verified directly: groups 4904 and 4905 both showed exactly 123 rows
-    -- the field's entire count -- because one subfield's seed row listed both as
-    alternates). Primary-only avoids that duplication and gives each group its own honest,
-    non-inflated count, at the cost of lower coverage (~129/213 groups vs ~193/213 with
-    alternates). That's an acceptable trade: callers (see resolver.py's
-    _resolve_from_for2020_code) already fall back to the division-level table when a group
-    has no row here, so an uncovered group degrades gracefully rather than getting a
-    distorted answer.
+def explode_for_groups(joined: pd.DataFrame, group_subfield_seed: pd.DataFrame) -> pd.DataFrame:
+    """One level finer than explode_for_divisions() -- attaches a FOR2020 group to each
+    joined row via the curated FOR2020 group -> OAX subfield mapping. Several FOR2020 groups
+    legitimately share the same OAX subfield (e.g. a division's "Other"/NEC catch-all groups
+    routinely land on the same general subfield as their siblings) -- a row fans out to all
+    of them, honestly, rather than being restricted to one.
     """
-    primary = bridge_openalex_for_group[bridge_openalex_for_group["is_primary"] == "True"]
-    subfield_to_groups = primary[["source_code", "canonical_code"]].drop_duplicates()
-    exploded = joined.merge(subfield_to_groups, left_on="subfield_id", right_on="source_code", how="inner")
-    return exploded.rename(columns={"canonical_code": "for_group"}).drop(columns=["source_code"])
+    subfield_to_group = group_subfield_seed[["openalex_subfield_id", "for_group_code"]].drop_duplicates()
+    exploded = joined.merge(subfield_to_group, left_on="subfield_id", right_on="openalex_subfield_id", how="inner")
+    return exploded.rename(columns={"for_group_code": "for_group"})
 
 
 def division_centric_target(
@@ -207,6 +191,7 @@ def division_centric_target(
                     "is_primary": i == 0,
                     "share": round(n / total, 3),
                     "n_rows": total,
+                    "match_method": "derived_empirical",
                 }
             )
     return pd.DataFrame(rows)
@@ -253,74 +238,33 @@ def run() -> dict[str, pd.DataFrame]:
 
     for_df = pd.read_csv(DATA_DIR / "for_2020.csv", dtype=str, keep_default_na=False)
     main_field_label = dict(zip(main_field["code"], main_field["label"]))
-    field_label_plain = dict(zip(openalex_fields["code"], openalex_fields["label"]))
-    domain_label_plain = dict(zip(openalex_domains["code"], openalex_domains["label"]))
 
-    # exploded on EVERY seed row (primary + alternate), not just primary -- see
-    # explode_for_divisions()'s docstring for why that matters (6 of 23 divisions would
-    # otherwise have zero data). Each row also carries its own primary Leiden main_field.
-    exploded = explode_for_divisions(joined, bridge_openalex_for)
+    # for2020_*_openalex_{domain,field,subfield}.csv are NOT built here anymore -- they come
+    # from curate_for2020_to_openalex.py's hand-curated, independent mapping (run earlier in
+    # build.py). Only FOR2020 -> Leiden is composed here, through THAT curated mapping (not
+    # the reverse OAX->FOR seed) so it isn't circular either: for a FOR2020 division/group,
+    # find the OAX field/subfield it was curated to, then majority-vote which Leiden
+    # main_field that OAX field/subfield's own topics primarily belong to.
+    division_field_seed = pd.read_csv(DATA_DIR / "for2020_division_openalex_field.csv", dtype=str, keep_default_na=False)
+    exploded = explode_for_divisions(joined, division_field_seed)
     exploded["main_field_id"] = exploded["micro_cluster_id"].map(
         mc_main_field[mc_main_field["is_primary_main_field"]].set_index("micro_cluster_id")["main_field_id"].to_dict()
     )
-
     division_to_leiden = division_centric_target(
         for_df, exploded, "main_field_id", main_field_label, "leiden_main_field_id", "leiden_main_field_label"
     )
     write_csv(division_to_leiden, DATA_DIR / "for2020_division_leiden_main_field.csv", ["for_division_code"])
 
-    division_to_oax_domain = division_centric_target(
-        for_df, exploded, "domain_id", domain_label_plain, "openalex_domain_id", "openalex_domain_label"
-    )
-    write_csv(division_to_oax_domain, DATA_DIR / "for2020_division_openalex_domain.csv", ["for_division_code"])
-
-    division_to_oax_field = division_centric_target(
-        for_df, exploded, "field_id", field_label_plain, "openalex_field_id", "openalex_field_label"
-    )
-    write_csv(division_to_oax_field, DATA_DIR / "for2020_division_openalex_field.csv", ["for_division_code"])
-
-    openalex_subfields = pd.read_csv(DATA_DIR / "openalex_subfields.csv", dtype=str, keep_default_na=False)
-    subfield_label_plain = dict(zip(openalex_subfields["code"], openalex_subfields["label"]))
-    division_to_oax_subfield = division_centric_target(
-        for_df, exploded, "subfield_id", subfield_label_plain, "openalex_subfield_id", "openalex_subfield_label"
-    )
-    write_csv(division_to_oax_subfield, DATA_DIR / "for2020_division_openalex_subfield.csv", ["for_division_code"])
-
-    # Group-level (4-digit) counterparts of the four division-centric tables above, one
-    # level finer, built the identical way but exploded through
-    # seeds/openalex_subfield_to_for_group.csv instead of the field->division seed. Coverage
-    # is necessarily partial (see explode_for_groups()'s docstring) -- a FOR group with no
-    # rows here just doesn't get a row in these tables, which callers must handle by falling
-    # back to the division-level table, not something these functions paper over.
-    bridge_openalex_for_group = pd.read_csv(DATA_DIR / "bridge_openalex_for_group.csv", dtype=str, keep_default_na=False)
-    group_exploded = explode_for_groups(joined, bridge_openalex_for_group)
+    group_subfield_seed = pd.read_csv(DATA_DIR / "for2020_group_openalex_subfield.csv", dtype=str, keep_default_na=False)
+    group_exploded = explode_for_groups(joined, group_subfield_seed)
     group_exploded["main_field_id"] = group_exploded["micro_cluster_id"].map(
         mc_main_field[mc_main_field["is_primary_main_field"]].set_index("micro_cluster_id")["main_field_id"].to_dict()
     )
-
     group_to_leiden = division_centric_target(
         for_df, group_exploded, "main_field_id", main_field_label, "leiden_main_field_id", "leiden_main_field_label",
         for_level_col="for_group", for_level_name="group",
     )
     write_csv(group_to_leiden, DATA_DIR / "for2020_group_leiden_main_field.csv", ["for_group_code"])
-
-    group_to_oax_domain = division_centric_target(
-        for_df, group_exploded, "domain_id", domain_label_plain, "openalex_domain_id", "openalex_domain_label",
-        for_level_col="for_group", for_level_name="group",
-    )
-    write_csv(group_to_oax_domain, DATA_DIR / "for2020_group_openalex_domain.csv", ["for_group_code"])
-
-    group_to_oax_field = division_centric_target(
-        for_df, group_exploded, "field_id", field_label_plain, "openalex_field_id", "openalex_field_label",
-        for_level_col="for_group", for_level_name="group",
-    )
-    write_csv(group_to_oax_field, DATA_DIR / "for2020_group_openalex_field.csv", ["for_group_code"])
-
-    group_to_oax_subfield = division_centric_target(
-        for_df, group_exploded, "subfield_id", subfield_label_plain, "openalex_subfield_id", "openalex_subfield_label",
-        for_level_col="for_group", for_level_name="group",
-    )
-    write_csv(group_to_oax_subfield, DATA_DIR / "for2020_group_openalex_subfield.csv", ["for_group_code"])
 
     return {
         "leiden_main_field": main_field,
@@ -328,13 +272,7 @@ def run() -> dict[str, pd.DataFrame]:
         "bridge_leiden_openalex_domain": domain_bridge,
         "bridge_leiden_for": for_bridge,
         "for2020_division_leiden_main_field": division_to_leiden,
-        "for2020_division_openalex_domain": division_to_oax_domain,
-        "for2020_division_openalex_field": division_to_oax_field,
-        "for2020_division_openalex_subfield": division_to_oax_subfield,
         "for2020_group_leiden_main_field": group_to_leiden,
-        "for2020_group_openalex_domain": group_to_oax_domain,
-        "for2020_group_openalex_field": group_to_oax_field,
-        "for2020_group_openalex_subfield": group_to_oax_subfield,
     }
 
 

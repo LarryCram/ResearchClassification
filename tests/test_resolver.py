@@ -104,7 +104,7 @@ def test_resolve_forward_pre2000():
     leiden = resolver.resolve("230104", "FOR1998", "LEIDEN")
     assert for2020.code == "490403"
     assert oax_field.level == "field"  # up the hierarchy only -- never "topic"
-    assert oax_field.match_method == "derived_empirical"
+    assert oax_field.match_method == "manual_curated"  # via 490403's group-level curated mapping
     assert leiden.level == "main_field"
     assert leiden.label == "Mathematics and computer science"
     print(f"  FOR1998 230104 -> FOR2020 {for2020.code}, "
@@ -229,7 +229,7 @@ def test_division45_cultural_proxy():
     sci = resolver.resolve("450601", "FOR2020", "OAX_FIELD")  # ATSI astronomy and cosmology
     assert sci.match_method == "cultural_proxy"
     assert sci.label == "Environmental Science"
-    assert sci.confidence == 0.61  # 0.7 (override) * 0.871... rounded -- proxy confidence compounds
+    assert sci.confidence == 0.7  # 0.7 (override) * 1.0 (division 41's own curated confidence)
 
     # bare division 45 and 4519's own catch-all both default to the "culture, language and
     # history" theme's own proxy -- the user's confirmed general landing spot for division 45
@@ -263,16 +263,29 @@ def test_division45_cultural_proxy():
 
 def test_group_level_precision():
     # FOR2020 groups 4904 (Pure mathematics) and 4905 (Statistics) both sit under division
-    # 49, and both used to give the identical division-level OAX field/confidence -- now
-    # they should differentiate (verified directly against the raw table: 4904 -> Mathematics
-    # at confidence 1.0, 4905 -> Mathematics at 0.69), each more specific than division 49's
-    # own confidence of 0.61 alone.
+    # 49. At OAX_FIELD they now agree exactly with the division (all three are hand-curated
+    # to the same field, "Mathematics", confidence 1.0 -- curated facts, not a statistical
+    # vote, so there's nothing left to differentiate at this granularity).
     div = resolver.resolve("49", "FOR2020", "OAX_FIELD")
     g4904 = resolver.resolve("4904", "FOR2020", "OAX_FIELD")
     g4905 = resolver.resolve("4905", "FOR2020", "OAX_FIELD")
     assert g4904.code == g4905.code == div.code == "26"  # all agree on OAX field "Mathematics"
-    assert g4904.confidence != g4905.confidence  # but differentiate at group level
-    assert g4904.level == "field" and g4904.match_method == "derived_empirical"
+    assert g4904.confidence == g4905.confidence == div.confidence == 1.0
+    assert g4904.level == "field" and g4904.match_method == "manual_curated"
+
+    # The real precision gain now shows up one level finer, at OAX_SUBFIELD: the division-
+    # level answer is still a majority-vote aggregate over its own groups' curated subfields
+    # (derived_empirical, share < 1), while each group resolves directly to its own distinct,
+    # hand-curated subfield (manual_curated, confidence 1.0) -- differentiated from its
+    # sibling group, and more confident than the division-level fallback either sibling would
+    # otherwise share.
+    div_sf = resolver.resolve("49", "FOR2020", "OAX_SUBFIELD")
+    g4904_sf = resolver.resolve("4904", "FOR2020", "OAX_SUBFIELD")
+    g4905_sf = resolver.resolve("4905", "FOR2020", "OAX_SUBFIELD")
+    assert g4904_sf.code != g4905_sf.code  # differentiate at group level
+    assert g4904_sf.match_method == g4905_sf.match_method == "manual_curated"
+    assert g4904_sf.confidence == g4905_sf.confidence == 1.0 > div_sf.confidence
+    assert div_sf.match_method == "derived_empirical"
 
     # a FOR1998 code resolving to a 6-digit FOR2020 field should use its group ancestor
     # (4-digit) for OAX/Leiden precision, not just fall back to the coarser division

@@ -1,0 +1,23 @@
+for2020_code,for2020_label,openalex_field_id,openalex_field_label,is_primary,confidence,match_method,notes,reviewed
+30,"AGRICULTURAL, VETERINARY AND FOOD SCIENCES",11,Agricultural and Biological Sciences,True,1.0,manual_curated,ported from data_untracked/EARLIER_FOR_OAX_analysis/build_for_oax_field_map.py,2026-07-11
+31,BIOLOGICAL SCIENCES,11,Agricultural and Biological Sciences,True,1.0,manual_curated,ported from data_untracked/EARLIER_FOR_OAX_analysis/build_for_oax_field_map.py,2026-07-11
+32,BIOMEDICAL AND CLINICAL SCIENCES,27,Medicine,True,1.0,manual_curated,ported from data_untracked/EARLIER_FOR_OAX_analysis/build_for_oax_field_map.py,2026-07-11
+33,BUILT ENVIRONMENT AND DESIGN,22,Engineering,True,1.0,manual_curated,ported from data_untracked/EARLIER_FOR_OAX_analysis/build_for_oax_field_map.py,2026-07-11
+34,CHEMICAL SCIENCES,16,Chemistry,True,1.0,manual_curated,ported from data_untracked/EARLIER_FOR_OAX_analysis/build_for_oax_field_map.py,2026-07-11
+35,"COMMERCE, MANAGEMENT, TOURISM AND SERVICES",14,"Business, Management and Accounting",True,1.0,manual_curated,ported from data_untracked/EARLIER_FOR_OAX_analysis/build_for_oax_field_map.py,2026-07-11
+36,CREATIVE ARTS AND WRITING,12,Arts and Humanities,True,1.0,manual_curated,ported from data_untracked/EARLIER_FOR_OAX_analysis/build_for_oax_field_map.py,2026-07-11
+37,EARTH SCIENCES,19,Earth and Planetary Sciences,True,1.0,manual_curated,ported from data_untracked/EARLIER_FOR_OAX_analysis/build_for_oax_field_map.py,2026-07-11
+38,ECONOMICS,20,"Economics, Econometrics and Finance",True,1.0,manual_curated,ported from data_untracked/EARLIER_FOR_OAX_analysis/build_for_oax_field_map.py,2026-07-11
+39,EDUCATION,33,Social Sciences,True,1.0,manual_curated,ported from data_untracked/EARLIER_FOR_OAX_analysis/build_for_oax_field_map.py,2026-07-11
+40,ENGINEERING,22,Engineering,True,1.0,manual_curated,ported from data_untracked/EARLIER_FOR_OAX_analysis/build_for_oax_field_map.py,2026-07-11
+41,ENVIRONMENTAL SCIENCES,23,Environmental Science,True,1.0,manual_curated,ported from data_untracked/EARLIER_FOR_OAX_analysis/build_for_oax_field_map.py,2026-07-11
+42,HEALTH SCIENCES,27,Medicine,True,1.0,manual_curated,ported from data_untracked/EARLIER_FOR_OAX_analysis/build_for_oax_field_map.py,2026-07-11
+43,"HISTORY, HERITAGE AND ARCHAEOLOGY",12,Arts and Humanities,True,1.0,manual_curated,ported from data_untracked/EARLIER_FOR_OAX_analysis/build_for_oax_field_map.py,2026-07-11
+44,HUMAN SOCIETY,33,Social Sciences,True,1.0,manual_curated,ported from data_untracked/EARLIER_FOR_OAX_analysis/build_for_oax_field_map.py,2026-07-11
+46,INFORMATION AND COMPUTING SCIENCES,17,Computer Science,True,1.0,manual_curated,ported from data_untracked/EARLIER_FOR_OAX_analysis/build_for_oax_field_map.py,2026-07-11
+47,"LANGUAGE, COMMUNICATION AND CULTURE",12,Arts and Humanities,True,1.0,manual_curated,ported from data_untracked/EARLIER_FOR_OAX_analysis/build_for_oax_field_map.py,2026-07-11
+48,LAW AND LEGAL STUDIES,33,Social Sciences,True,1.0,manual_curated,ported from data_untracked/EARLIER_FOR_OAX_analysis/build_for_oax_field_map.py,2026-07-11
+49,MATHEMATICAL SCIENCES,26,Mathematics,True,1.0,manual_curated,ported from data_untracked/EARLIER_FOR_OAX_analysis/build_for_oax_field_map.py,2026-07-11
+50,PHILOSOPHY AND RELIGIOUS STUDIES,12,Arts and Humanities,True,1.0,manual_curated,ported from data_untracked/EARLIER_FOR_OAX_analysis/build_for_oax_field_map.py,2026-07-11
+51,PHYSICAL SCIENCES,31,Physics and Astronomy,True,1.0,manual_curated,ported from data_untracked/EARLIER_FOR_OAX_analysis/build_for_oax_field_map.py,2026-07-11
+52,PSYCHOLOGY,32,Psychology,True,1.0,manual_curated,ported from data_untracked/EARLIER_FOR_OAX_analysis/build_for_oax_field_map.py,2026-07-11

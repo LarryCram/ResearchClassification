@@ -1,194 +1,194 @@
-for_group_code,for_group_label,openalex_field_id,openalex_field_label,is_primary,share,n_rows
-3001,Agricultural biotechnology,11,Agricultural and Biological Sciences,True,0.367,30
-3002,"Agriculture, land and farm management",23,Environmental Science,True,0.3,30
-3003,Animal production,11,Agricultural and Biological Sciences,True,0.3,30
-3004,Crop and pasture production,22,Engineering,True,0.233,30
-3005,Fisheries sciences,11,Agricultural and Biological Sciences,True,0.2,30
-3006,Food sciences,11,Agricultural and Biological Sciences,True,0.267,30
-3007,Forestry sciences,23,Environmental Science,True,0.267,30
-3008,Horticultural production,22,Engineering,True,0.233,30
-3009,Veterinary sciences,27,Medicine,True,0.467,30
-3099,"Other agricultural, veterinary and food sciences",11,Agricultural and Biological Sciences,True,0.467,30
-3101,Biochemistry and cell biology,13,"Biochemistry, Genetics and Molecular Biology",True,0.3,30
-3102,Bioinformatics and computational biology,26,Mathematics,True,0.267,30
-3103,Ecology,23,Environmental Science,True,0.4,30
-3104,Evolutionary biology,11,Agricultural and Biological Sciences,True,0.4,30
-3105,Genetics,13,"Biochemistry, Genetics and Molecular Biology",True,0.6,30
-3106,Industrial biotechnology,22,Engineering,True,0.433,30
-3107,Microbiology,23,Environmental Science,True,0.333,30
-3108,Plant biology,11,Agricultural and Biological Sciences,True,0.3,30
-3109,Zoology,11,Agricultural and Biological Sciences,True,0.3,30
-3199,Other biological sciences,13,"Biochemistry, Genetics and Molecular Biology",True,0.2,30
-3201,Cardiovascular medicine and haematology,27,Medicine,True,0.633,30
-3202,Clinical sciences,27,Medicine,True,0.4,30
-3203,Dentistry,27,Medicine,True,0.3,30
-3204,Immunology,22,Engineering,True,0.3,30
-3205,Medical biochemistry and metabolomics,13,"Biochemistry, Genetics and Molecular Biology",True,0.367,30
-3206,Medical biotechnology,36,Health Professions,True,0.233,30
-3207,Medical microbiology,27,Medicine,True,0.667,30
-3208,Medical physiology,22,Engineering,True,0.2,30
-3209,Neurosciences,27,Medicine,True,0.3,30
-3210,Nutrition and dietetics,27,Medicine,True,0.2,30
-3211,Oncology and carcinogenesis,27,Medicine,True,0.667,30
-3212,Ophthalmology and optometry,22,Engineering,True,0.367,30
-3213,Paediatrics,27,Medicine,True,0.367,30
-3214,Pharmacology and pharmaceutical sciences,33,Social Sciences,True,0.2,30
-3215,Reproductive medicine,27,Medicine,True,0.267,30
-3299,Other biomedical and clinical sciences,33,Social Sciences,True,0.233,30
-3301,Architecture,12,Arts and Humanities,True,0.2,30
-3302,Building,14,"Business, Management and Accounting",True,0.367,30
-3303,Design,12,Arts and Humanities,True,0.167,30
-3304,Urban and regional planning,33,Social Sciences,True,0.233,30
-3399,Other built environment and design,22,Engineering,True,0.467,30
-3401,Analytical chemistry,22,Engineering,True,0.2,30
-3402,Inorganic chemistry,16,Chemistry,True,0.567,30
-3403,Macromolecular and materials chemistry,25,Materials Science,True,0.5,30
-3404,Medicinal and biomolecular chemistry,13,"Biochemistry, Genetics and Molecular Biology",True,0.233,30
-3405,Organic chemistry,16,Chemistry,True,0.467,30
-3406,Physical chemistry,16,Chemistry,True,0.333,30
-3407,Theoretical and computational chemistry,16,Chemistry,True,0.2,30
-3499,Other chemical sciences,16,Chemistry,True,0.267,30
-3501,"Accounting, auditing and accountability",14,"Business, Management and Accounting",True,0.433,30
-3502,"Banking, finance and investment",14,"Business, Management and Accounting",True,0.333,30
-3503,Business systems in context,17,Computer Science,True,0.3,30
-3504,Commercial services,27,Medicine,True,0.233,30
-3505,Human resources and industrial relations,36,Health Professions,True,0.3,30
-3506,Marketing,14,"Business, Management and Accounting",True,0.3,30
-3507,"Strategy, management and organisational behaviour",14,"Business, Management and Accounting",True,0.633,30
-3508,Tourism,14,"Business, Management and Accounting",True,0.2,30
-3509,"Transportation, logistics and supply chains",14,"Business, Management and Accounting",True,0.3,30
-3599,"Other commerce, management, tourism and services",27,Medicine,True,0.267,30
-3601,"Art history, theory and criticism",12,Arts and Humanities,True,0.433,30
-3602,Creative and professional writing,33,Social Sciences,True,0.3,30
-3603,Music,33,Social Sciences,True,0.367,30
-3604,Performing arts,33,Social Sciences,True,0.3,30
-3605,Screen and digital media,33,Social Sciences,True,0.367,30
-3606,Visual arts,12,Arts and Humanities,True,0.2,30
-3699,Other creative arts and writing,12,Arts and Humanities,True,0.679,28
-3701,Atmospheric sciences,23,Environmental Science,True,0.3,30
-3702,Climate change science,23,Environmental Science,True,0.267,30
-3703,Geochemistry,16,Chemistry,True,0.4,30
-3704,Geoinformatics,17,Computer Science,True,0.3,30
-3705,Geology,22,Engineering,True,0.4,30
-3706,Geophysics,22,Engineering,True,0.333,30
-3707,Hydrology,23,Environmental Science,True,0.467,30
-3708,Oceanography,16,Chemistry,True,0.233,30
-3709,Physical geography and environmental geoscience,23,Environmental Science,True,0.267,30
-3799,Other earth sciences,22,Engineering,True,0.233,30
-3801,Applied economics,33,Social Sciences,True,0.367,30
-3802,Econometrics,20,"Economics, Econometrics and Finance",True,0.267,30
-3803,Economic theory,20,"Economics, Econometrics and Finance",True,0.267,30
-3899,Other economics,20,"Economics, Econometrics and Finance",True,0.367,30
-3901,Curriculum and pedagogy,33,Social Sciences,True,0.4,30
-3902,"Education policy, sociology and philosophy",33,Social Sciences,True,0.467,30
-3903,Education systems,33,Social Sciences,True,0.733,30
-3904,Specialist studies in education,33,Social Sciences,True,0.567,30
-3999,Other Education,33,Social Sciences,True,0.4,30
-4001,Aerospace engineering,22,Engineering,True,0.767,30
-4002,Automotive engineering,22,Engineering,True,0.833,30
-4003,Biomedical engineering,27,Medicine,True,0.333,30
-4004,Chemical engineering,22,Engineering,True,0.433,30
-4005,Civil engineering,22,Engineering,True,0.567,30
-4006,Communications engineering,22,Engineering,True,0.533,30
-4007,"Control engineering, mechatronics and robotics",22,Engineering,True,0.733,30
-4008,Electrical engineering,22,Engineering,True,0.6,30
-4009,"Electronics, sensors and digital hardware",22,Engineering,True,0.467,30
-4010,Engineering practice and education,22,Engineering,True,0.3,30
-4011,Environmental engineering,23,Environmental Science,True,0.367,30
-4012,Fluid mechanics and thermal engineering,22,Engineering,True,0.767,30
-4013,Geomatic engineering,22,Engineering,True,0.4,30
-4014,Manufacturing engineering,22,Engineering,True,0.433,30
-4015,Maritime engineering,22,Engineering,True,0.533,30
-4016,Materials engineering,22,Engineering,True,0.533,30
-4017,Mechanical engineering,22,Engineering,True,0.633,30
-4018,Nanotechnology,22,Engineering,True,0.267,30
-4019,Resources engineering and extractive metallurgy,22,Engineering,True,0.733,30
-4099,Other engineering,22,Engineering,True,0.567,30
-4101,Climate change impacts and adaptation,23,Environmental Science,True,0.333,30
-4102,Ecological applications,23,Environmental Science,True,0.233,30
-4103,Environmental biotechnology,23,Environmental Science,True,0.267,30
-4104,Environmental management,23,Environmental Science,True,0.433,30
-4105,Pollution and contamination,23,Environmental Science,True,0.567,30
-4106,Soil sciences,31,Physics and Astronomy,True,0.2,30
-4199,Other environmental sciences,23,Environmental Science,True,0.267,30
-4201,Allied health and rehabilitation science,36,Health Professions,True,0.3,30
-4202,Epidemiology,33,Social Sciences,True,0.167,30
-4203,Health services and systems,36,Health Professions,True,0.233,30
-4204,Midwifery,32,Psychology,True,0.3,30
-4205,Nursing,36,Health Professions,True,0.333,30
-4206,Public health,27,Medicine,True,0.267,30
-4207,Sports science and exercise,27,Medicine,True,0.2,30
-4208,"Traditional, complementary and integrative medicine",27,Medicine,True,0.833,30
-4299,Other health sciences,27,Medicine,True,0.367,30
-4301,Archaeology,12,Arts and Humanities,True,0.333,30
-4302,"Heritage, archive and museum studies",12,Arts and Humanities,True,0.433,30
-4303,Historical studies,33,Social Sciences,True,0.7,30
-4399,"Other history, heritage and archaeology",33,Social Sciences,True,0.433,30
-4401,Anthropology,33,Social Sciences,True,0.567,30
-4402,Criminology,33,Social Sciences,True,0.533,30
-4403,Demography,33,Social Sciences,True,0.5,30
-4404,Development studies,33,Social Sciences,True,0.5,30
-4405,Gender studies,33,Social Sciences,True,0.6,30
-4406,Human geography,33,Social Sciences,True,0.5,30
-4407,Policy and administration,33,Social Sciences,True,0.467,30
-4408,Political science,33,Social Sciences,True,0.6,30
-4409,Social work,33,Social Sciences,True,0.4,30
-4410,Sociology,33,Social Sciences,True,0.467,30
-4499,Other human society,33,Social Sciences,True,0.367,30
-4601,Applied computing,33,Social Sciences,True,0.533,30
-4602,Artificial intelligence,17,Computer Science,True,0.433,30
-4603,Computer vision and multimedia computation,17,Computer Science,True,0.533,30
-4604,Cybersecurity and privacy,17,Computer Science,True,0.667,30
-4605,Data management and data science,17,Computer Science,True,0.4,30
-4606,Distributed computing and systems software,17,Computer Science,True,0.467,30
-4607,"Graphics, augmented reality and games",17,Computer Science,True,0.367,30
-4608,Human-centred computing,33,Social Sciences,True,0.433,30
-4609,Information systems,33,Social Sciences,True,0.3,30
-4610,Library and information studies,33,Social Sciences,True,0.633,30
-4611,Machine learning,17,Computer Science,True,0.667,30
-4612,Software engineering,17,Computer Science,True,0.267,30
-4613,Theory of computation,17,Computer Science,True,0.5,30
-4699,Other information and computing sciences,17,Computer Science,True,0.333,30
-4701,Communication and media studies,33,Social Sciences,True,0.4,30
-4702,Cultural studies,12,Arts and Humanities,True,0.433,30
-4703,Language studies,33,Social Sciences,True,0.533,30
-4704,Linguistics,12,Arts and Humanities,True,0.467,30
-4705,Literary studies,33,Social Sciences,True,0.5,30
-4799,"Other language, communication and culture",33,Social Sciences,True,0.3,30
-4801,Commercial law,33,Social Sciences,True,0.533,30
-4802,Environmental and resources law,23,Environmental Science,True,0.367,30
-4803,International and comparative law,33,Social Sciences,True,0.8,30
-4804,Law in context,33,Social Sciences,True,0.533,30
-4805,Legal systems,33,Social Sciences,True,0.433,30
-4806,Private law and civil obligations,25,Materials Science,True,0.433,30
-4807,Public law,33,Social Sciences,True,0.8,30
-4899,Other law and legal studies,33,Social Sciences,True,0.633,30
-4901,Applied mathematics,26,Mathematics,True,0.333,30
-4902,Mathematical physics,31,Physics and Astronomy,True,0.4,30
-4903,Numerical and computational mathematics,22,Engineering,True,0.4,30
-4904,Pure mathematics,26,Mathematics,True,0.633,30
-4905,Statistics,17,Computer Science,True,0.3,30
-4999,Other mathematical sciences,33,Social Sciences,True,0.233,30
-5001,Applied ethics,33,Social Sciences,True,0.5,30
-5002,History and philosophy of specific fields,33,Social Sciences,True,0.333,30
-5003,Philosophy,33,Social Sciences,True,0.5,30
-5004,Religious studies,33,Social Sciences,True,0.633,30
-5005,Theology,12,Arts and Humanities,True,0.8,10
-5099,Other philosophy and religious studies,33,Social Sciences,True,0.3,30
-5101,Astronomical sciences,31,Physics and Astronomy,True,0.333,30
-5102,"Atomic, molecular and optical physics",31,Physics and Astronomy,True,0.4,30
-5103,Classical physics,31,Physics and Astronomy,True,0.333,30
-5104,Condensed matter physics,22,Engineering,True,0.233,30
-5105,Medical and biological physics,27,Medicine,True,0.3,30
-5106,Nuclear and plasma physics,31,Physics and Astronomy,True,0.533,30
-5107,Particle and high energy physics,31,Physics and Astronomy,True,0.3,30
-5108,Quantum physics,31,Physics and Astronomy,True,0.267,30
-5109,Space sciences,31,Physics and Astronomy,True,0.3,30
-5110,Synchrotrons and accelerators,22,Engineering,True,0.233,30
-5199,Other physical sciences,31,Physics and Astronomy,True,0.167,30
-5201,Applied and developmental psychology,32,Psychology,True,0.367,30
-5202,Biological psychology,33,Social Sciences,True,0.467,30
-5203,Clinical and health psychology,27,Medicine,True,0.433,30
-5204,Cognitive and computational psychology,32,Psychology,True,0.167,30
-5205,Social and personality psychology,33,Social Sciences,True,0.7,30
-5299,Other psychology,32,Psychology,True,0.526,19
+for_group_code,for_group_label,openalex_field_id,openalex_field_label,is_primary,share,match_method
+3001,Agricultural biotechnology,11,Agricultural and Biological Sciences,True,1.0,manual_curated
+3002,"Agriculture, land and farm management",11,Agricultural and Biological Sciences,True,1.0,manual_curated
+3003,Animal production,11,Agricultural and Biological Sciences,True,1.0,manual_curated
+3004,Crop and pasture production,11,Agricultural and Biological Sciences,True,1.0,manual_curated
+3005,Fisheries sciences,11,Agricultural and Biological Sciences,True,1.0,manual_curated
+3006,Food sciences,11,Agricultural and Biological Sciences,True,1.0,manual_curated
+3007,Forestry sciences,11,Agricultural and Biological Sciences,True,1.0,manual_curated
+3008,Horticultural production,11,Agricultural and Biological Sciences,True,1.0,manual_curated
+3009,Veterinary sciences,11,Agricultural and Biological Sciences,True,1.0,manual_curated
+3099,"Other agricultural, veterinary and food sciences",11,Agricultural and Biological Sciences,True,1.0,manual_curated
+3101,Biochemistry and cell biology,13,"Biochemistry, Genetics and Molecular Biology",True,1.0,manual_override
+3102,Bioinformatics and computational biology,13,"Biochemistry, Genetics and Molecular Biology",True,1.0,manual_override
+3103,Ecology,11,Agricultural and Biological Sciences,True,1.0,manual_curated
+3104,Evolutionary biology,11,Agricultural and Biological Sciences,True,1.0,manual_curated
+3105,Genetics,13,"Biochemistry, Genetics and Molecular Biology",True,1.0,manual_override
+3106,Industrial biotechnology,13,"Biochemistry, Genetics and Molecular Biology",True,1.0,manual_override
+3107,Microbiology,24,Immunology and Microbiology,True,1.0,manual_override
+3108,Plant biology,11,Agricultural and Biological Sciences,True,1.0,manual_curated
+3109,Zoology,11,Agricultural and Biological Sciences,True,1.0,manual_curated
+3199,Other biological sciences,11,Agricultural and Biological Sciences,True,1.0,manual_curated
+3201,Cardiovascular medicine and haematology,27,Medicine,True,1.0,manual_curated
+3202,Clinical sciences,27,Medicine,True,1.0,manual_curated
+3203,Dentistry,35,Dentistry,True,1.0,manual_override
+3204,Immunology,27,Medicine,True,1.0,manual_curated
+3205,Medical biochemistry and metabolomics,27,Medicine,True,1.0,manual_curated
+3206,Medical biotechnology,27,Medicine,True,1.0,manual_curated
+3207,Medical microbiology,27,Medicine,True,1.0,manual_curated
+3208,Medical physiology,27,Medicine,True,1.0,manual_curated
+3209,Neurosciences,27,Medicine,True,1.0,manual_curated
+3210,Nutrition and dietetics,27,Medicine,True,1.0,manual_curated
+3211,Oncology and carcinogenesis,27,Medicine,True,1.0,manual_curated
+3212,Ophthalmology and optometry,27,Medicine,True,1.0,manual_curated
+3213,Paediatrics,27,Medicine,True,1.0,manual_curated
+3214,Pharmacology and pharmaceutical sciences,27,Medicine,True,1.0,manual_curated
+3215,Reproductive medicine,27,Medicine,True,1.0,manual_curated
+3299,Other biomedical and clinical sciences,27,Medicine,True,1.0,manual_curated
+3301,Architecture,22,Engineering,True,1.0,manual_curated
+3302,Building,22,Engineering,True,1.0,manual_curated
+3303,Design,12,Arts and Humanities,True,1.0,manual_override
+3304,Urban and regional planning,33,Social Sciences,True,1.0,manual_override
+3399,Other built environment and design,22,Engineering,True,1.0,manual_curated
+3401,Analytical chemistry,16,Chemistry,True,1.0,manual_curated
+3402,Inorganic chemistry,16,Chemistry,True,1.0,manual_curated
+3403,Macromolecular and materials chemistry,16,Chemistry,True,1.0,manual_curated
+3404,Medicinal and biomolecular chemistry,16,Chemistry,True,1.0,manual_curated
+3405,Organic chemistry,16,Chemistry,True,1.0,manual_curated
+3406,Physical chemistry,16,Chemistry,True,1.0,manual_curated
+3407,Theoretical and computational chemistry,16,Chemistry,True,1.0,manual_curated
+3499,Other chemical sciences,16,Chemistry,True,1.0,manual_curated
+3501,"Accounting, auditing and accountability",14,"Business, Management and Accounting",True,1.0,manual_curated
+3502,"Banking, finance and investment",14,"Business, Management and Accounting",True,1.0,manual_curated
+3503,Business systems in context,14,"Business, Management and Accounting",True,1.0,manual_curated
+3504,Commercial services,14,"Business, Management and Accounting",True,1.0,manual_curated
+3505,Human resources and industrial relations,14,"Business, Management and Accounting",True,1.0,manual_curated
+3506,Marketing,14,"Business, Management and Accounting",True,1.0,manual_curated
+3507,"Strategy, management and organisational behaviour",14,"Business, Management and Accounting",True,1.0,manual_curated
+3508,Tourism,14,"Business, Management and Accounting",True,1.0,manual_curated
+3509,"Transportation, logistics and supply chains",14,"Business, Management and Accounting",True,1.0,manual_curated
+3599,"Other commerce, management, tourism and services",14,"Business, Management and Accounting",True,1.0,manual_curated
+3601,"Art history, theory and criticism",12,Arts and Humanities,True,1.0,manual_curated
+3602,Creative and professional writing,12,Arts and Humanities,True,1.0,manual_curated
+3603,Music,12,Arts and Humanities,True,1.0,manual_curated
+3604,Performing arts,12,Arts and Humanities,True,1.0,manual_curated
+3605,Screen and digital media,12,Arts and Humanities,True,1.0,manual_curated
+3606,Visual arts,12,Arts and Humanities,True,1.0,manual_curated
+3699,Other creative arts and writing,12,Arts and Humanities,True,1.0,manual_curated
+3701,Atmospheric sciences,19,Earth and Planetary Sciences,True,1.0,manual_curated
+3702,Climate change science,19,Earth and Planetary Sciences,True,1.0,manual_curated
+3703,Geochemistry,19,Earth and Planetary Sciences,True,1.0,manual_curated
+3704,Geoinformatics,19,Earth and Planetary Sciences,True,1.0,manual_curated
+3705,Geology,19,Earth and Planetary Sciences,True,1.0,manual_curated
+3706,Geophysics,19,Earth and Planetary Sciences,True,1.0,manual_curated
+3707,Hydrology,19,Earth and Planetary Sciences,True,1.0,manual_curated
+3708,Oceanography,19,Earth and Planetary Sciences,True,1.0,manual_curated
+3709,Physical geography and environmental geoscience,19,Earth and Planetary Sciences,True,1.0,manual_curated
+3799,Other earth sciences,19,Earth and Planetary Sciences,True,1.0,manual_curated
+3801,Applied economics,20,"Economics, Econometrics and Finance",True,1.0,manual_curated
+3802,Econometrics,20,"Economics, Econometrics and Finance",True,1.0,manual_curated
+3803,Economic theory,20,"Economics, Econometrics and Finance",True,1.0,manual_curated
+3899,Other economics,20,"Economics, Econometrics and Finance",True,1.0,manual_curated
+3901,Curriculum and pedagogy,33,Social Sciences,True,1.0,manual_curated
+3902,"Education policy, sociology and philosophy",33,Social Sciences,True,1.0,manual_curated
+3903,Education systems,33,Social Sciences,True,1.0,manual_curated
+3904,Specialist studies in education,33,Social Sciences,True,1.0,manual_curated
+3999,Other Education,33,Social Sciences,True,1.0,manual_curated
+4001,Aerospace engineering,22,Engineering,True,1.0,manual_curated
+4002,Automotive engineering,22,Engineering,True,1.0,manual_curated
+4003,Biomedical engineering,22,Engineering,True,1.0,manual_curated
+4004,Chemical engineering,15,Chemical Engineering,True,1.0,manual_override
+4005,Civil engineering,22,Engineering,True,1.0,manual_curated
+4006,Communications engineering,22,Engineering,True,1.0,manual_curated
+4007,"Control engineering, mechatronics and robotics",22,Engineering,True,1.0,manual_curated
+4008,Electrical engineering,22,Engineering,True,1.0,manual_curated
+4009,"Electronics, sensors and digital hardware",22,Engineering,True,1.0,manual_curated
+4010,Engineering practice and education,22,Engineering,True,1.0,manual_curated
+4011,Environmental engineering,23,Environmental Science,True,1.0,manual_override
+4012,Fluid mechanics and thermal engineering,22,Engineering,True,1.0,manual_curated
+4013,Geomatic engineering,22,Engineering,True,1.0,manual_curated
+4014,Manufacturing engineering,22,Engineering,True,1.0,manual_curated
+4015,Maritime engineering,22,Engineering,True,1.0,manual_curated
+4016,Materials engineering,25,Materials Science,True,1.0,manual_override
+4017,Mechanical engineering,22,Engineering,True,1.0,manual_curated
+4018,Nanotechnology,22,Engineering,True,1.0,manual_curated
+4019,Resources engineering and extractive metallurgy,22,Engineering,True,1.0,manual_curated
+4099,Other engineering,22,Engineering,True,1.0,manual_curated
+4101,Climate change impacts and adaptation,23,Environmental Science,True,1.0,manual_curated
+4102,Ecological applications,23,Environmental Science,True,1.0,manual_curated
+4103,Environmental biotechnology,23,Environmental Science,True,1.0,manual_curated
+4104,Environmental management,23,Environmental Science,True,1.0,manual_curated
+4105,Pollution and contamination,23,Environmental Science,True,1.0,manual_curated
+4106,Soil sciences,23,Environmental Science,True,1.0,manual_curated
+4199,Other environmental sciences,23,Environmental Science,True,1.0,manual_curated
+4201,Allied health and rehabilitation science,27,Medicine,True,1.0,manual_curated
+4202,Epidemiology,27,Medicine,True,1.0,manual_curated
+4203,Health services and systems,27,Medicine,True,1.0,manual_curated
+4204,Midwifery,27,Medicine,True,1.0,manual_curated
+4205,Nursing,29,Nursing,True,1.0,manual_override
+4206,Public health,27,Medicine,True,1.0,manual_curated
+4207,Sports science and exercise,27,Medicine,True,1.0,manual_curated
+4208,"Traditional, complementary and integrative medicine",27,Medicine,True,1.0,manual_curated
+4299,Other health sciences,27,Medicine,True,1.0,manual_curated
+4301,Archaeology,12,Arts and Humanities,True,1.0,manual_curated
+4302,"Heritage, archive and museum studies",12,Arts and Humanities,True,1.0,manual_curated
+4303,Historical studies,12,Arts and Humanities,True,1.0,manual_curated
+4399,"Other history, heritage and archaeology",12,Arts and Humanities,True,1.0,manual_curated
+4401,Anthropology,33,Social Sciences,True,1.0,manual_curated
+4402,Criminology,33,Social Sciences,True,1.0,manual_curated
+4403,Demography,33,Social Sciences,True,1.0,manual_curated
+4404,Development studies,33,Social Sciences,True,1.0,manual_curated
+4405,Gender studies,33,Social Sciences,True,1.0,manual_curated
+4406,Human geography,33,Social Sciences,True,1.0,manual_curated
+4407,Policy and administration,33,Social Sciences,True,1.0,manual_curated
+4408,Political science,33,Social Sciences,True,1.0,manual_curated
+4409,Social work,33,Social Sciences,True,1.0,manual_curated
+4410,Sociology,33,Social Sciences,True,1.0,manual_curated
+4499,Other human society,33,Social Sciences,True,1.0,manual_curated
+4601,Applied computing,17,Computer Science,True,1.0,manual_curated
+4602,Artificial intelligence,17,Computer Science,True,1.0,manual_curated
+4603,Computer vision and multimedia computation,17,Computer Science,True,1.0,manual_curated
+4604,Cybersecurity and privacy,17,Computer Science,True,1.0,manual_curated
+4605,Data management and data science,17,Computer Science,True,1.0,manual_curated
+4606,Distributed computing and systems software,17,Computer Science,True,1.0,manual_curated
+4607,"Graphics, augmented reality and games",17,Computer Science,True,1.0,manual_curated
+4608,Human-centred computing,17,Computer Science,True,1.0,manual_curated
+4609,Information systems,17,Computer Science,True,1.0,manual_curated
+4610,Library and information studies,33,Social Sciences,True,1.0,manual_override
+4611,Machine learning,17,Computer Science,True,1.0,manual_curated
+4612,Software engineering,17,Computer Science,True,1.0,manual_curated
+4613,Theory of computation,17,Computer Science,True,1.0,manual_curated
+4699,Other information and computing sciences,17,Computer Science,True,1.0,manual_curated
+4701,Communication and media studies,33,Social Sciences,True,1.0,manual_override
+4702,Cultural studies,33,Social Sciences,True,1.0,manual_override
+4703,Language studies,12,Arts and Humanities,True,1.0,manual_curated
+4704,Linguistics,12,Arts and Humanities,True,1.0,manual_curated
+4705,Literary studies,12,Arts and Humanities,True,1.0,manual_curated
+4799,"Other language, communication and culture",12,Arts and Humanities,True,1.0,manual_curated
+4801,Commercial law,33,Social Sciences,True,1.0,manual_curated
+4802,Environmental and resources law,33,Social Sciences,True,1.0,manual_curated
+4803,International and comparative law,33,Social Sciences,True,1.0,manual_curated
+4804,Law in context,33,Social Sciences,True,1.0,manual_curated
+4805,Legal systems,33,Social Sciences,True,1.0,manual_curated
+4806,Private law and civil obligations,33,Social Sciences,True,1.0,manual_curated
+4807,Public law,33,Social Sciences,True,1.0,manual_curated
+4899,Other law and legal studies,33,Social Sciences,True,1.0,manual_curated
+4901,Applied mathematics,26,Mathematics,True,1.0,manual_curated
+4902,Mathematical physics,26,Mathematics,True,1.0,manual_curated
+4903,Numerical and computational mathematics,26,Mathematics,True,1.0,manual_curated
+4904,Pure mathematics,26,Mathematics,True,1.0,manual_curated
+4905,Statistics,26,Mathematics,True,1.0,manual_curated
+4999,Other mathematical sciences,26,Mathematics,True,1.0,manual_curated
+5001,Applied ethics,12,Arts and Humanities,True,1.0,manual_curated
+5002,History and philosophy of specific fields,12,Arts and Humanities,True,1.0,manual_curated
+5003,Philosophy,12,Arts and Humanities,True,1.0,manual_curated
+5004,Religious studies,12,Arts and Humanities,True,1.0,manual_curated
+5005,Theology,12,Arts and Humanities,True,1.0,manual_curated
+5099,Other philosophy and religious studies,12,Arts and Humanities,True,1.0,manual_curated
+5101,Astronomical sciences,31,Physics and Astronomy,True,1.0,manual_curated
+5102,"Atomic, molecular and optical physics",31,Physics and Astronomy,True,1.0,manual_curated
+5103,Classical physics,31,Physics and Astronomy,True,1.0,manual_curated
+5104,Condensed matter physics,31,Physics and Astronomy,True,1.0,manual_curated
+5105,Medical and biological physics,31,Physics and Astronomy,True,1.0,manual_curated
+5106,Nuclear and plasma physics,31,Physics and Astronomy,True,1.0,manual_curated
+5107,Particle and high energy physics,31,Physics and Astronomy,True,1.0,manual_curated
+5108,Quantum physics,31,Physics and Astronomy,True,1.0,manual_curated
+5109,Space sciences,31,Physics and Astronomy,True,1.0,manual_curated
+5110,Synchrotrons and accelerators,31,Physics and Astronomy,True,1.0,manual_curated
+5199,Other physical sciences,31,Physics and Astronomy,True,1.0,manual_curated
+5201,Applied and developmental psychology,32,Psychology,True,1.0,manual_curated
+5202,Biological psychology,32,Psychology,True,1.0,manual_curated
+5203,Clinical and health psychology,32,Psychology,True,1.0,manual_curated
+5204,Cognitive and computational psychology,32,Psychology,True,1.0,manual_curated
+5205,Social and personality psychology,32,Psychology,True,1.0,manual_curated
+5299,Other psychology,32,Psychology,True,1.0,manual_curated

@@ -1,23 +1,23 @@
-for_division_code,for_division_label,openalex_domain_id,openalex_domain_label,is_primary,share,n_rows
-30,"AGRICULTURAL, VETERINARY AND FOOD SCIENCES",1,Life Sciences,True,0.5,30
-31,BIOLOGICAL SCIENCES,1,Life Sciences,True,0.4,30
-32,BIOMEDICAL AND CLINICAL SCIENCES,4,Health Sciences,True,0.267,30
-33,BUILT ENVIRONMENT AND DESIGN,3,Physical Sciences,True,0.2,30
-34,CHEMICAL SCIENCES,3,Physical Sciences,True,0.467,30
-35,"COMMERCE, MANAGEMENT, TOURISM AND SERVICES",2,Social Sciences,True,0.533,30
-36,CREATIVE ARTS AND WRITING,2,Social Sciences,True,0.4,30
-37,EARTH SCIENCES,3,Physical Sciences,True,0.433,30
-38,ECONOMICS,2,Social Sciences,True,0.267,30
-39,EDUCATION,2,Social Sciences,True,0.467,30
-40,ENGINEERING,3,Physical Sciences,True,0.767,30
-41,ENVIRONMENTAL SCIENCES,3,Physical Sciences,True,0.667,30
-42,HEALTH SCIENCES,4,Health Sciences,True,0.333,30
-43,"HISTORY, HERITAGE AND ARCHAEOLOGY",2,Social Sciences,True,0.467,30
-44,HUMAN SOCIETY,2,Social Sciences,True,0.633,30
-46,INFORMATION AND COMPUTING SCIENCES,3,Physical Sciences,True,0.767,30
-47,"LANGUAGE, COMMUNICATION AND CULTURE",2,Social Sciences,True,0.633,30
-48,LAW AND LEGAL STUDIES,2,Social Sciences,True,0.667,30
-49,MATHEMATICAL SCIENCES,3,Physical Sciences,True,0.567,30
-50,PHILOSOPHY AND RELIGIOUS STUDIES,2,Social Sciences,True,0.6,30
-51,PHYSICAL SCIENCES,3,Physical Sciences,True,0.4,30
-52,PSYCHOLOGY,2,Social Sciences,True,0.367,30
+for_division_code,for_division_label,openalex_domain_id,openalex_domain_label,is_primary,share,match_method
+30,"AGRICULTURAL, VETERINARY AND FOOD SCIENCES",1,Life Sciences,True,1.0,manual_curated
+31,BIOLOGICAL SCIENCES,1,Life Sciences,True,1.0,manual_curated
+32,BIOMEDICAL AND CLINICAL SCIENCES,4,Health Sciences,True,1.0,manual_curated
+33,BUILT ENVIRONMENT AND DESIGN,3,Physical Sciences,True,1.0,manual_curated
+34,CHEMICAL SCIENCES,3,Physical Sciences,True,1.0,manual_curated
+35,"COMMERCE, MANAGEMENT, TOURISM AND SERVICES",2,Social Sciences,True,1.0,manual_curated
+36,CREATIVE ARTS AND WRITING,2,Social Sciences,True,1.0,manual_curated
+37,EARTH SCIENCES,3,Physical Sciences,True,1.0,manual_curated
+38,ECONOMICS,2,Social Sciences,True,1.0,manual_curated
+39,EDUCATION,2,Social Sciences,True,1.0,manual_curated
+40,ENGINEERING,3,Physical Sciences,True,1.0,manual_curated
+41,ENVIRONMENTAL SCIENCES,3,Physical Sciences,True,1.0,manual_curated
+42,HEALTH SCIENCES,4,Health Sciences,True,1.0,manual_curated
+43,"HISTORY, HERITAGE AND ARCHAEOLOGY",2,Social Sciences,True,1.0,manual_curated
+44,HUMAN SOCIETY,2,Social Sciences,True,1.0,manual_curated
+46,INFORMATION AND COMPUTING SCIENCES,3,Physical Sciences,True,1.0,manual_curated
+47,"LANGUAGE, COMMUNICATION AND CULTURE",2,Social Sciences,True,1.0,manual_curated
+48,LAW AND LEGAL STUDIES,2,Social Sciences,True,1.0,manual_curated
+49,MATHEMATICAL SCIENCES,3,Physical Sciences,True,1.0,manual_curated
+50,PHILOSOPHY AND RELIGIOUS STUDIES,2,Social Sciences,True,1.0,manual_curated
+51,PHYSICAL SCIENCES,3,Physical Sciences,True,1.0,manual_curated
+52,PSYCHOLOGY,2,Social Sciences,True,1.0,manual_curated

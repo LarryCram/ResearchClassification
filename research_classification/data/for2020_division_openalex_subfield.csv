@@ -1,23 +1,138 @@
-for_division_code,for_division_label,openalex_subfield_id,openalex_subfield_label,is_primary,share,n_rows
-30,"AGRICULTURAL, VETERINARY AND FOOD SCIENCES",1110,Plant Science,True,0.267,30
-31,BIOLOGICAL SCIENCES,1312,Molecular Biology,True,0.3,30
-32,BIOMEDICAL AND CLINICAL SCIENCES,2735,"Pediatrics, Perinatology and Child Health",True,0.1,30
-33,BUILT ENVIRONMENT AND DESIGN,2216,Architecture,True,0.1,30
-34,CHEMICAL SCIENCES,1605,Organic Chemistry,True,0.3,30
-35,"COMMERCE, MANAGEMENT, TOURISM AND SERVICES",1408,Strategy and Management,True,0.233,30
-36,CREATIVE ARTS AND WRITING,1213,Visual Arts and Performing Arts,True,0.233,30
-37,EARTH SCIENCES,2312,Water Science and Technology,True,0.133,30
-38,ECONOMICS,2002,Economics and Econometrics,True,0.2,30
-39,EDUCATION,3304,Education,True,0.233,30
-40,ENGINEERING,2208,Electrical and Electronic Engineering,True,0.267,30
-41,ENVIRONMENTAL SCIENCES,2312,Water Science and Technology,True,0.2,30
-42,HEALTH SCIENCES,3600,General Health Professions,True,0.167,30
-43,"HISTORY, HERITAGE AND ARCHAEOLOGY",1202,History,True,0.133,30
-44,HUMAN SOCIETY,3312,Sociology and Political Science,True,0.233,30
-46,INFORMATION AND COMPUTING SCIENCES,1702,Artificial Intelligence,True,0.3,30
-47,"LANGUAGE, COMMUNICATION AND CULTURE",1208,Literature and Literary Theory,True,0.233,30
-48,LAW AND LEGAL STUDIES,3308,Law,True,0.167,30
-49,MATHEMATICAL SCIENCES,2613,Statistics and Probability,True,0.133,30
-50,PHILOSOPHY AND RELIGIOUS STUDIES,1211,Philosophy,True,0.167,30
-51,PHYSICAL SCIENCES,3103,Astronomy and Astrophysics,True,0.233,30
-52,PSYCHOLOGY,3204,Developmental and Educational Psychology,True,0.2,30
+for_division_code,for_division_label,openalex_subfield_id,openalex_subfield_label,is_primary,share,match_method
+30,"AGRICULTURAL, VETERINARY AND FOOD SCIENCES",1100,General Agricultural and Biological Sciences,True,0.2,derived_empirical
+30,"AGRICULTURAL, VETERINARY AND FOOD SCIENCES",1102,Agronomy and Crop Science,False,0.2,derived_empirical
+30,"AGRICULTURAL, VETERINARY AND FOOD SCIENCES",1103,Animal Science and Zoology,False,0.2,derived_empirical
+30,"AGRICULTURAL, VETERINARY AND FOOD SCIENCES",1104,Aquatic Science,False,0.1,derived_empirical
+30,"AGRICULTURAL, VETERINARY AND FOOD SCIENCES",1106,Food Science,False,0.1,derived_empirical
+30,"AGRICULTURAL, VETERINARY AND FOOD SCIENCES",1107,Forestry,False,0.1,derived_empirical
+30,"AGRICULTURAL, VETERINARY AND FOOD SCIENCES",1108,Horticulture,False,0.1,derived_empirical
+31,BIOLOGICAL SCIENCES,1100,General Agricultural and Biological Sciences,False,0.1,derived_empirical
+31,BIOLOGICAL SCIENCES,1103,Animal Science and Zoology,False,0.1,derived_empirical
+31,BIOLOGICAL SCIENCES,1110,Plant Science,False,0.1,derived_empirical
+31,BIOLOGICAL SCIENCES,2404,Microbiology,False,0.1,derived_empirical
+31,BIOLOGICAL SCIENCES,1305,Biotechnology,False,0.1,derived_empirical
+31,BIOLOGICAL SCIENCES,1311,Genetics,False,0.1,derived_empirical
+31,BIOLOGICAL SCIENCES,1312,Molecular Biology,False,0.1,derived_empirical
+31,BIOLOGICAL SCIENCES,1303,Biochemistry,False,0.1,derived_empirical
+31,BIOLOGICAL SCIENCES,1105,"Ecology, Evolution, Behavior and Systematics",True,0.2,derived_empirical
+32,BIOMEDICAL AND CLINICAL SCIENCES,2743,Reproductive Medicine,False,0.062,derived_empirical
+32,BIOMEDICAL AND CLINICAL SCIENCES,2736,Pharmacology,False,0.062,derived_empirical
+32,BIOMEDICAL AND CLINICAL SCIENCES,2735,"Pediatrics, Perinatology and Child Health",False,0.062,derived_empirical
+32,BIOMEDICAL AND CLINICAL SCIENCES,2731,Ophthalmology,False,0.062,derived_empirical
+32,BIOMEDICAL AND CLINICAL SCIENCES,2730,Oncology,False,0.062,derived_empirical
+32,BIOMEDICAL AND CLINICAL SCIENCES,2712,"Endocrinology, Diabetes and Metabolism",False,0.062,derived_empirical
+32,BIOMEDICAL AND CLINICAL SCIENCES,2728,Neurology,False,0.062,derived_empirical
+32,BIOMEDICAL AND CLINICAL SCIENCES,2724,Internal Medicine,True,0.125,derived_empirical
+32,BIOMEDICAL AND CLINICAL SCIENCES,2726,Microbiology,False,0.062,derived_empirical
+32,BIOMEDICAL AND CLINICAL SCIENCES,2716,Genetics,False,0.062,derived_empirical
+32,BIOMEDICAL AND CLINICAL SCIENCES,2704,Biochemistry,False,0.062,derived_empirical
+32,BIOMEDICAL AND CLINICAL SCIENCES,2723,Immunology and Allergy,False,0.062,derived_empirical
+32,BIOMEDICAL AND CLINICAL SCIENCES,3500,General Dentistry,False,0.062,derived_empirical
+32,BIOMEDICAL AND CLINICAL SCIENCES,2705,Cardiology and Cardiovascular Medicine,False,0.062,derived_empirical
+32,BIOMEDICAL AND CLINICAL SCIENCES,2737,Physiology,False,0.062,derived_empirical
+33,BUILT ENVIRONMENT AND DESIGN,2200,General Engineering,False,0.2,derived_empirical
+33,BUILT ENVIRONMENT AND DESIGN,3322,Urban Studies,False,0.2,derived_empirical
+33,BUILT ENVIRONMENT AND DESIGN,2215,Building and Construction,False,0.2,derived_empirical
+33,BUILT ENVIRONMENT AND DESIGN,2216,Architecture,True,0.2,derived_empirical
+33,BUILT ENVIRONMENT AND DESIGN,1213,Visual Arts and Performing Arts,False,0.2,derived_empirical
+34,CHEMICAL SCIENCES,1605,Organic Chemistry,True,0.375,derived_empirical
+34,CHEMICAL SCIENCES,1606,Physical and Theoretical Chemistry,False,0.375,derived_empirical
+34,CHEMICAL SCIENCES,1602,Analytical Chemistry,False,0.125,derived_empirical
+34,CHEMICAL SCIENCES,1604,Inorganic Chemistry,False,0.125,derived_empirical
+35,"COMMERCE, MANAGEMENT, TOURISM AND SERVICES",1403,Business and International Management,True,0.5,derived_empirical
+35,"COMMERCE, MANAGEMENT, TOURISM AND SERVICES",1402,Accounting,False,0.1,derived_empirical
+35,"COMMERCE, MANAGEMENT, TOURISM AND SERVICES",1407,Organizational Behavior and Human Resource Management,False,0.1,derived_empirical
+35,"COMMERCE, MANAGEMENT, TOURISM AND SERVICES",1406,Marketing,False,0.1,derived_empirical
+35,"COMMERCE, MANAGEMENT, TOURISM AND SERVICES",1408,Strategy and Management,False,0.1,derived_empirical
+35,"COMMERCE, MANAGEMENT, TOURISM AND SERVICES",1409,"Tourism, Leisure and Hospitality Management",False,0.1,derived_empirical
+36,CREATIVE ARTS AND WRITING,1200,General Arts and Humanities,False,0.143,derived_empirical
+36,CREATIVE ARTS AND WRITING,1210,Music,False,0.143,derived_empirical
+36,CREATIVE ARTS AND WRITING,1208,Literature and Literary Theory,False,0.143,derived_empirical
+36,CREATIVE ARTS AND WRITING,1213,Visual Arts and Performing Arts,True,0.571,derived_empirical
+37,EARTH SCIENCES,1907,Geology,True,0.3,derived_empirical
+37,EARTH SCIENCES,1902,Atmospheric Science,False,0.2,derived_empirical
+37,EARTH SCIENCES,1904,Earth-Surface Processes,False,0.2,derived_empirical
+37,EARTH SCIENCES,1906,Geochemistry and Petrology,False,0.1,derived_empirical
+37,EARTH SCIENCES,1908,Geophysics,False,0.1,derived_empirical
+37,EARTH SCIENCES,1910,Oceanography,False,0.1,derived_empirical
+38,ECONOMICS,2002,Economics and Econometrics,True,0.75,derived_empirical
+38,ECONOMICS,2000,"General Economics, Econometrics and Finance",False,0.25,derived_empirical
+39,EDUCATION,3304,Education,True,1.0,derived_empirical
+40,ENGINEERING,2207,Control and Systems Engineering,False,0.05,derived_empirical
+40,ENGINEERING,2209,Industrial and Manufacturing Engineering,False,0.05,derived_empirical
+40,ENGINEERING,1508,Process Chemistry and Technology,False,0.05,derived_empirical
+40,ENGINEERING,2500,General Materials Science,False,0.05,derived_empirical
+40,ENGINEERING,2212,Ocean Engineering,False,0.05,derived_empirical
+40,ENGINEERING,2204,Biomedical Engineering,False,0.05,derived_empirical
+40,ENGINEERING,2305,Environmental Engineering,False,0.05,derived_empirical
+40,ENGINEERING,2202,Aerospace Engineering,False,0.05,derived_empirical
+40,ENGINEERING,2210,Mechanical Engineering,False,0.1,derived_empirical
+40,ENGINEERING,2203,Automotive Engineering,False,0.05,derived_empirical
+40,ENGINEERING,2205,Civil and Structural Engineering,False,0.1,derived_empirical
+40,ENGINEERING,2208,Electrical and Electronic Engineering,False,0.15,derived_empirical
+40,ENGINEERING,2200,General Engineering,True,0.2,derived_empirical
+41,ENVIRONMENTAL SCIENCES,2303,Ecology,True,0.286,derived_empirical
+41,ENVIRONMENTAL SCIENCES,2304,Environmental Chemistry,False,0.286,derived_empirical
+41,ENVIRONMENTAL SCIENCES,2306,Global and Planetary Change,False,0.143,derived_empirical
+41,ENVIRONMENTAL SCIENCES,2308,"Management, Monitoring, Policy and Law",False,0.143,derived_empirical
+41,ENVIRONMENTAL SCIENCES,2310,Pollution,False,0.143,derived_empirical
+42,HEALTH SCIENCES,2707,Complementary and alternative medicine,False,0.111,derived_empirical
+42,HEALTH SCIENCES,2732,Orthopedics and Sports Medicine,False,0.111,derived_empirical
+42,HEALTH SCIENCES,2922,Research and Theory,False,0.111,derived_empirical
+42,HEALTH SCIENCES,2724,Internal Medicine,False,0.111,derived_empirical
+42,HEALTH SCIENCES,2713,Epidemiology,False,0.111,derived_empirical
+42,HEALTH SCIENCES,2742,Rehabilitation,False,0.111,derived_empirical
+42,HEALTH SCIENCES,2739,"Public Health, Environmental and Occupational Health",True,0.222,derived_empirical
+42,HEALTH SCIENCES,2729,Obstetrics and Gynecology,False,0.111,derived_empirical
+43,"HISTORY, HERITAGE AND ARCHAEOLOGY",1204,Archeology,True,0.25,derived_empirical
+43,"HISTORY, HERITAGE AND ARCHAEOLOGY",1209,Museology,False,0.25,derived_empirical
+43,"HISTORY, HERITAGE AND ARCHAEOLOGY",1202,History,False,0.25,derived_empirical
+43,"HISTORY, HERITAGE AND ARCHAEOLOGY",1200,General Arts and Humanities,False,0.25,derived_empirical
+44,HUMAN SOCIETY,3320,Political Science and International Relations,False,0.091,derived_empirical
+44,HUMAN SOCIETY,3321,Public Administration,False,0.091,derived_empirical
+44,HUMAN SOCIETY,3305,"Geography, Planning and Development",False,0.091,derived_empirical
+44,HUMAN SOCIETY,3318,Gender Studies,False,0.091,derived_empirical
+44,HUMAN SOCIETY,3314,Anthropology,False,0.091,derived_empirical
+44,HUMAN SOCIETY,3317,Demography,False,0.091,derived_empirical
+44,HUMAN SOCIETY,3300,General Social Sciences,False,0.182,derived_empirical
+44,HUMAN SOCIETY,3312,Sociology and Political Science,True,0.182,derived_empirical
+44,HUMAN SOCIETY,3303,Development,False,0.091,derived_empirical
+46,INFORMATION AND COMPUTING SCIENCES,1703,Computational Theory and Mathematics,False,0.071,derived_empirical
+46,INFORMATION AND COMPUTING SCIENCES,3309,Library and Information Sciences,False,0.071,derived_empirical
+46,INFORMATION AND COMPUTING SCIENCES,1709,Human-Computer Interaction,False,0.071,derived_empirical
+46,INFORMATION AND COMPUTING SCIENCES,1704,Computer Graphics and Computer-Aided Design,False,0.071,derived_empirical
+46,INFORMATION AND COMPUTING SCIENCES,1705,Computer Networks and Communications,False,0.071,derived_empirical
+46,INFORMATION AND COMPUTING SCIENCES,1712,Software,False,0.143,derived_empirical
+46,INFORMATION AND COMPUTING SCIENCES,1710,Information Systems,False,0.143,derived_empirical
+46,INFORMATION AND COMPUTING SCIENCES,1706,Computer Science Applications,True,0.143,derived_empirical
+46,INFORMATION AND COMPUTING SCIENCES,1707,Computer Vision and Pattern Recognition,False,0.071,derived_empirical
+46,INFORMATION AND COMPUTING SCIENCES,1702,Artificial Intelligence,False,0.143,derived_empirical
+47,"LANGUAGE, COMMUNICATION AND CULTURE",1203,Language and Linguistics,True,0.333,derived_empirical
+47,"LANGUAGE, COMMUNICATION AND CULTURE",3315,Communication,False,0.167,derived_empirical
+47,"LANGUAGE, COMMUNICATION AND CULTURE",3316,Cultural Studies,False,0.167,derived_empirical
+47,"LANGUAGE, COMMUNICATION AND CULTURE",1208,Literature and Literary Theory,False,0.167,derived_empirical
+47,"LANGUAGE, COMMUNICATION AND CULTURE",1200,General Arts and Humanities,False,0.167,derived_empirical
+48,LAW AND LEGAL STUDIES,3308,Law,True,1.0,derived_empirical
+49,MATHEMATICAL SCIENCES,2604,Applied Mathematics,True,0.333,derived_empirical
+49,MATHEMATICAL SCIENCES,2610,Mathematical Physics,False,0.167,derived_empirical
+49,MATHEMATICAL SCIENCES,2605,Computational Mathematics,False,0.167,derived_empirical
+49,MATHEMATICAL SCIENCES,2602,Algebra and Number Theory,False,0.167,derived_empirical
+49,MATHEMATICAL SCIENCES,2613,Statistics and Probability,False,0.167,derived_empirical
+50,PHILOSOPHY AND RELIGIOUS STUDIES,1200,General Arts and Humanities,False,0.167,derived_empirical
+50,PHILOSOPHY AND RELIGIOUS STUDIES,1207,History and Philosophy of Science,False,0.167,derived_empirical
+50,PHILOSOPHY AND RELIGIOUS STUDIES,1212,Religious studies,False,0.333,derived_empirical
+50,PHILOSOPHY AND RELIGIOUS STUDIES,1211,Philosophy,True,0.333,derived_empirical
+51,PHYSICAL SCIENCES,3103,Astronomy and Astrophysics,True,0.182,derived_empirical
+51,PHYSICAL SCIENCES,3104,Condensed Matter Physics,False,0.182,derived_empirical
+51,PHYSICAL SCIENCES,3106,Nuclear and High Energy Physics,False,0.182,derived_empirical
+51,PHYSICAL SCIENCES,3107,"Atomic and Molecular Physics, and Optics",False,0.091,derived_empirical
+51,PHYSICAL SCIENCES,3109,Statistical and Nonlinear Physics,False,0.091,derived_empirical
+51,PHYSICAL SCIENCES,3108,Radiation,False,0.091,derived_empirical
+51,PHYSICAL SCIENCES,3105,Instrumentation,False,0.091,derived_empirical
+51,PHYSICAL SCIENCES,3102,Acoustics and Ultrasonics,False,0.091,derived_empirical
+52,PSYCHOLOGY,3207,Social Psychology,False,0.167,derived_empirical
+52,PSYCHOLOGY,3202,Applied Psychology,True,0.167,derived_empirical
+52,PSYCHOLOGY,3206,Neuropsychology and Physiological Psychology,False,0.167,derived_empirical
+52,PSYCHOLOGY,3203,Clinical Psychology,False,0.167,derived_empirical
+52,PSYCHOLOGY,3205,Experimental and Cognitive Psychology,False,0.167,derived_empirical
+52,PSYCHOLOGY,3200,General Psychology,False,0.167,derived_empirical

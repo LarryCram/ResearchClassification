@@ -1,102 +1,101 @@
-for_division_code,for_division_label,leiden_main_field_id,leiden_main_field_label,is_primary,share,n_rows
-30,"AGRICULTURAL, VETERINARY AND FOOD SCIENCES",4,Life and earth sciences,True,0.695,213
-30,"AGRICULTURAL, VETERINARY AND FOOD SCIENCES",2,Biomedical and health sciences,False,0.141,213
-30,"AGRICULTURAL, VETERINARY AND FOOD SCIENCES",1,Social sciences and humanities,False,0.103,213
-30,"AGRICULTURAL, VETERINARY AND FOOD SCIENCES",3,Physical sciences and engineering,False,0.047,213
-30,"AGRICULTURAL, VETERINARY AND FOOD SCIENCES",5,Mathematics and computer science,False,0.014,213
-31,BIOLOGICAL SCIENCES,2,Biomedical and health sciences,True,0.512,484
-31,BIOLOGICAL SCIENCES,4,Life and earth sciences,False,0.347,484
-31,BIOLOGICAL SCIENCES,3,Physical sciences and engineering,False,0.064,484
-31,BIOLOGICAL SCIENCES,1,Social sciences and humanities,False,0.052,484
-31,BIOLOGICAL SCIENCES,5,Mathematics and computer science,False,0.025,484
-32,BIOMEDICAL AND CLINICAL SCIENCES,5,Mathematics and computer science,False,0.021,1016
-32,BIOMEDICAL AND CLINICAL SCIENCES,3,Physical sciences and engineering,False,0.035,1016
-32,BIOMEDICAL AND CLINICAL SCIENCES,4,Life and earth sciences,False,0.027,1016
-32,BIOMEDICAL AND CLINICAL SCIENCES,2,Biomedical and health sciences,True,0.876,1016
-32,BIOMEDICAL AND CLINICAL SCIENCES,1,Social sciences and humanities,False,0.041,1016
-33,BUILT ENVIRONMENT AND DESIGN,1,Social sciences and humanities,True,0.533,1067
-33,BUILT ENVIRONMENT AND DESIGN,3,Physical sciences and engineering,False,0.269,1067
-33,BUILT ENVIRONMENT AND DESIGN,5,Mathematics and computer science,False,0.162,1067
-33,BUILT ENVIRONMENT AND DESIGN,4,Life and earth sciences,False,0.019,1067
-33,BUILT ENVIRONMENT AND DESIGN,2,Biomedical and health sciences,False,0.017,1067
-34,CHEMICAL SCIENCES,3,Physical sciences and engineering,True,0.924,92
-34,CHEMICAL SCIENCES,4,Life and earth sciences,False,0.043,92
-34,CHEMICAL SCIENCES,5,Mathematics and computer science,False,0.011,92
-34,CHEMICAL SCIENCES,1,Social sciences and humanities,False,0.011,92
-34,CHEMICAL SCIENCES,2,Biomedical and health sciences,False,0.011,92
-35,"COMMERCE, MANAGEMENT, TOURISM AND SERVICES",3,Physical sciences and engineering,False,0.006,164
-35,"COMMERCE, MANAGEMENT, TOURISM AND SERVICES",2,Biomedical and health sciences,False,0.018,164
-35,"COMMERCE, MANAGEMENT, TOURISM AND SERVICES",1,Social sciences and humanities,True,0.805,164
-35,"COMMERCE, MANAGEMENT, TOURISM AND SERVICES",5,Mathematics and computer science,False,0.171,164
-36,CREATIVE ARTS AND WRITING,1,Social sciences and humanities,True,0.975,203
-36,CREATIVE ARTS AND WRITING,4,Life and earth sciences,False,0.015,203
-36,CREATIVE ARTS AND WRITING,2,Biomedical and health sciences,False,0.005,203
-36,CREATIVE ARTS AND WRITING,3,Physical sciences and engineering,False,0.005,203
-37,EARTH SCIENCES,4,Life and earth sciences,True,0.792,53
-37,EARTH SCIENCES,5,Mathematics and computer science,False,0.075,53
-37,EARTH SCIENCES,3,Physical sciences and engineering,False,0.075,53
-37,EARTH SCIENCES,1,Social sciences and humanities,False,0.057,53
-38,ECONOMICS,2,Biomedical and health sciences,False,0.013,78
-38,ECONOMICS,5,Mathematics and computer science,False,0.026,78
-38,ECONOMICS,1,Social sciences and humanities,True,0.962,78
-39,EDUCATION,1,Social sciences and humanities,True,0.95,575
-39,EDUCATION,5,Mathematics and computer science,False,0.019,575
-39,EDUCATION,2,Biomedical and health sciences,False,0.017,575
-39,EDUCATION,4,Life and earth sciences,False,0.012,575
-39,EDUCATION,3,Physical sciences and engineering,False,0.002,575
-40,ENGINEERING,3,Physical sciences and engineering,True,0.652,644
-40,ENGINEERING,5,Mathematics and computer science,False,0.256,644
-40,ENGINEERING,1,Social sciences and humanities,False,0.051,644
-40,ENGINEERING,4,Life and earth sciences,False,0.026,644
-40,ENGINEERING,2,Biomedical and health sciences,False,0.014,644
-41,ENVIRONMENTAL SCIENCES,2,Biomedical and health sciences,False,0.031,196
-41,ENVIRONMENTAL SCIENCES,5,Mathematics and computer science,False,0.046,196
-41,ENVIRONMENTAL SCIENCES,4,Life and earth sciences,True,0.526,196
-41,ENVIRONMENTAL SCIENCES,1,Social sciences and humanities,False,0.214,196
-41,ENVIRONMENTAL SCIENCES,3,Physical sciences and engineering,False,0.184,196
-42,HEALTH SCIENCES,2,Biomedical and health sciences,True,0.89,770
-42,HEALTH SCIENCES,1,Social sciences and humanities,False,0.07,770
-42,HEALTH SCIENCES,5,Mathematics and computer science,False,0.016,770
-42,HEALTH SCIENCES,3,Physical sciences and engineering,False,0.013,770
-42,HEALTH SCIENCES,4,Life and earth sciences,False,0.012,770
-43,"HISTORY, HERITAGE AND ARCHAEOLOGY",2,Biomedical and health sciences,False,0.005,203
-43,"HISTORY, HERITAGE AND ARCHAEOLOGY",3,Physical sciences and engineering,False,0.005,203
-43,"HISTORY, HERITAGE AND ARCHAEOLOGY",1,Social sciences and humanities,True,0.975,203
-43,"HISTORY, HERITAGE AND ARCHAEOLOGY",4,Life and earth sciences,False,0.015,203
-44,HUMAN SOCIETY,5,Mathematics and computer science,False,0.019,575
-44,HUMAN SOCIETY,2,Biomedical and health sciences,False,0.017,575
-44,HUMAN SOCIETY,4,Life and earth sciences,False,0.012,575
-44,HUMAN SOCIETY,3,Physical sciences and engineering,False,0.002,575
-44,HUMAN SOCIETY,1,Social sciences and humanities,True,0.95,575
-46,INFORMATION AND COMPUTING SCIENCES,2,Biomedical and health sciences,False,0.004,247
-46,INFORMATION AND COMPUTING SCIENCES,5,Mathematics and computer science,True,0.826,247
-46,INFORMATION AND COMPUTING SCIENCES,1,Social sciences and humanities,False,0.146,247
-46,INFORMATION AND COMPUTING SCIENCES,3,Physical sciences and engineering,False,0.016,247
-46,INFORMATION AND COMPUTING SCIENCES,4,Life and earth sciences,False,0.008,247
-47,"LANGUAGE, COMMUNICATION AND CULTURE",3,Physical sciences and engineering,False,0.005,203
-47,"LANGUAGE, COMMUNICATION AND CULTURE",2,Biomedical and health sciences,False,0.005,203
-47,"LANGUAGE, COMMUNICATION AND CULTURE",1,Social sciences and humanities,True,0.975,203
-47,"LANGUAGE, COMMUNICATION AND CULTURE",4,Life and earth sciences,False,0.015,203
-48,LAW AND LEGAL STUDIES,1,Social sciences and humanities,True,0.95,575
-48,LAW AND LEGAL STUDIES,5,Mathematics and computer science,False,0.019,575
-48,LAW AND LEGAL STUDIES,2,Biomedical and health sciences,False,0.017,575
-48,LAW AND LEGAL STUDIES,4,Life and earth sciences,False,0.012,575
-48,LAW AND LEGAL STUDIES,3,Physical sciences and engineering,False,0.002,575
-49,MATHEMATICAL SCIENCES,5,Mathematics and computer science,True,0.667,123
-49,MATHEMATICAL SCIENCES,1,Social sciences and humanities,False,0.293,123
-49,MATHEMATICAL SCIENCES,2,Biomedical and health sciences,False,0.016,123
-49,MATHEMATICAL SCIENCES,3,Physical sciences and engineering,False,0.016,123
-49,MATHEMATICAL SCIENCES,4,Life and earth sciences,False,0.008,123
-50,PHILOSOPHY AND RELIGIOUS STUDIES,3,Physical sciences and engineering,False,0.005,203
-50,PHILOSOPHY AND RELIGIOUS STUDIES,2,Biomedical and health sciences,False,0.005,203
-50,PHILOSOPHY AND RELIGIOUS STUDIES,1,Social sciences and humanities,True,0.975,203
-50,PHILOSOPHY AND RELIGIOUS STUDIES,4,Life and earth sciences,False,0.015,203
-51,PHYSICAL SCIENCES,3,Physical sciences and engineering,True,0.911,214
-51,PHYSICAL SCIENCES,5,Mathematics and computer science,False,0.047,214
-51,PHYSICAL SCIENCES,1,Social sciences and humanities,False,0.019,214
-51,PHYSICAL SCIENCES,4,Life and earth sciences,False,0.014,214
-51,PHYSICAL SCIENCES,2,Biomedical and health sciences,False,0.009,214
-52,PSYCHOLOGY,5,Mathematics and computer science,False,0.039,127
-52,PSYCHOLOGY,1,Social sciences and humanities,True,0.78,127
-52,PSYCHOLOGY,2,Biomedical and health sciences,False,0.173,127
-52,PSYCHOLOGY,4,Life and earth sciences,False,0.008,127
+for_division_code,for_division_label,leiden_main_field_id,leiden_main_field_label,is_primary,share,n_rows,match_method
+30,"AGRICULTURAL, VETERINARY AND FOOD SCIENCES",4,Life and earth sciences,True,0.723,202,derived_empirical
+30,"AGRICULTURAL, VETERINARY AND FOOD SCIENCES",1,Social sciences and humanities,False,0.109,202,derived_empirical
+30,"AGRICULTURAL, VETERINARY AND FOOD SCIENCES",2,Biomedical and health sciences,False,0.104,202,derived_empirical
+30,"AGRICULTURAL, VETERINARY AND FOOD SCIENCES",3,Physical sciences and engineering,False,0.05,202,derived_empirical
+30,"AGRICULTURAL, VETERINARY AND FOOD SCIENCES",5,Mathematics and computer science,False,0.015,202,derived_empirical
+31,BIOLOGICAL SCIENCES,4,Life and earth sciences,True,0.723,202,derived_empirical
+31,BIOLOGICAL SCIENCES,1,Social sciences and humanities,False,0.109,202,derived_empirical
+31,BIOLOGICAL SCIENCES,2,Biomedical and health sciences,False,0.104,202,derived_empirical
+31,BIOLOGICAL SCIENCES,3,Physical sciences and engineering,False,0.05,202,derived_empirical
+31,BIOLOGICAL SCIENCES,5,Mathematics and computer science,False,0.015,202,derived_empirical
+32,BIOMEDICAL AND CLINICAL SCIENCES,4,Life and earth sciences,False,0.006,648,derived_empirical
+32,BIOMEDICAL AND CLINICAL SCIENCES,5,Mathematics and computer science,False,0.012,648,derived_empirical
+32,BIOMEDICAL AND CLINICAL SCIENCES,3,Physical sciences and engineering,False,0.012,648,derived_empirical
+32,BIOMEDICAL AND CLINICAL SCIENCES,1,Social sciences and humanities,False,0.034,648,derived_empirical
+32,BIOMEDICAL AND CLINICAL SCIENCES,2,Biomedical and health sciences,True,0.935,648,derived_empirical
+33,BUILT ENVIRONMENT AND DESIGN,3,Physical sciences and engineering,True,0.581,492,derived_empirical
+33,BUILT ENVIRONMENT AND DESIGN,5,Mathematics and computer science,False,0.329,492,derived_empirical
+33,BUILT ENVIRONMENT AND DESIGN,1,Social sciences and humanities,False,0.047,492,derived_empirical
+33,BUILT ENVIRONMENT AND DESIGN,4,Life and earth sciences,False,0.026,492,derived_empirical
+33,BUILT ENVIRONMENT AND DESIGN,2,Biomedical and health sciences,False,0.016,492,derived_empirical
+34,CHEMICAL SCIENCES,3,Physical sciences and engineering,True,0.924,92,derived_empirical
+34,CHEMICAL SCIENCES,4,Life and earth sciences,False,0.043,92,derived_empirical
+34,CHEMICAL SCIENCES,5,Mathematics and computer science,False,0.011,92,derived_empirical
+34,CHEMICAL SCIENCES,1,Social sciences and humanities,False,0.011,92,derived_empirical
+34,CHEMICAL SCIENCES,2,Biomedical and health sciences,False,0.011,92,derived_empirical
+35,"COMMERCE, MANAGEMENT, TOURISM AND SERVICES",2,Biomedical and health sciences,False,0.017,116,derived_empirical
+35,"COMMERCE, MANAGEMENT, TOURISM AND SERVICES",1,Social sciences and humanities,True,0.914,116,derived_empirical
+35,"COMMERCE, MANAGEMENT, TOURISM AND SERVICES",5,Mathematics and computer science,False,0.069,116,derived_empirical
+36,CREATIVE ARTS AND WRITING,1,Social sciences and humanities,True,0.975,203,derived_empirical
+36,CREATIVE ARTS AND WRITING,4,Life and earth sciences,False,0.015,203,derived_empirical
+36,CREATIVE ARTS AND WRITING,2,Biomedical and health sciences,False,0.005,203,derived_empirical
+36,CREATIVE ARTS AND WRITING,3,Physical sciences and engineering,False,0.005,203,derived_empirical
+37,EARTH SCIENCES,4,Life and earth sciences,True,0.792,53,derived_empirical
+37,EARTH SCIENCES,5,Mathematics and computer science,False,0.075,53,derived_empirical
+37,EARTH SCIENCES,3,Physical sciences and engineering,False,0.075,53,derived_empirical
+37,EARTH SCIENCES,1,Social sciences and humanities,False,0.057,53,derived_empirical
+38,ECONOMICS,2,Biomedical and health sciences,False,0.013,78,derived_empirical
+38,ECONOMICS,5,Mathematics and computer science,False,0.026,78,derived_empirical
+38,ECONOMICS,1,Social sciences and humanities,True,0.962,78,derived_empirical
+39,EDUCATION,1,Social sciences and humanities,True,0.95,575,derived_empirical
+39,EDUCATION,5,Mathematics and computer science,False,0.019,575,derived_empirical
+39,EDUCATION,2,Biomedical and health sciences,False,0.017,575,derived_empirical
+39,EDUCATION,4,Life and earth sciences,False,0.012,575,derived_empirical
+39,EDUCATION,3,Physical sciences and engineering,False,0.002,575,derived_empirical
+40,ENGINEERING,3,Physical sciences and engineering,True,0.581,492,derived_empirical
+40,ENGINEERING,5,Mathematics and computer science,False,0.329,492,derived_empirical
+40,ENGINEERING,1,Social sciences and humanities,False,0.047,492,derived_empirical
+40,ENGINEERING,4,Life and earth sciences,False,0.026,492,derived_empirical
+40,ENGINEERING,2,Biomedical and health sciences,False,0.016,492,derived_empirical
+41,ENVIRONMENTAL SCIENCES,2,Biomedical and health sciences,False,0.035,171,derived_empirical
+41,ENVIRONMENTAL SCIENCES,5,Mathematics and computer science,False,0.041,171,derived_empirical
+41,ENVIRONMENTAL SCIENCES,4,Life and earth sciences,True,0.591,171,derived_empirical
+41,ENVIRONMENTAL SCIENCES,1,Social sciences and humanities,False,0.193,171,derived_empirical
+41,ENVIRONMENTAL SCIENCES,3,Physical sciences and engineering,False,0.14,171,derived_empirical
+42,HEALTH SCIENCES,2,Biomedical and health sciences,True,0.935,648,derived_empirical
+42,HEALTH SCIENCES,1,Social sciences and humanities,False,0.034,648,derived_empirical
+42,HEALTH SCIENCES,3,Physical sciences and engineering,False,0.012,648,derived_empirical
+42,HEALTH SCIENCES,5,Mathematics and computer science,False,0.012,648,derived_empirical
+42,HEALTH SCIENCES,4,Life and earth sciences,False,0.006,648,derived_empirical
+43,"HISTORY, HERITAGE AND ARCHAEOLOGY",2,Biomedical and health sciences,False,0.005,203,derived_empirical
+43,"HISTORY, HERITAGE AND ARCHAEOLOGY",3,Physical sciences and engineering,False,0.005,203,derived_empirical
+43,"HISTORY, HERITAGE AND ARCHAEOLOGY",1,Social sciences and humanities,True,0.975,203,derived_empirical
+43,"HISTORY, HERITAGE AND ARCHAEOLOGY",4,Life and earth sciences,False,0.015,203,derived_empirical
+44,HUMAN SOCIETY,5,Mathematics and computer science,False,0.019,575,derived_empirical
+44,HUMAN SOCIETY,2,Biomedical and health sciences,False,0.017,575,derived_empirical
+44,HUMAN SOCIETY,4,Life and earth sciences,False,0.012,575,derived_empirical
+44,HUMAN SOCIETY,3,Physical sciences and engineering,False,0.002,575,derived_empirical
+44,HUMAN SOCIETY,1,Social sciences and humanities,True,0.95,575,derived_empirical
+46,INFORMATION AND COMPUTING SCIENCES,2,Biomedical and health sciences,False,0.004,247,derived_empirical
+46,INFORMATION AND COMPUTING SCIENCES,5,Mathematics and computer science,True,0.826,247,derived_empirical
+46,INFORMATION AND COMPUTING SCIENCES,1,Social sciences and humanities,False,0.146,247,derived_empirical
+46,INFORMATION AND COMPUTING SCIENCES,3,Physical sciences and engineering,False,0.016,247,derived_empirical
+46,INFORMATION AND COMPUTING SCIENCES,4,Life and earth sciences,False,0.008,247,derived_empirical
+47,"LANGUAGE, COMMUNICATION AND CULTURE",3,Physical sciences and engineering,False,0.005,203,derived_empirical
+47,"LANGUAGE, COMMUNICATION AND CULTURE",2,Biomedical and health sciences,False,0.005,203,derived_empirical
+47,"LANGUAGE, COMMUNICATION AND CULTURE",1,Social sciences and humanities,True,0.975,203,derived_empirical
+47,"LANGUAGE, COMMUNICATION AND CULTURE",4,Life and earth sciences,False,0.015,203,derived_empirical
+48,LAW AND LEGAL STUDIES,1,Social sciences and humanities,True,0.95,575,derived_empirical
+48,LAW AND LEGAL STUDIES,5,Mathematics and computer science,False,0.019,575,derived_empirical
+48,LAW AND LEGAL STUDIES,2,Biomedical and health sciences,False,0.017,575,derived_empirical
+48,LAW AND LEGAL STUDIES,4,Life and earth sciences,False,0.012,575,derived_empirical
+48,LAW AND LEGAL STUDIES,3,Physical sciences and engineering,False,0.002,575,derived_empirical
+49,MATHEMATICAL SCIENCES,5,Mathematics and computer science,True,0.827,75,derived_empirical
+49,MATHEMATICAL SCIENCES,1,Social sciences and humanities,False,0.133,75,derived_empirical
+49,MATHEMATICAL SCIENCES,3,Physical sciences and engineering,False,0.013,75,derived_empirical
+49,MATHEMATICAL SCIENCES,4,Life and earth sciences,False,0.013,75,derived_empirical
+49,MATHEMATICAL SCIENCES,2,Biomedical and health sciences,False,0.013,75,derived_empirical
+50,PHILOSOPHY AND RELIGIOUS STUDIES,3,Physical sciences and engineering,False,0.005,203,derived_empirical
+50,PHILOSOPHY AND RELIGIOUS STUDIES,2,Biomedical and health sciences,False,0.005,203,derived_empirical
+50,PHILOSOPHY AND RELIGIOUS STUDIES,1,Social sciences and humanities,True,0.975,203,derived_empirical
+50,PHILOSOPHY AND RELIGIOUS STUDIES,4,Life and earth sciences,False,0.015,203,derived_empirical
+51,PHYSICAL SCIENCES,3,Physical sciences and engineering,True,0.84,100,derived_empirical
+51,PHYSICAL SCIENCES,5,Mathematics and computer science,False,0.09,100,derived_empirical
+51,PHYSICAL SCIENCES,1,Social sciences and humanities,False,0.04,100,derived_empirical
+51,PHYSICAL SCIENCES,4,Life and earth sciences,False,0.02,100,derived_empirical
+51,PHYSICAL SCIENCES,2,Biomedical and health sciences,False,0.01,100,derived_empirical
+52,PSYCHOLOGY,5,Mathematics and computer science,False,0.039,127,derived_empirical
+52,PSYCHOLOGY,1,Social sciences and humanities,True,0.78,127,derived_empirical
+52,PSYCHOLOGY,2,Biomedical and health sciences,False,0.173,127,derived_empirical
+52,PSYCHOLOGY,4,Life and earth sciences,False,0.008,127,derived_empirical
