@@ -158,11 +158,56 @@ r.resolve("321207", "FOR1998", "OAX_FIELD")  # "Indigenous Health" -> OAX field 
 
 As of this build, **all 2,203 FOR2020 codes resolve** -- exhaustively verified, including
 group 4599 ("Other Indigenous studies"), the last remaining gap, proxied (with user
-confirmation) to FOR2020 group 4499 "Other human society". Every FOR1998 (898) and FOR2008
-(1,238) code that appears in its vintage bridge resolves too, since each first resolves to
-some FOR2020 code and FOR2020 is now fully covered. See
+confirmation) to FOR2020 group 4499 "Other human society". Every FOR1998 and FOR2008 leaf
+code that appears in its vintage bridge resolves too, since each first resolves to some
+FOR2020 code and FOR2020 is now fully covered. See
 `research_classification/curate_for2020_division45_to_proxy.py` for the full method, and
 `tests/test_resolver.py`'s exhaustive coverage tests for the permanent regression guard.
+
+### Legacy vintages also resolve at division/group level, not just leaf
+
+FOR1998/FOR2008/SEO1998/SEO2008 all reach FOR2020/SEO2020 at division (2-digit) and group
+(4-digit) precision too, not just leaf level (field/objective) -- derived by rolling up the
+official leaf-level correspondence via majority vote (`research_classification/
+build_correspondences_rollup.py`), since none of these four vintages' ABS source tables
+publish anything coarser than leaf level directly:
+
+```python
+r.resolve("01", "FOR2008", "FOR2020")     # division -> "49 MATHEMATICAL SCIENCES"
+r.resolve("0101", "FOR2008", "FOR2020")   # group -> "4904 Pure mathematics"
+r.resolve("21", "FOR1998", "FOR2020")     # a genuine short code, not the padded "210000" --
+                                           # both forms are accepted, see "Legacy code shapes" below
+```
+
+Coverage: FOR2008 is 100% at all three levels (22/22 division, 157/157 group, 1241/1241
+field). FOR1998 is 100% at group/field (138/138, 895/895); division is 22/24 -- see below.
+SEO2008 is 100% at all three levels (16/16, 109/109, 757/757); SEO1998 is 100% at all three
+too (18/18, 107/107, 591/591). See `examples/map_category_for.py`/`map_category_seo.py` for
+the full verification script, and `TODO.md` for how each gap was closed.
+
+**Two FOR1998 divisions have no FOR2020 equivalent at all**, and `resolve()` says so rather
+than raising: `21` "SCIENCE-GENERAL" and `22` "SOCIAL SCIENCES, HUMANITIES AND ARTS-GENERAL"
+are broad catch-alls from the 1998 scheme with zero child disciplines of their own and no
+matching general/multidisciplinary division anywhere in FOR2020's 23 divisions. For exactly
+these two known, permanent cases, `resolve()` emits an informative `UserWarning` and returns
+`None` instead of raising `LookupError` -- so `resolve()`'s return type is `CanonicalResult |
+None`, and a caller iterating many codes should check for `None` alongside catching
+`LookupError`:
+
+```python
+result = r.resolve("21", "FOR1998", "FOR2020")  # warns, returns None
+if result is None:
+    ...  # a known, documented absence -- not an error to handle specially
+```
+
+### Legacy code shapes: FOR1998/SEO1998 vs FOR2008/SEO2008
+
+FOR2008/SEO2008 codes are natively variable-width (division `01`, group `0101`, field
+`010101` -- each a distinct code, not padding). FOR1998/SEO1998 instead encode every level in
+a single flat 6-digit space, right-padded with zeros for coarser levels (division `210000`,
+discipline/group `230100`, leaf `230101`). `resolve()` accepts *either* shape for FOR1998/
+SEO1998 -- the genuine short code (`"21"`, `"2301"`) or the ABS source's own zero-padded form
+(`"210000"`, `"230100"`) -- normalizing internally before lookup.
 
 ### Precision: group-level (4-digit) when available, division-level otherwise
 
