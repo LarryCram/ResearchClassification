@@ -48,12 +48,23 @@ _SEO_VINTAGES = {"SEO1998", "SEO2008", "SEO2020"}
 # four levels are natively 1/2/4/5 digits and never start with 0 in the actual data (domain
 # 1-4, field 11-36, subfield/topic prefixed by those), so no correction is needed there, but
 # the same length-based logic is still applied defensively.
+# FOR2008/SEO2008 are genuinely 2/4/6-digit at the source (division/group/leaf each have
+# their own code, not a shared padded width) -- all four of bridge_for2008_for2020.csv,
+# bridge_for1998_for2020.csv, bridge_seo2008_seo2020.csv, and bridge_seo1998_seo2020.csv now
+# carry division/group rows too (see build_correspondences_rollup.py), derived by rolling up
+# the official leaf-level correspondence since none of these four vintages' ABS source
+# publishes anything coarser. FOR1998/SEO1998 are listed here for documentation only: their
+# own encoding is a flat 6-digit space with right-padding (FOR1998 division "210000",
+# discipline "230100"; SEO1998 subdivision "610000", group "610100"), so length alone can't
+# identify a division/group input the way it does for FOR2008/SEO2008 -- see the dedicated
+# stripping branch in _normalize_code below, which handles both before this table is ever
+# consulted for them.
 _NATIVE_LENGTHS: dict[str, set[int]] = {
-    "FOR1998": {6},
-    "FOR2008": {6},
+    "FOR1998": {2, 4, 6},
+    "FOR2008": {2, 4, 6},
     "FOR2020": {2, 4, 6},
-    "SEO1998": {6},
-    "SEO2008": {6},
+    "SEO1998": {2, 4, 6},
+    "SEO2008": {2, 4, 6},
     "SEO2020": {2, 4, 6},
     "OAX": {1, 2, 4, 5},
 }
@@ -83,6 +94,26 @@ _DIVISION_CENTRIC: dict[str, tuple[str, str, str, str]] = {
 _GROUP_CENTRIC: dict[str, tuple[str, str, str, str]] = {
     to_scheme: (table.replace("for2020_division_", "for2020_group_"), code_col, label_col, level)
     for to_scheme, (table, code_col, label_col, level) in _DIVISION_CENTRIC.items()
+}
+
+# Codes confirmed to have no FOR2020 equivalent at all -- not a lookup gap to eventually
+# close, a genuine, fully-diagnosed absence: checked every one of FOR2020's 23 divisions and
+# none is a general/multidisciplinary catch-all, and both of these FOR1998 divisions have
+# zero child disciplines/subjects of their own to derive a target from either (confirmed
+# against data_untracked/12970_1998_2008.xlsx). resolve() warns and returns None for these
+# rather than raising, so a caller iterating many codes isn't forced into a try/except for a
+# known, permanent absence. See TODO.md.
+_KNOWN_UNRESOLVABLE: dict[tuple[str, str], str] = {
+    ("FOR1998", "21"): (
+        "FOR1998 division 21 'SCIENCE-GENERAL' has no FOR2020 equivalent -- FOR2020 has no "
+        "general/multidisciplinary catch-all division, and this 1998 division has zero child "
+        "disciplines/subjects to derive one from. See TODO.md."
+    ),
+    ("FOR1998", "22"): (
+        "FOR1998 division 22 'SOCIAL SCIENCES, HUMANITIES AND ARTS-GENERAL' has no FOR2020 "
+        "equivalent -- FOR2020 has no general/multidisciplinary catch-all division, and this "
+        "1998 division has zero child disciplines/subjects to derive one from. See TODO.md."
+    ),
 }
 
 _OAX_LEVEL_TABLE = {"domain": "openalex_domains", "field": "openalex_fields", "subfield": "openalex_subfields", "topic": "openalex_topics"}
@@ -167,6 +198,24 @@ class Resolver:
         text = str(value)
         if not text.isdigit():
             return text  # a label, not a code -- leave untouched
+        if from_scheme in ("FOR1998", "SEO1998"):
+            # Both encode every level in a flat 6-digit space, right-padded with zeros for
+            # coarser levels (FOR1998: division ends "0000", discipline/group ends "00" but
+            # not "0000"; SEO1998: subdivision ends "0000", group ends "00" but not "0000").
+            # Recover a lost leading zero on that padded form first (length 5 -> 6, same
+            # logic as below), then strip the padding to the level's own genuine short code
+            # -- "210000" -> "21", "230100" -> "2301" -- which is what
+            # bridge_for1998_for2020.csv/bridge_seo1998_seo2020.csv are actually keyed on for
+            # those levels (leaf/field codes never end in "00", so they pass through
+            # unchanged).
+            if len(text) == 5:
+                text = "0" + text
+            if len(text) == 6:
+                if text.endswith("0000"):
+                    return text[:2]
+                if text.endswith("00"):
+                    return text[:4]
+            return text
         native_lengths = _NATIVE_LENGTHS.get(from_scheme, set())
         if len(text) in native_lengths:
             return text
@@ -265,13 +314,18 @@ class Resolver:
 
     # -- public API -----------------------------------------------------
 
-    def resolve(self, value: str | int, from_scheme: FromScheme, to_scheme: ToScheme) -> CanonicalResult:
+    def resolve(self, value: str | int, from_scheme: FromScheme, to_scheme: ToScheme) -> CanonicalResult | None:
         if from_scheme not in _VALID_FROM_SCHEMES:
             raise ValueError(f"from_scheme must be one of {sorted(_VALID_FROM_SCHEMES)}, got {from_scheme!r}")
         if to_scheme not in _VALID_TO_SCHEMES:
             raise ValueError(f"to_scheme must be one of {sorted(_VALID_TO_SCHEMES)}, got {to_scheme!r}")
 
         code = self._normalize_code(value, from_scheme)
+
+        reason = _KNOWN_UNRESOLVABLE.get((from_scheme, code))
+        if reason is not None:
+            warnings.warn(reason, UserWarning, stacklevel=2)
+            return None
 
         if from_scheme in _SEO_VINTAGES:
             if to_scheme == "SEO2020":

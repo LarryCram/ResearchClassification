@@ -11,6 +11,7 @@ from research_classification import (
     build_asjc,
     build_correspondences_abs,
     build_correspondences_legacy,
+    build_correspondences_rollup,
     build_duckdb,
     build_for_seo,
     build_leiden,
@@ -114,6 +115,10 @@ def main() -> None:
 
     print("7. Building legacy FOR1998/SEO1998 bridges (via direct 1297.0 combined table)...")
     build_correspondences_legacy.run()
+
+    print("7b. Rolling up division/group (2/4-digit) bridge rows for all four legacy vintages "
+          "from the leaf-level bridges just built above, plus hand-coded overrides...")
+    build_correspondences_rollup.run()
 
     print("8. Building the scheme_registry.csv nomenclature/level map...")
     build_registry.run()

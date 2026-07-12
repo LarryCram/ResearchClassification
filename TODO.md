@@ -183,6 +183,57 @@ Group **4599** ("Other Indigenous studies") and its sole field 459999 -- no sub-
 no algorithmic signal at all -- were the last remaining gap; user-confirmed to the same
 proxy as 4519's own default, FOR2020 group 4499 "Other human society".
 
+## FOR1998/FOR2008 -> FOR2020 at division (2-digit) and group (4-digit) level: RESOLVED
+
+`resolve()` used to only reach FOR2020 from FOR1998/FOR2008 at field level (6-digit) --
+neither vintage's official ABS correspondence source publishes anything coarser than field
+level (confirmed directly: the 2008->2020 sheet's 2443 real rows are all 6 digits, none at 2
+or 4; same for the 1998->2008 "Table 1" source). Closed via
+`research_classification/build_correspondences_rollup.py`: division/group bridge rows are
+derived by rolling up the existing field-level bridge tables (majority vote per
+division/group prefix -- same pattern as OAX/Leiden's `_DIVISION_CENTRIC`/`_GROUP_CENTRIC`
+roll-ups), tagged `match_method="derived_empirical"`. `_NATIVE_LENGTHS["FOR2008"]` widened
+from `{6}` to `{2, 4, 6}` (its own codes are natively 2/4/6-digit); FOR1998 got dedicated
+handling in `_normalize_code()` instead, since its codes are a flat 6-digit space with
+right-padding (division `210000`, discipline `230100`) -- it strips that padding to the
+genuine short code (`"21"`, `"2301"`) that the bridge table is now keyed on for those levels,
+while still accepting the zero-padded 6-digit form too.
+
+Confirmed via `examples/map_category.py`, which runs every FOR1998/FOR2008 division/group/
+field code from `data_untracked/12970_1998_2008.xlsx` through `resolve()`:
+
+- **FOR2008: 100% at every level** -- 22/22 division, 157/157 group, 1241/1241 field. The
+  last 3 field-level gaps (`119901` Podiatry, `119902` Medical Biotechnology, `119903`
+  Therapies and Therapeutic Technology -- none has an official ABS correspondence or a clean
+  label match) were closed with user-provided hand-coded overrides
+  (`MANUAL_FIELD_OVERRIDES` in `build_correspondences_rollup.py`), resolving to their best-fit
+  FOR2020 *group* directly (`4201` Allied health and rehabilitation science; `3206` Medical
+  biotechnology) since no FOR2020 field fits either -- a deliberate level-coarsening, tagged
+  `match_method="user_provided"`.
+- **FOR1998: group and field 100%** (138/138 group; 895/895 field -- the last 2 field-level
+  gaps, `360205` Social Policy and `360206` Defence Policy, had no FOR2020 field of their own
+  under discipline 3602's own FOR2020 group target, and were closed the same way as FOR2008's
+  three: user-provided hand-coded overrides to their parent discipline's FOR2020 group, `4407`
+  Policy and administration), **division 22/24** -- the 2 failures are FOR1998 divisions
+  `21` "SCIENCE-GENERAL" and `22` "SOCIAL SCIENCES, HUMANITIES AND ARTS-GENERAL". Confirmed
+  genuinely unresolvable, not a gap to close: checked all 23 FOR2020 divisions, none is a
+  general/multidisciplinary catch-all, and both 1998 divisions have zero child disciplines/
+  subjects of their own in the source data to derive a target from either way. Per-user
+  decision: leave these as a documented, permanent absence rather than force a bad match --
+  `resolve()` special-cases `("FOR1998", "21")`/`("FOR1998", "22")` via `_KNOWN_UNRESOLVABLE`,
+  emits an informative `UserWarning` explaining why, and returns `None` instead of raising, so
+  a caller iterating many codes doesn't need a try/except for a known, permanent case.
+
+`build_correspondences_rollup.py`'s `run()` is idempotent (filters to `canonical_level ==
+"field"` before recomputing roll-ups), safe to re-run after either bridge CSV already has
+division/group rows written into it from a prior run.
+
+Still separately true: a non-ABS-official 4-digit group-level FOR2008->FOR2020 table sits
+unused in `data_untracked/2008_FoR_to_2020_FoR_conversion_04Apr2022.xlsx` (180 rows, near
+1:1) -- not needed now that the roll-up approach gives 100% FOR2008 group coverage, but
+worth a cross-check against it if the roll-up's group-level confidence ever looks suspicious
+for a specific code.
+
 ## OAX/Leiden -> FOR2020 group-level (4-digit) precision: done, but partial coverage
 `seeds/openalex_subfield_to_for_group.csv` (252 rows, algorithmic -- see its own docstring
 for the scoring approach and the three failure modes found and fixed while building it)
