@@ -234,6 +234,21 @@ r.resolve("300101", "FOR1998", "FOR2020")  # -> "Soil physics" (410605)
 r.resolve("300101", "FOR2020", "FOR2020")  # -> "Agricultural biotechnology diagnostics"
 ```
 
+### Bare-label lookups: ties resolve to the coarsest level
+
+Resolving by label instead of code (e.g. `r.resolve("Transport", "SEO1998", "SEO2020")`) can
+hit a genuine collision: the same label text can legitimately belong to more than one
+`source_code` at different granularities (e.g. SEO1998 division `69` "TRANSPORT" and an
+unrelated objective-level leaf `660403` also just labeled "Transport"). Since a bare-text
+query carries no code, there's no basis to prefer a finer level over a coarser one sharing
+the label -- `resolve()` always returns the coarsest match in that case, with the finer one
+available via `.alternates`:
+
+```python
+result = r.resolve("Transport", "SEO1998", "SEO2020")
+result.level, result.code  # ("division", "27") -- not the unrelated objective-level leaf
+```
+
 ### Leading zeros
 
 FOR2008 codes in divisions 01-09 (556 of them) commonly lose their leading zero when read

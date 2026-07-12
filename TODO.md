@@ -1,5 +1,25 @@
 # Known gaps
 
+## Bare-label vintage lookups resolving to a finer level than intended: FIXED
+
+`resolve(value, from_scheme, to_scheme)` with a bare label (not a code) could silently
+return a match at a finer classification level than the caller meant. Repro:
+`resolve("Transport", "SEO1998", "SEO2020")` returned the unrelated objective-level leaf
+`170104` ("Transport energy efficiency") instead of division `27` ("TRANSPORT") -- both
+`bridge_seo1998_seo2020` rows (`source_code=69` "TRANSPORT" division, `source_code=660403`
+"Transport" objective) are legitimately `is_primary=True` for their own, different
+`source_code`, so `ORDER BY is_primary DESC` alone didn't break the tie between them;
+whichever row the table scan returned first won arbitrarily.
+
+Fixed in `_resolve_vintage_to_current()`'s bare-label query: added `LENGTH(source_code) ASC`
+as a secondary sort key, so a label collision across granularities always resolves to the
+coarsest match -- a bare-text query carries no code, so there's never a basis to prefer a
+finer level over a coarser one sharing the same label. Applies to all four
+`_VINTAGE_BRIDGE_TABLE` lookups via the shared code path. Scanned all four bridge tables for
+the same collision class: real and widespread, not a one-off -- 26 in FOR1998
+(e.g. "Automotive Engineering" group 2904 vs field 290401), 2 in FOR2008, 85 in SEO1998, 2 in
+SEO2008. Regression test: `tests/test_resolver.py::test_bare_label_lookup_prefers_coarser_level`.
+
 ## OAX <-> FOR2020: RESOLVED, via a hand-curated mapping recovered from an earlier project
 
 The prior approach (documented below, kept for history) tried to build the FOR2020->OAX
