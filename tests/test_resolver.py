@@ -69,6 +69,18 @@ def test_collision_resolved_by_explicit_from_scheme():
     print(f"  collision resolved OK: FOR1998/300101={as_for1998.label!r}, FOR2020/300101={as_for2020.label!r}")
 
 
+def test_bare_label_lookup_prefers_coarser_level():
+    # A bare label (no code) can collide across source_codes at different granularities --
+    # SEO1998 division 69 "TRANSPORT" and an unrelated objective-level leaf 660403 are both
+    # literally labeled "Transport", and both are legitimately is_primary=True for their own
+    # source_code. A bare-text query carries no code, so there's no basis to prefer the finer
+    # level -- resolve() must pick the coarsest match, not whichever row the DB happens to
+    # scan first.
+    result = resolver.resolve("Transport", "SEO1998", "SEO2020")
+    assert result.level == "division" and result.code == "27"
+    print(f"  bare-label collision resolved to coarsest level OK: 'Transport' -> {result.code} ({result.label!r})")
+
+
 def test_asjc_exact_join():
     # ASJC code 16 = Chemistry (verified 100% exact match with OpenAlex field_id) -- ASJC
     # codes ARE OpenAlex field/subfield codes, so this resolves directly as OAX input.
@@ -389,6 +401,7 @@ if __name__ == "__main__":
         test_identity_round_trip,
         test_bridge_primary_uniqueness,
         test_collision_resolved_by_explicit_from_scheme,
+        test_bare_label_lookup_prefers_coarser_level,
         test_asjc_exact_join,
         test_leiden_for_derivation,
         test_for2008_known_code,

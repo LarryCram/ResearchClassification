@@ -253,9 +253,19 @@ class Resolver:
             [value],
         ).fetchall()
         if not rows:
+            # A bare label can collide across source_codes at different levels (e.g. SEO1998
+            # division 69 "TRANSPORT" and an unrelated objective-level leaf 660403 both
+            # literally labeled "Transport") -- is_primary alone doesn't break that tie, since
+            # each row IS the correct primary for its own, different source_code. Prefer the
+            # coarsest (shortest source_code) match: a bare-text query carries no code, so
+            # there's no basis for picking a finer level over a coarser one that shares the
+            # same label -- every FOR/SEO scheme's code precision is consistent (2/4/6 digits
+            # = division/group/field-or-objective), so LENGTH(source_code) ASC is a reliable
+            # coarsest-first tiebreak everywhere this query runs.
             rows = self._con.execute(
                 "SELECT canonical_code, canonical_label, canonical_level, is_primary, match_method, confidence "
-                f"FROM {table} WHERE lower(source_label) = lower(?) ORDER BY is_primary DESC",
+                f"FROM {table} WHERE lower(source_label) = lower(?) "
+                "ORDER BY is_primary DESC, LENGTH(source_code) ASC",
                 [value],
             ).fetchall()
         if not rows:
