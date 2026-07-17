@@ -11,10 +11,17 @@ ROOT = Path(__file__).resolve().parent.parent
 LEIDEN_DIR = ROOT / "data_untracked" / "classification_openalex_2023nov"
 DATA_DIR = ROOT / "research_classification" / "data"
 
+# The raw main_field.tsv numbers 1=SSH, 2=BHS, 3=PSE, 4=LES, 5=MCS. We renumber to match the
+# user's own leiden_idx convention (1=MCS, 2=PSE, 3=LES, 4=BHS, 5=SSH) -- the exact reverse --
+# applied to both main_field's own code and micro_cluster_main_field's main_field_id so every
+# downstream join in this module (which matches on that id) still lines up.
+_MAIN_FIELD_ID_REMAP = {"1": "5", "2": "4", "3": "2", "4": "3", "5": "1"}
+
 
 def load_main_field() -> pd.DataFrame:
     df = pd.read_csv(LEIDEN_DIR / "main_field.tsv", sep="\t", dtype=str, encoding="utf-8")
     df = df.rename(columns={"main_field_id": "code", "main_field": "label"})
+    df["code"] = df["code"].replace(_MAIN_FIELD_ID_REMAP)
     df["level"] = "main_field"
     df["parent_code"] = ""
     return df[["code", "level", "label", "parent_code"]]
@@ -35,6 +42,7 @@ def load_micro_cluster_main_field() -> pd.DataFrame:
     df = pd.read_csv(
         LEIDEN_DIR / "micro_cluster_main_field.tsv", sep="\t", dtype=str, encoding="utf-8"
     )
+    df["main_field_id"] = df["main_field_id"].replace(_MAIN_FIELD_ID_REMAP)
     df["is_primary_main_field"] = df["is_primary_main_field"].astype(str).isin(["1", "True", "true"])
     return df
 
