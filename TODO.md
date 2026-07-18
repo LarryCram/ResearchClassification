@@ -254,7 +254,7 @@ unused in `data_untracked/2008_FoR_to_2020_FoR_conversion_04Apr2022.xlsx` (180 r
 worth a cross-check against it if the roll-up's group-level confidence ever looks suspicious
 for a specific code.
 
-## OAX/Leiden -> FOR2020 group-level (4-digit) precision: done, but partial coverage
+## OAX/Leiden -> FOR2020 group-level (4-digit) precision: done, full coverage
 `seeds/openalex_subfield_to_for_group.csv` (252 rows, algorithmic -- see its own docstring
 for the scoring approach and the three failure modes found and fixed while building it)
 plus the four `for2020_group_*.csv` tables now give group-level (4-digit) precision when
@@ -263,3 +263,78 @@ exploding is deliberately primary-only, trading lower coverage for not duplicati
 subfield's full count across several close-scoring alternate groups -- see
 `explode_for_groups()`'s docstring). `resolve()` falls back to division-level automatically
 for uncovered groups, so this degrades gracefully rather than failing.
+
+The OAX subfield -> FOR2020 group direction itself (`bridge_openalex_for_group.csv`) is now
+**fully audited, not just algorithmic**: of the 252 subfields, 46 were originally
+`below_floor` (no confident lexical match at all) and the remaining 206 had a median
+confidence of only ~0.22, meaning many of the "confident" picks were likely wrong too, not
+just the unmatched ones. Rather than another round of formula-tuning (same lesson as the
+FOR2020->OAX direction below), every one of the 252 was reviewed directly against its own
+candidate pool (`research_classification/audit_oax_for_bridges.py`, a standalone diagnostic
+dump tool kept committed for future re-audits) and corrected via `_MANUAL_OVERRIDES` where
+the lexical pick was wrong -- 47 new entries, on top of the ~44 already there from an earlier
+session. Result: **0 `below_floor` primaries left, all 252/252 subfields resolve to a real,
+confident FOR2020 group** (`test_exhaustive_oax_subfield_to_for2020_group_coverage` is the
+permanent regression guard). None of the corrections were ambiguous enough to need surfacing
+to the user for a manual tie-break (the plan's own `<20`-case bar was met with room to spare
+-- the reviewed-and-decided count converged to 0 genuinely unresolvable cases). The 26-row
+OAX field -> FOR2020 division bridge (`bridge_openalex_for.csv`) got the same treatment on a
+smaller scale: 4 overrides (Economics/Econometrics/Finance -> the dedicated ECONOMICS
+division it was missing entirely; Energy -> Engineering, correcting a `contains_match` false
+positive on the bare word "energy" landing on physics' "Particle and high energy physics";
+Decision Sciences -> Commerce/Management per user direction; Health Professions -> Health
+Sciences, already fixed in an earlier session).
+
+## OAX topic -> FOR2020 field (6-digit leaf) precision: new, "cluster down" within each matched group
+The finest level on both sides now reaches each other too. Once a subfield is confidently
+pinned to a FOR2020 group (see above), `curate_openalex_topic_to_for_field.py` constrains
+each of that subfield's own OAX topics to *only* the FOR2020 fields inside that matched group
+(avg ~9.2 candidates, min 1, max 32 -- never the full 1,967-field space) and matches
+individually, using the topic's label + `keywords` + `summary` (sourced from the raw
+`OpenAlex_topic_mapping_table.xlsx`, now tracked directly in `research_classification/data/`
+rather than depending on the gitignored `data_untracked/` copy -- see
+`build_openalex.py`'s `SRC`) against the FOR2020 field's label (the only text available at
+that level -- no field-level definitions exist anywhere in the source data). Groups with
+exactly one field are trivial (direct assignment, no scoring needed).
+
+Result: 3,918/4,516 topics (87%) reach real field-level precision; the remaining 598 don't
+clear the lexical floor and are recorded as `below_floor` in `bridge_openalex_for_topic.csv`
+rather than forced to a guess. Per explicit user direction, there is **no `<20`-case manual
+review bar at this scale** (unlike the subfield->group audit above) -- LLM-only judgment was
+accepted, with two spot-checked overrides added after a targeted sample review: "Rheumatoid
+Arthritis Research and Therapies" (an exact-name field, "Rheumatology and arthritis", existed
+in the same matched group but was missed because "rheumatoid"/"rheumatology" don't share a
+tokenized root) and "Diabetes and associated disorders" (user-directed to "Epigenetics" within
+its own matched Genetics group, rather than crossing out to a different group's
+"Endocrinology" field -- the same OpenAlex topic ID can genuinely represent the genetics/
+epigenetics angle on diabetes specifically, distinct from other diabetes-related topics that
+may sit under a clinical/endocrine subfield instead).
+
+`resolve()`'s `_resolve_oax_to_for2020()` was restructured around an explicit ordered tier
+list (`_OAX_TO_FOR2020_TIERS`: topic->field, subfield->group, field->division), trying the
+finest tier the input supports and cascading to the next-coarsest whenever a tier's own
+primary is `below_floor` -- so a below_floor topic-level guess is never surfaced directly by
+`resolve()` (it gracefully degrades to that topic's subfield's group-level answer instead),
+even though it's still visible in `bridge_openalex_for_topic.csv` for anyone inspecting the
+raw data. This restructuring also fixed two real, pre-existing bugs found while doing it: the
+old two-tier logic hardcoded the literal strings `"constrained_lexical"`/`"manual_curated"`
+as `match_method` regardless of the row's real value, and its group-tier fallback check
+(`if row: ...`) never actually triggered for `below_floor` rows (every subfield already had
+an `is_primary=True` row, `below_floor` or not) -- both fixed as part of the same change, not
+separately (`test_oax_for2020_match_method_not_hardcoded` is the regression guard).
+
+Division 45 (Indigenous Studies) has no interaction with any of this: it's already excluded
+from the OAX->FOR2020 candidate pool at the group level (`curate_openalex_subfield_to_for_group.py`
+filters it out before scoring), and since the topic tier's candidate pools are always subsets
+of an already-matched non-45 group's own fields, division 45 fields can never surface as a
+topic-level target either -- no code needed to special-case it further. The existing
+`cultural_proxy` mechanism (`curate_for2020_division45_to_proxy.py`) remains exclusively part
+of the *other* direction (FOR2020->OAX) and is untouched by any of this.
+
+Known, accepted, non-blocking gap: `bridge_openalex_for.csv` also feeds `build_leiden.py`'s
+`bridge_leiden_for.csv` (an OAX-field-to-FOR2020-division majority vote for Leiden), which is
+now one commit stale relative to this audit's 4 field-level overrides -- not fixed in this
+pass since regenerating it needs `data_untracked/classification_openalex_2023nov/*.tsv`
+(absent in this checkout), and it's low-risk regardless since `LEIDEN` isn't currently a
+valid `from_scheme` for `resolve()`, so `bridge_leiden_for.csv` is presently unreachable from
+the public API either way.

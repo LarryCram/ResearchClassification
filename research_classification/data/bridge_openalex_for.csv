@@ -1,15 +1,15 @@
 source_system,source_code,source_label,system,canonical_code,canonical_label,canonical_level,is_primary,match_method,confidence,notes
-OpenAlex,11,Agricultural and Biological Sciences,FOR,30,"AGRICULTURAL, VETERINARY AND FOOD SCIENCES",division,True,constrained_lexical,0.188,
+OpenAlex,11,Agricultural and Biological Sciences,FOR,31,BIOLOGICAL SCIENCES,division,True,contains_match,0.9,
 OpenAlex,12,Arts and Humanities,FOR,47,"LANGUAGE, COMMUNICATION AND CULTURE",division,True,constrained_lexical,0.165,
-OpenAlex,13,"Biochemistry, Genetics and Molecular Biology",FOR,31,BIOLOGICAL SCIENCES,division,True,constrained_lexical,0.155,
+OpenAlex,13,"Biochemistry, Genetics and Molecular Biology",FOR,31,BIOLOGICAL SCIENCES,division,True,contains_match,0.9,
 OpenAlex,14,"Business, Management and Accounting",FOR,35,"COMMERCE, MANAGEMENT, TOURISM AND SERVICES",division,True,constrained_lexical,0.303,
 OpenAlex,15,Chemical Engineering,FOR,40,ENGINEERING,division,True,exact_match,1.0,
 OpenAlex,16,Chemistry,FOR,34,CHEMICAL SCIENCES,division,True,constrained_lexical,0.245,
-OpenAlex,17,Computer Science,FOR,46,INFORMATION AND COMPUTING SCIENCES,division,True,constrained_lexical,0.334,
-OpenAlex,18,Decision Sciences,FOR,46,INFORMATION AND COMPUTING SCIENCES,division,True,constrained_lexical,0.357,
-OpenAlex,19,Earth and Planetary Sciences,FOR,37,EARTH SCIENCES,division,True,constrained_lexical,0.238,
-OpenAlex,20,"Economics, Econometrics and Finance",FOR,35,"COMMERCE, MANAGEMENT, TOURISM AND SERVICES",division,True,constrained_lexical,0.23,
-OpenAlex,21,Energy,FOR,40,ENGINEERING,division,True,constrained_lexical,0.371,
+OpenAlex,17,Computer Science,FOR,46,INFORMATION AND COMPUTING SCIENCES,division,True,contains_match,0.9,
+OpenAlex,18,Decision Sciences,FOR,35,"COMMERCE, MANAGEMENT, TOURISM AND SERVICES",division,True,manual_override,0.7,"user override: Decision Sciences -> Commerce/Management (business), not Info/Computing Sciences"
+OpenAlex,19,Earth and Planetary Sciences,FOR,37,EARTH SCIENCES,division,True,contains_match,0.9,
+OpenAlex,20,"Economics, Econometrics and Finance",FOR,38,ECONOMICS,division,True,manual_override,0.7,exact-fit division 38 ECONOMICS exists (group 'Econometrics'); lexical cascade missed it on generic overlap with Commerce/Management
+OpenAlex,21,Energy,FOR,40,ENGINEERING,division,True,manual_override,0.7,obviously energy/power engineering on inspection; contains_match false-positived on bare word 'energy' -> Particle and high energy physics
 OpenAlex,22,Engineering,FOR,40,ENGINEERING,division,True,exact_match,1.0,
 OpenAlex,23,Environmental Science,FOR,41,ENVIRONMENTAL SCIENCES,division,True,exact_match,1.0,
 OpenAlex,24,Immunology and Microbiology,FOR,31,BIOLOGICAL SCIENCES,division,True,constrained_lexical,0.173,

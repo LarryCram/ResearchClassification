@@ -116,6 +116,17 @@ _KNOWN_UNRESOLVABLE: dict[tuple[str, str], str] = {
     ),
 }
 
+# OAX -> FOR2020 tiers, finest first: (OAX level required for this tier's lookup, bridge
+# table keyed on that level's own code). Each bridge is algorithmic/cascade-generated (not
+# the hand-curated FOR2020->OAX direction's _DIVISION_CENTRIC/_GROUP_CENTRIC), and each was
+# audited to confidence -- see curate_openalex_for.py, curate_openalex_subfield_to_for_group.py,
+# curate_openalex_topic_to_for_field.py.
+_OAX_TO_FOR2020_TIERS: list[tuple[str, str]] = [
+    ("topic", "bridge_openalex_for_topic"),      # -> FOR2020 field (6-digit)
+    ("subfield", "bridge_openalex_for_group"),   # -> FOR2020 group (4-digit)
+    ("field", "bridge_openalex_for"),            # -> FOR2020 division (2-digit)
+]
+
 _OAX_LEVEL_TABLE = {"domain": "openalex_domains", "field": "openalex_fields", "subfield": "openalex_subfields", "topic": "openalex_topics"}
 _OAX_LEVEL_RANK = {"domain": 0, "field": 1, "subfield": 2, "topic": 3}
 _TO_SCHEME_OAX_LEVEL = {"OAX_DOMAIN": "domain", "OAX_FIELD": "field", "OAX_SUBFIELD": "subfield", "OAX_TOPIC": "topic"}
@@ -440,6 +451,18 @@ class Resolver:
     # -- OAX -> FOR2020 / Leiden / OAX ---------------------------------------
 
     def _resolve_oax_to_for2020(self, code: str) -> CanonicalResult:
+        """Tries the finest OAX precision the input actually supports first, cascading to
+        progressively coarser tiers -- topic -> field (leaf), subfield -> group, field ->
+        division -- stopping at the first tier with a confident (non-below_floor) row. A
+        below_floor/confidence-0 hit at any tier means "no trustworthy answer here", not "the
+        answer": it's still recorded in that tier's own bridge CSV (for anyone inspecting the
+        raw data), but resolve() itself always prefers a trustworthy coarser answer over an
+        untrustworthy finer one -- the same graceful-degradation philosophy used everywhere
+        else in this module. The field->division tier is the guaranteed final fallback: after
+        the OAX subfield->FOR group audit (see curate_openalex_subfield_to_for_group.py's
+        docstring), every one of bridge_openalex_for.csv's 26 rows has real confidence, so
+        this tier never itself returns below_floor and the trailing LookupError below is
+        unreachable in practice, kept only as a defensive final guard."""
         identified = self._oax_identify(code)
         if not identified:
             raise LookupError(f"{code!r} not found in any OAX table (domain/field/subfield/topic)")
@@ -450,29 +473,20 @@ class Resolver:
                 f"OpenAlex-field-to-FOR-division mapping needs at least field-level precision"
             )
 
-        # subfield-or-deeper input tries the finer group-level seed first (walking up to
-        # subfield if given a topic), falling back to the field-level/division-level seed
-        if _OAX_LEVEL_RANK[level] >= _OAX_LEVEL_RANK["subfield"]:
-            subfield_code, _subfield_label = self._oax_walk_up_simple(oax_code, level, "subfield")
+        for required_level, table in _OAX_TO_FOR2020_TIERS:
+            if _OAX_LEVEL_RANK[level] < _OAX_LEVEL_RANK[required_level]:
+                continue  # input is coarser than this tier needs -- try a coarser tier instead
+            lookup_code = oax_code if level == required_level else self._oax_walk_up_simple(oax_code, level, required_level)[0]
             row = self._con.execute(
-                "SELECT canonical_code, canonical_label, canonical_level, confidence "
-                "FROM bridge_openalex_for_group WHERE source_code = ? AND is_primary = 'True'",
-                [subfield_code],
+                f"SELECT canonical_code, canonical_label, canonical_level, match_method, confidence "
+                f"FROM {table} WHERE source_code = ? AND is_primary = 'True'",
+                [lookup_code],
             ).fetchone()
-            if row:
-                group_code, group_label, group_level, confidence = row
-                return CanonicalResult(code, "OAX", "FOR2020", group_code, group_label, group_level, "constrained_lexical", float(confidence))
+            if row and row[3] != "below_floor" and float(row[4]) > 0:
+                for_code, for_label, for_level, match_method, confidence = row
+                return CanonicalResult(code, "OAX", "FOR2020", for_code, for_label, for_level, match_method, float(confidence))
 
-        field_code, _field_label = self._oax_walk_up_simple(oax_code, level, "field")
-        row = self._con.execute(
-            "SELECT canonical_code, canonical_label, canonical_level, confidence "
-            "FROM bridge_openalex_for WHERE source_code = ? AND is_primary = 'True'",
-            [field_code],
-        ).fetchone()
-        if not row:
-            raise LookupError(f"{code!r} (OpenAlex field {field_code}): no curated FOR2020 mapping found")
-        for_code, for_label, for_level, confidence = row
-        return CanonicalResult(code, "OAX", "FOR2020", for_code, for_label, for_level, "manual_curated", float(confidence))
+        raise LookupError(f"{code!r}: no curated FOR2020 mapping found at any OAX precision tier")
 
     def _resolve_oax_to_leiden(self, code: str) -> CanonicalResult:
         for2020 = self._resolve_oax_to_for2020(code)

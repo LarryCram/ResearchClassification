@@ -22,7 +22,9 @@ from research_classification import (
     curate_for2020_to_openalex,
     curate_openalex_for,
     curate_openalex_subfield_to_for_group,
+    curate_openalex_topic_to_for_field,
     curate_seo_to_sdg,
+    validate_oax_for2020_consistency,
 )
 from research_classification.hierarchy import audit_encoding, validate_bridge, validate_canonical
 
@@ -37,6 +39,7 @@ SEEDS_DIR = DATA_DIR.parent.parent / "seeds"
 _LOCKED_SEEDS = [
     "openalex_field_to_for_division.csv",
     "openalex_subfield_to_for_group.csv",
+    "openalex_topic_to_for_field.csv",
     "for2020_division_to_openalex_field.csv",
     "for2020_group_to_openalex_subfield.csv",
 ]
@@ -98,12 +101,18 @@ def main() -> None:
     bridge_openalex_for_group = curate_openalex_subfield_to_for_group.to_bridge(subfield_seed)
     write_csv(bridge_openalex_for_group, DATA_DIR / "bridge_openalex_for_group.csv", ["source_code"])
 
-    print("4c. Curating (or reusing) FOR2020 division 45 -> non-45 proxy (lexical + 2 manual overrides)...")
+    print("4c. Curating (or reusing) OpenAlex topic -> FOR field (constrained per subfield's "
+          "own matched group from 4b -- must run after it)...")
+    topic_seed = curate_openalex_topic_to_for_field.run()
+    bridge_openalex_for_topic = curate_openalex_topic_to_for_field.to_bridge(topic_seed)
+    write_csv(bridge_openalex_for_topic, DATA_DIR / "bridge_openalex_for_topic.csv", ["source_code"])
+
+    print("4d. Curating (or reusing) FOR2020 division 45 -> non-45 proxy (lexical + 2 manual overrides)...")
     division45_seed = curate_for2020_division45_to_proxy.run()
     write_csv(division45_seed, DATA_DIR / "for2020_division45_group_to_proxy.csv", ["for2020_source_code"])
 
-    print("4d. Curating (or reusing) FOR2020 division/group -> OAX field/subfield "
-          "(hand-curated, ported from an earlier project; independent of 4/4b above)...")
+    print("4e. Curating (or reusing) FOR2020 division/group -> OAX field/subfield "
+          "(hand-curated, ported from an earlier project; independent of 4/4b/4c above)...")
     curate_for2020_to_openalex.run()
 
     print("5. Building Leiden bridges (wikipedia_url exact join + empirical derivation), "
@@ -136,6 +145,9 @@ def main() -> None:
         df["confidence"] = df["confidence"].astype(float)
         validate_bridge(df, canonical_lookup, path.stem)
     print(f"   {len(bridge_files)} bridge tables OK")
+
+    print("9b. Checking OAX topic->field / subfield->group / field->division consistency...")
+    validate_oax_for2020_consistency.run()
 
     print("10. Auditing character encoding across every output table...")
     findings = []

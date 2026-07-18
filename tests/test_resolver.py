@@ -14,7 +14,7 @@ sys.path.insert(0, str(ROOT))
 
 import pandas as pd
 
-from research_classification import Resolver
+from research_classification import Resolver, validate_oax_for2020_consistency
 
 DATA_DIR = ROOT / "research_classification" / "data"
 resolver = Resolver()
@@ -386,6 +386,101 @@ def test_exhaustive_legacy_for_coverage():
         print(f"  exhaustive {from_scheme} coverage OK: all {len(codes)}/{len(codes)} codes resolve to both OAX_FIELD and LEIDEN")
 
 
+def test_exhaustive_oax_field_to_for2020_division_coverage():
+    # Every OAX field (26) resolves to a FOR2020 division -- cheap regression guard, already
+    # true before the subfield/topic audit work but worth locking in permanently too.
+    fields = pd.read_csv(DATA_DIR / "openalex_fields.csv", dtype=str, keep_default_na=False)
+    failures = set()
+    for code in fields["code"]:
+        try:
+            resolver.resolve(code, "OAX", "FOR2020")
+        except LookupError:
+            failures.add(code)
+    assert not failures, f"OAX field -> FOR2020: unexpected LookupError(s) for {failures}"
+    print(f"  exhaustive OAX field -> FOR2020 coverage OK: all {len(fields)}/{len(fields)} fields resolve")
+
+
+def test_exhaustive_oax_subfield_to_for2020_group_coverage():
+    # Every OAX subfield (252) resolves to FOR2020 group-level (4-digit) precision, and --
+    # the concrete, checkable definition of the full subfield->group audit's success --
+    # bridge_openalex_for_group.csv has zero below_floor primaries left (the original 46
+    # below_floor gaps were all promoted to a real, confident pick; see
+    # curate_openalex_subfield_to_for_group.py's docstring and TODO.md).
+    subfields = pd.read_csv(DATA_DIR / "openalex_subfields.csv", dtype=str, keep_default_na=False)
+    failures = set()
+    for code in subfields["code"]:
+        result = resolver.resolve(code, "OAX", "FOR2020")
+        if result.level != "group":
+            failures.add((code, result.level))
+    assert not failures, f"OAX subfield -> FOR2020: expected group-level for all, got {failures}"
+
+    bridge = pd.read_csv(DATA_DIR / "bridge_openalex_for_group.csv", dtype=str, keep_default_na=False)
+    bridge = bridge[bridge["is_primary"].isin(["True", "true"])]
+    below_floor = bridge[bridge["match_method"] == "below_floor"]
+    assert below_floor.empty, f"bridge_openalex_for_group.csv still has below_floor primaries: {below_floor['source_code'].tolist()}"
+    print(f"  exhaustive OAX subfield -> FOR2020 group-level coverage OK: all {len(subfields)}/{len(subfields)} "
+          f"subfields resolve, 0 below_floor primaries")
+
+
+def test_exhaustive_oax_topic_to_for2020_field_coverage():
+    # Every OAX topic (4,516, the finest level on both sides) resolves without a LookupError,
+    # and never falls all the way to division-level -- guaranteed by the prior test's 0
+    # below_floor invariant at the subfield->group tier, which is always the topic tier's own
+    # fallback. Full field-level precision on every topic is NOT required (confirmed with the
+    # user -- LLM-only judgment at this scale, no <20-case manual-review bar); this test
+    # reports the field-vs-group split as a coverage summary instead of asserting on it.
+    topics = pd.read_csv(DATA_DIR / "openalex_topics.csv", dtype=str, keep_default_na=False)
+    failures = set()
+    levels: dict[str, int] = {}
+    for code in topics["code"]:
+        try:
+            result = resolver.resolve(code, "OAX", "FOR2020")
+        except LookupError:
+            failures.add(code)
+            continue
+        levels[result.level] = levels.get(result.level, 0) + 1
+    assert not failures, f"OAX topic -> FOR2020: unexpected LookupError(s) for {len(failures)} topic(s)"
+    assert levels.get("division", 0) == 0, "no topic should ever fall all the way to division-level"
+    print(f"  exhaustive OAX topic -> FOR2020 coverage OK: all {len(topics)}/{len(topics)} topics resolve "
+          f"({levels})")
+
+
+def test_oax_topic_field_nests_under_subfield_group():
+    # Structurally-guaranteed invariant (curate_openalex_topic_to_for_field.py only ever
+    # searches within a subfield's own matched group's fields): a topic's resolved field's
+    # parent group must equal its own subfield's resolved group. Exhaustive since it's cheap
+    # -- a permanent regression guard against a future change accidentally widening the
+    # candidate pool.
+    violations = validate_oax_for2020_consistency.check_topic_field_nests_under_subfield_group()
+    assert not violations, f"topic->field escaped its subfield's matched group: {violations[:5]}"
+    print("  topic->field nests correctly under subfield->group for all topics")
+
+
+def test_oax_for2020_match_method_not_hardcoded():
+    # Regression test for a bug found and fixed while wiring the new tiers in:
+    # _resolve_oax_to_for2020() used to hardcode the literal strings "constrained_lexical"
+    # (group tier) and "manual_curated" (field tier) regardless of the row's real
+    # match_method. Subfield 1103 "Animal Science and Zoology" is a known exact_match in
+    # bridge_openalex_for_group.csv -- resolving it must report that real value, not a
+    # hardcoded guess.
+    result = resolver.resolve("1103", "OAX", "FOR2020")
+    assert result.match_method == "exact_match", f"expected 'exact_match', got {result.match_method!r}"
+    print(f"  OAX->FOR2020 match_method is no longer hardcoded: subfield 1103 correctly reports {result.match_method!r}")
+
+
+def test_oax_topic_field_level_precision():
+    # A known-good topic-level example, now that curate_openalex_topic_to_for_field.py's real
+    # output exists: OAX topic 10181 "Natural Language Processing Techniques" sits in a group
+    # (4602 Artificial intelligence... actually resolved via contains_match to the FOR2020
+    # field "Natural language processing") -- confirms field-level (6-digit) precision is
+    # actually reachable end-to-end through resolve(), not just present in the bridge CSV.
+    result = resolver.resolve("10181", "OAX", "FOR2020")
+    assert result.level == "field" and len(result.code) == 6
+    assert result.confidence > 0
+    print(f"  OAX topic -> FOR2020 field-level precision OK: topic 10181 -> {result.code} {result.label!r} "
+          f"({result.match_method}, {result.confidence})")
+
+
 def test_lookup_error():
     try:
         resolver.resolve("not-a-real-code", "FOR2020", "FOR2020")
@@ -415,6 +510,12 @@ if __name__ == "__main__":
         test_division45_cultural_proxy,
         test_exhaustive_for2020_to_oax_leiden_coverage,
         test_exhaustive_legacy_for_coverage,
+        test_exhaustive_oax_field_to_for2020_division_coverage,
+        test_exhaustive_oax_subfield_to_for2020_group_coverage,
+        test_exhaustive_oax_topic_to_for2020_field_coverage,
+        test_oax_topic_field_nests_under_subfield_group,
+        test_oax_for2020_match_method_not_hardcoded,
+        test_oax_topic_field_level_precision,
         test_group_level_precision,
         test_leading_zero_normalization,
         test_explicit_db_path_matches_bundled,

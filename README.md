@@ -209,7 +209,7 @@ discipline/group `230100`, leaf `230101`). `resolve()` accepts *either* shape fo
 SEO1998 -- the genuine short code (`"21"`, `"2301"`) or the ABS source's own zero-padded form
 (`"210000"`, `"230100"`) -- normalizing internally before lookup.
 
-### Precision: group-level (4-digit) when available, division-level otherwise
+### Precision: the finest level the input supports, falling back gracefully
 
 `resolve()` automatically uses FOR *group* precision (4-digit, e.g. `4905`) over *division*
 precision (2-digit, e.g. `49`) whenever the input supports it, falling back gracefully when
@@ -220,6 +220,31 @@ r.resolve("4905", "FOR2020", "OAX_FIELD")  # group-level: confidence 0.69
 r.resolve("49", "FOR2020", "OAX_FIELD")    # division-level fallback: confidence 0.61
 r.resolve("1908", "OAX", "FOR2020")        # OAX subfield -> FOR2020 group (4-digit), not just division
 ```
+
+The reverse direction (OAX -> FOR2020) now reaches all the way to FOR2020 **field** (6-digit
+leaf) precision too, the finest level on both sides -- OAX topic input tries a topic->field
+bridge first, cascading to subfield->group and then field->division if a finer tier isn't
+confident enough:
+
+```python
+r.resolve("10181", "OAX", "FOR2020")  # OAX topic "Natural Language Processing Techniques"
+                                       # -> FOR2020 field 460208 "Natural language processing"
+```
+
+Unlike the hand-curated FOR2020->OAX direction, this direction is algorithmic (lexical
+cascade-matched, then audited by direct inspection rather than formula-tuning -- see
+`research_classification/curate_openalex_for.py`, `curate_openalex_subfield_to_for_group.py`,
+and `curate_openalex_topic_to_for_field.py`). A topic's own candidate pool is deliberately
+constrained to the FOR2020 fields inside its subfield's own matched group (avg ~9 candidates,
+never the full 1,967-field space), which only works because that subfield->group tier is
+itself fully audited: all 252 OAX subfields resolve to a real, confident FOR2020 group (zero
+`below_floor` primaries). At the topic tier itself, 3,918/4,516 topics (87%) reach field-level
+precision; the remaining 598 don't clear the lexical floor and gracefully degrade to their
+subfield's group-level answer instead of surfacing a bad guess -- `resolve()` never returns a
+`below_floor` result directly at any OAX->FOR2020 tier, though it's still visible in each
+tier's own bridge CSV (`bridge_openalex_for.csv`, `bridge_openalex_for_group.csv`,
+`bridge_openalex_for_topic.csv`) for anyone inspecting the raw data. See `TODO.md` for the
+full audit account.
 
 ### Why both ends are always named explicitly
 

@@ -8,8 +8,10 @@ import pandas as pd
 from .hierarchy import write_csv
 
 ROOT = Path(__file__).resolve().parent.parent
-SRC = ROOT / "data_untracked" / "OpenAlex_topic_mapping_table.xlsx"
 DATA_DIR = ROOT / "research_classification" / "data"
+SRC = DATA_DIR / "OpenAlex_topic_mapping_table.xlsx"  # tracked in git, not data_untracked --
+# this is the pipeline's actual raw source, checked in directly so the build doesn't depend
+# on a gitignored local copy for this one file.
 
 
 def _to_int_str(v: object) -> str:

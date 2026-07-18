@@ -1,15 +1,15 @@
 openalex_field_id,openalex_field_name,for_division_code,for_division_label,for_group_code,for_group_label,is_primary,confidence,match_method,notes
-11,Agricultural and Biological Sciences,30,"AGRICULTURAL, VETERINARY AND FOOD SCIENCES",,,True,0.188,constrained_lexical,
+11,Agricultural and Biological Sciences,31,BIOLOGICAL SCIENCES,,,True,0.9,contains_match,
 12,Arts and Humanities,47,"LANGUAGE, COMMUNICATION AND CULTURE",,,True,0.165,constrained_lexical,
-13,"Biochemistry, Genetics and Molecular Biology",31,BIOLOGICAL SCIENCES,,,True,0.155,constrained_lexical,
+13,"Biochemistry, Genetics and Molecular Biology",31,BIOLOGICAL SCIENCES,3105,Genetics,True,0.9,contains_match,
 14,"Business, Management and Accounting",35,"COMMERCE, MANAGEMENT, TOURISM AND SERVICES",,,True,0.303,constrained_lexical,
 15,Chemical Engineering,40,ENGINEERING,4004,Chemical engineering,True,1.0,exact_match,
 16,Chemistry,34,CHEMICAL SCIENCES,,,True,0.245,constrained_lexical,
-17,Computer Science,46,INFORMATION AND COMPUTING SCIENCES,,,True,0.334,constrained_lexical,
-18,Decision Sciences,46,INFORMATION AND COMPUTING SCIENCES,,,True,0.357,constrained_lexical,
-19,Earth and Planetary Sciences,37,EARTH SCIENCES,,,True,0.238,constrained_lexical,
-20,"Economics, Econometrics and Finance",35,"COMMERCE, MANAGEMENT, TOURISM AND SERVICES",,,True,0.23,constrained_lexical,
-21,Energy,40,ENGINEERING,,,True,0.371,constrained_lexical,
+17,Computer Science,46,INFORMATION AND COMPUTING SCIENCES,4603,Computer vision and multimedia computation,True,0.9,contains_match,
+18,Decision Sciences,35,"COMMERCE, MANAGEMENT, TOURISM AND SERVICES",,,True,0.7,manual_override,"user override: Decision Sciences -> Commerce/Management (business), not Info/Computing Sciences"
+19,Earth and Planetary Sciences,37,EARTH SCIENCES,,,True,0.9,contains_match,
+20,"Economics, Econometrics and Finance",38,ECONOMICS,,,True,0.7,manual_override,exact-fit division 38 ECONOMICS exists (group 'Econometrics'); lexical cascade missed it on generic overlap with Commerce/Management
+21,Energy,40,ENGINEERING,,,True,0.7,manual_override,obviously energy/power engineering on inspection; contains_match false-positived on bare word 'energy' -> Particle and high energy physics
 22,Engineering,40,ENGINEERING,,,True,1.0,exact_match,
 23,Environmental Science,41,ENVIRONMENTAL SCIENCES,,,True,1.0,exact_match,
 24,Immunology and Microbiology,31,BIOLOGICAL SCIENCES,,,True,0.173,constrained_lexical,

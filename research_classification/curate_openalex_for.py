@@ -44,6 +44,30 @@ _MANUAL_OVERRIDES: dict[str, tuple[str, str, str]] = {
     # either way. "Health Professions" (nursing, allied health, physiotherapy, etc.) is
     # obviously a health-sciences concept on inspection.
     "36": ("42", "", "obviously Health Sciences on inspection; lexical overlap was a noise-level near-tie with Info/Computing Sciences"),
+    # Audited directly (all 26 fields eyeballed against their own subfields): FOR2020 has a
+    # dedicated division 38 ECONOMICS with a group literally named "Econometrics" (3802) --
+    # an exact-fit division-level home for this field's own name -- but the cascade landed on
+    # division 35 COMMERCE, MANAGEMENT, TOURISM AND SERVICES instead, on generic overlap
+    # ("management", "business"-adjacent words) rather than the far more specific
+    # "econometrics"/"economics" match. Obviously ECONOMICS on inspection.
+    "20": ("38", "", "exact-fit division 38 ECONOMICS exists (group 'Econometrics'); lexical cascade missed it on generic overlap with Commerce/Management"),
+    # Audited directly: this field's own subfields (Energy Engineering and Power Technology,
+    # Fuel Technology, Nuclear Energy and Engineering, Renewable Energy...) are unambiguously
+    # engineering/power-technology content -- FOR2020's actual energy fields (Chemical/thermal
+    # processes in energy, Electrical energy generation/storage/transmission, etc.) all sit
+    # under division 40 ENGINEERING. The contains_match cascade instead landed on group 5107
+    # "Particle and high energy physics" (division 51 PHYSICAL SCIENCES) purely because the
+    # bare word "energy" happens to be a subset of that group's label -- a false positive on a
+    # generic word, not the same concept as energy engineering at all (the same failure mode
+    # cascade_match.py's own contains_match docstring warns about, just not caught by the
+    # uniqueness check since no other group's label happens to contain "energy").
+    "21": ("40", "", "obviously energy/power engineering on inspection; contains_match false-positived on bare word 'energy' -> Particle and high energy physics"),
+    # User call: "Decision Sciences" (General Decision Sciences, Information Systems and
+    # Management, Management Science and Operations Research, Statistics/Probability/
+    # Uncertainty) is genuinely split across divisions 35/46/49 with no clean lexical winner --
+    # user directs it to 35 COMMERCE, MANAGEMENT, TOURISM AND SERVICES (business/management
+    # science home) rather than the cascade's 46 INFORMATION AND COMPUTING SCIENCES pick.
+    "18": ("35", "", "user override: Decision Sciences -> Commerce/Management (business), not Info/Computing Sciences"),
 }
 
 
