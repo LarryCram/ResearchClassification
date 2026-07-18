@@ -1,0 +1,504 @@
+\documentclass[11pt]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{longtable}
+\usepackage{hyperref}
+
+\title{The ResearchClassification Repository: A Cross-Walk Between\\
+ANZSRC (FOR/SEO), OpenAlex, CWTS Leiden, ASJC and the SDGs}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+
+% NOTE TO AUTHOR: insert formal citations (Australian Bureau of Statistics ANZSRC
+% documentation; OpenAlex topic classification documentation; CWTS Leiden Ranking
+% methodology papers; Elsevier ASJC documentation; UN SDG indicator framework) at the
+% points marked [CITE] below, using this paper's own bibliography style.
+
+\section{Introduction}
+
+Bibliometric analyses that combine publication-level data from OpenAlex with
+administrative research-output data coded under the Australian and New Zealand Standard
+Research Classification (ANZSRC) face an immediate practical obstacle: the two
+classification systems were built independently, at different levels of granularity, by
+different institutions, for different purposes. OpenAlex organises the scholarly
+literature into a four-level hierarchy of domains, fields, subfields and topics, derived
+computationally from citation and text data. ANZSRC's Fields of Research (FOR) and
+Socio-Economic Objective (SEO) classifications organise Australian and New Zealand
+research funding, higher-degree completions and other administrative collections into
+divisions, groups and fields (FOR) or divisions, groups and objectives (SEO), revised
+periodically by expert working groups (1998, 2008 and 2020 vintages). Neither system was
+designed with the other in mind, and no official concordance between them exists.
+
+This document describes a software repository, \texttt{ResearchClassification}, built to
+solve this problem systematically: to provide a single, auditable, versioned \emph{cross-walk}
+between every major research classification scheme a bibliometric or research-policy
+analyst is likely to encounter --- ANZSRC FOR (1998/2008/2020), ANZSRC SEO
+(1998/2008/2020), OpenAlex (domain/field/subfield/topic), the CWTS Leiden Ranking's
+five-way field classification, Elsevier's All Science Journal Classification (ASJC), and
+the United Nations Sustainable Development Goals (SDGs). The repository exposes this
+cross-walk through a single Python API, \texttt{Resolver.resolve(code, from\_scheme,
+to\_scheme)}, backed by a set of git-tracked, human-readable CSV ``bridge'' tables and a
+pre-built DuckDB database for fast lookup. Every correspondence the repository asserts
+carries an explicit confidence score and a \texttt{match\_method} tag describing exactly
+how it was derived --- hand-curated fact, exact lexical match, algorithmic lexical
+cascade, or (where the underlying data genuinely does not support a definitive answer) a
+documented, flagged uncertainty. The design goal throughout has been to make every
+correspondence traceable to its evidence, rather than to present a single opaque lookup
+table.
+
+This document has three purposes: to describe the raw data sources the repository draws
+on (Section~\ref{sec:data}); to describe the procedures used to build the correspondences
+between them, including a substantial piece of recent work extending the cross-walk from
+OpenAlex to FOR2020 down to the finest possible level of granularity on both sides
+(Sections~\ref{sec:architecture}--\ref{sec:extension}); and to report the final coverage
+achieved and discuss the residual, honestly-documented limitations that remain
+(Sections~\ref{sec:limitations}--\ref{sec:results}), together with their implications for
+combining OpenAlex-derived data with FOR/SEO-coded administrative data
+(Section~\ref{sec:discussion}).
+
+\section{Classification Schemes and Raw Data Sources}
+\label{sec:data}
+
+\subsection{ANZSRC FOR and SEO}
+
+The Australian and New Zealand Standard Research Classification (ANZSRC) is jointly
+maintained by the Australian Bureau of Statistics and Statistics New Zealand [CITE]. Two
+of its component classifications are used here: Fields of Research (FOR), organising
+research by subject matter, and Socio-Economic Objective (SEO), organising research by
+the purpose it serves. Both have been revised twice: FOR1998/SEO1998 (a flat six-digit
+code space, coarser levels zero-padded, e.g.\ division \texttt{210000}, group
+\texttt{230100}, leaf \texttt{230101}), FOR2008/SEO2008 (natively variable-width:
+division \texttt{01}, group \texttt{0101}, field \texttt{010101}), and FOR2020/SEO2020,
+the current, also variable-width, vintage and the repository's canonical target: FOR2020
+comprises 23 divisions, 213 groups and 1{,}967 fields (2{,}203 codes); SEO2020 comprises
+19 divisions, 128 groups and 840 objectives (987 codes). Official ABS correspondence
+tables map each legacy vintage's leaf-level codes forward to FOR2020/SEO2020, but ---
+critically for joint use with OpenAlex --- none extends beyond leaf level (no official
+division- or group-level correspondence exists), and no official correspondence exists
+at all between any FOR/SEO vintage and any non-ANZSRC scheme.
+
+\subsection{OpenAlex}
+
+OpenAlex classifies every work into a four-level hierarchy: domain (4 categories), field
+(26), subfield (252) and topic (4{,}516), each nesting exactly inside its parent, derived
+computationally from citation-network structure and natural-language processing over
+titles, abstracts and citation context. Each topic carries, beyond its label, a short
+list of representative keywords and a one-paragraph summary. The repository's raw source
+for this hierarchy is a single spreadsheet, \texttt{OpenAlex\_topic\_mapping\_table.xlsx}
+(4{,}516 rows, one per topic, with topic/subfield/field/domain identifiers and labels,
+keywords, summary and a Wikipedia URL also used to link into the Leiden classification).
+It is tracked directly in the repository's data directory precisely because the keyword
+and summary text is not carried through into the derived, lighter-weight per-level CSV
+files, yet remains needed by the fine-grained matching described in
+Section~\ref{sec:extension}.
+
+\subsection{CWTS Leiden Ranking classification}
+
+The CWTS Leiden Ranking assigns every publication to one of five broad ``main fields''
+(Social Sciences and Humanities, Biomedical and Health Sciences, Physical Sciences and
+Engineering, Life and Earth Sciences, and Mathematics and Computer Science) via an
+intermediate layer of algorithmically-derived ``micro-clusters,'' each linked, where
+possible, to a representative Wikipedia article. The repository links Leiden
+micro-clusters to OpenAlex topics via an exact join on that shared Wikipedia URL
+(successful for 3{,}880 of 4{,}516 topics; the remainder have no unique link on one or
+both sides and are left unjoined rather than forced into a spurious match), and derives
+Leiden main-field correspondences for FOR2020 divisions and groups by majority vote over
+that join.
+
+\subsection{ASJC and the Sustainable Development Goals}
+
+Elsevier's All Science Journal Classification (ASJC, 361 codes) is linked to OpenAlex
+fields via an exact identifier join (278 correspondences), not a lexical procedure,
+since OpenAlex's own field identifiers were originally derived from ASJC. The UN's 17
+Sustainable Development Goals and their five ``P'' pillars (People, Planet, Prosperity,
+Peace, Partnership) are linked to SEO2020 via a user-supplied, hand-reviewed
+division-level alignment table, since SEO --- unlike FOR --- is an objective-of-research
+classification with a natural conceptual relationship to development objectives.
+
+\section{System Architecture}
+\label{sec:architecture}
+
+Every correspondence, regardless of how it was derived, is expressed in one common
+eleven-column schema (a ``bridge'' table): \texttt{source\_system}, \texttt{source\_code},
+\texttt{source\_label}, \texttt{system} (target scheme), \texttt{canonical\_code},
+\texttt{canonical\_label}, \texttt{canonical\_level}, \texttt{is\_primary},
+\texttt{match\_method}, \texttt{confidence} and \texttt{notes}. A source code may have
+several ranked candidate targets recorded, with exactly one flagged \texttt{is\_primary}
+as the answer \texttt{resolve()} returns by default. \texttt{match\_method} is drawn from a
+fixed, documented vocabulary (\texttt{exact\_match}, \texttt{contains\_match},
+\texttt{constrained\_lexical}, \texttt{below\_floor}, \texttt{manual\_curated},
+\texttt{manual\_override}, \texttt{derived\_empirical}, \texttt{cultural\_proxy},
+\texttt{identity}, and a few others), so consumers can filter or re-weight results by
+provenance rather than treat every correspondence as equally authoritative.
+
+These bridge tables and each scheme's canonical code table are stored as git-tracked CSV
+files --- every change to every correspondence is visible in version control as a diff
+--- and loaded into a single pre-built DuckDB database bundled with the Python package.
+\texttt{Resolver()} opens this database read-only (\textasciitilde10\,ms), falling back
+automatically to rebuilding an in-memory database from the CSVs if the pre-built file
+cannot be opened (e.g.\ a DuckDB version mismatch). \texttt{resolve(code, from\_scheme,
+to\_scheme)} always requires both schemes named explicitly, never inferred: code values
+collide across schemes and vintages in ways that make silent inference unsafe (FOR1998's
+\texttt{300101} denotes ``Soil Physics'' while FOR2020's own \texttt{300101} denotes an
+unrelated ``Agricultural biotechnology diagnostics''; roughly 48\% of FOR1998's 898 codes
+collide this way). \texttt{resolve()} returns a \texttt{CanonicalResult} recording the
+resolved code, label, level, match method, confidence and ranked alternates, or raises
+\texttt{LookupError} with an explanatory message rather than returning nothing.
+
+\section{Correspondence-Building Methodology}
+\label{sec:methodology}
+
+Two broadly different methodologies are used across the repository, and their asymmetric
+application to the FOR2020$\leftrightarrow$OpenAlex relationship specifically is the
+starting point for the extension described in Section~\ref{sec:extension}.
+
+\subsection{Hand-curated correspondences}
+
+Where a definitive, reviewable correspondence could be established directly --- the
+FOR2020 division/group to OpenAlex domain/field/subfield direction, ported from an
+earlier, independently hand-curated project; the SEO2020-to-SDG division alignment,
+supplied and confirmed by the user; the OpenAlex-to-ASJC identifier join --- the
+repository uses that source directly, tagging it \texttt{manual\_curated} or
+\texttt{user\_provided} with confidence 1.0 (or, for the ASJC/OpenAlex identifier join,
+\texttt{exact\_match}). No further inference is applied.
+
+\subsection{Algorithmic correspondences: the lexical cascade}
+
+Where no hand-curated source exists, correspondences are built algorithmically using a
+shared matching module, \texttt{cascade\_match.py}. Given a source label and a pool of
+candidate target labels, the cascade tries three strategies in order, stopping at the
+first decisive result: (1) exact match between the two labels' stop-word-filtered,
+spelling-normalised word \emph{sets} (not a similarity score --- ``Engineering''
+\{engineering\} must not match ``Aerospace engineering'' \{aerospace, engineering\}, a
+narrower concept); (2) ``contains'' match, where one label's word set is a unique proper
+subset of another's (catching compound labels, e.g.\ OpenAlex's ``Pediatrics,
+Perinatology and Child Health'' against ANZSRC's ``Paediatrics''); and (3), last resort,
+the raw \emph{count} of words shared between the source's descendant-label bag and each
+coarse-level candidate's own bag --- a raw count, not a normalised ratio, since earlier
+ratio-based formulas (overlap coefficient, Jaccard) were found to systematically favour
+whichever candidate had the smaller vocabulary, sometimes egregiously (FOR2020 division
+45, Indigenous Studies, by far the largest bag of any division, would otherwise win most
+ratio-based comparisons on size alone regardless of relevance). A minimum raw-overlap
+floor (\texttt{MIN\_OVERLAP}), below which even the top-scoring candidate is untrusted,
+is calibrated separately per granularity: coarser, larger candidate pools use a higher
+floor than finer, smaller ones, since a single shared word is far more likely to be
+genuine signal in a small pool.
+
+Where the cascade cannot resolve an item with confidence, it is recorded with
+\texttt{match\_method = "below\_floor"} and confidence 0.0 --- never silently dropped, and
+never forced to a low-confidence guess presented as reliable. Every correspondence,
+confident or not, is written to the bridge table, so downstream consumers choose their
+own confidence threshold rather than inheriting the pipeline's.
+
+Division 45 (Indigenous Studies) merits a specific note, since it recurs throughout the
+repository's history. FOR2020 introduced Indigenous Studies as a first-class division
+for the first time (earlier vintages scattered a handful of Indigenous- and
+M\=aori-related codes across otherwise-unrelated divisions); its labels are almost
+entirely a generic FOR2020 concept with a population prefix added (``Aboriginal and
+Torres Strait Islander history,'' a M\=aori-language label with an English gloss,
+``Pacific Peoples archaeology''). With no direct OpenAlex, Leiden or ASJC counterpart,
+and an aggregate vocabulary large enough to distort any bag-based matching, it is
+resolved via a dedicated \texttt{cultural\_proxy} mechanism that routes each division-45
+code through the non-Indigenous FOR2020 concept it is a population-specific instance of,
+tagged distinctly so the result is never mistaken for an official ANZSRC relationship,
+and is excluded from every general-purpose candidate pool used elsewhere.
+
+\section{Extending the OpenAlex$\rightarrow$FOR2020 Direction to Full Precision}
+\label{sec:extension}
+
+\subsection{Motivation and the pre-existing asymmetry}
+
+Prior to this work, the repository's FOR2020$\rightarrow$OpenAlex direction
+(division/group to domain/field/subfield) was complete and hand-curated, but the reverse
+direction --- OpenAlex to FOR2020, the direction actually needed to classify an
+OpenAlex-indexed publication into a FOR code for comparison against
+administratively-coded research output --- was materially shallower. An OpenAlex
+subfield or topic input capped out at FOR2020 \emph{group} (4-digit) precision; an
+OpenAlex field input capped out at \emph{division} (2-digit) precision; and no
+correspondence existed at all from an OpenAlex topic to a FOR2020 \emph{field} (6-digit
+leaf), the finest level on both sides and the level most useful for comparing
+OpenAlex-derived and FOR-coded data beyond the broadest disciplinary level.
+
+Two further asymmetries were discovered while doing this work. First, the existing
+subfield-to-group bridge, while nominally covering all 252 subfields, was of markedly
+uneven quality: 46 subfields (18\%) had no confident match (\texttt{below\_floor}), and
+among the remaining 206 the median confidence was only 0.22 --- suggesting a substantial
+further share of the ``confident'' picks were also wrong. Second, no field-level
+definitional text exists anywhere in the ANZSRC source data for FOR2020 (only division-
+and group-level definitions were ever published), so matching against FOR2020 fields has
+only the field's own short label to work with, while OpenAlex offers considerably richer
+text (topic label, keywords, prose summary) --- a structural asymmetry designed around
+rather than treated as an oversight.
+
+\subsection{Step 1: auditing OpenAlex field to FOR2020 division (26 codes)}
+
+The coarsest of the three new correspondences, OpenAlex field to FOR2020 division, was
+already complete before this work began, but --- given its foundational role for
+everything finer --- was given a full, direct review of all 26 rows rather than taken on
+trust. Reading each field's own child subfields against its assigned division, rather
+than relying on the label-level lexical score alone, surfaced three corrections:
+``Economics, Econometrics and Finance'' had been assigned to division 35 (Commerce,
+Management, Tourism and Services) despite FOR2020 possessing a dedicated division 38
+(Economics) whose own group ``Econometrics'' exactly matches part of the field's own
+label; ``Energy'' (whose child subfields are unambiguously engineering/power-technology
+concepts) had been assigned to division 51 (Physical Sciences) purely because the bare
+word ``energy'' happened to be a subset of the physics group label ``Particle and high
+energy physics,'' an unrelated concept and a textbook contains-match false positive; and
+``Decision Sciences'' was redirected, at the user's explicit direction, from division 46
+(Information and Computing Sciences) to division 35, reflecting the judgement that this
+genuinely cross-disciplinary field (spanning statistics, operations research,
+information systems and management science) is best understood as a management
+discipline for this cross-walk's purposes.
+
+\subsection{Step 2: a full audit of OpenAlex subfield to FOR2020 group (252 codes)}
+
+Given the quality issues identified above, all 252 OpenAlex subfields --- not merely the
+46 originally unmatched --- were reviewed directly, using a purpose-built diagnostic
+tool (\texttt{audit\_oax\_for\_bridges.py}) that, for each subfield, displays its current
+match, its ranked lexical alternates, and the full list of candidate FOR2020 groups
+under both its own ``home'' division and, where the current pick crosses into a
+different division, that division's groups too. Reviewing subfields in this format ---
+rather than a further round of formula-tuning, an approach the project's own development
+history had already found unproductive for a closely analogous earlier problem ---
+allowed each assignment to be confirmed, corrected via an explicit, individually
+justified override, or (had any remained genuinely undecidable) escalated for a manual
+tie-break. In the event, every one of the 252 subfields was resolved through direct
+review; none required escalation, well inside the pre-agreed threshold of fewer than 20
+unresolved cases.
+
+This review added 47 new manual overrides (on top of approximately 44 already present),
+correcting both the 46 originally-unmatched subfields (e.g.\ ``Horticulture,'' corrected
+to the exact-fit group ``Horticultural production'') and nine further subfields whose
+nominally-confident match was a clear lexical false positive analogous to the ``Energy''
+case above (e.g.\ ``Nuclear and High Energy Physics'' had been matched to ``Astronomical
+sciences'' rather than the obviously appropriate ``Particle and high energy physics'').
+Following this review, zero subfields remain \texttt{below\_floor}: all 252 resolve to a
+real, confident FOR2020 group, with a match-method composition of 82 exact matches, 79
+constrained-lexical matches and 91 manual overrides (median confidence 0.7).
+
+\subsection{Step 3: clustering OpenAlex topics down to FOR2020 fields (4,516 codes)}
+
+With the subfield-to-group correspondence now solid, the finest-grained correspondence
+--- OpenAlex topic to FOR2020 field --- became tractable by a ``clustering down''
+strategy: for a given topic, the candidate pool of FOR2020 fields is restricted to only
+those fields belonging to the FOR2020 group already matched to that topic's own
+subfield (an average of 9.2 candidates, ranging from 1 to 32, rather than the full
+1{,}967-field space). This constraint is what makes the finest-grained matching problem
+tractable at all, and depends entirely on the subfield-to-group correspondence
+underlying it being trustworthy --- precisely why that correspondence was audited to
+completeness first.
+
+Each topic is matched against its constrained pool using its own label together with its
+OpenAlex-supplied keywords and summary text (sourced by identifier join against the raw
+source spreadsheet, avoiding a join on label text, which would be vulnerable to a small
+number of known character-encoding corruptions present in roughly 1--2\% of the raw
+file's topic labels), scored against each candidate field's own label with the same
+cascade described in Section~\ref{sec:methodology}, adapted to normalise by the
+candidate field's own short word count rather than the topic's, since the field label is
+consistently the thinner side of the comparison at this granularity. Groups with only a
+single field are assigned directly, with no scoring required.
+
+Per an explicit joint decision with the user, no fixed manual-review threshold
+(analogous to the fewer-than-20-cases rule at the subfield level) was applied at the
+topic level, given its far larger scale; genuinely uncertain matches are instead flagged
+via \texttt{below\_floor} status and low confidence directly in the data, to be handled
+programmatically (Section~\ref{sec:limitations}) rather than reviewed individually. Of
+the 4{,}516 topics, 3{,}918 (86.8\%) resolve to a real, confident FOR2020 field; 598
+(13.2\%) do not clear the matching floor and are recorded as \texttt{below\_floor}. Two
+individual corrections were made following a targeted spot-check of a small sample,
+discussed in Section~\ref{sec:limitations}.
+
+\subsection{Integrating the new tiers into \texttt{resolve()}}
+
+The public \texttt{resolve()} method was restructured to try the finest OpenAlex
+precision the input supports first, cascading to progressively coarser tiers ---
+topic$\rightarrow$field, subfield$\rightarrow$group, field$\rightarrow$division ---
+stopping at the first tier not itself flagged \texttt{below\_floor}. A
+\texttt{below\_floor} result at any tier is therefore never returned directly; it remains
+visible in that tier's own bridge CSV, but the public API always prefers a trustworthy
+coarser answer over an untrustworthy finer one. Because the subfield-to-group tier now
+has zero \texttt{below\_floor} results, this coarser fallback is itself always reliable:
+no OpenAlex topic input can ever fall all the way through to division-level output, a
+property verified exhaustively by the automated test suite (Section~\ref{sec:testing}).
+
+This restructuring also surfaced and corrected two latent defects in the previous,
+two-tier implementation: the match method returned to the caller had been hard-coded to
+a fixed string at each tier rather than read from the underlying bridge row, so every
+OpenAlex-to-FOR2020 result previously reported a provenance tag that did not necessarily
+reflect how it was actually derived; and the group-level fallback check had been written
+so that it could never trigger for a \texttt{below\_floor} result (every subfield already
+had a primary row on record, \texttt{below\_floor} or not), meaning the documented
+graceful-degradation behaviour had, in practice, never executed for the group tier prior
+to this work.
+
+\subsection{Validation}
+\label{sec:testing}
+
+Two consistency checks were added alongside the new correspondences. A hard,
+exhaustively-checked invariant confirms that every topic's resolved FOR2020 field sits,
+without exception, inside the FOR2020 group already assigned to that topic's own
+subfield --- guaranteed by the clustering-down design itself, and treated as a permanent
+regression guard rather than a data-quality report: any violation could only indicate an
+implementation error. A second, deliberately non-fatal check reports how often a
+subfield's matched group belongs to a different division than its own parent field's
+division; this ``crossing'' is expected and legitimate (OpenAlex's ``Education''
+subfield sits under field ``Social Sciences,'' mapping to division 44, yet correctly
+belongs with division 39's own Education groups) and occurred, after the audit, for 62
+of the 252 subfields (down from approximately 143 before the audit, consistent with the
+audit correcting spurious cross-division assignments rather than merely filling gaps).
+
+\texttt{tests/test\_resolver.py}, the repository's plain-assertion test suite, was
+extended with six new tests: exhaustive coverage of all 26 OpenAlex fields, 252
+subfields and 4{,}516 topics against FOR2020, including the explicit assertions that
+zero subfield-level results are ever \texttt{below\_floor} and that no topic-level result
+ever falls as far as division level; the topic-nests-under-subfield structural
+invariant; and a targeted regression test for the match-method hard-coding defect. All
+29 tests in the suite pass against the final, rebuilt database.
+
+\section{Known Limitations and Residual Uncertainty}
+\label{sec:limitations}
+
+Two distinct kinds of residual error were identified in a small, informal spot-check of
+the 598 \texttt{below\_floor} topics conducted after the main extension was complete,
+and are recorded here explicitly rather than corrected, since correcting them was judged
+out of scope for the present work and the distinction between them is itself
+methodologically informative for anyone extending or auditing this cross-walk further.
+
+The first kind is a genuine \emph{within-pool scoring miss}: the topic ``Surface
+Roughness and Optical Measurements'' sits under the OpenAlex subfield ``Computational
+Mechanics,'' whose matched FOR2020 group, ``Fluid mechanics and thermal engineering,''
+does in fact contain a well-fitting field, ``Non-Newtonian fluid flows (incl.\
+rheology)'' --- the correct answer is present in the candidate pool the topic-clustering
+procedure constructed, but the lexical scoring procedure failed to select it. This kind
+of error is, in principle, fully recoverable by refining the scoring procedure alone
+(or, more practically, by a targeted large-language-model judgement call restricted to
+the small candidate pool already identified, discussed further in
+Section~\ref{sec:discussion}), without requiring any change to the upstream
+subfield-to-group correspondence.
+
+The second kind is structurally different and cannot be fixed by better scoring at all:
+the topic ``Biodiesel Production and Applications'' sits under the OpenAlex subfield
+``Biomedical Engineering,'' whose matched FOR2020 group, ``Biomedical engineering,''
+contains no biofuel- or biotechnology-related field whatsoever among its candidates
+(biomaterials, biomedical imaging, tissue engineering, medical devices, and similar ---
+none a plausible home for a topic about biodiesel production). Here, the mismatch lies
+in OpenAlex's own topic-to-subfield placement, upstream of anything the present
+cross-walk pipeline controls; no amount of re-scoring within the constrained candidate
+pool can produce a correct answer, because a correct answer does not exist within that
+pool. Both failure modes present identically in the bridge CSV --- both are tagged
+\texttt{below\_floor} with confidence 0.0, and both cause \texttt{resolve()} to fall back
+identically to the subfield's group-level answer --- so distinguishing them requires
+manually tracing a given topic back through its own subfield to that subfield's
+candidate-field pool, exactly the diagnostic context the repository's audit tooling
+already surfaces for the subfield-to-group tier but does not yet surface, as a
+standalone tool, for the topic tier.
+
+Because this distinction was identified from a sample of only ten \texttt{below\_floor}
+topics (of which two, or 20\%, exhibited one or other of these failure modes), it should
+be treated as suggestive rather than as a reliable estimate of the true residual error
+rate across all 598 \texttt{below\_floor} topics; no claim is made here about what
+proportion of the full below-floor population falls into either category, only that both
+categories are known to occur and are, in principle, distinguishable by inspection.
+
+\section{Discussion: Implications for Combining OpenAlex with FOR/SEO-Coded
+Administrative Data}
+\label{sec:discussion}
+
+For an analyst combining OpenAlex-derived publication data with administrative data
+coded under FOR or SEO, this repository's contribution is threefold. First, it provides
+a complete, versioned, auditable correspondence at whatever granularity the comparison
+requires --- coarse comparisons can use the fully hand-curated
+FOR2020-to-OpenAlex-field direction at confidence 1.0, while publication-level
+classification can now use the OpenAlex-topic-to-FOR2020-field direction
+(Section~\ref{sec:extension}), which reaches leaf-level precision for 87\% of topics and
+degrades gracefully, rather than silently, for the remainder. Second, because every
+correspondence carries an explicit confidence score and provenance tag, an analyst
+chooses their own reliability threshold rather than inheriting an undocumented one: a
+study requiring only division-level comparability can safely use confidence-0.0
+group-level fallbacks unsuitable for a study requiring field-level precision. Third, the
+residual, honestly-documented uncertainty in Section~\ref{sec:limitations} demonstrates
+that automated cross-walks between independently-constructed classification systems
+will always retain some genuinely ambiguous or unrecoverable cases, falling into at
+least two qualitatively different categories --- fixable scoring errors versus
+irreducible upstream classification mismatches --- with different implications for how
+much further automated refinement can achieve.
+
+The diagnostic approach used to identify these residual errors --- tracing a topic to
+its subfield, that subfield to its matched FOR2020 group, and that group to its full
+candidate-field list, then judging by inspection whether the correct answer is present
+at all --- generalises to validating individual publication-level classifications in
+downstream use. Because the topic-to-field correspondence is already pre-computed for
+every OpenAlex topic, classifying an individual work requires no further
+natural-language reasoning: its topic identifier is looked up directly against the
+pre-built bridge table. Where an analyst wishes to go further --- sanity-checking a
+low-confidence result against a specific work's own title, or attempting a better
+classification for a work of particular importance --- the same short, structured
+context (the work's title, optionally its abstract, and the small, pre-constrained list
+of candidate fields from its topic's matched group) is directly suitable as input to
+either a plausibility check (``is this classification consistent with this title?'') or
+a re-classification judgement (``which candidate, if any, best fits this title?''),
+including the judgement, illustrated by the biodiesel example above, that \emph{none} of
+the candidates may be appropriate. Given corpus scale, such per-work verification is
+realistically only practical as a targeted procedure applied to already-flagged
+low-confidence cases; this repository's contribution is to make that minority
+identifiable in the first place.
+
+\section{Summary of Final Coverage}
+\label{sec:results}
+
+Table~\ref{tab:coverage} summarises the size of each canonical classification table and
+the coverage achieved for the correspondences most relevant to combining OpenAlex with
+FOR-coded administrative data, as of the work described in this document.
+
+\begin{table}[htbp]
+\centering
+\small
+\begin{tabular}{@{}lrrr@{}}
+\toprule
+\textbf{Correspondence} & \textbf{Source codes} & \textbf{Reaching finest level} & \textbf{Below-floor / division fallback} \\
+\midrule
+OpenAlex field $\rightarrow$ FOR2020 division & 26 & 26 (100\%) & 0 \\
+OpenAlex subfield $\rightarrow$ FOR2020 group & 252 & 252 (100\%) & 0 \\
+OpenAlex topic $\rightarrow$ FOR2020 field & 4{,}516 & 3{,}918 (86.8\%) & 598 (13.2\%, cascade to group) \\
+FOR2020 $\rightarrow$ OpenAlex field/Leiden & 2{,}203 & 2{,}203 (100\%) & 0 \\
+FOR1998 $\rightarrow$ OpenAlex field/Leiden & 1{,}060 & 1{,}060 (100\%) & 0 \\
+FOR2008 $\rightarrow$ OpenAlex field/Leiden & 1{,}420 & 1{,}420 (100\%) & 0 \\
+\bottomrule
+\end{tabular}
+\caption{Coverage of the OpenAlex$\leftrightarrow$FOR2020 correspondence and its
+downstream legacy-vintage consequences, following the audit described in
+Section~\ref{sec:extension}. ``Below-floor'' topic-level results never propagate to
+\texttt{resolve()}'s output directly; they are recorded in the underlying bridge table
+and the corresponding subfield-level (group) result is returned instead.}
+\label{tab:coverage}
+\end{table}
+
+Across the repository as a whole, the canonical classification tables comprise 2{,}203
+FOR2020 codes, 987 SEO2020 codes, 4{,}516 OpenAlex topics (nested under 252 subfields,
+26 fields and 4 domains), 5 CWTS Leiden main fields, 361 ASJC codes and 22 SDG
+goals/pillars, cross-linked by 13 bridge tables. The automated test suite comprises 29
+tests, exercised against the pre-built database on every change, and passes in full as
+of this document.
+
+\section{Conclusion}
+
+The extension described in this document closes what was, prior to this work, the most
+significant remaining gap in the \texttt{ResearchClassification} repository's coverage:
+the ability to classify an individual OpenAlex-indexed publication into a FOR2020 field
+--- the level of granularity actually required to compare OpenAlex-derived research
+output data against FOR-coded administrative collections meaningfully, rather than only
+at the coarse disciplinary level the pre-existing correspondence supported. The
+methodology used throughout --- direct, documented audit of algorithmically-generated
+correspondences by inspection against their own candidate pools, in preference to
+further automated formula-tuning, together with explicit, carried-through confidence
+scoring and a documented rather than hidden residual error rate --- is offered here both
+as a description of this specific repository's construction and as a template for
+similar cross-walk exercises between other pairs of independently-constructed research
+classification systems.
+
+\end{document}

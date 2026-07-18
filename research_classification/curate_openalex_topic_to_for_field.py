@@ -33,6 +33,23 @@ Per the user's explicit instruction, there is no <20-case manual-review bar at t
 `below_floor`/low confidence in the data (resolve() itself gracefully falls back to the
 subfield's own group-level answer rather than surfacing a bad guess), not chased down
 individually across ~4,500 rows.
+
+Known limitation, found by user spot-check of a random below_floor sample (not fixed, see
+TODO.md): the group-level fallback is only as good as (a) OpenAlex's own topic->subfield
+placement and (b) whatever FOR2020 fields happen to live in that subfield's matched group --
+neither is guaranteed to contain the topic's real subject. Topic 13049 "Surface Roughness and
+Optical Measurements" sits under OAX subfield "Computational Mechanics" (matched group 4012
+"Fluid mechanics and thermal engineering") -- the group DOES contain a fitting field
+(401212 "Non-Newtonian fluid flows (incl. rheology)"), so this is a within-pool miss the
+per-topic scoring failed to find, recoverable by refining the scoring alone. Topic 10507
+"Biodiesel Production and Applications" sits under OAX subfield "Biomedical Engineering"
+(matched group 4003 "Biomedical engineering") -- that group has NO biofuel/biotechnology
+field at all, so no amount of better scoring within this pool can fix it; the topic's own
+OpenAlex subfield placement itself is the mismatch, upstream of anything this module controls.
+The two failure modes look identical from the bridge CSV alone (both `below_floor`,
+group-level fallback surfaced either way) -- telling them apart requires checking the
+topic's own subfield and that subfield's candidate-field pool, the same context
+audit_oax_for_bridges.py already surfaces for the subfield->group tier.
 """
 
 from __future__ import annotations

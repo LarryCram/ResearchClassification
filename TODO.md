@@ -338,3 +338,23 @@ pass since regenerating it needs `data_untracked/classification_openalex_2023nov
 (absent in this checkout), and it's low-risk regardless since `LEIDEN` isn't currently a
 valid `from_scheme` for `resolve()`, so `bridge_leiden_for.csv` is presently unreachable from
 the public API either way.
+
+**Found by user spot-check, not fixed (deliberately out of scope for now):** a random sample
+of 10 `below_floor` topics turned up 2 where even the group-level fallback isn't quite right
+(`research_classification/curate_openalex_topic_to_for_field.py`'s module docstring has the
+full detail) -- suggesting the true error rate across all 598 `below_floor` topics may be
+higher than the bridge CSV's own tagging alone would suggest, in two genuinely different
+ways: (1) topic 13049 "Surface Roughness and Optical Measurements" (subfield "Computational
+Mechanics" -> group 4012 "Fluid mechanics and thermal engineering") has a good field sitting
+right there in its own candidate pool (401212 "Non-Newtonian fluid flows (incl. rheology)")
+that the per-topic scoring simply missed -- a within-pool scoring miss, in principle fixable
+by refining that scoring; (2) topic 10507 "Biodiesel Production and Applications" (subfield
+"Biomedical Engineering" -> group 4003 "Biomedical engineering") has no biofuel/biotechnology
+field anywhere in its matched group -- OpenAlex's own topic->subfield placement is the
+mismatch here, upstream of anything this pipeline's OAX->FOR2020 direction controls, and no
+amount of rescoring within that pool fixes it. The two look identical from the bridge CSV
+alone (both `below_floor`, group-level fallback either way); distinguishing them requires
+reading the topic's own subfield and that subfield's candidate pool by hand, the same context
+`audit_oax_for_bridges.py` already surfaces for the subfield->group tier. Left as a documented
+observation, not chased down across all 598 -- consistent with the user's original "LLM-only,
+no manual threshold" call for this tier.
