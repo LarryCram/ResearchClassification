@@ -1,0 +1,26 @@
+Column1	Column2	Column3
+Category	code	Areas
+"30 AGRICULTURAL, VETERINARY AND FOOD SCIENCES"	F30	Life and Earth Science
+31 BIOLOGICAL SCIENCES	F31	Life and Earth Science
+32 BIOMEDICAL AND CLINICAL SCIENCES	F32	Biomedical and Health Science
+33 BUILT ENVIRONMENT AND DESIGN	F33	Physical Science and Engineering
+34 CHEMICAL SCIENCES	F34	Physical Science and Engineering
+"35 COMMERCE, MANAGEMENT, TOURISM AND SERVICES"	F35	Social Science and Humanities
+36 CREATIVE ARTS AND WRITING	F36	Social Science and Humanities
+37 EARTH SCIENCES	F37	Life and Earth Science
+38 ECONOMICS	F38	Social Science and Humanities
+39 EDUCATION	F39	Social Science and Humanities
+40 ENGINEERING	F40	Physical Science and Engineering
+41 ENVIRONMENTAL SCIENCES	F41	Life and Earth Science
+42 HEALTH SCIENCES	F42	Biomedical and Health Science
+"43 HISTORY, HERITAGE AND ARCHAEOLOGY"	F43	Social Science and Humanities
+44 HUMAN SOCIETY	F44	Social Science and Humanities
+45 INDIGENOUS STUDIES	F45	INDIGENOUS STUDIES
+46 INFORMATION AND COMPUTING SCIENCES	F46	"Mathematics, Computing and Information Science"
+"47 LANGUAGE, COMMUNICATION AND CULTURE"	F47	Social Science and Humanities
+48 LAW AND LEGAL STUDIES	F48	Social Science and Humanities
+49 MATHEMATICAL SCIENCES	F49	"Mathematics, Computing and Information Science"
+50 PHILOSOPHY AND RELIGIOUS STUDIES	F50	Social Science and Humanities
+51 PHYSICAL SCIENCES	F51	Physical Science and Engineering
+52 PSYCHOLOGY	F52	Social Science and Humanities
+MD Multidisciplinary	FMD	

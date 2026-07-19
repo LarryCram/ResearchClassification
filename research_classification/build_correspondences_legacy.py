@@ -1,25 +1,23 @@
 from __future__ import annotations
 
-from pathlib import Path
-
 import openpyxl
 import pandas as pd
 
 from . import io as rio
 from .build_correspondences_abs import _canonical_label_lookup, _lexical_score
 from .hierarchy import BRIDGE_COLUMNS, write_csv
+from .paths import BRIDGES_DIR, RAW_DIR
 
-ROOT = Path(__file__).resolve().parent.parent
-LEGACY_XLS = ROOT / "data_untracked" / "ABS_FOR_SEO" / "1297.0 correspondence tables.xls"
-DATA_DIR = ROOT / "research_classification" / "data"
+# Already .xlsx (user-converted from the original .xls), so no LibreOffice conversion step
+# is needed here anymore.
+LEGACY_XLSX = RAW_DIR / "abs_for_seo" / "1297.0 correspondence tables.xlsx"
 
 
 def parse_1998_to_2008(sheet: str) -> pd.DataFrame:
     """Table 1 (RFCD1998, called FOR1998 in this project's own naming -> FOR2008) /
     Table 3 (SEO1998 -> SEO2008): plain code/label columns, with an optional trailing 'p'
     glued onto the 2008 code for partial matches."""
-    xlsx = rio.ensure_converted(LEGACY_XLS)
-    wb = openpyxl.load_workbook(xlsx, data_only=True)
+    wb = openpyxl.load_workbook(LEGACY_XLSX, data_only=True)
     ws = wb[sheet]
     rows = []
     for row in ws.iter_rows(min_row=6, max_row=ws.max_row, max_col=4, values_only=True):
@@ -123,9 +121,9 @@ def run() -> dict[str, pd.DataFrame]:
     for1998_resolved = resolve_1998_to_2008_primary(for1998_raw)
     seo1998_resolved = resolve_1998_to_2008_primary(seo1998_raw)
 
-    for2008_2020 = pd.read_csv(DATA_DIR / "bridge_for2008_for2020.csv", dtype=str, keep_default_na=False)
+    for2008_2020 = pd.read_csv(BRIDGES_DIR / "bridge_for2008_for2020.csv", dtype=str, keep_default_na=False)
     for2008_2020["is_primary"] = for2008_2020["is_primary"].isin(["True", "true"])
-    seo2008_2020 = pd.read_csv(DATA_DIR / "bridge_seo2008_seo2020.csv", dtype=str, keep_default_na=False)
+    seo2008_2020 = pd.read_csv(BRIDGES_DIR / "bridge_seo2008_seo2020.csv", dtype=str, keep_default_na=False)
     seo2008_2020["is_primary"] = seo2008_2020["is_primary"].isin(["True", "true"])
 
     # "FOR1998" is this project's own naming for consistency with FOR2008/FOR2020; ABS's own
@@ -133,8 +131,8 @@ def run() -> dict[str, pd.DataFrame]:
     for1998_bridge = compose_with_2008_2020(for1998_resolved, for2008_2020, "FOR", "FOR1998")
     seo1998_bridge = compose_with_2008_2020(seo1998_resolved, seo2008_2020, "SEO", "SEO1998")
 
-    write_csv(for1998_bridge, DATA_DIR / "bridge_for1998_for2020.csv", ["source_code"])
-    write_csv(seo1998_bridge, DATA_DIR / "bridge_seo1998_seo2020.csv", ["source_code"])
+    write_csv(for1998_bridge, BRIDGES_DIR / "bridge_for1998_for2020.csv", ["source_code"])
+    write_csv(seo1998_bridge, BRIDGES_DIR / "bridge_seo1998_seo2020.csv", ["source_code"])
 
     return {
         "bridge_for1998_for2020": for1998_bridge,

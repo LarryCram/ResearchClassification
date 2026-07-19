@@ -7,12 +7,9 @@ Run: .venv/Scripts/python.exe -m research_classification.validate_oax_for2020_co
 
 from __future__ import annotations
 
-from pathlib import Path
-
 import pandas as pd
 
-ROOT = Path(__file__).resolve().parent.parent
-DATA_DIR = ROOT / "research_classification" / "data"
+from .paths import BRIDGES_DIR, CANONICAL_DIR
 
 
 def check_topic_field_nests_under_subfield_group() -> list[tuple[str, str, str, str]]:
@@ -23,15 +20,15 @@ def check_topic_field_nests_under_subfield_group() -> list[tuple[str, str, str, 
     bug (e.g. a manual override pointing outside the matched group). Returns the list of
     violations (empty if none) -- callers should treat any non-empty result as fatal.
     """
-    topics = pd.read_csv(DATA_DIR / "openalex_topics.csv", dtype=str, keep_default_na=False)
-    for_df = pd.read_csv(DATA_DIR / "for_2020.csv", dtype=str, keep_default_na=False)
+    topics = pd.read_csv(CANONICAL_DIR / "openalex_topics.csv", dtype=str, keep_default_na=False)
+    for_df = pd.read_csv(CANONICAL_DIR / "for_2020.csv", dtype=str, keep_default_na=False)
     field_parent = dict(zip(for_df[for_df["level"] == "field"]["code"], for_df[for_df["level"] == "field"]["parent_code"]))
 
-    sf_group = pd.read_csv(DATA_DIR / "bridge_openalex_for_group.csv", dtype=str, keep_default_na=False)
+    sf_group = pd.read_csv(BRIDGES_DIR / "bridge_openalex_for_group.csv", dtype=str, keep_default_na=False)
     sf_group = sf_group[sf_group["is_primary"].isin(["True", "true"])]
     group_of_subfield = dict(zip(sf_group["source_code"], sf_group["canonical_code"]))
 
-    topic_field = pd.read_csv(DATA_DIR / "bridge_openalex_for_topic.csv", dtype=str, keep_default_na=False)
+    topic_field = pd.read_csv(BRIDGES_DIR / "bridge_openalex_for_topic.csv", dtype=str, keep_default_na=False)
     topic_field = topic_field[topic_field["is_primary"].isin(["True", "true"])]
     field_of_topic = dict(zip(topic_field["source_code"], topic_field["canonical_code"]))
 
@@ -56,13 +53,13 @@ def report_subfield_group_division_crossings() -> list[tuple[str, str, str]]:
     pedagogy" group). Returns the list of crossings for a human to spot-check, printed by
     build.py the same non-fatal way audit_encoding()'s findings are -- never asserted on.
     """
-    subfields = pd.read_csv(DATA_DIR / "openalex_subfields.csv", dtype=str, keep_default_na=False)
+    subfields = pd.read_csv(CANONICAL_DIR / "openalex_subfields.csv", dtype=str, keep_default_na=False)
 
-    field_div = pd.read_csv(DATA_DIR / "bridge_openalex_for.csv", dtype=str, keep_default_na=False)
+    field_div = pd.read_csv(BRIDGES_DIR / "bridge_openalex_for.csv", dtype=str, keep_default_na=False)
     field_div = field_div[field_div["is_primary"].isin(["True", "true"])]
     division_of_field = dict(zip(field_div["source_code"], field_div["canonical_code"]))
 
-    sf_group = pd.read_csv(DATA_DIR / "bridge_openalex_for_group.csv", dtype=str, keep_default_na=False)
+    sf_group = pd.read_csv(BRIDGES_DIR / "bridge_openalex_for_group.csv", dtype=str, keep_default_na=False)
     sf_group = sf_group[sf_group["is_primary"].isin(["True", "true"])]
     group_of_subfield = dict(zip(sf_group["source_code"], sf_group["canonical_code"]))
 
@@ -85,7 +82,7 @@ def run() -> None:
             f"subfield's matched group: {violations[:10]}"
         )
     print(f"   topic->field nests correctly under subfield->group for all "
-          f"{len(pd.read_csv(DATA_DIR / 'openalex_topics.csv'))} topics")
+          f"{len(pd.read_csv(CANONICAL_DIR / 'openalex_topics.csv'))} topics")
 
     crossings = report_subfield_group_division_crossings()
     print(f"   {len(crossings)}/252 subfields legitimately cross to a group in a different "

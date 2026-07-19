@@ -1,4 +1,5 @@
-"""Single entry point: rebuilds every table in data/ from data_untracked/ sources.
+"""Single entry point: rebuilds every table in research_classification/data/intermediate/
+from data_untracked/ (and data/raw/) sources.
 
 Run: .venv/bin/python build.py
 """
@@ -10,11 +11,12 @@ import pandas as pd
 from research_classification import (
     build_asjc,
     build_correspondences_abs,
+    build_correspondences_arc_era,
     build_correspondences_legacy,
     build_correspondences_rollup,
     build_duckdb,
+    build_for_area5,
     build_for_seo,
-    build_leiden,
     build_openalex,
     build_registry,
     build_sdg,
@@ -26,10 +28,8 @@ from research_classification import (
     curate_seo_to_sdg,
     validate_oax_for2020_consistency,
 )
-from research_classification.hierarchy import audit_encoding, validate_bridge, validate_canonical
-
-DATA_DIR = build_registry.DATA_DIR
-SEEDS_DIR = DATA_DIR.parent.parent / "seeds"
+from research_classification.hierarchy import audit_encoding, validate_bridge, validate_canonical, write_csv
+from research_classification.paths import BRIDGES_DIR, DB_PATH, DUCKDB_SOURCE_DIRS, HUB_DIR, SEEDS_DIR
 
 # Every seed file a curate_*.run() cache-guards on ("if exists, load and never regenerate").
 # If the bundled .duckdb from a prior build already exists but one of these is missing, that's
@@ -46,7 +46,7 @@ _LOCKED_SEEDS = [
 
 
 def _warn_on_missing_seeds() -> None:
-    db_exists = (DATA_DIR / "research_classification.duckdb").exists()
+    db_exists = DB_PATH.exists()
     if not db_exists:
         return  # first build ever (fresh clone) -- nothing locked in yet, nothing to warn about
     missing = [name for name in _LOCKED_SEEDS if not (SEEDS_DIR / name).exists()]
@@ -56,7 +56,7 @@ def _warn_on_missing_seeds() -> None:
         print("missing. Any human review captured in them will be silently regenerated from")
         print("scratch (or lost) unless you restore them from git before continuing:")
         for name in missing:
-            print(f"  - seeds/{name}")
+            print(f"  - data/intermediate/seeds/{name}")
         print("!" * 70)
 
 
@@ -74,6 +74,9 @@ def main() -> None:
     print("1c. Curating (or reusing) SEO2020 division -> SDG goal (user-provided)...")
     seo_sdg_seed = curate_seo_to_sdg.run()
     curate_seo_to_sdg.write_data_table(seo_sdg_seed)
+
+    print("1d. Building FOR2020 division -> 5-area aggregate (user-provided)...")
+    build_for_area5.run()
 
     print("2. Building canonical OpenAlex tables...")
     oax_tables = build_openalex.run()
@@ -93,34 +96,33 @@ def main() -> None:
     print("4. Curating (or reusing) the hand-curated seed: OpenAlex field -> FOR division...")
     seed = curate_openalex_for.run()
     bridge_openalex_for = curate_openalex_for.to_bridge(seed)
-    from research_classification.hierarchy import write_csv
-    write_csv(bridge_openalex_for, DATA_DIR / "bridge_openalex_for.csv", ["source_code"])
+    write_csv(bridge_openalex_for, BRIDGES_DIR / "bridge_openalex_for.csv", ["source_code"])
 
     print("4b. Curating (or reusing) OpenAlex subfield -> FOR group (constrained + algorithmic)...")
     subfield_seed = curate_openalex_subfield_to_for_group.run()
     bridge_openalex_for_group = curate_openalex_subfield_to_for_group.to_bridge(subfield_seed)
-    write_csv(bridge_openalex_for_group, DATA_DIR / "bridge_openalex_for_group.csv", ["source_code"])
+    write_csv(bridge_openalex_for_group, BRIDGES_DIR / "bridge_openalex_for_group.csv", ["source_code"])
 
     print("4c. Curating (or reusing) OpenAlex topic -> FOR field (constrained per subfield's "
           "own matched group from 4b -- must run after it)...")
     topic_seed = curate_openalex_topic_to_for_field.run()
     bridge_openalex_for_topic = curate_openalex_topic_to_for_field.to_bridge(topic_seed)
-    write_csv(bridge_openalex_for_topic, DATA_DIR / "bridge_openalex_for_topic.csv", ["source_code"])
+    write_csv(bridge_openalex_for_topic, BRIDGES_DIR / "bridge_openalex_for_topic.csv", ["source_code"])
 
     print("4d. Curating (or reusing) FOR2020 division 45 -> non-45 proxy (lexical + 2 manual overrides)...")
     division45_seed = curate_for2020_division45_to_proxy.run()
-    write_csv(division45_seed, DATA_DIR / "for2020_division45_group_to_proxy.csv", ["for2020_source_code"])
+    write_csv(division45_seed, HUB_DIR / "for2020_division45_group_to_proxy.csv", ["for2020_source_code"])
 
     print("4e. Curating (or reusing) FOR2020 division/group -> OAX field/subfield "
           "(hand-curated, ported from an earlier project; independent of 4/4b/4c above)...")
     curate_for2020_to_openalex.run()
 
-    print("5. Building Leiden bridges (wikipedia_url exact join + empirical derivation), "
-          "and composing FOR2020 -> Leiden through the curated FOR2020 -> OAX tables above...")
-    build_leiden.run()
-
     print("6. Building ABS FOR2008<->2020 / SEO2008<->2020 correspondence bridges...")
     build_correspondences_abs.run()
+
+    print("6b. Building the empirical ARC-ERA journal-crosswalk FOR2008<->FOR2020 bridge "
+          "(side-by-side validation only, not wired into resolve())...")
+    build_correspondences_arc_era.run()
 
     print("7. Building legacy FOR1998/SEO1998 bridges (via direct 1297.0 combined table)...")
     build_correspondences_legacy.run()
@@ -138,7 +140,7 @@ def main() -> None:
     oax_codes = set(oax_combined["code"])
     canonical_lookup = {"FOR": for_codes, "SEO": seo_codes, "OAX": oax_codes}
 
-    bridge_files = sorted(DATA_DIR.glob("bridge_*.csv"))
+    bridge_files = sorted(BRIDGES_DIR.glob("bridge_*.csv"))
     for path in bridge_files:
         df = pd.read_csv(path, dtype=str, keep_default_na=False)
         df["is_primary"] = df["is_primary"].isin(["True", "true"])
@@ -151,13 +153,14 @@ def main() -> None:
 
     print("10. Auditing character encoding across every output table...")
     findings = []
-    for path in sorted(DATA_DIR.glob("*.csv")):
-        df = pd.read_csv(path, dtype=str, keep_default_na=False)
-        findings.extend(audit_encoding(df, path.name))
+    for source_dir in DUCKDB_SOURCE_DIRS:
+        for path in sorted(source_dir.glob("*.csv")):
+            df = pd.read_csv(path, dtype=str, keep_default_na=False)
+            findings.extend(audit_encoding(df, path.name))
     files_with_findings = sorted({f[0] for f in findings})
     print(f"   {len(findings)} non-ASCII cell(s) found across {len(files_with_findings)} file(s): {files_with_findings}")
 
-    print("11. Loading everything into research_classification/data/research_classification.duckdb...")
+    print("11. Loading everything into research_classification/data/output/research_classification.duckdb...")
     build_duckdb.run()
 
     print("12. Summary:")

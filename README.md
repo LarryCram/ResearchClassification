@@ -1,8 +1,10 @@
 # research-classification
 
 Harmonized research classification lookup: ANZSRC FOR/SEO (2020, 2008, and pre-2000
-FOR1998/SEO1998), OpenAlex's topic hierarchy, Scopus ASJC, and the CWTS Leiden Ranking
-Main Fields.
+FOR1998/SEO1998), OpenAlex's topic hierarchy, Scopus ASJC, and a user-provided FOR2020
+5-area aggregate (`FOR2020_AREA5`). CWTS Leiden was used at one point to help validate
+OpenAlex's own topic hierarchy during development, but is not part of this package at all
+today -- no Leiden data ships, and `resolve()` has no Leiden-related scheme.
 
 ## Install
 
@@ -15,16 +17,17 @@ That's it -- no separate build step, no data file to copy around.
 ### How the bundled data loads
 
 `Resolver()` opens a pre-built `research_classification.duckdb` (bundled in
-`research_classification/data/`) directly, read-only. Measured on this repo's own data
-(~21K rows across 28 tables): **~10ms** to open the `.duckdb` file directly, versus **~360ms**
-to rebuild an equivalent in-memory database from the source CSVs on every call -- a 36x
-difference, and large enough to matter if `Resolver()` gets instantiated repeatedly (a shell
-loop invoking a script many times, a notebook restarted often, tests that each create a
+`research_classification/data/output/`) directly, read-only. Measured on this repo's own
+data (~49K rows across 27 tables): **~10ms** to open the `.duckdb` file directly, versus
+**~360ms** to rebuild an equivalent in-memory database from the source CSVs on every call --
+a 36x difference, and large enough to matter if `Resolver()` gets instantiated repeatedly (a
+shell loop invoking a script many times, a notebook restarted often, tests that each create a
 fresh instance), not just once per process.
 
-The source CSVs (`research_classification/data/*.csv`) are bundled too, both as a
-git-diffable audit trail (`.duckdb` binary diffs are opaque; the CSVs are what `build.py`
-actually rebuilds from and what shows up cleanly in `git log`) and as an automatic fallback:
+The source CSVs (`research_classification/data/intermediate/{canonical,bridges,hub}/*.csv`)
+are bundled too, both as a git-diffable audit trail (`.duckdb` binary diffs are opaque; the
+CSVs are what `build.py` actually rebuilds from and what shows up cleanly in `git log`) and
+as an automatic fallback:
 DuckDB's on-disk storage format isn't guaranteed compatible indefinitely across `duckdb`
 library versions, so a `.duckdb` file built with one version can in principle fail to open
 under a much older or newer one. Since this package is meant to be `pip install`-ed
@@ -56,8 +59,8 @@ r.resolve("230104", "FOR1998", "FOR2020")   # pre-2000 code -> current FOR2020 e
 r.resolve("010101", "FOR2008", "FOR2020")   # FOR2008 code -> FOR2020
 r.resolve("Chemistry", "OAX", "OAX_FIELD")  # label, current scheme
 
-r.resolve("230104", "FOR1998", "OAX_FIELD")  # pre-2000 code -> OpenAlex field
-r.resolve("230104", "FOR1998", "LEIDEN")     # pre-2000 code -> Leiden Main Field
+r.resolve("230104", "FOR1998", "OAX_FIELD")       # pre-2000 code -> OpenAlex field
+r.resolve("230104", "FOR1998", "FOR2020_AREA5")   # pre-2000 code -> 5-area aggregate
 ```
 
 ### What `resolve()` returns
@@ -72,7 +75,7 @@ CanonicalResult(
     code="26",                   # the resolved code, in to_scheme's own code space
     label="Mathematics",         # the resolved code's official/canonical label
     level="field",               # to_scheme's own granularity: e.g. division/group/field
-                                  # (FOR/SEO), domain/field/subfield/topic (OAX), main_field (LEIDEN)
+                                  # (FOR/SEO), domain/field/subfield/topic (OAX), area (FOR2020_AREA5)
     match_method="derived_empirical",  # HOW this result was produced -- see below
     confidence=1.0,              # 0.0-1.0, meaning depends on match_method -- see below
     alternates=(),               # other candidate CanonicalResults, when more than one
@@ -90,34 +93,34 @@ CanonicalResult(
 | `explicit_official` | a direct ABS/ANZSRC-published correspondence table row | always `1.0` |
 | `explicit_official_transitive` | chained through an intermediate official table (e.g. FOR1998->FOR2008->FOR2020) | `0.9` or the chain's own weakest link |
 | `exact_key_join` | codes are numerically identical across schemes (ASJC/OpenAlex) | always `1.0` |
-| `derived_empirical` | majority-vote statistic over real joined data (e.g. Leiden main field <-> FOR division) | the vote share, e.g. `0.95` |
+| `derived_empirical` | majority-vote statistic over real joined data (e.g. rolled-up legacy vintage bridges, the ARC-ERA journal-crosswalk bridge) | the vote share, e.g. `0.95` |
 | `manual_curated` | the one hand-curated seed (OpenAlex field -> FOR division), scored by keyword overlap against ABS's own definitions | the overlap score |
 | `constrained_lexical` | algorithmic lexical match within a hierarchically-constrained candidate pool | the lexical score |
 | `lexical` | ABS's own "p"-flagged many-to-many ties, broken by string similarity | the similarity score |
 | `cultural_proxy` | routed through a non-Indigenous FOR2020 proxy for division 45 (Indigenous Studies) -- see below | the proxy match's score, possibly compounded with the proxy target's own confidence |
-| `user_provided` | externally-sourced content the user supplied and confirmed directly (SEO -> SDG) -- no computed score, confidence assigned directly | as assigned; `1.0` throughout for SEO->SDG |
+| `user_provided` | externally-sourced content the user supplied and confirmed directly (SEO -> SDG, FOR2020 -> `FOR2020_AREA5`) -- no computed score, confidence assigned directly | as assigned; `1.0` throughout |
 
 Both `from_scheme` and `to_scheme` are always required, spelled out as one of these named
 values -- never inferred, never guessed:
 
 - **`from_scheme`**: `OAX`, `FOR1998`, `FOR2008`, `FOR2020`, `SEO1998`, `SEO2008`, `SEO2020`
 - **`to_scheme`**: `OAX_DOMAIN`, `OAX_FIELD`, `OAX_SUBFIELD`, `OAX_TOPIC`, `FOR2020`, `SEO2020`,
-  `LEIDEN`, `SDG_GOAL`, `SDG_PILLAR`
+  `FOR2020_AREA5`, `SDG_GOAL`, `SDG_PILLAR`
 
 Two rules hold everywhere:
 
 - **Forward in time only.** Resolving moves toward FOR2020/SEO2020, never back to an older
   vintage (there's no way to ask this tool to go FOR2020 -> FOR2008 -> FOR1998).
 - **Up the hierarchy only, never down.** A FOR/SEO input can reach `OAX_FIELD`/`OAX_SUBFIELD`
-  and `LEIDEN`, but never `OAX_TOPIC` -- OpenAlex's 4,516 topics are far finer than anything
-  honestly derivable from a coarser input, so that combination always raises `ValueError`
-  rather than fabricating a guess. The same applies within OAX itself: `OAX_FIELD ->
-  OAX_TOPIC` raises (one field has many topics), while `OAX_TOPIC -> OAX_FIELD` (walking up
-  the real hierarchy) works and is exact.
+  and `FOR2020_AREA5`, but never `OAX_TOPIC` -- OpenAlex's 4,516 topics are far finer than
+  anything honestly derivable from a coarser input, so that combination always raises
+  `ValueError` rather than fabricating a guess. The same applies within OAX itself:
+  `OAX_FIELD -> OAX_TOPIC` raises (one field has many topics), while `OAX_TOPIC -> OAX_FIELD`
+  (walking up the real hierarchy) works and is exact.
 - `SEO*` schemes can only ever target `SEO2020`, `SDG_GOAL`, or `SDG_PILLAR` -- SEO is an
-  objective classification with no relationship to OAX/Leiden by design, so any other
-  `to_scheme` raises immediately. `FOR*`/`OAX` cannot reach `SDG_GOAL`/`SDG_PILLAR` yet
-  (planned as a follow-on).
+  objective classification with no relationship to OAX by design, so any other `to_scheme`
+  raises immediately. `FOR*`/`OAX` cannot reach `SDG_GOAL`/`SDG_PILLAR` yet (planned as a
+  follow-on).
 
 If a mapping genuinely doesn't exist, `resolve()` raises `LookupError` with an explanatory
 message rather than guessing. See `TODO.md` for coverage caveats.
@@ -146,8 +149,8 @@ ANZSRC's Indigenous Studies division (Aboriginal & Torres Strait Islander, Maori
 Pacific Peoples research) has no direct OpenAlex/ASJC counterpart -- but its own group/field
 labels are, almost entirely, a generic FOR2020 research concept with a population prefix
 added ("Aboriginal and Torres Strait Islander history", "Pacific Peoples archaeology", a
-Maori-language label with the English gloss in parens). `resolve()` reaches OAX/Leiden for
-**2,201 of FOR2020's 2,203 codes** (exhaustively verified) by routing division-45 codes
+Maori-language label with the English gloss in parens). `resolve()` reaches OAX for
+**all 2,203 of FOR2020's codes** (exhaustively verified) by routing division-45 codes
 through the non-Indigenous FOR2020 group or division representing that same concept, tagged
 distinctly so it's never mistaken for official ANZSRC content or a real derived statistic:
 
@@ -282,20 +285,22 @@ through pandas/JSON/Excel, since those tools tend to infer an int type and drop 
 observed length of 1, 3, or 5 is unambiguous, so `resolve()` recovers it automatically --
 pass either `10101` or `"010101"`, same result. `int` values are accepted directly.
 
-See `examples/map_category_to_leiden.py` for a fuller worked example, including handling
-free-text category columns that don't match any code/label exactly (the one place this
-project still needs a fuzzy-match step, since `resolve()` itself only ever does exact
+See `examples/map_category_to_for_and_oax.py` for a fuller worked example, including
+handling free-text category columns that don't match any code/label exactly (the one place
+this project still needs a fuzzy-match step, since `resolve()` itself only ever does exact
 lookups).
 
 ## Rebuilding the data
 
-Needed if you're changing the source classification files themselves (`data_untracked/`,
-not tracked in this repo), or if you see the `RuntimeWarning` described above and want to
-refresh the bundled `.duckdb` file for the `duckdb` version you have installed. Requires the
-`build` extra:
+Every raw source `build.py` reads now lives under `research_classification/data/raw/` --
+git-tracked, no external `data_untracked/` dependency needed to rebuild from scratch. You'd
+run this if you're changing one of those source files, or if you see the `RuntimeWarning`
+described above and want to refresh the bundled `.duckdb` file for the `duckdb` version you
+have installed. Requires the `build` extra:
 
 ```
 pip install -e ".[build]"
-python build.py          # regenerates research_classification/data/*.csv AND *.duckdb
+python build.py          # regenerates research_classification/data/intermediate/*/*.csv
+                          # AND data/output/research_classification.duckdb
 python tests/test_resolver.py
 ```

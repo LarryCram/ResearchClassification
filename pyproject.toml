@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "research-classification"
 version = "0.1.0"
-description = "Harmonized ANZSRC FOR/SEO, OpenAlex, ASJC, and Leiden Main Field classification resolver"
+description = "Harmonized ANZSRC FOR/SEO, OpenAlex, ASJC, and FOR2020 5-area aggregate classification resolver"
 requires-python = ">=3.10"
 dependencies = ["duckdb"]
 
@@ -16,4 +16,4 @@ build = ["pandas", "openpyxl"]
 packages = ["research_classification"]
 
 [tool.setuptools.package-data]
-research_classification = ["data/*.csv", "data/*.duckdb"]
+research_classification = ["data/intermediate/*/*.csv", "data/output/*.duckdb"]

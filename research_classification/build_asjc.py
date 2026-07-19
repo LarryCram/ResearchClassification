@@ -1,15 +1,12 @@
 from __future__ import annotations
 
-from pathlib import Path
-
 import openpyxl
 import pandas as pd
 
 from .hierarchy import BRIDGE_COLUMNS, write_csv
+from .paths import BRIDGES_DIR, CANONICAL_DIR, RAW_DIR
 
-ROOT = Path(__file__).resolve().parent.parent
-SRC = ROOT / "data_untracked" / "ASJC1.xlsx"
-DATA_DIR = ROOT / "research_classification" / "data"
+SRC = RAW_DIR / "asjc" / "ASJC1.xlsx"
 
 
 def load_asjc() -> pd.DataFrame:
@@ -57,12 +54,12 @@ def build_bridge(asjc: pd.DataFrame, openalex_fields: pd.DataFrame, openalex_sub
 
 def run() -> tuple[pd.DataFrame, pd.DataFrame]:
     asjc = load_asjc()
-    openalex_fields = pd.read_csv(DATA_DIR / "openalex_fields.csv", dtype=str, keep_default_na=False)
-    openalex_subfields = pd.read_csv(DATA_DIR / "openalex_subfields.csv", dtype=str, keep_default_na=False)
+    openalex_fields = pd.read_csv(CANONICAL_DIR / "openalex_fields.csv", dtype=str, keep_default_na=False)
+    openalex_subfields = pd.read_csv(CANONICAL_DIR / "openalex_subfields.csv", dtype=str, keep_default_na=False)
     bridge = build_bridge(asjc, openalex_fields, openalex_subfields)
 
-    write_csv(asjc, DATA_DIR / "asjc.csv", ["code"])
-    write_csv(bridge, DATA_DIR / "bridge_asjc_openalex.csv", ["source_code"])
+    write_csv(asjc, CANONICAL_DIR / "asjc.csv", ["code"])
+    write_csv(bridge, BRIDGES_DIR / "bridge_asjc_openalex.csv", ["source_code"])
     return asjc, bridge
 
 

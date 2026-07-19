@@ -1,16 +1,14 @@
 from __future__ import annotations
 
 import difflib
-from pathlib import Path
 
 import openpyxl
 import pandas as pd
 
 from .hierarchy import BRIDGE_COLUMNS, write_csv
+from .paths import BRIDGES_DIR, CANONICAL_DIR, RAW_DIR
 
-ROOT = Path(__file__).resolve().parent.parent
-ABS_DIR = ROOT / "data_untracked" / "ABS_FOR_SEO"
-DATA_DIR = ROOT / "research_classification" / "data"
+ABS_DIR = RAW_DIR / "abs_for_seo"
 
 
 def _lexical_score(a: str, b: str) -> float:
@@ -19,7 +17,7 @@ def _lexical_score(a: str, b: str) -> float:
 
 def _canonical_label_lookup(system: str) -> dict[str, str]:
     fname = "for_2020.csv" if system == "FOR" else "seo_2020.csv"
-    df = pd.read_csv(DATA_DIR / fname, dtype=str, keep_default_na=False)
+    df = pd.read_csv(CANONICAL_DIR / fname, dtype=str, keep_default_na=False)
     return dict(zip(df["code"], df["label"]))
 
 
@@ -105,7 +103,7 @@ def resolve_primary(raw: pd.DataFrame, system: str, source_system: str) -> pd.Da
 # FORD2015 (OECD) and NABS2007 (EU) international-scheme correspondences were dropped from
 # this project entirely (not just excluded from resolution) -- like the hidden non-ASJC
 # sheets in ASJC1.xlsx, they're not one of the named schemes this tool resolves from/to
-# (OAX/FOR1998/FOR2008/FOR2020/SEO1998/SEO2008/SEO2020 in, OAX/FOR2020/SEO2020/Leiden out),
+# (OAX/FOR1998/FOR2008/FOR2020/SEO1998/SEO2008/SEO2020 in, OAX/FOR2020/SEO2020/FOR2020_AREA5 out),
 # and NABS2007 in particular collided with 19 of SEO2020's own 19 divisions (95%) when it
 # was still in scope, worse than the FOR1998/FOR2020 collision that prompted requiring an
 # explicit from_scheme at all. If this coverage is needed again, the parsing logic for these
@@ -115,8 +113,8 @@ def resolve_primary(raw: pd.DataFrame, system: str, source_system: str) -> pd.Da
 def run() -> dict[str, pd.DataFrame]:
     for2008 = resolve_primary(parse_2008_to_2020("FOR"), "FOR", "FOR2008")
     seo2008 = resolve_primary(parse_2008_to_2020("SEO"), "SEO", "SEO2008")
-    write_csv(for2008, DATA_DIR / "bridge_for2008_for2020.csv", ["source_code"])
-    write_csv(seo2008, DATA_DIR / "bridge_seo2008_seo2020.csv", ["source_code"])
+    write_csv(for2008, BRIDGES_DIR / "bridge_for2008_for2020.csv", ["source_code"])
+    write_csv(seo2008, BRIDGES_DIR / "bridge_seo2008_seo2020.csv", ["source_code"])
 
     return {
         "bridge_for2008_for2020": for2008,

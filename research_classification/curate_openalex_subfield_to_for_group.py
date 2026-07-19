@@ -39,16 +39,11 @@ Top-scoring candidates are kept as rows (primary + a handful of ranked alternate
 
 from __future__ import annotations
 
-from pathlib import Path
-
 import pandas as pd
 
 from . import cascade_match as cm
 from .hierarchy import BRIDGE_COLUMNS, write_csv
-
-ROOT = Path(__file__).resolve().parent.parent
-DATA_DIR = ROOT / "research_classification" / "data"
-SEEDS_DIR = ROOT / "seeds"
+from .paths import BRIDGES_DIR, CANONICAL_DIR, SEEDS_DIR
 
 MIN_OVERLAP = 2  # groups' bags are far smaller than divisions' -- a lower floor than
                  # cascade_match.MIN_OVERLAP is appropriate at this granularity
@@ -174,9 +169,9 @@ def run() -> pd.DataFrame:
     if seed_path.exists():
         return pd.read_csv(seed_path, dtype=str, keep_default_na=False)
 
-    subfields = pd.read_csv(DATA_DIR / "openalex_subfields.csv", dtype=str, keep_default_na=False)
-    topics = pd.read_csv(DATA_DIR / "openalex_topics.csv", dtype=str, keep_default_na=False)
-    for_df = pd.read_csv(DATA_DIR / "for_2020.csv", dtype=str, keep_default_na=False)
+    subfields = pd.read_csv(CANONICAL_DIR / "openalex_subfields.csv", dtype=str, keep_default_na=False)
+    topics = pd.read_csv(CANONICAL_DIR / "openalex_topics.csv", dtype=str, keep_default_na=False)
+    for_df = pd.read_csv(CANONICAL_DIR / "for_2020.csv", dtype=str, keep_default_na=False)
     for_df = for_df[~for_df["code"].str.startswith("45")]  # division 45 excluded; own proxy mechanism
     field_to_division = pd.read_csv(SEEDS_DIR / "openalex_field_to_for_division.csv", dtype=str, keep_default_na=False)
 
@@ -303,7 +298,7 @@ if __name__ == "__main__":
     seed = run()
     print(f"seed rows: {len(seed)}, unique subfields covered: {seed['openalex_subfield_id'].nunique()} / 252")
     bridge = to_bridge(seed)
-    write_csv(bridge, DATA_DIR / "bridge_openalex_for_group.csv", ["source_code"])
+    write_csv(bridge, BRIDGES_DIR / "bridge_openalex_for_group.csv", ["source_code"])
     print("bridge rows:", len(bridge))
     print("\nmatch_method breakdown (primary rows only):")
     print(seed[seed["is_primary"].astype(str) == "True"]["match_method"].value_counts())

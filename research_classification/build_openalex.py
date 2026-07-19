@@ -1,17 +1,14 @@
 from __future__ import annotations
 
-from pathlib import Path
-
 import openpyxl
 import pandas as pd
 
 from .hierarchy import write_csv
+from .paths import CANONICAL_DIR, RAW_DIR
 
-ROOT = Path(__file__).resolve().parent.parent
-DATA_DIR = ROOT / "research_classification" / "data"
-SRC = DATA_DIR / "OpenAlex_topic_mapping_table.xlsx"  # tracked in git, not data_untracked --
-# this is the pipeline's actual raw source, checked in directly so the build doesn't depend
-# on a gitignored local copy for this one file.
+SRC = RAW_DIR / "openalex" / "OpenAlex_topic_mapping_table.xlsx"  # tracked in git, not
+# data_untracked -- this is the pipeline's actual raw source, checked in directly so the
+# build doesn't depend on a gitignored local copy for this one file.
 
 
 def _to_int_str(v: object) -> str:
@@ -92,7 +89,7 @@ def run() -> dict[str, pd.DataFrame]:
         "openalex_topics": topics[cols],
     }
     for name, df in tables.items():
-        write_csv(df, DATA_DIR / f"{name}.csv", ["code"])
+        write_csv(df, CANONICAL_DIR / f"{name}.csv", ["code"])
 
     # keep the enriched topic-level table (with keywords/summary/wikipedia_url) available
     # in-memory for the Leiden join and the curation self-check; not written as a separate

@@ -1,14 +1,11 @@
 from __future__ import annotations
 
-from pathlib import Path
-
 import pandas as pd
 
 from . import io as rio
+from .paths import CANONICAL_DIR, RAW_DIR
 
-ROOT = Path(__file__).resolve().parent.parent
-ABS_DIR = ROOT / "data_untracked" / "ABS_FOR_SEO"
-DATA_DIR = ROOT / "research_classification" / "data"
+ABS_DIR = RAW_DIR / "abs_for_seo"
 
 FOR_LEVELS = ["division", "group", "field"]
 SEO_LEVELS = ["division", "group", "objective"]
@@ -41,8 +38,8 @@ def run() -> tuple[pd.DataFrame, pd.DataFrame]:
     seo_df = build_seo()
     from .hierarchy import write_csv
 
-    write_csv(for_df, DATA_DIR / "for_2020.csv", ["code"])
-    write_csv(seo_df, DATA_DIR / "seo_2020.csv", ["code"])
+    write_csv(for_df, CANONICAL_DIR / "for_2020.csv", ["code"])
+    write_csv(seo_df, CANONICAL_DIR / "seo_2020.csv", ["code"])
     return for_df, seo_df
 
 

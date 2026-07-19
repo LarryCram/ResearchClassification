@@ -28,8 +28,8 @@ SEO2008,820207,Mushrooms and Truffles,SEO,260508,Mushrooms and truffles,objectiv
 SEO2008,820208,Olives,SEO,260509,Olives,objective,True,explicit_official,1.0,
 SEO2008,820209,"Ornamentals, Natives, Flowers and Nursery Plants",SEO,260510,"Ornamentals, natives, flowers and nursery plants",objective,True,explicit_official,1.0,
 SEO2008,820210,"Pome Fruit, Pip Fruit",SEO,260511,"Pome fruit, pip fruit",objective,True,explicit_official,1.0,
-SEO2008,820211,Stone Fruit,SEO,260513,Stone fruit (excl. avocado),objective,True,lexical,0.579,lexical tiebreak among 2 p-flagged candidates
 SEO2008,820211,Stone Fruit,SEO,260502,Avocado,objective,False,lexical,0.111,lexical tiebreak among 2 p-flagged candidates
+SEO2008,820211,Stone Fruit,SEO,260513,Stone fruit (excl. avocado),objective,True,lexical,0.579,lexical tiebreak among 2 p-flagged candidates
 SEO2008,820212,Table Grapes,SEO,260514,Table grapes,objective,True,explicit_official,1.0,
 SEO2008,820213,Tree Nuts (excl. Almonds and Macadamias),SEO,260515,Tree nuts (excl. almonds and macadamias),objective,True,explicit_official,1.0,
 SEO2008,820214,Tropical Fruit,SEO,260516,Tropical fruit,objective,True,explicit_official,1.0,
@@ -43,9 +43,9 @@ SEO2008,820303,"Plant Extract Crops (e.g. Pyrethrum, Jojoba)",SEO,260606,Plant e
 SEO2008,820304,Sugar,SEO,260607,Sugar,objective,True,explicit_official,1.0,
 SEO2008,820305,Tobacco,SEO,260699,Industrial crops not elsewhere classified,objective,True,explicit_official,0.125,partial (p-flagged) single correspondence
 SEO2008,820306,Wine Grapes,SEO,260608,Wine grapes,objective,True,explicit_official,1.0,
-SEO2008,820399,Industrial Crops not elsewhere classified,SEO,260604,Hemp,objective,False,lexical,0.089,lexical tiebreak among 4 p-flagged candidates
-SEO2008,820399,Industrial Crops not elsewhere classified,SEO,260601,Cannabis,objective,False,lexical,0.082,lexical tiebreak among 4 p-flagged candidates
 SEO2008,820399,Industrial Crops not elsewhere classified,SEO,260699,Industrial crops not elsewhere classified,objective,True,lexical,1.0,lexical tiebreak among 4 p-flagged candidates
+SEO2008,820399,Industrial Crops not elsewhere classified,SEO,260601,Cannabis,objective,False,lexical,0.082,lexical tiebreak among 4 p-flagged candidates
+SEO2008,820399,Industrial Crops not elsewhere classified,SEO,260604,Hemp,objective,False,lexical,0.089,lexical tiebreak among 4 p-flagged candidates
 SEO2008,820399,Industrial Crops not elsewhere classified,SEO,260605,Hops,objective,False,lexical,0.133,lexical tiebreak among 4 p-flagged candidates
 SEO2008,820401,Maize,SEO,260306,Maize,objective,True,explicit_official,1.0,
 SEO2008,820402,Rice,SEO,260308,Rice,objective,True,explicit_official,1.0,
@@ -112,9 +112,9 @@ SEO2008,830308,Pigs,SEO,100410,Pigs,objective,True,explicit_official,1.0,
 SEO2008,830309,Poultry,SEO,100411,Poultry,objective,True,explicit_official,1.0,
 SEO2008,830310,Sheep - Meat,SEO,100412,Sheep for meat,objective,True,explicit_official,1.0,
 SEO2008,830311,Sheep - Wool,SEO,100413,Sheep for wool,objective,True,explicit_official,1.0,
-SEO2008,830399,Livestock Raising not elsewhere classified,SEO,100499,Livestock raising not elsewhere classified,objective,True,lexical,1.0,lexical tiebreak among 3 p-flagged candidates
-SEO2008,830399,Livestock Raising not elsewhere classified,SEO,100407,Insects,objective,False,lexical,0.245,lexical tiebreak among 3 p-flagged candidates
 SEO2008,830399,Livestock Raising not elsewhere classified,SEO,100409,Non-cattle dairy,objective,False,lexical,0.207,lexical tiebreak among 3 p-flagged candidates
+SEO2008,830399,Livestock Raising not elsewhere classified,SEO,100407,Insects,objective,False,lexical,0.245,lexical tiebreak among 3 p-flagged candidates
+SEO2008,830399,Livestock Raising not elsewhere classified,SEO,100499,Livestock raising not elsewhere classified,objective,True,lexical,1.0,lexical tiebreak among 3 p-flagged candidates
 SEO2008,8304,"PASTURE, BROWSE AND FODDER CROPS",SEO,1005,"Pasture, browse and fodder crops",group,True,derived_empirical,1.0,"rolled up from 7 SEO2008 leaf-level mapping(s), 7 agreeing"
 SEO2008,830401,Browse Crops,SEO,100501,Browse crops,objective,True,explicit_official,1.0,
 SEO2008,830402,Lucerne,SEO,100502,Lucerne,objective,True,explicit_official,1.0,
@@ -141,8 +141,8 @@ SEO2008,839899,Environmentally Sustainable Animal Production not elsewhere class
 SEO2008,839901,Animal Welfare,SEO,109902,Animal welfare,objective,True,explicit_official,1.0,
 SEO2008,839902,Fish Product Traceability and Quality Assurance,SEO,109903,Fish product traceability and quality assurance,objective,True,explicit_official,1.0,
 SEO2008,839903,Livestock Product Traceability and Quality Assurance,SEO,109904,Livestock product traceability and quality assurance,objective,True,explicit_official,1.0,
-SEO2008,839999,Animal Production and Animal Primary Products not elsewhere classified,SEO,109999,Other animal production and animal primary products not elsewhere classified,objective,True,lexical,0.959,lexical tiebreak among 2 p-flagged candidates
 SEO2008,839999,Animal Production and Animal Primary Products not elsewhere classified,SEO,109901,Animal adaptation to climate change,objective,False,lexical,0.438,lexical tiebreak among 2 p-flagged candidates
+SEO2008,839999,Animal Production and Animal Primary Products not elsewhere classified,SEO,109999,Other animal production and animal primary products not elsewhere classified,objective,True,lexical,0.959,lexical tiebreak among 2 p-flagged candidates
 SEO2008,84,MINERAL RESOURCES (EXCL. ENERGY RESOURCES),SEO,19,"ENVIRONMENTAL POLICY, CLIMATE CHANGE AND NATURAL HAZARDS",division,False,derived_empirical,0.031,"rolled up from 32 SEO2008 leaf-level mapping(s), 1 agreeing"
 SEO2008,84,MINERAL RESOURCES (EXCL. ENERGY RESOURCES),SEO,25,MINERAL RESOURCES (EXCL. ENERGY RESOURCES),division,True,derived_empirical,0.969,"rolled up from 32 SEO2008 leaf-level mapping(s), 31 agreeing"
 SEO2008,8401,MINERAL EXPLORATION,SEO,2503,Mineral exploration,group,True,derived_empirical,1.0,"rolled up from 9 SEO2008 leaf-level mapping(s), 9 agreeing"
@@ -241,8 +241,8 @@ SEO2008,850604,Energy Transmission and Distribution (excl. Hydrogen),SEO,170306,
 SEO2008,850605,Hydrogen Distribution,SEO,170307,Hydrogen distribution,objective,True,explicit_official,1.0,
 SEO2008,850606,Hydrogen Storage,SEO,170308,Hydrogen storage,objective,True,explicit_official,1.0,
 SEO2008,850699,"Energy Storage, Distribution and Supply not elsewhere classified",SEO,170399,"Energy storage, distribution and supply not elsewhere classified",objective,True,lexical,1.0,lexical tiebreak among 4 p-flagged candidates
-SEO2008,850699,"Energy Storage, Distribution and Supply not elsewhere classified",SEO,170301,Battery storage,objective,False,lexical,0.278,lexical tiebreak among 4 p-flagged candidates
 SEO2008,850699,"Energy Storage, Distribution and Supply not elsewhere classified",SEO,170302,Carbon capture and storage,objective,False,lexical,0.222,lexical tiebreak among 4 p-flagged candidates
+SEO2008,850699,"Energy Storage, Distribution and Supply not elsewhere classified",SEO,170301,Battery storage,objective,False,lexical,0.278,lexical tiebreak among 4 p-flagged candidates
 SEO2008,850699,"Energy Storage, Distribution and Supply not elsewhere classified",SEO,170309,Smart grids,objective,False,lexical,0.16,lexical tiebreak among 4 p-flagged candidates
 SEO2008,8507,ENERGY CONSERVATION AND EFFICIENCY,SEO,1701,Energy efficiency,group,True,derived_empirical,1.0,"rolled up from 5 SEO2008 leaf-level mapping(s), 5 agreeing"
 SEO2008,850701,Commercial Energy Conservation and Efficiency,SEO,170101,Commercial energy efficiency,objective,True,explicit_official,1.0,
@@ -347,8 +347,8 @@ SEO2008,861002,Ceramics,SEO,240302,Ceramics,objective,True,explicit_official,1.0
 SEO2008,861003,Clay Products,SEO,240303,Clay products,objective,True,explicit_official,1.0,
 SEO2008,861004,Plaster and Plaster Products,SEO,240305,Plaster and plaster products,objective,True,explicit_official,1.0,
 SEO2008,861005,Structural Glass and Glass Products,SEO,240306,Structural glass and glass products,objective,True,explicit_official,1.0,
-SEO2008,861099,"Ceramics, Glass and Industrial Mineral Products not elsewhere classified",SEO,240399,"Ceramics, glass and industrial mineral products not elsewhere classified",objective,True,lexical,1.0,lexical tiebreak among 2 p-flagged candidates
 SEO2008,861099,"Ceramics, Glass and Industrial Mineral Products not elsewhere classified",SEO,240304,Composite materials,objective,False,lexical,0.198,lexical tiebreak among 2 p-flagged candidates
+SEO2008,861099,"Ceramics, Glass and Industrial Mineral Products not elsewhere classified",SEO,240399,"Ceramics, glass and industrial mineral products not elsewhere classified",objective,True,lexical,1.0,lexical tiebreak among 2 p-flagged candidates
 SEO2008,8611,"BASIC METAL PRODUCTS (INCL. SMELTING, ROLLING, DRAWING AND EXTRUDING)",SEO,2402,Basic metal products,group,True,derived_empirical,1.0,"rolled up from 6 SEO2008 leaf-level mapping(s), 6 agreeing"
 SEO2008,861101,Basic Aluminium Products,SEO,240201,Basic aluminium products,objective,True,explicit_official,1.0,
 SEO2008,861102,Basic Copper Products,SEO,240202,Basic copper products,objective,True,explicit_official,1.0,
@@ -419,8 +419,8 @@ SEO2008,870102,Commercial Construction Planning,SEO,120402,Commercial constructi
 SEO2008,870103,Regional Planning,SEO,120404,Regional planning,objective,True,explicit_official,1.0,
 SEO2008,870104,Residential Construction Planning,SEO,120405,Residential construction planning,objective,True,explicit_official,1.0,
 SEO2008,870105,Urban Planning,SEO,120406,Urban planning,objective,True,explicit_official,1.0,
-SEO2008,870199,Construction Planning not elsewhere classified,SEO,120403,Industrial construction planning,objective,False,lexical,0.538,lexical tiebreak among 2 p-flagged candidates
 SEO2008,870199,Construction Planning not elsewhere classified,SEO,120499,Construction planning not elsewhere classified,objective,True,lexical,1.0,lexical tiebreak among 2 p-flagged candidates
+SEO2008,870199,Construction Planning not elsewhere classified,SEO,120403,Industrial construction planning,objective,False,lexical,0.538,lexical tiebreak among 2 p-flagged candidates
 SEO2008,8702,CONSTRUCTION DESIGN,SEO,1202,Construction design,group,True,derived_empirical,1.0,"rolled up from 5 SEO2008 leaf-level mapping(s), 5 agreeing"
 SEO2008,870201,Civil Construction Design,SEO,120201,Civil construction design,objective,True,explicit_official,1.0,
 SEO2008,870202,Commercial Construction Design,SEO,120202,Commercial construction design,objective,True,explicit_official,1.0,
@@ -441,8 +441,8 @@ SEO2008,870401,Civil Construction Processes,SEO,120501,Civil construction proces
 SEO2008,870402,Commercial Construction Processes,SEO,120502,Commercial construction processes,objective,True,explicit_official,1.0,
 SEO2008,870403,Industrial Construction Processes,SEO,120503,Industrial construction processes,objective,True,explicit_official,1.0,
 SEO2008,870404,Residential Construction Processes,SEO,120505,Residential construction processes,objective,True,explicit_official,1.0,
-SEO2008,870499,Construction Processes not elsewhere classified,SEO,120504,Institutional construction processes,objective,False,lexical,0.53,lexical tiebreak among 2 p-flagged candidates
 SEO2008,870499,Construction Processes not elsewhere classified,SEO,120599,Construction processes not elsewhere classified,objective,True,lexical,1.0,lexical tiebreak among 2 p-flagged candidates
+SEO2008,870499,Construction Processes not elsewhere classified,SEO,120504,Institutional construction processes,objective,False,lexical,0.53,lexical tiebreak among 2 p-flagged candidates
 SEO2008,8705,BUILDING MANAGEMENT AND SERVICES,SEO,1201,Building management and services,group,True,derived_empirical,1.0,"rolled up from 4 SEO2008 leaf-level mapping(s), 4 agreeing"
 SEO2008,870501,Civil Building Management and Services,SEO,120101,Civil building management and services,objective,True,explicit_official,1.0,
 SEO2008,870502,Commercial Building Management and Services,SEO,120102,Commercial building management and services,objective,True,explicit_official,1.0,
@@ -521,11 +521,11 @@ SEO2008,890103,Mobile Data Networks and Services,SEO,220103,Mobile technologies 
 SEO2008,890104,Mobile Telephone Networks and Services,SEO,220103,Mobile technologies and communications,objective,True,explicit_official,0.526,partial (p-flagged) single correspondence
 SEO2008,890105,Satellite Communication Networks and Services,SEO,220106,"Satellite technologies, networks and services",objective,True,explicit_official,1.0,
 SEO2008,890106,Videoconference Services,SEO,220199,"Communication technologies, systems and services not elsewhere classified",objective,True,explicit_official,0.309,partial (p-flagged) single correspondence
-SEO2008,890199,Communication Networks and Services not elsewhere classified,SEO,220101,E-infrastructures,objective,False,lexical,0.13,lexical tiebreak among 5 p-flagged candidates
-SEO2008,890199,Communication Networks and Services not elsewhere classified,SEO,220102,Internet protocols (ip),objective,False,lexical,0.217,lexical tiebreak among 5 p-flagged candidates
-SEO2008,890199,Communication Networks and Services not elsewhere classified,SEO,220199,"Communication technologies, systems and services not elsewhere classified",objective,True,lexical,0.842,lexical tiebreak among 5 p-flagged candidates
-SEO2008,890199,Communication Networks and Services not elsewhere classified,SEO,220107,"Wireless technologies, networks and services",objective,False,lexical,0.481,lexical tiebreak among 5 p-flagged candidates
 SEO2008,890199,Communication Networks and Services not elsewhere classified,SEO,220104,Network security,objective,False,lexical,0.342,lexical tiebreak among 5 p-flagged candidates
+SEO2008,890199,Communication Networks and Services not elsewhere classified,SEO,220107,"Wireless technologies, networks and services",objective,False,lexical,0.481,lexical tiebreak among 5 p-flagged candidates
+SEO2008,890199,Communication Networks and Services not elsewhere classified,SEO,220199,"Communication technologies, systems and services not elsewhere classified",objective,True,lexical,0.842,lexical tiebreak among 5 p-flagged candidates
+SEO2008,890199,Communication Networks and Services not elsewhere classified,SEO,220102,Internet protocols (ip),objective,False,lexical,0.217,lexical tiebreak among 5 p-flagged candidates
+SEO2008,890199,Communication Networks and Services not elsewhere classified,SEO,220101,E-infrastructures,objective,False,lexical,0.13,lexical tiebreak among 5 p-flagged candidates
 SEO2008,8902,COMPUTER SOFTWARE AND SERVICES,SEO,2204,"Information systems, technologies and services",group,True,derived_empirical,1.0,"rolled up from 7 SEO2008 leaf-level mapping(s), 7 agreeing"
 SEO2008,890201,Application Software Packages (excl. Computer Games),SEO,220401,Application software packages,objective,True,explicit_official,0.716,partial (p-flagged) single correspondence
 SEO2008,890202,Application Tools and System Utilities,SEO,220499,"Information systems, technologies and services not elsewhere classified",objective,True,explicit_official,0.44,partial (p-flagged) single correspondence
@@ -534,12 +534,12 @@ SEO2008,890203,Computer Gaming Software,SEO,220501,"Animation, video games and c
 SEO2008,890204,"Computer Time Leasing, Sharing and Renting Services",SEO,220499,"Information systems, technologies and services not elsewhere classified",objective,True,explicit_official,0.361,partial (p-flagged) single correspondence
 SEO2008,890205,Information Processing Services (incl. Data Entry and Capture),SEO,220499,"Information systems, technologies and services not elsewhere classified",objective,True,explicit_official,0.451,partial (p-flagged) single correspondence
 SEO2008,890206,Internet Hosting Services (incl. Application Hosting Services),SEO,220499,"Information systems, technologies and services not elsewhere classified",objective,True,explicit_official,0.376,partial (p-flagged) single correspondence
-SEO2008,890299,Computer Software and Services not elsewhere classified,SEO,220402,Applied computing,objective,False,lexical,0.194,lexical tiebreak among 8 p-flagged candidates
-SEO2008,890299,Computer Software and Services not elsewhere classified,SEO,220404,Computer systems,objective,False,lexical,0.366,lexical tiebreak among 8 p-flagged candidates
-SEO2008,890299,Computer Software and Services not elsewhere classified,SEO,220407,Human-computer interaction,objective,False,lexical,0.346,lexical tiebreak among 8 p-flagged candidates
-SEO2008,890299,Computer Software and Services not elsewhere classified,SEO,220405,Cybersecurity,objective,False,lexical,0.235,lexical tiebreak among 8 p-flagged candidates
 SEO2008,890299,Computer Software and Services not elsewhere classified,SEO,220403,Artificial intelligence,objective,False,lexical,0.179,lexical tiebreak among 8 p-flagged candidates
+SEO2008,890299,Computer Software and Services not elsewhere classified,SEO,220405,Cybersecurity,objective,False,lexical,0.235,lexical tiebreak among 8 p-flagged candidates
+SEO2008,890299,Computer Software and Services not elsewhere classified,SEO,220407,Human-computer interaction,objective,False,lexical,0.346,lexical tiebreak among 8 p-flagged candidates
+SEO2008,890299,Computer Software and Services not elsewhere classified,SEO,220404,Computer systems,objective,False,lexical,0.366,lexical tiebreak among 8 p-flagged candidates
 SEO2008,890299,Computer Software and Services not elsewhere classified,SEO,220499,"Information systems, technologies and services not elsewhere classified",objective,True,lexical,0.698,lexical tiebreak among 8 p-flagged candidates
+SEO2008,890299,Computer Software and Services not elsewhere classified,SEO,220402,Applied computing,objective,False,lexical,0.194,lexical tiebreak among 8 p-flagged candidates
 SEO2008,890299,Computer Software and Services not elsewhere classified,SEO,220408,Information systems,objective,False,lexical,0.135,lexical tiebreak among 8 p-flagged candidates
 SEO2008,890299,Computer Software and Services not elsewhere classified,SEO,220406,Graphics,objective,False,lexical,0.127,lexical tiebreak among 8 p-flagged candidates
 SEO2008,8903,INFORMATION SERVICES,SEO,2203,Information services,group,True,derived_empirical,1.0,"rolled up from 4 SEO2008 leaf-level mapping(s), 4 agreeing"
@@ -653,134 +653,134 @@ SEO2008,919999,Economic Framework not elsewhere classified,SEO,159999,Other econ
 SEO2008,92,HEALTH,SEO,20,HEALTH,division,True,derived_empirical,0.851,"rolled up from 67 SEO2008 leaf-level mapping(s), 57 agreeing"
 SEO2008,92,HEALTH,SEO,21,INDIGENOUS,division,False,derived_empirical,0.149,"rolled up from 67 SEO2008 leaf-level mapping(s), 10 agreeing"
 SEO2008,9201,"CLINICAL HEALTH (ORGANS, DISEASES AND ABNORMAL CONDITIONS)",SEO,2001,Clinical health,group,True,derived_empirical,1.0,"rolled up from 21 SEO2008 leaf-level mapping(s), 21 agreeing"
-SEO2008,920101,Blood Disorders,SEO,200199,Clinical health not elsewhere classified,objective,False,lexical,0.255,lexical tiebreak among 6 p-flagged candidates
-SEO2008,920101,Blood Disorders,SEO,200102,Efficacy of medications,objective,False,lexical,0.263,lexical tiebreak among 6 p-flagged candidates
 SEO2008,920101,Blood Disorders,SEO,200104,Prevention of human diseases and conditions,objective,False,lexical,0.31,lexical tiebreak among 6 p-flagged candidates
+SEO2008,920101,Blood Disorders,SEO,200199,Clinical health not elsewhere classified,objective,False,lexical,0.255,lexical tiebreak among 6 p-flagged candidates
 SEO2008,920101,Blood Disorders,SEO,200101,Diagnosis of human diseases and conditions,objective,True,lexical,0.316,lexical tiebreak among 6 p-flagged candidates
 SEO2008,920101,Blood Disorders,SEO,200105,Treatment of human diseases and conditions,objective,False,lexical,0.281,lexical tiebreak among 6 p-flagged candidates
+SEO2008,920101,Blood Disorders,SEO,200102,Efficacy of medications,objective,False,lexical,0.263,lexical tiebreak among 6 p-flagged candidates
 SEO2008,920101,Blood Disorders,SEO,200103,Human pain management,objective,False,lexical,0.167,lexical tiebreak among 6 p-flagged candidates
-SEO2008,920102,Cancer and Related Disorders,SEO,200104,Prevention of human diseases and conditions,objective,False,lexical,0.31,lexical tiebreak among 6 p-flagged candidates
-SEO2008,920102,Cancer and Related Disorders,SEO,200199,Clinical health not elsewhere classified,objective,False,lexical,0.294,lexical tiebreak among 6 p-flagged candidates
-SEO2008,920102,Cancer and Related Disorders,SEO,200103,Human pain management,objective,False,lexical,0.286,lexical tiebreak among 6 p-flagged candidates
-SEO2008,920102,Cancer and Related Disorders,SEO,200102,Efficacy of medications,objective,True,lexical,0.353,lexical tiebreak among 6 p-flagged candidates
 SEO2008,920102,Cancer and Related Disorders,SEO,200105,Treatment of human diseases and conditions,objective,False,lexical,0.314,lexical tiebreak among 6 p-flagged candidates
+SEO2008,920102,Cancer and Related Disorders,SEO,200199,Clinical health not elsewhere classified,objective,False,lexical,0.294,lexical tiebreak among 6 p-flagged candidates
 SEO2008,920102,Cancer and Related Disorders,SEO,200101,Diagnosis of human diseases and conditions,objective,False,lexical,0.314,lexical tiebreak among 6 p-flagged candidates
+SEO2008,920102,Cancer and Related Disorders,SEO,200102,Efficacy of medications,objective,True,lexical,0.353,lexical tiebreak among 6 p-flagged candidates
+SEO2008,920102,Cancer and Related Disorders,SEO,200103,Human pain management,objective,False,lexical,0.286,lexical tiebreak among 6 p-flagged candidates
+SEO2008,920102,Cancer and Related Disorders,SEO,200104,Prevention of human diseases and conditions,objective,False,lexical,0.31,lexical tiebreak among 6 p-flagged candidates
 SEO2008,920103,Cardiovascular System and Diseases,SEO,200101,Diagnosis of human diseases and conditions,objective,True,lexical,0.447,lexical tiebreak among 6 p-flagged candidates
 SEO2008,920103,Cardiovascular System and Diseases,SEO,200104,Prevention of human diseases and conditions,objective,False,lexical,0.416,lexical tiebreak among 6 p-flagged candidates
 SEO2008,920103,Cardiovascular System and Diseases,SEO,200105,Treatment of human diseases and conditions,objective,False,lexical,0.395,lexical tiebreak among 6 p-flagged candidates
 SEO2008,920103,Cardiovascular System and Diseases,SEO,200103,Human pain management,objective,False,lexical,0.255,lexical tiebreak among 6 p-flagged candidates
 SEO2008,920103,Cardiovascular System and Diseases,SEO,200199,Clinical health not elsewhere classified,objective,False,lexical,0.216,lexical tiebreak among 6 p-flagged candidates
 SEO2008,920103,Cardiovascular System and Diseases,SEO,200102,Efficacy of medications,objective,False,lexical,0.211,lexical tiebreak among 6 p-flagged candidates
-SEO2008,920104,Diabetes,SEO,200103,Human pain management,objective,False,lexical,0.276,lexical tiebreak among 6 p-flagged candidates
 SEO2008,920104,Diabetes,SEO,200101,Diagnosis of human diseases and conditions,objective,False,lexical,0.24,lexical tiebreak among 6 p-flagged candidates
+SEO2008,920104,Diabetes,SEO,200103,Human pain management,objective,False,lexical,0.276,lexical tiebreak among 6 p-flagged candidates
 SEO2008,920104,Diabetes,SEO,200105,Treatment of human diseases and conditions,objective,False,lexical,0.2,lexical tiebreak among 6 p-flagged candidates
 SEO2008,920104,Diabetes,SEO,200104,Prevention of human diseases and conditions,objective,False,lexical,0.196,lexical tiebreak among 6 p-flagged candidates
 SEO2008,920104,Diabetes,SEO,200199,Clinical health not elsewhere classified,objective,False,lexical,0.042,lexical tiebreak among 6 p-flagged candidates
 SEO2008,920104,Diabetes,SEO,200102,Efficacy of medications,objective,True,lexical,0.323,lexical tiebreak among 6 p-flagged candidates
-SEO2008,920105,Digestive System Disorders,SEO,200105,Treatment of human diseases and conditions,objective,False,lexical,0.353,lexical tiebreak among 6 p-flagged candidates
-SEO2008,920105,Digestive System Disorders,SEO,200102,Efficacy of medications,objective,False,lexical,0.204,lexical tiebreak among 6 p-flagged candidates
-SEO2008,920105,Digestive System Disorders,SEO,200101,Diagnosis of human diseases and conditions,objective,True,lexical,0.412,lexical tiebreak among 6 p-flagged candidates
-SEO2008,920105,Digestive System Disorders,SEO,200104,Prevention of human diseases and conditions,objective,False,lexical,0.348,lexical tiebreak among 6 p-flagged candidates
 SEO2008,920105,Digestive System Disorders,SEO,200103,Human pain management,objective,False,lexical,0.17,lexical tiebreak among 6 p-flagged candidates
+SEO2008,920105,Digestive System Disorders,SEO,200102,Efficacy of medications,objective,False,lexical,0.204,lexical tiebreak among 6 p-flagged candidates
+SEO2008,920105,Digestive System Disorders,SEO,200105,Treatment of human diseases and conditions,objective,False,lexical,0.353,lexical tiebreak among 6 p-flagged candidates
+SEO2008,920105,Digestive System Disorders,SEO,200104,Prevention of human diseases and conditions,objective,False,lexical,0.348,lexical tiebreak among 6 p-flagged candidates
 SEO2008,920105,Digestive System Disorders,SEO,200199,Clinical health not elsewhere classified,objective,False,lexical,0.273,lexical tiebreak among 6 p-flagged candidates
-SEO2008,920106,Endocrine Organs and Diseases (excl. Diabetes),SEO,200102,Efficacy of medications,objective,False,lexical,0.203,lexical tiebreak among 6 p-flagged candidates
+SEO2008,920105,Digestive System Disorders,SEO,200101,Diagnosis of human diseases and conditions,objective,True,lexical,0.412,lexical tiebreak among 6 p-flagged candidates
 SEO2008,920106,Endocrine Organs and Diseases (excl. Diabetes),SEO,200105,Treatment of human diseases and conditions,objective,False,lexical,0.477,lexical tiebreak among 6 p-flagged candidates
-SEO2008,920106,Endocrine Organs and Diseases (excl. Diabetes),SEO,200103,Human pain management,objective,False,lexical,0.09,lexical tiebreak among 6 p-flagged candidates
-SEO2008,920106,Endocrine Organs and Diseases (excl. Diabetes),SEO,200199,Clinical health not elsewhere classified,objective,False,lexical,0.209,lexical tiebreak among 6 p-flagged candidates
-SEO2008,920106,Endocrine Organs and Diseases (excl. Diabetes),SEO,200101,Diagnosis of human diseases and conditions,objective,False,lexical,0.5,lexical tiebreak among 6 p-flagged candidates
 SEO2008,920106,Endocrine Organs and Diseases (excl. Diabetes),SEO,200104,Prevention of human diseases and conditions,objective,True,lexical,0.517,lexical tiebreak among 6 p-flagged candidates
-SEO2008,920107,"Hearing, Vision, Speech and Their Disorders",SEO,200103,Human pain management,objective,False,lexical,0.25,lexical tiebreak among 6 p-flagged candidates
+SEO2008,920106,Endocrine Organs and Diseases (excl. Diabetes),SEO,200102,Efficacy of medications,objective,False,lexical,0.203,lexical tiebreak among 6 p-flagged candidates
+SEO2008,920106,Endocrine Organs and Diseases (excl. Diabetes),SEO,200199,Clinical health not elsewhere classified,objective,False,lexical,0.209,lexical tiebreak among 6 p-flagged candidates
+SEO2008,920106,Endocrine Organs and Diseases (excl. Diabetes),SEO,200103,Human pain management,objective,False,lexical,0.09,lexical tiebreak among 6 p-flagged candidates
+SEO2008,920106,Endocrine Organs and Diseases (excl. Diabetes),SEO,200101,Diagnosis of human diseases and conditions,objective,False,lexical,0.5,lexical tiebreak among 6 p-flagged candidates
 SEO2008,920107,"Hearing, Vision, Speech and Their Disorders",SEO,200199,Clinical health not elsewhere classified,objective,False,lexical,0.217,lexical tiebreak among 6 p-flagged candidates
 SEO2008,920107,"Hearing, Vision, Speech and Their Disorders",SEO,200104,Prevention of human diseases and conditions,objective,True,lexical,0.395,lexical tiebreak among 6 p-flagged candidates
 SEO2008,920107,"Hearing, Vision, Speech and Their Disorders",SEO,200105,Treatment of human diseases and conditions,objective,False,lexical,0.376,lexical tiebreak among 6 p-flagged candidates
 SEO2008,920107,"Hearing, Vision, Speech and Their Disorders",SEO,200101,Diagnosis of human diseases and conditions,objective,False,lexical,0.306,lexical tiebreak among 6 p-flagged candidates
+SEO2008,920107,"Hearing, Vision, Speech and Their Disorders",SEO,200103,Human pain management,objective,False,lexical,0.25,lexical tiebreak among 6 p-flagged candidates
 SEO2008,920107,"Hearing, Vision, Speech and Their Disorders",SEO,200102,Efficacy of medications,objective,False,lexical,0.212,lexical tiebreak among 6 p-flagged candidates
-SEO2008,920108,Immune System and Allergy,SEO,200102,Efficacy of medications,objective,False,lexical,0.167,lexical tiebreak among 6 p-flagged candidates
-SEO2008,920108,Immune System and Allergy,SEO,200199,Clinical health not elsewhere classified,objective,False,lexical,0.246,lexical tiebreak among 6 p-flagged candidates
-SEO2008,920108,Immune System and Allergy,SEO,200103,Human pain management,objective,False,lexical,0.261,lexical tiebreak among 6 p-flagged candidates
-SEO2008,920108,Immune System and Allergy,SEO,200101,Diagnosis of human diseases and conditions,objective,True,lexical,0.328,lexical tiebreak among 6 p-flagged candidates
 SEO2008,920108,Immune System and Allergy,SEO,200105,Treatment of human diseases and conditions,objective,False,lexical,0.269,lexical tiebreak among 6 p-flagged candidates
+SEO2008,920108,Immune System and Allergy,SEO,200101,Diagnosis of human diseases and conditions,objective,True,lexical,0.328,lexical tiebreak among 6 p-flagged candidates
 SEO2008,920108,Immune System and Allergy,SEO,200104,Prevention of human diseases and conditions,objective,False,lexical,0.324,lexical tiebreak among 6 p-flagged candidates
-SEO2008,920109,Infectious Diseases,SEO,200104,Prevention of human diseases and conditions,objective,True,lexical,0.452,lexical tiebreak among 6 p-flagged candidates
-SEO2008,920109,Infectious Diseases,SEO,200102,Efficacy of medications,objective,False,lexical,0.381,lexical tiebreak among 6 p-flagged candidates
-SEO2008,920109,Infectious Diseases,SEO,200103,Human pain management,objective,False,lexical,0.2,lexical tiebreak among 6 p-flagged candidates
-SEO2008,920109,Infectious Diseases,SEO,200199,Clinical health not elsewhere classified,objective,False,lexical,0.373,lexical tiebreak among 6 p-flagged candidates
+SEO2008,920108,Immune System and Allergy,SEO,200103,Human pain management,objective,False,lexical,0.261,lexical tiebreak among 6 p-flagged candidates
+SEO2008,920108,Immune System and Allergy,SEO,200199,Clinical health not elsewhere classified,objective,False,lexical,0.246,lexical tiebreak among 6 p-flagged candidates
+SEO2008,920108,Immune System and Allergy,SEO,200102,Efficacy of medications,objective,False,lexical,0.167,lexical tiebreak among 6 p-flagged candidates
 SEO2008,920109,Infectious Diseases,SEO,200101,Diagnosis of human diseases and conditions,objective,False,lexical,0.426,lexical tiebreak among 6 p-flagged candidates
 SEO2008,920109,Infectious Diseases,SEO,200105,Treatment of human diseases and conditions,objective,False,lexical,0.393,lexical tiebreak among 6 p-flagged candidates
-SEO2008,920110,Inherited Diseases (incl. Gene Therapy),SEO,200104,Prevention of human diseases and conditions,objective,False,lexical,0.366,lexical tiebreak among 6 p-flagged candidates
-SEO2008,920110,Inherited Diseases (incl. Gene Therapy),SEO,200105,Treatment of human diseases and conditions,objective,False,lexical,0.346,lexical tiebreak among 6 p-flagged candidates
-SEO2008,920110,Inherited Diseases (incl. Gene Therapy),SEO,200101,Diagnosis of human diseases and conditions,objective,True,lexical,0.37,lexical tiebreak among 6 p-flagged candidates
+SEO2008,920109,Infectious Diseases,SEO,200103,Human pain management,objective,False,lexical,0.2,lexical tiebreak among 6 p-flagged candidates
+SEO2008,920109,Infectious Diseases,SEO,200104,Prevention of human diseases and conditions,objective,True,lexical,0.452,lexical tiebreak among 6 p-flagged candidates
+SEO2008,920109,Infectious Diseases,SEO,200199,Clinical health not elsewhere classified,objective,False,lexical,0.373,lexical tiebreak among 6 p-flagged candidates
+SEO2008,920109,Infectious Diseases,SEO,200102,Efficacy of medications,objective,False,lexical,0.381,lexical tiebreak among 6 p-flagged candidates
 SEO2008,920110,Inherited Diseases (incl. Gene Therapy),SEO,200199,Clinical health not elsewhere classified,objective,False,lexical,0.203,lexical tiebreak among 6 p-flagged candidates
 SEO2008,920110,Inherited Diseases (incl. Gene Therapy),SEO,200102,Efficacy of medications,objective,False,lexical,0.161,lexical tiebreak among 6 p-flagged candidates
 SEO2008,920110,Inherited Diseases (incl. Gene Therapy),SEO,200103,Human pain management,objective,False,lexical,0.3,lexical tiebreak among 6 p-flagged candidates
+SEO2008,920110,Inherited Diseases (incl. Gene Therapy),SEO,200101,Diagnosis of human diseases and conditions,objective,True,lexical,0.37,lexical tiebreak among 6 p-flagged candidates
+SEO2008,920110,Inherited Diseases (incl. Gene Therapy),SEO,200104,Prevention of human diseases and conditions,objective,False,lexical,0.366,lexical tiebreak among 6 p-flagged candidates
+SEO2008,920110,Inherited Diseases (incl. Gene Therapy),SEO,200105,Treatment of human diseases and conditions,objective,False,lexical,0.346,lexical tiebreak among 6 p-flagged candidates
 SEO2008,920111,Nervous System and Disorders,SEO,200199,Clinical health not elsewhere classified,objective,False,lexical,0.206,lexical tiebreak among 6 p-flagged candidates
 SEO2008,920111,Nervous System and Disorders,SEO,200103,Human pain management,objective,False,lexical,0.204,lexical tiebreak among 6 p-flagged candidates
 SEO2008,920111,Nervous System and Disorders,SEO,200102,Efficacy of medications,objective,False,lexical,0.275,lexical tiebreak among 6 p-flagged candidates
 SEO2008,920111,Nervous System and Disorders,SEO,200104,Prevention of human diseases and conditions,objective,False,lexical,0.338,lexical tiebreak among 6 p-flagged candidates
 SEO2008,920111,Nervous System and Disorders,SEO,200105,Treatment of human diseases and conditions,objective,False,lexical,0.343,lexical tiebreak among 6 p-flagged candidates
 SEO2008,920111,Nervous System and Disorders,SEO,200101,Diagnosis of human diseases and conditions,objective,True,lexical,0.429,lexical tiebreak among 6 p-flagged candidates
-SEO2008,920112,Neurodegenerative Disorders Related to Ageing,SEO,200103,Human pain management,objective,False,lexical,0.212,lexical tiebreak among 6 p-flagged candidates
 SEO2008,920112,Neurodegenerative Disorders Related to Ageing,SEO,200102,Efficacy of medications,objective,False,lexical,0.206,lexical tiebreak among 6 p-flagged candidates
 SEO2008,920112,Neurodegenerative Disorders Related to Ageing,SEO,200104,Prevention of human diseases and conditions,objective,True,lexical,0.409,lexical tiebreak among 6 p-flagged candidates
 SEO2008,920112,Neurodegenerative Disorders Related to Ageing,SEO,200105,Treatment of human diseases and conditions,objective,False,lexical,0.391,lexical tiebreak among 6 p-flagged candidates
 SEO2008,920112,Neurodegenerative Disorders Related to Ageing,SEO,200101,Diagnosis of human diseases and conditions,objective,False,lexical,0.368,lexical tiebreak among 6 p-flagged candidates
 SEO2008,920112,Neurodegenerative Disorders Related to Ageing,SEO,200199,Clinical health not elsewhere classified,objective,False,lexical,0.306,lexical tiebreak among 6 p-flagged candidates
-SEO2008,920113,Oro-Dental Disorders,SEO,200102,Efficacy of medications,objective,False,lexical,0.233,lexical tiebreak among 6 p-flagged candidates
+SEO2008,920112,Neurodegenerative Disorders Related to Ageing,SEO,200103,Human pain management,objective,False,lexical,0.212,lexical tiebreak among 6 p-flagged candidates
+SEO2008,920113,Oro-Dental Disorders,SEO,200101,Diagnosis of human diseases and conditions,objective,False,lexical,0.323,lexical tiebreak among 6 p-flagged candidates
 SEO2008,920113,Oro-Dental Disorders,SEO,200104,Prevention of human diseases and conditions,objective,False,lexical,0.381,lexical tiebreak among 6 p-flagged candidates
+SEO2008,920113,Oro-Dental Disorders,SEO,200102,Efficacy of medications,objective,False,lexical,0.233,lexical tiebreak among 6 p-flagged candidates
+SEO2008,920113,Oro-Dental Disorders,SEO,200103,Human pain management,objective,False,lexical,0.146,lexical tiebreak among 6 p-flagged candidates
 SEO2008,920113,Oro-Dental Disorders,SEO,200105,Treatment of human diseases and conditions,objective,True,lexical,0.387,lexical tiebreak among 6 p-flagged candidates
 SEO2008,920113,Oro-Dental Disorders,SEO,200199,Clinical health not elsewhere classified,objective,False,lexical,0.267,lexical tiebreak among 6 p-flagged candidates
-SEO2008,920113,Oro-Dental Disorders,SEO,200101,Diagnosis of human diseases and conditions,objective,False,lexical,0.323,lexical tiebreak among 6 p-flagged candidates
-SEO2008,920113,Oro-Dental Disorders,SEO,200103,Human pain management,objective,False,lexical,0.146,lexical tiebreak among 6 p-flagged candidates
-SEO2008,920114,Reproductive System and Disorders,SEO,200104,Prevention of human diseases and conditions,objective,False,lexical,0.395,lexical tiebreak among 6 p-flagged candidates
 SEO2008,920114,Reproductive System and Disorders,SEO,200101,Diagnosis of human diseases and conditions,objective,False,lexical,0.293,lexical tiebreak among 6 p-flagged candidates
 SEO2008,920114,Reproductive System and Disorders,SEO,200199,Clinical health not elsewhere classified,objective,False,lexical,0.082,lexical tiebreak among 6 p-flagged candidates
 SEO2008,920114,Reproductive System and Disorders,SEO,200102,Efficacy of medications,objective,False,lexical,0.25,lexical tiebreak among 6 p-flagged candidates
 SEO2008,920114,Reproductive System and Disorders,SEO,200103,Human pain management,objective,False,lexical,0.222,lexical tiebreak among 6 p-flagged candidates
+SEO2008,920114,Reproductive System and Disorders,SEO,200104,Prevention of human diseases and conditions,objective,False,lexical,0.395,lexical tiebreak among 6 p-flagged candidates
 SEO2008,920114,Reproductive System and Disorders,SEO,200105,Treatment of human diseases and conditions,objective,True,lexical,0.427,lexical tiebreak among 6 p-flagged candidates
-SEO2008,920115,Respiratory System and Diseases (incl. Asthma),SEO,200199,Clinical health not elsewhere classified,objective,False,lexical,0.14,lexical tiebreak among 6 p-flagged candidates
 SEO2008,920115,Respiratory System and Diseases (incl. Asthma),SEO,200104,Prevention of human diseases and conditions,objective,False,lexical,0.472,lexical tiebreak among 6 p-flagged candidates
 SEO2008,920115,Respiratory System and Diseases (incl. Asthma),SEO,200102,Efficacy of medications,objective,False,lexical,0.174,lexical tiebreak among 6 p-flagged candidates
 SEO2008,920115,Respiratory System and Diseases (incl. Asthma),SEO,200103,Human pain management,objective,False,lexical,0.209,lexical tiebreak among 6 p-flagged candidates
+SEO2008,920115,Respiratory System and Diseases (incl. Asthma),SEO,200199,Clinical health not elsewhere classified,objective,False,lexical,0.14,lexical tiebreak among 6 p-flagged candidates
 SEO2008,920115,Respiratory System and Diseases (incl. Asthma),SEO,200105,Treatment of human diseases and conditions,objective,True,lexical,0.5,lexical tiebreak among 6 p-flagged candidates
 SEO2008,920115,Respiratory System and Diseases (incl. Asthma),SEO,200101,Diagnosis of human diseases and conditions,objective,False,lexical,0.455,lexical tiebreak among 6 p-flagged candidates
-SEO2008,920116,Skeletal System and Disorders (incl. Arthritis),SEO,200199,Clinical health not elsewhere classified,objective,True,lexical,0.322,lexical tiebreak among 6 p-flagged candidates
-SEO2008,920116,Skeletal System and Disorders (incl. Arthritis),SEO,200103,Human pain management,objective,False,lexical,0.176,lexical tiebreak among 6 p-flagged candidates
-SEO2008,920116,Skeletal System and Disorders (incl. Arthritis),SEO,200105,Treatment of human diseases and conditions,objective,False,lexical,0.315,lexical tiebreak among 6 p-flagged candidates
-SEO2008,920116,Skeletal System and Disorders (incl. Arthritis),SEO,200101,Diagnosis of human diseases and conditions,objective,False,lexical,0.315,lexical tiebreak among 6 p-flagged candidates
 SEO2008,920116,Skeletal System and Disorders (incl. Arthritis),SEO,200102,Efficacy of medications,objective,False,lexical,0.257,lexical tiebreak among 6 p-flagged candidates
 SEO2008,920116,Skeletal System and Disorders (incl. Arthritis),SEO,200104,Prevention of human diseases and conditions,objective,False,lexical,0.311,lexical tiebreak among 6 p-flagged candidates
-SEO2008,920117,Skin and Related Disorders,SEO,200102,Efficacy of medications,objective,False,lexical,0.286,lexical tiebreak among 6 p-flagged candidates
-SEO2008,920117,Skin and Related Disorders,SEO,200105,Treatment of human diseases and conditions,objective,False,lexical,0.265,lexical tiebreak among 6 p-flagged candidates
-SEO2008,920117,Skin and Related Disorders,SEO,200104,Prevention of human diseases and conditions,objective,False,lexical,0.261,lexical tiebreak among 6 p-flagged candidates
+SEO2008,920116,Skeletal System and Disorders (incl. Arthritis),SEO,200105,Treatment of human diseases and conditions,objective,False,lexical,0.315,lexical tiebreak among 6 p-flagged candidates
+SEO2008,920116,Skeletal System and Disorders (incl. Arthritis),SEO,200103,Human pain management,objective,False,lexical,0.176,lexical tiebreak among 6 p-flagged candidates
+SEO2008,920116,Skeletal System and Disorders (incl. Arthritis),SEO,200199,Clinical health not elsewhere classified,objective,True,lexical,0.322,lexical tiebreak among 6 p-flagged candidates
+SEO2008,920116,Skeletal System and Disorders (incl. Arthritis),SEO,200101,Diagnosis of human diseases and conditions,objective,False,lexical,0.315,lexical tiebreak among 6 p-flagged candidates
 SEO2008,920117,Skin and Related Disorders,SEO,200199,Clinical health not elsewhere classified,objective,True,lexical,0.364,lexical tiebreak among 6 p-flagged candidates
 SEO2008,920117,Skin and Related Disorders,SEO,200103,Human pain management,objective,False,lexical,0.298,lexical tiebreak among 6 p-flagged candidates
 SEO2008,920117,Skin and Related Disorders,SEO,200101,Diagnosis of human diseases and conditions,objective,False,lexical,0.324,lexical tiebreak among 6 p-flagged candidates
+SEO2008,920117,Skin and Related Disorders,SEO,200104,Prevention of human diseases and conditions,objective,False,lexical,0.261,lexical tiebreak among 6 p-flagged candidates
+SEO2008,920117,Skin and Related Disorders,SEO,200102,Efficacy of medications,objective,False,lexical,0.286,lexical tiebreak among 6 p-flagged candidates
+SEO2008,920117,Skin and Related Disorders,SEO,200105,Treatment of human diseases and conditions,objective,False,lexical,0.265,lexical tiebreak among 6 p-flagged candidates
 SEO2008,920118,Surgical Methods and Procedures,SEO,200105,Treatment of human diseases and conditions,objective,True,lexical,0.438,lexical tiebreak among 6 p-flagged candidates
 SEO2008,920118,Surgical Methods and Procedures,SEO,200199,Clinical health not elsewhere classified,objective,False,lexical,0.394,lexical tiebreak among 6 p-flagged candidates
 SEO2008,920118,Surgical Methods and Procedures,SEO,200101,Diagnosis of human diseases and conditions,objective,False,lexical,0.384,lexical tiebreak among 6 p-flagged candidates
 SEO2008,920118,Surgical Methods and Procedures,SEO,200102,Efficacy of medications,objective,False,lexical,0.333,lexical tiebreak among 6 p-flagged candidates
 SEO2008,920118,Surgical Methods and Procedures,SEO,200104,Prevention of human diseases and conditions,objective,False,lexical,0.324,lexical tiebreak among 6 p-flagged candidates
 SEO2008,920118,Surgical Methods and Procedures,SEO,200103,Human pain management,objective,False,lexical,0.308,lexical tiebreak among 6 p-flagged candidates
-SEO2008,920119,Urogenital System and Disorders,SEO,200104,Prevention of human diseases and conditions,objective,True,lexical,0.459,lexical tiebreak among 6 p-flagged candidates
-SEO2008,920119,Urogenital System and Disorders,SEO,200103,Human pain management,objective,False,lexical,0.192,lexical tiebreak among 6 p-flagged candidates
 SEO2008,920119,Urogenital System and Disorders,SEO,200101,Diagnosis of human diseases and conditions,objective,False,lexical,0.356,lexical tiebreak among 6 p-flagged candidates
 SEO2008,920119,Urogenital System and Disorders,SEO,200105,Treatment of human diseases and conditions,objective,False,lexical,0.411,lexical tiebreak among 6 p-flagged candidates
 SEO2008,920119,Urogenital System and Disorders,SEO,200102,Efficacy of medications,objective,False,lexical,0.185,lexical tiebreak among 6 p-flagged candidates
+SEO2008,920119,Urogenital System and Disorders,SEO,200103,Human pain management,objective,False,lexical,0.192,lexical tiebreak among 6 p-flagged candidates
 SEO2008,920119,Urogenital System and Disorders,SEO,200199,Clinical health not elsewhere classified,objective,False,lexical,0.282,lexical tiebreak among 6 p-flagged candidates
-SEO2008,920120,Zoonoses,SEO,200105,Treatment of human diseases and conditions,objective,False,lexical,0.2,lexical tiebreak among 6 p-flagged candidates
+SEO2008,920119,Urogenital System and Disorders,SEO,200104,Prevention of human diseases and conditions,objective,True,lexical,0.459,lexical tiebreak among 6 p-flagged candidates
 SEO2008,920120,Zoonoses,SEO,200102,Efficacy of medications,objective,True,lexical,0.258,lexical tiebreak among 6 p-flagged candidates
-SEO2008,920120,Zoonoses,SEO,200104,Prevention of human diseases and conditions,objective,False,lexical,0.235,lexical tiebreak among 6 p-flagged candidates
+SEO2008,920120,Zoonoses,SEO,200105,Treatment of human diseases and conditions,objective,False,lexical,0.2,lexical tiebreak among 6 p-flagged candidates
+SEO2008,920120,Zoonoses,SEO,200103,Human pain management,objective,False,lexical,0.138,lexical tiebreak among 6 p-flagged candidates
 SEO2008,920120,Zoonoses,SEO,200199,Clinical health not elsewhere classified,objective,False,lexical,0.208,lexical tiebreak among 6 p-flagged candidates
 SEO2008,920120,Zoonoses,SEO,200101,Diagnosis of human diseases and conditions,objective,False,lexical,0.2,lexical tiebreak among 6 p-flagged candidates
-SEO2008,920120,Zoonoses,SEO,200103,Human pain management,objective,False,lexical,0.138,lexical tiebreak among 6 p-flagged candidates
+SEO2008,920120,Zoonoses,SEO,200104,Prevention of human diseases and conditions,objective,False,lexical,0.235,lexical tiebreak among 6 p-flagged candidates
 SEO2008,920199,"Clinical Health (Organs, Diseases and Abnormal Conditions) not elsewhere classified",SEO,200199,Clinical health not elsewhere classified,objective,True,explicit_official,0.65,partial (p-flagged) single correspondence
 SEO2008,9202,HEALTH AND SUPPORT SERVICES,SEO,2003,Provision of health and support services,group,True,derived_empirical,0.5,"rolled up from 12 SEO2008 leaf-level mapping(s), 6 agreeing"
 SEO2008,9202,HEALTH AND SUPPORT SERVICES,SEO,2001,Clinical health,group,False,derived_empirical,0.083,"rolled up from 12 SEO2008 leaf-level mapping(s), 1 agreeing"
 SEO2008,9202,HEALTH AND SUPPORT SERVICES,SEO,2002,Evaluation of health and support services,group,False,derived_empirical,0.417,"rolled up from 12 SEO2008 leaf-level mapping(s), 5 agreeing"
 SEO2008,920201,Allied Health Therapies (excl. Mental Health Services),SEO,200301,Allied health therapies (excl. mental health services),objective,True,explicit_official,1.0,
 SEO2008,920202,Carer Health,SEO,200399,Provision of health and support services not elsewhere classified,objective,True,explicit_official,0.208,partial (p-flagged) single correspondence
-SEO2008,920203,Diagnostic Methods,SEO,200101,Diagnosis of human diseases and conditions,objective,True,lexical,0.367,lexical tiebreak among 2 p-flagged candidates
 SEO2008,920203,Diagnostic Methods,SEO,200399,Provision of health and support services not elsewhere classified,objective,False,lexical,0.193,lexical tiebreak among 2 p-flagged candidates
+SEO2008,920203,Diagnostic Methods,SEO,200101,Diagnosis of human diseases and conditions,objective,True,lexical,0.367,lexical tiebreak among 2 p-flagged candidates
 SEO2008,920204,Evaluation of Health Outcomes,SEO,200202,Evaluation of health outcomes,objective,True,explicit_official,1.0,
 SEO2008,920205,Health Education and Promotion,SEO,200203,Health education and promotion,objective,True,explicit_official,1.0,
 SEO2008,920206,Health Inequalities,SEO,200204,Health inequalities,objective,True,explicit_official,1.0,
@@ -791,16 +791,16 @@ SEO2008,920209,Mental Health Services,SEO,200305,Mental health services,objectiv
 SEO2008,920210,Nursing,SEO,200307,Nursing,objective,True,lexical,1.0,lexical tiebreak among 2 p-flagged candidates
 SEO2008,920210,Nursing,SEO,200306,Midwifery,objective,False,lexical,0.125,lexical tiebreak among 2 p-flagged candidates
 SEO2008,920211,Palliative Care,SEO,200309,Palliative care,objective,True,explicit_official,1.0,
-SEO2008,920299,Health and Support Services not elsewhere classified,SEO,200304,Inpatient hospital care,objective,False,lexical,0.187,lexical tiebreak among 10 p-flagged candidates
-SEO2008,920299,Health and Support Services not elsewhere classified,SEO,200311,"Urgent and critical care, and emergency medicine",objective,False,lexical,0.3,lexical tiebreak among 10 p-flagged candidates
-SEO2008,920299,Health and Support Services not elsewhere classified,SEO,200310,Primary care,objective,False,lexical,0.156,lexical tiebreak among 10 p-flagged candidates
+SEO2008,920299,Health and Support Services not elsewhere classified,SEO,200399,Provision of health and support services not elsewhere classified,objective,True,lexical,0.889,lexical tiebreak among 10 p-flagged candidates
+SEO2008,920299,Health and Support Services not elsewhere classified,SEO,200299,Evaluation of health and support services not elsewhere classified,objective,False,lexical,0.881,lexical tiebreak among 10 p-flagged candidates
+SEO2008,920299,Health and Support Services not elsewhere classified,SEO,200303,Health surveillance,objective,False,lexical,0.31,lexical tiebreak among 10 p-flagged candidates
+SEO2008,920299,Health and Support Services not elsewhere classified,SEO,200302,Community health care,objective,False,lexical,0.274,lexical tiebreak among 10 p-flagged candidates
 SEO2008,920299,Health and Support Services not elsewhere classified,SEO,200206,Health system performance (incl. effectiveness of programs),objective,False,lexical,0.288,lexical tiebreak among 10 p-flagged candidates
 SEO2008,920299,Health and Support Services not elsewhere classified,SEO,200308,Outpatient care,objective,False,lexical,0.209,lexical tiebreak among 10 p-flagged candidates
-SEO2008,920299,Health and Support Services not elsewhere classified,SEO,200302,Community health care,objective,False,lexical,0.274,lexical tiebreak among 10 p-flagged candidates
-SEO2008,920299,Health and Support Services not elsewhere classified,SEO,200303,Health surveillance,objective,False,lexical,0.31,lexical tiebreak among 10 p-flagged candidates
-SEO2008,920299,Health and Support Services not elsewhere classified,SEO,200399,Provision of health and support services not elsewhere classified,objective,True,lexical,0.889,lexical tiebreak among 10 p-flagged candidates
 SEO2008,920299,Health and Support Services not elsewhere classified,SEO,200208,Telehealth,objective,False,lexical,0.194,lexical tiebreak among 10 p-flagged candidates
-SEO2008,920299,Health and Support Services not elsewhere classified,SEO,200299,Evaluation of health and support services not elsewhere classified,objective,False,lexical,0.881,lexical tiebreak among 10 p-flagged candidates
+SEO2008,920299,Health and Support Services not elsewhere classified,SEO,200310,Primary care,objective,False,lexical,0.156,lexical tiebreak among 10 p-flagged candidates
+SEO2008,920299,Health and Support Services not elsewhere classified,SEO,200311,"Urgent and critical care, and emergency medicine",objective,False,lexical,0.3,lexical tiebreak among 10 p-flagged candidates
+SEO2008,920299,Health and Support Services not elsewhere classified,SEO,200304,Inpatient hospital care,objective,False,lexical,0.187,lexical tiebreak among 10 p-flagged candidates
 SEO2008,9203,INDIGENOUS HEALTH,SEO,2199,Other Indigenous,group,False,derived_empirical,0.1,"rolled up from 10 SEO2008 leaf-level mapping(s), 1 agreeing"
 SEO2008,9203,INDIGENOUS HEALTH,SEO,2111,Pacific Peoples health,group,False,derived_empirical,0.3,"rolled up from 10 SEO2008 leaf-level mapping(s), 3 agreeing"
 SEO2008,9203,INDIGENOUS HEALTH,SEO,2107,Te hauora (hauora Māori) (Māori health),group,False,derived_empirical,0.3,"rolled up from 10 SEO2008 leaf-level mapping(s), 3 agreeing"
@@ -838,19 +838,19 @@ SEO2008,920414,Substance Abuse,SEO,200499,Public health (excl. specific populati
 SEO2008,920499,Public Health (excl. Specific Population Health) not elsewhere classified,SEO,200499,Public health (excl. specific population health) not elsewhere classified,objective,True,lexical,1.0,lexical tiebreak among 2 p-flagged candidates
 SEO2008,920499,Public Health (excl. Specific Population Health) not elsewhere classified,SEO,200411,Overweight and obesity,objective,False,lexical,0.147,lexical tiebreak among 2 p-flagged candidates
 SEO2008,9205,SPECIFIC POPULATION HEALTH (EXCL. INDIGENOUS HEALTH),SEO,2005,Specific population health (excl. Indigenous health),group,True,derived_empirical,1.0,"rolled up from 8 SEO2008 leaf-level mapping(s), 8 agreeing"
-SEO2008,920501,Child Health,SEO,200506,Neonatal and child health,objective,True,lexical,0.649,lexical tiebreak among 2 p-flagged candidates
 SEO2008,920501,Child Health,SEO,200501,Adolescent health,objective,False,lexical,0.552,lexical tiebreak among 2 p-flagged candidates
+SEO2008,920501,Child Health,SEO,200506,Neonatal and child health,objective,True,lexical,0.649,lexical tiebreak among 2 p-flagged candidates
 SEO2008,920502,Health Related to Ageing,SEO,200502,Health related to ageing,objective,True,explicit_official,1.0,
 SEO2008,920503,Health Related to Specific Ethnic Groups,SEO,200503,Health related to specific ethnic groups,objective,True,explicit_official,1.0,
 SEO2008,920504,Men's Health,SEO,200504,Men's health,objective,True,explicit_official,1.0,
 SEO2008,920505,Occupational Health,SEO,200507,Occupational health,objective,True,explicit_official,1.0,
 SEO2008,920506,Rural Health,SEO,200508,Rural and remote area health,objective,True,explicit_official,1.0,
 SEO2008,920507,Women's Health,SEO,200509,Women's and maternal health,objective,True,explicit_official,1.0,
-SEO2008,920599,Specific Population Health (excl. Indigenous Health) not elsewhere classified,SEO,200599,Specific population health (excl. Indigenous health) not elsewhere classified,objective,True,lexical,1.0,lexical tiebreak among 2 p-flagged candidates
 SEO2008,920599,Specific Population Health (excl. Indigenous Health) not elsewhere classified,SEO,200505,Migrant health,objective,False,lexical,0.22,lexical tiebreak among 2 p-flagged candidates
+SEO2008,920599,Specific Population Health (excl. Indigenous Health) not elsewhere classified,SEO,200599,Specific population health (excl. Indigenous health) not elsewhere classified,objective,True,lexical,1.0,lexical tiebreak among 2 p-flagged candidates
 SEO2008,9299,OTHER HEALTH,SEO,2099,Other health,group,True,derived_empirical,1.0,"rolled up from 1 SEO2008 leaf-level mapping(s), 1 agreeing"
-SEO2008,929999,Health not elsewhere classified,SEO,200201,Determinants of health,objective,False,lexical,0.226,lexical tiebreak among 2 p-flagged candidates
 SEO2008,929999,Health not elsewhere classified,SEO,209999,Other health not elsewhere classified,objective,True,lexical,0.912,lexical tiebreak among 2 p-flagged candidates
+SEO2008,929999,Health not elsewhere classified,SEO,200201,Determinants of health,objective,False,lexical,0.226,lexical tiebreak among 2 p-flagged candidates
 SEO2008,93,EDUCATION AND TRAINING,SEO,16,EDUCATION AND TRAINING,division,True,derived_empirical,0.897,"rolled up from 29 SEO2008 leaf-level mapping(s), 26 agreeing"
 SEO2008,93,EDUCATION AND TRAINING,SEO,21,INDIGENOUS,division,False,derived_empirical,0.103,"rolled up from 29 SEO2008 leaf-level mapping(s), 3 agreeing"
 SEO2008,9301,LEARNER AND LEARNING,SEO,1601,Learner and learning,group,True,derived_empirical,1.0,"rolled up from 5 SEO2008 leaf-level mapping(s), 5 agreeing"
@@ -860,24 +860,24 @@ SEO2008,930101,Learner and Learning Achievement,SEO,160104,Professional developm
 SEO2008,930101,Learner and Learning Achievement,SEO,160102,Higher education,objective,False,lexical,0.208,lexical tiebreak among 6 p-flagged candidates
 SEO2008,930101,Learner and Learning Achievement,SEO,160105,Secondary education,objective,False,lexical,0.157,lexical tiebreak among 6 p-flagged candidates
 SEO2008,930101,Learner and Learning Achievement,SEO,160103,Primary education,objective,False,lexical,0.122,lexical tiebreak among 6 p-flagged candidates
-SEO2008,930102,Learner and Learning Processes,SEO,160105,Secondary education,objective,False,lexical,0.163,lexical tiebreak among 6 p-flagged candidates
-SEO2008,930102,Learner and Learning Processes,SEO,160103,Primary education,objective,False,lexical,0.128,lexical tiebreak among 6 p-flagged candidates
-SEO2008,930102,Learner and Learning Processes,SEO,160102,Higher education,objective,False,lexical,0.217,lexical tiebreak among 6 p-flagged candidates
-SEO2008,930102,Learner and Learning Processes,SEO,160101,Early childhood education,objective,False,lexical,0.327,lexical tiebreak among 6 p-flagged candidates
 SEO2008,930102,Learner and Learning Processes,SEO,160104,Professional development and adult education,objective,False,lexical,0.324,lexical tiebreak among 6 p-flagged candidates
 SEO2008,930102,Learner and Learning Processes,SEO,160199,Learner and learning not elsewhere classified,objective,True,lexical,0.693,lexical tiebreak among 6 p-flagged candidates
-SEO2008,930103,Learner Development,SEO,160105,Secondary education,objective,False,lexical,0.211,lexical tiebreak among 6 p-flagged candidates
+SEO2008,930102,Learner and Learning Processes,SEO,160101,Early childhood education,objective,False,lexical,0.327,lexical tiebreak among 6 p-flagged candidates
+SEO2008,930102,Learner and Learning Processes,SEO,160102,Higher education,objective,False,lexical,0.217,lexical tiebreak among 6 p-flagged candidates
+SEO2008,930102,Learner and Learning Processes,SEO,160105,Secondary education,objective,False,lexical,0.163,lexical tiebreak among 6 p-flagged candidates
+SEO2008,930102,Learner and Learning Processes,SEO,160103,Primary education,objective,False,lexical,0.128,lexical tiebreak among 6 p-flagged candidates
 SEO2008,930103,Learner Development,SEO,160101,Early childhood education,objective,False,lexical,0.182,lexical tiebreak among 6 p-flagged candidates
 SEO2008,930103,Learner Development,SEO,160104,Professional development and adult education,objective,True,lexical,0.413,lexical tiebreak among 6 p-flagged candidates
 SEO2008,930103,Learner Development,SEO,160199,Learner and learning not elsewhere classified,objective,False,lexical,0.406,lexical tiebreak among 6 p-flagged candidates
 SEO2008,930103,Learner Development,SEO,160102,Higher education,objective,False,lexical,0.343,lexical tiebreak among 6 p-flagged candidates
+SEO2008,930103,Learner Development,SEO,160105,Secondary education,objective,False,lexical,0.211,lexical tiebreak among 6 p-flagged candidates
 SEO2008,930103,Learner Development,SEO,160103,Primary education,objective,False,lexical,0.167,lexical tiebreak among 6 p-flagged candidates
-SEO2008,930104,Moral and Social Development (incl. Affect),SEO,160104,Professional development and adult education,objective,True,lexical,0.529,lexical tiebreak among 6 p-flagged candidates
+SEO2008,930104,Moral and Social Development (incl. Affect),SEO,160101,Early childhood education,objective,False,lexical,0.147,lexical tiebreak among 6 p-flagged candidates
 SEO2008,930104,Moral and Social Development (incl. Affect),SEO,160103,Primary education,objective,False,lexical,0.1,lexical tiebreak among 6 p-flagged candidates
+SEO2008,930104,Moral and Social Development (incl. Affect),SEO,160104,Professional development and adult education,objective,True,lexical,0.529,lexical tiebreak among 6 p-flagged candidates
 SEO2008,930104,Moral and Social Development (incl. Affect),SEO,160199,Learner and learning not elsewhere classified,objective,False,lexical,0.386,lexical tiebreak among 6 p-flagged candidates
 SEO2008,930104,Moral and Social Development (incl. Affect),SEO,160105,Secondary education,objective,False,lexical,0.194,lexical tiebreak among 6 p-flagged candidates
 SEO2008,930104,Moral and Social Development (incl. Affect),SEO,160102,Higher education,objective,False,lexical,0.068,lexical tiebreak among 6 p-flagged candidates
-SEO2008,930104,Moral and Social Development (incl. Affect),SEO,160101,Early childhood education,objective,False,lexical,0.147,lexical tiebreak among 6 p-flagged candidates
 SEO2008,930199,Learner and Learning not elsewhere classified,SEO,160199,Learner and learning not elsewhere classified,objective,True,explicit_official,1.0,partial (p-flagged) single correspondence
 SEO2008,9302,TEACHING AND INSTRUCTION,SEO,1603,Teaching and curriculum,group,True,derived_empirical,1.0,"rolled up from 4 SEO2008 leaf-level mapping(s), 4 agreeing"
 SEO2008,930201,Pedagogy,SEO,160302,Pedagogy,objective,True,explicit_official,1.0,partial (p-flagged) single correspondence
@@ -907,24 +907,24 @@ SEO2008,9399,OTHER EDUCATION AND TRAINING,SEO,2110,Pacific Peoples education,gro
 SEO2008,9399,OTHER EDUCATION AND TRAINING,SEO,1602,Schools and learning environments,group,True,derived_empirical,0.444,"rolled up from 9 SEO2008 leaf-level mapping(s), 4 agreeing"
 SEO2008,939901,Aboriginal and Torres Strait Islander Education,SEO,210202,Aboriginal and Torres Strait Islander education system performance,objective,True,lexical,0.832,lexical tiebreak among 4 p-flagged candidates
 SEO2008,939901,Aboriginal and Torres Strait Islander Education,SEO,210299,Aboriginal and Torres Strait Islander education not elsewhere classified,objective,False,lexical,0.79,lexical tiebreak among 4 p-flagged candidates
-SEO2008,939901,Aboriginal and Torres Strait Islander Education,SEO,210203,Aboriginal and Torres Strait Islander literacy and numeracy outcomes,objective,False,lexical,0.765,lexical tiebreak among 4 p-flagged candidates
 SEO2008,939901,Aboriginal and Torres Strait Islander Education,SEO,210201,Aboriginal and Torres Strait Islander education engagement and attendance outcomes,objective,False,lexical,0.729,lexical tiebreak among 4 p-flagged candidates
-SEO2008,939902,Education and Training Theory and Methodology,SEO,169999,Other education and training not elsewhere classified,objective,True,lexical,0.612,lexical tiebreak among 2 p-flagged candidates
+SEO2008,939901,Aboriginal and Torres Strait Islander Education,SEO,210203,Aboriginal and Torres Strait Islander literacy and numeracy outcomes,objective,False,lexical,0.765,lexical tiebreak among 4 p-flagged candidates
 SEO2008,939902,Education and Training Theory and Methodology,SEO,160302,Pedagogy,objective,False,lexical,0.264,lexical tiebreak among 2 p-flagged candidates
+SEO2008,939902,Education and Training Theory and Methodology,SEO,169999,Other education and training not elsewhere classified,objective,True,lexical,0.612,lexical tiebreak among 2 p-flagged candidates
 SEO2008,939903,Equity and Access to Education,SEO,160201,Equity and access to education,objective,True,explicit_official,1.0,
 SEO2008,939904,Gender Aspects of Education,SEO,160202,Gender aspects in education,objective,True,explicit_official,1.0,
 SEO2008,939905,Māori Education,SEO,210602,Te whakatutukitanga o te pūnaha mātauranga Māori (Māori education system performance),objective,True,lexical,0.3,lexical tiebreak among 4 p-flagged candidates
 SEO2008,939905,Māori Education,SEO,210699,Te mātauranga Māori kāore kāore anō kia whakarōpūtia i wāhi kē (Māori education not elsewhere classified),objective,False,lexical,0.25,lexical tiebreak among 4 p-flagged candidates
-SEO2008,939905,Māori Education,SEO,210603,Ngā putanga reo matatini me te pāngarau o te Māori (Māori literacy and numeracy outcomes),objective,False,lexical,0.231,lexical tiebreak among 4 p-flagged candidates
 SEO2008,939905,Māori Education,SEO,210601,Te whai wāhi o te Māori ki te mātauranga me te taetae atu ki te kura (Māori education engagement and attendance outcomes),objective,False,lexical,0.221,lexical tiebreak among 4 p-flagged candidates
-SEO2008,939906,Pacific Peoples Education,SEO,211001,Pacific Peoples education engagement and attendance,objective,False,lexical,0.658,lexical tiebreak among 4 p-flagged candidates
+SEO2008,939905,Māori Education,SEO,210603,Ngā putanga reo matatini me te pāngarau o te Māori (Māori literacy and numeracy outcomes),objective,False,lexical,0.231,lexical tiebreak among 4 p-flagged candidates
 SEO2008,939906,Pacific Peoples Education,SEO,211003,Pacific Peoples literacy and numeracy outcomes,objective,False,lexical,0.62,lexical tiebreak among 4 p-flagged candidates
+SEO2008,939906,Pacific Peoples Education,SEO,211001,Pacific Peoples education engagement and attendance,objective,False,lexical,0.658,lexical tiebreak among 4 p-flagged candidates
 SEO2008,939906,Pacific Peoples Education,SEO,211002,Pacific Peoples education system performance,objective,True,lexical,0.725,lexical tiebreak among 4 p-flagged candidates
 SEO2008,939906,Pacific Peoples Education,SEO,211099,Pacific Peoples education not elsewhere classified,objective,False,lexical,0.667,lexical tiebreak among 4 p-flagged candidates
 SEO2008,939907,Special Needs Education,SEO,160203,Inclusive education,objective,True,explicit_official,1.0,
 SEO2008,939908,Workforce Transition and Employment,SEO,160206,Workforce transition and employment,objective,True,explicit_official,1.0,
-SEO2008,939999,Education and Training not elsewhere classified,SEO,169999,Other education and training not elsewhere classified,objective,True,lexical,0.94,lexical tiebreak among 2 p-flagged candidates
 SEO2008,939999,Education and Training not elsewhere classified,SEO,219999,Other Indigenous not elsewhere classified,objective,False,lexical,0.705,lexical tiebreak among 2 p-flagged candidates
+SEO2008,939999,Education and Training not elsewhere classified,SEO,169999,Other education and training not elsewhere classified,objective,True,lexical,0.94,lexical tiebreak among 2 p-flagged candidates
 SEO2008,94,"LAW, POLITICS AND COMMUNITY SERVICES",SEO,21,INDIGENOUS,division,False,derived_empirical,0.068,"rolled up from 44 SEO2008 leaf-level mapping(s), 3 agreeing"
 SEO2008,94,"LAW, POLITICS AND COMMUNITY SERVICES",SEO,23,"LAW, POLITICS AND COMMUNITY SERVICES",division,True,derived_empirical,0.932,"rolled up from 44 SEO2008 leaf-level mapping(s), 41 agreeing"
 SEO2008,9401,COMMUNITY SERVICE (EXCL. WORK),SEO,2301,Community services,group,True,derived_empirical,0.833,"rolled up from 18 SEO2008 leaf-level mapping(s), 15 agreeing"
@@ -944,21 +944,21 @@ SEO2008,940107,Comparative Structure and Development of Community Services,SEO,2
 SEO2008,940108,Distribution of Income and Wealth,SEO,230199,Community services not elsewhere classified,objective,True,explicit_official,0.184,partial (p-flagged) single correspondence
 SEO2008,940109,Employment Services,SEO,230106,Employment services,objective,True,explicit_official,1.0,
 SEO2008,940110,Environmental Services,SEO,230199,Community services not elsewhere classified,objective,True,explicit_official,0.369,partial (p-flagged) single correspondence
-SEO2008,940111,"Ethnicity, Multiculturalism and Migrant Development and Welfare",SEO,230111,Multicultural services,objective,False,lexical,0.353,lexical tiebreak among 2 p-flagged candidates
 SEO2008,940111,"Ethnicity, Multiculturalism and Migrant Development and Welfare",SEO,230110,Migrant and refugee settlement services,objective,True,lexical,0.392,lexical tiebreak among 2 p-flagged candidates
+SEO2008,940111,"Ethnicity, Multiculturalism and Migrant Development and Welfare",SEO,230111,Multicultural services,objective,False,lexical,0.353,lexical tiebreak among 2 p-flagged candidates
 SEO2008,940112,Families and Family Services,SEO,230107,Families and family services,objective,True,explicit_official,1.0,
 SEO2008,940113,Gender and Sexualities,SEO,230108,Gender and sexualities,objective,True,explicit_official,1.0,
-SEO2008,940114,Māori Development and Welfare,SEO,210502,Te whanaketanga me te oranga o te Māori (Māori development and wellbeing),objective,True,lexical,0.51,lexical tiebreak among 3 p-flagged candidates
-SEO2008,940114,Māori Development and Welfare,SEO,210501,Ngā hōtaka ratonga hapori Māori (Māori community service programs),objective,False,lexical,0.232,lexical tiebreak among 3 p-flagged candidates
 SEO2008,940114,Māori Development and Welfare,SEO,210599,Ngā ratonga hapori o te Māori kāore anō kia whakarōpūtia i wāhi kē (Māori community services not elsewhere classified),objective,False,lexical,0.218,lexical tiebreak among 3 p-flagged candidates
-SEO2008,940115,Pacific Peoples Development and Welfare,SEO,210902,Pacific Peoples development and wellbeing,objective,True,lexical,0.9,lexical tiebreak among 3 p-flagged candidates
-SEO2008,940115,Pacific Peoples Development and Welfare,SEO,210901,Pacific Peoples community service programs,objective,False,lexical,0.519,lexical tiebreak among 3 p-flagged candidates
+SEO2008,940114,Māori Development and Welfare,SEO,210501,Ngā hōtaka ratonga hapori Māori (Māori community service programs),objective,False,lexical,0.232,lexical tiebreak among 3 p-flagged candidates
+SEO2008,940114,Māori Development and Welfare,SEO,210502,Te whanaketanga me te oranga o te Māori (Māori development and wellbeing),objective,True,lexical,0.51,lexical tiebreak among 3 p-flagged candidates
 SEO2008,940115,Pacific Peoples Development and Welfare,SEO,210999,Pacific Peoples community services not elsewhere classified,objective,False,lexical,0.51,lexical tiebreak among 3 p-flagged candidates
+SEO2008,940115,Pacific Peoples Development and Welfare,SEO,210901,Pacific Peoples community service programs,objective,False,lexical,0.519,lexical tiebreak among 3 p-flagged candidates
+SEO2008,940115,Pacific Peoples Development and Welfare,SEO,210902,Pacific Peoples development and wellbeing,objective,True,lexical,0.9,lexical tiebreak among 3 p-flagged candidates
 SEO2008,940116,Social Class and Inequalities,SEO,230112,Social class and inequalities,objective,True,explicit_official,1.0,
 SEO2008,940117,"Structure, Delivery and Financing of Community Services",SEO,230113,"Structure, delivery and resourcing",objective,True,explicit_official,1.0,
-SEO2008,940199,Community Service (excl. Work) not elsewhere classified,SEO,210999,Pacific Peoples community services not elsewhere classified,objective,False,lexical,0.737,lexical tiebreak among 6 p-flagged candidates
 SEO2008,940199,Community Service (excl. Work) not elsewhere classified,SEO,219999,Other Indigenous not elsewhere classified,objective,False,lexical,0.667,lexical tiebreak among 6 p-flagged candidates
 SEO2008,940199,Community Service (excl. Work) not elsewhere classified,SEO,230199,Community services not elsewhere classified,objective,True,lexical,0.857,lexical tiebreak among 6 p-flagged candidates
+SEO2008,940199,Community Service (excl. Work) not elsewhere classified,SEO,210999,Pacific Peoples community services not elsewhere classified,objective,False,lexical,0.737,lexical tiebreak among 6 p-flagged candidates
 SEO2008,940199,Community Service (excl. Work) not elsewhere classified,SEO,210901,Pacific Peoples community service programs,objective,False,lexical,0.433,lexical tiebreak among 6 p-flagged candidates
 SEO2008,940199,Community Service (excl. Work) not elsewhere classified,SEO,230109,Homelessness and housing services,objective,False,lexical,0.295,lexical tiebreak among 6 p-flagged candidates
 SEO2008,940199,Community Service (excl. Work) not elsewhere classified,SEO,230114,Violence and abuse services,objective,False,lexical,0.268,lexical tiebreak among 6 p-flagged candidates
@@ -991,8 +991,8 @@ SEO2008,940502,Professions and Professionalisation,SEO,230502,Professions and pr
 SEO2008,940503,"Time Use, Unpaid Work and Volunteering",SEO,230504,Unpaid work and volunteering,objective,True,explicit_official,1.0,
 SEO2008,940504,Work and Family Responsibilities,SEO,230505,Work and family responsibilities,objective,True,explicit_official,1.0,
 SEO2008,940505,Workplace Safety,SEO,230506,Workplace safety,objective,True,explicit_official,1.0,
-SEO2008,940599,Work and Institutional Development not elsewhere classified,SEO,230503,Remuneration,objective,False,lexical,0.169,lexical tiebreak among 2 p-flagged candidates
 SEO2008,940599,Work and Institutional Development not elsewhere classified,SEO,230599,Work and labour market not elsewhere classified,objective,True,lexical,0.717,lexical tiebreak among 2 p-flagged candidates
+SEO2008,940599,Work and Institutional Development not elsewhere classified,SEO,230503,Remuneration,objective,False,lexical,0.169,lexical tiebreak among 2 p-flagged candidates
 SEO2008,9499,"OTHER LAW, POLITICS AND COMMUNITY SERVICES",SEO,2399,"Other law, politics and community services",group,True,derived_empirical,1.0,"rolled up from 1 SEO2008 leaf-level mapping(s), 1 agreeing"
 SEO2008,949999,"Law, Politics and Community Services not elsewhere classified",SEO,239999,"Other law, politics and community services not elsewhere classified",objective,True,explicit_official,1.0,
 SEO2008,95,CULTURAL UNDERSTANDING,SEO,21,INDIGENOUS,division,False,derived_empirical,0.167,"rolled up from 42 SEO2008 leaf-level mapping(s), 7 agreeing"
@@ -1004,9 +1004,9 @@ SEO2008,950102,Organised Sports,SEO,130602,Organised sports,objective,True,expli
 SEO2008,950103,Recreation,SEO,130603,Recreation and leisure activities (excl. sport and exercise),objective,True,explicit_official,1.0,
 SEO2008,950104,The Creative Arts (incl. Graphics and Craft),SEO,130103,The creative arts,objective,True,explicit_official,1.0,
 SEO2008,950105,The Performing Arts (incl. Theatre and Dance),SEO,130104,The performing arts,objective,True,explicit_official,1.0,
-SEO2008,950199,Arts and Leisure not elsewhere classified,SEO,130199,Arts not elsewhere classified,objective,True,lexical,0.829,lexical tiebreak among 4 p-flagged candidates
-SEO2008,950199,Arts and Leisure not elsewhere classified,SEO,130699,"Sport, exercise and recreation not elsewhere classified",objective,False,lexical,0.729,lexical tiebreak among 4 p-flagged candidates
 SEO2008,950199,Arts and Leisure not elsewhere classified,SEO,130101,Design,objective,False,lexical,0.17,lexical tiebreak among 4 p-flagged candidates
+SEO2008,950199,Arts and Leisure not elsewhere classified,SEO,130699,"Sport, exercise and recreation not elsewhere classified",objective,False,lexical,0.729,lexical tiebreak among 4 p-flagged candidates
+SEO2008,950199,Arts and Leisure not elsewhere classified,SEO,130199,Arts not elsewhere classified,objective,True,lexical,0.829,lexical tiebreak among 4 p-flagged candidates
 SEO2008,950199,Arts and Leisure not elsewhere classified,SEO,130601,Exercise,objective,False,lexical,0.163,lexical tiebreak among 4 p-flagged candidates
 SEO2008,9502,COMMUNICATION,SEO,1302,Communication,group,True,derived_empirical,1.0,"rolled up from 6 SEO2008 leaf-level mapping(s), 6 agreeing"
 SEO2008,950201,Communication Across Languages and Culture,SEO,130201,Communication across languages and culture,objective,True,explicit_official,1.0,
@@ -1033,14 +1033,14 @@ SEO2008,950304,Conserving Intangible Cultural Heritage,SEO,130403,Conserving int
 SEO2008,950305,Conserving Natural Heritage,SEO,130404,Conserving natural heritage,objective,True,explicit_official,1.0,
 SEO2008,950306,Conserving Pacific Peoples Heritage,SEO,211201,Conserving Pacific Peoples heritage and culture,objective,True,explicit_official,1.0,
 SEO2008,950307,Conserving the Historic Environment,SEO,130405,Conserving the historic environment,objective,True,explicit_official,1.0,
-SEO2008,950308,Mātauranga Māori (Māori Knowledge),SEO,210803,Mōhiotanga Māori (Māori knowledge),objective,True,lexical,0.882,lexical tiebreak among 2 p-flagged candidates
 SEO2008,950308,Mātauranga Māori (Māori Knowledge),SEO,210802,Te whāomoomo i te tuku ihotanga me te ahurea Māori (conserving Māori heritage and culture),objective,False,lexical,0.403,lexical tiebreak among 2 p-flagged candidates
-SEO2008,950309,Taonga (Māori Artefacts),SEO,210804,Ngā taonga (Māori artefacts),objective,True,lexical,0.923,lexical tiebreak among 2 p-flagged candidates
+SEO2008,950308,Mātauranga Māori (Māori Knowledge),SEO,210803,Mōhiotanga Māori (Māori knowledge),objective,True,lexical,0.882,lexical tiebreak among 2 p-flagged candidates
 SEO2008,950309,Taonga (Māori Artefacts),SEO,210802,Te whāomoomo i te tuku ihotanga me te ahurea Māori (conserving Māori heritage and culture),objective,False,lexical,0.281,lexical tiebreak among 2 p-flagged candidates
+SEO2008,950309,Taonga (Māori Artefacts),SEO,210804,Ngā taonga (Māori artefacts),objective,True,lexical,0.923,lexical tiebreak among 2 p-flagged candidates
 SEO2008,950310,Tikanga Māori (Māori Customary Practices),SEO,210805,Ngā tikanga Māori (Māori customary practices),objective,True,lexical,0.953,lexical tiebreak among 2 p-flagged candidates
 SEO2008,950310,Tikanga Māori (Māori Customary Practices),SEO,210802,Te whāomoomo i te tuku ihotanga me te ahurea Māori (conserving Māori heritage and culture),objective,False,lexical,0.412,lexical tiebreak among 2 p-flagged candidates
-SEO2008,950311,Wahi Taonga (Māori Places of Significance),SEO,210806,Ngā wāhi taonga (Māori places of significance),objective,True,lexical,0.932,lexical tiebreak among 2 p-flagged candidates
 SEO2008,950311,Wahi Taonga (Māori Places of Significance),SEO,210802,Te whāomoomo i te tuku ihotanga me te ahurea Māori (conserving Māori heritage and culture),objective,False,lexical,0.364,lexical tiebreak among 2 p-flagged candidates
+SEO2008,950311,Wahi Taonga (Māori Places of Significance),SEO,210806,Ngā wāhi taonga (Māori places of significance),objective,True,lexical,0.932,lexical tiebreak among 2 p-flagged candidates
 SEO2008,950399,Heritage not elsewhere classified,SEO,210899,Te tuku ihotanga me te ahurea Māori kāore anō kia whakarōpūhia i wāhi kē (Māori heritage and culture not elsewhere classified),objective,False,lexical,0.415,lexical tiebreak among 6 p-flagged candidates
 SEO2008,950399,Heritage not elsewhere classified,SEO,210499,Aboriginal and Torres Strait Islander heritage and culture not elsewhere classified,objective,False,lexical,0.569,lexical tiebreak among 6 p-flagged candidates
 SEO2008,950399,Heritage not elsewhere classified,SEO,130401,Assessment of heritage value,objective,False,lexical,0.328,lexical tiebreak among 6 p-flagged candidates
@@ -1060,8 +1060,8 @@ SEO2008,950406,Religious Traditions (excl. Structures and Rituals),SEO,130503,Re
 SEO2008,950407,Social Ethics,SEO,130304,Social ethics,objective,True,explicit_official,1.0,
 SEO2008,950408,Technological Ethics,SEO,130305,Technological ethics,objective,True,explicit_official,1.0,
 SEO2008,950409,Workplace and Organisational Ethics,SEO,130306,Workplace and organisational ethics (excl. business ethics),objective,True,explicit_official,1.0,
-SEO2008,950499,Religion and Ethics not elsewhere classified,SEO,130599,Religion not elsewhere classified,objective,True,lexical,0.857,lexical tiebreak among 2 p-flagged candidates
 SEO2008,950499,Religion and Ethics not elsewhere classified,SEO,130399,Ethics not elsewhere classified,objective,False,lexical,0.827,lexical tiebreak among 2 p-flagged candidates
+SEO2008,950499,Religion and Ethics not elsewhere classified,SEO,130599,Religion not elsewhere classified,objective,True,lexical,0.857,lexical tiebreak among 2 p-flagged candidates
 SEO2008,9505,UNDERSTANDING PAST SOCIETIES,SEO,1307,Understanding past societies,group,True,derived_empirical,1.0,"rolled up from 7 SEO2008 leaf-level mapping(s), 7 agreeing"
 SEO2008,950501,Understanding Africa's Past,SEO,130701,Understanding Africa’s past,objective,True,explicit_official,1.0,
 SEO2008,950502,Understanding Asia's Past,SEO,130702,Understanding Asia’s past,objective,True,explicit_official,1.0,
@@ -1076,13 +1076,13 @@ SEO2008,959999,Cultural Understanding not elsewhere classified,SEO,211202,Pacifi
 SEO2008,96,ENVIRONMENT,SEO,18,ENVIRONMENTAL MANAGEMENT,division,True,derived_empirical,0.741,"rolled up from 147 SEO2008 leaf-level mapping(s), 109 agreeing"
 SEO2008,96,ENVIRONMENT,SEO,19,"ENVIRONMENTAL POLICY, CLIMATE CHANGE AND NATURAL HAZARDS",division,False,derived_empirical,0.259,"rolled up from 147 SEO2008 leaf-level mapping(s), 38 agreeing"
 SEO2008,9601,AIR QUALITY,SEO,1801,"Air quality, atmosphere and weather",group,True,derived_empirical,1.0,"rolled up from 7 SEO2008 leaf-level mapping(s), 7 agreeing"
-SEO2008,960101,Antarctic and Sub-Antarctic Air Quality,SEO,180101,Air quality,objective,True,lexical,0.44,lexical tiebreak among 2 p-flagged candidates
 SEO2008,960101,Antarctic and Sub-Antarctic Air Quality,SEO,180499,Management of Antarctic and Southern Ocean environments not elsewhere classified,objective,False,lexical,0.403,lexical tiebreak among 2 p-flagged candidates
+SEO2008,960101,Antarctic and Sub-Antarctic Air Quality,SEO,180101,Air quality,objective,True,lexical,0.44,lexical tiebreak among 2 p-flagged candidates
 SEO2008,960102,Coastal and Estuarine Air Quality,SEO,180101,Air quality,objective,True,lexical,0.5,lexical tiebreak among 2 p-flagged candidates
 SEO2008,960102,Coastal and Estuarine Air Quality,SEO,180299,Coastal and estuarine systems and management not elsewhere classified,objective,False,lexical,0.49,lexical tiebreak among 2 p-flagged candidates
-SEO2008,960103,"Farmland, Arable Cropland and Permanent Cropland Air Quality",SEO,180101,Air quality,objective,True,lexical,0.31,lexical tiebreak among 3 p-flagged candidates
 SEO2008,960103,"Farmland, Arable Cropland and Permanent Cropland Air Quality",SEO,180699,Terrestrial systems and management not elsewhere classified,objective,False,lexical,0.303,lexical tiebreak among 3 p-flagged candidates
 SEO2008,960103,"Farmland, Arable Cropland and Permanent Cropland Air Quality",SEO,180607,Terrestrial erosion,objective,False,lexical,0.177,lexical tiebreak among 3 p-flagged candidates
+SEO2008,960103,"Farmland, Arable Cropland and Permanent Cropland Air Quality",SEO,180101,Air quality,objective,True,lexical,0.31,lexical tiebreak among 3 p-flagged candidates
 SEO2008,960104,Marine Air Quality,SEO,180101,Air quality,objective,True,lexical,0.759,lexical tiebreak among 2 p-flagged candidates
 SEO2008,960104,Marine Air Quality,SEO,180599,Marine systems and management not elsewhere classified,objective,False,lexical,0.278,lexical tiebreak among 2 p-flagged candidates
 SEO2008,960105,Mining Air Quality,SEO,180101,Air quality,objective,True,lexical,0.759,lexical tiebreak among 2 p-flagged candidates
@@ -1108,10 +1108,10 @@ SEO2008,960308,Effects of Climate Change and Variability on New Zealand (excl. S
 SEO2008,960309,Effects of Climate Change and Variability on the South Pacific (excl. Australia and New Zealand) (excl. Social Impacts),SEO,190506,Effects of climate change on the South Pacific (excl. Australia and New Zealand) (excl. social impacts),objective,True,explicit_official,1.0,
 SEO2008,960310,"Global Effects of Climate Change and Variability (excl. Australia, New Zealand, Antarctica and the South Pacific) (excl. Social Impacts)",SEO,190507,"Global effects of climate change (excl. Australia, New Zealand, Antarctica and the South Pacific) (excl. social impacts)",objective,True,explicit_official,1.0,
 SEO2008,960311,Social Impacts of Climate Change and Variability,SEO,190103,Social impacts of climate change and variability,objective,True,explicit_official,1.0,
-SEO2008,960399,Climate and Climate Change not elsewhere classified,SEO,190399,Mitigation of climate change not elsewhere classified,objective,True,lexical,0.846,lexical tiebreak among 4 p-flagged candidates
-SEO2008,960399,Climate and Climate Change not elsewhere classified,SEO,190599,Understanding climate change not elsewhere classified,objective,False,lexical,0.846,lexical tiebreak among 4 p-flagged candidates
-SEO2008,960399,Climate and Climate Change not elsewhere classified,SEO,190199,Adaptation to climate change not elsewhere classified,objective,False,lexical,0.827,lexical tiebreak among 4 p-flagged candidates
 SEO2008,960399,Climate and Climate Change not elsewhere classified,SEO,190508,Understanding the impact of natural hazards caused by climate change,objective,False,lexical,0.319,lexical tiebreak among 4 p-flagged candidates
+SEO2008,960399,Climate and Climate Change not elsewhere classified,SEO,190199,Adaptation to climate change not elsewhere classified,objective,False,lexical,0.827,lexical tiebreak among 4 p-flagged candidates
+SEO2008,960399,Climate and Climate Change not elsewhere classified,SEO,190599,Understanding climate change not elsewhere classified,objective,False,lexical,0.846,lexical tiebreak among 4 p-flagged candidates
+SEO2008,960399,Climate and Climate Change not elsewhere classified,SEO,190399,Mitigation of climate change not elsewhere classified,objective,True,lexical,0.846,lexical tiebreak among 4 p-flagged candidates
 SEO2008,9604,"CONTROL OF PESTS, DISEASES AND EXOTIC SPECIES",SEO,1806,Terrestrial systems and management,group,True,derived_empirical,0.562,"rolled up from 16 SEO2008 leaf-level mapping(s), 9 agreeing"
 SEO2008,9604,"CONTROL OF PESTS, DISEASES AND EXOTIC SPECIES",SEO,1802,Coastal and estuarine systems and management,group,False,derived_empirical,0.125,"rolled up from 16 SEO2008 leaf-level mapping(s), 2 agreeing"
 SEO2008,9604,"CONTROL OF PESTS, DISEASES AND EXOTIC SPECIES",SEO,1803,"Fresh, ground and surface water systems and management",group,False,derived_empirical,0.062,"rolled up from 16 SEO2008 leaf-level mapping(s), 1 agreeing"
@@ -1121,19 +1121,19 @@ SEO2008,960401,Border Biosecurity (incl. Quarantine and Inspection),SEO,189999,O
 SEO2008,960402,"Control of Animal Pests, Diseases and Exotic Species in Coastal and Estuarine Environments",SEO,180204,"Control of pests, diseases and exotic species in coastal and estuarine environments",objective,True,explicit_official,0.96,partial (p-flagged) single correspondence
 SEO2008,960403,"Control of Animal Pests, Diseases and Exotic Species in Farmland, Arable Cropland and Permanent Cropland Environments",SEO,180602,"Control of pests, diseases and exotic species in terrestrial environments",objective,True,explicit_official,0.695,partial (p-flagged) single correspondence
 SEO2008,960404,"Control of Animal Pests, Diseases and Exotic Species in Forest and Woodlands Environments",SEO,180602,"Control of pests, diseases and exotic species in terrestrial environments",objective,True,explicit_official,0.84,partial (p-flagged) single correspondence
-SEO2008,960405,"Control of Pests, Diseases and Exotic Species at Regional or Larger Scales",SEO,180204,"Control of pests, diseases and exotic species in coastal and estuarine environments",objective,False,lexical,0.726,lexical tiebreak among 5 p-flagged candidates
 SEO2008,960405,"Control of Pests, Diseases and Exotic Species at Regional or Larger Scales",SEO,180302,"Control of pests, diseases and exotic species in fresh, ground and surface water",objective,False,lexical,0.649,lexical tiebreak among 5 p-flagged candidates
 SEO2008,960405,"Control of Pests, Diseases and Exotic Species at Regional or Larger Scales",SEO,180602,"Control of pests, diseases and exotic species in terrestrial environments",objective,True,lexical,0.762,lexical tiebreak among 5 p-flagged candidates
-SEO2008,960405,"Control of Pests, Diseases and Exotic Species at Regional or Larger Scales",SEO,180405,"Control of pests, diseases and exotic species in Antarctic and Southern Ocean environments",objective,False,lexical,0.683,lexical tiebreak among 5 p-flagged candidates
 SEO2008,960405,"Control of Pests, Diseases and Exotic Species at Regional or Larger Scales",SEO,180503,"Control of pests, diseases and exotic species in marine environments",objective,False,lexical,0.746,lexical tiebreak among 5 p-flagged candidates
+SEO2008,960405,"Control of Pests, Diseases and Exotic Species at Regional or Larger Scales",SEO,180405,"Control of pests, diseases and exotic species in Antarctic and Southern Ocean environments",objective,False,lexical,0.683,lexical tiebreak among 5 p-flagged candidates
+SEO2008,960405,"Control of Pests, Diseases and Exotic Species at Regional or Larger Scales",SEO,180204,"Control of pests, diseases and exotic species in coastal and estuarine environments",objective,False,lexical,0.726,lexical tiebreak among 5 p-flagged candidates
 SEO2008,960406,"Control of Pests, Diseases and Exotic Species in Fresh, Ground and Surface Water Environments",SEO,180302,"Control of pests, diseases and exotic species in fresh, ground and surface water",objective,True,explicit_official,0.925,partial (p-flagged) single correspondence
 SEO2008,960407,"Control of Pests, Diseases and Exotic Species in Marine Environments",SEO,180503,"Control of pests, diseases and exotic species in marine environments",objective,True,explicit_official,1.0,partial (p-flagged) single correspondence
 SEO2008,960408,"Control of Pests, Diseases and Exotic Species in Mining Environments",SEO,180602,"Control of pests, diseases and exotic species in terrestrial environments",objective,True,explicit_official,0.894,partial (p-flagged) single correspondence
 SEO2008,960409,"Control of Pests, Diseases and Exotic Species in Mountain and High Country Environments",SEO,180602,"Control of pests, diseases and exotic species in terrestrial environments",objective,True,explicit_official,0.812,partial (p-flagged) single correspondence
 SEO2008,960410,"Control of Pests, Diseases and Exotic Species in Sparseland, Permanent Grassland and Arid Zone Environments",SEO,180602,"Control of pests, diseases and exotic species in terrestrial environments",objective,True,explicit_official,0.756,partial (p-flagged) single correspondence
-SEO2008,960411,"Control of Pests, Diseases and Exotic Species in Urban and Industrial Environments",SEO,180602,"Control of pests, diseases and exotic species in terrestrial environments",objective,True,lexical,0.89,lexical tiebreak among 3 p-flagged candidates
-SEO2008,960411,"Control of Pests, Diseases and Exotic Species in Urban and Industrial Environments",SEO,180204,"Control of pests, diseases and exotic species in coastal and estuarine environments",objective,False,lexical,0.848,lexical tiebreak among 3 p-flagged candidates
 SEO2008,960411,"Control of Pests, Diseases and Exotic Species in Urban and Industrial Environments",SEO,180302,"Control of pests, diseases and exotic species in fresh, ground and surface water",objective,False,lexical,0.728,lexical tiebreak among 3 p-flagged candidates
+SEO2008,960411,"Control of Pests, Diseases and Exotic Species in Urban and Industrial Environments",SEO,180204,"Control of pests, diseases and exotic species in coastal and estuarine environments",objective,False,lexical,0.848,lexical tiebreak among 3 p-flagged candidates
+SEO2008,960411,"Control of Pests, Diseases and Exotic Species in Urban and Industrial Environments",SEO,180602,"Control of pests, diseases and exotic species in terrestrial environments",objective,True,lexical,0.89,lexical tiebreak among 3 p-flagged candidates
 SEO2008,960412,"Control of Plant Pests, Diseases and Exotic Species in Coastal and Estuarine Environments",SEO,180204,"Control of pests, diseases and exotic species in coastal and estuarine environments",objective,True,explicit_official,0.965,partial (p-flagged) single correspondence
 SEO2008,960413,"Control of Plant Pests, Diseases and Exotic Species in Farmland, Arable Cropland and Permanent Cropland Environments",SEO,180602,"Control of pests, diseases and exotic species in terrestrial environments",objective,True,explicit_official,0.698,partial (p-flagged) single correspondence
 SEO2008,960414,"Control of Plant Pests, Diseases and Exotic Species in Forest and Woodlands Environments",SEO,180602,"Control of pests, diseases and exotic species in terrestrial environments",objective,True,explicit_official,0.845,partial (p-flagged) single correspondence
@@ -1145,19 +1145,19 @@ SEO2008,9605,ECOSYSTEM ASSESSMENT AND MANAGEMENT,SEO,1802,Coastal and estuarine 
 SEO2008,9605,ECOSYSTEM ASSESSMENT AND MANAGEMENT,SEO,1803,"Fresh, ground and surface water systems and management",group,False,derived_empirical,0.083,"rolled up from 12 SEO2008 leaf-level mapping(s), 1 agreeing"
 SEO2008,9605,ECOSYSTEM ASSESSMENT AND MANAGEMENT,SEO,1899,Other environmental management,group,False,derived_empirical,0.083,"rolled up from 12 SEO2008 leaf-level mapping(s), 1 agreeing"
 SEO2008,9605,ECOSYSTEM ASSESSMENT AND MANAGEMENT,SEO,1806,Terrestrial systems and management,group,True,derived_empirical,0.5,"rolled up from 12 SEO2008 leaf-level mapping(s), 6 agreeing"
-SEO2008,960501,Ecosystem Assessment and Management at Regional or Larger Scales,SEO,180502,Assessment and management of pelagic marine ecosystems,objective,True,lexical,0.627,lexical tiebreak among 6 p-flagged candidates
-SEO2008,960501,Ecosystem Assessment and Management at Regional or Larger Scales,SEO,180601,Assessment and management of terrestrial ecosystems,objective,False,lexical,0.626,lexical tiebreak among 6 p-flagged candidates
-SEO2008,960501,Ecosystem Assessment and Management at Regional or Larger Scales,SEO,180201,Assessment and management of coastal and estuarine ecosystems,objective,False,lexical,0.624,lexical tiebreak among 6 p-flagged candidates
-SEO2008,960501,Ecosystem Assessment and Management at Regional or Larger Scales,SEO,180301,Assessment and management of freshwater ecosystems,objective,False,lexical,0.596,lexical tiebreak among 6 p-flagged candidates
-SEO2008,960501,Ecosystem Assessment and Management at Regional or Larger Scales,SEO,180501,Assessment and management of benthic marine ecosystems,objective,False,lexical,0.593,lexical tiebreak among 6 p-flagged candidates
 SEO2008,960501,Ecosystem Assessment and Management at Regional or Larger Scales,SEO,180403,Assessment and management of Antarctic and Southern Ocean ecosystems,objective,False,lexical,0.576,lexical tiebreak among 6 p-flagged candidates
+SEO2008,960501,Ecosystem Assessment and Management at Regional or Larger Scales,SEO,180501,Assessment and management of benthic marine ecosystems,objective,False,lexical,0.593,lexical tiebreak among 6 p-flagged candidates
+SEO2008,960501,Ecosystem Assessment and Management at Regional or Larger Scales,SEO,180301,Assessment and management of freshwater ecosystems,objective,False,lexical,0.596,lexical tiebreak among 6 p-flagged candidates
+SEO2008,960501,Ecosystem Assessment and Management at Regional or Larger Scales,SEO,180201,Assessment and management of coastal and estuarine ecosystems,objective,False,lexical,0.624,lexical tiebreak among 6 p-flagged candidates
+SEO2008,960501,Ecosystem Assessment and Management at Regional or Larger Scales,SEO,180601,Assessment and management of terrestrial ecosystems,objective,False,lexical,0.626,lexical tiebreak among 6 p-flagged candidates
+SEO2008,960501,Ecosystem Assessment and Management at Regional or Larger Scales,SEO,180502,Assessment and management of pelagic marine ecosystems,objective,True,lexical,0.627,lexical tiebreak among 6 p-flagged candidates
 SEO2008,960502,Ecosystem Assessment and Management of Antarctic and Sub-Antarctic Environments,SEO,180403,Assessment and management of Antarctic and Southern Ocean ecosystems,objective,True,explicit_official,0.707,partial (p-flagged) single correspondence
 SEO2008,960503,Ecosystem Assessment and Management of Coastal and Estuarine Environments,SEO,180201,Assessment and management of coastal and estuarine ecosystems,objective,True,explicit_official,0.821,partial (p-flagged) single correspondence
 SEO2008,960504,"Ecosystem Assessment and Management of Farmland, Arable Cropland and Permanent Cropland Environments",SEO,180601,Assessment and management of terrestrial ecosystems,objective,True,explicit_official,0.503,partial (p-flagged) single correspondence
 SEO2008,960505,Ecosystem Assessment and Management of Forest and Woodlands Environments,SEO,180601,Assessment and management of terrestrial ecosystems,objective,True,explicit_official,0.65,partial (p-flagged) single correspondence
 SEO2008,960506,"Ecosystem Assessment and Management of Fresh, Ground and Surface Water Environments",SEO,180301,Assessment and management of freshwater ecosystems,objective,True,explicit_official,0.662,partial (p-flagged) single correspondence
-SEO2008,960507,Ecosystem Assessment and Management of Marine Environments,SEO,180501,Assessment and management of benthic marine ecosystems,objective,True,lexical,0.714,lexical tiebreak among 2 p-flagged candidates
 SEO2008,960507,Ecosystem Assessment and Management of Marine Environments,SEO,180502,Assessment and management of pelagic marine ecosystems,objective,False,lexical,0.714,lexical tiebreak among 2 p-flagged candidates
+SEO2008,960507,Ecosystem Assessment and Management of Marine Environments,SEO,180501,Assessment and management of benthic marine ecosystems,objective,True,lexical,0.714,lexical tiebreak among 2 p-flagged candidates
 SEO2008,960508,Ecosystem Assessment and Management of Mining Environments,SEO,180601,Assessment and management of terrestrial ecosystems,objective,True,explicit_official,0.642,partial (p-flagged) single correspondence
 SEO2008,960509,Ecosystem Assessment and Management of Mountain and High Country Environments,SEO,180601,Assessment and management of terrestrial ecosystems,objective,True,explicit_official,0.594,partial (p-flagged) single correspondence
 SEO2008,960510,"Ecosystem Assessment and Management of Sparseland, Permanent Grassland and Arid Zone Environments",SEO,180601,Assessment and management of terrestrial ecosystems,objective,True,explicit_official,0.541,partial (p-flagged) single correspondence
@@ -1175,16 +1175,16 @@ SEO2008,960604,Environmental Management Systems,SEO,189999,Other environmental m
 SEO2008,960605,Institutional Arrangements for Environmental Protection,SEO,190206,Institutional arrangements,objective,True,explicit_official,1.0,
 SEO2008,960606,Rights to Environmental and Natural Resources (excl. Water Allocation),SEO,190208,Rights to environmental and natural resources (excl. water allocation),objective,True,explicit_official,1.0,
 SEO2008,960607,Rural Land Evaluation,SEO,180603,"Evaluation, allocation, and impacts of land use",objective,True,explicit_official,0.294,partial (p-flagged) single correspondence
-SEO2008,960608,Rural Water Evaluation (incl. Water Quality),SEO,180299,Coastal and estuarine systems and management not elsewhere classified,objective,False,lexical,0.248,lexical tiebreak among 5 p-flagged candidates
-SEO2008,960608,Rural Water Evaluation (incl. Water Quality),SEO,180308,"Surface water quantification, allocation and impact of depletion",objective,False,lexical,0.315,lexical tiebreak among 5 p-flagged candidates
+SEO2008,960608,Rural Water Evaluation (incl. Water Quality),SEO,180399,"Fresh, ground and surface water systems and management not elsewhere classified",objective,False,lexical,0.309,lexical tiebreak among 5 p-flagged candidates
 SEO2008,960608,Rural Water Evaluation (incl. Water Quality),SEO,180205,Measurement and assessment of estuarine water quality,objective,True,lexical,0.536,lexical tiebreak among 5 p-flagged candidates
 SEO2008,960608,Rural Water Evaluation (incl. Water Quality),SEO,180306,Measurement and assessment of freshwater quality (incl. physical and chemical conditions of water),objective,False,lexical,0.296,lexical tiebreak among 5 p-flagged candidates
-SEO2008,960608,Rural Water Evaluation (incl. Water Quality),SEO,180399,"Fresh, ground and surface water systems and management not elsewhere classified",objective,False,lexical,0.309,lexical tiebreak among 5 p-flagged candidates
+SEO2008,960608,Rural Water Evaluation (incl. Water Quality),SEO,180308,"Surface water quantification, allocation and impact of depletion",objective,False,lexical,0.315,lexical tiebreak among 5 p-flagged candidates
+SEO2008,960608,Rural Water Evaluation (incl. Water Quality),SEO,180299,Coastal and estuarine systems and management not elsewhere classified,objective,False,lexical,0.248,lexical tiebreak among 5 p-flagged candidates
 SEO2008,960609,Sustainability Indicators,SEO,190209,Sustainability indicators,objective,True,explicit_official,1.0,
 SEO2008,960610,Urban Land Evaluation,SEO,180603,"Evaluation, allocation, and impacts of land use",objective,True,explicit_official,0.294,partial (p-flagged) single correspondence
-SEO2008,960611,Urban Water Evaluation (incl. Water Quality),SEO,180308,"Surface water quantification, allocation and impact of depletion",objective,True,lexical,0.315,lexical tiebreak among 3 p-flagged candidates
 SEO2008,960611,Urban Water Evaluation (incl. Water Quality),SEO,180306,Measurement and assessment of freshwater quality (incl. physical and chemical conditions of water),objective,False,lexical,0.31,lexical tiebreak among 3 p-flagged candidates
 SEO2008,960611,Urban Water Evaluation (incl. Water Quality),SEO,180399,"Fresh, ground and surface water systems and management not elsewhere classified",objective,False,lexical,0.293,lexical tiebreak among 3 p-flagged candidates
+SEO2008,960611,Urban Water Evaluation (incl. Water Quality),SEO,180308,"Surface water quantification, allocation and impact of depletion",objective,True,lexical,0.315,lexical tiebreak among 3 p-flagged candidates
 SEO2008,960699,Environmental and Natural Resource Evaluation not elsewhere classified,SEO,189999,Other environmental management not elsewhere classified,objective,True,explicit_official,0.688,partial (p-flagged) single correspondence
 SEO2008,9607,"ENVIRONMENTAL POLICY, LEGISLATION AND STANDARDS",SEO,1802,Coastal and estuarine systems and management,group,False,derived_empirical,0.1,"rolled up from 10 SEO2008 leaf-level mapping(s), 1 agreeing"
 SEO2008,9607,"ENVIRONMENTAL POLICY, LEGISLATION AND STANDARDS",SEO,1902,"Environmental policy, legislation and standards",group,True,derived_empirical,0.9,"rolled up from 10 SEO2008 leaf-level mapping(s), 9 agreeing"
@@ -1208,11 +1208,11 @@ SEO2008,960801,"Antarctic and Sub-Antarctic Flora, Fauna and Biodiversity",SEO,1
 SEO2008,960802,"Coastal and Estuarine Flora, Fauna and Biodiversity",SEO,180203,Coastal or estuarine biodiversity,objective,True,explicit_official,0.738,partial (p-flagged) single correspondence
 SEO2008,960803,Documentation of Undescribed Flora and Fauna,SEO,189999,Other environmental management not elsewhere classified,objective,True,explicit_official,0.242,partial (p-flagged) single correspondence
 SEO2008,960804,"Farmland, Arable Cropland and Permanent Cropland Flora, Fauna and Biodiversity",SEO,180606,Terrestrial biodiversity,objective,True,explicit_official,0.333,partial (p-flagged) single correspondence
-SEO2008,960805,"Flora, Fauna and Biodiversity at Regional or Larger Scales",SEO,180303,"Fresh, ground and surface water biodiversity",objective,True,lexical,0.451,lexical tiebreak among 5 p-flagged candidates
-SEO2008,960805,"Flora, Fauna and Biodiversity at Regional or Larger Scales",SEO,180404,Biodiversity in Antarctic and Southern Ocean environments,objective,False,lexical,0.4,lexical tiebreak among 5 p-flagged candidates
 SEO2008,960805,"Flora, Fauna and Biodiversity at Regional or Larger Scales",SEO,180203,Coastal or estuarine biodiversity,objective,False,lexical,0.396,lexical tiebreak among 5 p-flagged candidates
-SEO2008,960805,"Flora, Fauna and Biodiversity at Regional or Larger Scales",SEO,180504,Marine biodiversity,objective,False,lexical,0.39,lexical tiebreak among 5 p-flagged candidates
+SEO2008,960805,"Flora, Fauna and Biodiversity at Regional or Larger Scales",SEO,180404,Biodiversity in Antarctic and Southern Ocean environments,objective,False,lexical,0.4,lexical tiebreak among 5 p-flagged candidates
+SEO2008,960805,"Flora, Fauna and Biodiversity at Regional or Larger Scales",SEO,180303,"Fresh, ground and surface water biodiversity",objective,True,lexical,0.451,lexical tiebreak among 5 p-flagged candidates
 SEO2008,960805,"Flora, Fauna and Biodiversity at Regional or Larger Scales",SEO,180606,Terrestrial biodiversity,objective,False,lexical,0.341,lexical tiebreak among 5 p-flagged candidates
+SEO2008,960805,"Flora, Fauna and Biodiversity at Regional or Larger Scales",SEO,180504,Marine biodiversity,objective,False,lexical,0.39,lexical tiebreak among 5 p-flagged candidates
 SEO2008,960806,"Forest and Woodlands Flora, Fauna and Biodiversity",SEO,180606,Terrestrial biodiversity,objective,True,explicit_official,0.514,partial (p-flagged) single correspondence
 SEO2008,960807,"Fresh, Ground and Surface Water Flora, Fauna and Biodiversity",SEO,180303,"Fresh, ground and surface water biodiversity",objective,True,explicit_official,0.838,partial (p-flagged) single correspondence
 SEO2008,960808,"Marine Flora, Fauna and Biodiversity",SEO,180504,Marine biodiversity,objective,True,explicit_official,0.691,partial (p-flagged) single correspondence
@@ -1231,27 +1231,27 @@ SEO2008,960901,Antarctic and Sub-Antarctic Land and Water Management,SEO,180499,
 SEO2008,960901,Antarctic and Sub-Antarctic Land and Water Management,SEO,180401,Antarctic and Southern Ocean ice dynamics,objective,True,lexical,0.532,lexical tiebreak among 3 p-flagged candidates
 SEO2008,960902,Coastal and Estuarine Land Management,SEO,180299,Coastal and estuarine systems and management not elsewhere classified,objective,True,explicit_official,0.679,partial (p-flagged) single correspondence
 SEO2008,960903,Coastal and Estuarine Water Management,SEO,180299,Coastal and estuarine systems and management not elsewhere classified,objective,True,explicit_official,0.654,partial (p-flagged) single correspondence
-SEO2008,960904,"Farmland, Arable Cropland and Permanent Cropland Land Management",SEO,180603,"Evaluation, allocation, and impacts of land use",objective,True,lexical,0.486,lexical tiebreak among 2 p-flagged candidates
 SEO2008,960904,"Farmland, Arable Cropland and Permanent Cropland Land Management",SEO,180607,Terrestrial erosion,objective,False,lexical,0.169,lexical tiebreak among 2 p-flagged candidates
+SEO2008,960904,"Farmland, Arable Cropland and Permanent Cropland Land Management",SEO,180603,"Evaluation, allocation, and impacts of land use",objective,True,lexical,0.486,lexical tiebreak among 2 p-flagged candidates
 SEO2008,960905,"Farmland, Arable Cropland and Permanent Cropland Water Management",SEO,180699,Terrestrial systems and management not elsewhere classified,objective,True,lexical,0.274,lexical tiebreak among 2 p-flagged candidates
 SEO2008,960905,"Farmland, Arable Cropland and Permanent Cropland Water Management",SEO,180607,Terrestrial erosion,objective,False,lexical,0.119,lexical tiebreak among 2 p-flagged candidates
-SEO2008,960906,Forest and Woodlands Land Management,SEO,180607,Terrestrial erosion,objective,False,lexical,0.218,lexical tiebreak among 2 p-flagged candidates
 SEO2008,960906,Forest and Woodlands Land Management,SEO,180603,"Evaluation, allocation, and impacts of land use",objective,True,lexical,0.361,lexical tiebreak among 2 p-flagged candidates
+SEO2008,960906,Forest and Woodlands Land Management,SEO,180607,Terrestrial erosion,objective,False,lexical,0.218,lexical tiebreak among 2 p-flagged candidates
 SEO2008,960907,Forest and Woodlands Water Management,SEO,180607,Terrestrial erosion,objective,False,lexical,0.286,lexical tiebreak among 2 p-flagged candidates
 SEO2008,960907,Forest and Woodlands Water Management,SEO,180699,Terrestrial systems and management not elsewhere classified,objective,True,lexical,0.396,lexical tiebreak among 2 p-flagged candidates
 SEO2008,960908,Mining Land and Water Management,SEO,180699,Terrestrial systems and management not elsewhere classified,objective,True,lexical,0.352,lexical tiebreak among 3 p-flagged candidates
 SEO2008,960908,Mining Land and Water Management,SEO,180603,"Evaluation, allocation, and impacts of land use",objective,False,lexical,0.203,lexical tiebreak among 3 p-flagged candidates
 SEO2008,960908,Mining Land and Water Management,SEO,180607,Terrestrial erosion,objective,False,lexical,0.196,lexical tiebreak among 3 p-flagged candidates
-SEO2008,960909,Mountain and High Country Land and Water Management,SEO,180603,"Evaluation, allocation, and impacts of land use",objective,True,lexical,0.408,lexical tiebreak among 3 p-flagged candidates
 SEO2008,960909,Mountain and High Country Land and Water Management,SEO,180699,Terrestrial systems and management not elsewhere classified,objective,False,lexical,0.291,lexical tiebreak among 3 p-flagged candidates
+SEO2008,960909,Mountain and High Country Land and Water Management,SEO,180603,"Evaluation, allocation, and impacts of land use",objective,True,lexical,0.408,lexical tiebreak among 3 p-flagged candidates
 SEO2008,960909,Mountain and High Country Land and Water Management,SEO,180607,Terrestrial erosion,objective,False,lexical,0.143,lexical tiebreak among 3 p-flagged candidates
-SEO2008,960910,"Sparseland, Permanent Grassland and Arid Zone Land and Water Management",SEO,180699,Terrestrial systems and management not elsewhere classified,objective,False,lexical,0.292,lexical tiebreak among 3 p-flagged candidates
-SEO2008,960910,"Sparseland, Permanent Grassland and Arid Zone Land and Water Management",SEO,180607,Terrestrial erosion,objective,False,lexical,0.111,lexical tiebreak among 3 p-flagged candidates
 SEO2008,960910,"Sparseland, Permanent Grassland and Arid Zone Land and Water Management",SEO,180603,"Evaluation, allocation, and impacts of land use",objective,True,lexical,0.39,lexical tiebreak among 3 p-flagged candidates
+SEO2008,960910,"Sparseland, Permanent Grassland and Arid Zone Land and Water Management",SEO,180607,Terrestrial erosion,objective,False,lexical,0.111,lexical tiebreak among 3 p-flagged candidates
+SEO2008,960910,"Sparseland, Permanent Grassland and Arid Zone Land and Water Management",SEO,180699,Terrestrial systems and management not elsewhere classified,objective,False,lexical,0.292,lexical tiebreak among 3 p-flagged candidates
 SEO2008,960911,Urban and Industrial Land Management,SEO,180603,"Evaluation, allocation, and impacts of land use",objective,True,explicit_official,0.41,partial (p-flagged) single correspondence
 SEO2008,960912,Urban and Industrial Water Management,SEO,180699,Terrestrial systems and management not elsewhere classified,objective,True,explicit_official,0.438,partial (p-flagged) single correspondence
-SEO2008,960913,Water Allocation and Quantification,SEO,180305,"Ground water quantification, allocation and impact of depletion",objective,True,lexical,0.571,lexical tiebreak among 2 p-flagged candidates
 SEO2008,960913,Water Allocation and Quantification,SEO,190211,Water policy (incl. water allocation),objective,False,lexical,0.444,lexical tiebreak among 2 p-flagged candidates
+SEO2008,960913,Water Allocation and Quantification,SEO,180305,"Ground water quantification, allocation and impact of depletion",objective,True,lexical,0.571,lexical tiebreak among 2 p-flagged candidates
 SEO2008,960999,Land and Water Management of Environments not elsewhere classified,SEO,189999,Other environmental management not elsewhere classified,objective,True,explicit_official,0.661,partial (p-flagged) single correspondence
 SEO2008,9610,NATURAL HAZARDS,SEO,1904,Natural hazards,group,True,derived_empirical,1.0,"rolled up from 11 SEO2008 leaf-level mapping(s), 11 agreeing"
 SEO2008,961001,Natural Hazards in Antarctic and Sub-Antarctic Environments,SEO,190404,Hydrological hazards (e.g. avalanches and floods),objective,False,lexical,0.407,lexical tiebreak among 6 p-flagged candidates
@@ -1260,67 +1260,67 @@ SEO2008,961001,Natural Hazards in Antarctic and Sub-Antarctic Environments,SEO,1
 SEO2008,961001,Natural Hazards in Antarctic and Sub-Antarctic Environments,SEO,190499,Natural hazards not elsewhere classified,objective,False,lexical,0.444,lexical tiebreak among 6 p-flagged candidates
 SEO2008,961001,Natural Hazards in Antarctic and Sub-Antarctic Environments,SEO,190405,Meteorological hazards (e.g. cyclones and storms),objective,False,lexical,0.444,lexical tiebreak among 6 p-flagged candidates
 SEO2008,961001,Natural Hazards in Antarctic and Sub-Antarctic Environments,SEO,190403,"Geological hazards (e.g. earthquakes, landslides and volcanic activity)",objective,True,lexical,0.446,lexical tiebreak among 6 p-flagged candidates
-SEO2008,961002,Natural Hazards in Coastal and Estuarine Environments,SEO,190405,Meteorological hazards (e.g. cyclones and storms),objective,True,lexical,0.529,lexical tiebreak among 6 p-flagged candidates
-SEO2008,961002,Natural Hazards in Coastal and Estuarine Environments,SEO,190401,"Climatological hazards (e.g. extreme temperatures, drought and wildfires)",objective,False,lexical,0.365,lexical tiebreak among 6 p-flagged candidates
-SEO2008,961002,Natural Hazards in Coastal and Estuarine Environments,SEO,190404,Hydrological hazards (e.g. avalanches and floods),objective,False,lexical,0.431,lexical tiebreak among 6 p-flagged candidates
-SEO2008,961002,Natural Hazards in Coastal and Estuarine Environments,SEO,190499,Natural hazards not elsewhere classified,objective,False,lexical,0.473,lexical tiebreak among 6 p-flagged candidates
 SEO2008,961002,Natural Hazards in Coastal and Estuarine Environments,SEO,190403,"Geological hazards (e.g. earthquakes, landslides and volcanic activity)",objective,False,lexical,0.371,lexical tiebreak among 6 p-flagged candidates
 SEO2008,961002,Natural Hazards in Coastal and Estuarine Environments,SEO,190402,Extraterrestrial hazards (e.g. meteorites),objective,False,lexical,0.379,lexical tiebreak among 6 p-flagged candidates
+SEO2008,961002,Natural Hazards in Coastal and Estuarine Environments,SEO,190404,Hydrological hazards (e.g. avalanches and floods),objective,False,lexical,0.431,lexical tiebreak among 6 p-flagged candidates
+SEO2008,961002,Natural Hazards in Coastal and Estuarine Environments,SEO,190401,"Climatological hazards (e.g. extreme temperatures, drought and wildfires)",objective,False,lexical,0.365,lexical tiebreak among 6 p-flagged candidates
+SEO2008,961002,Natural Hazards in Coastal and Estuarine Environments,SEO,190405,Meteorological hazards (e.g. cyclones and storms),objective,True,lexical,0.529,lexical tiebreak among 6 p-flagged candidates
+SEO2008,961002,Natural Hazards in Coastal and Estuarine Environments,SEO,190499,Natural hazards not elsewhere classified,objective,False,lexical,0.473,lexical tiebreak among 6 p-flagged candidates
 SEO2008,961003,"Natural Hazards in Farmland, Arable Cropland and Permanent Cropland Environments",SEO,190499,Natural hazards not elsewhere classified,objective,True,lexical,0.417,lexical tiebreak among 6 p-flagged candidates
+SEO2008,961003,"Natural Hazards in Farmland, Arable Cropland and Permanent Cropland Environments",SEO,190401,"Climatological hazards (e.g. extreme temperatures, drought and wildfires)",objective,False,lexical,0.405,lexical tiebreak among 6 p-flagged candidates
 SEO2008,961003,"Natural Hazards in Farmland, Arable Cropland and Permanent Cropland Environments",SEO,190404,Hydrological hazards (e.g. avalanches and floods),objective,False,lexical,0.403,lexical tiebreak among 6 p-flagged candidates
 SEO2008,961003,"Natural Hazards in Farmland, Arable Cropland and Permanent Cropland Environments",SEO,190405,Meteorological hazards (e.g. cyclones and storms),objective,False,lexical,0.403,lexical tiebreak among 6 p-flagged candidates
 SEO2008,961003,"Natural Hazards in Farmland, Arable Cropland and Permanent Cropland Environments",SEO,190402,Extraterrestrial hazards (e.g. meteorites),objective,False,lexical,0.311,lexical tiebreak among 6 p-flagged candidates
 SEO2008,961003,"Natural Hazards in Farmland, Arable Cropland and Permanent Cropland Environments",SEO,190403,"Geological hazards (e.g. earthquakes, landslides and volcanic activity)",objective,False,lexical,0.411,lexical tiebreak among 6 p-flagged candidates
-SEO2008,961003,"Natural Hazards in Farmland, Arable Cropland and Permanent Cropland Environments",SEO,190401,"Climatological hazards (e.g. extreme temperatures, drought and wildfires)",objective,False,lexical,0.405,lexical tiebreak among 6 p-flagged candidates
-SEO2008,961004,Natural Hazards in Forest and Woodlands Environments,SEO,190499,Natural hazards not elsewhere classified,objective,True,lexical,0.522,lexical tiebreak among 6 p-flagged candidates
-SEO2008,961004,Natural Hazards in Forest and Woodlands Environments,SEO,190405,Meteorological hazards (e.g. cyclones and storms),objective,False,lexical,0.455,lexical tiebreak among 6 p-flagged candidates
-SEO2008,961004,Natural Hazards in Forest and Woodlands Environments,SEO,190402,Extraterrestrial hazards (e.g. meteorites),objective,False,lexical,0.404,lexical tiebreak among 6 p-flagged candidates
-SEO2008,961004,Natural Hazards in Forest and Woodlands Environments,SEO,190404,Hydrological hazards (e.g. avalanches and floods),objective,False,lexical,0.475,lexical tiebreak among 6 p-flagged candidates
 SEO2008,961004,Natural Hazards in Forest and Woodlands Environments,SEO,190401,"Climatological hazards (e.g. extreme temperatures, drought and wildfires)",objective,False,lexical,0.464,lexical tiebreak among 6 p-flagged candidates
+SEO2008,961004,Natural Hazards in Forest and Woodlands Environments,SEO,190404,Hydrological hazards (e.g. avalanches and floods),objective,False,lexical,0.475,lexical tiebreak among 6 p-flagged candidates
+SEO2008,961004,Natural Hazards in Forest and Woodlands Environments,SEO,190402,Extraterrestrial hazards (e.g. meteorites),objective,False,lexical,0.404,lexical tiebreak among 6 p-flagged candidates
+SEO2008,961004,Natural Hazards in Forest and Woodlands Environments,SEO,190405,Meteorological hazards (e.g. cyclones and storms),objective,False,lexical,0.455,lexical tiebreak among 6 p-flagged candidates
 SEO2008,961004,Natural Hazards in Forest and Woodlands Environments,SEO,190403,"Geological hazards (e.g. earthquakes, landslides and volcanic activity)",objective,False,lexical,0.455,lexical tiebreak among 6 p-flagged candidates
+SEO2008,961004,Natural Hazards in Forest and Woodlands Environments,SEO,190499,Natural hazards not elsewhere classified,objective,True,lexical,0.522,lexical tiebreak among 6 p-flagged candidates
 SEO2008,961005,"Natural Hazards in Fresh, Ground and Surface Water Environments",SEO,190404,Hydrological hazards (e.g. avalanches and floods),objective,False,lexical,0.375,lexical tiebreak among 6 p-flagged candidates
+SEO2008,961005,"Natural Hazards in Fresh, Ground and Surface Water Environments",SEO,190402,Extraterrestrial hazards (e.g. meteorites),objective,False,lexical,0.324,lexical tiebreak among 6 p-flagged candidates
 SEO2008,961005,"Natural Hazards in Fresh, Ground and Surface Water Environments",SEO,190403,"Geological hazards (e.g. earthquakes, landslides and volcanic activity)",objective,False,lexical,0.448,lexical tiebreak among 6 p-flagged candidates
 SEO2008,961005,"Natural Hazards in Fresh, Ground and Surface Water Environments",SEO,190401,"Climatological hazards (e.g. extreme temperatures, drought and wildfires)",objective,True,lexical,0.471,lexical tiebreak among 6 p-flagged candidates
 SEO2008,961005,"Natural Hazards in Fresh, Ground and Surface Water Environments",SEO,190405,Meteorological hazards (e.g. cyclones and storms),objective,False,lexical,0.446,lexical tiebreak among 6 p-flagged candidates
 SEO2008,961005,"Natural Hazards in Fresh, Ground and Surface Water Environments",SEO,190499,Natural hazards not elsewhere classified,objective,False,lexical,0.427,lexical tiebreak among 6 p-flagged candidates
-SEO2008,961005,"Natural Hazards in Fresh, Ground and Surface Water Environments",SEO,190402,Extraterrestrial hazards (e.g. meteorites),objective,False,lexical,0.324,lexical tiebreak among 6 p-flagged candidates
 SEO2008,961006,Natural Hazards in Marine Environments,SEO,190499,Natural hazards not elsewhere classified,objective,True,lexical,0.564,lexical tiebreak among 6 p-flagged candidates
 SEO2008,961006,Natural Hazards in Marine Environments,SEO,190402,Extraterrestrial hazards (e.g. meteorites),objective,False,lexical,0.5,lexical tiebreak among 6 p-flagged candidates
 SEO2008,961006,Natural Hazards in Marine Environments,SEO,190405,Meteorological hazards (e.g. cyclones and storms),objective,False,lexical,0.483,lexical tiebreak among 6 p-flagged candidates
 SEO2008,961006,Natural Hazards in Marine Environments,SEO,190404,Hydrological hazards (e.g. avalanches and floods),objective,False,lexical,0.437,lexical tiebreak among 6 p-flagged candidates
 SEO2008,961006,Natural Hazards in Marine Environments,SEO,190401,"Climatological hazards (e.g. extreme temperatures, drought and wildfires)",objective,False,lexical,0.414,lexical tiebreak among 6 p-flagged candidates
 SEO2008,961006,Natural Hazards in Marine Environments,SEO,190403,"Geological hazards (e.g. earthquakes, landslides and volcanic activity)",objective,False,lexical,0.385,lexical tiebreak among 6 p-flagged candidates
+SEO2008,961007,Natural Hazards in Mining Environments,SEO,190499,Natural hazards not elsewhere classified,objective,True,lexical,0.538,lexical tiebreak among 6 p-flagged candidates
+SEO2008,961007,Natural Hazards in Mining Environments,SEO,190404,Hydrological hazards (e.g. avalanches and floods),objective,False,lexical,0.414,lexical tiebreak among 6 p-flagged candidates
+SEO2008,961007,Natural Hazards in Mining Environments,SEO,190402,Extraterrestrial hazards (e.g. meteorites),objective,False,lexical,0.475,lexical tiebreak among 6 p-flagged candidates
+SEO2008,961007,Natural Hazards in Mining Environments,SEO,190403,"Geological hazards (e.g. earthquakes, landslides and volcanic activity)",objective,False,lexical,0.367,lexical tiebreak among 6 p-flagged candidates
 SEO2008,961007,Natural Hazards in Mining Environments,SEO,190405,Meteorological hazards (e.g. cyclones and storms),objective,False,lexical,0.414,lexical tiebreak among 6 p-flagged candidates
 SEO2008,961007,Natural Hazards in Mining Environments,SEO,190401,"Climatological hazards (e.g. extreme temperatures, drought and wildfires)",objective,False,lexical,0.378,lexical tiebreak among 6 p-flagged candidates
-SEO2008,961007,Natural Hazards in Mining Environments,SEO,190403,"Geological hazards (e.g. earthquakes, landslides and volcanic activity)",objective,False,lexical,0.367,lexical tiebreak among 6 p-flagged candidates
-SEO2008,961007,Natural Hazards in Mining Environments,SEO,190402,Extraterrestrial hazards (e.g. meteorites),objective,False,lexical,0.475,lexical tiebreak among 6 p-flagged candidates
-SEO2008,961007,Natural Hazards in Mining Environments,SEO,190404,Hydrological hazards (e.g. avalanches and floods),objective,False,lexical,0.414,lexical tiebreak among 6 p-flagged candidates
-SEO2008,961007,Natural Hazards in Mining Environments,SEO,190499,Natural hazards not elsewhere classified,objective,True,lexical,0.538,lexical tiebreak among 6 p-flagged candidates
-SEO2008,961008,Natural Hazards in Mountain and High Country Environments,SEO,190401,"Climatological hazards (e.g. extreme temperatures, drought and wildfires)",objective,False,lexical,0.431,lexical tiebreak among 6 p-flagged candidates
-SEO2008,961008,Natural Hazards in Mountain and High Country Environments,SEO,190499,Natural hazards not elsewhere classified,objective,True,lexical,0.454,lexical tiebreak among 6 p-flagged candidates
-SEO2008,961008,Natural Hazards in Mountain and High Country Environments,SEO,190405,Meteorological hazards (e.g. cyclones and storms),objective,False,lexical,0.434,lexical tiebreak among 6 p-flagged candidates
-SEO2008,961008,Natural Hazards in Mountain and High Country Environments,SEO,190404,Hydrological hazards (e.g. avalanches and floods),objective,False,lexical,0.396,lexical tiebreak among 6 p-flagged candidates
-SEO2008,961008,Natural Hazards in Mountain and High Country Environments,SEO,190403,"Geological hazards (e.g. earthquakes, landslides and volcanic activity)",objective,False,lexical,0.375,lexical tiebreak among 6 p-flagged candidates
 SEO2008,961008,Natural Hazards in Mountain and High Country Environments,SEO,190402,Extraterrestrial hazards (e.g. meteorites),objective,False,lexical,0.404,lexical tiebreak among 6 p-flagged candidates
-SEO2008,961009,"Natural Hazards in Sparseland, Permanent Grassland and Arid Zone Environments",SEO,190404,Hydrological hazards (e.g. avalanches and floods),objective,False,lexical,0.413,lexical tiebreak among 6 p-flagged candidates
-SEO2008,961009,"Natural Hazards in Sparseland, Permanent Grassland and Arid Zone Environments",SEO,190405,Meteorological hazards (e.g. cyclones and storms),objective,False,lexical,0.413,lexical tiebreak among 6 p-flagged candidates
+SEO2008,961008,Natural Hazards in Mountain and High Country Environments,SEO,190403,"Geological hazards (e.g. earthquakes, landslides and volcanic activity)",objective,False,lexical,0.375,lexical tiebreak among 6 p-flagged candidates
+SEO2008,961008,Natural Hazards in Mountain and High Country Environments,SEO,190404,Hydrological hazards (e.g. avalanches and floods),objective,False,lexical,0.396,lexical tiebreak among 6 p-flagged candidates
+SEO2008,961008,Natural Hazards in Mountain and High Country Environments,SEO,190401,"Climatological hazards (e.g. extreme temperatures, drought and wildfires)",objective,False,lexical,0.431,lexical tiebreak among 6 p-flagged candidates
+SEO2008,961008,Natural Hazards in Mountain and High Country Environments,SEO,190405,Meteorological hazards (e.g. cyclones and storms),objective,False,lexical,0.434,lexical tiebreak among 6 p-flagged candidates
+SEO2008,961008,Natural Hazards in Mountain and High Country Environments,SEO,190499,Natural hazards not elsewhere classified,objective,True,lexical,0.454,lexical tiebreak among 6 p-flagged candidates
 SEO2008,961009,"Natural Hazards in Sparseland, Permanent Grassland and Arid Zone Environments",SEO,190403,"Geological hazards (e.g. earthquakes, landslides and volcanic activity)",objective,False,lexical,0.446,lexical tiebreak among 6 p-flagged candidates
+SEO2008,961009,"Natural Hazards in Sparseland, Permanent Grassland and Arid Zone Environments",SEO,190405,Meteorological hazards (e.g. cyclones and storms),objective,False,lexical,0.413,lexical tiebreak among 6 p-flagged candidates
 SEO2008,961009,"Natural Hazards in Sparseland, Permanent Grassland and Arid Zone Environments",SEO,190402,Extraterrestrial hazards (e.g. meteorites),objective,False,lexical,0.353,lexical tiebreak among 6 p-flagged candidates
+SEO2008,961009,"Natural Hazards in Sparseland, Permanent Grassland and Arid Zone Environments",SEO,190404,Hydrological hazards (e.g. avalanches and floods),objective,False,lexical,0.413,lexical tiebreak among 6 p-flagged candidates
 SEO2008,961009,"Natural Hazards in Sparseland, Permanent Grassland and Arid Zone Environments",SEO,190499,Natural hazards not elsewhere classified,objective,True,lexical,0.479,lexical tiebreak among 6 p-flagged candidates
 SEO2008,961009,"Natural Hazards in Sparseland, Permanent Grassland and Arid Zone Environments",SEO,190401,"Climatological hazards (e.g. extreme temperatures, drought and wildfires)",objective,False,lexical,0.453,lexical tiebreak among 6 p-flagged candidates
+SEO2008,961010,Natural Hazards in Urban and Industrial Environments,SEO,190402,Extraterrestrial hazards (e.g. meteorites),objective,False,lexical,0.426,lexical tiebreak among 6 p-flagged candidates
+SEO2008,961010,Natural Hazards in Urban and Industrial Environments,SEO,190403,"Geological hazards (e.g. earthquakes, landslides and volcanic activity)",objective,False,lexical,0.423,lexical tiebreak among 6 p-flagged candidates
+SEO2008,961010,Natural Hazards in Urban and Industrial Environments,SEO,190401,"Climatological hazards (e.g. extreme temperatures, drought and wildfires)",objective,False,lexical,0.432,lexical tiebreak among 6 p-flagged candidates
+SEO2008,961010,Natural Hazards in Urban and Industrial Environments,SEO,190499,Natural hazards not elsewhere classified,objective,True,lexical,0.478,lexical tiebreak among 6 p-flagged candidates
 SEO2008,961010,Natural Hazards in Urban and Industrial Environments,SEO,190404,Hydrological hazards (e.g. avalanches and floods),objective,False,lexical,0.436,lexical tiebreak among 6 p-flagged candidates
 SEO2008,961010,Natural Hazards in Urban and Industrial Environments,SEO,190405,Meteorological hazards (e.g. cyclones and storms),objective,False,lexical,0.475,lexical tiebreak among 6 p-flagged candidates
-SEO2008,961010,Natural Hazards in Urban and Industrial Environments,SEO,190499,Natural hazards not elsewhere classified,objective,True,lexical,0.478,lexical tiebreak among 6 p-flagged candidates
-SEO2008,961010,Natural Hazards in Urban and Industrial Environments,SEO,190402,Extraterrestrial hazards (e.g. meteorites),objective,False,lexical,0.426,lexical tiebreak among 6 p-flagged candidates
-SEO2008,961010,Natural Hazards in Urban and Industrial Environments,SEO,190401,"Climatological hazards (e.g. extreme temperatures, drought and wildfires)",objective,False,lexical,0.432,lexical tiebreak among 6 p-flagged candidates
-SEO2008,961010,Natural Hazards in Urban and Industrial Environments,SEO,190403,"Geological hazards (e.g. earthquakes, landslides and volcanic activity)",objective,False,lexical,0.423,lexical tiebreak among 6 p-flagged candidates
 SEO2008,961099,Natural Hazards not elsewhere classified,SEO,190499,Natural hazards not elsewhere classified,objective,True,explicit_official,1.0,partial (p-flagged) single correspondence
 SEO2008,9611,PHYSICAL AND CHEMICAL CONDITIONS OF WATER,SEO,1899,Other environmental management,group,False,derived_empirical,0.2,"rolled up from 5 SEO2008 leaf-level mapping(s), 1 agreeing"
 SEO2008,9611,PHYSICAL AND CHEMICAL CONDITIONS OF WATER,SEO,1802,Coastal and estuarine systems and management,group,False,derived_empirical,0.2,"rolled up from 5 SEO2008 leaf-level mapping(s), 1 agreeing"
 SEO2008,9611,PHYSICAL AND CHEMICAL CONDITIONS OF WATER,SEO,1805,Marine systems and management,group,False,derived_empirical,0.2,"rolled up from 5 SEO2008 leaf-level mapping(s), 1 agreeing"
 SEO2008,9611,PHYSICAL AND CHEMICAL CONDITIONS OF WATER,SEO,1803,"Fresh, ground and surface water systems and management",group,True,derived_empirical,0.4,"rolled up from 5 SEO2008 leaf-level mapping(s), 2 agreeing"
-SEO2008,961101,Physical and Chemical Conditions of Water for Urban and Industrial Use,SEO,180205,Measurement and assessment of estuarine water quality,objective,False,lexical,0.374,lexical tiebreak among 2 p-flagged candidates
 SEO2008,961101,Physical and Chemical Conditions of Water for Urban and Industrial Use,SEO,180306,Measurement and assessment of freshwater quality (incl. physical and chemical conditions of water),objective,True,lexical,0.488,lexical tiebreak among 2 p-flagged candidates
+SEO2008,961101,Physical and Chemical Conditions of Water for Urban and Industrial Use,SEO,180205,Measurement and assessment of estuarine water quality,objective,False,lexical,0.374,lexical tiebreak among 2 p-flagged candidates
 SEO2008,961102,Physical and Chemical Conditions of Water in Coastal and Estuarine Environments,SEO,180205,Measurement and assessment of estuarine water quality,objective,True,explicit_official,0.409,partial (p-flagged) single correspondence
 SEO2008,961103,"Physical and Chemical Conditions of Water in Fresh, Ground and Surface Water Environments (excl. Urban and Industrial Use)",SEO,180306,Measurement and assessment of freshwater quality (incl. physical and chemical conditions of water),objective,True,explicit_official,0.382,partial (p-flagged) single correspondence
 SEO2008,961104,Physical and Chemical Conditions of Water in Marine Environments,SEO,180505,Measurement and assessment of marine water quality and condition,objective,True,explicit_official,1.0,
@@ -1336,9 +1336,9 @@ SEO2008,961204,"Rehabilitation of Degraded Fresh, Ground and Surface Water Envir
 SEO2008,961205,Rehabilitation of Degraded Mining Environments,SEO,180604,Rehabilitation or conservation of terrestrial environments,objective,True,explicit_official,0.654,partial (p-flagged) single correspondence
 SEO2008,961206,Rehabilitation of Degraded Mountain and High Country Environments,SEO,180604,Rehabilitation or conservation of terrestrial environments,objective,True,explicit_official,0.585,partial (p-flagged) single correspondence
 SEO2008,961207,"Rehabilitation of Degraded Sparseland, Permanent Grassland and Arid Zone Environments",SEO,180604,Rehabilitation or conservation of terrestrial environments,objective,True,explicit_official,0.517,partial (p-flagged) single correspondence
-SEO2008,961208,Rehabilitation of Degraded Urban and Industrial Environments,SEO,180307,"Rehabilitation or conservation of fresh, ground and surface water environments",objective,False,lexical,0.623,lexical tiebreak among 3 p-flagged candidates
 SEO2008,961208,Rehabilitation of Degraded Urban and Industrial Environments,SEO,180206,Rehabilitation or conservation of coastal or estuarine environments,objective,False,lexical,0.551,lexical tiebreak among 3 p-flagged candidates
 SEO2008,961208,Rehabilitation of Degraded Urban and Industrial Environments,SEO,180604,Rehabilitation or conservation of terrestrial environments,objective,True,lexical,0.678,lexical tiebreak among 3 p-flagged candidates
+SEO2008,961208,Rehabilitation of Degraded Urban and Industrial Environments,SEO,180307,"Rehabilitation or conservation of fresh, ground and surface water environments",objective,False,lexical,0.623,lexical tiebreak among 3 p-flagged candidates
 SEO2008,961299,Rehabilitation of Degraded Environments not elsewhere classified,SEO,189999,Other environmental management not elsewhere classified,objective,True,explicit_official,0.639,partial (p-flagged) single correspondence
 SEO2008,9613,REMNANT VEGETATION AND PROTECTED CONSERVATION AREAS,SEO,1806,Terrestrial systems and management,group,True,derived_empirical,0.545,"rolled up from 11 SEO2008 leaf-level mapping(s), 6 agreeing"
 SEO2008,9613,REMNANT VEGETATION AND PROTECTED CONSERVATION AREAS,SEO,1804,Management of Antarctic and Southern Ocean environments,group,False,derived_empirical,0.091,"rolled up from 11 SEO2008 leaf-level mapping(s), 1 agreeing"
@@ -1355,9 +1355,9 @@ SEO2008,961306,Remnant Vegetation and Protected Conservation Areas in Forest and
 SEO2008,961307,Remnant Vegetation and Protected Conservation Areas in Mountain and High Country Environments,SEO,180604,Rehabilitation or conservation of terrestrial environments,objective,True,explicit_official,0.57,partial (p-flagged) single correspondence
 SEO2008,961308,Remnant Vegetation and Protected Conservation Areas at Regional or Larger Scales,SEO,180604,Rehabilitation or conservation of terrestrial environments,objective,True,lexical,0.536,lexical tiebreak among 5 p-flagged candidates
 SEO2008,961308,Remnant Vegetation and Protected Conservation Areas at Regional or Larger Scales,SEO,180206,Rehabilitation or conservation of coastal or estuarine environments,objective,False,lexical,0.531,lexical tiebreak among 5 p-flagged candidates
+SEO2008,961308,Remnant Vegetation and Protected Conservation Areas at Regional or Larger Scales,SEO,180406,Protection and conservation of Antarctic and Southern Ocean environments,objective,False,lexical,0.447,lexical tiebreak among 5 p-flagged candidates
 SEO2008,961308,Remnant Vegetation and Protected Conservation Areas at Regional or Larger Scales,SEO,180307,"Rehabilitation or conservation of fresh, ground and surface water environments",objective,False,lexical,0.443,lexical tiebreak among 5 p-flagged candidates
 SEO2008,961308,Remnant Vegetation and Protected Conservation Areas at Regional or Larger Scales,SEO,180507,Rehabilitation or conservation of marine environments,objective,False,lexical,0.511,lexical tiebreak among 5 p-flagged candidates
-SEO2008,961308,Remnant Vegetation and Protected Conservation Areas at Regional or Larger Scales,SEO,180406,Protection and conservation of Antarctic and Southern Ocean environments,objective,False,lexical,0.447,lexical tiebreak among 5 p-flagged candidates
 SEO2008,961309,"Remnant Vegetation and Protected Conservation Areas in Sparseland, Permanent Grassland and Arid Zone Environments",SEO,180604,Rehabilitation or conservation of terrestrial environments,objective,True,explicit_official,0.515,partial (p-flagged) single correspondence
 SEO2008,961310,Remnant Vegetation and Protected Conservation Areas in Urban and Industrial Environments,SEO,180604,Rehabilitation or conservation of terrestrial environments,objective,True,explicit_official,0.63,partial (p-flagged) single correspondence
 SEO2008,961399,Remnant Vegetation and Protected Conservation Areas not elsewhere classified,SEO,189999,Other environmental management not elsewhere classified,objective,True,explicit_official,0.458,partial (p-flagged) single correspondence
@@ -1395,9 +1395,9 @@ SEO2008,970110,Expanding Knowledge in Technology,SEO,280111,Expanding knowledge 
 SEO2008,970110,Expanding Knowledge in Technology,SEO,280115,Expanding knowledge in the information and computing sciences,objective,False,lexical,0.596,lexical tiebreak among 5 p-flagged candidates
 SEO2008,970110,Expanding Knowledge in Technology,SEO,280110,Expanding knowledge in engineering,objective,True,lexical,0.776,lexical tiebreak among 5 p-flagged candidates
 SEO2008,970110,Expanding Knowledge in Technology,SEO,280102,Expanding knowledge in the biological sciences,objective,False,lexical,0.734,lexical tiebreak among 5 p-flagged candidates
-SEO2008,970111,Expanding Knowledge in the Medical and Health Sciences,SEO,280112,Expanding knowledge in the health sciences,objective,False,lexical,0.875,lexical tiebreak among 3 p-flagged candidates
 SEO2008,970111,Expanding Knowledge in the Medical and Health Sciences,SEO,280114,Expanding knowledge in Indigenous studies,objective,False,lexical,0.653,lexical tiebreak among 3 p-flagged candidates
 SEO2008,970111,Expanding Knowledge in the Medical and Health Sciences,SEO,280103,Expanding knowledge in the biomedical and clinical sciences,objective,True,lexical,0.885,lexical tiebreak among 3 p-flagged candidates
+SEO2008,970111,Expanding Knowledge in the Medical and Health Sciences,SEO,280112,Expanding knowledge in the health sciences,objective,False,lexical,0.875,lexical tiebreak among 3 p-flagged candidates
 SEO2008,970112,Expanding Knowledge in Built Environment and Design,SEO,280104,Expanding knowledge in built environment and design,objective,True,explicit_official,1.0,
 SEO2008,970113,Expanding Knowledge in Education,SEO,280109,Expanding knowledge in education,objective,True,lexical,1.0,lexical tiebreak among 2 p-flagged candidates
 SEO2008,970113,Expanding Knowledge in Education,SEO,280114,Expanding knowledge in Indigenous studies,objective,False,lexical,0.712,lexical tiebreak among 2 p-flagged candidates

@@ -59,16 +59,13 @@ with this pipeline's standing policy of failing loudly over fabricating.
 from __future__ import annotations
 
 import re
-from pathlib import Path
 
 import pandas as pd
 
 from . import io as rio
+from .paths import CANONICAL_DIR, RAW_DIR, SEEDS_DIR
 
-ROOT = Path(__file__).resolve().parent.parent
-DATA_DIR = ROOT / "research_classification" / "data"
-SEEDS_DIR = ROOT / "seeds"
-FOR_XLSX = ROOT / "data_untracked" / "ABS_FOR_SEO" / "anzsrc2020_for.xlsx"
+FOR_XLSX = RAW_DIR / "abs_for_seo" / "anzsrc2020_for.xlsx"
 
 CONFIDENCE_FLOOR = 0.35
 GROUP_PREFERENCE_MARGIN = 0.15  # group-level must beat the best division score by this much to win
@@ -181,7 +178,7 @@ def run() -> pd.DataFrame:
     # crash without touching the already-reviewed division-45 proxy logic itself.
     from .curate_openalex_subfield_to_for_group import _group_score
 
-    for_df = pd.read_csv(DATA_DIR / "for_2020.csv", dtype=str, keep_default_na=False)
+    for_df = pd.read_csv(CANONICAL_DIR / "for_2020.csv", dtype=str, keep_default_na=False)
     group_rows = for_df[for_df["level"] == "group"]
     division_rows = for_df[for_df["level"] == "division"]
     group_label = dict(zip(group_rows["code"], group_rows["label"]))

@@ -1,7 +1,8 @@
 """Plain-assert smoke tests. Run: .venv/bin/python tests/test_resolver.py
 
-Runs entirely against research_classification/data/ (the bundled, git-tracked CSVs and the
-pre-built .duckdb file Resolver() opens by default) -- no build step required first.
+Runs entirely against research_classification/data/intermediate/ (the bundled, git-tracked
+CSVs) and the pre-built .duckdb file Resolver() opens by default -- no build step required
+first.
 """
 
 from __future__ import annotations
@@ -15,8 +16,8 @@ sys.path.insert(0, str(ROOT))
 import pandas as pd
 
 from research_classification import Resolver, validate_oax_for2020_consistency
+from research_classification.paths import BRIDGES_DIR, CANONICAL_DIR, DB_PATH
 
-DATA_DIR = ROOT / "research_classification" / "data"
 resolver = Resolver()
 
 
@@ -24,7 +25,7 @@ def test_row_counts():
     counts = {
         "for_2020": 2203,
         "seo_2020": 987,
-        "leiden_main_field": 5,
+        "for2020_area5": 23,
         "openalex_domains": 4,
         "openalex_fields": 26,
         "openalex_subfields": 252,
@@ -39,7 +40,7 @@ def test_row_counts():
 
 def test_identity_round_trip():
     for from_scheme, to_scheme, fname in [("FOR2020", "FOR2020", "for_2020.csv"), ("SEO2020", "SEO2020", "seo_2020.csv")]:
-        df = pd.read_csv(DATA_DIR / fname, dtype=str, keep_default_na=False)
+        df = pd.read_csv(CANONICAL_DIR / fname, dtype=str, keep_default_na=False)
         for code in df["code"]:
             result = resolver.resolve(code, from_scheme, to_scheme)
             assert result.match_method == "identity", f"{from_scheme} {code}: {result.match_method}"
@@ -48,7 +49,7 @@ def test_identity_round_trip():
 
 
 def test_bridge_primary_uniqueness():
-    for path in sorted(DATA_DIR.glob("bridge_*.csv")):
+    for path in sorted(BRIDGES_DIR.glob("bridge_*.csv")):
         df = pd.read_csv(path, dtype=str, keep_default_na=False)
         df["is_primary"] = df["is_primary"].isin(["True", "true"])
         counts = df.groupby(["source_system", "source_code", "system"])["is_primary"].sum()
@@ -90,16 +91,6 @@ def test_asjc_exact_join():
     print(f"  ASJC/OpenAlex exact-ID join OK: {result.label!r}")
 
 
-def test_leiden_for_derivation():
-    # Leiden main_field codes aren't a valid from_scheme (Leiden is output-only, never an
-    # administrative code anyone assigns) -- this exercises the reverse instead: a FOR
-    # division resolving to its correctly-directed Leiden parent.
-    for code in ["44", "38", "43"]:  # Human Society, Economics, History
-        result = resolver.resolve(code, "FOR2020", "LEIDEN")
-        assert result.match_method == "derived_empirical"
-        print(f"  FOR2020 {code} -> Leiden '{result.label}' (confidence={result.confidence})")
-
-
 def test_for2008_known_code():
     # spot-checked directly against the raw ABS correspondence table earlier
     result = resolver.resolve("010101", "FOR2008", "FOR2020")
@@ -110,18 +101,14 @@ def test_for2008_known_code():
 
 def test_resolve_forward_pre2000():
     # FOR1998 230104 "Category Theory, K Theory, Homological Algebra" -> FOR2020 490403,
-    # then up to OAX field/subfield and Leiden main field (never a fabricated OAX topic guess)
+    # then up to OAX field/subfield (never a fabricated OAX topic guess)
     for2020 = resolver.resolve("230104", "FOR1998", "FOR2020")
     oax_field = resolver.resolve("230104", "FOR1998", "OAX_FIELD")
-    leiden = resolver.resolve("230104", "FOR1998", "LEIDEN")
     assert for2020.code == "490403"
     assert oax_field.level == "field"  # up the hierarchy only -- never "topic"
     assert oax_field.match_method == "manual_curated"  # via 490403's group-level curated mapping
-    assert leiden.level == "main_field"
-    assert leiden.label == "Mathematics and computer science"
     print(f"  FOR1998 230104 -> FOR2020 {for2020.code}, "
-          f"OAX field {oax_field.label!r} ({oax_field.confidence}), "
-          f"Leiden {leiden.label!r} ({leiden.confidence}) OK")
+          f"OAX field {oax_field.label!r} ({oax_field.confidence}) OK")
 
 
 def test_oax_topic_hard_fails_from_for_family():
@@ -154,14 +141,14 @@ def test_oax_domain_too_coarse_for_for2020():
     print("  OAX domain-level input correctly rejected for FOR2020 (needs field-level precision)")
 
 
-def test_seo_cannot_target_oax_or_leiden():
-    for to_scheme in ("OAX_FIELD", "OAX_DOMAIN", "OAX_SUBFIELD", "OAX_TOPIC", "LEIDEN"):
+def test_seo_cannot_target_oax():
+    for to_scheme in ("OAX_FIELD", "OAX_DOMAIN", "OAX_SUBFIELD", "OAX_TOPIC"):
         try:
             resolver.resolve("10", "SEO2020", to_scheme)
             raise AssertionError(f"expected ValueError for SEO2020 -> {to_scheme}")
         except ValueError as e:
             assert "SEO" in str(e)
-    print("  SEO2020 correctly cannot target any OAX/Leiden scheme")
+    print("  SEO2020 correctly cannot target any OAX scheme")
 
 
 def test_seo_to_sdg():
@@ -207,7 +194,7 @@ def test_seo_to_sdg():
 def test_exhaustive_seo2020_to_sdg_coverage():
     # Every one of SEO2020's 19 divisions resolves to both SDG_GOAL and SDG_PILLAR --
     # permanent regression guard, same pattern as the FOR2020 exhaustive coverage tests.
-    seo_df = pd.read_csv(DATA_DIR / "seo_2020.csv", dtype=str, keep_default_na=False)
+    seo_df = pd.read_csv(CANONICAL_DIR / "seo_2020.csv", dtype=str, keep_default_na=False)
     divisions = seo_df[seo_df["level"] == "division"]["code"]
     for to_scheme in ("SDG_GOAL", "SDG_PILLAR"):
         failures = set()
@@ -221,20 +208,16 @@ def test_exhaustive_seo2020_to_sdg_coverage():
 
 
 def test_division45_cultural_proxy():
-    # Most of division 45 (Indigenous Studies) DOES resolve to OAX/Leiden now, via a
+    # Most of division 45 (Indigenous Studies) DOES resolve to OAX now, via a
     # lexically-derived (or, for two theme-buckets, user-confirmed) proxy to the
     # non-Indigenous FOR2020 group/division representing the same underlying research
     # concept -- see curate_for2020_division45_to_proxy.py. FOR1998 321207 "Indigenous
-    # Health" and FOR2008 210101 "Aboriginal and Torres Strait Islander Archaeology" are
-    # both confirmed (via direct query against the vintage bridges) to have their *primary*
-    # FOR2020 target inside division 45 -- real historical codes that hard-failed before.
+    # Health" is confirmed (via direct query against the vintage bridge) to have its
+    # *primary* FOR2020 target inside division 45 -- a real historical code that hard-failed
+    # before.
     oax = resolver.resolve("321207", "FOR1998", "OAX_FIELD")
     assert oax.match_method == "cultural_proxy"
     assert oax.label == "Medicine"  # health and wellbeing -> division 42 Health Sciences -> OAX field
-
-    leiden = resolver.resolve("210101", "FOR2008", "LEIDEN")
-    assert leiden.match_method == "cultural_proxy"
-    assert leiden.label == "Social sciences and humanities"
 
     # the "sciences" theme's manual override (Environmental Science, not the algorithmic
     # noise-pick) is reachable directly too
@@ -267,7 +250,7 @@ def test_division45_cultural_proxy():
     assert other_indigenous.label == other_indigenous_field.label == "Social Sciences"
 
     print(f"  division-45 cultural proxy OK: FOR1998 321207 -> OAX field {oax.label!r} "
-          f"({oax.confidence}, {oax.match_method}); FOR2008 210101 -> Leiden {leiden.label!r} ({leiden.confidence}); "
+          f"({oax.confidence}, {oax.match_method}); "
           f"FOR2020 450601 (sciences override) -> OAX field {sci.label!r} ({sci.confidence}); "
           f"bare 45/4519/451999 -> {bare45.label!r}; 451906 -> {data_tech.label!r}; 451907 -> {methodologies.label!r}; "
           f"4599/459999 -> {other_indigenous.label!r}")
@@ -300,7 +283,7 @@ def test_group_level_precision():
     assert div_sf.match_method == "derived_empirical"
 
     # a FOR1998 code resolving to a 6-digit FOR2020 field should use its group ancestor
-    # (4-digit) for OAX/Leiden precision, not just fall back to the coarser division
+    # (4-digit) for OAX precision, not just fall back to the coarser division
     oax_group_level = resolver.resolve("230104", "FOR1998", "OAX_FIELD")
     assert oax_group_level.confidence == g4904.confidence  # same group (4904) either way
 
@@ -327,9 +310,8 @@ def test_leading_zero_normalization():
 def test_explicit_db_path_matches_bundled():
     # Resolver(db_path=...) pointed explicitly at the same bundled .duckdb file the default
     # constructor opens automatically should agree -- same data, two ways to load it.
-    db_path = DATA_DIR / "research_classification.duckdb"
-    assert db_path.exists(), "research_classification.duckdb should always be present (git-tracked, bundled package data)"
-    explicit = Resolver(db_path=db_path)
+    assert DB_PATH.exists(), "research_classification.duckdb should always be present (git-tracked, bundled package data)"
+    explicit = Resolver(db_path=DB_PATH)
     a = resolver.resolve("30", "FOR2020", "FOR2020")
     b = explicit.resolve("30", "FOR2020", "FOR2020")
     assert a.code == b.code and a.label == b.label
@@ -349,47 +331,45 @@ def test_csv_fallback_matches_default():
     print("  CSV-fallback path agrees with the default bundled-.duckdb path")
 
 
-def test_exhaustive_for2020_to_oax_leiden_coverage():
+def test_exhaustive_for2020_to_oax_coverage():
     # Every single FOR2020 code (2203 total: 23 divisions, 213 groups, 1967 fields) resolves
-    # to both OAX_FIELD and LEIDEN -- division 45's cultural-proxy chain (see
+    # to OAX_FIELD -- division 45's cultural-proxy chain (see
     # curate_for2020_division45_to_proxy.py) now covers all of it, including the last
     # remaining gap (group 4599, proxied to FOR2020 group 4499 "Other human society"). This
     # is a permanent regression guard: any future failure here means something broke.
-    for_df = pd.read_csv(DATA_DIR / "for_2020.csv", dtype=str, keep_default_na=False)
-    for to_scheme in ("OAX_FIELD", "LEIDEN"):
-        failures = set()
-        for code in for_df["code"]:
-            try:
-                resolver.resolve(code, "FOR2020", to_scheme)
-            except LookupError:
-                failures.add(code)
-        assert not failures, f"{to_scheme}: unexpected LookupError(s) for {failures}"
-    print(f"  exhaustive FOR2020 coverage OK: all {len(for_df)}/{len(for_df)} codes resolve to both OAX_FIELD and LEIDEN")
+    for_df = pd.read_csv(CANONICAL_DIR / "for_2020.csv", dtype=str, keep_default_na=False)
+    failures = set()
+    for code in for_df["code"]:
+        try:
+            resolver.resolve(code, "FOR2020", "OAX_FIELD")
+        except LookupError:
+            failures.add(code)
+    assert not failures, f"OAX_FIELD: unexpected LookupError(s) for {failures}"
+    print(f"  exhaustive FOR2020 coverage OK: all {len(for_df)}/{len(for_df)} codes resolve to OAX_FIELD")
 
 
 def test_exhaustive_legacy_for_coverage():
     # Every FOR1998 and FOR2008 code that appears as a source_code in its vintage bridge
-    # (898 and 1238 respectively) should also resolve to both OAX_FIELD and LEIDEN, since
-    # they all resolve to *some* FOR2020 code first and FOR2020 is now fully covered (see
-    # test_exhaustive_for2020_to_oax_leiden_coverage). A permanent regression guard.
+    # (898 and 1238 respectively) should also resolve to OAX_FIELD, since they all resolve to
+    # *some* FOR2020 code first and FOR2020 is now fully covered (see
+    # test_exhaustive_for2020_to_oax_coverage). A permanent regression guard.
     for from_scheme, bridge_file in [("FOR1998", "bridge_for1998_for2020.csv"), ("FOR2008", "bridge_for2008_for2020.csv")]:
-        bridge = pd.read_csv(DATA_DIR / bridge_file, dtype=str, keep_default_na=False)
+        bridge = pd.read_csv(BRIDGES_DIR / bridge_file, dtype=str, keep_default_na=False)
         codes = bridge["source_code"].unique()
-        for to_scheme in ("OAX_FIELD", "LEIDEN"):
-            failures = set()
-            for code in codes:
-                try:
-                    resolver.resolve(code, from_scheme, to_scheme)
-                except LookupError:
-                    failures.add(code)
-            assert not failures, f"{from_scheme} -> {to_scheme}: unexpected LookupError(s) for {failures}"
-        print(f"  exhaustive {from_scheme} coverage OK: all {len(codes)}/{len(codes)} codes resolve to both OAX_FIELD and LEIDEN")
+        failures = set()
+        for code in codes:
+            try:
+                resolver.resolve(code, from_scheme, "OAX_FIELD")
+            except LookupError:
+                failures.add(code)
+        assert not failures, f"{from_scheme} -> OAX_FIELD: unexpected LookupError(s) for {failures}"
+        print(f"  exhaustive {from_scheme} coverage OK: all {len(codes)}/{len(codes)} codes resolve to OAX_FIELD")
 
 
 def test_exhaustive_oax_field_to_for2020_division_coverage():
     # Every OAX field (26) resolves to a FOR2020 division -- cheap regression guard, already
     # true before the subfield/topic audit work but worth locking in permanently too.
-    fields = pd.read_csv(DATA_DIR / "openalex_fields.csv", dtype=str, keep_default_na=False)
+    fields = pd.read_csv(CANONICAL_DIR / "openalex_fields.csv", dtype=str, keep_default_na=False)
     failures = set()
     for code in fields["code"]:
         try:
@@ -406,7 +386,7 @@ def test_exhaustive_oax_subfield_to_for2020_group_coverage():
     # bridge_openalex_for_group.csv has zero below_floor primaries left (the original 46
     # below_floor gaps were all promoted to a real, confident pick; see
     # curate_openalex_subfield_to_for_group.py's docstring and TODO.md).
-    subfields = pd.read_csv(DATA_DIR / "openalex_subfields.csv", dtype=str, keep_default_na=False)
+    subfields = pd.read_csv(CANONICAL_DIR / "openalex_subfields.csv", dtype=str, keep_default_na=False)
     failures = set()
     for code in subfields["code"]:
         result = resolver.resolve(code, "OAX", "FOR2020")
@@ -414,7 +394,7 @@ def test_exhaustive_oax_subfield_to_for2020_group_coverage():
             failures.add((code, result.level))
     assert not failures, f"OAX subfield -> FOR2020: expected group-level for all, got {failures}"
 
-    bridge = pd.read_csv(DATA_DIR / "bridge_openalex_for_group.csv", dtype=str, keep_default_na=False)
+    bridge = pd.read_csv(BRIDGES_DIR / "bridge_openalex_for_group.csv", dtype=str, keep_default_na=False)
     bridge = bridge[bridge["is_primary"].isin(["True", "true"])]
     below_floor = bridge[bridge["match_method"] == "below_floor"]
     assert below_floor.empty, f"bridge_openalex_for_group.csv still has below_floor primaries: {below_floor['source_code'].tolist()}"
@@ -429,7 +409,7 @@ def test_exhaustive_oax_topic_to_for2020_field_coverage():
     # fallback. Full field-level precision on every topic is NOT required (confirmed with the
     # user -- LLM-only judgment at this scale, no <20-case manual-review bar); this test
     # reports the field-vs-group split as a coverage summary instead of asserting on it.
-    topics = pd.read_csv(DATA_DIR / "openalex_topics.csv", dtype=str, keep_default_na=False)
+    topics = pd.read_csv(CANONICAL_DIR / "openalex_topics.csv", dtype=str, keep_default_na=False)
     failures = set()
     levels: dict[str, int] = {}
     for code in topics["code"]:
@@ -481,6 +461,46 @@ def test_oax_topic_field_level_precision():
           f"({result.match_method}, {result.confidence})")
 
 
+def test_for2020_area5():
+    # Direct FOR2020 division -> 5-area aggregate, user-provided (research_classification/
+    # data/raw/for_areas/FoR_Areas.csv via build_for_area5.py) -- replaces Leiden's old
+    # top-level-grouping role, but as a direct fact, not a derivation through OAX.
+    indigenous = resolver.resolve("45", "FOR2020", "FOR2020_AREA5")
+    assert indigenous.label == "INDIGENOUS STUDIES"
+    assert indigenous.match_method == "user_provided" and indigenous.confidence == 1.0
+
+    maths = resolver.resolve("49", "FOR2020", "FOR2020_AREA5")  # Mathematical Sciences
+    assert maths.label == "Mathematics, Computing and Information Science"
+
+    engineering = resolver.resolve("40", "FOR2020", "FOR2020_AREA5")
+    assert engineering.label == "Physical Science and Engineering"
+
+    # reachable from legacy vintages via the same FOR2020 hub every other FOR resolution uses
+    from_for2008 = resolver.resolve("010101", "FOR2008", "FOR2020_AREA5")
+    assert from_for2008.label == "Mathematics, Computing and Information Science"
+
+    # OAX reaches it by first resolving to FOR2020, then the same direct division lookup
+    from_oax = resolver.resolve("16", "OAX", "FOR2020_AREA5")  # OAX field "Chemistry"
+    assert from_oax.label == "Physical Science and Engineering"
+
+    print(f"  FOR2020_AREA5 OK: division 45 -> {indigenous.label!r}; division 49 -> {maths.label!r}; "
+          f"FOR2008 010101 -> {from_for2008.label!r}; OAX field 16 -> {from_oax.label!r}")
+
+
+def test_exhaustive_for2020_to_area5_coverage():
+    # Every single FOR2020 code resolves to FOR2020_AREA5 -- a direct division-code lookup,
+    # so this should never have a gap (unlike the OAX bridges, no cultural-proxy chain needed).
+    for_df = pd.read_csv(CANONICAL_DIR / "for_2020.csv", dtype=str, keep_default_na=False)
+    failures = set()
+    for code in for_df["code"]:
+        try:
+            resolver.resolve(code, "FOR2020", "FOR2020_AREA5")
+        except LookupError:
+            failures.add(code)
+    assert not failures, f"FOR2020_AREA5: unexpected LookupError(s) for {failures}"
+    print(f"  exhaustive FOR2020 -> FOR2020_AREA5 coverage OK: all {len(for_df)}/{len(for_df)} codes resolve")
+
+
 def test_lookup_error():
     try:
         resolver.resolve("not-a-real-code", "FOR2020", "FOR2020")
@@ -498,17 +518,16 @@ if __name__ == "__main__":
         test_collision_resolved_by_explicit_from_scheme,
         test_bare_label_lookup_prefers_coarser_level,
         test_asjc_exact_join,
-        test_leiden_for_derivation,
         test_for2008_known_code,
         test_resolve_forward_pre2000,
         test_oax_topic_hard_fails_from_for_family,
         test_oax_down_direction_hard_fails,
         test_oax_domain_too_coarse_for_for2020,
-        test_seo_cannot_target_oax_or_leiden,
+        test_seo_cannot_target_oax,
         test_seo_to_sdg,
         test_exhaustive_seo2020_to_sdg_coverage,
         test_division45_cultural_proxy,
-        test_exhaustive_for2020_to_oax_leiden_coverage,
+        test_exhaustive_for2020_to_oax_coverage,
         test_exhaustive_legacy_for_coverage,
         test_exhaustive_oax_field_to_for2020_division_coverage,
         test_exhaustive_oax_subfield_to_for2020_group_coverage,
@@ -520,6 +539,8 @@ if __name__ == "__main__":
         test_leading_zero_normalization,
         test_explicit_db_path_matches_bundled,
         test_csv_fallback_matches_default,
+        test_for2020_area5,
+        test_exhaustive_for2020_to_area5_coverage,
         test_lookup_error,
     ]
     for t in tests:

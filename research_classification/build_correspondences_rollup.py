@@ -27,16 +27,14 @@ reasoning behind that match).
 from __future__ import annotations
 
 from collections import Counter
-from pathlib import Path
 
 import openpyxl
 import pandas as pd
 
 from .hierarchy import BRIDGE_COLUMNS, write_csv
+from .paths import BRIDGES_DIR, CANONICAL_DIR, RAW_DIR
 
-ROOT = Path(__file__).resolve().parent.parent
-DATA_DIR = ROOT / "research_classification" / "data"
-LABELS_XLSX = ROOT / "data_untracked" / "12970_1998_2008.xlsx"
+LABELS_XLSX = RAW_DIR / "abs_for_seo" / "12970_1998_2008.xlsx"
 
 
 def _source_titles(sheet: str, level: str) -> dict[str, str]:
@@ -187,7 +185,7 @@ def _manual_override_rows(source_system: str) -> pd.DataFrame:
 
 
 def _load_leaf_bridge(filename: str, leaf_level: str) -> pd.DataFrame:
-    df = pd.read_csv(DATA_DIR / filename, dtype=str, keep_default_na=False)
+    df = pd.read_csv(BRIDGES_DIR / filename, dtype=str, keep_default_na=False)
     df["is_primary"] = df["is_primary"].isin(["True", "true"])
     # Filter to leaf-level rows only -- makes this idempotent to re-run even after a prior
     # run already wrote division/group rollup rows into this same file.
@@ -195,9 +193,9 @@ def _load_leaf_bridge(filename: str, leaf_level: str) -> pd.DataFrame:
 
 
 def run() -> dict[str, pd.DataFrame]:
-    for2020 = pd.read_csv(DATA_DIR / "for_2020.csv", dtype=str, keep_default_na=False)
+    for2020 = pd.read_csv(CANONICAL_DIR / "for_2020.csv", dtype=str, keep_default_na=False)
     for_canonical_lookup = dict(zip(for2020["code"], for2020["label"]))
-    seo2020 = pd.read_csv(DATA_DIR / "seo_2020.csv", dtype=str, keep_default_na=False)
+    seo2020 = pd.read_csv(CANONICAL_DIR / "seo_2020.csv", dtype=str, keep_default_na=False)
     seo_canonical_lookup = dict(zip(seo2020["code"], seo2020["label"]))
 
     for1998_field = _load_leaf_bridge("bridge_for1998_for2020.csv", "field")
@@ -224,10 +222,10 @@ def run() -> dict[str, pd.DataFrame]:
     seo1998_full = pd.concat([seo1998_field, seo1998_div, seo1998_group], ignore_index=True)
     seo2008_full = pd.concat([seo2008_field, seo2008_div, seo2008_group], ignore_index=True)
 
-    write_csv(for1998_full, DATA_DIR / "bridge_for1998_for2020.csv", ["source_code"])
-    write_csv(for2008_full, DATA_DIR / "bridge_for2008_for2020.csv", ["source_code"])
-    write_csv(seo1998_full, DATA_DIR / "bridge_seo1998_seo2020.csv", ["source_code"])
-    write_csv(seo2008_full, DATA_DIR / "bridge_seo2008_seo2020.csv", ["source_code"])
+    write_csv(for1998_full, BRIDGES_DIR / "bridge_for1998_for2020.csv", ["source_code"])
+    write_csv(for2008_full, BRIDGES_DIR / "bridge_for2008_for2020.csv", ["source_code"])
+    write_csv(seo1998_full, BRIDGES_DIR / "bridge_seo1998_seo2020.csv", ["source_code"])
+    write_csv(seo2008_full, BRIDGES_DIR / "bridge_seo2008_seo2020.csv", ["source_code"])
 
     return {
         "bridge_for1998_for2020": for1998_full,

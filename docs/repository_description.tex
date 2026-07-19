@@ -7,7 +7,7 @@
 \usepackage{hyperref}
 
 \title{The ResearchClassification Repository: A Cross-Walk Between\\
-ANZSRC (FOR/SEO), OpenAlex, CWTS Leiden, ASJC and the SDGs}
+ANZSRC (FOR/SEO), OpenAlex, ASJC and the SDGs}
 \author{}
 \date{}
 
@@ -15,9 +15,9 @@ ANZSRC (FOR/SEO), OpenAlex, CWTS Leiden, ASJC and the SDGs}
 \maketitle
 
 % NOTE TO AUTHOR: insert formal citations (Australian Bureau of Statistics ANZSRC
-% documentation; OpenAlex topic classification documentation; CWTS Leiden Ranking
-% methodology papers; Elsevier ASJC documentation; UN SDG indicator framework) at the
-% points marked [CITE] below, using this paper's own bibliography style.
+% documentation; OpenAlex topic classification documentation; Elsevier ASJC
+% documentation; UN SDG indicator framework) at the points marked [CITE] below, using
+% this paper's own bibliography style.
 
 \section{Introduction}
 
@@ -38,9 +38,10 @@ This document describes a software repository, \texttt{ResearchClassification}, 
 solve this problem systematically: to provide a single, auditable, versioned \emph{cross-walk}
 between every major research classification scheme a bibliometric or research-policy
 analyst is likely to encounter --- ANZSRC FOR (1998/2008/2020), ANZSRC SEO
-(1998/2008/2020), OpenAlex (domain/field/subfield/topic), the CWTS Leiden Ranking's
-five-way field classification, Elsevier's All Science Journal Classification (ASJC), and
-the United Nations Sustainable Development Goals (SDGs). The repository exposes this
+(1998/2008/2020), OpenAlex (domain/field/subfield/topic), Elsevier's All Science Journal
+Classification (ASJC), the United Nations Sustainable Development Goals (SDGs), and a
+user-provided five-area aggregate over the FOR2020 divisions (\texttt{FOR2020\_AREA5}).
+The repository exposes this
 cross-walk through a single Python API, \texttt{Resolver.resolve(code, from\_scheme,
 to\_scheme)}, backed by a set of git-tracked, human-readable CSV ``bridge'' tables and a
 pre-built DuckDB database for fast lookup. Every correspondence the repository asserts
@@ -91,24 +92,33 @@ titles, abstracts and citation context. Each topic carries, beyond its label, a 
 list of representative keywords and a one-paragraph summary. The repository's raw source
 for this hierarchy is a single spreadsheet, \texttt{OpenAlex\_topic\_mapping\_table.xlsx}
 (4{,}516 rows, one per topic, with topic/subfield/field/domain identifiers and labels,
-keywords, summary and a Wikipedia URL also used to link into the Leiden classification).
-It is tracked directly in the repository's data directory precisely because the keyword
+keywords and summary). It is tracked directly in the repository's data directory
+precisely because the keyword
 and summary text is not carried through into the derived, lighter-weight per-level CSV
 files, yet remains needed by the fine-grained matching described in
 Section~\ref{sec:extension}.
 
-\subsection{CWTS Leiden Ranking classification}
+\subsection{A user-provided FOR2020 five-area aggregate}
 
-The CWTS Leiden Ranking assigns every publication to one of five broad ``main fields''
-(Social Sciences and Humanities, Biomedical and Health Sciences, Physical Sciences and
-Engineering, Life and Earth Sciences, and Mathematics and Computer Science) via an
-intermediate layer of algorithmically-derived ``micro-clusters,'' each linked, where
-possible, to a representative Wikipedia article. The repository links Leiden
-micro-clusters to OpenAlex topics via an exact join on that shared Wikipedia URL
-(successful for 3{,}880 of 4{,}516 topics; the remainder have no unique link on one or
-both sides and are left unjoined rather than forced into a spurious match), and derives
-Leiden main-field correspondences for FOR2020 divisions and groups by majority vote over
-that join.
+A coarse, top-level grouping above the 23 FOR2020 divisions is provided directly by the
+user as a five-category aggregate (Life and Earth Science; Biomedical and Health Science;
+Physical Science and Engineering; Social Science and Humanities; Mathematics, Computing
+and Information Science), with Indigenous Studies and the Multidisciplinary catch-all
+category handled separately. \texttt{resolve()} exposes this as \texttt{FOR2020\_AREA5}, a
+direct division-code lookup (\texttt{match\_method = "user\_provided"}, confidence 1.0
+throughout) reachable from any FOR vintage or from OpenAlex via the FOR2020 hub.
+
+An earlier version of this repository instead derived a comparable coarse grouping from
+the CWTS Leiden Ranking's five ``main fields,'' joining Leiden micro-clusters to OpenAlex
+topics via an exact match on a shared Wikipedia URL and then taking a majority vote over
+FOR2020 divisions/groups through that join. That mechanism has since been removed
+entirely: on inspection, the Leiden linkage fed nothing else in the pipeline (it was not,
+despite an earlier assumption, an input to the OpenAlex$\leftrightarrow$FOR2020
+correspondence described in Section~\ref{sec:extension}, which is built purely from
+lexical matching between OpenAlex and FOR2020 labels), and it added an indirect,
+two-hop derivation (FOR2020 $\rightarrow$ OpenAlex $\rightarrow$ Leiden) where the direct,
+user-provided fact above is simpler, more transparent, and does not depend on any
+CWTS-sourced data at all.
 
 \subsection{ASJC and the Sustainable Development Goals}
 
@@ -201,8 +211,8 @@ for the first time (earlier vintages scattered a handful of Indigenous- and
 M\=aori-related codes across otherwise-unrelated divisions); its labels are almost
 entirely a generic FOR2020 concept with a population prefix added (``Aboriginal and
 Torres Strait Islander history,'' a M\=aori-language label with an English gloss,
-``Pacific Peoples archaeology''). With no direct OpenAlex, Leiden or ASJC counterpart,
-and an aggregate vocabulary large enough to distort any bag-based matching, it is
+``Pacific Peoples archaeology''). With no direct OpenAlex or ASJC counterpart, and an
+aggregate vocabulary large enough to distort any bag-based matching, it is
 resolved via a dedicated \texttt{cultural\_proxy} mechanism that routes each division-45
 code through the non-Indigenous FOR2020 concept it is a population-specific instance of,
 tagged distinctly so the result is never mistaken for an official ANZSRC relationship,
@@ -465,9 +475,10 @@ FOR-coded administrative data, as of the work described in this document.
 OpenAlex field $\rightarrow$ FOR2020 division & 26 & 26 (100\%) & 0 \\
 OpenAlex subfield $\rightarrow$ FOR2020 group & 252 & 252 (100\%) & 0 \\
 OpenAlex topic $\rightarrow$ FOR2020 field & 4{,}516 & 3{,}918 (86.8\%) & 598 (13.2\%, cascade to group) \\
-FOR2020 $\rightarrow$ OpenAlex field/Leiden & 2{,}203 & 2{,}203 (100\%) & 0 \\
-FOR1998 $\rightarrow$ OpenAlex field/Leiden & 1{,}060 & 1{,}060 (100\%) & 0 \\
-FOR2008 $\rightarrow$ OpenAlex field/Leiden & 1{,}420 & 1{,}420 (100\%) & 0 \\
+FOR2020 $\rightarrow$ OpenAlex field & 2{,}203 & 2{,}203 (100\%) & 0 \\
+FOR1998 $\rightarrow$ OpenAlex field & 1{,}060 & 1{,}060 (100\%) & 0 \\
+FOR2008 $\rightarrow$ OpenAlex field & 1{,}420 & 1{,}420 (100\%) & 0 \\
+FOR2020 $\rightarrow$ FOR2020\_AREA5 & 2{,}203 & 2{,}203 (100\%) & 0 \\
 \bottomrule
 \end{tabular}
 \caption{Coverage of the OpenAlex$\leftrightarrow$FOR2020 correspondence and its
@@ -480,10 +491,13 @@ and the corresponding subfield-level (group) result is returned instead.}
 
 Across the repository as a whole, the canonical classification tables comprise 2{,}203
 FOR2020 codes, 987 SEO2020 codes, 4{,}516 OpenAlex topics (nested under 252 subfields,
-26 fields and 4 domains), 5 CWTS Leiden main fields, 361 ASJC codes and 22 SDG
-goals/pillars, cross-linked by 13 bridge tables. The automated test suite comprises 29
-tests, exercised against the pre-built database on every change, and passes in full as
-of this document.
+26 fields and 4 domains), 361 ASJC codes, 22 SDG goals/pillars, and a 23-division
+\texttt{FOR2020\_AREA5} aggregate, cross-linked by 9 bridge tables (including an
+empirical FOR2008$\leftrightarrow$FOR2020 correspondence derived independently from ARC
+ERA journal classifications, cross-validated against --- and agreeing exactly with, at
+division level --- the official ABS correspondence). The automated test suite comprises
+30 tests, exercised against the pre-built database on every change, and passes in full
+as of this document.
 
 \section{Conclusion}
 

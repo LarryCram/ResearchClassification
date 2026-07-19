@@ -37,15 +37,11 @@ replaces.
 from __future__ import annotations
 
 from collections import Counter
-from pathlib import Path
 
 import pandas as pd
 
 from .hierarchy import write_csv
-
-ROOT = Path(__file__).resolve().parent.parent
-DATA_DIR = ROOT / "research_classification" / "data"
-SEEDS_DIR = ROOT / "seeds"
+from .paths import CANONICAL_DIR, HUB_DIR, SEEDS_DIR
 
 # 22 FOR2020 divisions -> OAX field name (division 45 excluded, see module docstring).
 FIELD_BY_DIVISION: dict[str, str] = {
@@ -389,10 +385,10 @@ def _seeds() -> tuple[pd.DataFrame, pd.DataFrame]:
             pd.read_csv(group_seed_path, dtype=str, keep_default_na=False),
         )
 
-    for_df = pd.read_csv(DATA_DIR / "for_2020.csv", dtype=str, keep_default_na=False)
+    for_df = pd.read_csv(CANONICAL_DIR / "for_2020.csv", dtype=str, keep_default_na=False)
     for_label = dict(zip(for_df["code"], for_df["label"]))
-    fields = pd.read_csv(DATA_DIR / "openalex_fields.csv", dtype=str, keep_default_na=False)
-    subfields = pd.read_csv(DATA_DIR / "openalex_subfields.csv", dtype=str, keep_default_na=False)
+    fields = pd.read_csv(CANONICAL_DIR / "openalex_fields.csv", dtype=str, keep_default_na=False)
+    subfields = pd.read_csv(CANONICAL_DIR / "openalex_subfields.csv", dtype=str, keep_default_na=False)
     field_label_by_name = dict(zip(fields["label"], fields["code"]))
     field_row = dict(zip(fields["code"], zip(fields["label"], fields["parent_code"])))
     subfield_row = dict(zip(subfields["code"], zip(subfields["label"], subfields["parent_code"])))
@@ -448,8 +444,8 @@ def _seeds() -> tuple[pd.DataFrame, pd.DataFrame]:
 def run() -> dict[str, pd.DataFrame]:
     division_seed, group_seed = _seeds()
 
-    fields = pd.read_csv(DATA_DIR / "openalex_fields.csv", dtype=str, keep_default_na=False)
-    domains = pd.read_csv(DATA_DIR / "openalex_domains.csv", dtype=str, keep_default_na=False)
+    fields = pd.read_csv(CANONICAL_DIR / "openalex_fields.csv", dtype=str, keep_default_na=False)
+    domains = pd.read_csv(CANONICAL_DIR / "openalex_domains.csv", dtype=str, keep_default_na=False)
     domain_label = dict(zip(domains["code"], domains["label"]))
     field_domain = dict(zip(fields["code"], fields["parent_code"]))
 
@@ -518,7 +514,7 @@ def run() -> dict[str, pd.DataFrame]:
     }
     for name, df in tables.items():
         key_col = "for_division_code" if "division" in name else "for_group_code"
-        write_csv(df, DATA_DIR / f"{name}.csv", [key_col])
+        write_csv(df, HUB_DIR / f"{name}.csv", [key_col])
     return tables
 
 

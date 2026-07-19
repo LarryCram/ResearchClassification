@@ -358,3 +358,76 @@ reading the topic's own subfield and that subfield's candidate pool by hand, the
 `audit_oax_for_bridges.py` already surfaces for the subfield->group tier. Left as a documented
 observation, not chased down across all 598 -- consistent with the user's original "LLM-only,
 no manual threshold" call for this tier.
+
+## 2026-07-19: Focus narrowed to FOR-vintage mapping + OAX<->FOR; Leiden fully removed; data/ restructured; project now self-contained
+
+Directory restructure: `research_classification/data/` split into `raw/` (untouched source
+files, git-tracked), `intermediate/{canonical,bridges,hub,seeds}/` (every derived table,
+sub-split by regeneration semantics -- see `research_classification/paths.py`'s module
+docstring), and `output/` (just `research_classification.duckdb`, the minimal artifact
+`resolve()` actually needs). The repo-root `seeds/` folder (cache-guarded curation results)
+moved into `data/intermediate/seeds/`. `pyproject.toml`'s `package-data` glob was stale after
+the move (`data/*.csv` no longer matched anything one level deeper) and has been fixed to
+`data/intermediate/*/*.csv` + `data/output/*.duckdb` -- would have silently shipped an empty
+package otherwise.
+
+**CWTS Leiden removed entirely**, not just de-emphasized. The original plan for this session
+was to keep the Leiden<->OpenAlex topic/domain linking tables as an internal "helped ground
+OAX's own hierarchy" reference, per the user's initial answer, but on inspection that
+condition never actually held: nothing in the OAX->FOR curation code
+(`curate_openalex_for.py`/`curate_openalex_subfield_to_for_group.py`/
+`curate_openalex_topic_to_for_field.py`/`curate_for2020_to_openalex.py`) reads any Leiden
+file or table -- the matching is done entirely by `cascade_match.py`'s lexical scoring
+between OAX and FOR labels. The Leiden linkage was a self-contained side computation feeding
+nothing else. `build_leiden.py` and its three output tables (`leiden_main_field.csv`,
+`bridge_leiden_openalex_topic.csv`, `bridge_leiden_openalex_domain.csv`) were deleted, along
+with the already-superseded `bridge_leiden_for.csv`/`for2020_*_leiden_main_field.csv` (the
+FOR2020<->Leiden derivation, one commit stale per the entry above, and never reachable from
+the public API since `LEIDEN` wasn't a valid `from_scheme` anyway). `resolve()` no longer has
+a `LEIDEN` `to_scheme` at all.
+
+**New `FOR2020_AREA5` scheme** replaces Leiden's old role as a coarse, top-level grouping
+above the FOR divisions -- but as a *direct* fact, not the old indirect
+`FOR2020 -> OAX -> Leiden` derivation loop. Source: a user-provided 5-area aggregate
+(`data/raw/for_areas/FoR_Areas.csv` -> `build_for_area5.py` -> `for2020_area5.csv`), covering
+all 23 FOR2020 divisions (5 substantive areas -- Life & Earth Science; Biomedical & Health
+Science; Physical Science & Engineering; Social Science & Humanities; Mathematics, Computing
+& Information Science -- plus Indigenous Studies and Multidisciplinary special-cased, the
+same way division 45 already is elsewhere). Resolves via a plain division-code lookup
+(`Resolver._area5_lookup()`), `match_method="user_provided"`, confidence `1.0` throughout.
+Exhaustive coverage test: `tests/test_resolver.py::test_exhaustive_for2020_to_area5_coverage`.
+
+**New empirical ARC-ERA journal-crosswalk bridge**
+(`build_correspondences_arc_era.py` -> `bridge_for2008_for2020_arc_era.csv`), built from two
+ARC ERA journal-classification files (`data/raw/arc_era/australia-era-for.xlsx` for FOR2008,
+`Australia-era-for-2023.xlsx` for FOR2020) joined on the shared `JNL11` WoS journal
+abbreviation (verified match rate: 10,298/16,679 unique 2023-file journal labels, 89% of the
+2008-file's own journals). Tallied separately at division- and group-level (never mixed
+across precision tiers) via majority vote, same pattern as the existing rollup/Leiden-style
+majority-vote code. Cross-checked at division level against the official
+`bridge_for2008_for2020.csv`: **all 22 FOR2008 divisions agree exactly** with the ABS
+correspondence's own primary target -- a strong independent validation of both, not a
+replacement. Deliberately **not** wired into `resolver.py`'s `_VINTAGE_BRIDGE_TABLE`; it's a
+sibling file for manual comparison only, at least for now.
+
+**`data_untracked/` dependency eliminated from the build pipeline.** All six raw files the
+pipeline actually reads (`anzsrc2020_for.xlsx`, `anzsrc2020_seo.xlsx`,
+`anzsrc2020_anzsrc2008_correspondences.xlsx`, `1297.0 correspondence tables.xlsx`,
+`12970_1998_2008.xlsx`, `ASJC1.xlsx`) were moved into git-tracked
+`data/raw/{abs_for_seo,asjc}/` after being verified working end-to-end (`python build.py` run
+in full against them, all 27 output tables produced, all resolver tests pass). `ASJC1.xlsx`
+in particular was cross-checked by rebuilding `asjc.csv`/`bridge_asjc_openalex.csv` from it
+and diffing against the already-committed versions: zero differences. `io.py`'s
+`ensure_converted()` (headless-LibreOffice `.xls`->`.xlsx` conversion) is now dead code and
+was removed -- every source file is already `.xlsx`. `data_untracked/` itself still exists on
+disk (left in place, untracked, per the user's explicit instruction) with a number of
+never-wired alternate/duplicate files (OECD/NABS correspondence tables, a direct
+FOR<->ASJC/Scopus crosswalk, an unrelated Leiden per-publication clustering file, several
+duplicate copies of files also present in `data/raw/`) -- none of these are read by any
+script; nothing currently depends on that directory existing at all.
+
+**6 other newly-downloaded raw files parked, not integrated this round**: OECD Category-to-
+WoS-Category mappings (2 vintages), REF2021 Category Schema, a 2026 SDG/Citation-Topics
+mapping, a Web of Science Research Areas name list, and the ESI master journal list all sit
+in `data/raw/future_phase/`, documented but out of scope for this session's two-item focus
+((a) FOR-vintage mapping, (b) OAX<->FOR).

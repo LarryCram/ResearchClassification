@@ -5,14 +5,10 @@ stable UN content -- hardcoded here, no source file to parse.
 
 from __future__ import annotations
 
-from pathlib import Path
-
 import pandas as pd
 
 from .hierarchy import write_csv
-
-ROOT = Path(__file__).resolve().parent.parent
-DATA_DIR = ROOT / "research_classification" / "data"
+from .paths import CANONICAL_DIR
 
 # code -> (label, parent pillar code)
 _GOALS: dict[str, tuple[str, str]] = {
@@ -51,5 +47,5 @@ def run() -> pd.DataFrame:
         for code, (label, parent) in _GOALS.items()
     ]
     df = pd.DataFrame(rows)
-    write_csv(df, DATA_DIR / "sdg.csv", ["level", "code"])
+    write_csv(df, CANONICAL_DIR / "sdg.csv", ["level", "code"])
     return df

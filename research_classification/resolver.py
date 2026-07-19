@@ -1,11 +1,12 @@
 """Public resolver API.
 
 Resolver() with no arguments opens the pre-built research_classification.duckdb bundled
-inside this package (research_classification/data/) directly, read-only -- so `pip install
-git+https://github.com/LarryCram/ResearchClassification.git` followed immediately by
+inside this package (research_classification/data/output/) directly, read-only -- so `pip
+install git+https://github.com/LarryCram/ResearchClassification.git` followed immediately by
 `Resolver().resolve(...)` just works, no separate build step and no external data file
-required. This is ~10ms (vs ~360ms rebuilding an in-memory database from the 28 bundled CSVs
-on every call), so it's the default; the CSVs stay bundled too as an automatic fallback (see
+required. This is ~10ms (vs ~360ms rebuilding an in-memory database from the bundled
+canonical/bridge/hub CSVs under research_classification/data/intermediate/ on every call), so
+it's the default; the CSVs stay bundled too as an automatic fallback (see
 _load_bundled_db()'s docstring) and remain the git-diffable source of truth build.py rebuilds
 from. Pass db_path=... to point at a different exported .duckdb file instead if you want a
 specific file's exact snapshot.
@@ -29,14 +30,14 @@ import duckdb
 
 FromScheme = Literal["OAX", "FOR1998", "FOR2008", "FOR2020", "SEO1998", "SEO2008", "SEO2020"]
 ToScheme = Literal[
-    "OAX_DOMAIN", "OAX_FIELD", "OAX_SUBFIELD", "OAX_TOPIC", "FOR2020", "SEO2020", "LEIDEN",
-    "SDG_GOAL", "SDG_PILLAR",
+    "OAX_DOMAIN", "OAX_FIELD", "OAX_SUBFIELD", "OAX_TOPIC", "FOR2020", "SEO2020",
+    "FOR2020_AREA5", "SDG_GOAL", "SDG_PILLAR",
 ]
 
 _VALID_FROM_SCHEMES = {"OAX", "FOR1998", "FOR2008", "FOR2020", "SEO1998", "SEO2008", "SEO2020"}
 _VALID_TO_SCHEMES = {
-    "OAX_DOMAIN", "OAX_FIELD", "OAX_SUBFIELD", "OAX_TOPIC", "FOR2020", "SEO2020", "LEIDEN",
-    "SDG_GOAL", "SDG_PILLAR",
+    "OAX_DOMAIN", "OAX_FIELD", "OAX_SUBFIELD", "OAX_TOPIC", "FOR2020", "SEO2020",
+    "FOR2020_AREA5", "SDG_GOAL", "SDG_PILLAR",
 }
 _FOR_VINTAGES = {"FOR1998", "FOR2008", "FOR2020"}
 _SEO_VINTAGES = {"SEO1998", "SEO2008", "SEO2020"}
@@ -88,7 +89,6 @@ _DIVISION_CENTRIC: dict[str, tuple[str, str, str, str]] = {
     "OAX_DOMAIN": ("for2020_division_openalex_domain", "openalex_domain_id", "openalex_domain_label", "domain"),
     "OAX_FIELD": ("for2020_division_openalex_field", "openalex_field_id", "openalex_field_label", "field"),
     "OAX_SUBFIELD": ("for2020_division_openalex_subfield", "openalex_subfield_id", "openalex_subfield_label", "subfield"),
-    "LEIDEN": ("for2020_division_leiden_main_field", "leiden_main_field_id", "leiden_main_field_label", "main_field"),
 }
 
 _GROUP_CENTRIC: dict[str, tuple[str, str, str, str]] = {
@@ -132,7 +132,7 @@ _OAX_LEVEL_RANK = {"domain": 0, "field": 1, "subfield": 2, "topic": 3}
 _TO_SCHEME_OAX_LEVEL = {"OAX_DOMAIN": "domain", "OAX_FIELD": "field", "OAX_SUBFIELD": "subfield", "OAX_TOPIC": "topic"}
 
 _NO_MAPPING_NOTE = (
-    "No OpenAlex/Leiden equivalent exists for this FOR division in the source data, and no "
+    "No OpenAlex equivalent exists for this FOR division in the source data, and no "
     "match_method='cultural_proxy' fallback applies either -- genuinely absent, not a lookup "
     "failure. (As of this build, every FOR2020 code -- including all of division 45, "
     "Indigenous Studies, via curate_for2020_division45_to_proxy.py -- resolves; this message "
@@ -170,7 +170,10 @@ class Resolver:
         pip-installed unmodified into new environments over a period of years, so this isn't
         a hypothetical: the fallback exists specifically so a version mismatch degrades to
         "slower" rather than "broken"."""
-        db_resource = importlib.resources.files("research_classification") / "data" / "research_classification.duckdb"
+        db_resource = (
+            importlib.resources.files("research_classification")
+            / "data" / "output" / "research_classification.duckdb"
+        )
         ctx = importlib.resources.as_file(db_resource)
         real_path = ctx.__enter__()
         try:
@@ -192,14 +195,20 @@ class Resolver:
     @staticmethod
     def _load_bundled_csvs() -> duckdb.DuckDBPyConnection:
         con = duckdb.connect(":memory:")
-        data_dir = importlib.resources.files("research_classification") / "data"
-        for csv_path in sorted(p for p in data_dir.iterdir() if p.name.endswith(".csv")):
-            table = csv_path.name.removesuffix(".csv")
-            with importlib.resources.as_file(csv_path) as real_path:
-                con.execute(
-                    f"CREATE TABLE {table} AS SELECT * FROM read_csv_auto(?, header=true, all_varchar=true)",
-                    [str(real_path)],
-                )
+        data_dir = importlib.resources.files("research_classification") / "data" / "intermediate"
+        # canonical/bridges/hub only -- seeds/ holds cache/input artifacts for the build
+        # pipeline's curate_*.py scripts, not resolver-queryable tables (this matches
+        # pre-restructure behavior, where seeds/ lived outside data/ entirely and was never
+        # bundled here either).
+        for subdir_name in ("canonical", "bridges", "hub"):
+            subdir = data_dir / subdir_name
+            for csv_path in sorted(p for p in subdir.iterdir() if p.name.endswith(".csv")):
+                table = csv_path.name.removesuffix(".csv")
+                with importlib.resources.as_file(csv_path) as real_path:
+                    con.execute(
+                        f"CREATE TABLE {table} AS SELECT * FROM read_csv_auto(?, header=true, all_varchar=true)",
+                        [str(real_path)],
+                    )
         return con
 
     # -- normalization ------------------------------------------------------
@@ -315,6 +324,32 @@ class Resolver:
         pillar_label = self._con.execute("SELECT label FROM sdg WHERE code = ? AND level = 'pillar'", [pillar_code]).fetchone()[0]
         return CanonicalResult(code, from_scheme, to_scheme, pillar_code, pillar_label, "pillar", "user_provided", float(confidence))
 
+    # -- FOR -> FOR2020_AREA5 (division-level, user-provided) ----------------
+    #
+    # A direct FOR2020 division -> area fact, not a bridge/cascade -- plays the same role
+    # CWTS Leiden's main_field used to play (a coarse, top-level grouping above the FOR
+    # divisions) but without the old indirect FOR2020 -> OAX -> Leiden derivation loop.
+
+    def _area5_lookup(self, for2020_code: str) -> tuple[str, str]:
+        division_code = for2020_code[:2]
+        row = self._con.execute(
+            "SELECT area5_code, area5_label FROM for2020_area5 WHERE for2020_division_code = ?",
+            [division_code],
+        ).fetchone()
+        if not row:
+            raise LookupError(f"FOR2020 division {division_code!r}: no FOR2020_AREA5 mapping found")
+        return row
+
+    def _resolve_for_to_area5(self, code: str, from_scheme: FromScheme) -> CanonicalResult:
+        for2020 = self._resolve_vintage_to_current(code, from_scheme, "FOR")
+        area_code, area_label = self._area5_lookup(for2020.code)
+        return CanonicalResult(code, from_scheme, "FOR2020_AREA5", area_code, area_label, "area", "user_provided", 1.0)
+
+    def _resolve_oax_to_area5(self, code: str) -> CanonicalResult:
+        for2020 = self._resolve_oax_to_for2020(code)
+        area_code, area_label = self._area5_lookup(for2020.code)
+        return CanonicalResult(code, "OAX", "FOR2020_AREA5", area_code, area_label, "area", "user_provided", 1.0)
+
     # -- OAX hierarchy walking (up only) ------------------------------------
 
     def _oax_identify(self, value: str) -> tuple[str, str, str, str] | None:
@@ -355,13 +390,15 @@ class Resolver:
                 return self._resolve_seo_to_sdg(code, from_scheme, to_scheme)
             raise ValueError(
                 f"from_scheme={from_scheme!r} can only target to_scheme='SEO2020', 'SDG_GOAL', or "
-                f"'SDG_PILLAR' -- SEO is an objective classification with no relationship to OAX/Leiden "
+                f"'SDG_PILLAR' -- SEO is an objective classification with no relationship to OAX "
                 f"by design"
             )
 
         if from_scheme in _FOR_VINTAGES:
             if to_scheme == "FOR2020":
                 return self._resolve_vintage_to_current(code, from_scheme, "FOR")
+            if to_scheme == "FOR2020_AREA5":
+                return self._resolve_for_to_area5(code, from_scheme)
             if to_scheme == "OAX_TOPIC":
                 raise ValueError(
                     "to_scheme='OAX_TOPIC' is never supported from a FOR-family input -- OpenAlex's "
@@ -375,8 +412,8 @@ class Resolver:
         # from_scheme == "OAX"
         if to_scheme == "FOR2020":
             return self._resolve_oax_to_for2020(code)
-        if to_scheme == "LEIDEN":
-            return self._resolve_oax_to_leiden(code)
+        if to_scheme == "FOR2020_AREA5":
+            return self._resolve_oax_to_area5(code)
         if to_scheme in _TO_SCHEME_OAX_LEVEL:
             return self._resolve_oax_to_oax(code, to_scheme)
         raise ValueError(f"from_scheme='OAX' cannot target to_scheme={to_scheme!r}")
@@ -386,7 +423,7 @@ class Resolver:
     ) -> list[CanonicalResult]:
         return [self.resolve(v, from_scheme, to_scheme) for v in values]
 
-    # -- FOR-family -> OAX/Leiden, via the FOR2020-division hub -------------
+    # -- FOR-family -> OAX, via the FOR2020-division hub --------------------
 
     def _resolve_from_for2020_code(
         self, input_value: str, for2020_code: str, to_scheme: ToScheme, from_scheme: FromScheme
@@ -448,7 +485,7 @@ class Resolver:
         result = self._resolve_vintage_to_current(code, from_scheme, "FOR")
         return self._resolve_from_for2020_code(code, result.code, to_scheme, from_scheme)
 
-    # -- OAX -> FOR2020 / Leiden / OAX ---------------------------------------
+    # -- OAX -> FOR2020 / FOR2020_AREA5 / OAX --------------------------------
 
     def _resolve_oax_to_for2020(self, code: str) -> CanonicalResult:
         """Tries the finest OAX precision the input actually supports first, cascading to
@@ -487,10 +524,6 @@ class Resolver:
                 return CanonicalResult(code, "OAX", "FOR2020", for_code, for_label, for_level, match_method, float(confidence))
 
         raise LookupError(f"{code!r}: no curated FOR2020 mapping found at any OAX precision tier")
-
-    def _resolve_oax_to_leiden(self, code: str) -> CanonicalResult:
-        for2020 = self._resolve_oax_to_for2020(code)
-        return self._resolve_from_for2020_code(code, for2020.code, "LEIDEN", "OAX")
 
     def _resolve_oax_to_oax(self, code: str, to_scheme: ToScheme) -> CanonicalResult:
         identified = self._oax_identify(code)

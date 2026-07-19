@@ -13,23 +13,21 @@ Run: .venv/Scripts/python.exe -m research_classification.audit_oax_for_bridges [
 from __future__ import annotations
 
 import sys
-from pathlib import Path
 
 import pandas as pd
 
-ROOT = Path(__file__).resolve().parent.parent
-DATA_DIR = ROOT / "research_classification" / "data"
+from .paths import BRIDGES_DIR, CANONICAL_DIR
 
 TOP_N_ALTERNATES_SHOWN = 5
 
 
 def _load_for_hierarchy() -> pd.DataFrame:
-    return pd.read_csv(DATA_DIR / "for_2020.csv", dtype=str, keep_default_na=False)
+    return pd.read_csv(CANONICAL_DIR / "for_2020.csv", dtype=str, keep_default_na=False)
 
 
 def dump_field_to_division() -> None:
     """The 26-row OAX field -> FOR2020 division bridge, one block per field."""
-    bridge = pd.read_csv(DATA_DIR / "bridge_openalex_for.csv", dtype=str, keep_default_na=False)
+    bridge = pd.read_csv(BRIDGES_DIR / "bridge_openalex_for.csv", dtype=str, keep_default_na=False)
     for_df = _load_for_hierarchy()
     div_label = dict(zip(for_df[for_df["level"] == "division"]["code"], for_df[for_df["level"] == "division"]["label"]))
 
@@ -47,12 +45,12 @@ def dump_field_to_division() -> None:
 def dump_subfield_to_group() -> None:
     """The 252-row OAX subfield -> FOR2020 group bridge, batched by parent OAX field so the
     review is tractable in ~26 chunks of ~9-10 subfields rather than one 252-row wall."""
-    subfields = pd.read_csv(DATA_DIR / "openalex_subfields.csv", dtype=str, keep_default_na=False)
-    fields = pd.read_csv(DATA_DIR / "openalex_fields.csv", dtype=str, keep_default_na=False)
+    subfields = pd.read_csv(CANONICAL_DIR / "openalex_subfields.csv", dtype=str, keep_default_na=False)
+    fields = pd.read_csv(CANONICAL_DIR / "openalex_fields.csv", dtype=str, keep_default_na=False)
     field_label = dict(zip(fields["code"], fields["label"]))
     subfield_field = dict(zip(subfields["code"], subfields["parent_code"]))
 
-    field_div_bridge = pd.read_csv(DATA_DIR / "bridge_openalex_for.csv", dtype=str, keep_default_na=False)
+    field_div_bridge = pd.read_csv(BRIDGES_DIR / "bridge_openalex_for.csv", dtype=str, keep_default_na=False)
     field_div_bridge = field_div_bridge[field_div_bridge["is_primary"].isin(["True", "true"])]
     division_of_field = dict(zip(field_div_bridge["source_code"], field_div_bridge["canonical_code"]))
     division_label_of_field = dict(zip(field_div_bridge["source_code"], field_div_bridge["canonical_label"]))
@@ -64,7 +62,7 @@ def dump_subfield_to_group() -> None:
         groups_by_division.setdefault(row["parent_code"], []).append((row["code"], row["label"]))
     div_label = dict(zip(for_df[for_df["level"] == "division"]["code"], for_df[for_df["level"] == "division"]["label"]))
 
-    bridge = pd.read_csv(DATA_DIR / "bridge_openalex_for_group.csv", dtype=str, keep_default_na=False)
+    bridge = pd.read_csv(BRIDGES_DIR / "bridge_openalex_for_group.csv", dtype=str, keep_default_na=False)
     bridge["confidence"] = bridge["confidence"].astype(float)
 
     n_below_floor = 0

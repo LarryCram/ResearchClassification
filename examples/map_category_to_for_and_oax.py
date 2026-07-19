@@ -1,6 +1,6 @@
 """Demo: map (year, hep_code, hep_name, state, Category, $K)-style rows -- e.g. from a
 HERDC/National Competitive Grants Register extract -- forward to FOR2020, OpenAlex (OAX),
-and Leiden Ranking Main Field, using research_classification.Resolver.
+and the FOR2020_AREA5 5-area aggregate, using research_classification.Resolver.
 
 This is the pattern for any other project: `pip install git+https://github.com/LarryCram/
 ResearchClassification.git`, then `Resolver()` -- no separate build step, no data file to
@@ -62,8 +62,9 @@ def best_for_division(con: duckdb.DuckDBPyConnection, category: str, top_n: int 
 
 def print_forward_result(prefix: str, resolver: Resolver, for2020) -> None:
     """for2020 is an already-resolved CanonicalResult targeting FOR2020 (its match_method/
-    confidence reflect whichever from_scheme it actually came from). The OAX/Leiden hops
-    always go through FOR2020's own division code as the hub, regardless of how we got here."""
+    confidence reflect whichever from_scheme it actually came from). The OAX hop and the
+    FOR2020_AREA5 hop both go through FOR2020's own division code as the hub, regardless of
+    how we got here."""
     print(f"{prefix}  ->  {for2020.label} [{for2020.code}] ({for2020.confidence:.2f}, {for2020.match_method})")
     try:
         oax = resolver.resolve(for2020.code, "FOR2020", "OAX_FIELD")
@@ -71,10 +72,10 @@ def print_forward_result(prefix: str, resolver: Resolver, for2020) -> None:
     except LookupError as e:
         print(f"{'':{len(prefix)}}  ->  OAX: unavailable -- {e}")
     try:
-        leiden = resolver.resolve(for2020.code, "FOR2020", "LEIDEN")
-        print(f"{'':{len(prefix)}}  ->  Leiden: {leiden.label} ({leiden.confidence:.2f})")
+        area5 = resolver.resolve(for2020.code, "FOR2020", "FOR2020_AREA5")
+        print(f"{'':{len(prefix)}}  ->  Area: {area5.label} ({area5.confidence:.2f})")
     except LookupError as e:
-        print(f"{'':{len(prefix)}}  ->  Leiden: unavailable -- {e}")
+        print(f"{'':{len(prefix)}}  ->  Area: unavailable -- {e}")
 
 
 def main() -> None:

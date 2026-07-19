@@ -50,12 +50,8 @@ from __future__ import annotations
 
 import re
 from collections import Counter
-from pathlib import Path
 
 import pandas as pd
-
-ROOT = Path(__file__).resolve().parent.parent
-DATA_DIR = ROOT / "research_classification" / "data"
 
 MIN_OVERLAP = 5  # below this raw intersection size, a bag-fallback match is noise, not signal
 _COARSE_LEVELS = {"division", "field"}

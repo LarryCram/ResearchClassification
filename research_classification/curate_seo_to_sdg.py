@@ -18,15 +18,10 @@ supplied a division-level SDG-alignment table directly and confirmed it as autho
 
 from __future__ import annotations
 
-from pathlib import Path
-
 import pandas as pd
 
 from .hierarchy import write_csv
-
-ROOT = Path(__file__).resolve().parent.parent
-DATA_DIR = ROOT / "research_classification" / "data"
-SEEDS_DIR = ROOT / "seeds"
+from .paths import CANONICAL_DIR, HUB_DIR, SEEDS_DIR
 
 # seo2020_division_code -> sdg_code
 _DIVISION_TO_SDG: dict[str, str] = {
@@ -57,9 +52,9 @@ def run() -> pd.DataFrame:
     if seed_path.exists():
         return pd.read_csv(seed_path, dtype=str, keep_default_na=False)
 
-    seo_df = pd.read_csv(DATA_DIR / "seo_2020.csv", dtype=str, keep_default_na=False)
+    seo_df = pd.read_csv(CANONICAL_DIR / "seo_2020.csv", dtype=str, keep_default_na=False)
     division_label = dict(zip(seo_df[seo_df["level"] == "division"]["code"], seo_df[seo_df["level"] == "division"]["label"]))
-    sdg_df = pd.read_csv(DATA_DIR / "sdg.csv", dtype=str, keep_default_na=False)
+    sdg_df = pd.read_csv(CANONICAL_DIR / "sdg.csv", dtype=str, keep_default_na=False)
     goal_label = dict(zip(sdg_df[sdg_df["level"] == "goal"]["code"], sdg_df[sdg_df["level"] == "goal"]["label"]))
 
     assert set(_DIVISION_TO_SDG) == set(division_label), (
@@ -88,4 +83,4 @@ def run() -> pd.DataFrame:
 
 
 def write_data_table(seed: pd.DataFrame) -> None:
-    write_csv(seed, DATA_DIR / "seo2020_division_sdg.csv", ["seo2020_division_code"])
+    write_csv(seed, HUB_DIR / "seo2020_division_sdg.csv", ["seo2020_division_code"])

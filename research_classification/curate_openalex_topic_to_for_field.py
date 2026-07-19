@@ -54,17 +54,12 @@ audit_oax_for_bridges.py already surfaces for the subfield->group tier.
 
 from __future__ import annotations
 
-from pathlib import Path
-
 import pandas as pd
 
 from . import build_openalex
 from . import cascade_match as cm
 from .hierarchy import BRIDGE_COLUMNS, write_csv
-
-ROOT = Path(__file__).resolve().parent.parent
-DATA_DIR = ROOT / "research_classification" / "data"
-SEEDS_DIR = ROOT / "seeds"
+from .paths import BRIDGES_DIR, CANONICAL_DIR, SEEDS_DIR
 
 MIN_OVERLAP = 1
 TOP_N_ALTERNATES = 5
@@ -91,13 +86,13 @@ def run() -> pd.DataFrame:
     raw = build_openalex.load_raw()
     topic_bag = {r["topic_id"]: _topic_bag(r) for _, r in raw.iterrows()}
 
-    topics = pd.read_csv(DATA_DIR / "openalex_topics.csv", dtype=str, keep_default_na=False)
+    topics = pd.read_csv(CANONICAL_DIR / "openalex_topics.csv", dtype=str, keep_default_na=False)
 
-    subfield_group = pd.read_csv(DATA_DIR / "bridge_openalex_for_group.csv", dtype=str, keep_default_na=False)
+    subfield_group = pd.read_csv(BRIDGES_DIR / "bridge_openalex_for_group.csv", dtype=str, keep_default_na=False)
     subfield_group = subfield_group[subfield_group["is_primary"].isin(["True", "true"])]
     group_of_subfield = dict(zip(subfield_group["source_code"], subfield_group["canonical_code"]))
 
-    for_df = pd.read_csv(DATA_DIR / "for_2020.csv", dtype=str, keep_default_na=False)
+    for_df = pd.read_csv(CANONICAL_DIR / "for_2020.csv", dtype=str, keep_default_na=False)
     fields = for_df[for_df["level"] == "field"]
     field_label = dict(zip(fields["code"], fields["label"]))
     fields_by_group: dict[str, list[str]] = {}
@@ -234,7 +229,7 @@ if __name__ == "__main__":
     seed = run()
     print(f"seed rows: {len(seed)}, unique topics covered: {seed['openalex_topic_id'].nunique()} / 4516")
     bridge = to_bridge(seed)
-    write_csv(bridge, DATA_DIR / "bridge_openalex_for_topic.csv", ["source_code"])
+    write_csv(bridge, BRIDGES_DIR / "bridge_openalex_for_topic.csv", ["source_code"])
     print("bridge rows:", len(bridge))
     print("\nmatch_method breakdown (primary rows only):")
     primary = seed[seed["is_primary"].astype(str) == "True"]

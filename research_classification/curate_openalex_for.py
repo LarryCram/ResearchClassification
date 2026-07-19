@@ -20,16 +20,11 @@ curate_openalex_field_to_for_precise.py doesn't need to re-run the search from s
 
 from __future__ import annotations
 
-from pathlib import Path
-
 import pandas as pd
 
 from . import cascade_match as cm
 from .hierarchy import BRIDGE_COLUMNS, write_csv
-
-ROOT = Path(__file__).resolve().parent.parent
-DATA_DIR = ROOT / "research_classification" / "data"
-SEEDS_DIR = ROOT / "seeds"
+from .paths import BRIDGES_DIR, CANONICAL_DIR, SEEDS_DIR
 
 # Escape hatch for fields the cascade can't resolve with confidence -- filled in only after
 # inspecting the real run's output (never guessed in advance).
@@ -76,10 +71,10 @@ def run() -> pd.DataFrame:
     if seed_path.exists():
         return pd.read_csv(seed_path, dtype=str, keep_default_na=False)
 
-    fields = pd.read_csv(DATA_DIR / "openalex_fields.csv", dtype=str, keep_default_na=False)
-    subfields = pd.read_csv(DATA_DIR / "openalex_subfields.csv", dtype=str, keep_default_na=False)
-    topics = pd.read_csv(DATA_DIR / "openalex_topics.csv", dtype=str, keep_default_na=False)
-    for_df = pd.read_csv(DATA_DIR / "for_2020.csv", dtype=str, keep_default_na=False)
+    fields = pd.read_csv(CANONICAL_DIR / "openalex_fields.csv", dtype=str, keep_default_na=False)
+    subfields = pd.read_csv(CANONICAL_DIR / "openalex_subfields.csv", dtype=str, keep_default_na=False)
+    topics = pd.read_csv(CANONICAL_DIR / "openalex_topics.csv", dtype=str, keep_default_na=False)
+    for_df = pd.read_csv(CANONICAL_DIR / "for_2020.csv", dtype=str, keep_default_na=False)
 
     field_label = dict(zip(fields["code"], fields["label"]))
     # Division 45 (Indigenous Studies) is excluded from the general candidate pool -- its
@@ -181,7 +176,7 @@ if __name__ == "__main__":
     seed = run()
     print(seed.to_string())
     bridge = to_bridge(seed)
-    write_csv(bridge, DATA_DIR / "bridge_openalex_for.csv", ["source_code"])
+    write_csv(bridge, BRIDGES_DIR / "bridge_openalex_for.csv", ["source_code"])
     print("\nbridge rows:", len(bridge))
     print("\nmatch_method breakdown:")
     print(seed["match_method"].value_counts())

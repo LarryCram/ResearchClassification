@@ -1,18 +1,14 @@
 from __future__ import annotations
 
-from pathlib import Path
-
 import pandas as pd
 
 from .hierarchy import write_csv
-
-ROOT = Path(__file__).resolve().parent.parent
-DATA_DIR = ROOT / "research_classification" / "data"
+from .paths import CANONICAL_DIR
 
 # Static "Rosetta stone" of how every scheme's levels line up by granularity.
 # rank=1 is the coarsest level within that scheme. cardinality/corresponds_to are filled
 # in once the relevant tables exist (build.py calls run() after build_for_seo/build_openalex/
-# build_asjc/build_leiden so the counts below are always live, not guessed).
+# build_asjc/build_for_area5 so the counts below are always live, not guessed).
 _ROWS = [
     ("FOR", "division", 1, "2-digit", ""),
     ("FOR", "group", 2, "4-digit", ""),
@@ -23,11 +19,10 @@ _ROWS = [
     ("OAX", "domain", 1, "1-digit", ""),
     ("OAX", "field", 2, "2-digit", "ASJC field code (exact)"),
     ("OAX", "subfield", 3, "4-digit", "ASJC subfield code (exact)"),
-    ("OAX", "topic", 4, "5-digit", "Leiden micro_cluster (91% exact via wikipedia_url)"),
+    ("OAX", "topic", 4, "5-digit", ""),
     ("ASJC", "field", 2, "2-digit", "= OAX field_id (exact)"),
     ("ASJC", "subfield", 3, "4-digit", "superset of OAX subfield_id (252 of 361 used)"),
-    ("Leiden", "main_field", 1, "integer 1-5", "~OAX domain (derived, majority vote)"),
-    ("Leiden", "micro_cluster", 4, "integer", "91% exact join to OAX topic via wikipedia_url"),
+    ("FOR2020_AREA5", "area", 1, "label", "direct FOR2020 division -> area fact, user-provided"),
 ]
 
 
@@ -44,14 +39,14 @@ _SOURCE_FILES = {
     ("OAX", "topic"): ("openalex_topics.csv", None),
     ("ASJC", "field"): ("asjc.csv", "field"),
     ("ASJC", "subfield"): ("asjc.csv", "subfield"),
-    ("Leiden", "main_field"): ("leiden_main_field.csv", None),
+    ("FOR2020_AREA5", "area"): ("for2020_area5.csv", None),
 }
 
 
 def _live_cardinalities() -> dict[tuple[str, str], int]:
     cardinalities: dict[tuple[str, str], int] = {}
     for key, (fname, level_filter) in _SOURCE_FILES.items():
-        path = DATA_DIR / fname
+        path = CANONICAL_DIR / fname
         if not path.exists():
             continue
         df = pd.read_csv(path, dtype=str, keep_default_na=False)
@@ -74,7 +69,7 @@ def run(cardinalities: dict[tuple[str, str], int] | None = None) -> pd.DataFrame
             }
         )
     df = pd.DataFrame(rows)
-    write_csv(df, DATA_DIR / "scheme_registry.csv", ["scheme", "rank"])
+    write_csv(df, CANONICAL_DIR / "scheme_registry.csv", ["scheme", "rank"])
     return df
 
 

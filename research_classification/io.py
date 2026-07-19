@@ -1,42 +1,11 @@
-"""Shared parsing utilities: legacy .xls conversion and ANZSRC-style hierarchy readers."""
+"""Shared parsing utilities: ANZSRC-style hierarchy readers."""
 
 from __future__ import annotations
 
-import subprocess
 from pathlib import Path
 
 import openpyxl
 import pandas as pd
-
-RAW_DIR = Path(__file__).resolve().parent.parent / "data_untracked"
-CONVERTED_DIR = RAW_DIR / "_converted"
-
-
-def ensure_converted(xls_path: Path) -> Path:
-    """Convert a legacy .xls file to .xlsx via headless LibreOffice, caching the result.
-
-    Re-converts only if the source is newer than any previously converted copy.
-    """
-    CONVERTED_DIR.mkdir(parents=True, exist_ok=True)
-    target = CONVERTED_DIR / (xls_path.stem + ".xlsx")
-    if target.exists() and target.stat().st_mtime >= xls_path.stat().st_mtime:
-        return target
-    subprocess.run(
-        [
-            "soffice",
-            "--headless",
-            "--convert-to",
-            "xlsx",
-            "--outdir",
-            str(CONVERTED_DIR),
-            str(xls_path),
-        ],
-        check=True,
-        capture_output=True,
-    )
-    if not target.exists():
-        raise RuntimeError(f"soffice conversion did not produce {target}")
-    return target
 
 
 def read_indented_hierarchy(
