@@ -28,6 +28,8 @@ from typing import Literal
 
 import duckdb
 
+from .paths import DUCKDB_SOURCE_SUBDIR_NAMES
+
 FromScheme = Literal["OAX", "FOR1998", "FOR2008", "FOR2020", "SEO1998", "SEO2008", "SEO2020"]
 ToScheme = Literal[
     "OAX_DOMAIN", "OAX_FIELD", "OAX_SUBFIELD", "OAX_TOPIC", "FOR2020", "SEO2020",
@@ -199,8 +201,8 @@ class Resolver:
         # canonical/bridges/hub only -- seeds/ holds cache/input artifacts for the build
         # pipeline's curate_*.py scripts, not resolver-queryable tables (this matches
         # pre-restructure behavior, where seeds/ lived outside data/ entirely and was never
-        # bundled here either).
-        for subdir_name in ("canonical", "bridges", "hub"):
+        # bundled here either). Same three names build_duckdb.py loads via DUCKDB_SOURCE_DIRS.
+        for subdir_name in DUCKDB_SOURCE_SUBDIR_NAMES:
             subdir = data_dir / subdir_name
             for csv_path in sorted(p for p in subdir.iterdir() if p.name.endswith(".csv")):
                 table = csv_path.name.removesuffix(".csv")
@@ -330,7 +332,7 @@ class Resolver:
     # CWTS Leiden's main_field used to play (a coarse, top-level grouping above the FOR
     # divisions) but without the old indirect FOR2020 -> OAX -> Leiden derivation loop.
 
-    def _area5_lookup(self, for2020_code: str) -> tuple[str, str]:
+    def _area5_result(self, input_value: str, from_scheme: FromScheme, for2020_code: str) -> CanonicalResult:
         division_code = for2020_code[:2]
         row = self._con.execute(
             "SELECT area5_code, area5_label FROM for2020_area5 WHERE for2020_division_code = ?",
@@ -338,17 +340,16 @@ class Resolver:
         ).fetchone()
         if not row:
             raise LookupError(f"FOR2020 division {division_code!r}: no FOR2020_AREA5 mapping found")
-        return row
+        area_code, area_label = row
+        return CanonicalResult(input_value, from_scheme, "FOR2020_AREA5", area_code, area_label, "area", "user_provided", 1.0)
 
     def _resolve_for_to_area5(self, code: str, from_scheme: FromScheme) -> CanonicalResult:
         for2020 = self._resolve_vintage_to_current(code, from_scheme, "FOR")
-        area_code, area_label = self._area5_lookup(for2020.code)
-        return CanonicalResult(code, from_scheme, "FOR2020_AREA5", area_code, area_label, "area", "user_provided", 1.0)
+        return self._area5_result(code, from_scheme, for2020.code)
 
     def _resolve_oax_to_area5(self, code: str) -> CanonicalResult:
         for2020 = self._resolve_oax_to_for2020(code)
-        area_code, area_label = self._area5_lookup(for2020.code)
-        return CanonicalResult(code, "OAX", "FOR2020_AREA5", area_code, area_label, "area", "user_provided", 1.0)
+        return self._area5_result(code, "OAX", for2020.code)
 
     # -- OAX hierarchy walking (up only) ------------------------------------
 

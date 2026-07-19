@@ -91,10 +91,7 @@ def run() -> dict[str, pd.DataFrame]:
     for name, df in tables.items():
         write_csv(df, CANONICAL_DIR / f"{name}.csv", ["code"])
 
-    # keep the enriched topic-level table (with keywords/summary/wikipedia_url) available
-    # in-memory for the Leiden join and the curation self-check; not written as a separate
-    # canonical file since 'level' semantics already live in openalex_topics.csv.
-    return {**tables, "_raw": raw}
+    return tables
 
 
 if __name__ == "__main__":

@@ -21,6 +21,18 @@ from research_classification.paths import BRIDGES_DIR, CANONICAL_DIR, DB_PATH
 resolver = Resolver()
 
 
+def _assert_all_resolve(codes, from_scheme, to_scheme) -> None:
+    """Shared body for the exhaustive coverage tests below: every code must resolve from
+    from_scheme to to_scheme without raising LookupError."""
+    failures = set()
+    for code in codes:
+        try:
+            resolver.resolve(code, from_scheme, to_scheme)
+        except LookupError:
+            failures.add(code)
+    assert not failures, f"{from_scheme} -> {to_scheme}: unexpected LookupError(s) for {failures}"
+
+
 def test_row_counts():
     counts = {
         "for_2020": 2203,
@@ -197,13 +209,7 @@ def test_exhaustive_seo2020_to_sdg_coverage():
     seo_df = pd.read_csv(CANONICAL_DIR / "seo_2020.csv", dtype=str, keep_default_na=False)
     divisions = seo_df[seo_df["level"] == "division"]["code"]
     for to_scheme in ("SDG_GOAL", "SDG_PILLAR"):
-        failures = set()
-        for code in divisions:
-            try:
-                resolver.resolve(code, "SEO2020", to_scheme)
-            except LookupError:
-                failures.add(code)
-        assert not failures, f"{to_scheme}: unexpected LookupError(s) for {failures}"
+        _assert_all_resolve(divisions, "SEO2020", to_scheme)
     print(f"  exhaustive SEO2020->SDG coverage OK: all {len(divisions)}/{len(divisions)} divisions resolve to both SDG_GOAL and SDG_PILLAR")
 
 
@@ -338,13 +344,7 @@ def test_exhaustive_for2020_to_oax_coverage():
     # remaining gap (group 4599, proxied to FOR2020 group 4499 "Other human society"). This
     # is a permanent regression guard: any future failure here means something broke.
     for_df = pd.read_csv(CANONICAL_DIR / "for_2020.csv", dtype=str, keep_default_na=False)
-    failures = set()
-    for code in for_df["code"]:
-        try:
-            resolver.resolve(code, "FOR2020", "OAX_FIELD")
-        except LookupError:
-            failures.add(code)
-    assert not failures, f"OAX_FIELD: unexpected LookupError(s) for {failures}"
+    _assert_all_resolve(for_df["code"], "FOR2020", "OAX_FIELD")
     print(f"  exhaustive FOR2020 coverage OK: all {len(for_df)}/{len(for_df)} codes resolve to OAX_FIELD")
 
 
@@ -356,13 +356,7 @@ def test_exhaustive_legacy_for_coverage():
     for from_scheme, bridge_file in [("FOR1998", "bridge_for1998_for2020.csv"), ("FOR2008", "bridge_for2008_for2020.csv")]:
         bridge = pd.read_csv(BRIDGES_DIR / bridge_file, dtype=str, keep_default_na=False)
         codes = bridge["source_code"].unique()
-        failures = set()
-        for code in codes:
-            try:
-                resolver.resolve(code, from_scheme, "OAX_FIELD")
-            except LookupError:
-                failures.add(code)
-        assert not failures, f"{from_scheme} -> OAX_FIELD: unexpected LookupError(s) for {failures}"
+        _assert_all_resolve(codes, from_scheme, "OAX_FIELD")
         print(f"  exhaustive {from_scheme} coverage OK: all {len(codes)}/{len(codes)} codes resolve to OAX_FIELD")
 
 
@@ -370,13 +364,7 @@ def test_exhaustive_oax_field_to_for2020_division_coverage():
     # Every OAX field (26) resolves to a FOR2020 division -- cheap regression guard, already
     # true before the subfield/topic audit work but worth locking in permanently too.
     fields = pd.read_csv(CANONICAL_DIR / "openalex_fields.csv", dtype=str, keep_default_na=False)
-    failures = set()
-    for code in fields["code"]:
-        try:
-            resolver.resolve(code, "OAX", "FOR2020")
-        except LookupError:
-            failures.add(code)
-    assert not failures, f"OAX field -> FOR2020: unexpected LookupError(s) for {failures}"
+    _assert_all_resolve(fields["code"], "OAX", "FOR2020")
     print(f"  exhaustive OAX field -> FOR2020 coverage OK: all {len(fields)}/{len(fields)} fields resolve")
 
 
@@ -491,13 +479,7 @@ def test_exhaustive_for2020_to_area5_coverage():
     # Every single FOR2020 code resolves to FOR2020_AREA5 -- a direct division-code lookup,
     # so this should never have a gap (unlike the OAX bridges, no cultural-proxy chain needed).
     for_df = pd.read_csv(CANONICAL_DIR / "for_2020.csv", dtype=str, keep_default_na=False)
-    failures = set()
-    for code in for_df["code"]:
-        try:
-            resolver.resolve(code, "FOR2020", "FOR2020_AREA5")
-        except LookupError:
-            failures.add(code)
-    assert not failures, f"FOR2020_AREA5: unexpected LookupError(s) for {failures}"
+    _assert_all_resolve(for_df["code"], "FOR2020", "FOR2020_AREA5")
     print(f"  exhaustive FOR2020 -> FOR2020_AREA5 coverage OK: all {len(for_df)}/{len(for_df)} codes resolve")
 
 

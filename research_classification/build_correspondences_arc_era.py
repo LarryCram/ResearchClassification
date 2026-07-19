@@ -25,8 +25,9 @@ from collections import Counter
 
 import pandas as pd
 
+from .build_correspondences_abs import _canonical_label_lookup
 from .hierarchy import BRIDGE_COLUMNS, write_csv
-from .paths import BRIDGES_DIR, CANONICAL_DIR, RAW_DIR
+from .paths import BRIDGES_DIR, RAW_DIR
 
 FOR2008_XLSX = RAW_DIR / "arc_era" / "australia-era-for.xlsx"
 FOR2020_XLSX = RAW_DIR / "arc_era" / "Australia-era-for-2023.xlsx"
@@ -73,9 +74,7 @@ def _tally(
     target_votes = for2020[for2020["level"] == level].groupby("journal")["code"].apply(list).to_dict()
 
     source_label = dict(zip(source["code"], source["fordesc"]))
-    journals_by_code: dict[str, list[str]] = {}
-    for code, grp in source.groupby("code"):
-        journals_by_code[code] = grp["journal"].tolist()
+    journals_by_code = source.groupby("code")["journal"].apply(list).to_dict()
 
     rows = []
     for code, journals in journals_by_code.items():
@@ -105,8 +104,7 @@ def _tally(
 
 
 def run() -> pd.DataFrame:
-    for_df = pd.read_csv(CANONICAL_DIR / "for_2020.csv", dtype=str, keep_default_na=False)
-    for_canonical_lookup = dict(zip(for_df["code"], for_df["label"]))
+    for_canonical_lookup = _canonical_label_lookup("FOR")
 
     for2008 = _load_for2008_journal_codes()
     for2020 = _load_for2020_journal_codes()
