@@ -1,0 +1,18 @@
+sdg_code,sdg_label,oax_subfield_code,oax_subfield_label,seo2020_division_code,seo2020_division_label,match_method,confidence,notes
+1,No Poverty,3207,Social Psychology,13,CULTURE AND SOCIETY,manual_curated,0.7,broad fit; no subfield names poverty/welfare directly
+1,No Poverty,3300,General Social Sciences,13,CULTURE AND SOCIETY,manual_curated,0.7,broad fit; no subfield names poverty/welfare directly
+10,Reduced Inequalities,3316,Cultural Studies,13,CULTURE AND SOCIETY,manual_curated,0.8,clear semantic fit
+14,Life Below Water,1104,Aquatic Science,18,ENVIRONMENTAL MANAGEMENT,manual_curated,0.8,clear semantic fit
+14,Life Below Water,1910,Oceanography,18,ENVIRONMENTAL MANAGEMENT,manual_curated,0.8,clear semantic fit
+14,Life Below Water,2212,Ocean Engineering,18,ENVIRONMENTAL MANAGEMENT,manual_curated,0.7,"engineering angle, slightly less direct than the other two"
+16,"Peace, Justice and Strong Institutions",3308,Law,23,"LAW, POLITICS AND COMMUNITY SERVICES",contains_match,0.9,
+17,Partnerships for the Goals,3320,Political Science and International Relations,23,"LAW, POLITICS AND COMMUNITY SERVICES",manual_curated,0.5,"weak/stretch: this SDG goal is a meta/process goal about cooperation as a means, not a subject domain"
+2,Zero Hunger,1103,Animal Science and Zoology,10,ANIMAL PRODUCTION AND ANIMAL PRIMARY PRODUCTS,manual_curated,0.9,"clear semantic fit (goal 2's other candidate, division 26, is already resolved lexically via 'Plant Science')"
+2,Zero Hunger,1110,Plant Science,26,PLANT PRODUCTION AND PLANT PRIMARY PRODUCTS,contains_match,0.9,
+5,Gender Equality,3318,Gender Studies,13,CULTURE AND SOCIETY,manual_curated,0.8,clear semantic fit
+6,Clean Water and Sanitation,2312,Water Science and Technology,18,ENVIRONMENTAL MANAGEMENT,manual_curated,0.8,clear semantic fit
+8,Decent Work and Economic Growth,1409,"Tourism, Leisure and Hospitality Management",11,COMMERCIAL SERVICES AND TOURISM,manual_curated,0.9,clear semantic fit
+8,Decent Work and Economic Growth,2002,Economics and Econometrics,15,ECONOMIC FRAMEWORK,manual_curated,0.8,clear semantic fit
+9,"Industry, Innovation and Infrastructure",2209,Industrial and Manufacturing Engineering,24,MANUFACTURING,contains_match,0.9,
+9,"Industry, Innovation and Infrastructure",2215,Building and Construction,12,CONSTRUCTION,contains_match,0.9,
+9,"Industry, Innovation and Infrastructure",3315,Communication,22,INFORMATION AND COMMUNICATION SERVICES,contains_match,0.9,

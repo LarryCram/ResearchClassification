@@ -25,6 +25,7 @@ from research_classification import (
     curate_openalex_for,
     curate_openalex_subfield_to_for_group,
     curate_openalex_topic_to_for_field,
+    curate_sdg_oax_to_seo,
     curate_seo_to_sdg,
     validate_oax_for2020_consistency,
 )
@@ -89,6 +90,9 @@ def main() -> None:
         oax_combined, 4 + 26 + 252 + 4516, "OAX",
         require_prefix=False, level_order=["domain", "field", "subfield", "topic"],
     )
+
+    print("2b. Deriving (SDG goal, OAX subfield) -> SEO2020 division (lexical + manual pass)...")
+    curate_sdg_oax_to_seo.run()
 
     print("3. Building ASJC table and exact-ID bridge to OpenAlex...")
     build_asjc.run()

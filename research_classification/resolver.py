@@ -30,13 +30,17 @@ import duckdb
 
 from .paths import DUCKDB_SOURCE_SUBDIR_NAMES
 
-FromScheme = Literal["OAX", "FOR1998", "FOR2008", "FOR2020", "SEO1998", "SEO2008", "SEO2020"]
+FromScheme = Literal[
+    "OAX", "FOR1998", "FOR2008", "FOR2020", "SEO1998", "SEO2008", "SEO2020", "SDG_GOAL",
+]
 ToScheme = Literal[
     "OAX_DOMAIN", "OAX_FIELD", "OAX_SUBFIELD", "OAX_TOPIC", "FOR2020", "SEO2020",
     "FOR2020_AREA5", "SDG_GOAL", "SDG_PILLAR",
 ]
 
-_VALID_FROM_SCHEMES = {"OAX", "FOR1998", "FOR2008", "FOR2020", "SEO1998", "SEO2008", "SEO2020"}
+_VALID_FROM_SCHEMES = {
+    "OAX", "FOR1998", "FOR2008", "FOR2020", "SEO1998", "SEO2008", "SEO2020", "SDG_GOAL",
+}
 _VALID_TO_SCHEMES = {
     "OAX_DOMAIN", "OAX_FIELD", "OAX_SUBFIELD", "OAX_TOPIC", "FOR2020", "SEO2020",
     "FOR2020_AREA5", "SDG_GOAL", "SDG_PILLAR",
@@ -115,6 +119,37 @@ _KNOWN_UNRESOLVABLE: dict[tuple[str, str], str] = {
         "FOR1998 division 22 'SOCIAL SCIENCES, HUMANITIES AND ARTS-GENERAL' has no FOR2020 "
         "equivalent -- FOR2020 has no general/multidisciplinary catch-all division, and this "
         "1998 division has zero child disciplines/subjects to derive one from. See TODO.md."
+    ),
+    # 5 of the 17 SDG goals have zero SEO2020 divisions pointing at them in the user-curated
+    # seo2020_division_sdg table -- a genuine absence in that source, not a lookup gap. This
+    # only gates the goal-ALONE path (plain resolve()/resolve_sdg_oax_to_seo() with no useful
+    # OAX subfield): resolve_sdg_oax_to_seo() checks its own (goal, subfield) table first and
+    # can still resolve 4 of these 5 when a matching subfield is supplied, bypassing this
+    # entirely -- see TODO.md.
+    ("SDG_GOAL", "1"): (
+        "SDG goal 1 'No Poverty' has no SEO2020 division mapped to it in seo2020_division_sdg "
+        "-- none of the 19 SEO2020 divisions the user aligned to SDGs points here. Try "
+        "resolve_sdg_oax_to_seo() with an OAX subfield code for a possible match. See TODO.md."
+    ),
+    ("SDG_GOAL", "5"): (
+        "SDG goal 5 'Gender Equality' has no SEO2020 division mapped to it in "
+        "seo2020_division_sdg. Try resolve_sdg_oax_to_seo() with an OAX subfield code for a "
+        "possible match. See TODO.md."
+    ),
+    ("SDG_GOAL", "6"): (
+        "SDG goal 6 'Clean Water and Sanitation' has no SEO2020 division mapped to it in "
+        "seo2020_division_sdg. Try resolve_sdg_oax_to_seo() with an OAX subfield code for a "
+        "possible match. See TODO.md."
+    ),
+    ("SDG_GOAL", "14"): (
+        "SDG goal 14 'Life Below Water' has no SEO2020 division mapped to it in "
+        "seo2020_division_sdg. Try resolve_sdg_oax_to_seo() with an OAX subfield code for a "
+        "possible match. See TODO.md."
+    ),
+    ("SDG_GOAL", "17"): (
+        "SDG goal 17 'Partnerships for the Goals' has no SEO2020 division mapped to it in "
+        "seo2020_division_sdg. Try resolve_sdg_oax_to_seo() with an OAX subfield code for a "
+        "possible (but weak) match. See TODO.md."
     ),
 }
 
@@ -238,6 +273,16 @@ class Resolver:
                 if text.endswith("00"):
                     return text[:4]
             return text
+        if from_scheme == "SDG_GOAL":
+            # SDG codes are natively unpadded ("1".."9", "10".."17" -- sdg.csv has no padding
+            # convention), so unlike FOR/SEO there's no *lost*-leading-zero case to recover
+            # here. The only realistic risk is the opposite: a caller/upstream source that
+            # zero-pads to 2 digits (e.g. "01" for goal 1). Strip a single leading zero
+            # defensively; a genuine 2-digit code (10-17) never starts with "0" so this can't
+            # misfire.
+            if len(text) == 2 and text.startswith("0"):
+                return text[1:]
+            return text
         native_lengths = _NATIVE_LENGTHS.get(from_scheme, set())
         if len(text) in native_lengths:
             return text
@@ -326,6 +371,74 @@ class Resolver:
         pillar_label = self._con.execute("SELECT label FROM sdg WHERE code = ? AND level = 'pillar'", [pillar_code]).fetchone()[0]
         return CanonicalResult(code, from_scheme, to_scheme, pillar_code, pillar_label, "pillar", "user_provided", float(confidence))
 
+    # -- SDG_GOAL -> SEO2020 (division-level, mechanically inverted from the same
+    #    user-provided seo2020_division_sdg table above) ---------------------------------
+
+    def _resolve_sdg_to_seo(self, code: str, from_scheme: FromScheme, to_scheme: ToScheme) -> CanonicalResult:
+        rows = self._con.execute(
+            "SELECT seo2020_division_code, seo2020_division_label FROM seo2020_division_sdg "
+            "WHERE sdg_code = ? ORDER BY seo2020_division_code ASC",
+            [code],
+        ).fetchall()
+        if not rows:
+            rows = self._con.execute(
+                "SELECT seo2020_division_code, seo2020_division_label FROM seo2020_division_sdg "
+                "WHERE lower(sdg_label) = lower(?) ORDER BY seo2020_division_code ASC",
+                [code],
+            ).fetchall()
+        if not rows:
+            raise LookupError(f"{code!r}: no SEO2020 division maps to this SDG goal in seo2020_division_sdg")
+
+        # 17 SDG goals sit over 19 SEO2020 divisions, so several goals have more than one
+        # division pointing at them (e.g. goal 9 <- divisions 12, 22, 24, 28) -- a genuine,
+        # undifferentiated split with nothing in the source data to prefer one division over
+        # another, so confidence = 1/N reflects that honestly rather than fabricating a
+        # tiebreak score. Primary is the lowest division code (deterministic, not
+        # meaningful); the rest are alternates -- same is_primary/alternates shape used
+        # everywhere else in this module for a real multi-candidate judgment call.
+        confidence = 1.0 / len(rows)
+        results = [
+            CanonicalResult(code, from_scheme, to_scheme, division_code, division_label, "division",
+                             "user_provided_inverted", confidence)
+            for division_code, division_label in rows
+        ]
+        primary, *rest = results
+        return CanonicalResult(
+            primary.input_value, primary.from_scheme, primary.to_scheme, primary.code, primary.label,
+            primary.level, primary.match_method, primary.confidence, alternates=tuple(rest),
+        )
+
+    def _resolve_sdg_oax_to_seo(self, sdg_code: str, oax_code: str | None) -> CanonicalResult | None:
+        """(sdg_code, oax_code) -> SEO2020 division, refining the plain SDG_GOAL -> SEO2020
+        direction with an OAX subfield's disambiguating signal, when available. Checks
+        sdg_oax_subfield_to_seo2020 (research_classification/curate_sdg_oax_to_seo.py) first
+        -- a small, curated table built via lexical word-set matching (exact_match/
+        contains_match) plus direct manual judgment for the handful of cases lexical matching
+        alone can't resolve -- falling back to the plain resolve('SDG_GOAL' -> 'SEO2020')
+        path (multi-alternate split, or the known-unresolvable warn+None for the 5 orphan
+        goals) whenever no oax_code is given or it has no entry for this SDG goal. This
+        method never does worse than that plain path -- it's a strict refinement."""
+        if oax_code is not None:
+            normalized_oax = self._normalize_code(oax_code, "OAX")
+            row = self._con.execute(
+                "SELECT seo2020_division_code, seo2020_division_label, match_method, confidence "
+                "FROM sdg_oax_subfield_to_seo2020 WHERE sdg_code = ? AND oax_subfield_code = ?",
+                [sdg_code, normalized_oax],
+            ).fetchone()
+            if not row:
+                row = self._con.execute(
+                    "SELECT seo2020_division_code, seo2020_division_label, match_method, confidence "
+                    "FROM sdg_oax_subfield_to_seo2020 WHERE sdg_code = ? AND lower(oax_subfield_label) = lower(?)",
+                    [sdg_code, oax_code],
+                ).fetchone()
+            if row:
+                division_code, division_label, method, confidence = row
+                return CanonicalResult(
+                    sdg_code, "SDG_GOAL", "SEO2020", division_code, division_label, "division",
+                    method, float(confidence),
+                )
+        return self.resolve(sdg_code, "SDG_GOAL", "SEO2020")
+
     # -- FOR -> FOR2020_AREA5 (division-level, user-provided) ----------------
     #
     # A direct FOR2020 division -> area fact, not a bridge/cascade -- plays the same role
@@ -410,6 +523,15 @@ class Resolver:
                 return self._resolve_from_for_division_hub(code, from_scheme, to_scheme)
             raise ValueError(f"from_scheme={from_scheme!r} cannot target to_scheme={to_scheme!r}")
 
+        if from_scheme == "SDG_GOAL":
+            if to_scheme == "SEO2020":
+                return self._resolve_sdg_to_seo(code, from_scheme, to_scheme)
+            raise ValueError(
+                f"from_scheme='SDG_GOAL' can only target to_scheme='SEO2020' for now -- "
+                f"FOR2020/OAX reverse resolution is deferred (see TODO.md); "
+                f"to_scheme={to_scheme!r} is not supported from an SDG_GOAL input"
+            )
+
         # from_scheme == "OAX"
         if to_scheme == "FOR2020":
             return self._resolve_oax_to_for2020(code)
@@ -423,6 +545,19 @@ class Resolver:
         self, values: list[str | int], from_scheme: FromScheme, to_scheme: ToScheme
     ) -> list[CanonicalResult]:
         return [self.resolve(v, from_scheme, to_scheme) for v in values]
+
+    def resolve_sdg_oax_to_seo(self, sdg_code: str | int, oax_code: str | int | None = None) -> CanonicalResult | None:
+        """SDG_GOAL -> SEO2020, refined by an OAX subfield code when one is available (e.g.
+        a real OpenAlex work tagged with both an SDG and an OAX subfield). A plain SDG goal
+        alone can't disambiguate the cases where more than one SEO2020 division aligns to it
+        (see resolve('SDG_GOAL' -> 'SEO2020')'s multi-alternate behavior) -- the (goal,
+        subfield) pair often can. Falls back to that same plain path (including its
+        known-unresolvable warn+None for 5 goals with no SEO2020 division at all) whenever
+        oax_code is omitted or has no curated entry for this goal; never worse than calling
+        resolve() directly. See TODO.md for the full worked example and coverage."""
+        code = self._normalize_code(sdg_code, "SDG_GOAL")
+        oax = None if oax_code is None else str(oax_code)
+        return self._resolve_sdg_oax_to_seo(code, oax)
 
     # -- FOR-family -> OAX, via the FOR2020-division hub --------------------
 

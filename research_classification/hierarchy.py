@@ -37,6 +37,7 @@ MATCH_METHODS = {
     "lexical",
     "cultural_proxy",
     "user_provided",
+    "user_provided_inverted",
 }
 
 

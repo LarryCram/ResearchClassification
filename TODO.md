@@ -151,12 +151,67 @@ our real division 27 is "Transport", 28 is "Expanding Knowledge"; the source tab
 "Transport" at 31 and no counterpart for "Expanding Knowledge" at all). Resolved by matching
 on label rather than the source's code, plus two direct user overrides (division 27 reuses
 the source's own "Transport" row; division 28 -> SDG 9). Full 19/19 coverage, exhaustively
-tested (`test_exhaustive_seo2020_to_sdg_coverage`).
+tested (`test_exhaustive_seo2020_to_sdg_coverage`; SEO1998/SEO2008's own exhaustive coverage
+of this hop, previously just a single spot-check each, was closed too --
+`test_exhaustive_legacy_seo_to_sdg_coverage`).
 
-**Deferred, explicitly out of scope for now**: the user's next ask is "a higher aggregation
-like Leiden for FOR" -- i.e. FOR (and/or OAX) reaching SDG too. `to_scheme="SDG_GOAL"`/
-`"SDG_PILLAR"` currently raise `ValueError` for any `from_scheme` other than SEO*, on
-purpose -- not a gap to close incidentally, a separate future request.
+**Update: `SDG_GOAL` -> `SEO2020` (reverse direction), plus OAX-subfield disambiguation --
+done.** 17 SDG goals sit over 19 SEO2020 divisions, so the existing curated table already had
+real collisions when inverted: 5 goals point to 2+ divisions each (goal 9 "Industry,
+Innovation and Infrastructure" alone has 4: divisions 12/22/24/28), and 5 goals (1, 5, 6, 14,
+17) have zero divisions at all. `_resolve_sdg_to_seo()` in `resolver.py` handles the plain
+reverse direction: lowest-division-code primary + the rest as `.alternates`, confidence =
+1/N (a genuine, undifferentiated split -- nothing in the source data prefers one division
+over another), tagged `match_method="user_provided_inverted"`. The 5 zero-division goals are
+in `_KNOWN_UNRESOLVABLE` (warn + return `None`, same pattern as FOR1998 divisions 21/22) --
+but only for the goal-*alone* path.
+
+A real OpenAlex work tagged with an SDG also carries an OAX topic/subfield, and that's often
+enough to disambiguate the collisions -- confirmed directly: raw character-level lexical
+scoring between OAX *field* (26) labels and SEO2020 division labels was mostly noise (e.g.
+"Nursing"->"MANUFACTURING" scoring 0.60 on coincidental letters), but word-set exact/contains
+matching (`cascade_match.py`, already used for OAX<->FOR2020, reused as-is) at OAX *subfield*
+level (252) found real, clean hits: 3 of goal 9's 4 divisions resolved cleanly ("Industrial
+and Manufacturing Engineering"->Manufacturing, "Building and Construction"->Construction,
+"Communication"->Information and Communication Services). `resolve_sdg_oax_to_seo(sdg_code,
+oax_code)` (new public method, since a `(goal, subfield)` pair doesn't fit `resolve()`'s
+single-`value` signature) checks this lexical-pass result first, then a small manual-judgment
+pass for what lexical matching couldn't resolve (`research_classification/
+curate_sdg_oax_to_seo.py`, 17 rows total: 5 lexical + 12 manual, written to
+`data/intermediate/hub/sdg_oax_subfield_to_seo2020.csv`), falling back to the plain
+`SDG_GOAL -> SEO2020` behavior above whenever `oax_code` is omitted or unmatched -- never
+worse than calling `resolve()` directly.
+
+The manual pass also revisited the 5 zero-division goals rather than assuming OAX input
+can't help them either: pure lexical matching finds nothing for any of them (no shared
+vocabulary between e.g. "Gender Studies"/"Aquatic Science" and SEO2020's broad sectoral
+names), but direct semantic judgment resolves 4 of the 5 anyway (`1`->division 13 via
+"Social Psychology"/"General Social Sciences"; `5`->13 via "Gender Studies"; `6`->18 via
+"Water Science and Technology"; `14`->18 via "Aquatic Science"/"Oceanography"/"Ocean
+Engineering"; `17`->23 via "Political Science and International Relations", flagged as a
+weak/stretch call since that goal is a meta/process goal about cooperation as a means, not a
+subject domain, confidence 0.5). Two genuine dead ends were confirmed and deliberately left
+with no override: "Expanding Knowledge" (division 28, one of goal 9's candidates -- ANZSRC's
+basic/curiosity-driven-research catch-all, an intent category with no subject-matter content
+by definition) and "Defence"/"Indigenous" (divisions 14/21 -- no OpenAlex academic-subject
+analog exists for either). All three correctly fall through to the plain multi-alternate
+default rather than being forced to a bad guess.
+
+Investigated whether OpenAlex's own SDG data (`sdgs.parquet`, `work_sdgs` -- 134M per-work
+rows, from a separate OpenAlex extract outside this repo) could instead *empirically* derive
+this mapping the same way other empirical bridges in this project were built: confirmed it
+can't -- OpenAlex doesn't tag works with SEO at all (SEO is ANZSRC/Australia-NZ specific), so
+there's no per-work signal linking an SDG tag to an SEO code. That data was only used to
+confirm OpenAlex's own SDG numbering (1-17) is identical to the UN standard already in
+`sdg.csv`; nothing from it was ingested into this repo.
+
+**Still deferred, explicitly out of scope**: `SDG_GOAL` -> `FOR2020`/OAX (FOR/OAX reaching
+SDG in the forward direction, replacing what used to be described here as "a higher
+aggregation like Leiden for FOR" -- that comparison is now stale since Leiden was dropped
+from this project entirely; `FOR2020_AREA5` is the closer analogue today, but FOR2020_AREA5
+-> SDG still remains a separate future request), and `SDG_PILLAR` as a `from_scheme` at all
+(5 pillars over 19 divisions -- ambiguity would be far worse than the goal-level case, not
+worth building).
 
 ## FOR2020 Division 45 (Indigenous Studies) -> OAX/Leiden: resolved via cultural proxy
 Division 45 has no *direct* OpenAlex/ASJC counterpart at any granularity (confirmed: none

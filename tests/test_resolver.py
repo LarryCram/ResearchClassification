@@ -8,6 +8,7 @@ first.
 from __future__ import annotations
 
 import sys
+import warnings
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -211,6 +212,117 @@ def test_exhaustive_seo2020_to_sdg_coverage():
     for to_scheme in ("SDG_GOAL", "SDG_PILLAR"):
         _assert_all_resolve(divisions, "SEO2020", to_scheme)
     print(f"  exhaustive SEO2020->SDG coverage OK: all {len(divisions)}/{len(divisions)} divisions resolve to both SDG_GOAL and SDG_PILLAR")
+
+
+def test_exhaustive_legacy_seo_to_sdg_coverage():
+    # Every SEO1998/SEO2008 code that appears as a source_code in its vintage bridge should
+    # also resolve to both SDG_GOAL and SDG_PILLAR, since each first resolves to some SEO2020
+    # code and SEO2020->SDG is now fully covered (test_exhaustive_seo2020_to_sdg_coverage).
+    # Previously only SEO2020 itself had exhaustive SDG coverage; SEO1998/SEO2008 only had a
+    # single spot-check each inside test_seo_to_sdg -- this closes that gap.
+    for from_scheme, bridge_file in [("SEO1998", "bridge_seo1998_seo2020.csv"), ("SEO2008", "bridge_seo2008_seo2020.csv")]:
+        bridge = pd.read_csv(BRIDGES_DIR / bridge_file, dtype=str, keep_default_na=False)
+        codes = bridge["source_code"].unique()
+        for to_scheme in ("SDG_GOAL", "SDG_PILLAR"):
+            _assert_all_resolve(codes, from_scheme, to_scheme)
+        print(f"  exhaustive {from_scheme} -> SDG coverage OK: all {len(codes)}/{len(codes)} codes resolve to both SDG_GOAL and SDG_PILLAR")
+
+
+def test_sdg_goal_to_seo_reverse():
+    # Mechanically inverted from the same seo2020_division_sdg table the forward direction
+    # uses. Goal 9 "Industry, Innovation and Infrastructure" is the collision case: 4
+    # divisions (12, 22, 24, 28) all point to it, a genuine undifferentiated split.
+    goal9 = resolver.resolve("9", "SDG_GOAL", "SEO2020")
+    assert goal9.code == "12"  # lowest division code is primary
+    assert goal9.match_method == "user_provided_inverted"
+    assert goal9.confidence == 0.25
+    assert [alt.code for alt in goal9.alternates] == ["22", "24", "28"]
+    assert all(alt.confidence == 0.25 for alt in goal9.alternates)
+
+    # Goal 3 "Good Health and Well-being" has exactly one division (20) -- no alternates,
+    # confidence 1.0, the exact round-trip of the forward test_seo_to_sdg case.
+    goal3 = resolver.resolve("3", "SDG_GOAL", "SEO2020")
+    assert goal3.code == "20" and goal3.confidence == 1.0 and goal3.alternates == ()
+
+    # SDG_PILLAR is explicitly not a valid from_scheme at all (deferred: far worse
+    # ambiguity, a pillar spans most of the 19 divisions)
+    try:
+        resolver.resolve("PEOPLE", "SDG_PILLAR", "SEO2020")
+        raise AssertionError("expected ValueError")
+    except ValueError as e:
+        assert "SDG_PILLAR" in str(e) or "from_scheme" in str(e)
+
+    # SDG_GOAL cannot target anything but SEO2020 yet (FOR2020/OAX deferred)
+    for to_scheme in ("FOR2020", "OAX_FIELD", "FOR2020_AREA5"):
+        try:
+            resolver.resolve("9", "SDG_GOAL", to_scheme)
+            raise AssertionError(f"expected ValueError for SDG_GOAL -> {to_scheme}")
+        except ValueError as e:
+            assert "SDG_GOAL" in str(e)
+
+    print(f"  SDG_GOAL->SEO2020 reverse OK: goal 9 -> division {goal9.code} "
+          f"+ {len(goal9.alternates)} alternates (confidence {goal9.confidence}); "
+          f"goal 3 -> division {goal3.code} (confidence {goal3.confidence})")
+
+
+def test_exhaustive_sdg_goal_to_seo_coverage():
+    # 12 of the 17 SDG goals have at least one SEO2020 division pointing at them in
+    # seo2020_division_sdg (7 unambiguous + 5 with real collisions, e.g. goal 9's 4-way
+    # split). The other 5 (1, 5, 6, 14, 17) are a known, permanent absence via
+    # _KNOWN_UNRESOLVABLE for the plain goal-alone path -- resolve() warns and returns None
+    # rather than raising (4 of these 5 ARE resolvable via resolve_sdg_oax_to_seo() with a
+    # matching OAX subfield -- see test_sdg_oax_to_seo_disambiguation).
+    known_unresolvable = {"1", "5", "6", "14", "17"}
+    resolved, warned_none = set(), set()
+    for goal_code in [str(n) for n in range(1, 18)]:
+        with warnings.catch_warnings(record=True) as caught:
+            warnings.simplefilter("always")
+            result = resolver.resolve(goal_code, "SDG_GOAL", "SEO2020")
+        if result is None:
+            assert caught and issubclass(caught[-1].category, UserWarning)
+            warned_none.add(goal_code)
+        else:
+            resolved.add(goal_code)
+    assert resolved == set(str(n) for n in range(1, 18)) - known_unresolvable
+    assert warned_none == known_unresolvable
+    print(f"  exhaustive SDG_GOAL->SEO2020 coverage OK: {len(resolved)}/17 goals resolve, "
+          f"{len(warned_none)}/17 ({sorted(warned_none, key=int)}) known-unresolvable (warn+None)")
+
+
+def test_sdg_oax_to_seo_disambiguation():
+    # goal 9's 4-way split, disambiguated by OAX subfield: 3 of the 4 candidates have a
+    # clean lexical (contains_match) hit; "Expanding Knowledge" (28, ANZSRC's basic-research
+    # catch-all with no subject-matter content) deliberately has none.
+    manufacturing = resolver.resolve_sdg_oax_to_seo("9", "2209")  # Industrial and Manufacturing Engineering
+    assert manufacturing.code == "24" and manufacturing.match_method == "contains_match" and manufacturing.confidence == 0.9
+
+    construction = resolver.resolve_sdg_oax_to_seo("9", "2215")  # Building and Construction
+    assert construction.code == "12"
+
+    ict = resolver.resolve_sdg_oax_to_seo("9", "3315")  # Communication
+    assert ict.code == "22"
+
+    # No oax_code, or one with no curated entry for this goal -- falls back to the plain
+    # multi-alternate path exactly (never worse than calling resolve() directly).
+    no_oax = resolver.resolve_sdg_oax_to_seo("9")
+    plain = resolver.resolve("9", "SDG_GOAL", "SEO2020")
+    assert no_oax.code == plain.code and no_oax.confidence == plain.confidence
+    bogus_oax = resolver.resolve_sdg_oax_to_seo("9", "9999")
+    assert bogus_oax.code == plain.code
+
+    # A manually-curated case: goal 5 "Gender Equality" has NO SEO2020 division at all in
+    # the plain table (known-unresolvable), but resolves via OAX subfield "Gender Studies".
+    with warnings.catch_warnings(record=True):
+        warnings.simplefilter("always")
+        gender_plain = resolver.resolve_sdg_oax_to_seo("5")
+    assert gender_plain is None
+    gender_with_oax = resolver.resolve_sdg_oax_to_seo("5", "3318")
+    assert gender_with_oax.code == "13" and gender_with_oax.match_method == "manual_curated"
+
+    print(f"  (SDG, OAX subfield)->SEO2020 disambiguation OK: goal 9 resolved to 3 distinct "
+          f"divisions via subfield (manufacturing={manufacturing.code}, "
+          f"construction={construction.code}, ict={ict.code}); goal 5 (no plain division) "
+          f"resolved to {gender_with_oax.code} via subfield")
 
 
 def test_division45_cultural_proxy():
@@ -508,6 +620,10 @@ if __name__ == "__main__":
         test_seo_cannot_target_oax,
         test_seo_to_sdg,
         test_exhaustive_seo2020_to_sdg_coverage,
+        test_exhaustive_legacy_seo_to_sdg_coverage,
+        test_sdg_goal_to_seo_reverse,
+        test_exhaustive_sdg_goal_to_seo_coverage,
+        test_sdg_oax_to_seo_disambiguation,
         test_division45_cultural_proxy,
         test_exhaustive_for2020_to_oax_coverage,
         test_exhaustive_legacy_for_coverage,
