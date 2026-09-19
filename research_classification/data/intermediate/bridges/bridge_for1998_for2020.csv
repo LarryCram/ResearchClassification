@@ -1134,7 +1134,7 @@ FOR1998,3212,Public Health and Health Services,FOR,4206,Public health,group,Fals
 FOR1998,3212,Public Health and Health Services,FOR,3505,Human resources and industrial relations,group,False,derived_empirical,0.056,"rolled up from 18 FOR1998 leaf-level mapping(s), 1 agreeing"
 FOR1998,3212,Public Health and Health Services,FOR,4202,Epidemiology,group,False,derived_empirical,0.056,"rolled up from 18 FOR1998 leaf-level mapping(s), 1 agreeing"
 FOR1998,3212,Public Health and Health Services,FOR,3210,Nutrition and dietetics,group,False,derived_empirical,0.056,"rolled up from 18 FOR1998 leaf-level mapping(s), 1 agreeing"
-FOR1998,3212,Public Health and Health Services,FOR,4516,Pacific Peoples health and wellbeing,group,False,derived_empirical,0.056,"rolled up from 18 FOR1998 leaf-level mapping(s), 1 agreeing"
+FOR1998,3212,Public Health and Health Services,FOR,4504,Aboriginal and Torres Strait Islander health and wellbeing,group,False,derived_empirical,0.056,"rolled up from 18 FOR1998 leaf-level mapping(s), 1 agreeing"
 FOR1998,321201,Environmental and Occupational Health and Safety,FOR,350505,Occupational and workplace health and safety,field,True,explicit_official_transitive,0.9,FOR1998->111705 (2008)->350505 (2020)
 FOR1998,321202,Epidemiology,FOR,420210,Social epidemiology,field,True,explicit_official_transitive,0.9,FOR1998->111706 (2008)->420210 (2020)
 FOR1998,321203,Health Information Systems (incl. Surveillance),FOR,420308,Health informatics and information systems,field,True,explicit_official_transitive,0.9,FOR1998->111711 (2008)->420308 (2020)
@@ -1145,9 +1145,9 @@ FOR1998,321205,Nutrition and Dietetics,FOR,321004,Nutritional science,field,Fals
 FOR1998,321205,Nutrition and Dietetics,FOR,321005,Public health nutrition,field,False,explicit_official_transitive,0.577,FOR1998->111104 (2008)->321005 (2020)
 FOR1998,321205,Nutrition and Dietetics,FOR,321002,Food properties (incl. characteristics and health benefits),field,False,explicit_official_transitive,0.36,FOR1998->111102 (2008)->321002 (2020)
 FOR1998,321206,Preventive Medicine,FOR,420605,Preventative health care,field,True,explicit_official_transitive,0.9,FOR1998->111716 (2008)->420605 (2020)
-FOR1998,321207,Indigenous Health,FOR,450418,Aboriginal and Torres Strait Islander remote health,field,False,explicit_official_transitive,0.393,FOR1998->111701 (2008)->450418 (2020)
+FOR1998,321207,Indigenous Health,FOR,450418,Aboriginal and Torres Strait Islander remote health,field,True,explicit_official_transitive,0.393,FOR1998->111701 (2008)->450418 (2020)
 FOR1998,321207,Indigenous Health,FOR,451016,Te hauora mamao o te Māori (Māori remote health),field,False,explicit_official_transitive,0.552,FOR1998->111713 (2008)->451016 (2020)
-FOR1998,321207,Indigenous Health,FOR,451606,Pacific Peoples health policy,field,True,explicit_official_transitive,0.615,FOR1998->111715 (2008)->451606 (2020)
+FOR1998,321207,Indigenous Health,FOR,451606,Pacific Peoples health policy,field,False,explicit_official_transitive,0.615,FOR1998->111715 (2008)->451606 (2020)
 FOR1998,321208,Primary Health Care,FOR,420319,Primary health care,field,True,explicit_official_transitive,0.9,FOR1998->111717 (2008)->420319 (2020)
 FOR1998,321209,Family Care,FOR,420303,Family care,field,True,explicit_official_transitive,0.9,FOR1998->111707 (2008)->420303 (2020)
 FOR1998,321210,Community Child Health,FOR,420601,Community child health,field,True,explicit_official_transitive,0.9,FOR1998->111704 (2008)->420601 (2020)
@@ -1541,7 +1541,7 @@ FOR1998,3901,Law,FOR,4803,International and comparative law,group,False,derived_
 FOR1998,3901,Law,FOR,4805,Legal systems,group,False,derived_empirical,0.095,"rolled up from 21 FOR1998 leaf-level mapping(s), 2 agreeing"
 FOR1998,3901,Law,FOR,4802,Environmental and resources law,group,False,derived_empirical,0.048,"rolled up from 21 FOR1998 leaf-level mapping(s), 1 agreeing"
 FOR1998,3901,Law,FOR,5002,History and philosophy of specific fields,group,False,derived_empirical,0.048,"rolled up from 21 FOR1998 leaf-level mapping(s), 1 agreeing"
-FOR1998,3901,Law,FOR,4511,"Ngā tāngata, te porihanga me ngā hapori o te Māori (Māori peoples, society and community)",group,False,derived_empirical,0.048,"rolled up from 21 FOR1998 leaf-level mapping(s), 1 agreeing"
+FOR1998,3901,Law,FOR,4505,"Aboriginal and Torres Strait Islander peoples, society and community",group,False,derived_empirical,0.048,"rolled up from 21 FOR1998 leaf-level mapping(s), 1 agreeing"
 FOR1998,3901,Law,FOR,4804,Law in context,group,False,derived_empirical,0.048,"rolled up from 21 FOR1998 leaf-level mapping(s), 1 agreeing"
 FOR1998,390101,Administrative Law,FOR,480701,Administrative law,field,True,explicit_official_transitive,0.9,FOR1998->180103 (2008)->480701 (2020)
 FOR1998,390102,Comparative Law,FOR,480302,Comparative law,field,True,explicit_official_transitive,0.9,FOR1998->180106 (2008)->480302 (2020)
@@ -1554,8 +1554,8 @@ FOR1998,390107,Environmental and Natural Resources Law,FOR,480204,"Mining, energ
 FOR1998,390108,Family Law,FOR,480402,Family law,field,True,explicit_official_transitive,0.9,FOR1998->180113 (2008)->480402 (2020)
 FOR1998,390109,Civil Law,FOR,480502,Civil procedure,field,True,explicit_official_transitive,0.562,FOR1998->180104 (2008)->480502 (2020)
 FOR1998,390110,Indigenous Law,FOR,451116,Ngā ture Māori (Māori legislation),field,False,explicit_official_transitive,0.208,FOR1998->180299 (2008)->451116 (2020)
-FOR1998,390110,Indigenous Law,FOR,451109,Ngā tikanga Māori (Māori customary law),field,True,explicit_official_transitive,0.377,FOR1998->180201 (2008)->451109 (2020)
-FOR1998,390110,Indigenous Law,FOR,450509,Aboriginal and Torres Strait Islander customary law,field,False,explicit_official_transitive,0.327,FOR1998->180101 (2008)->450509 (2020)
+FOR1998,390110,Indigenous Law,FOR,451109,Ngā tikanga Māori (Māori customary law),field,False,explicit_official_transitive,0.377,FOR1998->180201 (2008)->451109 (2020)
+FOR1998,390110,Indigenous Law,FOR,450509,Aboriginal and Torres Strait Islander customary law,field,True,explicit_official_transitive,0.327,FOR1998->180101 (2008)->450509 (2020)
 FOR1998,390110,Indigenous Law,FOR,451114,Te ture Whenua (Māori land law),field,False,explicit_official_transitive,0.311,FOR1998->180204 (2008)->451114 (2020)
 FOR1998,390110,Indigenous Law,FOR,451124,Ngā ture rawa Māori (Māori resource law),field,False,explicit_official_transitive,0.295,FOR1998->180202 (2008)->451124 (2020)
 FOR1998,390110,Indigenous Law,FOR,451130,Te Tiriti o Waitangi (The Treaty of Waitangi),field,False,explicit_official_transitive,0.136,FOR1998->180203 (2008)->451130 (2020)

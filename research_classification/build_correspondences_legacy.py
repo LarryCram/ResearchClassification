@@ -78,6 +78,32 @@ def resolve_1998_to_2008_primary(raw: pd.DataFrame) -> pd.DataFrame:
     return pd.DataFrame(out_rows)
 
 
+# Cases where the official ABS RFCD1998 (this project's "FOR1998") -> FOR2008 correspondence
+# lists a source field against several candidate 2008 targets, and this pipeline's own lexical
+# tiebreak (SequenceMatcher over full label text) picked the wrong one -- confirmed by direct
+# user review, not a change to the tiebreak formula itself. RFCD1998 is Australia's own
+# pre-ANZSRC scheme, predating New Zealand joining ANZSRC for FOR2008 -- so a generic
+# "Indigenous" label from this vintage can only ever have meant Aboriginal and Torres Strait
+# Islander peoples, never Māori or Pacific Peoples, even though SequenceMatcher's ratio metric
+# favours those candidates' shorter label text ("Māori Health"/"Pacific Peoples Health") over
+# the correct, longer "Aboriginal and Torres Strait Islander ..." label.
+MANUAL_PRIMARY_REFLAGS_1998: dict[str, str] = {
+    "321207": "111701",  # "Indigenous Health" -> "Aboriginal and Torres Strait Islander Health"
+    "390110": "180101",  # "Indigenous Law" -> "Aboriginal and Torres Strait Islander Law"
+}
+
+
+def _apply_primary_reflags(df: pd.DataFrame) -> pd.DataFrame:
+    df = df.copy()
+    for source_code, code_2008 in MANUAL_PRIMARY_REFLAGS_1998.items():
+        match = (df["source_code"] == source_code) & (df["code_2008"] == code_2008)
+        if not match.any():
+            raise ValueError(f"primary reflag target not found: FOR1998 {source_code} -> {code_2008}")
+        df.loc[df["source_code"] == source_code, "is_primary"] = False
+        df.loc[match, "is_primary"] = True
+    return df
+
+
 def compose_with_2008_2020(
     resolved_1998: pd.DataFrame, bridge_2008_2020: pd.DataFrame, system: str, source_system: str
 ) -> pd.DataFrame:
@@ -118,7 +144,7 @@ def run() -> dict[str, pd.DataFrame]:
     for1998_raw = parse_1998_to_2008("Table 1")
     seo1998_raw = parse_1998_to_2008("Table 3")
 
-    for1998_resolved = resolve_1998_to_2008_primary(for1998_raw)
+    for1998_resolved = _apply_primary_reflags(resolve_1998_to_2008_primary(for1998_raw))
     seo1998_resolved = resolve_1998_to_2008_primary(seo1998_raw)
 
     for2008_2020 = pd.read_csv(BRIDGES_DIR / "bridge_for2008_for2020.csv", dtype=str, keep_default_na=False)

@@ -161,6 +161,36 @@ MANUAL_FIELD_OVERRIDES: dict[str, list[tuple[str, str, str, str]]] = {
 }
 
 
+# Cases where the official ABS 2008->2020 correspondence lists a source field against several
+# "p"-flagged partial candidate targets, and this pipeline's own lexical tiebreak (crude
+# SequenceMatcher over full label text) didn't land on the right one -- confirmed by direct
+# user review of the candidate set, not a change to the tiebreak formula itself. FOR2008
+# 210313 "Pacific History (excl. New Zealand and Māori)" is a near-exact match for FOR2020
+# 430315 "History of the pacific" despite scoring only 0.328 (it was that source code's only
+# candidate, so it landed as non-primary by default rather than for lack of a better option).
+# FOR2008 180116 "International Law (excl. International Trade Law)" is the genuine source of
+# FOR2020 480301 "Asian and Pacific law" (0.257); the tiebreak had instead favoured 480306
+# "International criminal law" (0.64) as primary, which scores higher lexically but is a
+# distinct, unrelated legal field.
+MANUAL_PRIMARY_REFLAGS: dict[str, list[tuple[str, str]]] = {
+    "FOR2008": [
+        ("210313", "430315"),
+        ("180116", "480301"),
+    ],
+}
+
+
+def _apply_primary_reflags(df: pd.DataFrame, source_system: str) -> pd.DataFrame:
+    df = df.copy()
+    for source_code, canonical_code in MANUAL_PRIMARY_REFLAGS.get(source_system, []):
+        match = (df["source_code"] == source_code) & (df["canonical_code"] == canonical_code)
+        if not match.any():
+            raise ValueError(f"primary reflag target not found: {source_system} {source_code} -> {canonical_code}")
+        df.loc[df["source_code"] == source_code, "is_primary"] = False
+        df.loc[match, "is_primary"] = True
+    return df
+
+
 def _manual_override_rows(source_system: str) -> pd.DataFrame:
     system = source_system[:3]  # "FOR1998"/"FOR2008" -> "FOR", "SEO1998"/"SEO2008" -> "SEO"
     leaf_level = "field" if system == "FOR" else "objective"
@@ -202,6 +232,8 @@ def run() -> dict[str, pd.DataFrame]:
     for2008_field = _load_leaf_bridge("bridge_for2008_for2020.csv", "field")
     seo1998_field = _load_leaf_bridge("bridge_seo1998_seo2020.csv", "objective")
     seo2008_field = _load_leaf_bridge("bridge_seo2008_seo2020.csv", "objective")
+
+    for2008_field = _apply_primary_reflags(for2008_field, "FOR2008")
 
     for1998_field = pd.concat([for1998_field, _manual_override_rows("FOR1998")], ignore_index=True)
     for2008_field = pd.concat([for2008_field, _manual_override_rows("FOR2008")], ignore_index=True)
