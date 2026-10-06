@@ -1,4 +1,4 @@
-"""Demo: for every FOR1998 and FOR2008 code in data_untracked/12970_1998_2008.xlsx, at
+"""Demo: for every FOR1998 and FOR2008 code in raw/abs_for_seo/12970_1998_2008.xlsx, at
 division (2-digit), group (4-digit), and field (6-digit) level, try
 resolver.resolve(code, from_scheme, "FOR2020") and report the match/failure count at each
 of the 6 (scheme x level) combinations.
@@ -22,9 +22,10 @@ sys.path.insert(0, str(ROOT))
 import openpyxl
 
 from research_classification import Resolver
+from research_classification.paths import RAW_DIR
 from research_classification.resolver import FromScheme
 
-XLSX = ROOT / "data_untracked" / "12970_1998_2008.xlsx"
+XLSX = RAW_DIR / "abs_for_seo" / "12970_1998_2008.xlsx"
 
 
 def _read_sheet(sheet: str) -> list[tuple[str, str, str]]:

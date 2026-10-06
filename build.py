@@ -1,5 +1,5 @@
 """Single entry point: rebuilds every table in research_classification/data/intermediate/
-from data_untracked/ (and data/raw/) sources.
+from research_classification/data/raw/ sources.
 
 Run: .venv/bin/python build.py
 """
