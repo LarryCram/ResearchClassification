@@ -34,7 +34,7 @@ FromScheme = Literal[
     "OAX", "FOR1998", "FOR2008", "FOR2020", "SEO1998", "SEO2008", "SEO2020", "SDG_GOAL",
 ]
 ToScheme = Literal[
-    "OAX_DOMAIN", "OAX_FIELD", "OAX_SUBFIELD", "OAX_TOPIC", "FOR2020", "SEO2020",
+    "OAX_DOMAIN", "OAX_FIELD", "OAX_SUBFIELD", "OAX_TOPIC", "FOR2020", "FOR2008", "SEO2020",
     "FOR2020_AREA5", "SDG_GOAL", "SDG_PILLAR",
 ]
 
@@ -42,7 +42,7 @@ _VALID_FROM_SCHEMES = {
     "OAX", "FOR1998", "FOR2008", "FOR2020", "SEO1998", "SEO2008", "SEO2020", "SDG_GOAL",
 }
 _VALID_TO_SCHEMES = {
-    "OAX_DOMAIN", "OAX_FIELD", "OAX_SUBFIELD", "OAX_TOPIC", "FOR2020", "SEO2020",
+    "OAX_DOMAIN", "OAX_FIELD", "OAX_SUBFIELD", "OAX_TOPIC", "FOR2020", "FOR2008", "SEO2020",
     "FOR2020_AREA5", "SDG_GOAL", "SDG_PILLAR",
 }
 _FOR_VINTAGES = {"FOR1998", "FOR2008", "FOR2020"}
@@ -106,7 +106,7 @@ _GROUP_CENTRIC: dict[str, tuple[str, str, str, str]] = {
 # close, a genuine, fully-diagnosed absence: checked every one of FOR2020's 23 divisions and
 # none is a general/multidisciplinary catch-all, and both of these FOR1998 divisions have
 # zero child disciplines/subjects of their own to derive a target from either (confirmed
-# against data_untracked/12970_1998_2008.xlsx). resolve() warns and returns None for these
+# against raw/abs_for_seo/12970_1998_2008.xlsx). resolve() warns and returns None for these
 # rather than raising, so a caller iterating many codes isn't forced into a try/except for a
 # known, permanent absence. See TODO.md.
 _KNOWN_UNRESOLVABLE: dict[tuple[str, str], str] = {
@@ -163,6 +163,16 @@ _OAX_TO_FOR2020_TIERS: list[tuple[str, str]] = [
     ("subfield", "bridge_openalex_for_group"),   # -> FOR2020 group (4-digit)
     ("field", "bridge_openalex_for"),            # -> FOR2020 division (2-digit)
 ]
+
+# OAX -> FOR2008 tiers, same shape. OAX has a single layout, so this is a lateral move to a
+# chosen FOR layout, not backward in time. Both bridges are reviewed row by row -- see
+# curate_openalex_to_for2008.py. No topic tier: a topic input walks up to its subfield.
+_OAX_TO_FOR2008_TIERS: list[tuple[str, str]] = [
+    ("subfield", "bridge_openalex_for2008_group"),  # -> FOR2008 group (4-digit)
+    ("field", "bridge_openalex_for2008"),           # -> FOR2008 division (2-digit)
+]
+
+_OAX_TO_FOR_TIERS = {"FOR2020": _OAX_TO_FOR2020_TIERS, "FOR2008": _OAX_TO_FOR2008_TIERS}
 
 _OAX_LEVEL_TABLE = {"domain": "openalex_domains", "field": "openalex_fields", "subfield": "openalex_subfields", "topic": "openalex_topics"}
 _OAX_LEVEL_RANK = {"domain": 0, "field": 1, "subfield": 2, "topic": 3}
@@ -461,7 +471,7 @@ class Resolver:
         return self._area5_result(code, from_scheme, for2020.code)
 
     def _resolve_oax_to_area5(self, code: str) -> CanonicalResult:
-        for2020 = self._resolve_oax_to_for2020(code)
+        for2020 = self._resolve_oax_to_for(code, "FOR2020")
         return self._area5_result(code, "OAX", for2020.code)
 
     # -- OAX hierarchy walking (up only) ------------------------------------
@@ -509,6 +519,11 @@ class Resolver:
             )
 
         if from_scheme in _FOR_VINTAGES:
+            if to_scheme == "FOR2008":
+                raise ValueError(
+                    "to_scheme='FOR2008' is only supported from_scheme='OAX' -- between FOR "
+                    "vintages, resolution moves forward in time only (target 'FOR2020')"
+                )
             if to_scheme == "FOR2020":
                 return self._resolve_vintage_to_current(code, from_scheme, "FOR")
             if to_scheme == "FOR2020_AREA5":
@@ -533,8 +548,8 @@ class Resolver:
             )
 
         # from_scheme == "OAX"
-        if to_scheme == "FOR2020":
-            return self._resolve_oax_to_for2020(code)
+        if to_scheme in _OAX_TO_FOR_TIERS:
+            return self._resolve_oax_to_for(code, to_scheme)
         if to_scheme == "FOR2020_AREA5":
             return self._resolve_oax_to_area5(code)
         if to_scheme in _TO_SCHEME_OAX_LEVEL:
@@ -621,12 +636,14 @@ class Resolver:
         result = self._resolve_vintage_to_current(code, from_scheme, "FOR")
         return self._resolve_from_for2020_code(code, result.code, to_scheme, from_scheme)
 
-    # -- OAX -> FOR2020 / FOR2020_AREA5 / OAX --------------------------------
+    # -- OAX -> FOR2020 / FOR2008 / FOR2020_AREA5 / OAX --------------------------
 
-    def _resolve_oax_to_for2020(self, code: str) -> CanonicalResult:
-        """Tries the finest OAX precision the input actually supports first, cascading to
-        progressively coarser tiers -- topic -> field (leaf), subfield -> group, field ->
-        division -- stopping at the first tier with a confident (non-below_floor) row. A
+    def _resolve_oax_to_for(self, code: str, to_scheme: ToScheme) -> CanonicalResult:
+        """to_scheme is 'FOR2020' or 'FOR2008' (see _OAX_TO_FOR_TIERS). Tries the finest OAX
+        precision the input actually supports first, cascading to progressively coarser
+        tiers -- for FOR2020: topic -> field (leaf), subfield -> group, field -> division;
+        for FOR2008: subfield -> group, field -> division -- stopping at the first tier with a
+        confident (non-below_floor) row. A
         below_floor/confidence-0 hit at any tier means "no trustworthy answer here", not "the
         answer": it's still recorded in that tier's own bridge CSV (for anyone inspecting the
         raw data), but resolve() itself always prefers a trustworthy coarser answer over an
@@ -635,18 +652,19 @@ class Resolver:
         the OAX subfield->FOR group audit (see curate_openalex_subfield_to_for_group.py's
         docstring), every one of bridge_openalex_for.csv's 26 rows has real confidence, so
         this tier never itself returns below_floor and the trailing LookupError below is
-        unreachable in practice, kept only as a defensive final guard."""
+        unreachable in practice, kept only as a defensive final guard. The FOR2008 tiers
+        have no below_floor rows at all (every row was reviewed)."""
         identified = self._oax_identify(code)
         if not identified:
             raise LookupError(f"{code!r} not found in any OAX table (domain/field/subfield/topic)")
         oax_code, level, label, parent_code = identified
         if _OAX_LEVEL_RANK[level] < _OAX_LEVEL_RANK["field"]:
             raise ValueError(
-                f"cannot resolve FOR2020 from an OAX {level}-level input ({code!r}) -- the curated "
+                f"cannot resolve {to_scheme} from an OAX {level}-level input ({code!r}) -- the curated "
                 f"OpenAlex-field-to-FOR-division mapping needs at least field-level precision"
             )
 
-        for required_level, table in _OAX_TO_FOR2020_TIERS:
+        for required_level, table in _OAX_TO_FOR_TIERS[to_scheme]:
             if _OAX_LEVEL_RANK[level] < _OAX_LEVEL_RANK[required_level]:
                 continue  # input is coarser than this tier needs -- try a coarser tier instead
             lookup_code = oax_code if level == required_level else self._oax_walk_up_simple(oax_code, level, required_level)[0]
@@ -657,9 +675,9 @@ class Resolver:
             ).fetchone()
             if row and row[3] != "below_floor" and float(row[4]) > 0:
                 for_code, for_label, for_level, match_method, confidence = row
-                return CanonicalResult(code, "OAX", "FOR2020", for_code, for_label, for_level, match_method, float(confidence))
+                return CanonicalResult(code, "OAX", to_scheme, for_code, for_label, for_level, match_method, float(confidence))
 
-        raise LookupError(f"{code!r}: no curated FOR2020 mapping found at any OAX precision tier")
+        raise LookupError(f"{code!r}: no curated {to_scheme} mapping found at any OAX precision tier")
 
     def _resolve_oax_to_oax(self, code: str, to_scheme: ToScheme) -> CanonicalResult:
         identified = self._oax_identify(code)

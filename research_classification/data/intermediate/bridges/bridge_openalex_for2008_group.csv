@@ -1,0 +1,559 @@
+source_system,source_code,source_label,system,canonical_code,canonical_label,canonical_level,is_primary,match_method,confidence,notes
+OpenAlex,1100,General Agricultural and Biological Sciences,FOR2008,0699,OTHER BIOLOGICAL SCIENCES,group,False,derived_empirical,0.1,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,1100,General Agricultural and Biological Sciences,FOR2008,0701,"Agriculture, Land and Farm Management",group,True,manual_curated,0.8,
+OpenAlex,1100,General Agricultural and Biological Sciences,FOR2008,0703,Crop and Pasture Production,group,False,derived_empirical,0.072,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,1100,General Agricultural and Biological Sciences,FOR2008,0799,Other Agricultural and Veterinary Sciences,group,False,derived_empirical,0.079,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,1100,General Agricultural and Biological Sciences,FOR2008,1001,Agricultural Biotechnology,group,False,derived_empirical,0.317,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,1102,Agronomy and Crop Science,FOR2008,0607,PLANT BIOLOGY,group,False,derived_empirical,0.028,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,1102,Agronomy and Crop Science,FOR2008,0701,"Agriculture, Land and Farm Management",group,False,derived_empirical,0.16,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,1102,Agronomy and Crop Science,FOR2008,0703,Crop and Pasture Production,group,True,manual_curated,1.0,
+OpenAlex,1102,Agronomy and Crop Science,FOR2008,0706,Horticultural Production,group,False,derived_empirical,0.035,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,1102,Agronomy and Crop Science,FOR2008,0799,Other Agricultural and Veterinary Sciences,group,False,derived_empirical,0.159,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,1103,Animal Science and Zoology,FOR2008,0502,ENVIRONMENTAL SCIENCE AND MANAGEMENT,group,False,derived_empirical,0.007,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,1103,Animal Science and Zoology,FOR2008,0606,PHYSIOLOGY,group,False,derived_empirical,0.209,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,1103,Animal Science and Zoology,FOR2008,0608,ZOOLOGY,group,True,manual_curated,0.9,
+OpenAlex,1103,Animal Science and Zoology,FOR2008,0702,Animal Production,group,False,derived_empirical,0.099,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,1103,Animal Science and Zoology,FOR2008,0707,Veterinary Sciences,group,False,derived_empirical,0.197,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,1104,Aquatic Science,FOR2008,0704,Fisheries Sciences,group,True,manual_curated,0.9,
+OpenAlex,1105,"Ecology, Evolution, Behavior and Systematics",FOR2008,0602,ECOLOGY,group,True,manual_curated,0.9,
+OpenAlex,1105,"Ecology, Evolution, Behavior and Systematics",FOR2008,0603,EVOLUTIONARY BIOLOGY,group,False,derived_empirical,0.323,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,1106,Food Science,FOR2008,0908,Food Sciences,group,True,manual_curated,1.0,
+OpenAlex,1106,Food Science,FOR2008,1505,Marketing,group,False,derived_empirical,0.063,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,1107,Forestry,FOR2008,0602,ECOLOGY,group,False,derived_empirical,0.103,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,1107,Forestry,FOR2008,0705,Forestry Sciences,group,True,manual_curated,1.0,
+OpenAlex,1108,Horticulture,FOR2008,0706,Horticultural Production,group,True,manual_curated,0.9,
+OpenAlex,1109,Insect Science,FOR2008,0606,PHYSIOLOGY,group,False,derived_empirical,0.3,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,1109,Insect Science,FOR2008,0608,ZOOLOGY,group,True,manual_curated,0.8,
+OpenAlex,1110,Plant Science,FOR2008,0607,PLANT BIOLOGY,group,True,manual_curated,1.0,
+OpenAlex,1111,Soil Science,FOR2008,0503,SOIL SCIENCES,group,True,manual_curated,0.9,
+OpenAlex,1200,General Arts and Humanities,FOR2008,1999,Other Studies in Creative Arts and Writing,group,False,derived_empirical,0.125,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,1200,General Arts and Humanities,FOR2008,2005,Literary Studies,group,True,manual_curated,0.8,
+OpenAlex,1200,General Arts and Humanities,FOR2008,2099,"Other Language, Communication and Culture",group,False,derived_empirical,0.125,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,1200,General Arts and Humanities,FOR2008,2199,Other History and Archaeology,group,False,derived_empirical,0.125,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,1200,General Arts and Humanities,FOR2008,2299,Other Philosophy and Religious Studies,group,False,derived_empirical,0.125,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,1202,History,FOR2008,1602,Criminology,group,False,derived_empirical,0.021,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,1202,History,FOR2008,1603,Demography,group,False,derived_empirical,0.021,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,1202,History,FOR2008,2103,Historical Studies,group,True,manual_curated,0.9,
+OpenAlex,1202,History,FOR2008,2204,Religion and Religious Studies,group,False,derived_empirical,0.021,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,1203,Language and Linguistics,FOR2008,2003,Language Studies,group,False,derived_empirical,0.324,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,1203,Language and Linguistics,FOR2008,2004,Linguistics,group,True,manual_curated,0.8,
+OpenAlex,1204,Archeology,FOR2008,2101,Archaeology,group,True,manual_curated,0.9,
+OpenAlex,1205,Classics,FOR2008,2002,Cultural Studies,group,False,derived_empirical,0.031,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,1205,Classics,FOR2008,2005,Literary Studies,group,True,manual_curated,0.8,
+OpenAlex,1205,Classics,FOR2008,2103,Historical Studies,group,False,derived_empirical,0.016,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,1206,Conservation,FOR2008,0501,ECOLOGICAL APPLICATIONS,group,False,derived_empirical,1.0,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,1206,Conservation,FOR2008,2102,Curatorial and Related Studies,group,True,manual_curated,0.7,"Arts and Humanities 'Conservation' is heritage/art conservation (210202), not ecological conservation"
+OpenAlex,1207,History and Philosophy of Science,FOR2008,2202,History and Philosophy of Specific Fields,group,True,manual_curated,1.0,
+OpenAlex,1208,Literature and Literary Theory,FOR2008,1903,Journalism and Professional Writing,group,False,derived_empirical,0.031,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,1208,Literature and Literary Theory,FOR2008,1904,Performing Arts and Creative Writing,group,False,derived_empirical,0.044,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,1208,Literature and Literary Theory,FOR2008,2002,Cultural Studies,group,False,derived_empirical,0.029,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,1208,Literature and Literary Theory,FOR2008,2005,Literary Studies,group,True,manual_curated,1.0,
+OpenAlex,1208,Literature and Literary Theory,FOR2008,2103,Historical Studies,group,False,derived_empirical,0.014,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,1209,Museology,FOR2008,2102,Curatorial and Related Studies,group,True,manual_curated,0.9,
+OpenAlex,1210,Music,FOR2008,1904,Performing Arts and Creative Writing,group,True,manual_curated,0.9,
+OpenAlex,1211,Philosophy,FOR2008,2201,Applied Ethics,group,False,derived_empirical,0.133,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,1211,Philosophy,FOR2008,2202,History and Philosophy of Specific Fields,group,False,derived_empirical,0.02,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,1211,Philosophy,FOR2008,2203,Philosophy,group,True,manual_curated,1.0,
+OpenAlex,1212,Religious studies,FOR2008,2204,Religion and Religious Studies,group,True,manual_curated,1.0,
+OpenAlex,1213,Visual Arts and Performing Arts,FOR2008,1203,Design Practice and Management,group,False,derived_empirical,0.2,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,1213,Visual Arts and Performing Arts,FOR2008,1901,Art Theory and Criticism,group,False,derived_empirical,0.066,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,1213,Visual Arts and Performing Arts,FOR2008,1902,"Film, Television and Digital Media",group,False,derived_empirical,0.092,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,1213,Visual Arts and Performing Arts,FOR2008,1904,Performing Arts and Creative Writing,group,False,derived_empirical,0.053,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,1213,Visual Arts and Performing Arts,FOR2008,1905,Visual Arts and Crafts,group,True,manual_curated,0.9,
+OpenAlex,1302,Aging,FOR2008,0601,BIOCHEMISTRY AND CELL BIOLOGY,group,True,manual_curated,0.8,
+OpenAlex,1303,Biochemistry,FOR2008,0601,BIOCHEMISTRY AND CELL BIOLOGY,group,True,manual_curated,1.0,
+OpenAlex,1304,Biophysics,FOR2008,0299,OTHER PHYSICAL SCIENCES,group,True,manual_curated,0.7,029901 Biological Physics is FOR2008's exact home for biophysics
+OpenAlex,1304,Biophysics,FOR2008,0601,BIOCHEMISTRY AND CELL BIOLOGY,group,False,derived_empirical,1.0,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,1305,Biotechnology,FOR2008,0601,BIOCHEMISTRY AND CELL BIOLOGY,group,False,derived_empirical,0.5,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,1305,Biotechnology,FOR2008,1003,Industrial Biotechnology,group,True,manual_curated,0.8,FOR2008 puts biotechnology under division 10 TECHNOLOGY; OAX's topics here are bioprocess-heavy
+OpenAlex,1305,Biotechnology,FOR2008,1007,Nanotechnology,group,False,derived_empirical,0.062,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,1305,Biotechnology,FOR2008,1099,Other Technology,group,False,derived_empirical,0.031,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,1306,Cancer Research,FOR2008,0601,BIOCHEMISTRY AND CELL BIOLOGY,group,False,derived_empirical,1.0,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,1306,Cancer Research,FOR2008,1112,Oncology and Carcinogenesis,group,True,manual_curated,0.7,cancer research -> Oncology and Carcinogenesis
+OpenAlex,1307,Cell Biology,FOR2008,0601,BIOCHEMISTRY AND CELL BIOLOGY,group,True,manual_curated,0.9,
+OpenAlex,1308,Clinical Biochemistry,FOR2008,1101,Medical Biochemistry and Metabolomics,group,True,manual_curated,0.7,clinical biochemistry -> Medical Biochemistry and Metabolomics
+OpenAlex,1308,Clinical Biochemistry,FOR2008,1103,Clinical Sciences,group,False,derived_empirical,0.964,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,1308,Clinical Biochemistry,FOR2008,1106,Human Movement and Sports Science,group,False,derived_empirical,0.036,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,1309,Developmental Biology,FOR2008,0606,PHYSIOLOGY,group,False,derived_empirical,0.3,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,1309,Developmental Biology,FOR2008,0608,ZOOLOGY,group,True,manual_curated,0.8,
+OpenAlex,1310,Endocrinology,FOR2008,1101,Medical Biochemistry and Metabolomics,group,False,derived_empirical,1.0,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,1310,Endocrinology,FOR2008,1103,Clinical Sciences,group,True,manual_curated,0.7,110306 Endocrinology sits in Clinical Sciences
+OpenAlex,1311,Genetics,FOR2008,0604,GENETICS,group,True,manual_curated,1.0,
+OpenAlex,1312,Molecular Biology,FOR2008,0601,BIOCHEMISTRY AND CELL BIOLOGY,group,True,manual_curated,0.9,
+OpenAlex,1313,Molecular Medicine,FOR2008,0601,BIOCHEMISTRY AND CELL BIOLOGY,group,True,manual_curated,0.8,
+OpenAlex,1314,Physiology,FOR2008,0606,PHYSIOLOGY,group,True,manual_curated,0.8,biological physiology (under OAX's Biochemistry field); Medicine's own Physiology subfield 2737 -> 1116
+OpenAlex,1314,Physiology,FOR2008,1116,Medical Physiology,group,False,derived_empirical,1.0,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,1315,Structural Biology,FOR2008,0601,BIOCHEMISTRY AND CELL BIOLOGY,group,True,manual_curated,0.8,
+OpenAlex,1402,Accounting,FOR2008,1501,"Accounting, Auditing and Accountability",group,True,manual_curated,1.0,
+OpenAlex,1403,Business and International Management,FOR2008,1502,"Banking, Finance and Investment",group,False,derived_empirical,0.129,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,1403,Business and International Management,FOR2008,1503,Business and Management,group,True,manual_curated,0.9,"business/international management -> Business and Management, not Marketing"
+OpenAlex,1403,Business and International Management,FOR2008,1504,Commercial Services,group,False,derived_empirical,0.086,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,1403,Business and International Management,FOR2008,1505,Marketing,group,False,derived_empirical,0.5,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,1403,Business and International Management,FOR2008,1507,Transportation and Freight Services,group,False,derived_empirical,0.114,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,1404,Management Information Systems,FOR2008,0804,Data Format,group,False,derived_empirical,0.038,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,1404,Management Information Systems,FOR2008,0806,Information Systems,group,True,manual_curated,0.9,
+OpenAlex,1405,Management of Technology and Innovation,FOR2008,0804,Data Format,group,False,derived_empirical,0.038,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,1405,Management of Technology and Innovation,FOR2008,0806,Information Systems,group,False,derived_empirical,0.962,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,1405,Management of Technology and Innovation,FOR2008,1503,Business and Management,group,True,manual_curated,0.8,150307 Innovation and Technology Management
+OpenAlex,1406,Marketing,FOR2008,1505,Marketing,group,True,manual_curated,1.0,
+OpenAlex,1407,Organizational Behavior and Human Resource Management,FOR2008,1503,Business and Management,group,True,manual_curated,0.9,
+OpenAlex,1407,Organizational Behavior and Human Resource Management,FOR2008,2202,History and Philosophy of Specific Fields,group,False,derived_empirical,0.062,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,1408,Strategy and Management,FOR2008,1503,Business and Management,group,True,manual_curated,1.0,
+OpenAlex,1409,"Tourism, Leisure and Hospitality Management",FOR2008,1506,Tourism,group,True,manual_curated,1.0,
+OpenAlex,1410,Industrial relations,FOR2008,1503,Business and Management,group,True,manual_curated,0.8,
+OpenAlex,1410,Industrial relations,FOR2008,2202,History and Philosophy of Specific Fields,group,False,derived_empirical,0.125,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,1502,Bioengineering,FOR2008,0903,Biomedical Engineering,group,True,manual_curated,0.8,
+OpenAlex,1502,Bioengineering,FOR2008,1004,Medical Biotechnology,group,False,derived_empirical,0.083,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,1503,Catalysis,FOR2008,0904,Chemical Engineering,group,True,manual_curated,0.8,
+OpenAlex,1503,Catalysis,FOR2008,0905,Civil Engineering,group,False,derived_empirical,0.083,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,1503,Catalysis,FOR2008,0908,Food Sciences,group,False,derived_empirical,0.083,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,1504,Chemical Health and Safety,FOR2008,0904,Chemical Engineering,group,True,manual_curated,0.8,"chemical process safety -> Chemical Engineering, not Civil"
+OpenAlex,1504,Chemical Health and Safety,FOR2008,0905,Civil Engineering,group,False,derived_empirical,1.0,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,1506,Filtration and Separation,FOR2008,0904,Chemical Engineering,group,True,manual_curated,0.8,
+OpenAlex,1506,Filtration and Separation,FOR2008,0905,Civil Engineering,group,False,derived_empirical,0.083,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,1506,Filtration and Separation,FOR2008,0908,Food Sciences,group,False,derived_empirical,0.083,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,1507,Fluid Flow and Transfer Processes,FOR2008,0904,Chemical Engineering,group,False,derived_empirical,0.833,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,1507,Fluid Flow and Transfer Processes,FOR2008,0905,Civil Engineering,group,False,derived_empirical,0.083,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,1507,Fluid Flow and Transfer Processes,FOR2008,0908,Food Sciences,group,False,derived_empirical,0.083,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,1507,Fluid Flow and Transfer Processes,FOR2008,0915,Interdisciplinary Engineering,group,True,manual_curated,0.7,"091504 Fluidisation and Fluid Mechanics, 091505 Heat and Mass Transfer Operations"
+OpenAlex,1508,Process Chemistry and Technology,FOR2008,0904,Chemical Engineering,group,True,manual_curated,0.9,
+OpenAlex,1508,Process Chemistry and Technology,FOR2008,0905,Civil Engineering,group,False,derived_empirical,0.083,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,1508,Process Chemistry and Technology,FOR2008,0908,Food Sciences,group,False,derived_empirical,0.083,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,1602,Analytical Chemistry,FOR2008,0301,ANALYTICAL CHEMISTRY,group,True,manual_curated,1.0,
+OpenAlex,1602,Analytical Chemistry,FOR2008,0304,MEDICINAL AND BIOMOLECULAR CHEMISTRY,group,False,derived_empirical,0.067,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,1603,Electrochemistry,FOR2008,0306,PHYSICAL CHEMISTRY (INCL. STRUCTURAL),group,True,manual_curated,0.8,
+OpenAlex,1603,Electrochemistry,FOR2008,0307,THEORETICAL AND COMPUTATIONAL CHEMISTRY,group,False,derived_empirical,0.1,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,1604,Inorganic Chemistry,FOR2008,0302,INORGANIC CHEMISTRY,group,True,manual_curated,1.0,
+OpenAlex,1604,Inorganic Chemistry,FOR2008,0303,MACROMOLECULAR AND MATERIALS CHEMISTRY,group,False,derived_empirical,0.056,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,1604,Inorganic Chemistry,FOR2008,0306,PHYSICAL CHEMISTRY (INCL. STRUCTURAL),group,False,derived_empirical,0.083,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,1604,Inorganic Chemistry,FOR2008,0399,OTHER CHEMICAL SCIENCES,group,False,derived_empirical,0.125,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,1605,Organic Chemistry,FOR2008,0302,INORGANIC CHEMISTRY,group,False,derived_empirical,0.013,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,1605,Organic Chemistry,FOR2008,0303,MACROMOLECULAR AND MATERIALS CHEMISTRY,group,False,derived_empirical,0.183,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,1605,Organic Chemistry,FOR2008,0304,MEDICINAL AND BIOMOLECULAR CHEMISTRY,group,False,derived_empirical,0.167,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,1605,Organic Chemistry,FOR2008,0305,ORGANIC CHEMISTRY,group,True,manual_curated,0.9,
+OpenAlex,1605,Organic Chemistry,FOR2008,0306,PHYSICAL CHEMISTRY (INCL. STRUCTURAL),group,False,derived_empirical,0.008,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,1606,Physical and Theoretical Chemistry,FOR2008,0306,PHYSICAL CHEMISTRY (INCL. STRUCTURAL),group,True,manual_curated,0.9,
+OpenAlex,1606,Physical and Theoretical Chemistry,FOR2008,0307,THEORETICAL AND COMPUTATIONAL CHEMISTRY,group,False,derived_empirical,0.226,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,1606,Physical and Theoretical Chemistry,FOR2008,0399,OTHER CHEMICAL SCIENCES,group,False,derived_empirical,0.059,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,1607,Spectroscopy,FOR2008,0306,PHYSICAL CHEMISTRY (INCL. STRUCTURAL),group,True,manual_curated,0.8,
+OpenAlex,1607,Spectroscopy,FOR2008,0307,THEORETICAL AND COMPUTATIONAL CHEMISTRY,group,False,derived_empirical,0.1,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,1702,Artificial Intelligence,FOR2008,0801,Artificial Intelligence and Image Processing,group,True,manual_curated,1.0,
+OpenAlex,1702,Artificial Intelligence,FOR2008,0802,Computation Theory and Mathematics,group,False,derived_empirical,0.032,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,1702,Artificial Intelligence,FOR2008,0803,Computer Software,group,False,derived_empirical,0.013,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,1702,Artificial Intelligence,FOR2008,0906,Electrical and Electronic Engineering,group,False,derived_empirical,0.006,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,1702,Artificial Intelligence,FOR2008,1702,Cognitive Sciences,group,False,derived_empirical,0.023,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,1703,Computational Theory and Mathematics,FOR2008,0802,Computation Theory and Mathematics,group,True,manual_curated,1.0,
+OpenAlex,1703,Computational Theory and Mathematics,FOR2008,0803,Computer Software,group,False,derived_empirical,0.042,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,1703,Computational Theory and Mathematics,FOR2008,0804,Data Format,group,False,derived_empirical,0.188,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,1703,Computational Theory and Mathematics,FOR2008,0899,Other Information and Computing Sciences,group,False,derived_empirical,0.125,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,1704,Computer Graphics and Computer-Aided Design,FOR2008,0801,Artificial Intelligence and Image Processing,group,True,manual_curated,0.8,"080103 Computer Graphics, not design practice"
+OpenAlex,1704,Computer Graphics and Computer-Aided Design,FOR2008,0803,Computer Software,group,False,derived_empirical,0.011,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,1704,Computer Graphics and Computer-Aided Design,FOR2008,0806,Information Systems,group,False,derived_empirical,0.062,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,1704,Computer Graphics and Computer-Aided Design,FOR2008,1201,Architecture,group,False,derived_empirical,0.054,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,1704,Computer Graphics and Computer-Aided Design,FOR2008,1203,Design Practice and Management,group,False,derived_empirical,0.446,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,1705,Computer Networks and Communications,FOR2008,0803,Computer Software,group,False,derived_empirical,0.502,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,1705,Computer Networks and Communications,FOR2008,0804,Data Format,group,False,derived_empirical,0.088,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,1705,Computer Networks and Communications,FOR2008,0805,Distributed Computing,group,True,manual_curated,0.8,
+OpenAlex,1705,Computer Networks and Communications,FOR2008,0806,Information Systems,group,False,derived_empirical,0.035,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,1705,Computer Networks and Communications,FOR2008,0899,Other Information and Computing Sciences,group,False,derived_empirical,0.031,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,1706,Computer Science Applications,FOR2008,0803,Computer Software,group,True,manual_curated,0.9,
+OpenAlex,1706,Computer Science Applications,FOR2008,0807,Library and Information Studies,group,False,derived_empirical,0.067,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,1706,Computer Science Applications,FOR2008,0899,Other Information and Computing Sciences,group,False,derived_empirical,0.33,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,1706,Computer Science Applications,FOR2008,1117,Public Health and Health Services,group,False,derived_empirical,0.067,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,1707,Computer Vision and Pattern Recognition,FOR2008,0801,Artificial Intelligence and Image Processing,group,True,manual_curated,0.9,
+OpenAlex,1707,Computer Vision and Pattern Recognition,FOR2008,0803,Computer Software,group,False,derived_empirical,0.067,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,1707,Computer Vision and Pattern Recognition,FOR2008,0806,Information Systems,group,False,derived_empirical,0.033,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,1707,Computer Vision and Pattern Recognition,FOR2008,2004,Linguistics,group,False,derived_empirical,0.05,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,1708,Hardware and Architecture,FOR2008,1006,Computer Hardware,group,True,manual_curated,0.7,"computer hardware/architecture, not building architecture"
+OpenAlex,1708,Hardware and Architecture,FOR2008,1201,Architecture,group,False,derived_empirical,1.0,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,1709,Human-Computer Interaction,FOR2008,0801,Artificial Intelligence and Image Processing,group,False,derived_empirical,0.072,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,1709,Human-Computer Interaction,FOR2008,0803,Computer Software,group,False,derived_empirical,0.083,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,1709,Human-Computer Interaction,FOR2008,0806,Information Systems,group,True,manual_curated,0.8,080602 Computer-Human Interaction
+OpenAlex,1709,Human-Computer Interaction,FOR2008,0906,Electrical and Electronic Engineering,group,False,derived_empirical,0.146,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,1709,Human-Computer Interaction,FOR2008,0913,Mechanical Engineering,group,False,derived_empirical,0.312,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,1710,Information Systems,FOR2008,0801,Artificial Intelligence and Image Processing,group,False,derived_empirical,0.031,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,1710,Information Systems,FOR2008,0804,Data Format,group,False,derived_empirical,0.064,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,1710,Information Systems,FOR2008,0805,Distributed Computing,group,False,derived_empirical,0.017,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,1710,Information Systems,FOR2008,0806,Information Systems,group,True,manual_curated,1.0,
+OpenAlex,1710,Information Systems,FOR2008,0807,Library and Information Studies,group,False,derived_empirical,0.034,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,1711,Signal Processing,FOR2008,0906,Electrical and Electronic Engineering,group,True,manual_curated,0.7,090609 Signal Processing
+OpenAlex,1711,Signal Processing,FOR2008,1005,Communications Technologies,group,False,derived_empirical,0.861,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,1711,Signal Processing,FOR2008,1099,Other Technology,group,False,derived_empirical,0.028,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,1712,Software,FOR2008,0802,Computation Theory and Mathematics,group,False,derived_empirical,0.052,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,1712,Software,FOR2008,0803,Computer Software,group,True,manual_curated,1.0,
+OpenAlex,1712,Software,FOR2008,0804,Data Format,group,False,derived_empirical,0.006,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,1712,Software,FOR2008,0805,Distributed Computing,group,False,derived_empirical,0.202,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,1712,Software,FOR2008,0806,Information Systems,group,False,derived_empirical,0.011,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,1800,General Decision Sciences,FOR2008,1599,"Other Commerce, Management, Tourism and Services",group,True,manual_curated,0.8,
+OpenAlex,1802,Information Systems and Management,FOR2008,0804,Data Format,group,False,derived_empirical,0.038,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,1802,Information Systems and Management,FOR2008,0806,Information Systems,group,True,manual_curated,0.9,
+OpenAlex,1803,Management Science and Operations Research,FOR2008,1503,Business and Management,group,True,manual_curated,0.8,
+OpenAlex,1804,"Statistics, Probability and Uncertainty",FOR2008,0104,STATISTICS,group,True,manual_curated,0.9,
+OpenAlex,1902,Atmospheric Science,FOR2008,0399,OTHER CHEMICAL SCIENCES,group,False,derived_empirical,0.086,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,1902,Atmospheric Science,FOR2008,0401,ATMOSPHERIC SCIENCES,group,True,manual_curated,1.0,
+OpenAlex,1902,Atmospheric Science,FOR2008,0406,PHYSICAL GEOGRAPHY AND ENVIRONMENTAL GEOSCIENCE,group,False,derived_empirical,0.043,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,1904,Earth-Surface Processes,FOR2008,0406,PHYSICAL GEOGRAPHY AND ENVIRONMENTAL GEOSCIENCE,group,True,manual_curated,0.9,
+OpenAlex,1906,Geochemistry and Petrology,FOR2008,0402,GEOCHEMISTRY,group,True,manual_curated,1.0,
+OpenAlex,1907,Geology,FOR2008,0403,GEOLOGY,group,True,manual_curated,1.0,
+OpenAlex,1907,Geology,FOR2008,0499,OTHER EARTH SCIENCES,group,False,derived_empirical,0.158,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,1908,Geophysics,FOR2008,0404,GEOPHYSICS,group,True,manual_curated,1.0,
+OpenAlex,1908,Geophysics,FOR2008,0909,Geomatic Engineering,group,False,derived_empirical,0.1,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,1910,Oceanography,FOR2008,0405,OCEANOGRAPHY,group,True,manual_curated,1.0,
+OpenAlex,1911,Paleontology,FOR2008,0403,GEOLOGY,group,True,manual_curated,0.8,
+OpenAlex,1912,Space and Planetary Science,FOR2008,0201,ASTRONOMICAL AND SPACE SCIENCES,group,True,manual_curated,0.9,
+OpenAlex,2000,"General Economics, Econometrics and Finance",FOR2008,1402,Applied Economics,group,True,manual_curated,0.7,"general economics -> Applied Economics, FOR2008's broadest economics group"
+OpenAlex,2000,"General Economics, Econometrics and Finance",FOR2008,1403,Econometrics,group,False,derived_empirical,0.5,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,2000,"General Economics, Econometrics and Finance",FOR2008,1499,Other Economics,group,False,derived_empirical,0.5,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,2002,Economics and Econometrics,FOR2008,1401,Economic Theory,group,False,derived_empirical,0.081,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,2002,Economics and Econometrics,FOR2008,1402,Applied Economics,group,True,manual_curated,0.8,economics at large -> Applied Economics; Econometrics kept as an alternate
+OpenAlex,2002,Economics and Econometrics,FOR2008,1403,Econometrics,group,False,derived_empirical,0.597,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,2003,Finance,FOR2008,1402,Applied Economics,group,False,derived_empirical,0.1,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,2003,Finance,FOR2008,1502,"Banking, Finance and Investment",group,True,manual_curated,0.9,
+OpenAlex,2100,General Energy,FOR2008,0904,Chemical Engineering,group,False,derived_empirical,0.833,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,2100,General Energy,FOR2008,0905,Civil Engineering,group,False,derived_empirical,0.083,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,2100,General Energy,FOR2008,0906,Electrical and Electronic Engineering,group,True,manual_curated,0.7,power and energy systems engineering (090607/090608) is FOR2008's main energy home
+OpenAlex,2100,General Energy,FOR2008,0908,Food Sciences,group,False,derived_empirical,0.083,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,2102,Energy Engineering and Power Technology,FOR2008,0906,Electrical and Electronic Engineering,group,True,manual_curated,0.8,
+OpenAlex,2103,Fuel Technology,FOR2008,0904,Chemical Engineering,group,True,manual_curated,0.8,
+OpenAlex,2103,Fuel Technology,FOR2008,0905,Civil Engineering,group,False,derived_empirical,0.083,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,2103,Fuel Technology,FOR2008,0908,Food Sciences,group,False,derived_empirical,0.083,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,2104,Nuclear Energy and Engineering,FOR2008,0904,Chemical Engineering,group,False,derived_empirical,0.833,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,2104,Nuclear Energy and Engineering,FOR2008,0905,Civil Engineering,group,False,derived_empirical,0.083,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,2104,Nuclear Energy and Engineering,FOR2008,0908,Food Sciences,group,False,derived_empirical,0.083,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,2104,Nuclear Energy and Engineering,FOR2008,0915,Interdisciplinary Engineering,group,True,manual_curated,0.7,091506 Nuclear Engineering
+OpenAlex,2105,"Renewable Energy, Sustainability and the Environment",FOR2008,0502,ENVIRONMENTAL SCIENCE AND MANAGEMENT,group,False,derived_empirical,1.0,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,2105,"Renewable Energy, Sustainability and the Environment",FOR2008,0906,Electrical and Electronic Engineering,group,True,manual_curated,0.7,090608 Renewable Power and Energy Systems Engineering
+OpenAlex,2200,General Engineering,FOR2008,0905,Civil Engineering,group,False,derived_empirical,0.5,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,2200,General Engineering,FOR2008,0914,Resources Engineering and Extractive Metallurgy,group,False,derived_empirical,0.125,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,2200,General Engineering,FOR2008,0915,Interdisciplinary Engineering,group,True,manual_curated,0.7,general engineering -> Interdisciplinary Engineering
+OpenAlex,2200,General Engineering,FOR2008,0999,Other Engineering,group,False,derived_empirical,0.047,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,2200,General Engineering,FOR2008,1007,Nanotechnology,group,False,derived_empirical,0.156,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,2202,Aerospace Engineering,FOR2008,0901,Aerospace Engineering,group,True,manual_curated,1.0,
+OpenAlex,2203,Automotive Engineering,FOR2008,0902,Automotive Engineering,group,True,manual_curated,1.0,
+OpenAlex,2204,Biomedical Engineering,FOR2008,0903,Biomedical Engineering,group,True,manual_curated,1.0,
+OpenAlex,2204,Biomedical Engineering,FOR2008,1004,Medical Biotechnology,group,False,derived_empirical,0.083,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,2205,Civil and Structural Engineering,FOR2008,0905,Civil Engineering,group,True,manual_curated,1.0,
+OpenAlex,2205,Civil and Structural Engineering,FOR2008,0909,Geomatic Engineering,group,False,derived_empirical,0.167,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,2206,Computational Mechanics,FOR2008,0203,CLASSICAL PHYSICS,group,False,derived_empirical,0.214,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,2206,Computational Mechanics,FOR2008,0404,GEOPHYSICS,group,False,derived_empirical,0.071,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,2206,Computational Mechanics,FOR2008,0901,Aerospace Engineering,group,False,derived_empirical,0.143,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,2206,Computational Mechanics,FOR2008,0903,Biomedical Engineering,group,False,derived_empirical,0.143,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,2206,Computational Mechanics,FOR2008,0915,Interdisciplinary Engineering,group,True,manual_curated,0.8,
+OpenAlex,2207,Control and Systems Engineering,FOR2008,0906,Electrical and Electronic Engineering,group,False,derived_empirical,0.292,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,2207,Control and Systems Engineering,FOR2008,0910,Manufacturing Engineering,group,False,derived_empirical,0.083,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,2207,Control and Systems Engineering,FOR2008,0913,Mechanical Engineering,group,True,manual_curated,0.9,
+OpenAlex,2208,Electrical and Electronic Engineering,FOR2008,0206,QUANTUM PHYSICS,group,False,derived_empirical,0.016,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,2208,Electrical and Electronic Engineering,FOR2008,0906,Electrical and Electronic Engineering,group,True,manual_curated,1.0,
+OpenAlex,2208,Electrical and Electronic Engineering,FOR2008,1005,Communications Technologies,group,False,derived_empirical,0.137,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,2208,Electrical and Electronic Engineering,FOR2008,1006,Computer Hardware,group,False,derived_empirical,0.07,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,2208,Electrical and Electronic Engineering,FOR2008,1099,Other Technology,group,False,derived_empirical,0.004,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,2209,Industrial and Manufacturing Engineering,FOR2008,0910,Manufacturing Engineering,group,True,manual_curated,1.0,
+OpenAlex,2210,Mechanical Engineering,FOR2008,0203,CLASSICAL PHYSICS,group,False,derived_empirical,0.065,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,2210,Mechanical Engineering,FOR2008,0901,Aerospace Engineering,group,False,derived_empirical,0.043,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,2210,Mechanical Engineering,FOR2008,0903,Biomedical Engineering,group,False,derived_empirical,0.043,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,2210,Mechanical Engineering,FOR2008,0913,Mechanical Engineering,group,True,manual_curated,1.0,
+OpenAlex,2210,Mechanical Engineering,FOR2008,0915,Interdisciplinary Engineering,group,False,derived_empirical,0.087,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,2211,Mechanics of Materials,FOR2008,0913,Mechanical Engineering,group,True,manual_curated,0.8,
+OpenAlex,2212,Ocean Engineering,FOR2008,0911,Maritime Engineering,group,True,manual_curated,0.9,
+OpenAlex,2213,"Safety, Risk, Reliability and Quality",FOR2008,0905,Civil Engineering,group,False,derived_empirical,1.0,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,2213,"Safety, Risk, Reliability and Quality",FOR2008,0915,Interdisciplinary Engineering,group,True,manual_curated,0.7,091507 Risk Engineering
+OpenAlex,2214,Media Technology,FOR2008,0801,Artificial Intelligence and Image Processing,group,True,manual_curated,0.7,an engineering subfield whose OAX topics are mostly image processing; not humanities media studies
+OpenAlex,2214,Media Technology,FOR2008,1903,Journalism and Professional Writing,group,False,derived_empirical,0.111,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,2214,Media Technology,FOR2008,2001,Communication and Media Studies,group,False,derived_empirical,0.889,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,2215,Building and Construction,FOR2008,1201,Architecture,group,False,derived_empirical,0.125,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,2215,Building and Construction,FOR2008,1202,Building,group,True,manual_curated,1.0,
+OpenAlex,2216,Architecture,FOR2008,1201,Architecture,group,True,manual_curated,1.0,
+OpenAlex,2302,Ecological Modeling,FOR2008,0501,ECOLOGICAL APPLICATIONS,group,True,manual_curated,0.9,
+OpenAlex,2303,Ecology,FOR2008,0501,ECOLOGICAL APPLICATIONS,group,False,derived_empirical,0.438,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,2303,Ecology,FOR2008,0599,OTHER ENVIRONMENTAL SCIENCES,group,False,derived_empirical,0.062,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,2303,Ecology,FOR2008,0602,ECOLOGY,group,True,manual_curated,0.9,
+OpenAlex,2303,Ecology,FOR2008,0603,EVOLUTIONARY BIOLOGY,group,False,derived_empirical,0.028,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,2304,Environmental Chemistry,FOR2008,0399,OTHER CHEMICAL SCIENCES,group,True,manual_curated,0.7,039901 Environmental Chemistry (incl. Atmospheric Chemistry)
+OpenAlex,2304,Environmental Chemistry,FOR2008,0502,ENVIRONMENTAL SCIENCE AND MANAGEMENT,group,False,derived_empirical,0.5,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,2304,Environmental Chemistry,FOR2008,0503,SOIL SCIENCES,group,False,derived_empirical,0.231,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,2304,Environmental Chemistry,FOR2008,1002,Environmental Biotechnology,group,False,derived_empirical,0.218,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,2304,Environmental Chemistry,FOR2008,1007,Nanotechnology,group,False,derived_empirical,0.038,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,2305,Environmental Engineering,FOR2008,0907,Environmental Engineering,group,True,manual_curated,1.0,
+OpenAlex,2306,Global and Planetary Change,FOR2008,0401,ATMOSPHERIC SCIENCES,group,True,manual_curated,0.8,
+OpenAlex,2306,Global and Planetary Change,FOR2008,0501,ECOLOGICAL APPLICATIONS,group,False,derived_empirical,0.271,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,2306,Global and Planetary Change,FOR2008,0502,ENVIRONMENTAL SCIENCE AND MANAGEMENT,group,False,derived_empirical,0.104,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,2306,Global and Planetary Change,FOR2008,0503,SOIL SCIENCES,group,False,derived_empirical,0.125,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,2307,"Health, Toxicology and Mutagenesis",FOR2008,1115,Pharmacology and Pharmaceutical Sciences,group,True,manual_curated,0.8,
+OpenAlex,2308,"Management, Monitoring, Policy and Law",FOR2008,0502,ENVIRONMENTAL SCIENCE AND MANAGEMENT,group,True,manual_curated,0.8,"environmental management/monitoring/policy (050205), not urban planning"
+OpenAlex,2308,"Management, Monitoring, Policy and Law",FOR2008,1205,Urban and Regional Planning,group,False,derived_empirical,0.5,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,2309,Nature and Landscape Conservation,FOR2008,0502,ENVIRONMENTAL SCIENCE AND MANAGEMENT,group,True,manual_curated,0.8,
+OpenAlex,2310,Pollution,FOR2008,0502,ENVIRONMENTAL SCIENCE AND MANAGEMENT,group,True,manual_curated,0.9,
+OpenAlex,2311,Waste Management and Disposal,FOR2008,0502,ENVIRONMENTAL SCIENCE AND MANAGEMENT,group,False,derived_empirical,1.0,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,2311,Waste Management and Disposal,FOR2008,0907,Environmental Engineering,group,True,manual_curated,0.7,waste management -> Environmental Engineering (090703 Environmental Technologies)
+OpenAlex,2312,Water Science and Technology,FOR2008,0406,PHYSICAL GEOGRAPHY AND ENVIRONMENTAL GEOSCIENCE,group,True,manual_curated,0.8,
+OpenAlex,2402,Applied Microbiology and Biotechnology,FOR2008,0605,MICROBIOLOGY,group,True,manual_curated,0.9,
+OpenAlex,2403,Immunology,FOR2008,1107,Immunology,group,True,manual_curated,0.9,
+OpenAlex,2404,Microbiology,FOR2008,0605,MICROBIOLOGY,group,True,manual_curated,1.0,
+OpenAlex,2405,Parasitology,FOR2008,0602,ECOLOGY,group,False,derived_empirical,0.038,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,2405,Parasitology,FOR2008,0603,EVOLUTIONARY BIOLOGY,group,False,derived_empirical,0.962,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,2405,Parasitology,FOR2008,1108,Medical Microbiology,group,True,manual_curated,0.7,110803 Medical Parasitology; OAX's topics are mostly human parasitic disease
+OpenAlex,2406,Virology,FOR2008,0605,MICROBIOLOGY,group,True,manual_curated,0.8,
+OpenAlex,2500,General Materials Science,FOR2008,0912,Materials Engineering,group,True,manual_curated,1.0,
+OpenAlex,2502,Biomaterials,FOR2008,0903,Biomedical Engineering,group,True,manual_curated,0.7,090301 Biomaterials
+OpenAlex,2502,Biomaterials,FOR2008,0912,Materials Engineering,group,False,derived_empirical,1.0,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,2503,Ceramics and Composites,FOR2008,0912,Materials Engineering,group,True,manual_curated,0.8,
+OpenAlex,2504,"Electronic, Optical and Magnetic Materials",FOR2008,0204,CONDENSED MATTER PHYSICS,group,False,derived_empirical,0.02,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,2504,"Electronic, Optical and Magnetic Materials",FOR2008,0302,INORGANIC CHEMISTRY,group,False,derived_empirical,0.06,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,2504,"Electronic, Optical and Magnetic Materials",FOR2008,0303,MACROMOLECULAR AND MATERIALS CHEMISTRY,group,False,derived_empirical,0.88,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,2504,"Electronic, Optical and Magnetic Materials",FOR2008,0306,PHYSICAL CHEMISTRY (INCL. STRUCTURAL),group,False,derived_empirical,0.04,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,2504,"Electronic, Optical and Magnetic Materials",FOR2008,0912,Materials Engineering,group,True,manual_curated,0.7,091205 Functional Materials
+OpenAlex,2505,Materials Chemistry,FOR2008,0204,CONDENSED MATTER PHYSICS,group,False,derived_empirical,0.02,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,2505,Materials Chemistry,FOR2008,0302,INORGANIC CHEMISTRY,group,False,derived_empirical,0.06,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,2505,Materials Chemistry,FOR2008,0303,MACROMOLECULAR AND MATERIALS CHEMISTRY,group,True,manual_curated,0.9,
+OpenAlex,2505,Materials Chemistry,FOR2008,0306,PHYSICAL CHEMISTRY (INCL. STRUCTURAL),group,False,derived_empirical,0.04,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,2506,Metals and Alloys,FOR2008,0912,Materials Engineering,group,True,manual_curated,0.8,
+OpenAlex,2507,Polymers and Plastics,FOR2008,0912,Materials Engineering,group,True,manual_curated,0.8,
+OpenAlex,2508,"Surfaces, Coatings and Films",FOR2008,0912,Materials Engineering,group,True,manual_curated,0.8,
+OpenAlex,2602,Algebra and Number Theory,FOR2008,0101,PURE MATHEMATICS,group,True,manual_curated,0.8,algebra and number theory is pure mathematics (010101)
+OpenAlex,2602,Algebra and Number Theory,FOR2008,0102,APPLIED MATHEMATICS,group,False,derived_empirical,0.475,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,2602,Algebra and Number Theory,FOR2008,0802,Computation Theory and Mathematics,group,False,derived_empirical,0.025,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,2604,Applied Mathematics,FOR2008,0102,APPLIED MATHEMATICS,group,True,manual_curated,1.0,
+OpenAlex,2604,Applied Mathematics,FOR2008,0199,OTHER MATHEMATICAL SCIENCES,group,False,derived_empirical,0.045,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,2604,Applied Mathematics,FOR2008,0802,Computation Theory and Mathematics,group,False,derived_empirical,0.048,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,2605,Computational Mathematics,FOR2008,0103,NUMERICAL AND COMPUTATIONAL MATHEMATICS,group,True,manual_curated,1.0,
+OpenAlex,2607,Discrete Mathematics and Combinatorics,FOR2008,0101,PURE MATHEMATICS,group,True,manual_curated,0.8,010104 Combinatorics and Discrete Mathematics sits in Pure Mathematics
+OpenAlex,2607,Discrete Mathematics and Combinatorics,FOR2008,0102,APPLIED MATHEMATICS,group,False,derived_empirical,0.95,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,2607,Discrete Mathematics and Combinatorics,FOR2008,0802,Computation Theory and Mathematics,group,False,derived_empirical,0.05,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,2608,Geometry and Topology,FOR2008,0101,PURE MATHEMATICS,group,True,manual_curated,0.8,
+OpenAlex,2610,Mathematical Physics,FOR2008,0105,MATHEMATICAL PHYSICS,group,True,manual_curated,1.0,
+OpenAlex,2611,Modeling and Simulation,FOR2008,0103,NUMERICAL AND COMPUTATIONAL MATHEMATICS,group,True,manual_curated,0.8,
+OpenAlex,2612,Numerical Analysis,FOR2008,0103,NUMERICAL AND COMPUTATIONAL MATHEMATICS,group,True,manual_curated,0.9,
+OpenAlex,2613,Statistics and Probability,FOR2008,0104,STATISTICS,group,True,manual_curated,1.0,
+OpenAlex,2614,Theoretical Computer Science,FOR2008,0102,APPLIED MATHEMATICS,group,False,derived_empirical,0.95,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,2614,Theoretical Computer Science,FOR2008,0802,Computation Theory and Mathematics,group,True,manual_curated,0.7,theoretical computer science -> Computation Theory and Mathematics
+OpenAlex,2702,Anatomy,FOR2008,1103,Clinical Sciences,group,True,manual_curated,0.8,
+OpenAlex,2702,Anatomy,FOR2008,1106,Human Movement and Sports Science,group,False,derived_empirical,0.036,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,2703,Anesthesiology and Pain Medicine,FOR2008,1103,Clinical Sciences,group,True,manual_curated,0.8,
+OpenAlex,2703,Anesthesiology and Pain Medicine,FOR2008,1106,Human Movement and Sports Science,group,False,derived_empirical,0.036,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,2704,Biochemistry,FOR2008,1101,Medical Biochemistry and Metabolomics,group,True,manual_curated,0.9,
+OpenAlex,2705,Cardiology and Cardiovascular Medicine,FOR2008,1102,Cardiorespiratory Medicine and Haematology,group,True,manual_curated,0.9,
+OpenAlex,2706,Critical Care and Intensive Care Medicine,FOR2008,1103,Clinical Sciences,group,True,manual_curated,0.8,
+OpenAlex,2706,Critical Care and Intensive Care Medicine,FOR2008,1106,Human Movement and Sports Science,group,False,derived_empirical,0.036,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,2707,Complementary and alternative medicine,FOR2008,1104,Complementary and Alternative Medicine,group,True,manual_curated,1.0,
+OpenAlex,2708,Dermatology,FOR2008,1103,Clinical Sciences,group,True,manual_curated,0.8,
+OpenAlex,2708,Dermatology,FOR2008,1106,Human Movement and Sports Science,group,False,derived_empirical,0.036,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,2711,Emergency Medicine,FOR2008,1103,Clinical Sciences,group,True,manual_curated,0.8,
+OpenAlex,2711,Emergency Medicine,FOR2008,1106,Human Movement and Sports Science,group,False,derived_empirical,0.036,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,2712,"Endocrinology, Diabetes and Metabolism",FOR2008,1101,Medical Biochemistry and Metabolomics,group,False,derived_empirical,0.5,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,2712,"Endocrinology, Diabetes and Metabolism",FOR2008,1103,Clinical Sciences,group,True,manual_curated,0.7,110306 Endocrinology; Medical Biochemistry and Metabolomics / Nutrition kept as alternates
+OpenAlex,2712,"Endocrinology, Diabetes and Metabolism",FOR2008,1111,Nutrition and Dietetics,group,False,derived_empirical,0.5,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,2713,Epidemiology,FOR2008,1117,Public Health and Health Services,group,True,manual_curated,0.9,
+OpenAlex,2714,Family Practice,FOR2008,1103,Clinical Sciences,group,False,derived_empirical,0.964,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,2714,Family Practice,FOR2008,1106,Human Movement and Sports Science,group,False,derived_empirical,0.036,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,2714,Family Practice,FOR2008,1117,Public Health and Health Services,group,True,manual_curated,0.7,family/general practice -> 111717 Primary Health Care
+OpenAlex,2715,Gastroenterology,FOR2008,1103,Clinical Sciences,group,True,manual_curated,0.8,
+OpenAlex,2715,Gastroenterology,FOR2008,1106,Human Movement and Sports Science,group,False,derived_empirical,0.036,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,2716,Genetics,FOR2008,0604,GENETICS,group,False,derived_empirical,0.5,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,2716,Genetics,FOR2008,1004,Medical Biotechnology,group,False,derived_empirical,0.321,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,2716,Genetics,FOR2008,1007,Nanotechnology,group,False,derived_empirical,0.143,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,2716,Genetics,FOR2008,1099,Other Technology,group,False,derived_empirical,0.036,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,2716,Genetics,FOR2008,1103,Clinical Sciences,group,True,manual_curated,0.7,110311 Medical Genetics (excl. Cancer Genetics)
+OpenAlex,2717,Geriatrics and Gerontology,FOR2008,1103,Clinical Sciences,group,True,manual_curated,0.8,
+OpenAlex,2717,Geriatrics and Gerontology,FOR2008,1106,Human Movement and Sports Science,group,False,derived_empirical,0.036,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,2718,Health Informatics,FOR2008,0807,Library and Information Studies,group,False,derived_empirical,0.023,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,2718,Health Informatics,FOR2008,1103,Clinical Sciences,group,False,derived_empirical,0.083,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,2718,Health Informatics,FOR2008,1117,Public Health and Health Services,group,True,manual_curated,0.9,
+OpenAlex,2718,Health Informatics,FOR2008,1199,Other Medical and Health Sciences,group,False,derived_empirical,0.038,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,2720,Hematology,FOR2008,1102,Cardiorespiratory Medicine and Haematology,group,True,manual_curated,0.8,
+OpenAlex,2721,Hepatology,FOR2008,1103,Clinical Sciences,group,True,manual_curated,0.8,
+OpenAlex,2721,Hepatology,FOR2008,1106,Human Movement and Sports Science,group,False,derived_empirical,0.036,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,2723,Immunology and Allergy,FOR2008,1107,Immunology,group,True,manual_curated,1.0,
+OpenAlex,2724,Internal Medicine,FOR2008,1103,Clinical Sciences,group,True,manual_curated,0.9,
+OpenAlex,2724,Internal Medicine,FOR2008,1106,Human Movement and Sports Science,group,False,derived_empirical,0.035,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,2724,Internal Medicine,FOR2008,1199,Other Medical and Health Sciences,group,False,derived_empirical,0.025,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,2725,Infectious Diseases,FOR2008,1103,Clinical Sciences,group,True,manual_curated,0.8,
+OpenAlex,2725,Infectious Diseases,FOR2008,1106,Human Movement and Sports Science,group,False,derived_empirical,0.036,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,2726,Microbiology,FOR2008,0605,MICROBIOLOGY,group,False,derived_empirical,0.5,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,2726,Microbiology,FOR2008,1108,Medical Microbiology,group,True,manual_curated,0.8,Microbiology under OAX's Medicine field -> Medical Microbiology
+OpenAlex,2727,Nephrology,FOR2008,1103,Clinical Sciences,group,True,manual_curated,0.8,
+OpenAlex,2727,Nephrology,FOR2008,1106,Human Movement and Sports Science,group,False,derived_empirical,0.036,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,2728,Neurology,FOR2008,1109,Neurosciences,group,True,manual_curated,0.9,
+OpenAlex,2729,Obstetrics and Gynecology,FOR2008,1110,Nursing,group,False,derived_empirical,0.317,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,2729,Obstetrics and Gynecology,FOR2008,1114,Paediatrics and Reproductive Medicine,group,True,manual_curated,0.8,
+OpenAlex,2729,Obstetrics and Gynecology,FOR2008,1117,Public Health and Health Services,group,False,derived_empirical,0.1,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,2729,Obstetrics and Gynecology,FOR2008,1607,Social Work,group,False,derived_empirical,0.021,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,2729,Obstetrics and Gynecology,FOR2008,1701,Psychology,group,False,derived_empirical,0.042,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,2730,Oncology,FOR2008,1112,Oncology and Carcinogenesis,group,True,manual_curated,1.0,
+OpenAlex,2731,Ophthalmology,FOR2008,1113,Ophthalmology and Optometry,group,True,manual_curated,1.0,
+OpenAlex,2732,Orthopedics and Sports Medicine,FOR2008,1103,Clinical Sciences,group,True,manual_curated,0.8,
+OpenAlex,2732,Orthopedics and Sports Medicine,FOR2008,1106,Human Movement and Sports Science,group,False,derived_empirical,0.518,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,2733,Otorhinolaryngology,FOR2008,1103,Clinical Sciences,group,True,manual_curated,0.8,
+OpenAlex,2733,Otorhinolaryngology,FOR2008,1106,Human Movement and Sports Science,group,False,derived_empirical,0.036,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,2734,Pathology and Forensic Medicine,FOR2008,1103,Clinical Sciences,group,True,manual_curated,0.8,
+OpenAlex,2734,Pathology and Forensic Medicine,FOR2008,1106,Human Movement and Sports Science,group,False,derived_empirical,0.036,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,2735,"Pediatrics, Perinatology and Child Health",FOR2008,1114,Paediatrics and Reproductive Medicine,group,True,manual_curated,0.9,
+OpenAlex,2736,Pharmacology,FOR2008,1115,Pharmacology and Pharmaceutical Sciences,group,True,manual_curated,1.0,
+OpenAlex,2737,Physiology,FOR2008,1116,Medical Physiology,group,True,manual_curated,0.9,
+OpenAlex,2738,Psychiatry and Mental health,FOR2008,1103,Clinical Sciences,group,True,manual_curated,0.8,
+OpenAlex,2738,Psychiatry and Mental health,FOR2008,1106,Human Movement and Sports Science,group,False,derived_empirical,0.036,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,2739,"Public Health, Environmental and Occupational Health",FOR2008,1103,Clinical Sciences,group,False,derived_empirical,0.061,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,2739,"Public Health, Environmental and Occupational Health",FOR2008,1106,Human Movement and Sports Science,group,False,derived_empirical,0.03,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,2739,"Public Health, Environmental and Occupational Health",FOR2008,1117,Public Health and Health Services,group,True,manual_curated,1.0,
+OpenAlex,2739,"Public Health, Environmental and Occupational Health",FOR2008,1199,Other Medical and Health Sciences,group,False,derived_empirical,0.014,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,2739,"Public Health, Environmental and Occupational Health",FOR2008,1603,Demography,group,False,derived_empirical,0.089,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,2740,Pulmonary and Respiratory Medicine,FOR2008,1102,Cardiorespiratory Medicine and Haematology,group,True,manual_curated,0.7,110203 Respiratory Diseases sits in Cardiorespiratory Medicine and Haematology
+OpenAlex,2740,Pulmonary and Respiratory Medicine,FOR2008,1103,Clinical Sciences,group,False,derived_empirical,0.964,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,2740,Pulmonary and Respiratory Medicine,FOR2008,1106,Human Movement and Sports Science,group,False,derived_empirical,0.036,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,2741,"Radiology, Nuclear Medicine and Imaging",FOR2008,1103,Clinical Sciences,group,True,manual_curated,0.8,
+OpenAlex,2741,"Radiology, Nuclear Medicine and Imaging",FOR2008,1106,Human Movement and Sports Science,group,False,derived_empirical,0.036,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,2742,Rehabilitation,FOR2008,1103,Clinical Sciences,group,True,manual_curated,0.9,
+OpenAlex,2742,Rehabilitation,FOR2008,1113,Ophthalmology and Optometry,group,False,derived_empirical,0.061,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,2742,Rehabilitation,FOR2008,1904,Performing Arts and Creative Writing,group,False,derived_empirical,0.091,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,2743,Reproductive Medicine,FOR2008,1114,Paediatrics and Reproductive Medicine,group,True,manual_curated,1.0,
+OpenAlex,2745,Rheumatology,FOR2008,1103,Clinical Sciences,group,True,manual_curated,0.8,
+OpenAlex,2745,Rheumatology,FOR2008,1106,Human Movement and Sports Science,group,False,derived_empirical,0.036,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,2746,Surgery,FOR2008,1103,Clinical Sciences,group,True,manual_curated,0.8,
+OpenAlex,2746,Surgery,FOR2008,1106,Human Movement and Sports Science,group,False,derived_empirical,0.036,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,2747,Transplantation,FOR2008,1107,Immunology,group,True,manual_curated,0.8,
+OpenAlex,2748,Urology,FOR2008,1103,Clinical Sciences,group,True,manual_curated,0.8,
+OpenAlex,2748,Urology,FOR2008,1106,Human Movement and Sports Science,group,False,derived_empirical,0.036,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,2802,Behavioral Neuroscience,FOR2008,1109,Neurosciences,group,True,manual_curated,0.9,
+OpenAlex,2803,Biological Psychiatry,FOR2008,1109,Neurosciences,group,True,manual_curated,0.8,
+OpenAlex,2804,Cellular and Molecular Neuroscience,FOR2008,1109,Neurosciences,group,True,manual_curated,0.9,
+OpenAlex,2805,Cognitive Neuroscience,FOR2008,1109,Neurosciences,group,True,manual_curated,0.8,
+OpenAlex,2806,Developmental Neuroscience,FOR2008,1109,Neurosciences,group,True,manual_curated,0.9,
+OpenAlex,2807,Endocrine and Autonomic Systems,FOR2008,1109,Neurosciences,group,True,manual_curated,0.8,
+OpenAlex,2808,Neurology,FOR2008,1109,Neurosciences,group,True,manual_curated,0.8,
+OpenAlex,2809,Sensory Systems,FOR2008,1109,Neurosciences,group,True,manual_curated,0.8,
+OpenAlex,2910,"Issues, ethics and legal aspects",FOR2008,1110,Nursing,group,True,manual_curated,0.8,
+OpenAlex,2911,Leadership and Management,FOR2008,1110,Nursing,group,True,manual_curated,0.8,
+OpenAlex,2916,Nutrition and Dietetics,FOR2008,1111,Nutrition and Dietetics,group,True,manual_curated,0.9,
+OpenAlex,2922,Research and Theory,FOR2008,1110,Nursing,group,True,manual_curated,0.9,
+OpenAlex,3002,Drug Discovery,FOR2008,1115,Pharmacology and Pharmaceutical Sciences,group,True,manual_curated,0.8,
+OpenAlex,3003,Pharmaceutical Science,FOR2008,1115,Pharmacology and Pharmaceutical Sciences,group,True,manual_curated,0.9,
+OpenAlex,3004,Pharmacology,FOR2008,1115,Pharmacology and Pharmaceutical Sciences,group,True,manual_curated,0.9,
+OpenAlex,3005,Toxicology,FOR2008,1115,Pharmacology and Pharmaceutical Sciences,group,True,manual_curated,0.8,
+OpenAlex,3102,Acoustics and Ultrasonics,FOR2008,0203,CLASSICAL PHYSICS,group,True,manual_curated,0.8,
+OpenAlex,3102,Acoustics and Ultrasonics,FOR2008,0205,OPTICAL PHYSICS,group,False,derived_empirical,0.1,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,3102,Acoustics and Ultrasonics,FOR2008,0299,OTHER PHYSICAL SCIENCES,group,False,derived_empirical,0.5,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,3103,Astronomy and Astrophysics,FOR2008,0201,ASTRONOMICAL AND SPACE SCIENCES,group,True,manual_curated,0.9,
+OpenAlex,3104,Condensed Matter Physics,FOR2008,0204,CONDENSED MATTER PHYSICS,group,True,manual_curated,1.0,
+OpenAlex,3104,Condensed Matter Physics,FOR2008,0206,QUANTUM PHYSICS,group,False,derived_empirical,0.214,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,3105,Instrumentation,FOR2008,0299,OTHER PHYSICAL SCIENCES,group,True,manual_curated,0.9,
+OpenAlex,3106,Nuclear and High Energy Physics,FOR2008,0202,"ATOMIC, MOLECULAR, NUCLEAR, PARTICLE AND PLASMA PHYSICS",group,True,manual_curated,1.0,
+OpenAlex,3106,Nuclear and High Energy Physics,FOR2008,0206,QUANTUM PHYSICS,group,False,derived_empirical,0.196,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,3107,"Atomic and Molecular Physics, and Optics",FOR2008,0202,"ATOMIC, MOLECULAR, NUCLEAR, PARTICLE AND PLASMA PHYSICS",group,False,derived_empirical,0.167,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,3107,"Atomic and Molecular Physics, and Optics",FOR2008,0205,OPTICAL PHYSICS,group,True,manual_curated,0.9,
+OpenAlex,3108,Radiation,FOR2008,0202,"ATOMIC, MOLECULAR, NUCLEAR, PARTICLE AND PLASMA PHYSICS",group,False,derived_empirical,0.5,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,3108,Radiation,FOR2008,0299,OTHER PHYSICAL SCIENCES,group,True,manual_curated,0.8,"applied/medical radiation physics (029903 Medical Physics, 029904 Instruments and Techniques)"
+OpenAlex,3109,Statistical and Nonlinear Physics,FOR2008,0102,APPLIED MATHEMATICS,group,False,derived_empirical,0.475,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,3109,Statistical and Nonlinear Physics,FOR2008,0203,CLASSICAL PHYSICS,group,True,manual_curated,0.8,020304 Thermodynamics and Statistical Physics
+OpenAlex,3109,Statistical and Nonlinear Physics,FOR2008,0205,OPTICAL PHYSICS,group,False,derived_empirical,0.1,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,3109,Statistical and Nonlinear Physics,FOR2008,0802,Computation Theory and Mathematics,group,False,derived_empirical,0.025,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,3200,General Psychology,FOR2008,1701,Psychology,group,True,manual_curated,0.8,general psychology -> Psychology
+OpenAlex,3200,General Psychology,FOR2008,1799,Other Psychology and Cognitive Sciences,group,False,derived_empirical,1.0,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,3202,Applied Psychology,FOR2008,1701,Psychology,group,True,manual_curated,1.0,
+OpenAlex,3203,Clinical Psychology,FOR2008,1701,Psychology,group,True,manual_curated,1.0,
+OpenAlex,3204,Developmental and Educational Psychology,FOR2008,1701,Psychology,group,True,manual_curated,0.9,
+OpenAlex,3205,Experimental and Cognitive Psychology,FOR2008,1303,Specialist Studies in Education,group,False,derived_empirical,0.078,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,3205,Experimental and Cognitive Psychology,FOR2008,1701,Psychology,group,False,derived_empirical,0.452,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,3205,Experimental and Cognitive Psychology,FOR2008,1702,Cognitive Sciences,group,True,manual_curated,1.0,
+OpenAlex,3206,Neuropsychology and Physiological Psychology,FOR2008,0604,GENETICS,group,False,derived_empirical,0.042,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,3206,Neuropsychology and Physiological Psychology,FOR2008,1109,Neurosciences,group,False,derived_empirical,0.083,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,3206,Neuropsychology and Physiological Psychology,FOR2008,1701,Psychology,group,True,manual_curated,1.0,
+OpenAlex,3206,Neuropsychology and Physiological Psychology,FOR2008,1702,Cognitive Sciences,group,False,derived_empirical,0.021,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,3207,Social Psychology,FOR2008,1701,Psychology,group,True,manual_curated,1.0,
+OpenAlex,3207,Social Psychology,FOR2008,1799,Other Psychology and Cognitive Sciences,group,False,derived_empirical,0.083,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,3300,General Social Sciences,FOR2008,1607,Social Work,group,False,derived_empirical,0.333,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,3300,General Social Sciences,FOR2008,1699,Other Studies in Human Society,group,True,manual_curated,0.8,
+OpenAlex,3302,Archeology,FOR2008,2101,Archaeology,group,True,manual_curated,0.8,
+OpenAlex,3303,Development,FOR2008,1402,Applied Economics,group,False,derived_empirical,0.481,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,3303,Development,FOR2008,1601,Anthropology,group,False,derived_empirical,0.037,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,3303,Development,FOR2008,1604,Human Geography,group,True,manual_curated,0.9,
+OpenAlex,3304,Education,FOR2008,1301,Education Systems,group,False,derived_empirical,0.081,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,3304,Education,FOR2008,1302,Curriculum and Pedagogy,group,True,manual_curated,0.9,
+OpenAlex,3304,Education,FOR2008,1303,Specialist Studies in Education,group,False,derived_empirical,0.174,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,3304,Education,FOR2008,1399,Other Education,group,False,derived_empirical,0.012,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,3304,Education,FOR2008,1605,Policy and Administration,group,False,derived_empirical,0.023,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,3305,"Geography, Planning and Development",FOR2008,1402,Applied Economics,group,False,derived_empirical,0.241,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,3305,"Geography, Planning and Development",FOR2008,1601,Anthropology,group,False,derived_empirical,0.031,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,3305,"Geography, Planning and Development",FOR2008,1604,Human Geography,group,True,manual_curated,1.0,
+OpenAlex,3306,Health,FOR2008,1103,Clinical Sciences,group,False,derived_empirical,0.5,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,3306,Health,FOR2008,1117,Public Health and Health Services,group,True,manual_curated,0.8,health as a social science -> Public Health and Health Services
+OpenAlex,3306,Health,FOR2008,1199,Other Medical and Health Sciences,group,False,derived_empirical,0.5,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,3307,Human Factors and Ergonomics,FOR2008,1699,Other Studies in Human Society,group,False,derived_empirical,1.0,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,3307,Human Factors and Ergonomics,FOR2008,1701,Psychology,group,True,manual_curated,0.7,170107 Industrial and Organisational Psychology covers human factors
+OpenAlex,3308,Law,FOR2008,1801,Law,group,True,manual_curated,1.0,
+OpenAlex,3308,Law,FOR2008,1802,Maori Law,group,False,derived_empirical,0.005,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,3308,Law,FOR2008,1899,Other Law and Legal Studies,group,False,derived_empirical,0.038,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,3309,Library and Information Sciences,FOR2008,0806,Information Systems,group,False,derived_empirical,0.03,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,3309,Library and Information Sciences,FOR2008,0807,Library and Information Studies,group,True,manual_curated,1.0,
+OpenAlex,3309,Library and Information Sciences,FOR2008,1503,Business and Management,group,False,derived_empirical,0.045,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,3309,Library and Information Sciences,FOR2008,2102,Curatorial and Related Studies,group,False,derived_empirical,0.045,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,3310,Linguistics and Language,FOR2008,2004,Linguistics,group,True,manual_curated,0.9,
+OpenAlex,3311,Safety Research,FOR2008,1117,Public Health and Health Services,group,True,manual_curated,0.7,111705 Environmental and Occupational Health and Safety
+OpenAlex,3311,Safety Research,FOR2008,1699,Other Studies in Human Society,group,False,derived_empirical,1.0,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,3312,Sociology and Political Science,FOR2008,1602,Criminology,group,False,derived_empirical,0.27,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,3312,Sociology and Political Science,FOR2008,1608,Sociology,group,True,manual_curated,0.8,
+OpenAlex,3313,Transportation,FOR2008,1503,Business and Management,group,False,derived_empirical,0.2,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,3313,Transportation,FOR2008,1507,Transportation and Freight Services,group,True,manual_curated,0.9,
+OpenAlex,3314,Anthropology,FOR2008,1601,Anthropology,group,True,manual_curated,1.0,
+OpenAlex,3315,Communication,FOR2008,1903,Journalism and Professional Writing,group,False,derived_empirical,0.111,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,3315,Communication,FOR2008,2001,Communication and Media Studies,group,True,manual_curated,0.9,
+OpenAlex,3316,Cultural Studies,FOR2008,1605,Policy and Administration,group,False,derived_empirical,0.067,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,3316,Cultural Studies,FOR2008,2002,Cultural Studies,group,True,manual_curated,1.0,
+OpenAlex,3317,Demography,FOR2008,1603,Demography,group,True,manual_curated,1.0,
+OpenAlex,3318,Gender Studies,FOR2008,1601,Anthropology,group,False,derived_empirical,0.033,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,3318,Gender Studies,FOR2008,1608,Sociology,group,False,derived_empirical,0.067,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,3318,Gender Studies,FOR2008,1699,Other Studies in Human Society,group,True,manual_curated,0.9,
+OpenAlex,3318,Gender Studies,FOR2008,2002,Cultural Studies,group,False,derived_empirical,0.283,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,3318,Gender Studies,FOR2008,2203,Philosophy,group,False,derived_empirical,0.1,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,3319,Life-span and Life-course Studies,FOR2008,1603,Demography,group,True,manual_curated,0.8,
+OpenAlex,3320,Political Science and International Relations,FOR2008,1606,Political Science,group,True,manual_curated,1.0,
+OpenAlex,3321,Public Administration,FOR2008,1402,Applied Economics,group,False,derived_empirical,0.033,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,3321,Public Administration,FOR2008,1605,Policy and Administration,group,True,manual_curated,1.0,
+OpenAlex,3322,Urban Studies,FOR2008,1205,Urban and Regional Planning,group,True,manual_curated,1.0,
+OpenAlex,3402,Equine,FOR2008,0707,Veterinary Sciences,group,True,manual_curated,0.8,
+OpenAlex,3404,Small Animals,FOR2008,0707,Veterinary Sciences,group,True,manual_curated,0.8,
+OpenAlex,3500,General Dentistry,FOR2008,1103,Clinical Sciences,group,False,derived_empirical,0.038,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,3500,General Dentistry,FOR2008,1105,Dentistry,group,True,manual_curated,1.0,
+OpenAlex,3504,Oral Surgery,FOR2008,1103,Clinical Sciences,group,False,derived_empirical,0.038,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,3504,Oral Surgery,FOR2008,1105,Dentistry,group,True,manual_curated,0.8,
+OpenAlex,3505,Orthodontics,FOR2008,1103,Clinical Sciences,group,False,derived_empirical,0.038,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,3505,Orthodontics,FOR2008,1105,Dentistry,group,True,manual_curated,0.8,
+OpenAlex,3506,Periodontics,FOR2008,1103,Clinical Sciences,group,False,derived_empirical,0.964,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,3506,Periodontics,FOR2008,1105,Dentistry,group,True,manual_curated,0.7,periodontics is dentistry
+OpenAlex,3506,Periodontics,FOR2008,1106,Human Movement and Sports Science,group,False,derived_empirical,0.036,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,3600,General Health Professions,FOR2008,0807,Library and Information Studies,group,False,derived_empirical,0.023,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,3600,General Health Professions,FOR2008,1103,Clinical Sciences,group,False,derived_empirical,0.083,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,3600,General Health Professions,FOR2008,1117,Public Health and Health Services,group,True,manual_curated,0.9,
+OpenAlex,3600,General Health Professions,FOR2008,1199,Other Medical and Health Sciences,group,False,derived_empirical,0.038,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,3603,Complementary and Manual Therapy,FOR2008,1104,Complementary and Alternative Medicine,group,True,manual_curated,0.9,
+OpenAlex,3604,Emergency Medical Services,FOR2008,0807,Library and Information Studies,group,False,derived_empirical,0.023,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,3604,Emergency Medical Services,FOR2008,1103,Clinical Sciences,group,True,manual_curated,0.7,110305 Emergency Medicine
+OpenAlex,3604,Emergency Medical Services,FOR2008,1117,Public Health and Health Services,group,False,derived_empirical,0.856,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,3604,Emergency Medical Services,FOR2008,1199,Other Medical and Health Sciences,group,False,derived_empirical,0.038,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,3605,Health Information Management,FOR2008,0804,Data Format,group,False,derived_empirical,0.038,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,3605,Health Information Management,FOR2008,0806,Information Systems,group,False,derived_empirical,0.962,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,3605,Health Information Management,FOR2008,1117,Public Health and Health Services,group,True,manual_curated,0.7,111711 Health Information Systems (incl. Surveillance)
+OpenAlex,3607,Medical Laboratory Technology,FOR2008,1103,Clinical Sciences,group,True,manual_curated,0.8,
+OpenAlex,3607,Medical Laboratory Technology,FOR2008,1113,Ophthalmology and Optometry,group,False,derived_empirical,0.061,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,3607,Medical Laboratory Technology,FOR2008,1904,Performing Arts and Creative Writing,group,False,derived_empirical,0.091,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,3608,Medical Terminology,FOR2008,0807,Library and Information Studies,group,False,derived_empirical,0.023,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,3608,Medical Terminology,FOR2008,1103,Clinical Sciences,group,False,derived_empirical,0.083,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,3608,Medical Terminology,FOR2008,1117,Public Health and Health Services,group,True,manual_curated,0.8,
+OpenAlex,3608,Medical Terminology,FOR2008,1199,Other Medical and Health Sciences,group,False,derived_empirical,0.038,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,3609,Occupational Therapy,FOR2008,0807,Library and Information Studies,group,False,derived_empirical,0.023,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,3609,Occupational Therapy,FOR2008,1103,Clinical Sciences,group,True,manual_curated,0.7,110321 Rehabilitation and Therapy (excl. Physiotherapy)
+OpenAlex,3609,Occupational Therapy,FOR2008,1117,Public Health and Health Services,group,False,derived_empirical,0.856,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,3609,Occupational Therapy,FOR2008,1199,Other Medical and Health Sciences,group,False,derived_empirical,0.038,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,3611,Pharmacy,FOR2008,0807,Library and Information Studies,group,False,derived_empirical,0.023,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,3611,Pharmacy,FOR2008,1103,Clinical Sciences,group,False,derived_empirical,0.083,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,3611,Pharmacy,FOR2008,1115,Pharmacology and Pharmaceutical Sciences,group,True,manual_curated,0.7,111503 Clinical Pharmacy and Pharmacy Practice
+OpenAlex,3611,Pharmacy,FOR2008,1117,Public Health and Health Services,group,False,derived_empirical,0.856,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,3611,Pharmacy,FOR2008,1199,Other Medical and Health Sciences,group,False,derived_empirical,0.038,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,3612,"Physical Therapy, Sports Therapy and Rehabilitation",FOR2008,1103,Clinical Sciences,group,True,manual_curated,0.8,
+OpenAlex,3612,"Physical Therapy, Sports Therapy and Rehabilitation",FOR2008,1113,Ophthalmology and Optometry,group,False,derived_empirical,0.061,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,3612,"Physical Therapy, Sports Therapy and Rehabilitation",FOR2008,1904,Performing Arts and Creative Writing,group,False,derived_empirical,0.091,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,3614,Radiological and Ultrasound Technology,FOR2008,0807,Library and Information Studies,group,False,derived_empirical,0.023,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,3614,Radiological and Ultrasound Technology,FOR2008,1103,Clinical Sciences,group,True,manual_curated,0.7,110320 Radiology and Organ Imaging
+OpenAlex,3614,Radiological and Ultrasound Technology,FOR2008,1117,Public Health and Health Services,group,False,derived_empirical,0.856,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,3614,Radiological and Ultrasound Technology,FOR2008,1199,Other Medical and Health Sciences,group,False,derived_empirical,0.038,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,3616,Speech and Hearing,FOR2008,1103,Clinical Sciences,group,True,manual_curated,0.8,
+OpenAlex,3616,Speech and Hearing,FOR2008,1113,Ophthalmology and Optometry,group,False,derived_empirical,0.061,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,3616,Speech and Hearing,FOR2008,1904,Performing Arts and Creative Writing,group,False,derived_empirical,0.091,runner-up from the official FOR2020 -> FOR2008 correspondence vote

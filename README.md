@@ -61,6 +61,9 @@ r.resolve("Chemistry", "OAX", "OAX_FIELD")  # label, current scheme
 
 r.resolve("230104", "FOR1998", "OAX_FIELD")       # pre-2000 code -> OpenAlex field
 r.resolve("230104", "FOR1998", "FOR2020_AREA5")   # pre-2000 code -> 5-area aggregate
+
+r.resolve("1708", "OAX", "FOR2008")   # OAX subfield -> FOR2008 group ("1006" Computer Hardware)
+r.resolve("17", "OAX", "FOR2008")     # OAX field -> FOR2008 division ("08")
 ```
 
 ### What `resolve()` returns
@@ -94,7 +97,7 @@ CanonicalResult(
 | `explicit_official_transitive` | chained through an intermediate official table (e.g. FOR1998->FOR2008->FOR2020) | `0.9` or the chain's own weakest link |
 | `exact_key_join` | codes are numerically identical across schemes (ASJC/OpenAlex) | always `1.0` |
 | `derived_empirical` | majority-vote statistic over real joined data (e.g. rolled-up legacy vintage bridges, the ARC-ERA journal-crosswalk bridge) | the vote share, e.g. `0.95` |
-| `manual_curated` | the one hand-curated seed (OpenAlex field -> FOR division), scored by keyword overlap against ABS's own definitions | the overlap score |
+| `manual_curated` | a hand-curated/reviewed pick: the OpenAlex field -> FOR2020 division seed (scored by keyword overlap against ABS's own definitions), the FOR2020 -> OAX hub, and OAX -> `FOR2008` (reviewed row by row, scored by how many of three independent draft signals agree with the pick) | the overlap score; `1.0`; for `FOR2008`, `1.0`/`0.9`/`0.8`/`0.7` for 3/2/1/0 agreeing signals |
 | `constrained_lexical` | algorithmic lexical match within a hierarchically-constrained candidate pool | the lexical score |
 | `lexical` | ABS's own "p"-flagged many-to-many ties, broken by string similarity | the similarity score |
 | `cultural_proxy` | routed through a non-Indigenous FOR2020 proxy for division 45 (Indigenous Studies) -- see below | the proxy match's score, possibly compounded with the proxy target's own confidence |
@@ -106,13 +109,15 @@ values -- never inferred, never guessed:
 
 - **`from_scheme`**: `OAX`, `FOR1998`, `FOR2008`, `FOR2020`, `SEO1998`, `SEO2008`, `SEO2020`,
   `SDG_GOAL`
-- **`to_scheme`**: `OAX_DOMAIN`, `OAX_FIELD`, `OAX_SUBFIELD`, `OAX_TOPIC`, `FOR2020`, `SEO2020`,
-  `FOR2020_AREA5`, `SDG_GOAL`, `SDG_PILLAR`
+- **`to_scheme`**: `OAX_DOMAIN`, `OAX_FIELD`, `OAX_SUBFIELD`, `OAX_TOPIC`, `FOR2020`, `FOR2008`,
+  `SEO2020`, `FOR2020_AREA5`, `SDG_GOAL`, `SDG_PILLAR`
 
 Two rules hold everywhere:
 
-- **Forward in time only.** Resolving moves toward FOR2020/SEO2020, never back to an older
-  vintage (there's no way to ask this tool to go FOR2020 -> FOR2008 -> FOR1998).
+- **Forward in time only.** Between FOR/SEO vintages, resolving moves toward FOR2020/SEO2020,
+  never back to an older vintage (there's no way to ask this tool to go FOR2020 -> FOR2008 ->
+  FOR1998). OAX has a single layout, so `OAX -> FOR2008` is a lateral move to a chosen FOR
+  layout, not a step back in time -- `FOR2008` is a valid `to_scheme` from `OAX` only.
 - **Up the hierarchy only, never down.** A FOR/SEO input can reach `OAX_FIELD`/`OAX_SUBFIELD`
   and `FOR2020_AREA5`, but never `OAX_TOPIC` -- OpenAlex's 4,516 topics are far finer than
   anything honestly derivable from a coarser input, so that combination always raises
@@ -212,6 +217,24 @@ left with no override rather than a forced guess: "Expanding Knowledge" (ANZSRC'
 basic-research catch-all, an intent category with no subject-matter content) and
 "Defence"/"Indigenous" (no OpenAlex academic-subject analog exists for either). See
 `TODO.md` for the full table and reasoning.
+
+### OAX -> FOR2008
+
+`resolve(value, "OAX", "FOR2008")` maps an OAX subfield (or a topic, via its subfield) to a
+FOR2008 group, and an OAX field to a FOR2008 division; an OAX domain raises `ValueError`. All
+252 subfield and 26 field picks were reviewed directly
+(`research_classification/curate_openalex_to_for2008.py`), starting from three cheap draft
+signals: OAX -> FOR2020 -> FOR2008 through ABS's official 2020 -> 2008 correspondence, the
+reverse chain through the hand-curated FOR2020 -> OAX hub, and a word-overlap label match.
+`confidence` records how many of those signals agree with the reviewed pick (`1.0` all three,
+`0.9` two, `0.8` one, `0.7` none -- a pure review judgment). The bridge CSVs
+(`bridge_openalex_for2008_group.csv`, `bridge_openalex_for2008.csv`) also keep up to 4
+correspondence-vote runners-up per code as non-primary `derived_empirical` rows.
+
+```python
+r.resolve("1306", "OAX", "FOR2008")   # Cancer Research -> 1112 Oncology and Carcinogenesis
+r.resolve("10181", "OAX", "FOR2008")  # a topic -> its subfield's group (0801)
+```
 
 ### Indigenous Studies (FOR2020 division 45): resolved via cultural proxy
 

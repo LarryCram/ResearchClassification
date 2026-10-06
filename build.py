@@ -15,6 +15,7 @@ from research_classification import (
     build_correspondences_legacy,
     build_correspondences_rollup,
     build_duckdb,
+    build_for2008,
     build_for_area5,
     build_for_seo,
     build_openalex,
@@ -23,10 +24,12 @@ from research_classification import (
     curate_for2020_division45_to_proxy,
     curate_for2020_to_openalex,
     curate_openalex_for,
+    curate_openalex_to_for2008,
     curate_openalex_subfield_to_for_group,
     curate_openalex_topic_to_for_field,
     curate_sdg_oax_to_seo,
     curate_seo_to_sdg,
+    validate_oax_for2008_consistency,
     validate_oax_for2020_consistency,
 )
 from research_classification.hierarchy import audit_encoding, validate_bridge, validate_canonical, write_csv
@@ -43,6 +46,8 @@ _LOCKED_SEEDS = [
     "openalex_topic_to_for_field.csv",
     "for2020_division_to_openalex_field.csv",
     "for2020_group_to_openalex_subfield.csv",
+    "openalex_subfield_to_for2008_group.csv",
+    "openalex_field_to_for2008_division.csv",
 ]
 
 
@@ -67,6 +72,10 @@ def main() -> None:
     for_df, seo_df = build_for_seo.run()
     validate_canonical(for_df, 23 + 213 + 1967, "FOR")
     validate_canonical(seo_df, 19 + 128 + 840, "SEO")
+
+    print("1a. Building canonical FOR2008 table (target scheme for OAX -> FOR2008)...")
+    for2008_df = build_for2008.run()
+    validate_canonical(for2008_df, 22 + 157 + 1241, "FOR2008")
 
     print("1b. Building canonical SDG table (5 pillars + 17 goals)...")
     sdg_df = build_sdg.run()
@@ -121,6 +130,10 @@ def main() -> None:
           "(hand-curated, ported from an earlier project; independent of 4/4b/4c above)...")
     curate_for2020_to_openalex.run()
 
+    print("4f. Curating (or reusing) OAX subfield/field -> FOR2008 group/division "
+          "(reviewed row by row; draft signals read 4b and 4e above)...")
+    curate_openalex_to_for2008.run()
+
     print("6. Building ABS FOR2008<->2020 / SEO2008<->2020 correspondence bridges...")
     build_correspondences_abs.run()
 
@@ -142,7 +155,7 @@ def main() -> None:
     for_codes = set(for_df["code"])
     seo_codes = set(seo_df["code"])
     oax_codes = set(oax_combined["code"])
-    canonical_lookup = {"FOR": for_codes, "SEO": seo_codes, "OAX": oax_codes}
+    canonical_lookup = {"FOR": for_codes, "FOR2008": set(for2008_df["code"]), "SEO": seo_codes, "OAX": oax_codes}
 
     bridge_files = sorted(BRIDGES_DIR.glob("bridge_*.csv"))
     for path in bridge_files:
@@ -154,6 +167,8 @@ def main() -> None:
 
     print("9b. Checking OAX topic->field / subfield->group / field->division consistency...")
     validate_oax_for2020_consistency.run()
+    print("9c. Reporting OAX -> FOR2008 division crossings and FOR2020 round-trip mismatches...")
+    validate_oax_for2008_consistency.run()
 
     print("10. Auditing character encoding across every output table...")
     findings = []

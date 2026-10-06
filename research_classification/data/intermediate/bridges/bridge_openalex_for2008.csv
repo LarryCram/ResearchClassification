@@ -1,0 +1,92 @@
+source_system,source_code,source_label,system,canonical_code,canonical_label,canonical_level,is_primary,match_method,confidence,notes
+OpenAlex,11,Agricultural and Biological Sciences,FOR2008,05,ENVIRONMENTAL SCIENCES,division,False,derived_empirical,0.002,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,11,Agricultural and Biological Sciences,FOR2008,06,BIOLOGICAL SCIENCES,division,True,manual_curated,1.0,"subfields split between 06 and 07 (and 05/09); 06 kept to match the existing OAX field 11 -> FOR2020 31 BIOLOGICAL SCIENCES mapping, 07 is the main alternate"
+OpenAlex,11,Agricultural and Biological Sciences,FOR2008,07,AGRICULTURAL AND VETERINARY SCIENCES,division,False,derived_empirical,0.191,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,11,Agricultural and Biological Sciences,FOR2008,09,ENGINEERING,division,False,derived_empirical,0.019,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,11,Agricultural and Biological Sciences,FOR2008,10,TECHNOLOGY,division,False,derived_empirical,0.087,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,12,Arts and Humanities,FOR2008,16,STUDIES IN HUMAN SOCIETY,division,False,derived_empirical,0.01,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,12,Arts and Humanities,FOR2008,19,STUDIES IN CREATIVE ARTS AND WRITING,division,False,derived_empirical,0.087,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,12,Arts and Humanities,FOR2008,20,"LANGUAGE, COMMUNICATION AND CULTURE",division,True,manual_curated,0.9,
+OpenAlex,12,Arts and Humanities,FOR2008,21,HISTORY AND ARCHAEOLOGY,division,False,derived_empirical,0.1,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,12,Arts and Humanities,FOR2008,22,PHILOSOPHY AND RELIGIOUS STUDIES,division,False,derived_empirical,0.115,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,13,"Biochemistry, Genetics and Molecular Biology",FOR2008,06,BIOLOGICAL SCIENCES,division,True,manual_curated,0.8,
+OpenAlex,13,"Biochemistry, Genetics and Molecular Biology",FOR2008,10,TECHNOLOGY,division,False,derived_empirical,0.082,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,14,"Business, Management and Accounting",FOR2008,14,ECONOMICS,division,False,derived_empirical,0.011,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,14,"Business, Management and Accounting",FOR2008,15,"COMMERCE, MANAGEMENT, TOURISM AND SERVICES",division,True,manual_curated,1.0,
+OpenAlex,14,"Business, Management and Accounting",FOR2008,22,PHILOSOPHY AND RELIGIOUS STUDIES,division,False,derived_empirical,0.011,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,15,Chemical Engineering,FOR2008,02,PHYSICAL SCIENCES,division,False,derived_empirical,0.02,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,15,Chemical Engineering,FOR2008,04,EARTH SCIENCES,division,False,derived_empirical,0.005,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,15,Chemical Engineering,FOR2008,09,ENGINEERING,division,True,manual_curated,0.9,
+OpenAlex,15,Chemical Engineering,FOR2008,10,TECHNOLOGY,division,False,derived_empirical,0.125,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,15,Chemical Engineering,FOR2008,12,BUILT ENVIRONMENT AND DESIGN,division,False,derived_empirical,0.005,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,16,Chemistry,FOR2008,02,PHYSICAL SCIENCES,division,False,derived_empirical,0.003,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,16,Chemistry,FOR2008,03,CHEMICAL SCIENCES,division,True,manual_curated,0.9,
+OpenAlex,17,Computer Science,FOR2008,08,INFORMATION AND COMPUTING SCIENCES,division,True,manual_curated,0.9,
+OpenAlex,17,Computer Science,FOR2008,11,MEDICAL AND HEALTH SCIENCES,division,False,derived_empirical,0.004,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,17,Computer Science,FOR2008,15,"COMMERCE, MANAGEMENT, TOURISM AND SERVICES",division,False,derived_empirical,0.004,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,17,Computer Science,FOR2008,17,PSYCHOLOGY AND COGNITIVE SCIENCES,division,False,derived_empirical,0.007,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,17,Computer Science,FOR2008,20,"LANGUAGE, COMMUNICATION AND CULTURE",division,False,derived_empirical,0.004,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,18,Decision Sciences,FOR2008,14,ECONOMICS,division,False,derived_empirical,0.011,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,18,Decision Sciences,FOR2008,15,"COMMERCE, MANAGEMENT, TOURISM AND SERVICES",division,True,manual_curated,0.8,
+OpenAlex,18,Decision Sciences,FOR2008,22,PHILOSOPHY AND RELIGIOUS STUDIES,division,False,derived_empirical,0.011,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,19,Earth and Planetary Sciences,FOR2008,03,CHEMICAL SCIENCES,division,False,derived_empirical,0.015,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,19,Earth and Planetary Sciences,FOR2008,04,EARTH SCIENCES,division,True,manual_curated,1.0,
+OpenAlex,19,Earth and Planetary Sciences,FOR2008,09,ENGINEERING,division,False,derived_empirical,0.015,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,20,"Economics, Econometrics and Finance",FOR2008,14,ECONOMICS,division,True,manual_curated,1.0,
+OpenAlex,21,Energy,FOR2008,02,PHYSICAL SCIENCES,division,False,derived_empirical,0.02,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,21,Energy,FOR2008,04,EARTH SCIENCES,division,False,derived_empirical,0.005,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,21,Energy,FOR2008,09,ENGINEERING,division,True,manual_curated,0.8,
+OpenAlex,21,Energy,FOR2008,10,TECHNOLOGY,division,False,derived_empirical,0.125,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,21,Energy,FOR2008,12,BUILT ENVIRONMENT AND DESIGN,division,False,derived_empirical,0.005,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,22,Engineering,FOR2008,02,PHYSICAL SCIENCES,division,False,derived_empirical,0.018,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,22,Engineering,FOR2008,04,EARTH SCIENCES,division,False,derived_empirical,0.005,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,22,Engineering,FOR2008,09,ENGINEERING,division,True,manual_curated,1.0,
+OpenAlex,22,Engineering,FOR2008,10,TECHNOLOGY,division,False,derived_empirical,0.112,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,22,Engineering,FOR2008,12,BUILT ENVIRONMENT AND DESIGN,division,False,derived_empirical,0.108,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,23,Environmental Science,FOR2008,05,ENVIRONMENTAL SCIENCES,division,True,manual_curated,1.0,
+OpenAlex,23,Environmental Science,FOR2008,10,TECHNOLOGY,division,False,derived_empirical,0.184,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,24,Immunology and Microbiology,FOR2008,06,BIOLOGICAL SCIENCES,division,True,manual_curated,0.8,
+OpenAlex,24,Immunology and Microbiology,FOR2008,10,TECHNOLOGY,division,False,derived_empirical,0.082,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,25,Materials Science,FOR2008,02,PHYSICAL SCIENCES,division,False,derived_empirical,0.02,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,25,Materials Science,FOR2008,04,EARTH SCIENCES,division,False,derived_empirical,0.005,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,25,Materials Science,FOR2008,09,ENGINEERING,division,True,manual_curated,0.8,
+OpenAlex,25,Materials Science,FOR2008,10,TECHNOLOGY,division,False,derived_empirical,0.125,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,25,Materials Science,FOR2008,12,BUILT ENVIRONMENT AND DESIGN,division,False,derived_empirical,0.005,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,26,Mathematics,FOR2008,01,MATHEMATICAL SCIENCES,division,True,manual_curated,0.9,
+OpenAlex,26,Mathematics,FOR2008,08,INFORMATION AND COMPUTING SCIENCES,division,False,derived_empirical,0.01,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,27,Medicine,FOR2008,08,INFORMATION AND COMPUTING SCIENCES,division,False,derived_empirical,0.001,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,27,Medicine,FOR2008,10,TECHNOLOGY,division,False,derived_empirical,0.045,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,27,Medicine,FOR2008,11,MEDICAL AND HEALTH SCIENCES,division,True,manual_curated,0.9,
+OpenAlex,27,Medicine,FOR2008,16,STUDIES IN HUMAN SOCIETY,division,False,derived_empirical,0.003,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,27,Medicine,FOR2008,19,STUDIES IN CREATIVE ARTS AND WRITING,division,False,derived_empirical,0.003,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,28,Neuroscience,FOR2008,10,TECHNOLOGY,division,False,derived_empirical,0.054,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,28,Neuroscience,FOR2008,11,MEDICAL AND HEALTH SCIENCES,division,True,manual_curated,0.8,
+OpenAlex,29,Nursing,FOR2008,08,INFORMATION AND COMPUTING SCIENCES,division,False,derived_empirical,0.007,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,29,Nursing,FOR2008,11,MEDICAL AND HEALTH SCIENCES,division,True,manual_curated,0.8,
+OpenAlex,29,Nursing,FOR2008,16,STUDIES IN HUMAN SOCIETY,division,False,derived_empirical,0.016,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,29,Nursing,FOR2008,17,PSYCHOLOGY AND COGNITIVE SCIENCES,division,False,derived_empirical,0.005,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,29,Nursing,FOR2008,19,STUDIES IN CREATIVE ARTS AND WRITING,division,False,derived_empirical,0.014,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,30,"Pharmacology, Toxicology and Pharmaceutics",FOR2008,10,TECHNOLOGY,division,False,derived_empirical,0.054,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,30,"Pharmacology, Toxicology and Pharmaceutics",FOR2008,11,MEDICAL AND HEALTH SCIENCES,division,True,manual_curated,0.8,
+OpenAlex,31,Physics and Astronomy,FOR2008,02,PHYSICAL SCIENCES,division,True,manual_curated,0.9,
+OpenAlex,32,Psychology,FOR2008,06,BIOLOGICAL SCIENCES,division,False,derived_empirical,0.009,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,32,Psychology,FOR2008,11,MEDICAL AND HEALTH SCIENCES,division,False,derived_empirical,0.019,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,32,Psychology,FOR2008,13,EDUCATION,division,False,derived_empirical,0.015,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,32,Psychology,FOR2008,17,PSYCHOLOGY AND COGNITIVE SCIENCES,division,True,manual_curated,1.0,
+OpenAlex,33,Social Sciences,FOR2008,13,EDUCATION,division,False,derived_empirical,0.088,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,33,Social Sciences,FOR2008,14,ECONOMICS,division,False,derived_empirical,0.032,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,33,Social Sciences,FOR2008,16,STUDIES IN HUMAN SOCIETY,division,True,manual_curated,0.9,
+OpenAlex,33,Social Sciences,FOR2008,18,LAW AND LEGAL STUDIES,division,False,derived_empirical,0.14,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,33,Social Sciences,FOR2008,20,"LANGUAGE, COMMUNICATION AND CULTURE",division,False,derived_empirical,0.019,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,34,Veterinary,FOR2008,05,ENVIRONMENTAL SCIENCES,division,False,derived_empirical,0.009,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,34,Veterinary,FOR2008,06,BIOLOGICAL SCIENCES,division,False,derived_empirical,0.025,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,34,Veterinary,FOR2008,07,AGRICULTURAL AND VETERINARY SCIENCES,division,True,manual_curated,0.9,
+OpenAlex,34,Veterinary,FOR2008,09,ENGINEERING,division,False,derived_empirical,0.079,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,34,Veterinary,FOR2008,10,TECHNOLOGY,division,False,derived_empirical,0.105,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,35,Dentistry,FOR2008,10,TECHNOLOGY,division,False,derived_empirical,0.054,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,35,Dentistry,FOR2008,11,MEDICAL AND HEALTH SCIENCES,division,True,manual_curated,0.8,
+OpenAlex,36,Health Professions,FOR2008,08,INFORMATION AND COMPUTING SCIENCES,division,False,derived_empirical,0.007,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,36,Health Professions,FOR2008,11,MEDICAL AND HEALTH SCIENCES,division,True,manual_curated,0.9,
+OpenAlex,36,Health Professions,FOR2008,16,STUDIES IN HUMAN SOCIETY,division,False,derived_empirical,0.016,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,36,Health Professions,FOR2008,17,PSYCHOLOGY AND COGNITIVE SCIENCES,division,False,derived_empirical,0.005,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,36,Health Professions,FOR2008,19,STUDIES IN CREATIVE ARTS AND WRITING,division,False,derived_empirical,0.014,runner-up from the official FOR2020 -> FOR2008 correspondence vote

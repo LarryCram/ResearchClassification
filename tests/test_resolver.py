@@ -44,6 +44,7 @@ def test_row_counts():
         "openalex_subfields": 252,
         "openalex_topics": 4516,
         "sdg": 22,
+        "for_2008": 22 + 157 + 1241,
     }
     for table, expected in counts.items():
         n = resolver._con.execute(f"SELECT COUNT(*) FROM {table}").fetchone()[0]
@@ -538,9 +539,9 @@ def test_oax_topic_field_nests_under_subfield_group():
 
 def test_oax_for2020_match_method_not_hardcoded():
     # Regression test for a bug found and fixed while wiring the new tiers in:
-    # _resolve_oax_to_for2020() used to hardcode the literal strings "constrained_lexical"
-    # (group tier) and "manual_curated" (field tier) regardless of the row's real
-    # match_method. Subfield 1103 "Animal Science and Zoology" is a known exact_match in
+    # _resolve_oax_to_for() (then named _resolve_oax_to_for2020()) used to hardcode the
+    # literal strings "constrained_lexical" (group tier) and "manual_curated" (field tier)
+    # regardless of the row's real match_method. Subfield 1103 "Animal Science and Zoology" is a known exact_match in
     # bridge_openalex_for_group.csv -- resolving it must report that real value, not a
     # hardcoded guess.
     result = resolver.resolve("1103", "OAX", "FOR2020")
@@ -559,6 +560,58 @@ def test_oax_topic_field_level_precision():
     assert result.confidence > 0
     print(f"  OAX topic -> FOR2020 field-level precision OK: topic 10181 -> {result.code} {result.label!r} "
           f"({result.match_method}, {result.confidence})")
+
+
+def test_exhaustive_oax_to_for2008_coverage():
+    # Every OAX field resolves to a FOR2008 division, every subfield and topic to a FOR2008
+    # group (a topic walks up to its subfield -- there is no topic tier), all from reviewed
+    # manual_curated rows at one of the four agreed confidence levels.
+    allowed_confidence = {1.0, 0.9, 0.8, 0.7}
+    for fname, expected_level in [("openalex_fields.csv", "division"), ("openalex_subfields.csv", "group"),
+                                  ("openalex_topics.csv", "group")]:
+        codes = pd.read_csv(CANONICAL_DIR / fname, dtype=str, keep_default_na=False)["code"]
+        bad = set()
+        for code in codes:
+            result = resolver.resolve(code, "OAX", "FOR2008")
+            if (result.level != expected_level or result.match_method != "manual_curated"
+                    or result.confidence not in allowed_confidence):
+                bad.add((code, result.level, result.match_method, result.confidence))
+        assert not bad, f"OAX -> FOR2008 ({fname}): unexpected results {sorted(bad)[:5]}"
+    print("  exhaustive OAX -> FOR2008 coverage OK: 26 fields -> division, 252 subfields and "
+          "4516 topics -> group")
+
+
+def test_oax_to_for2008_known_codes():
+    cases = [
+        ("1708", "1006"),               # Hardware and Architecture -> Computer Hardware, not building Architecture
+        ("Cancer Research", "1112"),    # label input -> Oncology and Carcinogenesis
+        ("2602", "0101"),               # Algebra and Number Theory -> Pure Mathematics
+        ("10181", "0801"),              # topic NLP -> its subfield 1702 AI -> AI and Image Processing
+        ("17", "08"),                   # field Computer Science -> INFORMATION AND COMPUTING SCIENCES
+    ]
+    for value, expected in cases:
+        result = resolver.resolve(value, "OAX", "FOR2008")
+        assert result.code == expected, f"OAX {value!r} -> FOR2008: expected {expected}, got {result.code}"
+        assert result.to_scheme == "FOR2008"
+    print(f"  OAX -> FOR2008 known codes OK ({len(cases)} cases)")
+
+
+def test_for2008_target_only_from_oax():
+    # FOR2008 is a target only from OAX: between FOR vintages resolution still moves forward
+    # in time only, and an OAX domain is too coarse for any FOR division.
+    for value, from_scheme in [("4602", "FOR2020"), ("0801", "FOR2008"), ("230101", "FOR1998")]:
+        try:
+            resolver.resolve(value, from_scheme, "FOR2008")
+        except ValueError:
+            continue
+        raise AssertionError(f"{from_scheme} -> FOR2008 should raise ValueError")
+    try:
+        resolver.resolve("1", "OAX", "FOR2008")
+    except ValueError:
+        pass
+    else:
+        raise AssertionError("OAX domain -> FOR2008 should raise ValueError")
+    print("  FOR2008 target rejected from FOR vintages and from an OAX domain")
 
 
 def test_for2020_area5():
@@ -633,6 +686,9 @@ if __name__ == "__main__":
         test_oax_topic_field_nests_under_subfield_group,
         test_oax_for2020_match_method_not_hardcoded,
         test_oax_topic_field_level_precision,
+        test_exhaustive_oax_to_for2008_coverage,
+        test_oax_to_for2008_known_codes,
+        test_for2008_target_only_from_oax,
         test_group_level_precision,
         test_leading_zero_normalization,
         test_explicit_db_path_matches_bundled,

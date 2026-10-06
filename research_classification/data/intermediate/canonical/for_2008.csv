@@ -1,0 +1,1421 @@
+code,level,label,parent_code
+01,division,MATHEMATICAL SCIENCES,
+0101,group,PURE MATHEMATICS,01
+010101,field,Algebra and Number Theory,0101
+010102,field,Algebraic and Differential Geometry,0101
+010103,field,"Category Theory, K Theory, Homological Algebra",0101
+010104,field,Combinatorics and Discrete Mathematics (excl. Physical Combinatorics),0101
+010105,field,Group Theory and Generalisations,0101
+010106,field,"Lie Groups, Harmonic and Fourier Analysis",0101
+010107,field,"Mathematical Logic, Set Theory, Lattices and Universal Algebra",0101
+010108,field,Operator Algebras and Functional Analysis,0101
+010109,field,"Ordinary Differential Equations, Difference Equations and Dynamical Systems",0101
+010110,field,Partial Differential Equations,0101
+010111,field,Real and Complex Functions (incl. Several Variables),0101
+010112,field,Topology,0101
+010199,field,Pure Mathematics not elsewhere classified,0101
+0102,group,APPLIED MATHEMATICS,01
+010201,field,Approximation Theory and Asymptotic Methods,0102
+010202,field,Biological Mathematics,0102
+010203,field,"Calculus of Variations, Systems Theory and Control Theory",0102
+010204,field,Dynamical Systems in Applications,0102
+010205,field,Financial Mathematics,0102
+010206,field,Operations Research,0102
+010207,field,Theoretical and Applied Mechanics,0102
+010299,field,Applied Mathematics not elsewhere classified,0102
+0103,group,NUMERICAL AND COMPUTATIONAL MATHEMATICS,01
+010301,field,Numerical Analysis,0103
+010302,field,Numerical Solution of Differential and Integral Equations,0103
+010303,field,Optimisation,0103
+010399,field,Numerical and Computational Mathematics not elsewhere classified,0103
+0104,group,STATISTICS,01
+010401,field,Applied Statistics,0104
+010402,field,Biostatistics,0104
+010403,field,Forensic Statistics,0104
+010404,field,Probability Theory,0104
+010405,field,Statistical Theory,0104
+010406,field,Stochastic Analysis and Modelling,0104
+010499,field,Statistics not elsewhere classified,0104
+0105,group,MATHEMATICAL PHYSICS,01
+010501,field,Algebraic Structures in Mathematical Physics,0105
+010502,field,Integrable Systems (Classical and Quantum),0105
+010503,field,"Mathematical Aspects of Classical Mechanics, Quantum Mechanics and Quantum Information Theory",0105
+010504,field,Mathematical Aspects of General Relativity,0105
+010505,field,"Mathematical Aspects of Quantum and Conformal Field Theory, Quantum Gravity and String Theory",0105
+010506,field,"Statistical Mechanics, Physical Combinatorics and Mathematical Aspects of Condensed Matter",0105
+010599,field,Mathematical Physics not elsewhere classified,0105
+0199,group,OTHER MATHEMATICAL SCIENCES,01
+019999,field,Mathematical Sciences not elsewhere classified,0199
+02,division,PHYSICAL SCIENCES,
+0201,group,ASTRONOMICAL AND SPACE SCIENCES,02
+020101,field,Astrobiology,0201
+020102,field,Astronomical and Space Instrumentation,0201
+020103,field,Cosmology and Extragalactic Astronomy,0201
+020104,field,Galactic Astronomy,0201
+020105,field,General Relativity and Gravitational Waves,0201
+020106,field,High Energy Astrophysics; Cosmic Rays,0201
+020107,field,"Mesospheric, Ionospheric and Magnetospheric Physics",0201
+020108,field,Planetary Science (excl. Extraterrestrial Geology),0201
+020109,field,Space and Solar Physics,0201
+020110,field,Stellar Astronomy and Planetary Systems,0201
+020199,field,Astronomical and Space Sciences not elsewhere classified,0201
+0202,group,"ATOMIC, MOLECULAR, NUCLEAR, PARTICLE AND PLASMA PHYSICS",02
+020201,field,Atomic and Molecular Physics,0202
+020202,field,Nuclear Physics,0202
+020203,field,Particle Physics,0202
+020204,field,Plasma Physics; Fusion Plasmas; Electrical Discharges,0202
+020299,field,"Atomic, Molecular, Nuclear, Particle and Plasma Physics not elsewhere classified",0202
+0203,group,CLASSICAL PHYSICS,02
+020301,field,Acoustics and Acoustical Devices; Waves,0203
+020302,field,Electrostatics and Electrodynamics,0203
+020303,field,Fluid Physics,0203
+020304,field,Thermodynamics and Statistical Physics,0203
+020399,field,Classical Physics not elsewhere classified,0203
+0204,group,CONDENSED MATTER PHYSICS,02
+020401,field,Condensed Matter Characterisation Technique Development,0204
+020402,field,Condensed Matter Imaging,0204
+020403,field,Condensed Matter Modelling and Density Functional Theory,0204
+020404,field,Electronic and Magnetic Properties of Condensed Matter; Superconductivity,0204
+020405,field,Soft Condensed Matter,0204
+020406,field,Surfaces and Structural Properties of Condensed Matter,0204
+020499,field,Condensed Matter Physics not elsewhere classified,0204
+0205,group,OPTICAL PHYSICS,02
+020501,field,Classical and Physical Optics,0205
+020502,field,Lasers and Quantum Electronics,0205
+020503,field,Nonlinear Optics and Spectroscopy,0205
+020504,field,"Photonics, Optoelectronics and Optical Communications",0205
+020599,field,Optical Physics not elsewhere classified,0205
+0206,group,QUANTUM PHYSICS,02
+020601,field,Degenerate Quantum Gases and Atom Optics,0206
+020602,field,Field Theory and String Theory,0206
+020603,field,"Quantum Information, Computation and Communication",0206
+020604,field,Quantum Optics,0206
+020699,field,Quantum Physics not elsewhere classified,0206
+0299,group,OTHER PHYSICAL SCIENCES,02
+029901,field,Biological Physics,0299
+029902,field,Complex Physical Systems,0299
+029903,field,Medical Physics,0299
+029904,field,Synchrotrons; Accelerators; Instruments and Techniques,0299
+029999,field,Physical Sciences not elsewhere classified,0299
+03,division,CHEMICAL SCIENCES,
+0301,group,ANALYTICAL CHEMISTRY,03
+030101,field,Analytical Spectrometry,0301
+030102,field,Electroanalytical Chemistry,0301
+030103,field,Flow Analysis,0301
+030104,field,Immunological and Bioassay Methods,0301
+030105,field,Instrumental Methods (excl. Immunological and Bioassay Methods),0301
+030106,field,"Quality Assurance, Chemometrics, Traceability and Metrological Chemistry",0301
+030107,field,Sensor Technology (Chemical aspects),0301
+030108,field,Separation Science,0301
+030199,field,Analytical Chemistry not elsewhere classified,0301
+0302,group,INORGANIC CHEMISTRY,03
+030201,field,Bioinorganic Chemistry,0302
+030202,field,f-Block Chemistry,0302
+030203,field,Inorganic Green Chemistry,0302
+030204,field,Main Group Metal Chemistry,0302
+030205,field,Non-metal Chemistry,0302
+030206,field,Solid State Chemistry,0302
+030207,field,Transition Metal Chemistry,0302
+030299,field,Inorganic Chemistry not elsewhere classified,0302
+0303,group,MACROMOLECULAR AND MATERIALS CHEMISTRY,03
+030301,field,Chemical Characterisation of Materials,0303
+030302,field,Nanochemistry and Supramolecular Chemistry,0303
+030303,field,Optical Properties of Materials,0303
+030304,field,Physical Chemistry of Materials,0303
+030305,field,Polymerisation Mechanisms,0303
+030306,field,Synthesis of Materials,0303
+030307,field,Theory and Design of Materials,0303
+030399,field,Macromolecular and Materials Chemistry not elsewhere classified,0303
+0304,group,MEDICINAL AND BIOMOLECULAR CHEMISTRY,03
+030401,field,Biologically Active Molecules,0304
+030402,field,Biomolecular Modelling and Design,0304
+030403,field,Characterisation of Biological Macromolecules,0304
+030404,field,Cheminformatics and Quantitative Structure-Activity Relationships,0304
+030405,field,Molecular Medicine,0304
+030406,field,Proteins and Peptides,0304
+030499,field,Medicinal and Biomolecular Chemistry not elsewhere classified,0304
+0305,group,ORGANIC CHEMISTRY,03
+030501,field,Free Radical Chemistry,0305
+030502,field,Natural Products Chemistry,0305
+030503,field,Organic Chemical Synthesis,0305
+030504,field,Organic Green Chemistry,0305
+030505,field,Physical Organic Chemistry,0305
+030599,field,Organic Chemistry not elsewhere classified,0305
+0306,group,PHYSICAL CHEMISTRY (INCL. STRUCTURAL),03
+030601,field,Catalysis and Mechanisms of Reactions,0306
+030602,field,Chemical Thermodynamics and Energetics,0306
+030603,field,Colloid and Surface Chemistry,0306
+030604,field,Electrochemistry,0306
+030605,field,Solution Chemistry,0306
+030606,field,Structural Chemistry and Spectroscopy,0306
+030607,field,Transport Properties and Non-equilibrium Processes,0306
+030699,field,Physical Chemistry not elsewhere classified,0306
+0307,group,THEORETICAL AND COMPUTATIONAL CHEMISTRY,03
+030701,field,Quantum Chemistry,0307
+030702,field,Radiation and Matter,0307
+030703,field,Reaction Kinetics and Dynamics,0307
+030704,field,Statistical Mechanics in Chemistry,0307
+030799,field,Theoretical and Computational Chemistry not elsewhere classified,0307
+0399,group,OTHER CHEMICAL SCIENCES,03
+039901,field,Environmental Chemistry (incl. Atmospheric Chemistry),0399
+039902,field,Forensic Chemistry,0399
+039903,field,Industrial Chemistry,0399
+039904,field,Organometallic Chemistry,0399
+039999,field,Chemical Sciences not elsewhere classified,0399
+04,division,EARTH SCIENCES,
+0401,group,ATMOSPHERIC SCIENCES,04
+040101,field,Atmospheric Aerosols,0401
+040102,field,Atmospheric Dynamics,0401
+040103,field,Atmospheric Radiation,0401
+040104,field,Climate Change Processes,0401
+040105,field,Climatology (excl. Climate Change Processes),0401
+040106,field,Cloud Physics,0401
+040107,field,Meteorology,0401
+040108,field,Tropospheric and Stratospheric Physics,0401
+040199,field,Atmospheric Sciences not elsewhere classified,0401
+0402,group,GEOCHEMISTRY,04
+040201,field,Exploration Geochemistry,0402
+040202,field,Inorganic Geochemistry,0402
+040203,field,Isotope Geochemistry,0402
+040204,field,Organic Geochemistry,0402
+040299,field,Geochemistry not elsewhere classified,0402
+0403,group,GEOLOGY,04
+040301,field,Basin Analysis,0403
+040302,field,Extraterrestrial Geology,0403
+040303,field,Geochronology,0403
+040304,field,Igneous and Metamorphic Petrology,0403
+040305,field,Marine Geoscience,0403
+040306,field,Mineralogy and Crystallography,0403
+040307,field,Ore Deposit Petrology,0403
+040308,field,Palaeontology (incl. Palynology),0403
+040309,field,Petroleum and Coal Geology,0403
+040310,field,Sedimentology,0403
+040311,field,Stratigraphy (incl. Biostratigraphy and Sequence Stratigraphy),0403
+040312,field,Structural Geology,0403
+040313,field,Tectonics,0403
+040314,field,Volcanology,0403
+040399,field,Geology not elsewhere classified,0403
+0404,group,GEOPHYSICS,04
+040401,field,Electrical and Electromagnetic Methods in Geophysics,0404
+040402,field,Geodynamics,0404
+040403,field,Geophysical Fluid Dynamics,0404
+040404,field,Geothermics and Radiometrics,0404
+040405,field,Gravimetrics,0404
+040406,field,Magnetism and Palaeomagnetism,0404
+040407,field,Seismology and Seismic Exploration,0404
+040499,field,Geophysics not elsewhere classified,0404
+0405,group,OCEANOGRAPHY,04
+040501,field,Biological Oceanography,0405
+040502,field,Chemical Oceanography,0405
+040503,field,Physical Oceanography,0405
+040599,field,Oceanography not elsewhere classified,0405
+0406,group,PHYSICAL GEOGRAPHY AND ENVIRONMENTAL GEOSCIENCE,04
+040601,field,Geomorphology and Regolith and Landscape Evolution,0406
+040602,field,Glaciology,0406
+040603,field,Hydrogeology,0406
+040604,field,Natural Hazards,0406
+040605,field,Palaeoclimatology,0406
+040606,field,Quaternary Environments,0406
+040607,field,Surface Processes,0406
+040608,field,Surfacewater Hydrology,0406
+040699,field,Physical Geography and Environmental Geoscience not elsewhere classified,0406
+0499,group,OTHER EARTH SCIENCES,04
+049999,field,Earth Sciences not elsewhere classified,0499
+05,division,ENVIRONMENTAL SCIENCES,
+0501,group,ECOLOGICAL APPLICATIONS,05
+050101,field,Ecological Impacts of Climate Change,0501
+050102,field,Ecosystem Function,0501
+050103,field,Invasive Species Ecology,0501
+050104,field,Landscape Ecology,0501
+050199,field,Ecological Applications not elsewhere classified,0501
+0502,group,ENVIRONMENTAL SCIENCE AND MANAGEMENT,05
+050201,field,Aboriginal and Torres Strait Islander Environmental Knowledge,0502
+050202,field,Conservation and Biodiversity,0502
+050203,field,Environmental Education and Extension,0502
+050204,field,Environmental Impact Assessment,0502
+050205,field,Environmental Management,0502
+050206,field,Environmental Monitoring,0502
+050207,field,Environmental Rehabilitation (excl. Bioremediation),0502
+050208,field,Maori Environmental Knowledge,0502
+050209,field,Natural Resource Management,0502
+050210,field,Pacific Peoples Environmental Knowledge,0502
+050211,field,Wildlife and Habitat Management,0502
+050299,field,Environmental Science and Management not elsewhere classified,0502
+0503,group,SOIL SCIENCES,05
+050301,field,Carbon Sequestration Science,0503
+050302,field,Land Capability and Soil Degradation,0503
+050303,field,Soil Biology,0503
+050304,field,Soil Chemistry (excl. Carbon Sequestration Science),0503
+050305,field,Soil Physics,0503
+050399,field,Soil Sciences not elsewhere classified,0503
+0599,group,OTHER ENVIRONMENTAL SCIENCES,05
+059999,field,Environmental Sciences not elsewhere classified,0599
+06,division,BIOLOGICAL SCIENCES,
+0601,group,BIOCHEMISTRY AND CELL BIOLOGY,06
+060101,field,Analytical Biochemistry,0601
+060102,field,Bioinformatics,0601
+060103,field,"Cell Development, Proliferation and Death",0601
+060104,field,Cell Metabolism,0601
+060105,field,Cell Neurochemistry,0601
+060106,field,"Cellular Interactions (incl. Adhesion, Matrix, Cell Wall)",0601
+060107,field,Enzymes,0601
+060108,field,Protein Trafficking,0601
+060109,field,Proteomics and Intermolecular Interactions (excl. Medical Proteomics),0601
+060110,field,Receptors and Membrane Biology,0601
+060111,field,Signal Transduction,0601
+060112,field,Structural Biology (incl. Macromolecular Modelling),0601
+060113,field,Synthetic Biology,0601
+060114,field,Systems Biology,0601
+060199,field,Biochemistry and Cell Biology not elsewhere classified,0601
+0602,group,ECOLOGY,06
+060201,field,Behavioural Ecology,0602
+060202,field,Community Ecology (excl. Invasive Species Ecology),0602
+060203,field,Ecological Physiology,0602
+060204,field,Freshwater Ecology,0602
+060205,field,Marine and Estuarine Ecology (incl. Marine Ichthyology),0602
+060206,field,Palaeoecology,0602
+060207,field,Population Ecology,0602
+060208,field,Terrestrial Ecology,0602
+060299,field,Ecology not elsewhere classified,0602
+0603,group,EVOLUTIONARY BIOLOGY,06
+060301,field,Animal Systematics and Taxonomy,0603
+060302,field,Biogeography and Phylogeography,0603
+060303,field,Biological Adaptation,0603
+060304,field,Ethology and Sociobiology,0603
+060305,field,Evolution of Developmental Systems,0603
+060306,field,Evolutionary Impacts of Climate Change,0603
+060307,field,Host-Parasite Interactions,0603
+060308,field,Life Histories,0603
+060309,field,Phylogeny and Comparative Analysis,0603
+060310,field,Plant Systematics and Taxonomy,0603
+060311,field,Speciation and Extinction,0603
+060399,field,Evolutionary Biology not elsewhere classified,0603
+0604,group,GENETICS,06
+060401,field,Anthropological Genetics,0604
+060402,field,Cell and Nuclear Division,0604
+060403,field,Developmental Genetics (incl. Sex Determination),0604
+060404,field,Epigenetics (incl. Genome Methylation and Epigenomics),0604
+060405,field,Gene Expression (incl. Microarray and other genome-wide approaches),0604
+060406,field,Genetic Immunology,0604
+060407,field,Genome Structure and Regulation,0604
+060408,field,Genomics,0604
+060409,field,Molecular Evolution,0604
+060410,field,Neurogenetics,0604
+060411,field,"Population, Ecological and Evolutionary Genetics",0604
+060412,field,Quantitative Genetics (incl. Disease and Trait Mapping Genetics),0604
+060499,field,Genetics not elsewhere classified,0604
+0605,group,MICROBIOLOGY,06
+060501,field,Bacteriology,0605
+060502,field,Infectious Agents,0605
+060503,field,Microbial Genetics,0605
+060504,field,Microbial Ecology,0605
+060505,field,Mycology,0605
+060506,field,Virology,0605
+060599,field,Microbiology not elsewhere classified,0605
+0606,group,PHYSIOLOGY,06
+060601,field,Animal Physiology - Biophysics,0606
+060602,field,Animal Physiology - Cell,0606
+060603,field,Animal Physiology – Systems,0606
+060604,field,Comparative Physiology,0606
+060699,field,Physiology not elsewhere classified,0606
+0607,group,PLANT BIOLOGY,06
+060701,field,Phycology (incl. Marine Grasses),0607
+060702,field,Plant Cell and Molecular Biology,0607
+060703,field,Plant Developmental and Reproductive Biology,0607
+060704,field,Plant Pathology,0607
+060705,field,Plant Physiology,0607
+060799,field,Plant Biology not elsewhere classified,0607
+0608,group,ZOOLOGY,06
+060801,field,Animal Behaviour,0608
+060802,field,Animal Cell and Molecular Biology,0608
+060803,field,Animal Developmental and Reproductive Biology,0608
+060804,field,Animal Immunology,0608
+060805,field,Animal Neurobiology,0608
+060806,field,Animal Physiological Ecology,0608
+060807,field,Animal Structure and Function,0608
+060808,field,Invertebrate Biology,0608
+060809,field,Vertebrate Biology,0608
+060899,field,Zoology not elsewhere classified,0608
+0699,group,OTHER BIOLOGICAL SCIENCES,06
+069901,field,Forensic Biology,0699
+069902,field,Global Change Biology,0699
+069999,field,Biological Sciences not elsewhere classified,0699
+07,division,AGRICULTURAL AND VETERINARY SCIENCES,
+0701,group,"Agriculture, Land and Farm Management",07
+070101,field,Agricultural Land Management,0701
+070102,field,Agricultural Land Planning,0701
+070103,field,Agricultural Production Systems Simulation,0701
+070104,field,Agricultural Spatial Analysis and Modelling,0701
+070105,field,Agricultural Systems Analysis and Modelling,0701
+070106,field,"Farm Management, Rural Management and Agribusiness",0701
+070107,field,Farming Systems Research,0701
+070108,field,Sustainable Agricultural Development,0701
+070199,field,"Agriculture, Land and Farm Management not elsewhere classified",0701
+0702,group,Animal Production,07
+070201,field,Animal Breeding,0702
+070202,field,Animal Growth and Development,0702
+070203,field,Animal Management,0702
+070204,field,Animal Nutrition,0702
+070205,field,Animal Protection (Pests and Pathogens),0702
+070206,field,Animal Reproduction,0702
+070207,field,Humane Animal Treatment,0702
+070299,field,Animal Production not elsewhere classified,0702
+0703,group,Crop and Pasture Production,07
+070301,field,Agro-ecosystem Function and Prediction,0703
+070302,field,Agronomy,0703
+070303,field,Crop and Pasture Biochemistry and Physiology,0703
+070304,field,Crop and Pasture Biomass and Bioproducts,0703
+070305,field,Crop and Pasture Improvement (Selection and Breeding),0703
+070306,field,Crop and Pasture Nutrition,0703
+070307,field,Crop and Pasture Post Harvest Technologies (incl. Transportation and Storage),0703
+070308,field,"Crop and Pasture Protection (Pests, Diseases and Weeds)",0703
+070399,field,Crop and Pasture Production not elsewhere classified,0703
+0704,group,Fisheries Sciences,07
+070401,field,Aquaculture,0704
+070402,field,Aquatic Ecosystem Studies and Stock Assessment,0704
+070403,field,Fisheries Management,0704
+070404,field,Fish Pests and Diseases,0704
+070405,field,Fish Physiology and Genetics,0704
+070406,field,Post-Harvest Fisheries Technologies (incl. Transportation),0704
+070499,field,Fisheries Sciences not elsewhere classified,0704
+0705,group,Forestry Sciences,07
+070501,field,Agroforestry,0705
+070502,field,Forestry Biomass and Bioproducts,0705
+070503,field,Forestry Fire Management,0705
+070504,field,Forestry Management and Environment,0705
+070505,field,"Forestry Pests, Health and Diseases",0705
+070506,field,Forestry Product Quality Assessment,0705
+070507,field,Tree Improvement (Selection and Breeding),0705
+070508,field,Tree Nutrition and Physiology,0705
+070509,field,Wood Fibre Processing,0705
+070510,field,Wood Processing,0705
+070599,field,Forestry Sciences not elsewhere classified,0705
+0706,group,Horticultural Production,07
+070601,field,Horticultural Crop Growth and Development,0706
+070602,field,Horticultural Crop Improvement (Selection and Breeding),0706
+070603,field,"Horticultural Crop Protection (Pests, Diseases and Weeds)",0706
+070604,field,Oenology and Viticulture,0706
+070605,field,Post Harvest Horticultural Technologies (incl. Transportation and Storage),0706
+070699,field,Horticultural Production not elsewhere classified,0706
+0707,group,Veterinary Sciences,07
+070701,field,Veterinary Anaesthesiology and Intensive Care,0707
+070702,field,Veterinary Anatomy and Physiology,0707
+070703,field,Veterinary Diagnosis and Diagnostics,0707
+070704,field,Veterinary Epidemiology,0707
+070705,field,Veterinary Immunology,0707
+070706,field,Veterinary Medicine,0707
+070707,field,Veterinary Microbiology (excl. Virology),0707
+070708,field,Veterinary Parasitology,0707
+070709,field,Veterinary Pathology,0707
+070710,field,Veterinary Pharmacology,0707
+070711,field,Veterinary Surgery,0707
+070712,field,Veterinary Virology,0707
+070799,field,Veterinary Sciences not elsewhere classified,0707
+0799,group,Other Agricultural and Veterinary Sciences,07
+079901,field,"Agricultural Hydrology (Drainage, Flooding, Irrigation, Quality, etc.)",0799
+079902,field,Fertilisers and Agrochemicals (incl. Application),0799
+079999,field,Agricultural and Veterinary Sciences not elsewhere classified,0799
+08,division,INFORMATION AND COMPUTING SCIENCES,
+0801,group,Artificial Intelligence and Image Processing,08
+080101,field,Adaptive Agents and Intelligent Robotics,0801
+080102,field,Artificial Life,0801
+080103,field,Computer Graphics,0801
+080104,field,Computer Vision,0801
+080105,field,Expert Systems,0801
+080106,field,Image Processing,0801
+080107,field,Natural Language Processing,0801
+080108,field,"Neural, Evolutionary and Fuzzy Computation",0801
+080109,field,Pattern Recognition and Data Mining,0801
+080110,field,Simulation and Modelling,0801
+080111,field,Virtual Reality and Related Simulation,0801
+080199,field,Artificial Intelligence and Image Processing not elsewhere classified,0801
+0802,group,Computation Theory and Mathematics,08
+080201,field,Analysis of Algorithms and Complexity,0802
+080202,field,Applied Discrete Mathematics,0802
+080203,field,Computational Logic and Formal Languages,0802
+080204,field,Mathematical Software,0802
+080205,field,Numerical Computation,0802
+080299,field,Computation Theory and Mathematics not elsewhere classified,0802
+0803,group,Computer Software,08
+080301,field,Bioinformatics Software,0803
+080302,field,Computer System Architecture,0803
+080303,field,Computer System Security,0803
+080304,field,Concurrent Programming,0803
+080305,field,Multimedia Programming,0803
+080306,field,Open Software,0803
+080307,field,Operating Systems,0803
+080308,field,Programming Languages,0803
+080309,field,Software Engineering,0803
+080399,field,Computer Software not elsewhere classified,0803
+0804,group,Data Format,08
+080401,field,Coding and Information Theory,0804
+080402,field,Data Encryption,0804
+080403,field,Data Structures,0804
+080404,field,Markup Languages,0804
+080499,field,Data Format not elsewhere classified,0804
+0805,group,Distributed Computing,08
+080501,field,Distributed and Grid Systems,0805
+080502,field,Mobile Technologies,0805
+080503,field,Networking and Communications,0805
+080504,field,Ubiquitous Computing,0805
+080505,field,Web Technologies (excl. Web Search),0805
+080599,field,Distributed Computing not elsewhere classified,0805
+0806,group,Information Systems,08
+080601,field,Aboriginal and Torres Strait Islander Information and Knowledge Systems,0806
+080602,field,Computer-Human Interaction,0806
+080603,field,Conceptual Modelling,0806
+080604,field,Database Management,0806
+080605,field,Decision Support and Group Support Systems,0806
+080606,field,Global Information Systems,0806
+080607,field,Information Engineering and Theory,0806
+080608,field,Information Systems Development Methodologies,0806
+080609,field,Information Systems Management,0806
+080610,field,Information Systems Organisation,0806
+080611,field,Information Systems Theory,0806
+080612,field,Interorganisational Information Systems and Web Services,0806
+080613,field,Maori Information and Knowledge Systems,0806
+080614,field,Pacific Peoples Information and Knowledge Systems,0806
+080699,field,Information Systems not elsewhere classified,0806
+0807,group,Library and Information Studies,08
+080701,field,Aboriginal and Torres Strait Islander Knowledge Management,0807
+080702,field,Health Informatics,0807
+080703,field,Human Information Behaviour,0807
+080704,field,Information Retrieval and Web Search,0807
+080705,field,Informetrics,0807
+080706,field,Librarianship,0807
+080707,field,Organisation of Information and Knowledge Resources,0807
+080708,field,Records and Information Management (excl. Business Records and Information Management),0807
+080709,field,Social and Community Informatics,0807
+080799,field,Library and Information Studies not elsewhere classified,0807
+0899,group,Other Information and Computing Sciences,08
+089999,field,Information and Computing Sciences not elsewhere classified,0899
+09,division,ENGINEERING,
+0901,group,Aerospace Engineering,09
+090101,field,Aerodynamics (excl. Hypersonic Aerodynamics),0901
+090102,field,Aerospace Materials,0901
+090103,field,Aerospace Structures,0901
+090104,field,Aircraft Performance and Flight Control Systems,0901
+090105,field,Avionics,0901
+090106,field,Flight Dynamics,0901
+090107,field,Hypersonic Propulsion and Hypersonic Aerodynamics,0901
+090108,field,"Satellite, Space Vehicle and Missile Design and Testing",0901
+090199,field,Aerospace Engineering not elsewhere classified,0901
+0902,group,Automotive Engineering,09
+090201,field,Automotive Combustion and Fuel Engineering (incl. Alternative/Renewable Fuels),0902
+090202,field,Automotive Engineering Materials,0902
+090203,field,Automotive Mechatronics,0902
+090204,field,Automotive Safety Engineering,0902
+090205,field,Hybrid Vehicles and Powertrains,0902
+090299,field,Automotive Engineering not elsewhere classified,0902
+0903,group,Biomedical Engineering,09
+090301,field,Biomaterials,0903
+090302,field,Biomechanical Engineering,0903
+090303,field,Biomedical Instrumentation,0903
+090304,field,Medical Devices,0903
+090305,field,Rehabilitation Engineering,0903
+090399,field,Biomedical Engineering not elsewhere classified,0903
+0904,group,Chemical Engineering,09
+090401,field,Carbon Capture Engineering (excl. Sequestration),0904
+090402,field,Catalytic Process Engineering,0904
+090403,field,Chemical Engineering Design,0904
+090404,field,Membrane and Separation Technologies,0904
+090405,field,Non-automotive Combustion and Fuel Engineering (incl. Alternative/Renewable Fuels),0904
+090406,field,Powder and Particle Technology,0904
+090407,field,Process Control and Simulation,0904
+090408,field,Rheology,0904
+090409,field,Wastewater Treatment Processes,0904
+090410,field,Water Treatment Processes,0904
+090499,field,Chemical Engineering not elsewhere classified,0904
+0905,group,Civil Engineering,09
+090501,field,Civil Geotechnical Engineering,0905
+090502,field,Construction Engineering,0905
+090503,field,Construction Materials,0905
+090504,field,Earthquake Engineering,0905
+090505,field,Infrastructure Engineering and Asset Management,0905
+090506,field,Structural Engineering,0905
+090507,field,Transport Engineering,0905
+090508,field,Water Quality Engineering,0905
+090509,field,Water Resources Engineering,0905
+090599,field,Civil Engineering not elsewhere classified,0905
+0906,group,Electrical and Electronic Engineering,09
+090601,field,Circuits and Systems,0906
+090602,field,"Control Systems, Robotics and Automation",0906
+090603,field,Industrial Electronics,0906
+090604,field,Microelectronics and Integrated Circuits,0906
+090605,field,"Photodetectors, Optical Sensors and Solar Cells",0906
+090606,field,Photonics and Electro-Optical Engineering (excl. Communications),0906
+090607,field,Power and Energy Systems Engineering (excl. Renewable Power),0906
+090608,field,Renewable Power and Energy Systems Engineering (excl. Solar Cells),0906
+090609,field,Signal Processing,0906
+090699,field,Electrical and Electronic Engineering not elsewhere classified,0906
+0907,group,Environmental Engineering,09
+090701,field,Environmental Engineering Design,0907
+090702,field,Environmental Engineering Modelling,0907
+090703,field,Environmental Technologies,0907
+090799,field,Environmental Engineering not elsewhere classified,0907
+0908,group,Food Sciences,09
+090801,field,Food Chemistry and Molecular Gastronomy (excl. Wine),0908
+090802,field,Food Engineering,0908
+090803,field,Food Nutritional Balance,0908
+090804,field,"Food Packaging, Preservation and Safety",0908
+090805,field,Food Processing,0908
+090806,field,Wine Chemistry and Wine Sensory Science,0908
+090899,field,Food Sciences not elsewhere classified,0908
+0909,group,Geomatic Engineering,09
+090901,field,Cartography,0909
+090902,field,Geodesy,0909
+090903,field,Geospatial Information Systems,0909
+090904,field,Navigation and Position Fixing,0909
+090905,field,Photogrammetry and Remote Sensing,0909
+090906,field,Surveying (incl. Hydrographic Surveying),0909
+090999,field,Geomatic Engineering not elsewhere classified,0909
+0910,group,Manufacturing Engineering,09
+091001,field,CAD/CAM Systems,0910
+091002,field,Flexible Manufacturing Systems,0910
+091003,field,Machine Tools,0910
+091004,field,Machining,0910
+091005,field,Manufacturing Management,0910
+091006,field,Manufacturing Processes and Technologies (excl. Textiles),0910
+091007,field,Manufacturing Robotics and Mechatronics (excl. Automotive Mechatronics),0910
+091008,field,Manufacturing Safety and Quality,0910
+091009,field,Microtechnology,0910
+091010,field,"Packaging, Storage and Transportation (excl. Food and Agricultural Products)",0910
+091011,field,Precision Engineering,0910
+091012,field,Textile Technology,0910
+091099,field,Manufacturing Engineering not elsewhere classified,0910
+0911,group,Maritime Engineering,09
+091101,field,Marine Engineering,0911
+091102,field,Naval Architecture,0911
+091103,field,Ocean Engineering,0911
+091104,field,Ship and Platform Hydrodynamics,0911
+091105,field,Ship and Platform Structures,0911
+091106,field,Special Vehicles,0911
+091199,field,Maritime Engineering not elsewhere classified,0911
+0912,group,Materials Engineering,09
+091201,field,Ceramics,0912
+091202,field,Composite and Hybrid Materials,0912
+091203,field,Compound Semiconductors,0912
+091204,field,Elemental Semiconductors,0912
+091205,field,Functional Materials,0912
+091206,field,Glass,0912
+091207,field,Metals and Alloy Materials,0912
+091208,field,Organic Semiconductors,0912
+091209,field,Polymers and Plastics,0912
+091210,field,"Timber, Pulp and Paper",0912
+091299,field,Materials Engineering not elsewhere classified,0912
+0913,group,Mechanical Engineering,09
+091301,field,Acoustics and Noise Control (excl. Architectural Acoustics),0913
+091302,field,Automation and Control Engineering,0913
+091303,field,Autonomous Vehicles,0913
+091304,field,"Dynamics, Vibration and Vibration Control",0913
+091305,field,"Energy Generation, Conversion and Storage Engineering",0913
+091306,field,Microelectromechanical Systems (MEMS),0913
+091307,field,Numerical Modelling and Mechanical Characterisation,0913
+091308,field,Solid Mechanics,0913
+091309,field,Tribology,0913
+091399,field,Mechanical Engineering not elsewhere classified,0913
+0914,group,Resources Engineering and Extractive Metallurgy,09
+091401,field,Electrometallurgy,0914
+091402,field,Geomechanics and Resources Geotechnical Engineering,0914
+091403,field,Hydrometallurgy,0914
+091404,field,Mineral Processing/Beneficiation,0914
+091405,field,Mining Engineering,0914
+091406,field,Petroleum and Reservoir Engineering,0914
+091407,field,Pyrometallurgy,0914
+091499,field,Resources Engineering and Extractive Metallurgy not elsewhere classified,0914
+0915,group,Interdisciplinary Engineering,09
+091501,field,Computational Fluid Dynamics,0915
+091502,field,Computational Heat Transfer,0915
+091503,field,Engineering Practice,0915
+091504,field,Fluidisation and Fluid Mechanics,0915
+091505,field,Heat and Mass Transfer Operations,0915
+091506,field,Nuclear Engineering (incl. Fuel Enrichment and Waste Processing and Storage),0915
+091507,field,Risk Engineering (excl. Earthquake Engineering),0915
+091508,field,Turbulent Flows,0915
+091599,field,Interdisciplinary Engineering not elsewhere classified,0915
+0999,group,Other Engineering,09
+099901,field,Agricultural Engineering,0999
+099902,field,Engineering Instrumentation,0999
+099999,field,Engineering not elsewhere classified,0999
+10,division,TECHNOLOGY,
+1001,group,Agricultural Biotechnology,10
+100101,field,Agricultural Biotechnology Diagnostics (incl. Biosensors),1001
+100102,field,Agricultural Marine Biotechnology,1001
+100103,field,Agricultural Molecular Engineering of Nucleic Acids and Proteins,1001
+100104,field,Genetically Modified Animals,1001
+100105,field,Genetically Modified Field Crops and Pasture,1001
+100106,field,Genetically Modified Horticulture Plants,1001
+100107,field,Genetically Modified Trees,1001
+100108,field,Livestock Cloning,1001
+100109,field,Transgenesis,1001
+100199,field,Agricultural Biotechnology not elsewhere classified,1001
+1002,group,Environmental Biotechnology,10
+100201,field,Biodiscovery,1002
+100202,field,Biological Control,1002
+100203,field,Bioremediation,1002
+100204,field,Environmental Biotechnology Diagnostics (incl. Biosensors),1002
+100205,field,Environmental Marine Biotechnology,1002
+100206,field,Environmental Molecular Engineering of Nucleic Acids and Proteins,1002
+100299,field,Environmental Biotechnology not elsewhere classified,1002
+1003,group,Industrial Biotechnology,10
+100301,field,Biocatalysis and Enzyme Technology,1003
+100302,field,"Bioprocessing, Bioproduction and Bioproducts",1003
+100303,field,Fermentation,1003
+100304,field,Industrial Biotechnology Diagnostics (incl. Biosensors),1003
+100305,field,Industrial Microbiology (incl. Biofeedstocks),1003
+100306,field,Industrial Molecular Engineering of Nucleic Acids and Proteins,1003
+100399,field,Industrial Biotechnology not elsewhere classified,1003
+1004,group,Medical Biotechnology,10
+100401,field,Gene and Molecular Therapy,1004
+100402,field,Medical Biotechnology Diagnostics (incl. Biosensors),1004
+100403,field,Medical Molecular Engineering of Nucleic Acids and Proteins,1004
+100404,field,Regenerative Medicine (incl. Stem Cells and Tissue Engineering),1004
+100499,field,Medical Biotechnology not elsewhere classified,1004
+1005,group,Communications Technologies,10
+100501,field,Antennas and Propagation,1005
+100502,field,Broadband and Modem Technology,1005
+100503,field,Computer Communications Networks,1005
+100504,field,Data Communications,1005
+100505,field,Microwave and Millimetrewave Theory and Technology,1005
+100506,field,Optical Fibre Communications,1005
+100507,field,Optical Networks and Systems,1005
+100508,field,Satellite Communications,1005
+100509,field,Video Communications,1005
+100510,field,Wireless Communications,1005
+100599,field,Communications Technologies not elsewhere classified,1005
+1006,group,Computer Hardware,10
+100601,field,Arithmetic and Logic Structures,1006
+100602,field,"Input, Output and Data Devices",1006
+100603,field,Logic Design,1006
+100604,field,Memory Structures,1006
+100605,field,Performance Evaluation; Testing and Simulation of Reliability,1006
+100606,field,Processor Architectures,1006
+100699,field,Computer Hardware not elsewhere classified,1006
+1007,group,Nanotechnology,10
+100701,field,Environmental Nanotechnology,1007
+100702,field,Molecular and Organic Electronics,1007
+100703,field,Nanobiotechnology,1007
+100704,field,Nanoelectromechanical Systems,1007
+100705,field,Nanoelectronics,1007
+100706,field,"Nanofabrication, Growth and Self Assembly",1007
+100707,field,Nanomanufacturing,1007
+100708,field,Nanomaterials,1007
+100709,field,Nanomedicine,1007
+100710,field,Nanometrology,1007
+100711,field,Nanophotonics,1007
+100712,field,Nanoscale Characterisation,1007
+100713,field,"Nanotoxicology, Health and Safety",1007
+100799,field,Nanotechnology not elsewhere classified,1007
+1099,group,Other Technology,10
+109999,field,Technology not elsewhere classified,1099
+11,division,MEDICAL AND HEALTH SCIENCES,
+1101,group,Medical Biochemistry and Metabolomics,11
+110101,field,Medical Biochemistry: Amino Acids and Metabolites,1101
+110102,field,Medical Biochemistry: Carbohydrates,1101
+110103,field,Medical Biochemistry: Inorganic Elements and Compounds,1101
+110104,field,Medical Biochemistry: Lipids,1101
+110105,field,Medical Biochemistry: Nucleic Acids,1101
+110106,field,Medical Biochemistry: Proteins and Peptides (incl. Medical Proteomics),1101
+110107,field,Metabolic Medicine,1101
+110199,field,Medical Biochemistry and Metabolomics not elsewhere classified,1101
+1102,group,Cardiorespiratory Medicine and Haematology,11
+110201,field,Cardiology (incl. Cardiovascular Diseases),1102
+110202,field,Haematology,1102
+110203,field,Respiratory Diseases,1102
+110299,field,Cardiorespiratory Medicine and Haematology not elsewhere classified,1102
+1103,group,Clinical Sciences,11
+110301,field,Anaesthesiology,1103
+110302,field,Clinical Chemistry (diagnostics),1103
+110303,field,Clinical Microbiology,1103
+110304,field,Dermatology,1103
+110305,field,Emergency Medicine,1103
+110306,field,Endocrinology,1103
+110307,field,Gastroenterology and Hepatology,1103
+110308,field,Geriatrics and Gerontology,1103
+110309,field,Infectious Diseases,1103
+110310,field,Intensive Care,1103
+110311,field,Medical Genetics (excl. Cancer Genetics),1103
+110312,field,Nephrology and Urology,1103
+110313,field,Nuclear Medicine,1103
+110314,field,Orthopaedics,1103
+110315,field,Otorhinolaryngology,1103
+110316,field,Pathology (excl. Oral Pathology),1103
+110317,field,Physiotherapy,1103
+110318,field,Podiatry,1103
+110319,field,Psychiatry (incl. Psychotherapy),1103
+110320,field,Radiology and Organ Imaging,1103
+110321,field,Rehabilitation and Therapy (excl. Physiotherapy),1103
+110322,field,Rheumatology and Arthritis,1103
+110323,field,Surgery,1103
+110324,field,Venereology,1103
+110399,field,Clinical Sciences not elsewhere classified,1103
+1104,group,Complementary and Alternative Medicine,11
+110401,field,Chiropractic,1104
+110402,field,Naturopathy,1104
+110403,field,Traditional Aboriginal and Torres Strait Islander Medicine and Treatments,1104
+110404,field,Traditional Chinese Medicine and Treatments,1104
+110405,field,Traditional Maori Medicine and Treatments,1104
+110499,field,Complementary and Alternative Medicine not elsewhere classified,1104
+1105,group,Dentistry,11
+110501,field,Dental Materials and Equipment,1105
+110502,field,"Dental Therapeutics, Pharmacology and Toxicology",1105
+110503,field,Endodontics,1105
+110504,field,Oral and Maxillofacial Surgery,1105
+110505,field,Oral Medicine and Pathology,1105
+110506,field,Orthodontics and Dentofacial Orthopaedics,1105
+110507,field,Paedodontics,1105
+110508,field,Periodontics,1105
+110509,field,Special Needs Dentistry,1105
+110599,field,Dentistry not elsewhere classified,1105
+1106,group,Human Movement and Sports Science,11
+110601,field,Biomechanics,1106
+110602,field,Exercise Physiology,1106
+110603,field,Motor Control,1106
+110604,field,Sports Medicine,1106
+110699,field,Human Movement and Sports Science not elsewhere classified,1106
+1107,group,Immunology,11
+110701,field,Allergy,1107
+110702,field,"Applied Immunology (incl. Antibody Engineering, Xenotransplantation and T-cell Therapies)",1107
+110703,field,Autoimmunity,1107
+110704,field,Cellular Immunology,1107
+110705,field,Humoural Immunology and Immunochemistry,1107
+110706,field,Immunogenetics (incl. Genetic Immunology),1107
+110707,field,Innate Immunity,1107
+110708,field,Transplantation Immunology,1107
+110709,field,Tumour Immunology,1107
+110799,field,Immunology not elsewhere classified,1107
+1108,group,Medical Microbiology,11
+110801,field,Medical Bacteriology,1108
+110802,field,Medical Infection Agents (incl. Prions),1108
+110803,field,Medical Parasitology,1108
+110804,field,Medical Virology,1108
+110899,field,Medical Microbiology not elsewhere classified,1108
+1109,group,Neurosciences,11
+110901,field,Autonomic Nervous System,1109
+110902,field,Cellular Nervous System,1109
+110903,field,Central Nervous System,1109
+110904,field,Neurology and Neuromuscular Diseases,1109
+110905,field,Peripheral Nervous System,1109
+110906,field,Sensory Systems,1109
+110999,field,Neurosciences not elsewhere classified,1109
+1110,group,Nursing,11
+111001,field,Aged Care Nursing,1110
+111002,field,Clinical Nursing: Primary (Preventative),1110
+111003,field,Clinical Nursing: Secondary (Acute Care),1110
+111004,field,Clinical Nursing: Tertiary (Rehabilitative),1110
+111005,field,Mental Health Nursing,1110
+111006,field,Midwifery,1110
+111099,field,Nursing not elsewhere classified,1110
+1111,group,Nutrition and Dietetics,11
+111101,field,Clinical and Sports Nutrition,1111
+111102,field,Dietetics and Nutrigenomics,1111
+111103,field,Nutritional Physiology,1111
+111104,field,Public Nutrition Intervention,1111
+111199,field,Nutrition and Dietetics not elsewhere classified,1111
+1112,group,Oncology and Carcinogenesis,11
+111201,field,Cancer Cell Biology,1112
+111202,field,Cancer Diagnosis,1112
+111203,field,Cancer Genetics,1112
+111204,field,Cancer Therapy (excl. Chemotherapy and Radiation Therapy),1112
+111205,field,Chemotherapy,1112
+111206,field,Haematological Tumours,1112
+111207,field,Molecular Targets,1112
+111208,field,Radiation Therapy,1112
+111209,field,Solid Tumours,1112
+111299,field,Oncology and Carcinogenesis not elsewhere classified,1112
+1113,group,Ophthalmology and Optometry,11
+111301,field,Ophthalmology,1113
+111302,field,Optical Technology,1113
+111303,field,Vision Science,1113
+111399,field,Ophthalmology and Optometry not elsewhere classified,1113
+1114,group,Paediatrics and Reproductive Medicine,11
+111401,field,Foetal Development and Medicine,1114
+111402,field,Obstetrics and Gynaecology,1114
+111403,field,Paediatrics,1114
+111404,field,Reproduction,1114
+111499,field,Paediatrics and Reproductive Medicine not elsewhere classified,1114
+1115,group,Pharmacology and Pharmaceutical Sciences,11
+111501,field,Basic Pharmacology,1115
+111502,field,Clinical Pharmacology and Therapeutics,1115
+111503,field,Clinical Pharmacy and Pharmacy Practice,1115
+111504,field,Pharmaceutical Sciences,1115
+111505,field,Pharmacogenomics,1115
+111506,field,Toxicology (incl. Clinical Toxicology),1115
+111599,field,Pharmacology and Pharmaceutical Sciences not elsewhere classified,1115
+1116,group,Medical Physiology,11
+111601,field,Cell Physiology,1116
+111602,field,Human Biophysics,1116
+111603,field,Systems Physiology,1116
+111699,field,Medical Physiology not elsewhere classified,1116
+1117,group,Public Health and Health Services,11
+111701,field,Aboriginal and Torres Strait Islander Health,1117
+111702,field,Aged Health Care,1117
+111703,field,Care for Disabled,1117
+111704,field,Community Child Health,1117
+111705,field,Environmental and Occupational Health and Safety,1117
+111706,field,Epidemiology,1117
+111707,field,Family Care,1117
+111708,field,Health and Community Services,1117
+111709,field,Health Care Administration,1117
+111710,field,Health Counselling,1117
+111711,field,Health Information Systems (incl. Surveillance),1117
+111712,field,Health Promotion,1117
+111713,field,Maori Health,1117
+111714,field,Mental Health,1117
+111715,field,Pacific Peoples Health,1117
+111716,field,Preventive Medicine,1117
+111717,field,Primary Health Care,1117
+111718,field,Residential Client Care,1117
+111799,field,Public Health and Health Services not elsewhere classified,1117
+1199,group,Other Medical and Health Sciences,11
+119901,field,Podiatry,1199
+119902,field,Medical Biotechnology,1199
+119903,field,Therapies and Therapeutic Technology,1199
+119999,field,Medical and Health Sciences not elsewhere classified,1199
+12,division,BUILT ENVIRONMENT AND DESIGN,
+1201,group,Architecture,12
+120101,field,Architectural Design,1201
+120102,field,Architectural Heritage and Conservation,1201
+120103,field,Architectural History and Theory,1201
+120104,field,"Architectural Science and Technology (incl. Acoustics, Lighting, Structure and Ecologically Sustainable Design)",1201
+120105,field,Architecture Management,1201
+120106,field,Interior Design,1201
+120107,field,Landscape Architecture,1201
+120199,field,Architecture not elsewhere classified,1201
+1202,group,Building,12
+120201,field,Building Construction Management and Project Planning,1202
+120202,field,Building Science and Techniques,1202
+120203,field,Quantity Surveying,1202
+120299,field,Building not elsewhere classified,1202
+1203,group,Design Practice and Management,12
+120301,field,Design History and Theory,1203
+120302,field,Design Innovation,1203
+120303,field,Design Management and Studio and Professional Practice,1203
+120304,field,Digital and Interaction Design,1203
+120305,field,Industrial Design,1203
+120306,field,Textile and Fashion Design,1203
+120307,field,Visual Communication Design (incl. Graphic Design),1203
+120399,field,Design Practice and Management not elsewhere classified,1203
+1204,group,Engineering Design,12
+120401,field,Engineering Design Empirical Studies,1204
+120402,field,Engineering Design Knowledge,1204
+120403,field,Engineering Design Methods,1204
+120404,field,Engineering Systems Design,1204
+120405,field,Models of Engineering Design,1204
+120499,field,Engineering Design not elsewhere classified,1204
+1205,group,Urban and Regional Planning,12
+120501,field,Community Planning,1205
+120502,field,History and Theory of the Built Environment (excl. Architecture),1205
+120503,field,"Housing Markets, Development, Management",1205
+120504,field,Land Use and Environmental Planning,1205
+120505,field,Regional Analysis and Development,1205
+120506,field,Transport Planning,1205
+120507,field,Urban Analysis and Development,1205
+120508,field,Urban Design,1205
+120599,field,Urban and Regional Planning not elsewhere classified,1205
+1299,group,Other Built Environment and Design,12
+129999,field,Built Environment and Design not elsewhere classified,1299
+13,division,EDUCATION,
+1301,group,Education Systems,13
+130101,field,Continuing and Community Education,1301
+130102,field,Early Childhood Education (excl. Maori),1301
+130103,field,Higher Education,1301
+130104,field,Kura Kaupapa Maori (Maori Primary Education),1301
+130105,field,Primary Education (excl. Maori),1301
+130106,field,Secondary Education,1301
+130107,field,Te Whariki (Maori Early Childhood Education),1301
+130108,field,"Technical, Further and Workplace Education",1301
+130199,field,Education systems not elsewhere classified,1301
+1302,group,Curriculum and Pedagogy,13
+130201,field,"Creative Arts, Media and Communication Curriculum and Pedagogy",1302
+130202,field,Curriculum and Pedagogy Theory and Development,1302
+130203,field,"Economics, Business and Management Curriculum and Pedagogy",1302
+130204,field,"English and Literacy Curriculum and Pedagogy (excl. LOTE, ESL and TESOL)",1302
+130205,field,"Humanities and Social Sciences Curriculum and Pedagogy (excl. Economics, Business and Management)",1302
+130206,field,Kohanga Reo (Maori Language Curriculum and Pedagogy),1302
+130207,field,"LOTE, ESL and TESOL Curriculum and Pedagogy (excl. Maori)",1302
+130208,field,Mathematics and Numeracy Curriculum and Pedagogy,1302
+130209,field,"Medicine, Nursing and Health Curriculum and Pedagogy",1302
+130210,field,Physical Education and Development Curriculum and Pedagogy,1302
+130211,field,Religion Curriculum and Pedagogy,1302
+130212,field,"Science, Technology and Engineering Curriculum and Pedagogy",1302
+130213,field,Vocational Education and Training Curriculum and Pedagogy,1302
+130299,field,Curriculum and Pedagogy not elsewhere classified,1302
+1303,group,Specialist Studies in Education,13
+130301,field,Aboriginal and Torres Strait Islander Education,1303
+130302,field,Comparative and Cross-Cultural Education,1303
+130303,field,Education Assessment and Evaluation,1303
+130304,field,"Educational Administration, Management and Leadership",1303
+130305,field,Educational Counselling,1303
+130306,field,Educational Technology and Computing,1303
+130307,field,"Ethnic Education (excl. Aboriginal and Torres Strait Islander, Maori and Pacific Peoples)",1303
+130308,field,"Gender, Sexuality and Education",1303
+130309,field,Learning Sciences,1303
+130310,field,Maori Education (excl. Early Childhood and Primary Education),1303
+130311,field,Pacific Peoples Education,1303
+130312,field,Special Education and Disability,1303
+130313,field,Teacher Education and Professional Development of Educators,1303
+130399,field,Specialist Studies in Education not elsewhere classified,1303
+1399,group,Other Education,13
+139999,field,Education not elsewhere classified,1399
+14,division,ECONOMICS,
+1401,group,Economic Theory,14
+140101,field,History of Economic Thought,1401
+140102,field,Macroeconomic Theory,1401
+140103,field,Mathematical Economics,1401
+140104,field,Microeconomic Theory,1401
+140199,field,Economic Theory not elsewhere classified,1401
+1402,group,Applied Economics,14
+140201,field,Agricultural Economics,1402
+140202,field,Economic Development and Growth,1402
+140203,field,Economic History,1402
+140204,field,Economics of Education,1402
+140205,field,Environment and Resource Economics,1402
+140206,field,Experimental Economics,1402
+140207,field,Financial Economics,1402
+140208,field,Health Economics,1402
+140209,field,Industry Economics and Industrial Organisation,1402
+140210,field,International Economics and International Finance,1402
+140211,field,Labour Economics,1402
+140212,field,Macroeconomics (incl. Monetary and Fiscal Theory),1402
+140213,field,Public Economics - Public Choice,1402
+140214,field,Public Economics - Publically Provided Goods,1402
+140215,field,Public Economics - Taxation and Revenue,1402
+140216,field,Tourism Economics,1402
+140217,field,Transport Economics,1402
+140218,field,Urban and Regional Economics,1402
+140219,field,Welfare Economics,1402
+140299,field,Applied Economics not elsewhere classified,1402
+1403,group,Econometrics,14
+140301,field,Cross-Sectional Analysis,1403
+140302,field,Econometric and Statistical Methods,1403
+140303,field,Economic Models and Forecasting,1403
+140304,field,Panel Data Analysis,1403
+140305,field,Time-Series Analysis,1403
+140399,field,Econometrics not elsewhere classified,1403
+1499,group,Other Economics,14
+149901,field,Comparative Economic Systems,1499
+149902,field,Ecological Economics,1499
+149903,field,Heterodox Economics,1499
+149999,field,Economics not elsewhere classified,1499
+15,division,"COMMERCE, MANAGEMENT, TOURISM AND SERVICES",
+1501,group,"Accounting, Auditing and Accountability",15
+150101,field,Accounting Theory and Standards,1501
+150102,field,Auditing and Accountability,1501
+150103,field,Financial Accounting,1501
+150104,field,International Accounting,1501
+150105,field,Management Accounting,1501
+150106,field,Sustainability Accounting and Reporting,1501
+150107,field,Taxation Accounting,1501
+150199,field,"Accounting, Auditing and Accountability not elsewhere classified",1501
+1502,group,"Banking, Finance and Investment",15
+150201,field,Finance,1502
+150202,field,Financial Econometrics,1502
+150203,field,Financial Institutions (incl. Banking),1502
+150204,field,Insurance Studies,1502
+150205,field,Investment and Risk Management,1502
+150299,field,"Banking, Finance and Investment not elsewhere classified",1502
+1503,group,Business and Management,15
+150301,field,"Business Information Management (incl. Records, Knowledge and Information Management, and Intelligence)",1503
+150302,field,Business Information Systems,1503
+150303,field,Corporate Governance and Stakeholder Engagement,1503
+150304,field,Entrepreneurship,1503
+150305,field,Human Resources Management,1503
+150306,field,Industrial Relations,1503
+150307,field,Innovation and Technology Management,1503
+150308,field,International Business,1503
+150309,field,Logistics and Supply Chain Management,1503
+150310,field,Organisation and Management Theory,1503
+150311,field,Organisational Behaviour,1503
+150312,field,Organisational Planning and Management,1503
+150313,field,Quality Management,1503
+150314,field,Small Business Management,1503
+150399,field,Business and Management not elsewhere classified,1503
+1504,group,Commercial Services,15
+150401,field,Food and Hospitality Services,1504
+150402,field,Hospitality Management,1504
+150403,field,Real Estate and Valuation Services,1504
+150404,field,Sport and Leisure Management,1504
+150499,field,Commercial Services not elsewhere classified,1504
+1505,group,Marketing,15
+150501,field,Consumer-Oriented Product or Service Development,1505
+150502,field,Marketing Communications,1505
+150503,field,Marketing Management (incl. Strategy and Customer Relations),1505
+150504,field,Marketing Measurement,1505
+150505,field,Marketing Research Methodology,1505
+150506,field,Marketing Theory,1505
+150507,field,Pricing (incl. Consumer Value Estimation),1505
+150599,field,Marketing not elsewhere classified,1505
+1506,group,Tourism,15
+150601,field,Impacts of Tourism,1506
+150602,field,Tourism Forecasting,1506
+150603,field,Tourism Management,1506
+150604,field,Tourism Marketing,1506
+150605,field,Tourism Resource Appraisal,1506
+150606,field,Tourist Behaviour and Visitor Experience,1506
+150699,field,Tourism not elsewhere classified,1506
+1507,group,Transportation and Freight Services,15
+150701,field,Air Transportation and Freight Services,1507
+150702,field,Rail Transportation and Freight Services,1507
+150703,field,Road Transportation and Freight Services,1507
+150799,field,Transportation and Freight Services not elsewhere classified,1507
+1599,group,"Other Commerce, Management, Tourism and Services",15
+159999,field,"Commerce, Management, Tourism and Services not elsewhere classified",1599
+16,division,STUDIES IN HUMAN SOCIETY,
+1601,group,Anthropology,16
+160101,field,Anthropology of Development,1601
+160102,field,Biological (Physical) Anthropology,1601
+160103,field,Linguistic Anthropology,1601
+160104,field,Social and Cultural Anthropology,1601
+160199,field,Anthropology not elsewhere classified,1601
+1602,group,Criminology,16
+160201,field,Causes and Prevention of Crime,1602
+160202,field,"Correctional Theory, Offender Treatment and Rehabilitation",1602
+160203,field,Courts and Sentencing,1602
+160204,field,Criminological Theories,1602
+160205,field,"Police Administration, Procedures and Practice",1602
+160206,field,Private Policing and Security Services,1602
+160299,field,Criminology not elsewhere classified,1602
+1603,group,Demography,16
+160301,field,Family and Household Studies,1603
+160302,field,Fertility,1603
+160303,field,Migration,1603
+160304,field,Mortality,1603
+160305,field,Population Trends and Policies,1603
+160399,field,Demography not elsewhere classified,1603
+1604,group,Human Geography,16
+160401,field,Economic Geography,1604
+160402,field,"Recreation, Leisure and Tourism Geography",1604
+160403,field,Social and Cultural Geography,1604
+160404,field,Urban and Regional Studies (excl. Planning),1604
+160499,field,Human Geography not elsewhere classified,1604
+1605,group,Policy and Administration,16
+160501,field,Aboriginal and Torres Strait Islander Policy,1605
+160502,field,Arts and Cultural Policy,1605
+160503,field,Communications and Media Policy,1605
+160504,field,Crime Policy,1605
+160505,field,Economic Development Policy,1605
+160506,field,Education Policy,1605
+160507,field,Environment Policy,1605
+160508,field,Health Policy,1605
+160509,field,Public Administration,1605
+160510,field,Public Policy,1605
+160511,field,"Research, Science and Technology Policy",1605
+160512,field,Social Policy,1605
+160513,field,Tourism Policy,1605
+160514,field,Urban Policy,1605
+160599,field,Policy and Administration not elsewhere classified,1605
+1606,group,Political Science,16
+160601,field,Australian Government and Politics,1606
+160602,field,Citizenship,1606
+160603,field,Comparative Government and Politics,1606
+160604,field,Defence Studies,1606
+160605,field,Environmental Politics,1606
+160606,field,Government and Politics of Asia and the Pacific,1606
+160607,field,International Relations,1606
+160608,field,New Zealand Government and Politics,1606
+160609,field,Political Theory and Political Philosophy,1606
+160699,field,Political Science not elsewhere classified,1606
+1607,group,Social Work,16
+160701,field,Clinical Social Work Practice,1607
+160702,field,"Counselling, Welfare and Community Services",1607
+160703,field,Social Program Evaluation,1607
+160799,field,Social Work not elsewhere classified,1607
+1608,group,Sociology,16
+160801,field,"Applied Sociology, Program Evaluation and Social Impact Assessment",1608
+160802,field,Environmental Sociology,1608
+160803,field,Race and Ethnic Relations,1608
+160804,field,Rural Sociology,1608
+160805,field,Social Change,1608
+160806,field,Social Theory,1608
+160807,field,Sociological Methodology and Research Methods,1608
+160808,field,Sociology and Social Studies of Science and Technology,1608
+160809,field,Sociology of Education,1608
+160810,field,Urban Sociology and Community Studies,1608
+160899,field,Sociology not elsewhere classified,1608
+1699,group,Other Studies in Human Society,16
+169901,field,Gender Specific Studies,1699
+169902,field,Studies of Aboriginal and Torres Strait Islander Society,1699
+169903,field,Studies of Asian Society,1699
+169904,field,Studies of Maori Society,1699
+169905,field,Studies of Pacific Peoples' Societies,1699
+169999,field,Studies in Human Society not elsewhere classified,1699
+17,division,PSYCHOLOGY AND COGNITIVE SCIENCES,
+1701,group,Psychology,17
+170101,field,"Biological Psychology (Neuropsychology, Psychopharmacology, Physiological Psychology)",1701
+170102,field,Developmental Psychology and Ageing,1701
+170103,field,Educational Psychology,1701
+170104,field,Forensic Psychology,1701
+170105,field,Gender Psychology,1701
+170106,field,"Health, Clinical and Counselling Psychology",1701
+170107,field,Industrial and Organisational Psychology,1701
+170108,field,Kaupapa Maori Psychology,1701
+170109,field,"Personality, Abilities and Assessment",1701
+170110,field,"Psychological Methodology, Design and Analysis",1701
+170111,field,Psychology of Religion,1701
+170112,field,"Sensory Processes, Perception and Performance",1701
+170113,field,Social and Community Psychology,1701
+170114,field,Sport and Exercise Psychology,1701
+170199,field,Psychology not elsewhere classified,1701
+1702,group,Cognitive Sciences,17
+170201,field,"Computer Perception, Memory and Attention",1702
+170202,field,Decision Making,1702
+170203,field,Knowledge Representation and Machine Learning,1702
+170204,field,Linguistic Processes (incl. Speech Production and Comprehension),1702
+170205,field,Neurocognitive Patterns and Neural Networks,1702
+170299,field,Cognitive Sciences not elsewhere classified,1702
+1799,group,Other Psychology and Cognitive Sciences,17
+179999,field,Psychology and Cognitive Sciences not elsewhere classified,1799
+18,division,LAW AND LEGAL STUDIES,
+1801,group,Law,18
+180101,field,Aboriginal and Torres Strait Islander Law,1801
+180102,field,Access to Justice,1801
+180103,field,Administrative Law,1801
+180104,field,Civil Law and Procedure,1801
+180105,field,Commercial and Contract Law,1801
+180106,field,Comparative Law,1801
+180107,field,Conflict of Laws (Private International Law),1801
+180108,field,Constitutional Law,1801
+180109,field,Corporations and Associations Law,1801
+180110,field,Criminal Law and Procedure,1801
+180111,field,Environmental and Natural Resources Law,1801
+180112,field,Equity and Trusts Law,1801
+180113,field,Family Law,1801
+180114,field,Human Rights Law,1801
+180115,field,Intellectual Property Law,1801
+180116,field,International Law (excl. International Trade Law),1801
+180117,field,International Trade Law,1801
+180118,field,Labour Law,1801
+180119,field,Law and Society,1801
+180120,field,Legal Institutions (incl. Courts and Justice Systems),1801
+180121,field,"Legal Practice, Lawyering and the Legal Profession",1801
+180122,field,"Legal Theory, Jurisprudence and Legal Interpretation",1801
+180123,field,"Litigation, Adjudication and Dispute Resolution",1801
+180124,field,Property Law (excl. Intellectual Property Law),1801
+180125,field,Taxation Law,1801
+180126,field,Tort Law,1801
+180199,field,Law not elsewhere classified,1801
+1802,group,Maori Law,18
+180201,field,Nga Tikanga Maori (Maori Customary Law),1802
+180202,field,Te Maori Whakahaere Rauemi (Maori Resource Law),1802
+180203,field,Te Tiriti o Waitangi (The Treaty of Waitangi),1802
+180204,field,Te Ture Whenua (Maori Land Law),1802
+180299,field,Maori Law not elsewhere classified,1802
+1899,group,Other Law and Legal Studies,18
+189999,field,Law and Legal Studies not elsewhere classified,1899
+19,division,STUDIES IN CREATIVE ARTS AND WRITING,
+1901,group,Art Theory and Criticism,19
+190101,field,Art Criticism,1901
+190102,field,Art History,1901
+190103,field,Art Theory,1901
+190104,field,Visual Cultures,1901
+190199,field,Art Theory and Criticism not elsewhere classified,1901
+1902,group,"Film, Television and Digital Media",19
+190201,field,Cinema Studies,1902
+190202,field,Computer Gaming and Animation,1902
+190203,field,Electronic Media Art,1902
+190204,field,Film and Television,1902
+190205,field,Interactive Media,1902
+190299,field,"Film, Television and Digital Media not elsewhere classified",1902
+1903,group,Journalism and Professional Writing,19
+190301,field,Journalism Studies,1903
+190302,field,Professional Writing,1903
+190303,field,Technical Writing,1903
+190399,field,Journalism and Professional Writing not elsewhere classified,1903
+1904,group,Performing Arts and Creative Writing,19
+190401,field,Aboriginal and Torres Strait Islander Performing Arts,1904
+190402,field,Creative Writing (incl. Playwriting),1904
+190403,field,Dance,1904
+190404,field,"Drama, Theatre and Performance Studies",1904
+190405,field,Maori Performing Arts,1904
+190406,field,Music Composition,1904
+190407,field,Music Performance,1904
+190408,field,Music Therapy,1904
+190409,field,Musicology and Ethnomusicology,1904
+190410,field,Pacific Peoples Performing Arts,1904
+190499,field,Performing Arts and Creative Writing not elsewhere classified,1904
+1905,group,Visual Arts and Crafts,19
+190501,field,Crafts,1905
+190502,field,Fine Arts (incl. Sculpture and Painting),1905
+190503,field,Lens-based Practice,1905
+190504,field,Performance and Installation Art,1905
+190599,field,Visual Arts and Crafts not elsewhere classified,1905
+1999,group,Other Studies in Creative Arts and Writing,19
+199999,field,Studies in Creative Arts and Writing not elsewhere classified,1999
+20,division,"LANGUAGE, COMMUNICATION AND CULTURE",
+2001,group,Communication and Media Studies,20
+200101,field,Communication Studies,2001
+200102,field,Communication Technology and Digital Media Studies,2001
+200103,field,International and Development Communication,2001
+200104,field,Media Studies,2001
+200105,field,"Organisational, Interpersonal and Intercultural Communication",2001
+200199,field,Communication and Media Studies not elsewhere classified,2001
+2002,group,Cultural Studies,20
+200201,field,Aboriginal and Torres Strait Islander Cultural Studies,2002
+200202,field,Asian Cultural Studies,2002
+200203,field,Consumption and Everyday Life,2002
+200204,field,Cultural Theory,2002
+200205,field,"Culture, Gender, Sexuality",2002
+200206,field,Globalisation and Culture,2002
+200207,field,Maori Cultural Studies,2002
+200208,field,Migrant Cultural Studies,2002
+200209,field,"Multicultural, Intercultural and Cross-cultural Studies",2002
+200210,field,Pacific Cultural Studies,2002
+200211,field,Postcolonial Studies,2002
+200212,field,Screen and Media Culture,2002
+200299,field,Cultural Studies not elsewhere classified,2002
+2003,group,Language Studies,20
+200301,field,Early English Languages,2003
+200302,field,English Language,2003
+200303,field,English as a Second Language,2003
+200304,field,Central and Eastern European Languages (incl. Russian),2003
+200305,field,Latin and Classical Greek Languages,2003
+200306,field,French Language,2003
+200307,field,German Language,2003
+200308,field,Iberian Languages,2003
+200309,field,Italian Language,2003
+200310,field,Other European Languages,2003
+200311,field,Chinese Languages,2003
+200312,field,Japanese Language,2003
+200313,field,Indonesian Languages,2003
+200314,field,South-East Asian Languages (excl. Indonesian),2003
+200315,field,Indian Languages,2003
+200316,field,Korean Language,2003
+200317,field,Other Asian Languages (excl. South-East Asian),2003
+200318,field,Middle Eastern Languages,2003
+200319,field,Aboriginal and Torres Strait Islander Languages,2003
+200320,field,Pacific Languages,2003
+200321,field,Te Reo Maori (Maori Language),2003
+200322,field,Comparative Language Studies,2003
+200323,field,Translation and Interpretation Studies,2003
+200399,field,Language Studies not elsewhere classified,2003
+2004,group,Linguistics,20
+200401,field,Applied Linguistics and Educational Linguistics,2004
+200402,field,Computational Linguistics,2004
+200403,field,Discourse and Pragmatics,2004
+200404,field,Laboratory Phonetics and Speech Science,2004
+200405,field,Language in Culture and Society (Sociolinguistics),2004
+200406,field,"Language in Time and Space (incl. Historical Linguistics, Dialectology)",2004
+200407,field,Lexicography,2004
+200408,field,"Linguistic Structures (incl. Grammar, Phonology, Lexicon, Semantics)",2004
+200499,field,Linguistics not elsewhere classified,2004
+2005,group,Literary Studies,20
+200501,field,Aboriginal and Torres Strait Islander Literature,2005
+200502,field,Australian Literature (excl. Aboriginal and Torres Strait Islander Literature),2005
+200503,field,British and Irish Literature,2005
+200504,field,Maori Literature,2005
+200505,field,New Zealand Literature (excl. Maori Literature),2005
+200506,field,North American Literature,2005
+200507,field,Pacific Literature,2005
+200508,field,Other Literatures in English,2005
+200509,field,Central and Eastern European Literature (incl. Russian),2005
+200510,field,Latin and Classical Greek Literature,2005
+200511,field,Literature in French,2005
+200512,field,Literature in German,2005
+200513,field,Literature in Italian,2005
+200514,field,Literature in Spanish and Portuguese,2005
+200515,field,Other European Literature,2005
+200516,field,Indonesian Literature,2005
+200517,field,Literature in Chinese,2005
+200518,field,Literature in Japanese,2005
+200519,field,South-East Asian Literature (excl. Indonesian),2005
+200520,field,Indian Literature,2005
+200521,field,Korean Literature,2005
+200522,field,Other Asian Literature (excl. South-East Asian),2005
+200523,field,Middle Eastern Literature,2005
+200524,field,Comparative Literature Studies,2005
+200525,field,Literary Theory,2005
+200526,field,Stylistics and Textual Analysis,2005
+200599,field,Literary Studies not elsewhere classified,2005
+2099,group,"Other Language, Communication and Culture",20
+209999,field,"Language, Communication and Culture not elsewhere classified",2099
+21,division,HISTORY AND ARCHAEOLOGY,
+2101,group,Archaeology,21
+210101,field,Aboriginal and Torres Strait Islander Archaeology,2101
+210102,field,Archaeological Science,2101
+210103,field,"Archaeology of Asia, Africa and the Americas",2101
+210104,field,Archaeology of Australia (excl. Aboriginal and Torres Strait Islander),2101
+210105,field,"Archaeology of Europe, the Mediterranean and the Levant",2101
+210106,field,Archaeology of New Guinea and Pacific Islands (excl. New Zealand),2101
+210107,field,Archaeology of New Zealand (excl. Maori),2101
+210108,field,Historical Archaeology (incl. Industrial Archaeology),2101
+210109,field,Maori Archaeology,2101
+210110,field,Maritime Archaeology,2101
+210199,field,Archaeology not elsewhere classified,2101
+2102,group,Curatorial and Related Studies,21
+210201,field,"Archival, Repository and Related Studies",2102
+210202,field,Heritage and Cultural Conservation,2102
+210203,field,Materials Conservation,2102
+210204,field,Museum Studies,2102
+210299,field,Curatorial and Related Studies not elsewhere classified,2102
+2103,group,Historical Studies,21
+210301,field,Aboriginal and Torres Strait Islander History,2103
+210302,field,Asian History,2103
+210303,field,Australian History (excl. Aboriginal and Torres Strait Islander History),2103
+210304,field,Biography,2103
+210305,field,British History,2103
+210306,field,Classical Greek and Roman History,2103
+210307,field,"European History (excl. British, Classical Greek and Roman)",2103
+210308,field,Latin American History,2103
+210309,field,Maori History,2103
+210310,field,Middle Eastern and African History,2103
+210311,field,New Zealand History,2103
+210312,field,North American History,2103
+210313,field,Pacific History (excl. New Zealand and Maori),2103
+210399,field,Historical Studies not elsewhere classified,2103
+2199,group,Other History and Archaeology,21
+219999,field,History and Archaeology not elsewhere classified,2199
+22,division,PHILOSOPHY AND RELIGIOUS STUDIES,
+2201,group,Applied Ethics,22
+220101,field,Bioethics (human and animal),2201
+220102,field,Business Ethics,2201
+220103,field,"Ethical Use of New Technology (e.g. Nanotechnology, Biotechnology)",2201
+220104,field,Human Rights and Justice Issues,2201
+220105,field,Legal Ethics,2201
+220106,field,Medical Ethics,2201
+220107,field,Professional Ethics (incl. police and research ethics),2201
+220199,field,Applied Ethics not elsewhere classified,2201
+2202,group,History and Philosophy of Specific Fields,22
+220201,field,Business and Labour History,2202
+220202,field,History and Philosophy of Education,2202
+220203,field,History and Philosophy of Engineering and Technology,2202
+220204,field,History and Philosophy of Law and Justice,2202
+220205,field,History and Philosophy of Medicine,2202
+220206,field,History and Philosophy of Science (incl. Non-historical Philosophy of Science),2202
+220207,field,History and Philosophy of the Humanities,2202
+220208,field,History and Philosophy of the Social Sciences,2202
+220209,field,History of Ideas,2202
+220210,field,History of Philosophy,2202
+220299,field,History and Philosophy of Specific Fields not elsewhere classified,2202
+2203,group,Philosophy,22
+220301,field,Aesthetics,2203
+220302,field,Decision Theory,2203
+220303,field,Environmental Philosophy,2203
+220304,field,Epistemology,2203
+220305,field,Ethical Theory,2203
+220306,field,Feminist Theory,2203
+220307,field,Hermeneutic and Critical Theory,2203
+220308,field,Logic,2203
+220309,field,Metaphysics,2203
+220310,field,Phenomenology,2203
+220311,field,Philosophical Psychology (incl. Moral Psychology and Philosophy of Action),2203
+220312,field,Philosophy of Cognition,2203
+220313,field,Philosophy of Language,2203
+220314,field,Philosophy of Mind (excl. Cognition),2203
+220315,field,Philosophy of Religion,2203
+220316,field,Philosophy of Specific Cultures (incl. Comparative Philosophy),2203
+220317,field,Poststructuralism,2203
+220318,field,Psychoanalytic Philosophy,2203
+220319,field,Social Philosophy,2203
+220399,field,Philosophy not elsewhere classified,2203
+2204,group,Religion and Religious Studies,22
+220401,field,Christian Studies (incl. Biblical Studies and Church History),2204
+220402,field,Comparative Religious Studies,2204
+220403,field,Islamic Studies,2204
+220404,field,Jewish Studies,2204
+220405,field,Religion and Society,2204
+220406,field,Studies in Eastern Religious Traditions,2204
+220407,field,"Studies in Religious Traditions (excl. Eastern, Jewish, Christian and Islamic Traditions)",2204
+220499,field,Religion and Religious Studies not elsewhere classified,2204
+2299,group,Other Philosophy and Religious Studies,22
+229999,field,Philosophy and Religious Studies not elsewhere classified,2299

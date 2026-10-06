@@ -486,3 +486,36 @@ WoS-Category mappings (2 vintages), REF2021 Category Schema, a 2026 SDG/Citation
 mapping, a Web of Science Research Areas name list, and the ESI master journal list all sit
 in `data/raw/future_phase/`, documented but out of scope for this session's two-item focus
 ((a) FOR-vintage mapping, (b) OAX<->FOR).
+
+## 2026-10-06: OAX -> FOR2008 (subfield -> group, field -> division): done, reviewed row by row
+
+`resolve(value, "OAX", "FOR2008")` is new. OAX has a single layout, so this is a lateral
+move to a chosen FOR layout, not backward in time; `FOR2008` is a valid `to_scheme` from
+`OAX` only (FOR vintages still can't target an older vintage, and FOR2020 -> FOR2008 is
+deliberately not exposed). Supporting pieces:
+
+- `canonical/for_2008.csv` (22 divisions, 157 groups, 1,241 fields), from the `2008_FOR`
+  sheet of the already-tracked `raw/abs_for_seo/12970_1998_2008.xlsx`
+  (`build_for2008.py`). The `1297.0 correspondence tables` workbook is RFCD1998 <-> FOR2008
+  correspondences only (no division/group list); its tracked `.xlsx` is cell-for-cell
+  identical to the `.xls` in `data_untracked/`.
+- `curate_openalex_to_for2008.py`: three draft signals (OAX -> FOR2020 -> FOR2008 via ABS's
+  official `2020 FoR - 2008 FoR` sheet rolled up by vote; the reverse chain through the
+  hand-curated FOR2020 -> OAX hub; a word-overlap label match), then every one of the 252
+  subfield and 26 field rows reviewed directly. 49 subfield picks depart from the forward
+  draft, each with a one-line note in `GROUP_BY_SUBFIELD`. Confidence = agreement count
+  (1.0/0.9/0.8/0.7 for 3/2/1/0 signals). Primaries: 65 at 1.0, 62 at 0.9, 92 at 0.8, 33 at
+  0.7 (subfields); 7/10/9 at 1.0/0.9/0.8 (fields).
+- Judgment call worth revisiting: OAX field 11 "Agricultural and Biological Sciences" ->
+  FOR2008 06 BIOLOGICAL SCIENCES (matches the existing FOR2020 31 mapping), although its
+  subfields split 4 to division 06 and 5 to 07 AGRICULTURAL AND VETERINARY SCIENCES.
+- `validate_oax_for2008_consistency.py` (build step 9c, informational): 54/252 subfields land
+  outside their field's FOR2008 division (expected), and 31/252 round trips OAX -> FOR2008 ->
+  FOR2020 land in a different FOR2020 division than OAX -> FOR2020 directly. Most of the 31
+  are the allied-health subfields (FOR2008 1103 Clinical Sciences rolls up to FOR2020 32,
+  while FOR2020 puts allied health in 42), but several expose clear errors in the existing
+  **OAX subfield -> FOR2020 group** bridge, not yet fixed: 1708 "Hardware and Architecture"
+  -> 3301 Architecture (exact_match 1.0), 1704 "Computer Graphics and Computer-Aided Design"
+  -> 3303 Design, 1206 "Conservation" (heritage) -> 4102 Ecological applications, 1709
+  "Human-Computer Interaction" -> 4007 Control engineering, 2614 "Theoretical Computer
+  Science" -> 4901 Applied mathematics.

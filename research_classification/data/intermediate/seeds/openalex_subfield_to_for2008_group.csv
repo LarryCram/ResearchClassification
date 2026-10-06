@@ -1,0 +1,559 @@
+oax_code,oax_label,for2008_code,for2008_label,is_primary,confidence,match_method,signals_agreeing,notes,reviewed
+1100,General Agricultural and Biological Sciences,0701,"Agriculture, Land and Farm Management",True,0.8,manual_curated,forward,,2026-10-06
+1100,General Agricultural and Biological Sciences,1001,Agricultural Biotechnology,False,0.317,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+1100,General Agricultural and Biological Sciences,0699,OTHER BIOLOGICAL SCIENCES,False,0.1,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+1100,General Agricultural and Biological Sciences,0799,Other Agricultural and Veterinary Sciences,False,0.079,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+1100,General Agricultural and Biological Sciences,0703,Crop and Pasture Production,False,0.072,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+1102,Agronomy and Crop Science,0703,Crop and Pasture Production,True,1.0,manual_curated,forward+reverse+lexical,,2026-10-06
+1102,Agronomy and Crop Science,0701,"Agriculture, Land and Farm Management",False,0.16,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+1102,Agronomy and Crop Science,0799,Other Agricultural and Veterinary Sciences,False,0.159,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+1102,Agronomy and Crop Science,0706,Horticultural Production,False,0.035,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+1102,Agronomy and Crop Science,0607,PLANT BIOLOGY,False,0.028,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+1103,Animal Science and Zoology,0608,ZOOLOGY,True,0.9,manual_curated,forward+lexical,,2026-10-06
+1103,Animal Science and Zoology,0606,PHYSIOLOGY,False,0.209,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+1103,Animal Science and Zoology,0707,Veterinary Sciences,False,0.197,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+1103,Animal Science and Zoology,0702,Animal Production,False,0.099,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+1103,Animal Science and Zoology,0502,ENVIRONMENTAL SCIENCE AND MANAGEMENT,False,0.007,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+1104,Aquatic Science,0704,Fisheries Sciences,True,0.9,manual_curated,forward+reverse,,2026-10-06
+1105,"Ecology, Evolution, Behavior and Systematics",0602,ECOLOGY,True,0.9,manual_curated,forward+lexical,,2026-10-06
+1105,"Ecology, Evolution, Behavior and Systematics",0603,EVOLUTIONARY BIOLOGY,False,0.323,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+1106,Food Science,0908,Food Sciences,True,1.0,manual_curated,forward+reverse+lexical,,2026-10-06
+1106,Food Science,1505,Marketing,False,0.063,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+1107,Forestry,0705,Forestry Sciences,True,1.0,manual_curated,forward+reverse+lexical,,2026-10-06
+1107,Forestry,0602,ECOLOGY,False,0.103,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+1108,Horticulture,0706,Horticultural Production,True,0.9,manual_curated,forward+reverse,,2026-10-06
+1109,Insect Science,0608,ZOOLOGY,True,0.8,manual_curated,forward,,2026-10-06
+1109,Insect Science,0606,PHYSIOLOGY,False,0.3,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+1110,Plant Science,0607,PLANT BIOLOGY,True,1.0,manual_curated,forward+reverse+lexical,,2026-10-06
+1111,Soil Science,0503,SOIL SCIENCES,True,0.9,manual_curated,forward+lexical,,2026-10-06
+1200,General Arts and Humanities,2005,Literary Studies,True,0.8,manual_curated,forward,,2026-10-06
+1200,General Arts and Humanities,1999,Other Studies in Creative Arts and Writing,False,0.125,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+1200,General Arts and Humanities,2099,"Other Language, Communication and Culture",False,0.125,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+1200,General Arts and Humanities,2199,Other History and Archaeology,False,0.125,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+1200,General Arts and Humanities,2299,Other Philosophy and Religious Studies,False,0.125,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+1202,History,2103,Historical Studies,True,0.9,manual_curated,forward+reverse,,2026-10-06
+1202,History,1602,Criminology,False,0.021,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+1202,History,1603,Demography,False,0.021,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+1202,History,2204,Religion and Religious Studies,False,0.021,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+1203,Language and Linguistics,2004,Linguistics,True,0.8,manual_curated,forward,,2026-10-06
+1203,Language and Linguistics,2003,Language Studies,False,0.324,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+1204,Archeology,2101,Archaeology,True,0.9,manual_curated,forward+reverse,,2026-10-06
+1205,Classics,2005,Literary Studies,True,0.8,manual_curated,forward,,2026-10-06
+1205,Classics,2002,Cultural Studies,False,0.031,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+1205,Classics,2103,Historical Studies,False,0.016,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+1206,Conservation,2102,Curatorial and Related Studies,True,0.7,manual_curated,,"Arts and Humanities 'Conservation' is heritage/art conservation (210202), not ecological conservation",2026-10-06
+1206,Conservation,0501,ECOLOGICAL APPLICATIONS,False,1.0,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+1207,History and Philosophy of Science,2202,History and Philosophy of Specific Fields,True,1.0,manual_curated,forward+reverse+lexical,,2026-10-06
+1208,Literature and Literary Theory,2005,Literary Studies,True,1.0,manual_curated,forward+reverse+lexical,,2026-10-06
+1208,Literature and Literary Theory,1904,Performing Arts and Creative Writing,False,0.044,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+1208,Literature and Literary Theory,1903,Journalism and Professional Writing,False,0.031,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+1208,Literature and Literary Theory,2002,Cultural Studies,False,0.029,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+1208,Literature and Literary Theory,2103,Historical Studies,False,0.014,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+1209,Museology,2102,Curatorial and Related Studies,True,0.9,manual_curated,forward+reverse,,2026-10-06
+1210,Music,1904,Performing Arts and Creative Writing,True,0.9,manual_curated,forward+reverse,,2026-10-06
+1211,Philosophy,2203,Philosophy,True,1.0,manual_curated,forward+reverse+lexical,,2026-10-06
+1211,Philosophy,2201,Applied Ethics,False,0.133,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+1211,Philosophy,2202,History and Philosophy of Specific Fields,False,0.02,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+1212,Religious studies,2204,Religion and Religious Studies,True,1.0,manual_curated,forward+reverse+lexical,,2026-10-06
+1213,Visual Arts and Performing Arts,1905,Visual Arts and Crafts,True,0.9,manual_curated,forward+lexical,,2026-10-06
+1213,Visual Arts and Performing Arts,1203,Design Practice and Management,False,0.2,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+1213,Visual Arts and Performing Arts,1902,"Film, Television and Digital Media",False,0.092,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+1213,Visual Arts and Performing Arts,1901,Art Theory and Criticism,False,0.066,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+1213,Visual Arts and Performing Arts,1904,Performing Arts and Creative Writing,False,0.053,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+1302,Aging,0601,BIOCHEMISTRY AND CELL BIOLOGY,True,0.8,manual_curated,forward,,2026-10-06
+1303,Biochemistry,0601,BIOCHEMISTRY AND CELL BIOLOGY,True,1.0,manual_curated,forward+reverse+lexical,,2026-10-06
+1304,Biophysics,0299,OTHER PHYSICAL SCIENCES,True,0.7,manual_curated,,029901 Biological Physics is FOR2008's exact home for biophysics,2026-10-06
+1304,Biophysics,0601,BIOCHEMISTRY AND CELL BIOLOGY,False,1.0,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+1305,Biotechnology,1003,Industrial Biotechnology,True,0.8,manual_curated,reverse,FOR2008 puts biotechnology under division 10 TECHNOLOGY; OAX's topics here are bioprocess-heavy,2026-10-06
+1305,Biotechnology,0601,BIOCHEMISTRY AND CELL BIOLOGY,False,0.5,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+1305,Biotechnology,1007,Nanotechnology,False,0.062,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+1305,Biotechnology,1099,Other Technology,False,0.031,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+1306,Cancer Research,1112,Oncology and Carcinogenesis,True,0.7,manual_curated,,cancer research -> Oncology and Carcinogenesis,2026-10-06
+1306,Cancer Research,0601,BIOCHEMISTRY AND CELL BIOLOGY,False,1.0,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+1307,Cell Biology,0601,BIOCHEMISTRY AND CELL BIOLOGY,True,0.9,manual_curated,forward+lexical,,2026-10-06
+1308,Clinical Biochemistry,1101,Medical Biochemistry and Metabolomics,True,0.7,manual_curated,,clinical biochemistry -> Medical Biochemistry and Metabolomics,2026-10-06
+1308,Clinical Biochemistry,1103,Clinical Sciences,False,0.964,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+1308,Clinical Biochemistry,1106,Human Movement and Sports Science,False,0.036,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+1309,Developmental Biology,0608,ZOOLOGY,True,0.8,manual_curated,forward,,2026-10-06
+1309,Developmental Biology,0606,PHYSIOLOGY,False,0.3,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+1310,Endocrinology,1103,Clinical Sciences,True,0.7,manual_curated,,110306 Endocrinology sits in Clinical Sciences,2026-10-06
+1310,Endocrinology,1101,Medical Biochemistry and Metabolomics,False,1.0,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+1311,Genetics,0604,GENETICS,True,1.0,manual_curated,forward+reverse+lexical,,2026-10-06
+1312,Molecular Biology,0601,BIOCHEMISTRY AND CELL BIOLOGY,True,0.9,manual_curated,forward+reverse,,2026-10-06
+1313,Molecular Medicine,0601,BIOCHEMISTRY AND CELL BIOLOGY,True,0.8,manual_curated,forward,,2026-10-06
+1314,Physiology,0606,PHYSIOLOGY,True,0.8,manual_curated,lexical,biological physiology (under OAX's Biochemistry field); Medicine's own Physiology subfield 2737 -> 1116,2026-10-06
+1314,Physiology,1116,Medical Physiology,False,1.0,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+1315,Structural Biology,0601,BIOCHEMISTRY AND CELL BIOLOGY,True,0.8,manual_curated,forward,,2026-10-06
+1402,Accounting,1501,"Accounting, Auditing and Accountability",True,1.0,manual_curated,forward+reverse+lexical,,2026-10-06
+1403,Business and International Management,1503,Business and Management,True,0.9,manual_curated,reverse+lexical,"business/international management -> Business and Management, not Marketing",2026-10-06
+1403,Business and International Management,1505,Marketing,False,0.5,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+1403,Business and International Management,1502,"Banking, Finance and Investment",False,0.129,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+1403,Business and International Management,1507,Transportation and Freight Services,False,0.114,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+1403,Business and International Management,1504,Commercial Services,False,0.086,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+1404,Management Information Systems,0806,Information Systems,True,0.9,manual_curated,forward+lexical,,2026-10-06
+1404,Management Information Systems,0804,Data Format,False,0.038,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+1405,Management of Technology and Innovation,1503,Business and Management,True,0.8,manual_curated,lexical,150307 Innovation and Technology Management,2026-10-06
+1405,Management of Technology and Innovation,0806,Information Systems,False,0.962,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+1405,Management of Technology and Innovation,0804,Data Format,False,0.038,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+1406,Marketing,1505,Marketing,True,1.0,manual_curated,forward+reverse+lexical,,2026-10-06
+1407,Organizational Behavior and Human Resource Management,1503,Business and Management,True,0.9,manual_curated,forward+reverse,,2026-10-06
+1407,Organizational Behavior and Human Resource Management,2202,History and Philosophy of Specific Fields,False,0.062,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+1408,Strategy and Management,1503,Business and Management,True,1.0,manual_curated,forward+reverse+lexical,,2026-10-06
+1409,"Tourism, Leisure and Hospitality Management",1506,Tourism,True,1.0,manual_curated,forward+reverse+lexical,,2026-10-06
+1410,Industrial relations,1503,Business and Management,True,0.8,manual_curated,forward,,2026-10-06
+1410,Industrial relations,2202,History and Philosophy of Specific Fields,False,0.125,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+1502,Bioengineering,0903,Biomedical Engineering,True,0.8,manual_curated,forward,,2026-10-06
+1502,Bioengineering,1004,Medical Biotechnology,False,0.083,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+1503,Catalysis,0904,Chemical Engineering,True,0.8,manual_curated,forward,,2026-10-06
+1503,Catalysis,0905,Civil Engineering,False,0.083,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+1503,Catalysis,0908,Food Sciences,False,0.083,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+1504,Chemical Health and Safety,0904,Chemical Engineering,True,0.8,manual_curated,lexical,"chemical process safety -> Chemical Engineering, not Civil",2026-10-06
+1504,Chemical Health and Safety,0905,Civil Engineering,False,1.0,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+1506,Filtration and Separation,0904,Chemical Engineering,True,0.8,manual_curated,forward,,2026-10-06
+1506,Filtration and Separation,0905,Civil Engineering,False,0.083,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+1506,Filtration and Separation,0908,Food Sciences,False,0.083,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+1507,Fluid Flow and Transfer Processes,0915,Interdisciplinary Engineering,True,0.7,manual_curated,,"091504 Fluidisation and Fluid Mechanics, 091505 Heat and Mass Transfer Operations",2026-10-06
+1507,Fluid Flow and Transfer Processes,0904,Chemical Engineering,False,0.833,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+1507,Fluid Flow and Transfer Processes,0905,Civil Engineering,False,0.083,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+1507,Fluid Flow and Transfer Processes,0908,Food Sciences,False,0.083,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+1508,Process Chemistry and Technology,0904,Chemical Engineering,True,0.9,manual_curated,forward+reverse,,2026-10-06
+1508,Process Chemistry and Technology,0905,Civil Engineering,False,0.083,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+1508,Process Chemistry and Technology,0908,Food Sciences,False,0.083,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+1602,Analytical Chemistry,0301,ANALYTICAL CHEMISTRY,True,1.0,manual_curated,forward+reverse+lexical,,2026-10-06
+1602,Analytical Chemistry,0304,MEDICINAL AND BIOMOLECULAR CHEMISTRY,False,0.067,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+1603,Electrochemistry,0306,PHYSICAL CHEMISTRY (INCL. STRUCTURAL),True,0.8,manual_curated,forward,,2026-10-06
+1603,Electrochemistry,0307,THEORETICAL AND COMPUTATIONAL CHEMISTRY,False,0.1,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+1604,Inorganic Chemistry,0302,INORGANIC CHEMISTRY,True,1.0,manual_curated,forward+reverse+lexical,,2026-10-06
+1604,Inorganic Chemistry,0399,OTHER CHEMICAL SCIENCES,False,0.125,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+1604,Inorganic Chemistry,0306,PHYSICAL CHEMISTRY (INCL. STRUCTURAL),False,0.083,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+1604,Inorganic Chemistry,0303,MACROMOLECULAR AND MATERIALS CHEMISTRY,False,0.056,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+1605,Organic Chemistry,0305,ORGANIC CHEMISTRY,True,0.9,manual_curated,forward+lexical,,2026-10-06
+1605,Organic Chemistry,0303,MACROMOLECULAR AND MATERIALS CHEMISTRY,False,0.183,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+1605,Organic Chemistry,0304,MEDICINAL AND BIOMOLECULAR CHEMISTRY,False,0.167,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+1605,Organic Chemistry,0302,INORGANIC CHEMISTRY,False,0.013,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+1605,Organic Chemistry,0306,PHYSICAL CHEMISTRY (INCL. STRUCTURAL),False,0.008,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+1606,Physical and Theoretical Chemistry,0306,PHYSICAL CHEMISTRY (INCL. STRUCTURAL),True,0.9,manual_curated,forward+reverse,,2026-10-06
+1606,Physical and Theoretical Chemistry,0307,THEORETICAL AND COMPUTATIONAL CHEMISTRY,False,0.226,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+1606,Physical and Theoretical Chemistry,0399,OTHER CHEMICAL SCIENCES,False,0.059,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+1607,Spectroscopy,0306,PHYSICAL CHEMISTRY (INCL. STRUCTURAL),True,0.8,manual_curated,forward,,2026-10-06
+1607,Spectroscopy,0307,THEORETICAL AND COMPUTATIONAL CHEMISTRY,False,0.1,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+1702,Artificial Intelligence,0801,Artificial Intelligence and Image Processing,True,1.0,manual_curated,forward+reverse+lexical,,2026-10-06
+1702,Artificial Intelligence,0802,Computation Theory and Mathematics,False,0.032,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+1702,Artificial Intelligence,1702,Cognitive Sciences,False,0.023,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+1702,Artificial Intelligence,0803,Computer Software,False,0.013,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+1702,Artificial Intelligence,0906,Electrical and Electronic Engineering,False,0.006,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+1703,Computational Theory and Mathematics,0802,Computation Theory and Mathematics,True,1.0,manual_curated,forward+reverse+lexical,,2026-10-06
+1703,Computational Theory and Mathematics,0804,Data Format,False,0.188,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+1703,Computational Theory and Mathematics,0899,Other Information and Computing Sciences,False,0.125,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+1703,Computational Theory and Mathematics,0803,Computer Software,False,0.042,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+1704,Computer Graphics and Computer-Aided Design,0801,Artificial Intelligence and Image Processing,True,0.8,manual_curated,reverse,"080103 Computer Graphics, not design practice",2026-10-06
+1704,Computer Graphics and Computer-Aided Design,1203,Design Practice and Management,False,0.446,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+1704,Computer Graphics and Computer-Aided Design,0806,Information Systems,False,0.062,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+1704,Computer Graphics and Computer-Aided Design,1201,Architecture,False,0.054,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+1704,Computer Graphics and Computer-Aided Design,0803,Computer Software,False,0.011,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+1705,Computer Networks and Communications,0805,Distributed Computing,True,0.8,manual_curated,forward,,2026-10-06
+1705,Computer Networks and Communications,0803,Computer Software,False,0.502,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+1705,Computer Networks and Communications,0804,Data Format,False,0.088,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+1705,Computer Networks and Communications,0806,Information Systems,False,0.035,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+1705,Computer Networks and Communications,0899,Other Information and Computing Sciences,False,0.031,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+1706,Computer Science Applications,0803,Computer Software,True,0.9,manual_curated,forward+reverse,,2026-10-06
+1706,Computer Science Applications,0899,Other Information and Computing Sciences,False,0.33,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+1706,Computer Science Applications,0807,Library and Information Studies,False,0.067,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+1706,Computer Science Applications,1117,Public Health and Health Services,False,0.067,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+1707,Computer Vision and Pattern Recognition,0801,Artificial Intelligence and Image Processing,True,0.9,manual_curated,forward+reverse,,2026-10-06
+1707,Computer Vision and Pattern Recognition,0803,Computer Software,False,0.067,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+1707,Computer Vision and Pattern Recognition,2004,Linguistics,False,0.05,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+1707,Computer Vision and Pattern Recognition,0806,Information Systems,False,0.033,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+1708,Hardware and Architecture,1006,Computer Hardware,True,0.7,manual_curated,,"computer hardware/architecture, not building architecture",2026-10-06
+1708,Hardware and Architecture,1201,Architecture,False,1.0,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+1709,Human-Computer Interaction,0806,Information Systems,True,0.8,manual_curated,reverse,080602 Computer-Human Interaction,2026-10-06
+1709,Human-Computer Interaction,0913,Mechanical Engineering,False,0.312,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+1709,Human-Computer Interaction,0906,Electrical and Electronic Engineering,False,0.146,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+1709,Human-Computer Interaction,0803,Computer Software,False,0.083,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+1709,Human-Computer Interaction,0801,Artificial Intelligence and Image Processing,False,0.072,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+1710,Information Systems,0806,Information Systems,True,1.0,manual_curated,forward+reverse+lexical,,2026-10-06
+1710,Information Systems,0804,Data Format,False,0.064,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+1710,Information Systems,0807,Library and Information Studies,False,0.034,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+1710,Information Systems,0801,Artificial Intelligence and Image Processing,False,0.031,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+1710,Information Systems,0805,Distributed Computing,False,0.017,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+1711,Signal Processing,0906,Electrical and Electronic Engineering,True,0.7,manual_curated,,090609 Signal Processing,2026-10-06
+1711,Signal Processing,1005,Communications Technologies,False,0.861,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+1711,Signal Processing,1099,Other Technology,False,0.028,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+1712,Software,0803,Computer Software,True,1.0,manual_curated,forward+reverse+lexical,,2026-10-06
+1712,Software,0805,Distributed Computing,False,0.202,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+1712,Software,0802,Computation Theory and Mathematics,False,0.052,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+1712,Software,0806,Information Systems,False,0.011,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+1712,Software,0804,Data Format,False,0.006,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+1800,General Decision Sciences,1599,"Other Commerce, Management, Tourism and Services",True,0.8,manual_curated,forward,,2026-10-06
+1802,Information Systems and Management,0806,Information Systems,True,0.9,manual_curated,forward+lexical,,2026-10-06
+1802,Information Systems and Management,0804,Data Format,False,0.038,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+1803,Management Science and Operations Research,1503,Business and Management,True,0.8,manual_curated,forward,,2026-10-06
+1804,"Statistics, Probability and Uncertainty",0104,STATISTICS,True,0.9,manual_curated,forward+lexical,,2026-10-06
+1902,Atmospheric Science,0401,ATMOSPHERIC SCIENCES,True,1.0,manual_curated,forward+reverse+lexical,,2026-10-06
+1902,Atmospheric Science,0399,OTHER CHEMICAL SCIENCES,False,0.086,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+1902,Atmospheric Science,0406,PHYSICAL GEOGRAPHY AND ENVIRONMENTAL GEOSCIENCE,False,0.043,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+1904,Earth-Surface Processes,0406,PHYSICAL GEOGRAPHY AND ENVIRONMENTAL GEOSCIENCE,True,0.9,manual_curated,forward+reverse,,2026-10-06
+1906,Geochemistry and Petrology,0402,GEOCHEMISTRY,True,1.0,manual_curated,forward+reverse+lexical,,2026-10-06
+1907,Geology,0403,GEOLOGY,True,1.0,manual_curated,forward+reverse+lexical,,2026-10-06
+1907,Geology,0499,OTHER EARTH SCIENCES,False,0.158,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+1908,Geophysics,0404,GEOPHYSICS,True,1.0,manual_curated,forward+reverse+lexical,,2026-10-06
+1908,Geophysics,0909,Geomatic Engineering,False,0.1,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+1910,Oceanography,0405,OCEANOGRAPHY,True,1.0,manual_curated,forward+reverse+lexical,,2026-10-06
+1911,Paleontology,0403,GEOLOGY,True,0.8,manual_curated,forward,,2026-10-06
+1912,Space and Planetary Science,0201,ASTRONOMICAL AND SPACE SCIENCES,True,0.9,manual_curated,forward+lexical,,2026-10-06
+2000,"General Economics, Econometrics and Finance",1402,Applied Economics,True,0.7,manual_curated,,"general economics -> Applied Economics, FOR2008's broadest economics group",2026-10-06
+2000,"General Economics, Econometrics and Finance",1403,Econometrics,False,0.5,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+2000,"General Economics, Econometrics and Finance",1499,Other Economics,False,0.5,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+2002,Economics and Econometrics,1402,Applied Economics,True,0.8,manual_curated,reverse,economics at large -> Applied Economics; Econometrics kept as an alternate,2026-10-06
+2002,Economics and Econometrics,1403,Econometrics,False,0.597,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+2002,Economics and Econometrics,1401,Economic Theory,False,0.081,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+2003,Finance,1502,"Banking, Finance and Investment",True,0.9,manual_curated,forward+lexical,,2026-10-06
+2003,Finance,1402,Applied Economics,False,0.1,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+2100,General Energy,0906,Electrical and Electronic Engineering,True,0.7,manual_curated,,power and energy systems engineering (090607/090608) is FOR2008's main energy home,2026-10-06
+2100,General Energy,0904,Chemical Engineering,False,0.833,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+2100,General Energy,0905,Civil Engineering,False,0.083,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+2100,General Energy,0908,Food Sciences,False,0.083,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+2102,Energy Engineering and Power Technology,0906,Electrical and Electronic Engineering,True,0.8,manual_curated,forward,,2026-10-06
+2103,Fuel Technology,0904,Chemical Engineering,True,0.8,manual_curated,forward,,2026-10-06
+2103,Fuel Technology,0905,Civil Engineering,False,0.083,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+2103,Fuel Technology,0908,Food Sciences,False,0.083,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+2104,Nuclear Energy and Engineering,0915,Interdisciplinary Engineering,True,0.7,manual_curated,,091506 Nuclear Engineering,2026-10-06
+2104,Nuclear Energy and Engineering,0904,Chemical Engineering,False,0.833,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+2104,Nuclear Energy and Engineering,0905,Civil Engineering,False,0.083,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+2104,Nuclear Energy and Engineering,0908,Food Sciences,False,0.083,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+2105,"Renewable Energy, Sustainability and the Environment",0906,Electrical and Electronic Engineering,True,0.7,manual_curated,,090608 Renewable Power and Energy Systems Engineering,2026-10-06
+2105,"Renewable Energy, Sustainability and the Environment",0502,ENVIRONMENTAL SCIENCE AND MANAGEMENT,False,1.0,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+2200,General Engineering,0915,Interdisciplinary Engineering,True,0.7,manual_curated,,general engineering -> Interdisciplinary Engineering,2026-10-06
+2200,General Engineering,0905,Civil Engineering,False,0.5,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+2200,General Engineering,1007,Nanotechnology,False,0.156,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+2200,General Engineering,0914,Resources Engineering and Extractive Metallurgy,False,0.125,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+2200,General Engineering,0999,Other Engineering,False,0.047,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+2202,Aerospace Engineering,0901,Aerospace Engineering,True,1.0,manual_curated,forward+reverse+lexical,,2026-10-06
+2203,Automotive Engineering,0902,Automotive Engineering,True,1.0,manual_curated,forward+reverse+lexical,,2026-10-06
+2204,Biomedical Engineering,0903,Biomedical Engineering,True,1.0,manual_curated,forward+reverse+lexical,,2026-10-06
+2204,Biomedical Engineering,1004,Medical Biotechnology,False,0.083,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+2205,Civil and Structural Engineering,0905,Civil Engineering,True,1.0,manual_curated,forward+reverse+lexical,,2026-10-06
+2205,Civil and Structural Engineering,0909,Geomatic Engineering,False,0.167,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+2206,Computational Mechanics,0915,Interdisciplinary Engineering,True,0.8,manual_curated,forward,,2026-10-06
+2206,Computational Mechanics,0203,CLASSICAL PHYSICS,False,0.214,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+2206,Computational Mechanics,0901,Aerospace Engineering,False,0.143,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+2206,Computational Mechanics,0903,Biomedical Engineering,False,0.143,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+2206,Computational Mechanics,0404,GEOPHYSICS,False,0.071,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+2207,Control and Systems Engineering,0913,Mechanical Engineering,True,0.9,manual_curated,forward+reverse,,2026-10-06
+2207,Control and Systems Engineering,0906,Electrical and Electronic Engineering,False,0.292,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+2207,Control and Systems Engineering,0910,Manufacturing Engineering,False,0.083,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+2208,Electrical and Electronic Engineering,0906,Electrical and Electronic Engineering,True,1.0,manual_curated,forward+reverse+lexical,,2026-10-06
+2208,Electrical and Electronic Engineering,1005,Communications Technologies,False,0.137,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+2208,Electrical and Electronic Engineering,1006,Computer Hardware,False,0.07,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+2208,Electrical and Electronic Engineering,0206,QUANTUM PHYSICS,False,0.016,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+2208,Electrical and Electronic Engineering,1099,Other Technology,False,0.004,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+2209,Industrial and Manufacturing Engineering,0910,Manufacturing Engineering,True,1.0,manual_curated,forward+reverse+lexical,,2026-10-06
+2210,Mechanical Engineering,0913,Mechanical Engineering,True,1.0,manual_curated,forward+reverse+lexical,,2026-10-06
+2210,Mechanical Engineering,0915,Interdisciplinary Engineering,False,0.087,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+2210,Mechanical Engineering,0203,CLASSICAL PHYSICS,False,0.065,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+2210,Mechanical Engineering,0901,Aerospace Engineering,False,0.043,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+2210,Mechanical Engineering,0903,Biomedical Engineering,False,0.043,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+2211,Mechanics of Materials,0913,Mechanical Engineering,True,0.8,manual_curated,forward,,2026-10-06
+2212,Ocean Engineering,0911,Maritime Engineering,True,0.9,manual_curated,forward+reverse,,2026-10-06
+2213,"Safety, Risk, Reliability and Quality",0915,Interdisciplinary Engineering,True,0.7,manual_curated,,091507 Risk Engineering,2026-10-06
+2213,"Safety, Risk, Reliability and Quality",0905,Civil Engineering,False,1.0,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+2214,Media Technology,0801,Artificial Intelligence and Image Processing,True,0.7,manual_curated,,an engineering subfield whose OAX topics are mostly image processing; not humanities media studies,2026-10-06
+2214,Media Technology,2001,Communication and Media Studies,False,0.889,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+2214,Media Technology,1903,Journalism and Professional Writing,False,0.111,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+2215,Building and Construction,1202,Building,True,1.0,manual_curated,forward+reverse+lexical,,2026-10-06
+2215,Building and Construction,1201,Architecture,False,0.125,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+2216,Architecture,1201,Architecture,True,1.0,manual_curated,forward+reverse+lexical,,2026-10-06
+2302,Ecological Modeling,0501,ECOLOGICAL APPLICATIONS,True,0.9,manual_curated,forward+lexical,,2026-10-06
+2303,Ecology,0602,ECOLOGY,True,0.9,manual_curated,forward+lexical,,2026-10-06
+2303,Ecology,0501,ECOLOGICAL APPLICATIONS,False,0.438,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+2303,Ecology,0599,OTHER ENVIRONMENTAL SCIENCES,False,0.062,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+2303,Ecology,0603,EVOLUTIONARY BIOLOGY,False,0.028,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+2304,Environmental Chemistry,0399,OTHER CHEMICAL SCIENCES,True,0.7,manual_curated,,039901 Environmental Chemistry (incl. Atmospheric Chemistry),2026-10-06
+2304,Environmental Chemistry,0502,ENVIRONMENTAL SCIENCE AND MANAGEMENT,False,0.5,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+2304,Environmental Chemistry,0503,SOIL SCIENCES,False,0.231,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+2304,Environmental Chemistry,1002,Environmental Biotechnology,False,0.218,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+2304,Environmental Chemistry,1007,Nanotechnology,False,0.038,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+2305,Environmental Engineering,0907,Environmental Engineering,True,1.0,manual_curated,forward+reverse+lexical,,2026-10-06
+2306,Global and Planetary Change,0401,ATMOSPHERIC SCIENCES,True,0.8,manual_curated,forward,,2026-10-06
+2306,Global and Planetary Change,0501,ECOLOGICAL APPLICATIONS,False,0.271,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+2306,Global and Planetary Change,0503,SOIL SCIENCES,False,0.125,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+2306,Global and Planetary Change,0502,ENVIRONMENTAL SCIENCE AND MANAGEMENT,False,0.104,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+2307,"Health, Toxicology and Mutagenesis",1115,Pharmacology and Pharmaceutical Sciences,True,0.8,manual_curated,forward,,2026-10-06
+2308,"Management, Monitoring, Policy and Law",0502,ENVIRONMENTAL SCIENCE AND MANAGEMENT,True,0.8,manual_curated,reverse,"environmental management/monitoring/policy (050205), not urban planning",2026-10-06
+2308,"Management, Monitoring, Policy and Law",1205,Urban and Regional Planning,False,0.5,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+2309,Nature and Landscape Conservation,0502,ENVIRONMENTAL SCIENCE AND MANAGEMENT,True,0.8,manual_curated,forward,,2026-10-06
+2310,Pollution,0502,ENVIRONMENTAL SCIENCE AND MANAGEMENT,True,0.9,manual_curated,forward+reverse,,2026-10-06
+2311,Waste Management and Disposal,0907,Environmental Engineering,True,0.7,manual_curated,,waste management -> Environmental Engineering (090703 Environmental Technologies),2026-10-06
+2311,Waste Management and Disposal,0502,ENVIRONMENTAL SCIENCE AND MANAGEMENT,False,1.0,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+2312,Water Science and Technology,0406,PHYSICAL GEOGRAPHY AND ENVIRONMENTAL GEOSCIENCE,True,0.8,manual_curated,forward,,2026-10-06
+2402,Applied Microbiology and Biotechnology,0605,MICROBIOLOGY,True,0.9,manual_curated,forward+lexical,,2026-10-06
+2403,Immunology,1107,Immunology,True,0.9,manual_curated,forward+lexical,,2026-10-06
+2404,Microbiology,0605,MICROBIOLOGY,True,1.0,manual_curated,forward+reverse+lexical,,2026-10-06
+2405,Parasitology,1108,Medical Microbiology,True,0.7,manual_curated,,110803 Medical Parasitology; OAX's topics are mostly human parasitic disease,2026-10-06
+2405,Parasitology,0603,EVOLUTIONARY BIOLOGY,False,0.962,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+2405,Parasitology,0602,ECOLOGY,False,0.038,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+2406,Virology,0605,MICROBIOLOGY,True,0.8,manual_curated,forward,,2026-10-06
+2500,General Materials Science,0912,Materials Engineering,True,1.0,manual_curated,forward+reverse+lexical,,2026-10-06
+2502,Biomaterials,0903,Biomedical Engineering,True,0.7,manual_curated,,090301 Biomaterials,2026-10-06
+2502,Biomaterials,0912,Materials Engineering,False,1.0,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+2503,Ceramics and Composites,0912,Materials Engineering,True,0.8,manual_curated,forward,,2026-10-06
+2504,"Electronic, Optical and Magnetic Materials",0912,Materials Engineering,True,0.7,manual_curated,,091205 Functional Materials,2026-10-06
+2504,"Electronic, Optical and Magnetic Materials",0303,MACROMOLECULAR AND MATERIALS CHEMISTRY,False,0.88,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+2504,"Electronic, Optical and Magnetic Materials",0302,INORGANIC CHEMISTRY,False,0.06,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+2504,"Electronic, Optical and Magnetic Materials",0306,PHYSICAL CHEMISTRY (INCL. STRUCTURAL),False,0.04,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+2504,"Electronic, Optical and Magnetic Materials",0204,CONDENSED MATTER PHYSICS,False,0.02,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+2505,Materials Chemistry,0303,MACROMOLECULAR AND MATERIALS CHEMISTRY,True,0.9,manual_curated,forward+lexical,,2026-10-06
+2505,Materials Chemistry,0302,INORGANIC CHEMISTRY,False,0.06,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+2505,Materials Chemistry,0306,PHYSICAL CHEMISTRY (INCL. STRUCTURAL),False,0.04,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+2505,Materials Chemistry,0204,CONDENSED MATTER PHYSICS,False,0.02,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+2506,Metals and Alloys,0912,Materials Engineering,True,0.8,manual_curated,forward,,2026-10-06
+2507,Polymers and Plastics,0912,Materials Engineering,True,0.8,manual_curated,forward,,2026-10-06
+2508,"Surfaces, Coatings and Films",0912,Materials Engineering,True,0.8,manual_curated,forward,,2026-10-06
+2602,Algebra and Number Theory,0101,PURE MATHEMATICS,True,0.8,manual_curated,reverse,algebra and number theory is pure mathematics (010101),2026-10-06
+2602,Algebra and Number Theory,0102,APPLIED MATHEMATICS,False,0.475,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+2602,Algebra and Number Theory,0802,Computation Theory and Mathematics,False,0.025,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+2604,Applied Mathematics,0102,APPLIED MATHEMATICS,True,1.0,manual_curated,forward+reverse+lexical,,2026-10-06
+2604,Applied Mathematics,0802,Computation Theory and Mathematics,False,0.048,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+2604,Applied Mathematics,0199,OTHER MATHEMATICAL SCIENCES,False,0.045,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+2605,Computational Mathematics,0103,NUMERICAL AND COMPUTATIONAL MATHEMATICS,True,1.0,manual_curated,forward+reverse+lexical,,2026-10-06
+2607,Discrete Mathematics and Combinatorics,0101,PURE MATHEMATICS,True,0.8,manual_curated,lexical,010104 Combinatorics and Discrete Mathematics sits in Pure Mathematics,2026-10-06
+2607,Discrete Mathematics and Combinatorics,0102,APPLIED MATHEMATICS,False,0.95,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+2607,Discrete Mathematics and Combinatorics,0802,Computation Theory and Mathematics,False,0.05,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+2608,Geometry and Topology,0101,PURE MATHEMATICS,True,0.8,manual_curated,forward,,2026-10-06
+2610,Mathematical Physics,0105,MATHEMATICAL PHYSICS,True,1.0,manual_curated,forward+reverse+lexical,,2026-10-06
+2611,Modeling and Simulation,0103,NUMERICAL AND COMPUTATIONAL MATHEMATICS,True,0.8,manual_curated,forward,,2026-10-06
+2612,Numerical Analysis,0103,NUMERICAL AND COMPUTATIONAL MATHEMATICS,True,0.9,manual_curated,forward+lexical,,2026-10-06
+2613,Statistics and Probability,0104,STATISTICS,True,1.0,manual_curated,forward+reverse+lexical,,2026-10-06
+2614,Theoretical Computer Science,0802,Computation Theory and Mathematics,True,0.7,manual_curated,,theoretical computer science -> Computation Theory and Mathematics,2026-10-06
+2614,Theoretical Computer Science,0102,APPLIED MATHEMATICS,False,0.95,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+2702,Anatomy,1103,Clinical Sciences,True,0.8,manual_curated,forward,,2026-10-06
+2702,Anatomy,1106,Human Movement and Sports Science,False,0.036,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+2703,Anesthesiology and Pain Medicine,1103,Clinical Sciences,True,0.8,manual_curated,forward,,2026-10-06
+2703,Anesthesiology and Pain Medicine,1106,Human Movement and Sports Science,False,0.036,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+2704,Biochemistry,1101,Medical Biochemistry and Metabolomics,True,0.9,manual_curated,forward+reverse,,2026-10-06
+2705,Cardiology and Cardiovascular Medicine,1102,Cardiorespiratory Medicine and Haematology,True,0.9,manual_curated,forward+reverse,,2026-10-06
+2706,Critical Care and Intensive Care Medicine,1103,Clinical Sciences,True,0.8,manual_curated,forward,,2026-10-06
+2706,Critical Care and Intensive Care Medicine,1106,Human Movement and Sports Science,False,0.036,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+2707,Complementary and alternative medicine,1104,Complementary and Alternative Medicine,True,1.0,manual_curated,forward+reverse+lexical,,2026-10-06
+2708,Dermatology,1103,Clinical Sciences,True,0.8,manual_curated,forward,,2026-10-06
+2708,Dermatology,1106,Human Movement and Sports Science,False,0.036,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+2711,Emergency Medicine,1103,Clinical Sciences,True,0.8,manual_curated,forward,,2026-10-06
+2711,Emergency Medicine,1106,Human Movement and Sports Science,False,0.036,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+2712,"Endocrinology, Diabetes and Metabolism",1103,Clinical Sciences,True,0.7,manual_curated,,110306 Endocrinology; Medical Biochemistry and Metabolomics / Nutrition kept as alternates,2026-10-06
+2712,"Endocrinology, Diabetes and Metabolism",1101,Medical Biochemistry and Metabolomics,False,0.5,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+2712,"Endocrinology, Diabetes and Metabolism",1111,Nutrition and Dietetics,False,0.5,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+2713,Epidemiology,1117,Public Health and Health Services,True,0.9,manual_curated,forward+reverse,,2026-10-06
+2714,Family Practice,1117,Public Health and Health Services,True,0.7,manual_curated,,family/general practice -> 111717 Primary Health Care,2026-10-06
+2714,Family Practice,1103,Clinical Sciences,False,0.964,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+2714,Family Practice,1106,Human Movement and Sports Science,False,0.036,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+2715,Gastroenterology,1103,Clinical Sciences,True,0.8,manual_curated,forward,,2026-10-06
+2715,Gastroenterology,1106,Human Movement and Sports Science,False,0.036,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+2716,Genetics,1103,Clinical Sciences,True,0.7,manual_curated,,110311 Medical Genetics (excl. Cancer Genetics),2026-10-06
+2716,Genetics,0604,GENETICS,False,0.5,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+2716,Genetics,1004,Medical Biotechnology,False,0.321,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+2716,Genetics,1007,Nanotechnology,False,0.143,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+2716,Genetics,1099,Other Technology,False,0.036,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+2717,Geriatrics and Gerontology,1103,Clinical Sciences,True,0.8,manual_curated,forward,,2026-10-06
+2717,Geriatrics and Gerontology,1106,Human Movement and Sports Science,False,0.036,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+2718,Health Informatics,1117,Public Health and Health Services,True,0.9,manual_curated,forward+lexical,,2026-10-06
+2718,Health Informatics,1103,Clinical Sciences,False,0.083,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+2718,Health Informatics,1199,Other Medical and Health Sciences,False,0.038,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+2718,Health Informatics,0807,Library and Information Studies,False,0.023,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+2720,Hematology,1102,Cardiorespiratory Medicine and Haematology,True,0.8,manual_curated,forward,,2026-10-06
+2721,Hepatology,1103,Clinical Sciences,True,0.8,manual_curated,forward,,2026-10-06
+2721,Hepatology,1106,Human Movement and Sports Science,False,0.036,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+2723,Immunology and Allergy,1107,Immunology,True,1.0,manual_curated,forward+reverse+lexical,,2026-10-06
+2724,Internal Medicine,1103,Clinical Sciences,True,0.9,manual_curated,forward+reverse,,2026-10-06
+2724,Internal Medicine,1106,Human Movement and Sports Science,False,0.035,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+2724,Internal Medicine,1199,Other Medical and Health Sciences,False,0.025,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+2725,Infectious Diseases,1103,Clinical Sciences,True,0.8,manual_curated,forward,,2026-10-06
+2725,Infectious Diseases,1106,Human Movement and Sports Science,False,0.036,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+2726,Microbiology,1108,Medical Microbiology,True,0.8,manual_curated,reverse,Microbiology under OAX's Medicine field -> Medical Microbiology,2026-10-06
+2726,Microbiology,0605,MICROBIOLOGY,False,0.5,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+2727,Nephrology,1103,Clinical Sciences,True,0.8,manual_curated,forward,,2026-10-06
+2727,Nephrology,1106,Human Movement and Sports Science,False,0.036,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+2728,Neurology,1109,Neurosciences,True,0.9,manual_curated,forward+reverse,,2026-10-06
+2729,Obstetrics and Gynecology,1114,Paediatrics and Reproductive Medicine,True,0.8,manual_curated,forward,,2026-10-06
+2729,Obstetrics and Gynecology,1110,Nursing,False,0.317,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+2729,Obstetrics and Gynecology,1117,Public Health and Health Services,False,0.1,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+2729,Obstetrics and Gynecology,1701,Psychology,False,0.042,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+2729,Obstetrics and Gynecology,1607,Social Work,False,0.021,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+2730,Oncology,1112,Oncology and Carcinogenesis,True,1.0,manual_curated,forward+reverse+lexical,,2026-10-06
+2731,Ophthalmology,1113,Ophthalmology and Optometry,True,1.0,manual_curated,forward+reverse+lexical,,2026-10-06
+2732,Orthopedics and Sports Medicine,1103,Clinical Sciences,True,0.8,manual_curated,forward,,2026-10-06
+2732,Orthopedics and Sports Medicine,1106,Human Movement and Sports Science,False,0.518,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+2733,Otorhinolaryngology,1103,Clinical Sciences,True,0.8,manual_curated,forward,,2026-10-06
+2733,Otorhinolaryngology,1106,Human Movement and Sports Science,False,0.036,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+2734,Pathology and Forensic Medicine,1103,Clinical Sciences,True,0.8,manual_curated,forward,,2026-10-06
+2734,Pathology and Forensic Medicine,1106,Human Movement and Sports Science,False,0.036,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+2735,"Pediatrics, Perinatology and Child Health",1114,Paediatrics and Reproductive Medicine,True,0.9,manual_curated,forward+reverse,,2026-10-06
+2736,Pharmacology,1115,Pharmacology and Pharmaceutical Sciences,True,1.0,manual_curated,forward+reverse+lexical,,2026-10-06
+2737,Physiology,1116,Medical Physiology,True,0.9,manual_curated,forward+reverse,,2026-10-06
+2738,Psychiatry and Mental health,1103,Clinical Sciences,True,0.8,manual_curated,forward,,2026-10-06
+2738,Psychiatry and Mental health,1106,Human Movement and Sports Science,False,0.036,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+2739,"Public Health, Environmental and Occupational Health",1117,Public Health and Health Services,True,1.0,manual_curated,forward+reverse+lexical,,2026-10-06
+2739,"Public Health, Environmental and Occupational Health",1603,Demography,False,0.089,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+2739,"Public Health, Environmental and Occupational Health",1103,Clinical Sciences,False,0.061,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+2739,"Public Health, Environmental and Occupational Health",1106,Human Movement and Sports Science,False,0.03,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+2739,"Public Health, Environmental and Occupational Health",1199,Other Medical and Health Sciences,False,0.014,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+2740,Pulmonary and Respiratory Medicine,1102,Cardiorespiratory Medicine and Haematology,True,0.7,manual_curated,,110203 Respiratory Diseases sits in Cardiorespiratory Medicine and Haematology,2026-10-06
+2740,Pulmonary and Respiratory Medicine,1103,Clinical Sciences,False,0.964,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+2740,Pulmonary and Respiratory Medicine,1106,Human Movement and Sports Science,False,0.036,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+2741,"Radiology, Nuclear Medicine and Imaging",1103,Clinical Sciences,True,0.8,manual_curated,forward,,2026-10-06
+2741,"Radiology, Nuclear Medicine and Imaging",1106,Human Movement and Sports Science,False,0.036,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+2742,Rehabilitation,1103,Clinical Sciences,True,0.9,manual_curated,forward+reverse,,2026-10-06
+2742,Rehabilitation,1904,Performing Arts and Creative Writing,False,0.091,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+2742,Rehabilitation,1113,Ophthalmology and Optometry,False,0.061,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+2743,Reproductive Medicine,1114,Paediatrics and Reproductive Medicine,True,1.0,manual_curated,forward+reverse+lexical,,2026-10-06
+2745,Rheumatology,1103,Clinical Sciences,True,0.8,manual_curated,forward,,2026-10-06
+2745,Rheumatology,1106,Human Movement and Sports Science,False,0.036,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+2746,Surgery,1103,Clinical Sciences,True,0.8,manual_curated,forward,,2026-10-06
+2746,Surgery,1106,Human Movement and Sports Science,False,0.036,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+2747,Transplantation,1107,Immunology,True,0.8,manual_curated,forward,,2026-10-06
+2748,Urology,1103,Clinical Sciences,True,0.8,manual_curated,forward,,2026-10-06
+2748,Urology,1106,Human Movement and Sports Science,False,0.036,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+2802,Behavioral Neuroscience,1109,Neurosciences,True,0.9,manual_curated,forward+lexical,,2026-10-06
+2803,Biological Psychiatry,1109,Neurosciences,True,0.8,manual_curated,forward,,2026-10-06
+2804,Cellular and Molecular Neuroscience,1109,Neurosciences,True,0.9,manual_curated,forward+lexical,,2026-10-06
+2805,Cognitive Neuroscience,1109,Neurosciences,True,0.8,manual_curated,forward,,2026-10-06
+2806,Developmental Neuroscience,1109,Neurosciences,True,0.9,manual_curated,forward+lexical,,2026-10-06
+2807,Endocrine and Autonomic Systems,1109,Neurosciences,True,0.8,manual_curated,forward,,2026-10-06
+2808,Neurology,1109,Neurosciences,True,0.8,manual_curated,forward,,2026-10-06
+2809,Sensory Systems,1109,Neurosciences,True,0.8,manual_curated,forward,,2026-10-06
+2910,"Issues, ethics and legal aspects",1110,Nursing,True,0.8,manual_curated,forward,,2026-10-06
+2911,Leadership and Management,1110,Nursing,True,0.8,manual_curated,forward,,2026-10-06
+2916,Nutrition and Dietetics,1111,Nutrition and Dietetics,True,0.9,manual_curated,forward+lexical,,2026-10-06
+2922,Research and Theory,1110,Nursing,True,0.9,manual_curated,forward+reverse,,2026-10-06
+3002,Drug Discovery,1115,Pharmacology and Pharmaceutical Sciences,True,0.8,manual_curated,forward,,2026-10-06
+3003,Pharmaceutical Science,1115,Pharmacology and Pharmaceutical Sciences,True,0.9,manual_curated,forward+lexical,,2026-10-06
+3004,Pharmacology,1115,Pharmacology and Pharmaceutical Sciences,True,0.9,manual_curated,forward+lexical,,2026-10-06
+3005,Toxicology,1115,Pharmacology and Pharmaceutical Sciences,True,0.8,manual_curated,forward,,2026-10-06
+3102,Acoustics and Ultrasonics,0203,CLASSICAL PHYSICS,True,0.8,manual_curated,forward,,2026-10-06
+3102,Acoustics and Ultrasonics,0299,OTHER PHYSICAL SCIENCES,False,0.5,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+3102,Acoustics and Ultrasonics,0205,OPTICAL PHYSICS,False,0.1,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+3103,Astronomy and Astrophysics,0201,ASTRONOMICAL AND SPACE SCIENCES,True,0.9,manual_curated,forward+reverse,,2026-10-06
+3104,Condensed Matter Physics,0204,CONDENSED MATTER PHYSICS,True,1.0,manual_curated,forward+reverse+lexical,,2026-10-06
+3104,Condensed Matter Physics,0206,QUANTUM PHYSICS,False,0.214,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+3105,Instrumentation,0299,OTHER PHYSICAL SCIENCES,True,0.9,manual_curated,forward+reverse,,2026-10-06
+3106,Nuclear and High Energy Physics,0202,"ATOMIC, MOLECULAR, NUCLEAR, PARTICLE AND PLASMA PHYSICS",True,1.0,manual_curated,forward+reverse+lexical,,2026-10-06
+3106,Nuclear and High Energy Physics,0206,QUANTUM PHYSICS,False,0.196,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+3107,"Atomic and Molecular Physics, and Optics",0205,OPTICAL PHYSICS,True,0.9,manual_curated,forward+reverse,,2026-10-06
+3107,"Atomic and Molecular Physics, and Optics",0202,"ATOMIC, MOLECULAR, NUCLEAR, PARTICLE AND PLASMA PHYSICS",False,0.167,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+3108,Radiation,0299,OTHER PHYSICAL SCIENCES,True,0.8,manual_curated,reverse,"applied/medical radiation physics (029903 Medical Physics, 029904 Instruments and Techniques)",2026-10-06
+3108,Radiation,0202,"ATOMIC, MOLECULAR, NUCLEAR, PARTICLE AND PLASMA PHYSICS",False,0.5,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+3109,Statistical and Nonlinear Physics,0203,CLASSICAL PHYSICS,True,0.8,manual_curated,reverse,020304 Thermodynamics and Statistical Physics,2026-10-06
+3109,Statistical and Nonlinear Physics,0102,APPLIED MATHEMATICS,False,0.475,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+3109,Statistical and Nonlinear Physics,0205,OPTICAL PHYSICS,False,0.1,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+3109,Statistical and Nonlinear Physics,0802,Computation Theory and Mathematics,False,0.025,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+3200,General Psychology,1701,Psychology,True,0.8,manual_curated,lexical,general psychology -> Psychology,2026-10-06
+3200,General Psychology,1799,Other Psychology and Cognitive Sciences,False,1.0,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+3202,Applied Psychology,1701,Psychology,True,1.0,manual_curated,forward+reverse+lexical,,2026-10-06
+3203,Clinical Psychology,1701,Psychology,True,1.0,manual_curated,forward+reverse+lexical,,2026-10-06
+3204,Developmental and Educational Psychology,1701,Psychology,True,0.9,manual_curated,forward+lexical,,2026-10-06
+3205,Experimental and Cognitive Psychology,1702,Cognitive Sciences,True,1.0,manual_curated,forward+reverse+lexical,,2026-10-06
+3205,Experimental and Cognitive Psychology,1701,Psychology,False,0.452,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+3205,Experimental and Cognitive Psychology,1303,Specialist Studies in Education,False,0.078,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+3206,Neuropsychology and Physiological Psychology,1701,Psychology,True,1.0,manual_curated,forward+reverse+lexical,,2026-10-06
+3206,Neuropsychology and Physiological Psychology,1109,Neurosciences,False,0.083,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+3206,Neuropsychology and Physiological Psychology,0604,GENETICS,False,0.042,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+3206,Neuropsychology and Physiological Psychology,1702,Cognitive Sciences,False,0.021,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+3207,Social Psychology,1701,Psychology,True,1.0,manual_curated,forward+reverse+lexical,,2026-10-06
+3207,Social Psychology,1799,Other Psychology and Cognitive Sciences,False,0.083,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+3300,General Social Sciences,1699,Other Studies in Human Society,True,0.8,manual_curated,forward,,2026-10-06
+3300,General Social Sciences,1607,Social Work,False,0.333,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+3302,Archeology,2101,Archaeology,True,0.8,manual_curated,forward,,2026-10-06
+3303,Development,1604,Human Geography,True,0.9,manual_curated,forward+reverse,,2026-10-06
+3303,Development,1402,Applied Economics,False,0.481,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+3303,Development,1601,Anthropology,False,0.037,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+3304,Education,1302,Curriculum and Pedagogy,True,0.9,manual_curated,forward+reverse,,2026-10-06
+3304,Education,1303,Specialist Studies in Education,False,0.174,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+3304,Education,1301,Education Systems,False,0.081,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+3304,Education,1605,Policy and Administration,False,0.023,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+3304,Education,1399,Other Education,False,0.012,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+3305,"Geography, Planning and Development",1604,Human Geography,True,1.0,manual_curated,forward+reverse+lexical,,2026-10-06
+3305,"Geography, Planning and Development",1402,Applied Economics,False,0.241,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+3305,"Geography, Planning and Development",1601,Anthropology,False,0.031,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+3306,Health,1117,Public Health and Health Services,True,0.8,manual_curated,lexical,health as a social science -> Public Health and Health Services,2026-10-06
+3306,Health,1103,Clinical Sciences,False,0.5,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+3306,Health,1199,Other Medical and Health Sciences,False,0.5,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+3307,Human Factors and Ergonomics,1701,Psychology,True,0.7,manual_curated,,170107 Industrial and Organisational Psychology covers human factors,2026-10-06
+3307,Human Factors and Ergonomics,1699,Other Studies in Human Society,False,1.0,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+3308,Law,1801,Law,True,1.0,manual_curated,forward+reverse+lexical,,2026-10-06
+3308,Law,1899,Other Law and Legal Studies,False,0.038,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+3308,Law,1802,Maori Law,False,0.005,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+3309,Library and Information Sciences,0807,Library and Information Studies,True,1.0,manual_curated,forward+reverse+lexical,,2026-10-06
+3309,Library and Information Sciences,1503,Business and Management,False,0.045,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+3309,Library and Information Sciences,2102,Curatorial and Related Studies,False,0.045,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+3309,Library and Information Sciences,0806,Information Systems,False,0.03,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+3310,Linguistics and Language,2004,Linguistics,True,0.9,manual_curated,forward+lexical,,2026-10-06
+3311,Safety Research,1117,Public Health and Health Services,True,0.7,manual_curated,,111705 Environmental and Occupational Health and Safety,2026-10-06
+3311,Safety Research,1699,Other Studies in Human Society,False,1.0,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+3312,Sociology and Political Science,1608,Sociology,True,0.8,manual_curated,forward,,2026-10-06
+3312,Sociology and Political Science,1602,Criminology,False,0.27,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+3313,Transportation,1507,Transportation and Freight Services,True,0.9,manual_curated,forward+lexical,,2026-10-06
+3313,Transportation,1503,Business and Management,False,0.2,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+3314,Anthropology,1601,Anthropology,True,1.0,manual_curated,forward+reverse+lexical,,2026-10-06
+3315,Communication,2001,Communication and Media Studies,True,0.9,manual_curated,forward+reverse,,2026-10-06
+3315,Communication,1903,Journalism and Professional Writing,False,0.111,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+3316,Cultural Studies,2002,Cultural Studies,True,1.0,manual_curated,forward+reverse+lexical,,2026-10-06
+3316,Cultural Studies,1605,Policy and Administration,False,0.067,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+3317,Demography,1603,Demography,True,1.0,manual_curated,forward+reverse+lexical,,2026-10-06
+3318,Gender Studies,1699,Other Studies in Human Society,True,0.9,manual_curated,forward+reverse,,2026-10-06
+3318,Gender Studies,2002,Cultural Studies,False,0.283,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+3318,Gender Studies,2203,Philosophy,False,0.1,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+3318,Gender Studies,1608,Sociology,False,0.067,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+3318,Gender Studies,1601,Anthropology,False,0.033,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+3319,Life-span and Life-course Studies,1603,Demography,True,0.8,manual_curated,forward,,2026-10-06
+3320,Political Science and International Relations,1606,Political Science,True,1.0,manual_curated,forward+reverse+lexical,,2026-10-06
+3321,Public Administration,1605,Policy and Administration,True,1.0,manual_curated,forward+reverse+lexical,,2026-10-06
+3321,Public Administration,1402,Applied Economics,False,0.033,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+3322,Urban Studies,1205,Urban and Regional Planning,True,1.0,manual_curated,forward+reverse+lexical,,2026-10-06
+3402,Equine,0707,Veterinary Sciences,True,0.8,manual_curated,forward,,2026-10-06
+3404,Small Animals,0707,Veterinary Sciences,True,0.8,manual_curated,forward,,2026-10-06
+3500,General Dentistry,1105,Dentistry,True,1.0,manual_curated,forward+reverse+lexical,,2026-10-06
+3500,General Dentistry,1103,Clinical Sciences,False,0.038,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+3504,Oral Surgery,1105,Dentistry,True,0.8,manual_curated,forward,,2026-10-06
+3504,Oral Surgery,1103,Clinical Sciences,False,0.038,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+3505,Orthodontics,1105,Dentistry,True,0.8,manual_curated,forward,,2026-10-06
+3505,Orthodontics,1103,Clinical Sciences,False,0.038,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+3506,Periodontics,1105,Dentistry,True,0.7,manual_curated,,periodontics is dentistry,2026-10-06
+3506,Periodontics,1103,Clinical Sciences,False,0.964,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+3506,Periodontics,1106,Human Movement and Sports Science,False,0.036,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+3600,General Health Professions,1117,Public Health and Health Services,True,0.9,manual_curated,forward+lexical,,2026-10-06
+3600,General Health Professions,1103,Clinical Sciences,False,0.083,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+3600,General Health Professions,1199,Other Medical and Health Sciences,False,0.038,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+3600,General Health Professions,0807,Library and Information Studies,False,0.023,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+3603,Complementary and Manual Therapy,1104,Complementary and Alternative Medicine,True,0.9,manual_curated,forward+lexical,,2026-10-06
+3604,Emergency Medical Services,1103,Clinical Sciences,True,0.7,manual_curated,,110305 Emergency Medicine,2026-10-06
+3604,Emergency Medical Services,1117,Public Health and Health Services,False,0.856,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+3604,Emergency Medical Services,1199,Other Medical and Health Sciences,False,0.038,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+3604,Emergency Medical Services,0807,Library and Information Studies,False,0.023,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+3605,Health Information Management,1117,Public Health and Health Services,True,0.7,manual_curated,,111711 Health Information Systems (incl. Surveillance),2026-10-06
+3605,Health Information Management,0806,Information Systems,False,0.962,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+3605,Health Information Management,0804,Data Format,False,0.038,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+3607,Medical Laboratory Technology,1103,Clinical Sciences,True,0.8,manual_curated,forward,,2026-10-06
+3607,Medical Laboratory Technology,1904,Performing Arts and Creative Writing,False,0.091,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+3607,Medical Laboratory Technology,1113,Ophthalmology and Optometry,False,0.061,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+3608,Medical Terminology,1117,Public Health and Health Services,True,0.8,manual_curated,forward,,2026-10-06
+3608,Medical Terminology,1103,Clinical Sciences,False,0.083,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+3608,Medical Terminology,1199,Other Medical and Health Sciences,False,0.038,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+3608,Medical Terminology,0807,Library and Information Studies,False,0.023,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+3609,Occupational Therapy,1103,Clinical Sciences,True,0.7,manual_curated,,110321 Rehabilitation and Therapy (excl. Physiotherapy),2026-10-06
+3609,Occupational Therapy,1117,Public Health and Health Services,False,0.856,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+3609,Occupational Therapy,1199,Other Medical and Health Sciences,False,0.038,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+3609,Occupational Therapy,0807,Library and Information Studies,False,0.023,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+3611,Pharmacy,1115,Pharmacology and Pharmaceutical Sciences,True,0.7,manual_curated,,111503 Clinical Pharmacy and Pharmacy Practice,2026-10-06
+3611,Pharmacy,1117,Public Health and Health Services,False,0.856,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+3611,Pharmacy,1103,Clinical Sciences,False,0.083,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+3611,Pharmacy,1199,Other Medical and Health Sciences,False,0.038,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+3611,Pharmacy,0807,Library and Information Studies,False,0.023,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+3612,"Physical Therapy, Sports Therapy and Rehabilitation",1103,Clinical Sciences,True,0.8,manual_curated,forward,,2026-10-06
+3612,"Physical Therapy, Sports Therapy and Rehabilitation",1904,Performing Arts and Creative Writing,False,0.091,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+3612,"Physical Therapy, Sports Therapy and Rehabilitation",1113,Ophthalmology and Optometry,False,0.061,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+3614,Radiological and Ultrasound Technology,1103,Clinical Sciences,True,0.7,manual_curated,,110320 Radiology and Organ Imaging,2026-10-06
+3614,Radiological and Ultrasound Technology,1117,Public Health and Health Services,False,0.856,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+3614,Radiological and Ultrasound Technology,1199,Other Medical and Health Sciences,False,0.038,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+3614,Radiological and Ultrasound Technology,0807,Library and Information Studies,False,0.023,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+3616,Speech and Hearing,1103,Clinical Sciences,True,0.8,manual_curated,forward,,2026-10-06
+3616,Speech and Hearing,1904,Performing Arts and Creative Writing,False,0.091,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+3616,Speech and Hearing,1113,Ophthalmology and Optometry,False,0.061,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,

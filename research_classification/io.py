@@ -90,7 +90,7 @@ def read_definitions(xlsx_path: Path, sheet_name: str = "Table 4") -> pd.DataFra
 
 def split_trailing_p_code(cell: object) -> tuple[str, bool] | None:
     """Split a code with an optional trailing 'p' glued directly onto it (used by the
-    legacy '1297.0 correspondence tables.xls' RFCD1998<->FOR2008 / SEO1998<->SEO2008
+    legacy '1297.0 correspondence tables.xlsx' RFCD1998<->FOR2008 / SEO1998<->SEO2008
     tables, e.g. '010104p') into (code, is_partial).
     """
     if cell is None:

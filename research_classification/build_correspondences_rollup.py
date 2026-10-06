@@ -6,7 +6,7 @@ correspondences' official ABS source publishes anything coarser than leaf level 
 directly against the source sheets -- see TODO.md), so this is the only way to reach
 division/group precision at all.
 
-Source-side division/group titles come from data_untracked/12970_1998_2008.xlsx, the only
+Source-side division/group titles come from raw/abs_for_seo/12970_1998_2008.xlsx, the only
 source file in this checkout that lists these vintages' own division/group names (the usual
 ABS_FOR_SEO correspondence sources this pipeline otherwise reads don't carry them). FOR2008's
 and SEO2008's own codes are natively 2/4/6-digit (division/group/leaf each genuinely

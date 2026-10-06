@@ -1,0 +1,92 @@
+oax_code,oax_label,for2008_code,for2008_label,is_primary,confidence,match_method,signals_agreeing,notes,reviewed
+11,Agricultural and Biological Sciences,06,BIOLOGICAL SCIENCES,True,1.0,manual_curated,forward+reverse+lexical,"subfields split between 06 and 07 (and 05/09); 06 kept to match the existing OAX field 11 -> FOR2020 31 BIOLOGICAL SCIENCES mapping, 07 is the main alternate",2026-10-06
+11,Agricultural and Biological Sciences,07,AGRICULTURAL AND VETERINARY SCIENCES,False,0.191,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+11,Agricultural and Biological Sciences,10,TECHNOLOGY,False,0.087,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+11,Agricultural and Biological Sciences,09,ENGINEERING,False,0.019,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+11,Agricultural and Biological Sciences,05,ENVIRONMENTAL SCIENCES,False,0.002,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+12,Arts and Humanities,20,"LANGUAGE, COMMUNICATION AND CULTURE",True,0.9,manual_curated,forward+reverse,,2026-10-06
+12,Arts and Humanities,22,PHILOSOPHY AND RELIGIOUS STUDIES,False,0.115,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+12,Arts and Humanities,21,HISTORY AND ARCHAEOLOGY,False,0.1,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+12,Arts and Humanities,19,STUDIES IN CREATIVE ARTS AND WRITING,False,0.087,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+12,Arts and Humanities,16,STUDIES IN HUMAN SOCIETY,False,0.01,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+13,"Biochemistry, Genetics and Molecular Biology",06,BIOLOGICAL SCIENCES,True,0.8,manual_curated,forward,,2026-10-06
+13,"Biochemistry, Genetics and Molecular Biology",10,TECHNOLOGY,False,0.082,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+14,"Business, Management and Accounting",15,"COMMERCE, MANAGEMENT, TOURISM AND SERVICES",True,1.0,manual_curated,forward+reverse+lexical,,2026-10-06
+14,"Business, Management and Accounting",14,ECONOMICS,False,0.011,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+14,"Business, Management and Accounting",22,PHILOSOPHY AND RELIGIOUS STUDIES,False,0.011,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+15,Chemical Engineering,09,ENGINEERING,True,0.9,manual_curated,forward+lexical,,2026-10-06
+15,Chemical Engineering,10,TECHNOLOGY,False,0.125,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+15,Chemical Engineering,02,PHYSICAL SCIENCES,False,0.02,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+15,Chemical Engineering,04,EARTH SCIENCES,False,0.005,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+15,Chemical Engineering,12,BUILT ENVIRONMENT AND DESIGN,False,0.005,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+16,Chemistry,03,CHEMICAL SCIENCES,True,0.9,manual_curated,forward+reverse,,2026-10-06
+16,Chemistry,02,PHYSICAL SCIENCES,False,0.003,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+17,Computer Science,08,INFORMATION AND COMPUTING SCIENCES,True,0.9,manual_curated,forward+reverse,,2026-10-06
+17,Computer Science,17,PSYCHOLOGY AND COGNITIVE SCIENCES,False,0.007,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+17,Computer Science,11,MEDICAL AND HEALTH SCIENCES,False,0.004,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+17,Computer Science,15,"COMMERCE, MANAGEMENT, TOURISM AND SERVICES",False,0.004,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+17,Computer Science,20,"LANGUAGE, COMMUNICATION AND CULTURE",False,0.004,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+18,Decision Sciences,15,"COMMERCE, MANAGEMENT, TOURISM AND SERVICES",True,0.8,manual_curated,forward,,2026-10-06
+18,Decision Sciences,14,ECONOMICS,False,0.011,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+18,Decision Sciences,22,PHILOSOPHY AND RELIGIOUS STUDIES,False,0.011,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+19,Earth and Planetary Sciences,04,EARTH SCIENCES,True,1.0,manual_curated,forward+reverse+lexical,,2026-10-06
+19,Earth and Planetary Sciences,03,CHEMICAL SCIENCES,False,0.015,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+19,Earth and Planetary Sciences,09,ENGINEERING,False,0.015,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+20,"Economics, Econometrics and Finance",14,ECONOMICS,True,1.0,manual_curated,forward+reverse+lexical,,2026-10-06
+21,Energy,09,ENGINEERING,True,0.8,manual_curated,forward,,2026-10-06
+21,Energy,10,TECHNOLOGY,False,0.125,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+21,Energy,02,PHYSICAL SCIENCES,False,0.02,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+21,Energy,04,EARTH SCIENCES,False,0.005,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+21,Energy,12,BUILT ENVIRONMENT AND DESIGN,False,0.005,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+22,Engineering,09,ENGINEERING,True,1.0,manual_curated,forward+reverse+lexical,,2026-10-06
+22,Engineering,10,TECHNOLOGY,False,0.112,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+22,Engineering,12,BUILT ENVIRONMENT AND DESIGN,False,0.108,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+22,Engineering,02,PHYSICAL SCIENCES,False,0.018,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+22,Engineering,04,EARTH SCIENCES,False,0.005,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+23,Environmental Science,05,ENVIRONMENTAL SCIENCES,True,1.0,manual_curated,forward+reverse+lexical,,2026-10-06
+23,Environmental Science,10,TECHNOLOGY,False,0.184,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+24,Immunology and Microbiology,06,BIOLOGICAL SCIENCES,True,0.8,manual_curated,forward,,2026-10-06
+24,Immunology and Microbiology,10,TECHNOLOGY,False,0.082,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+25,Materials Science,09,ENGINEERING,True,0.8,manual_curated,forward,,2026-10-06
+25,Materials Science,10,TECHNOLOGY,False,0.125,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+25,Materials Science,02,PHYSICAL SCIENCES,False,0.02,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+25,Materials Science,04,EARTH SCIENCES,False,0.005,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+25,Materials Science,12,BUILT ENVIRONMENT AND DESIGN,False,0.005,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+26,Mathematics,01,MATHEMATICAL SCIENCES,True,0.9,manual_curated,forward+reverse,,2026-10-06
+26,Mathematics,08,INFORMATION AND COMPUTING SCIENCES,False,0.01,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+27,Medicine,11,MEDICAL AND HEALTH SCIENCES,True,0.9,manual_curated,forward+reverse,,2026-10-06
+27,Medicine,10,TECHNOLOGY,False,0.045,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+27,Medicine,16,STUDIES IN HUMAN SOCIETY,False,0.003,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+27,Medicine,19,STUDIES IN CREATIVE ARTS AND WRITING,False,0.003,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+27,Medicine,08,INFORMATION AND COMPUTING SCIENCES,False,0.001,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+28,Neuroscience,11,MEDICAL AND HEALTH SCIENCES,True,0.8,manual_curated,forward,,2026-10-06
+28,Neuroscience,10,TECHNOLOGY,False,0.054,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+29,Nursing,11,MEDICAL AND HEALTH SCIENCES,True,0.8,manual_curated,forward,,2026-10-06
+29,Nursing,16,STUDIES IN HUMAN SOCIETY,False,0.016,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+29,Nursing,19,STUDIES IN CREATIVE ARTS AND WRITING,False,0.014,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+29,Nursing,08,INFORMATION AND COMPUTING SCIENCES,False,0.007,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+29,Nursing,17,PSYCHOLOGY AND COGNITIVE SCIENCES,False,0.005,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+30,"Pharmacology, Toxicology and Pharmaceutics",11,MEDICAL AND HEALTH SCIENCES,True,0.8,manual_curated,forward,,2026-10-06
+30,"Pharmacology, Toxicology and Pharmaceutics",10,TECHNOLOGY,False,0.054,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+31,Physics and Astronomy,02,PHYSICAL SCIENCES,True,0.9,manual_curated,forward+reverse,,2026-10-06
+32,Psychology,17,PSYCHOLOGY AND COGNITIVE SCIENCES,True,1.0,manual_curated,forward+reverse+lexical,,2026-10-06
+32,Psychology,11,MEDICAL AND HEALTH SCIENCES,False,0.019,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+32,Psychology,13,EDUCATION,False,0.015,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+32,Psychology,06,BIOLOGICAL SCIENCES,False,0.009,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+33,Social Sciences,16,STUDIES IN HUMAN SOCIETY,True,0.9,manual_curated,forward+reverse,,2026-10-06
+33,Social Sciences,18,LAW AND LEGAL STUDIES,False,0.14,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+33,Social Sciences,13,EDUCATION,False,0.088,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+33,Social Sciences,14,ECONOMICS,False,0.032,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+33,Social Sciences,20,"LANGUAGE, COMMUNICATION AND CULTURE",False,0.019,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+34,Veterinary,07,AGRICULTURAL AND VETERINARY SCIENCES,True,0.9,manual_curated,forward+lexical,,2026-10-06
+34,Veterinary,10,TECHNOLOGY,False,0.105,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+34,Veterinary,09,ENGINEERING,False,0.079,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+34,Veterinary,06,BIOLOGICAL SCIENCES,False,0.025,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+34,Veterinary,05,ENVIRONMENTAL SCIENCES,False,0.009,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+35,Dentistry,11,MEDICAL AND HEALTH SCIENCES,True,0.8,manual_curated,forward,,2026-10-06
+35,Dentistry,10,TECHNOLOGY,False,0.054,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+36,Health Professions,11,MEDICAL AND HEALTH SCIENCES,True,0.9,manual_curated,forward+lexical,,2026-10-06
+36,Health Professions,16,STUDIES IN HUMAN SOCIETY,False,0.016,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+36,Health Professions,19,STUDIES IN CREATIVE ARTS AND WRITING,False,0.014,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+36,Health Professions,08,INFORMATION AND COMPUTING SCIENCES,False,0.007,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+36,Health Professions,17,PSYCHOLOGY AND COGNITIVE SCIENCES,False,0.005,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,

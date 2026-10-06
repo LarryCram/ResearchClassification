@@ -6,7 +6,7 @@ from pathlib import Path
 
 import pandas as pd
 
-VALID_SYSTEMS = {"FOR", "SEO", "OAX"}
+VALID_SYSTEMS = {"FOR", "FOR2008", "SEO", "OAX"}
 
 BRIDGE_COLUMNS = [
     "source_system",
