@@ -41,8 +41,7 @@ OpenAlex,1204,Archeology,FOR2008,2101,Archaeology,group,True,manual_curated,0.9,
 OpenAlex,1205,Classics,FOR2008,2002,Cultural Studies,group,False,derived_empirical,0.031,runner-up from the official FOR2020 -> FOR2008 correspondence vote
 OpenAlex,1205,Classics,FOR2008,2005,Literary Studies,group,True,manual_curated,0.8,
 OpenAlex,1205,Classics,FOR2008,2103,Historical Studies,group,False,derived_empirical,0.016,runner-up from the official FOR2020 -> FOR2008 correspondence vote
-OpenAlex,1206,Conservation,FOR2008,0501,ECOLOGICAL APPLICATIONS,group,False,derived_empirical,1.0,runner-up from the official FOR2020 -> FOR2008 correspondence vote
-OpenAlex,1206,Conservation,FOR2008,2102,Curatorial and Related Studies,group,True,manual_curated,0.7,"Arts and Humanities 'Conservation' is heritage/art conservation (210202), not ecological conservation"
+OpenAlex,1206,Conservation,FOR2008,2102,Curatorial and Related Studies,group,True,manual_curated,0.8,"Arts and Humanities 'Conservation' is heritage/art conservation (210202), not ecological conservation"
 OpenAlex,1207,History and Philosophy of Science,FOR2008,2202,History and Philosophy of Specific Fields,group,True,manual_curated,1.0,
 OpenAlex,1208,Literature and Literary Theory,FOR2008,1903,Journalism and Professional Writing,group,False,derived_empirical,0.031,runner-up from the official FOR2020 -> FOR2008 correspondence vote
 OpenAlex,1208,Literature and Literary Theory,FOR2008,1904,Performing Arts and Creative Writing,group,False,derived_empirical,0.044,runner-up from the official FOR2020 -> FOR2008 correspondence vote
@@ -146,11 +145,11 @@ OpenAlex,1703,Computational Theory and Mathematics,FOR2008,0802,Computation Theo
 OpenAlex,1703,Computational Theory and Mathematics,FOR2008,0803,Computer Software,group,False,derived_empirical,0.042,runner-up from the official FOR2020 -> FOR2008 correspondence vote
 OpenAlex,1703,Computational Theory and Mathematics,FOR2008,0804,Data Format,group,False,derived_empirical,0.188,runner-up from the official FOR2020 -> FOR2008 correspondence vote
 OpenAlex,1703,Computational Theory and Mathematics,FOR2008,0899,Other Information and Computing Sciences,group,False,derived_empirical,0.125,runner-up from the official FOR2020 -> FOR2008 correspondence vote
-OpenAlex,1704,Computer Graphics and Computer-Aided Design,FOR2008,0801,Artificial Intelligence and Image Processing,group,True,manual_curated,0.8,"080103 Computer Graphics, not design practice"
-OpenAlex,1704,Computer Graphics and Computer-Aided Design,FOR2008,0803,Computer Software,group,False,derived_empirical,0.011,runner-up from the official FOR2020 -> FOR2008 correspondence vote
-OpenAlex,1704,Computer Graphics and Computer-Aided Design,FOR2008,0806,Information Systems,group,False,derived_empirical,0.062,runner-up from the official FOR2020 -> FOR2008 correspondence vote
-OpenAlex,1704,Computer Graphics and Computer-Aided Design,FOR2008,1201,Architecture,group,False,derived_empirical,0.054,runner-up from the official FOR2020 -> FOR2008 correspondence vote
-OpenAlex,1704,Computer Graphics and Computer-Aided Design,FOR2008,1203,Design Practice and Management,group,False,derived_empirical,0.446,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,1704,Computer Graphics and Computer-Aided Design,FOR2008,0801,Artificial Intelligence and Image Processing,group,True,manual_curated,0.9,"080103 Computer Graphics, not design practice"
+OpenAlex,1704,Computer Graphics and Computer-Aided Design,FOR2008,0803,Computer Software,group,False,derived_empirical,0.022,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,1704,Computer Graphics and Computer-Aided Design,FOR2008,0804,Data Format,group,False,derived_empirical,0.022,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,1704,Computer Graphics and Computer-Aided Design,FOR2008,0806,Information Systems,group,False,derived_empirical,0.124,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,1704,Computer Graphics and Computer-Aided Design,FOR2008,0906,Electrical and Electronic Engineering,group,False,derived_empirical,0.022,runner-up from the official FOR2020 -> FOR2008 correspondence vote
 OpenAlex,1705,Computer Networks and Communications,FOR2008,0803,Computer Software,group,False,derived_empirical,0.502,runner-up from the official FOR2020 -> FOR2008 correspondence vote
 OpenAlex,1705,Computer Networks and Communications,FOR2008,0804,Data Format,group,False,derived_empirical,0.088,runner-up from the official FOR2020 -> FOR2008 correspondence vote
 OpenAlex,1705,Computer Networks and Communications,FOR2008,0805,Distributed Computing,group,True,manual_curated,0.8,
@@ -164,13 +163,16 @@ OpenAlex,1707,Computer Vision and Pattern Recognition,FOR2008,0801,Artificial In
 OpenAlex,1707,Computer Vision and Pattern Recognition,FOR2008,0803,Computer Software,group,False,derived_empirical,0.067,runner-up from the official FOR2020 -> FOR2008 correspondence vote
 OpenAlex,1707,Computer Vision and Pattern Recognition,FOR2008,0806,Information Systems,group,False,derived_empirical,0.033,runner-up from the official FOR2020 -> FOR2008 correspondence vote
 OpenAlex,1707,Computer Vision and Pattern Recognition,FOR2008,2004,Linguistics,group,False,derived_empirical,0.05,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,1708,Hardware and Architecture,FOR2008,0803,Computer Software,group,False,derived_empirical,0.327,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,1708,Hardware and Architecture,FOR2008,0804,Data Format,group,False,derived_empirical,0.019,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,1708,Hardware and Architecture,FOR2008,0805,Distributed Computing,group,False,derived_empirical,0.596,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,1708,Hardware and Architecture,FOR2008,0806,Information Systems,group,False,derived_empirical,0.038,runner-up from the official FOR2020 -> FOR2008 correspondence vote
 OpenAlex,1708,Hardware and Architecture,FOR2008,1006,Computer Hardware,group,True,manual_curated,0.7,"computer hardware/architecture, not building architecture"
-OpenAlex,1708,Hardware and Architecture,FOR2008,1201,Architecture,group,False,derived_empirical,1.0,runner-up from the official FOR2020 -> FOR2008 correspondence vote
-OpenAlex,1709,Human-Computer Interaction,FOR2008,0801,Artificial Intelligence and Image Processing,group,False,derived_empirical,0.072,runner-up from the official FOR2020 -> FOR2008 correspondence vote
-OpenAlex,1709,Human-Computer Interaction,FOR2008,0803,Computer Software,group,False,derived_empirical,0.083,runner-up from the official FOR2020 -> FOR2008 correspondence vote
-OpenAlex,1709,Human-Computer Interaction,FOR2008,0806,Information Systems,group,True,manual_curated,0.8,080602 Computer-Human Interaction
-OpenAlex,1709,Human-Computer Interaction,FOR2008,0906,Electrical and Electronic Engineering,group,False,derived_empirical,0.146,runner-up from the official FOR2020 -> FOR2008 correspondence vote
-OpenAlex,1709,Human-Computer Interaction,FOR2008,0913,Mechanical Engineering,group,False,derived_empirical,0.312,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,1709,Human-Computer Interaction,FOR2008,0801,Artificial Intelligence and Image Processing,group,False,derived_empirical,0.144,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,1709,Human-Computer Interaction,FOR2008,0803,Computer Software,group,False,derived_empirical,0.167,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,1709,Human-Computer Interaction,FOR2008,0805,Distributed Computing,group,False,derived_empirical,0.114,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,1709,Human-Computer Interaction,FOR2008,0806,Information Systems,group,True,manual_curated,0.9,080602 Computer-Human Interaction
+OpenAlex,1709,Human-Computer Interaction,FOR2008,0899,Other Information and Computing Sciences,group,False,derived_empirical,0.053,runner-up from the official FOR2020 -> FOR2008 correspondence vote
 OpenAlex,1710,Information Systems,FOR2008,0801,Artificial Intelligence and Image Processing,group,False,derived_empirical,0.031,runner-up from the official FOR2020 -> FOR2008 correspondence vote
 OpenAlex,1710,Information Systems,FOR2008,0804,Data Format,group,False,derived_empirical,0.064,runner-up from the official FOR2020 -> FOR2008 correspondence vote
 OpenAlex,1710,Information Systems,FOR2008,0805,Distributed Computing,group,False,derived_empirical,0.017,runner-up from the official FOR2020 -> FOR2008 correspondence vote
@@ -324,8 +326,10 @@ OpenAlex,2610,Mathematical Physics,FOR2008,0105,MATHEMATICAL PHYSICS,group,True,
 OpenAlex,2611,Modeling and Simulation,FOR2008,0103,NUMERICAL AND COMPUTATIONAL MATHEMATICS,group,True,manual_curated,0.8,
 OpenAlex,2612,Numerical Analysis,FOR2008,0103,NUMERICAL AND COMPUTATIONAL MATHEMATICS,group,True,manual_curated,0.9,
 OpenAlex,2613,Statistics and Probability,FOR2008,0104,STATISTICS,group,True,manual_curated,1.0,
-OpenAlex,2614,Theoretical Computer Science,FOR2008,0102,APPLIED MATHEMATICS,group,False,derived_empirical,0.95,runner-up from the official FOR2020 -> FOR2008 correspondence vote
-OpenAlex,2614,Theoretical Computer Science,FOR2008,0802,Computation Theory and Mathematics,group,True,manual_curated,0.7,theoretical computer science -> Computation Theory and Mathematics
+OpenAlex,2614,Theoretical Computer Science,FOR2008,0802,Computation Theory and Mathematics,group,True,manual_curated,0.8,theoretical computer science -> Computation Theory and Mathematics
+OpenAlex,2614,Theoretical Computer Science,FOR2008,0803,Computer Software,group,False,derived_empirical,0.042,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,2614,Theoretical Computer Science,FOR2008,0804,Data Format,group,False,derived_empirical,0.188,runner-up from the official FOR2020 -> FOR2008 correspondence vote
+OpenAlex,2614,Theoretical Computer Science,FOR2008,0899,Other Information and Computing Sciences,group,False,derived_empirical,0.125,runner-up from the official FOR2020 -> FOR2008 correspondence vote
 OpenAlex,2702,Anatomy,FOR2008,1103,Clinical Sciences,group,True,manual_curated,0.8,
 OpenAlex,2702,Anatomy,FOR2008,1106,Human Movement and Sports Science,group,False,derived_empirical,0.036,runner-up from the official FOR2020 -> FOR2008 correspondence vote
 OpenAlex,2703,Anesthesiology and Pain Medicine,FOR2008,1103,Clinical Sciences,group,True,manual_curated,0.8,

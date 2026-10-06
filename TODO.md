@@ -504,18 +504,34 @@ deliberately not exposed). Supporting pieces:
   hand-curated FOR2020 -> OAX hub; a word-overlap label match), then every one of the 252
   subfield and 26 field rows reviewed directly. 49 subfield picks depart from the forward
   draft, each with a one-line note in `GROUP_BY_SUBFIELD`. Confidence = agreement count
-  (1.0/0.9/0.8/0.7 for 3/2/1/0 signals). Primaries: 65 at 1.0, 62 at 0.9, 92 at 0.8, 33 at
+  (1.0/0.9/0.8/0.7 for 3/2/1/0 signals). Primaries: 65 at 1.0, 64 at 0.9, 92 at 0.8, 31 at
   0.7 (subfields); 7/10/9 at 1.0/0.9/0.8 (fields).
 - Judgment call worth revisiting: OAX field 11 "Agricultural and Biological Sciences" ->
   FOR2008 06 BIOLOGICAL SCIENCES (matches the existing FOR2020 31 mapping), although its
   subfields split 4 to division 06 and 5 to 07 AGRICULTURAL AND VETERINARY SCIENCES.
 - `validate_oax_for2008_consistency.py` (build step 9c, informational): 54/252 subfields land
-  outside their field's FOR2008 division (expected), and 31/252 round trips OAX -> FOR2008 ->
-  FOR2020 land in a different FOR2020 division than OAX -> FOR2020 directly. Most of the 31
-  are the allied-health subfields (FOR2008 1103 Clinical Sciences rolls up to FOR2020 32,
-  while FOR2020 puts allied health in 42), but several expose clear errors in the existing
-  **OAX subfield -> FOR2020 group** bridge, not yet fixed: 1708 "Hardware and Architecture"
-  -> 3301 Architecture (exact_match 1.0), 1704 "Computer Graphics and Computer-Aided Design"
-  -> 3303 Design, 1206 "Conservation" (heritage) -> 4102 Ecological applications, 1709
-  "Human-Computer Interaction" -> 4007 Control engineering, 2614 "Theoretical Computer
-  Science" -> 4901 Applied mathematics.
+  outside their field's FOR2008 division (expected). Its round-trip report (OAX -> FOR2008 ->
+  FOR2020 vs OAX -> FOR2020 directly) first flagged 31/252 mismatches, which exposed five
+  clear errors in the existing **OAX subfield -> FOR2020 group** bridge -- now **fixed** as
+  `manual_override` rows in `curate_openalex_subfield_to_for_group.py`:
+
+  | Subfield | Was | Now |
+  |---|---|---|
+  | 1206 Conservation (heritage, under Arts and Humanities) | 4102 Ecological applications | 4302 Heritage, archive and museum studies |
+  | 1704 Computer Graphics and Computer-Aided Design | 3303 Design | 4607 Graphics, augmented reality and games |
+  | 1708 Hardware and Architecture | 3301 Architecture (`exact_match` 1.0) | 4606 Distributed computing and systems software |
+  | 1709 Human-Computer Interaction | 4007 Control engineering | 4608 Human-centred computing |
+  | 2614 Theoretical Computer Science | 4901 Applied mathematics | 4613 Theory of computation |
+
+  1708 was tried at 4009 Electronics, sensors and digital hardware first, but 6 of its 8 OAX
+  topics (parallel, embedded, real-time, cloud, packet-processing, energy-efficient computing)
+  fit 4606 far better. The 27 topics under these subfields were re-picked within their new
+  groups (topic -> field must nest under subfield -> group), plus three topic overrides for
+  exact-fit fields the lexical pass missed (10904 -> 460603, 12326 -> 460609, 14098 ->
+  460606). Regenerating all three seeds reproduced every other row exactly. The FOR2008
+  seeds were regenerated too, so their agreement scores use the corrected bridge.
+
+  27/252 round-trip mismatches remain and are expected: mostly allied-health subfields
+  (FOR2008 1103 Clinical Sciences rolls up to FOR2020 32, while FOR2020 puts allied health
+  in 42), plus cases where FOR2008 and FOR2020 genuinely group a topic differently (e.g.
+  1708: FOR2008 1006 Computer Hardware rolls up to FOR2020 40, vs 4606 in division 46).

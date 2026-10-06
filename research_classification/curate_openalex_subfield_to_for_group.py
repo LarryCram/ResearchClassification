@@ -68,7 +68,7 @@ _MANUAL_OVERRIDES: dict[str, tuple[str, str]] = {
     "2215": ("3302", "Building and Construction -- exact-fit group 'Building' exists but wasn't reached"),
     "2705": ("3201", "Cardiology and Cardiovascular Medicine -- exact-fit group exists"),
     "1706": ("4601", "Computer Science Applications -- general fit, was a Literary-studies-style false magnet hit"),
-    "1206": ("4102", "Conservation -- ecological/environmental concept, not Literary studies"),
+    "1206": ("4302", "Conservation -- under OAX's Arts and Humanities field this is heritage/art conservation (430205 Heritage and cultural conservation), not ecological applications; corrected 2026-10-06 after the OAX -> FOR2008 round-trip check flagged it"),
     "3604": ("4203", "Emergency Medical Services -- health services concept, not HR/industrial relations"),
     "2712": ("3205", "Endocrinology, Diabetes and Metabolism -- metabolomics is the closest real fit"),
     "3300": ("4499", "General Social Sciences -- division 44's own NEC catch-all, not Education"),
@@ -161,6 +161,14 @@ _MANUAL_OVERRIDES: dict[str, tuple[str, str]] = {
     "3603": ("4208", "Complementary and Manual Therapy -- exact-fit 'Traditional, complementary and integrative medicine' group exists"),
     "3608": ("4203", "Medical Terminology -- generic health-administration concept, closest available group"),
     "3612": ("4201", "Physical Therapy, Sports Therapy and Rehabilitation -- exact-fit 'Allied health and rehabilitation science' group, already the algorithm's own pick, just promoted off below_floor"),
+
+    # 2026-10-06: computer-science subfields whose pick landed on a same-named but unrelated
+    # group (an "exact_match" on the word "architecture"/"design") or a weak lexical cross,
+    # found by validate_oax_for2008_consistency.py's round-trip report.
+    "1704": ("4607", "Computer Graphics and Computer-Aided Design -- 460701 Computer aided design / 460702 Computer graphics, not the built-environment Design group"),
+    "1708": ("4606", "Hardware and Architecture -- computer systems, not building Architecture; OAX's topics here (parallel, embedded, real-time, cloud, energy-efficient computing) fit Distributed computing and systems software better than 4009 Electronics"),
+    "1709": ("4608", "Human-Computer Interaction -- 460806 Human-computer interaction, not control engineering"),
+    "2614": ("4613", "Theoretical Computer Science -- Theory of computation, not applied mathematics"),
 }
 
 

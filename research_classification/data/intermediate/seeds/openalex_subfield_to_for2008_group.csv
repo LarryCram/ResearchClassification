@@ -41,8 +41,7 @@ oax_code,oax_label,for2008_code,for2008_label,is_primary,confidence,match_method
 1205,Classics,2005,Literary Studies,True,0.8,manual_curated,forward,,2026-10-06
 1205,Classics,2002,Cultural Studies,False,0.031,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
 1205,Classics,2103,Historical Studies,False,0.016,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
-1206,Conservation,2102,Curatorial and Related Studies,True,0.7,manual_curated,,"Arts and Humanities 'Conservation' is heritage/art conservation (210202), not ecological conservation",2026-10-06
-1206,Conservation,0501,ECOLOGICAL APPLICATIONS,False,1.0,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+1206,Conservation,2102,Curatorial and Related Studies,True,0.8,manual_curated,forward,"Arts and Humanities 'Conservation' is heritage/art conservation (210202), not ecological conservation",2026-10-06
 1207,History and Philosophy of Science,2202,History and Philosophy of Specific Fields,True,1.0,manual_curated,forward+reverse+lexical,,2026-10-06
 1208,Literature and Literary Theory,2005,Literary Studies,True,1.0,manual_curated,forward+reverse+lexical,,2026-10-06
 1208,Literature and Literary Theory,1904,Performing Arts and Creative Writing,False,0.044,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
@@ -146,11 +145,11 @@ oax_code,oax_label,for2008_code,for2008_label,is_primary,confidence,match_method
 1703,Computational Theory and Mathematics,0804,Data Format,False,0.188,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
 1703,Computational Theory and Mathematics,0899,Other Information and Computing Sciences,False,0.125,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
 1703,Computational Theory and Mathematics,0803,Computer Software,False,0.042,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
-1704,Computer Graphics and Computer-Aided Design,0801,Artificial Intelligence and Image Processing,True,0.8,manual_curated,reverse,"080103 Computer Graphics, not design practice",2026-10-06
-1704,Computer Graphics and Computer-Aided Design,1203,Design Practice and Management,False,0.446,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
-1704,Computer Graphics and Computer-Aided Design,0806,Information Systems,False,0.062,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
-1704,Computer Graphics and Computer-Aided Design,1201,Architecture,False,0.054,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
-1704,Computer Graphics and Computer-Aided Design,0803,Computer Software,False,0.011,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+1704,Computer Graphics and Computer-Aided Design,0801,Artificial Intelligence and Image Processing,True,0.9,manual_curated,forward+reverse,"080103 Computer Graphics, not design practice",2026-10-06
+1704,Computer Graphics and Computer-Aided Design,0806,Information Systems,False,0.124,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+1704,Computer Graphics and Computer-Aided Design,0803,Computer Software,False,0.022,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+1704,Computer Graphics and Computer-Aided Design,0804,Data Format,False,0.022,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+1704,Computer Graphics and Computer-Aided Design,0906,Electrical and Electronic Engineering,False,0.022,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
 1705,Computer Networks and Communications,0805,Distributed Computing,True,0.8,manual_curated,forward,,2026-10-06
 1705,Computer Networks and Communications,0803,Computer Software,False,0.502,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
 1705,Computer Networks and Communications,0804,Data Format,False,0.088,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
@@ -165,12 +164,15 @@ oax_code,oax_label,for2008_code,for2008_label,is_primary,confidence,match_method
 1707,Computer Vision and Pattern Recognition,2004,Linguistics,False,0.05,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
 1707,Computer Vision and Pattern Recognition,0806,Information Systems,False,0.033,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
 1708,Hardware and Architecture,1006,Computer Hardware,True,0.7,manual_curated,,"computer hardware/architecture, not building architecture",2026-10-06
-1708,Hardware and Architecture,1201,Architecture,False,1.0,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
-1709,Human-Computer Interaction,0806,Information Systems,True,0.8,manual_curated,reverse,080602 Computer-Human Interaction,2026-10-06
-1709,Human-Computer Interaction,0913,Mechanical Engineering,False,0.312,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
-1709,Human-Computer Interaction,0906,Electrical and Electronic Engineering,False,0.146,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
-1709,Human-Computer Interaction,0803,Computer Software,False,0.083,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
-1709,Human-Computer Interaction,0801,Artificial Intelligence and Image Processing,False,0.072,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+1708,Hardware and Architecture,0805,Distributed Computing,False,0.596,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+1708,Hardware and Architecture,0803,Computer Software,False,0.327,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+1708,Hardware and Architecture,0806,Information Systems,False,0.038,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+1708,Hardware and Architecture,0804,Data Format,False,0.019,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+1709,Human-Computer Interaction,0806,Information Systems,True,0.9,manual_curated,forward+reverse,080602 Computer-Human Interaction,2026-10-06
+1709,Human-Computer Interaction,0803,Computer Software,False,0.167,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+1709,Human-Computer Interaction,0801,Artificial Intelligence and Image Processing,False,0.144,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+1709,Human-Computer Interaction,0805,Distributed Computing,False,0.114,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+1709,Human-Computer Interaction,0899,Other Information and Computing Sciences,False,0.053,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
 1710,Information Systems,0806,Information Systems,True,1.0,manual_curated,forward+reverse+lexical,,2026-10-06
 1710,Information Systems,0804,Data Format,False,0.064,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
 1710,Information Systems,0807,Library and Information Studies,False,0.034,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
@@ -324,8 +326,10 @@ oax_code,oax_label,for2008_code,for2008_label,is_primary,confidence,match_method
 2611,Modeling and Simulation,0103,NUMERICAL AND COMPUTATIONAL MATHEMATICS,True,0.8,manual_curated,forward,,2026-10-06
 2612,Numerical Analysis,0103,NUMERICAL AND COMPUTATIONAL MATHEMATICS,True,0.9,manual_curated,forward+lexical,,2026-10-06
 2613,Statistics and Probability,0104,STATISTICS,True,1.0,manual_curated,forward+reverse+lexical,,2026-10-06
-2614,Theoretical Computer Science,0802,Computation Theory and Mathematics,True,0.7,manual_curated,,theoretical computer science -> Computation Theory and Mathematics,2026-10-06
-2614,Theoretical Computer Science,0102,APPLIED MATHEMATICS,False,0.95,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+2614,Theoretical Computer Science,0802,Computation Theory and Mathematics,True,0.8,manual_curated,forward,theoretical computer science -> Computation Theory and Mathematics,2026-10-06
+2614,Theoretical Computer Science,0804,Data Format,False,0.188,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+2614,Theoretical Computer Science,0899,Other Information and Computing Sciences,False,0.125,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
+2614,Theoretical Computer Science,0803,Computer Software,False,0.042,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
 2702,Anatomy,1103,Clinical Sciences,True,0.8,manual_curated,forward,,2026-10-06
 2702,Anatomy,1106,Human Movement and Sports Science,False,0.036,derived_empirical,,runner-up from the official FOR2020 -> FOR2008 correspondence vote,
 2703,Anesthesiology and Pain Medicine,1103,Clinical Sciences,True,0.8,manual_curated,forward,,2026-10-06

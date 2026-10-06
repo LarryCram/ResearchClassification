@@ -97,7 +97,7 @@ openalex_subfield_id,openalex_subfield_name,for_group_code,for_group_label,is_pr
 1205,Classics,4701,Communication and media studies,False,0.091,constrained_lexical,
 1205,Classics,4704,Linguistics,False,0.091,constrained_lexical,
 1205,Classics,4799,"Other language, communication and culture",False,0.091,constrained_lexical,
-1206,Conservation,4102,Ecological applications,True,0.7,manual_override,"Conservation -- ecological/environmental concept, not Literary studies"
+1206,Conservation,4302,"Heritage, archive and museum studies",True,0.7,manual_override,"Conservation -- under OAX's Arts and Humanities field this is heritage/art conservation (430205 Heritage and cultural conservation), not ecological applications; corrected 2026-10-06 after the OAX -> FOR2008 round-trip check flagged it"
 1207,History and Philosophy of Science,5002,History and philosophy of specific fields,True,0.7,manual_override,History and Philosophy of Science -- exact-fit group exists
 1208,Literature and Literary Theory,4705,Literary studies,True,1.0,exact_match,
 1208,Literature and Literary Theory,4303,Historical studies,False,0.119,constrained_lexical,
@@ -394,15 +394,7 @@ openalex_subfield_id,openalex_subfield_name,for_group_code,for_group_label,is_pr
 1703,Computational Theory and Mathematics,4609,Information systems,False,0.117,constrained_lexical,
 1703,Computational Theory and Mathematics,4902,Mathematical physics,False,0.117,constrained_lexical,
 1703,Computational Theory and Mathematics,4007,"Control engineering, mechatronics and robotics",False,0.1,constrained_lexical,
-1704,Computer Graphics and Computer-Aided Design,3303,Design,True,1.0,exact_match,
-1704,Computer Graphics and Computer-Aided Design,4607,"Graphics, augmented reality and games",False,0.2,constrained_lexical,
-1704,Computer Graphics and Computer-Aided Design,4603,Computer vision and multimedia computation,False,0.133,constrained_lexical,
-1704,Computer Graphics and Computer-Aided Design,4604,Cybersecurity and privacy,False,0.133,constrained_lexical,
-1704,Computer Graphics and Computer-Aided Design,4608,Human-centred computing,False,0.133,constrained_lexical,
-1704,Computer Graphics and Computer-Aided Design,4601,Applied computing,False,0.067,constrained_lexical,
-1704,Computer Graphics and Computer-Aided Design,4602,Artificial intelligence,False,0.067,constrained_lexical,
-1704,Computer Graphics and Computer-Aided Design,4605,Data management and data science,False,0.067,constrained_lexical,
-1704,Computer Graphics and Computer-Aided Design,4606,Distributed computing and systems software,False,0.067,constrained_lexical,
+1704,Computer Graphics and Computer-Aided Design,4607,"Graphics, augmented reality and games",True,0.7,manual_override,"Computer Graphics and Computer-Aided Design -- 460701 Computer aided design / 460702 Computer graphics, not the built-environment Design group"
 1705,Computer Networks and Communications,4606,Distributed computing and systems software,True,0.146,constrained_lexical,
 1705,Computer Networks and Communications,4605,Data management and data science,False,0.115,constrained_lexical,
 1705,Computer Networks and Communications,3901,Curriculum and pedagogy,False,0.083,constrained_lexical,
@@ -422,24 +414,8 @@ openalex_subfield_id,openalex_subfield_name,for_group_code,for_group_label,is_pr
 1707,Computer Vision and Pattern Recognition,3503,Business systems in context,False,0.063,constrained_lexical,
 1707,Computer Vision and Pattern Recognition,3904,Specialist studies in education,False,0.063,constrained_lexical,
 1707,Computer Vision and Pattern Recognition,4410,Sociology,False,0.063,constrained_lexical,
-1708,Hardware and Architecture,3301,Architecture,True,1.0,exact_match,
-1708,Hardware and Architecture,4606,Distributed computing and systems software,False,0.207,constrained_lexical,
-1708,Hardware and Architecture,4009,"Electronics, sensors and digital hardware",False,0.172,constrained_lexical,
-1708,Hardware and Architecture,4006,Communications engineering,False,0.138,constrained_lexical,
-1708,Hardware and Architecture,4007,"Control engineering, mechatronics and robotics",False,0.138,constrained_lexical,
-1708,Hardware and Architecture,4008,Electrical engineering,False,0.138,constrained_lexical,
-1708,Hardware and Architecture,4604,Cybersecurity and privacy,False,0.138,constrained_lexical,
-1708,Hardware and Architecture,4904,Pure mathematics,False,0.138,constrained_lexical,
-1708,Hardware and Architecture,3004,Crop and pasture production,False,0.103,constrained_lexical,
-1709,Human-Computer Interaction,4007,"Control engineering, mechatronics and robotics",True,0.154,constrained_lexical,
-1709,Human-Computer Interaction,4009,"Electronics, sensors and digital hardware",False,0.154,constrained_lexical,
-1709,Human-Computer Interaction,4607,"Graphics, augmented reality and games",False,0.154,constrained_lexical,
-1709,Human-Computer Interaction,3004,Crop and pasture production,False,0.115,constrained_lexical,
-1709,Human-Computer Interaction,3104,Evolutionary biology,False,0.115,constrained_lexical,
-1709,Human-Computer Interaction,3303,Design,False,0.115,constrained_lexical,
-1709,Human-Computer Interaction,4006,Communications engineering,False,0.115,constrained_lexical,
-1709,Human-Computer Interaction,4602,Artificial intelligence,False,0.115,constrained_lexical,
-1709,Human-Computer Interaction,4604,Cybersecurity and privacy,False,0.115,constrained_lexical,
+1708,Hardware and Architecture,4606,Distributed computing and systems software,True,0.7,manual_override,"Hardware and Architecture -- computer systems, not building Architecture; OAX's topics here (parallel, embedded, real-time, cloud, energy-efficient computing) fit Distributed computing and systems software better than 4009 Electronics"
+1709,Human-Computer Interaction,4608,Human-centred computing,True,0.7,manual_override,"Human-Computer Interaction -- 460806 Human-computer interaction, not control engineering"
 1710,Information Systems,4609,Information systems,True,1.0,exact_match,
 1710,Information Systems,4605,Data management and data science,False,0.121,constrained_lexical,
 1710,Information Systems,3901,Curriculum and pedagogy,False,0.112,constrained_lexical,
@@ -882,12 +858,7 @@ openalex_subfield_id,openalex_subfield_name,for_group_code,for_group_label,is_pr
 2611,Modeling and Simulation,4902,Mathematical physics,False,0.05,constrained_lexical,
 2612,Numerical Analysis,4903,Numerical and computational mathematics,True,0.7,manual_override,Numerical Analysis -- exact-fit 'Numerical and computational mathematics' group exists
 2613,Statistics and Probability,4905,Statistics,True,0.7,manual_override,Statistics and Probability -- exact-fit 'Statistics' group exists
-2614,Theoretical Computer Science,4901,Applied mathematics,True,0.667,constrained_lexical,
-2614,Theoretical Computer Science,4904,Pure mathematics,False,0.667,constrained_lexical,
-2614,Theoretical Computer Science,4902,Mathematical physics,False,0.333,constrained_lexical,
-2614,Theoretical Computer Science,4903,Numerical and computational mathematics,False,0.333,constrained_lexical,
-2614,Theoretical Computer Science,4905,Statistics,False,0.333,constrained_lexical,
-2614,Theoretical Computer Science,4999,Other mathematical sciences,False,0.0,constrained_lexical,
+2614,Theoretical Computer Science,4613,Theory of computation,True,0.7,manual_override,"Theoretical Computer Science -- Theory of computation, not applied mathematics"
 2702,Anatomy,3202,Clinical sciences,True,0.667,constrained_lexical,
 2702,Anatomy,3205,Medical biochemistry and metabolomics,False,0.333,constrained_lexical,
 2702,Anatomy,3206,Medical biotechnology,False,0.333,constrained_lexical,

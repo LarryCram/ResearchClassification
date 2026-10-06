@@ -71,6 +71,11 @@ TOP_N_ALTERNATES = 5
 _MANUAL_OVERRIDES: dict[str, tuple[str, str]] = {
     "10200": ("320223", "Rheumatoid Arthritis Research and Therapies -- exact-fit 'Rheumatology and arthritis' field exists in the same matched group, missed because 'rheumatoid' and 'rheumatology' don't share a tokenized root"),
     "11171": ("310504", "Diabetes and associated disorders -- user override: epigenetic mechanisms in diabetes, staying within the topic's own matched Genetics group rather than crossing to a different group's Endocrinology field"),
+    # 2026-10-06, after subfield 1708 "Hardware and Architecture" moved to group 4606: exact-fit
+    # fields in that group the lexical pass missed.
+    "10904": ("460603", "Embedded Systems Design Techniques -- 'Cyberphysical systems and internet of things', not the group's NEC field"),
+    "12326": ("460609", "Network Packet Processing and Optimization -- exact-fit 'Networking and communications' field exists"),
+    "14098": ("460606", "Energy Efficiency in Computing -- exact-fit 'Energy-efficient computing' field exists"),
 }
 
 
